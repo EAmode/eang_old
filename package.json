@@ -1,8 +1,8 @@
 {
-  "name": "angular-libraries-example",
+  "name": "eang",
   "version": "1.0.0",
-  "description": "Example of bundling Angular libraries",
-  "author": "Jason Aden",
+  "description": "Reactive Angular component library",
+  "author": "Sebastian Kropp",
   "license": "MIT",
   "scripts": {
     "start": "ng serve",
