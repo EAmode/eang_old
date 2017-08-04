@@ -31,5 +31,13 @@
     "typescript": "^2.2.2",
     "zone.js": "^0.8.5"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eascientific/eang.git"
+  },
+  "bugs": {
+    "url": "https://github.com/eascientific/eang/issues"
+  },
+  "homepage": "https://github.com/eascientific/eang"
 }
