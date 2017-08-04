@@ -5,5 +5,8 @@
 .gitignore
 package-lock.json
 package.json
+rollup-config.fesm.js
+rollup-config.umd.js
+rollup-external.js
 tsconfig.json
 tslint.json
