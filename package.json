@@ -14,7 +14,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "version": "npm version -",
+    "version": "npm version --",
     "prepublish": "npm run build",
     "postpublish": "git tag -am \"${npm_package_version}\" v${npm_package_version} && git push && git push --tags"
   },
