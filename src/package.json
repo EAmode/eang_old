@@ -1,11 +1,20 @@
 {
   "name": "eang",
+  "description": "Reactive Angular component library",
   "author": "Sebastian Kropp",
-  "version": "0.0.0",
+  "version": "0.0.4",
   "license": "MIT",
   "module": "eang.umd.js",
   "es2015": "eang.js",
   "typings": "eang.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eascientific/eang.git"
+  },
+  "bugs": {
+    "url": "https://github.com/eascientific/eang/issues"
+  },
+  "homepage": "https://github.com/eascientific/eang",
   "peerDependencies": {
     "@angular/core": "^4.0.1",
     "@angular/forms": "^4.0.1",
