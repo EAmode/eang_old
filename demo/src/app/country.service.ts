@@ -5,10 +5,9 @@ export class CountryService {
 
   constructor() { }
 
-search(term:string){
-countries.name.
-
-}
+  search(term: string) {
+    return countries
+  }
 
 }
 /* tslint:disable */
