@@ -2,7 +2,7 @@
   "name": "eang",
   "description": "Reactive Angular component library",
   "author": "Sebastian Kropp",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "license": "MIT",
   "module": "eang.umd.js",
   "es2015": "eang.js",

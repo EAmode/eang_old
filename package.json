@@ -13,7 +13,7 @@
     "copy": "cpx \"build/**/!(*.js)\" dist && cpx src/package.json dist && cpx README.md dist",
     "lint": "ng lint",
     "postversion": "cd src && cross-var npm version $npm_package_version",
-    "prepublish": "cross-var git commit -m \"d3 ${npm_package_version}\" && npm run build",
+    "prepublish": "cross-var git commit -a -m \"eang $npm_package_version\" && npm run build",
     "postpublish": "git push && git push --tags"
   },
   "devDependencies": {
