@@ -14,7 +14,7 @@
     "lint": "ng lint",
     "postversion": "cd src && cross-var npm version $npm_package_version",
     "prepublish": "npm run build",
-    "postpublish": "cross-var git commit -a -m \"eang $npm_package_version\" && git push && git push --tags"
+    "postpublish": "cross-var git commit -a -m \"eang v$npm_package_version\" && git push && git push --tags"
   },
   "devDependencies": {
     "@angular/common": "^4.3.2",
