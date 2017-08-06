@@ -1,5 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, Input, TemplateRef, ContentChild, OnDestroy } from '@angular/core'
-import { FormControl } from '@angular/forms'
+import { Component, Input, OnDestroy } from '@angular/core'
 import { Observable } from 'rxjs/Observable'
 import { Subscription } from 'rxjs/Subscription'
 import * as MarkdownIt from 'markdown-it'
@@ -7,7 +6,6 @@ import * as _ from 'lodash'
 import 'rxjs/add/observable/combineLatest'
 import 'rxjs/add/operator/debounceTime'
 import 'rxjs/add/operator/distinctUntilChanged'
-import 'rxjs/add/operator/switchMap'
 
 @Component({
   selector: 'ea-markdown',
@@ -27,9 +25,11 @@ export class MarkdownComponent implements OnDestroy {
   constructor() {
     this.subscription = Observable
       .combineLatest(this.doc, this.ctx, (doc, ctx) => ({ doc, ctx }))
+      .debounceTime(400)
+      .distinctUntilChanged()
       .subscribe(change => {
         const compiled = _.template(change.doc)
-        this.markdownIt.render(compiled(change.ctx))
+        this.compiledMarkdown = this.markdownIt.render(compiled(change.ctx))
       })
   }
 
