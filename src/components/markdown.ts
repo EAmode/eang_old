@@ -1,9 +1,10 @@
-import { Component, Input, OnDestroy } from '@angular/core'
+import { Component, Input, OnDestroy, OnInit } from '@angular/core'
 import { Observable } from 'rxjs/Observable'
 import { Subscription } from 'rxjs/Subscription'
 import * as MarkdownIt from 'markdown-it'
 import * as _ from 'lodash'
 import 'rxjs/add/observable/combineLatest'
+import 'rxjs/add/observable/of'
 import 'rxjs/add/operator/debounceTime'
 import 'rxjs/add/operator/distinctUntilChanged'
 
@@ -13,16 +14,15 @@ import 'rxjs/add/operator/distinctUntilChanged'
     <div class="md-content" [innerHTML]="compiledMarkdown"></div>
   `
 })
-export class MarkdownComponent implements OnDestroy {
+export class MarkdownComponent implements OnDestroy, OnInit {
   markdownIt = new MarkdownIt({ html: true })
 
-  @Input() doc: Observable<string>
-  @Input() ctx: Observable<any>
+  @Input() doc = Observable.of('')
+  @Input() ctx = Observable.of({})
   subscription: Subscription
-
   compiledMarkdown: string
 
-  constructor() {
+  ngOnInit(): void {
     this.subscription = Observable
       .combineLatest(this.doc, this.ctx, (doc, ctx) => ({ doc, ctx }))
       .debounceTime(400)

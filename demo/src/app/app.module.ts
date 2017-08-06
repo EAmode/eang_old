@@ -6,12 +6,14 @@ import { NgModule } from '@angular/core'
 import { AppComponent } from './app.component'
 
 import { EangModule } from '../../../src/index';
-import { MenuTreeComponent } from './menu-tree/menu-tree.component'
+import { MenuTreeComponent } from './menu-tree/menu-tree.component';
+import { MarkdownComponent } from './markdown/markdown.component'
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuTreeComponent
+    MenuTreeComponent,
+    MarkdownComponent
   ],
   imports: [
     BrowserModule,
