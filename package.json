@@ -5,7 +5,7 @@
   "author": "Sebastian Kropp",
   "license": "MIT",
   "scripts": {
-    "start": "ng serve",
+    "start": "cd demo && ng serve",
     "build": "npm run ngc && npm run rollup && npm run copy",
     "build:watch": "npm run build && onchange \"src/**/*\" -- npm run build",
     "ngc": "ngc -p src/tsconfig.json",
