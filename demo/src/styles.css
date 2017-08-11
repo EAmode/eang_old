@@ -1,1 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+ea-autocomplete > ul {
+  border-radius: .3em;
+  margin: .2em 0 0;
+  background: #ffffff;
+  background: rgba(255, 255, 255, .9);
+  background: linear-gradient(to bottom right, white, rgba(255, 255, 255, .8));
+  border: 1px solid #000000;
+  border: 1px solid rgba(0, 0, 0, .3);
+  box-shadow: 0.05em 0.2em 0.6em rgba(0, 0, 0, .2);
+  text-shadow: none; }
+
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1vZGUvX2F1dG9jb21wbGV0ZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUNBO0VBQ0Msb0JBQW1CO0VBQ25CLGlCQUFnQjtFQUNoQixvQkFBOEI7RUFBOUIsb0NBQThCO0VBQzlCLDZFQUF1RTtFQUN2RSwwQkFBZ0M7RUFBaEMsb0NBQWdDO0VBQ2hDLGlEQUEwQztFQUMxQyxrQkFBaUIsRUFDakIiLCJmaWxlIjoibW9kZS5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJcbmVhLWF1dG9jb21wbGV0ZSA+IHVsIHtcblx0Ym9yZGVyLXJhZGl1czogLjNlbTtcblx0bWFyZ2luOiAuMmVtIDAgMDtcblx0YmFja2dyb3VuZDogaHNsYSgwLDAlLDEwMCUsLjkpO1xuXHRiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQodG8gYm90dG9tIHJpZ2h0LCB3aGl0ZSwgaHNsYSgwLDAlLDEwMCUsLjgpKTtcblx0Ym9yZGVyOiAxcHggc29saWQgcmdiYSgwLDAsMCwuMyk7XG5cdGJveC1zaGFkb3c6IC4wNWVtIC4yZW0gLjZlbSByZ2JhKDAsMCwwLC4yKTtcblx0dGV4dC1zaGFkb3c6IG5vbmU7XG59XG4iXX0= */
