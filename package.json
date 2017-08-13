@@ -10,7 +10,7 @@
   "typings": "./dist/eang.d.ts",
   "scripts": {
     "start": "cd demo && ng serve",
-    "build": "npm run clean && npm run build:es5 && npm run build:es2015 && npm run build:umd && npm run copy",
+    "build": "npm run clean && npm run build:es5 && npm run build:umd && npm run build:es2015 && npm run copy",
     "build:watch": "npm run build && onchange \"src/**/*\" -- npm run build",
     "build:es5": "rimraf build && ngc -p src/tsconfig.es5.json && rollup -c rollup-config.js -i ./build/eang.es5.js -o ./dist/eang.es5.js",
     "build:es2015": "rimraf build && ngc -p src && rollup -c rollup-config.js",
