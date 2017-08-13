@@ -10,12 +10,17 @@
     "build:watch": "npm run build && onchange \"src/**/*\" -- npm run build",
     "ngc": "ngc -p src/tsconfig.json",
     "rollup": "rollup -c rollup-config.fesm.js && rollup -c rollup-config.fesm.js",
-    "copy": "cpx \"build/**/!(*.js)\" dist && cpx src/package.json dist && cpx README.md dist",
+    "copy": "cpx \"build/**/!(*.js)\" dist",
     "lint": "ng lint",
-    "postversion": "cd src && cross-var npm version $npm_package_version",
     "prepublish": "npm run build",
-    "publish": "npm publish dist",
     "postpublish": "cross-var git commit -a -m \"eang v$npm_package_version\" && git push && git push --tags"
+  },
+  "peerDependencies": {
+    "@angular/core": "^4.0.1",
+    "@angular/forms": "^4.0.1",
+    "rxjs": "^5.3.0",
+    "zone.js": "^0.8.5",
+    "markdown-it": "^8.3.2"
   },
   "devDependencies": {
     "@angular/common": "^4.3.2",

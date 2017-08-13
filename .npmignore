@@ -1,11 +1,11 @@
 /build
 /node_modules
 /src
-demo
+/demo
+.vscode/
 .editorconfig
 .gitignore
 package-lock.json
-package.json
 rollup-config.fesm.js
 rollup-config.umd.js
 rollup-external.js
