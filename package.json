@@ -5,19 +5,21 @@
   "author": "Sebastian Kropp",
   "license": "MIT",
   "main": "./dist/eang.umd.js",
-  "module": "./dist/eang.umd.js",
+  "module": "./dist/eang.es5.js",
   "es2015": "./dist/eang.js",
   "typings": "./dist/eang.d.ts",
   "scripts": {
     "start": "cd demo && ng serve",
-    "build": "npm run ngc && npm run rollup && npm run copy",
+    "build": "npm run clean && npm run build:es5 && npm run build:es2015 && npm run build:umd && npm run copy",
     "build:watch": "npm run build && onchange \"src/**/*\" -- npm run build",
-    "ngc": "ngc -p tsconfig.json",
-    "rollup": "rollup -c rollup-config.fesm.js && rollup -c rollup-config.umd.js",
+    "build:es5": "rimraf build && ngc -p src/tsconfig.es5.json && rollup -c rollup-config.js -i ./build/eang.es5.js -o ./dist/eang.es5.js",
+    "build:es2015": "rimraf build && ngc -p src && rollup -c rollup-config.js",
+    "build:umd": "rimraf build && ngc -p src/tsconfig.es5.json && rollup -c rollup-config.umd.js -i build/eang.es5.js -o dist/eang.umd.js",
     "copy": "cpx \"build/**/!(*.js)\" dist",
     "lint": "ng lint",
     "prepublish": "npm run build",
-    "postpublish": "git push && git push --tags"
+    "postpublish": "git push && git push --tags",
+    "clean": "rimraf build && rimraf dist"
   },
   "peerDependencies": {
     "@angular/core": "^4.0.1",

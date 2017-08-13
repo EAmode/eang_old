@@ -2,7 +2,7 @@
   "compilerOptions": {
     "declaration": true,
     "module": "es2015",
-    "target": "es2015",
+    "target": "es5",
     "baseUrl": ".",
     "stripInternal": true,
     "experimentalDecorators": true,
@@ -15,13 +15,13 @@
     "types": []
   },
   "files": [
-    "src/index.ts"
+    "./index.ts"
   ],
   "angularCompilerOptions": {
     "annotateForClosureCompiler": true,
     "strictMetadataEmit": true,
     "skipTemplateCodegen": true,
-    "flatModuleOutFile": "eang.js",
+    "flatModuleOutFile": "eang.es5.js",
     "flatModuleId": "eang"
   }
 }

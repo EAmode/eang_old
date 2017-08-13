@@ -10,4 +10,5 @@ rollup-config.fesm.js
 rollup-config.umd.js
 rollup-external.js
 tsconfig.json
+tsconfig.es5.json
 tslint.json
