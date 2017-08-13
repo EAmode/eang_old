@@ -13,7 +13,7 @@
     "copy": "cpx \"build/**/!(*.js)\" dist",
     "lint": "ng lint",
     "prepublish": "npm run build",
-    "postpublish": "cross-var git commit -a -m \"eang v$npm_package_version\" && git push && git push --tags"
+    "postpublish": "git push && git push --tags"
   },
   "peerDependencies": {
     "@angular/core": "^4.0.1",
