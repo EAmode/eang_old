@@ -7,7 +7,7 @@
   "main": "./dist/eang.umd.js",
   "module": "./dist/eang.umd.js",
   "es2015": "./dist/eang.js",
-  "typings": "./disteang.d.ts",
+  "typings": "./dist/eang.d.ts",
   "scripts": {
     "start": "cd demo && ng serve",
     "build": "npm run ngc && npm run rollup && npm run copy",
