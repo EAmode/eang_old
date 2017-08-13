@@ -6,7 +6,7 @@
 .editorconfig
 .gitignore
 package-lock.json
-rollup-config.fesm.js
+rollup-config.js
 rollup-config.umd.js
 rollup-external.js
 tsconfig.json
