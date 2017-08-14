@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core'
 import { Observable } from 'rxjs/Observable'
 import 'rxjs/add/observable/of'
+import { Subject } from 'rxjs/Subject'
+import {BehaviorSubject} from 'rxjs/BehaviorSubject'
 
 @Component({
   selector: 'demo-markdown',
@@ -9,8 +11,8 @@ import 'rxjs/add/observable/of'
 })
 export class MarkdownComponent implements OnInit {
 
-  context = Observable.of({ obj: 1 })
-  mdDoc = Observable.of('# Markdown ${obj +2}')
+  context = new BehaviorSubject({ obj: 1 })
+  mdDoc = Observable.of('# Markdown ${obj + 4}')
   constructor() { }
 
   ngOnInit() {
