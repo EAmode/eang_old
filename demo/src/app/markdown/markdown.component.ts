@@ -12,7 +12,7 @@ import {BehaviorSubject} from 'rxjs/BehaviorSubject'
 export class MarkdownComponent implements OnInit {
 
   context = new BehaviorSubject({ obj: 1 })
-  mdDoc = Observable.of('# Markdown ${obj + 4}')
+  mdDoc = Observable.of('# Markdown ${obj + 4} <% [\'fred\', \'barney\'].forEach(user => { %>\n## <%- user %><% }); %>')
   constructor() { }
 
   ngOnInit() {
