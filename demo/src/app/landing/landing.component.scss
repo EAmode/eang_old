@@ -1,0 +1,325 @@
+
+
+nav {
+  position: fixed;
+  top: 20px;
+  right: 0px;
+  width: 20%;
+  ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    li {
+      list-style: none;
+      text-transform: uppercase;
+      margin-right: 15px;
+    }
+    a {
+      text-decoration: none;
+      color: black;
+      font-size: 14px;
+      &:hover {
+        text-decoration: none;
+        color: black;
+      }
+    }
+  }
+}
+
+.eang-landing-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  display: flex;
+}
+
+.eang-landing-title {
+  height: 35vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.eang-title {
+  height: 3rem;
+  align-items: center;
+}
+
+.eang-title-container {
+  display: flex;
+}
+
+.eang-logo {
+  height: 50px;
+  width: 50px;
+}
+
+.eang-header {
+  font-size: 32px;
+  margin: 0;
+  span {
+    font-weight: 300;
+  }
+}
+
+.eang-sub-header {
+  font-size: 14px;
+}
+
+.eang-button {
+  font-size: 14px;
+  width: 150px;
+  height: 45px;
+  background: rebeccapurple;
+  color: white;
+  margin-top: 1rem;
+  border: none;
+}
+
+.eang-body {
+  background: #f6f6f6;
+  width: 100%;
+  justify-content: space-around;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 200vh;
+}
+
+.eang-reactive {
+  flex-direction: column;
+}
+
+.eang-responsive {
+  flex-direction: column;
+}
+
+.eang-code {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.eang-reactive,
+.eang-responsive,
+.eang-code,
+.eang-npm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.eang-npm {
+  position: relative;
+}
+
+.reactive-img {
+  width: 450px;
+}
+
+.install {
+  padding: 2rem;
+  background: #1d1d1d;
+  color: orange;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto Mono', monospace;
+  border-radius: 3px;
+}
+
+.eang-footer {
+  height: 10vh;
+  background: #1d1d1d;
+  width: 100%;
+  color: white;
+}
+
+button.github {
+  background: none;
+  outline: none;
+  border: none;
+  position: fixed;
+  right: 5px;
+  top: 15px;
+  position: absolute;
+}
+
+span.version {
+  font-size: 10px;
+  font-weight: 200;
+}
+
+.header-img {
+  width: 200px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.github-logo {
+  width: 20px;
+}
+
+.npm-logo {
+  width: 35px;
+}
+
+.npm-img {
+  width: 100px;
+  position: absolute;
+  top: -25px;
+  left: -35px;
+  transform: rotate(-10deg);
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.eang-footer {
+  display: flex;
+  align-items: center;
+}
+
+.eang-footer p {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  padding-left: 1rem;
+}
+
+.menu-item {
+  min-width: 220px;
+  color: white;
+  height: 100vh;
+  background: #1d1d1d;
+  position: fixed;
+}
+
+.menu-item li.eang-title {
+  line-height: 42px;
+  background: #2c3136;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+.menu-item li.eang-title span {
+  font-size: 24px;
+}
+
+.menu-item li.eang-title img {
+  max-width: 24px;
+}
+
+.eang-title a {
+  text-decoration: none;
+  color: white;
+}
+
+.eang-title span:hover {
+  border-bottom: 1px solid lightblue;
+  color: white;
+}
+
+code {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 13px;
+  background: #d3d3d3;
+  border: 1px solid #1d1d1d;
+  border-radius: 2px;
+  padding: 0 3px 0 3px;
+}
+
+.menu-item {
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    line-height: 22px;
+    list-style: none;
+    padding-left: 15px;
+    /* background: #4A4A4A; */
+    cursor: pointer;
+    &.root {
+      line-height: 22px;
+      list-style: none;
+      padding-left: 15px;
+      background: #4A4A4A;
+    }
+  }
+}
+
+
+
+.menu-item span {
+  font-size: 12px;
+}
+
+.documentation-body {
+  width: calc(100% - 220px);
+  margin: 2rem 2rem 2rem 240px;
+}
+
+.concept-view {
+  /* background: red; */
+  /* width: calc(100% - 220px); */
+  min-height: 15vh;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.concept-example {
+  /* background: blue; */
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.concept-example img {
+  max-width: 300px;
+}
+
+.concept-text {
+  /* background: grey; */
+  width: 50%;
+  padding: 0 2rem 1rem 2rem;
+}
+
+.concept-text h1 {
+  margin: 0 0 1rem 0rem;
+}
+
+.examples {
+  width: 100%;
+}
+
+.github img {
+  background: url(../../assets/images/github.png);
+  height: 40px;
+  width: 40px;
+}
+
+button.github {
+  background: none;
+  outline: none;
+  border: none;
+  position: fixed;
+  right: 5px;
+  top: 15px;
+}

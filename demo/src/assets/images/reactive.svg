@@ -1,0 +1,131 @@
+<svg width="279" height="83" viewBox="0 0 279 83" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>Canvas</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-173 2727)">
+<g id="Group">
+<g id="Rectangle 47">
+<use xlink:href="#path0_fill" transform="translate(394 -2714)" fill="#FFFFFF"/>
+<mask id="mask0_outline_ins">
+<use xlink:href="#path0_fill" fill="white" transform="translate(394 -2714)"/>
+</mask>
+<g mask="url(#mask0_outline_ins)">
+<use xlink:href="#path1_stroke_2x" transform="translate(394 -2714)" fill="#828282"/>
+</g>
+</g>
+<g id="Rectangle 48">
+<use xlink:href="#path2_fill" transform="translate(400.356 -2709.26)" fill="#BDBDBD"/>
+</g>
+<g id="Ellipse 6">
+<use xlink:href="#path3_fill" transform="translate(400.356 -2699.79)" fill="#E0E0E0"/>
+</g>
+<g id="Ellipse 6">
+<use xlink:href="#path3_fill" transform="translate(410.685 -2699.79)" fill="#E0E0E0"/>
+</g>
+</g>
+<g id="Group">
+<g id="Rectangle 47">
+<use xlink:href="#path0_fill" transform="translate(394 -2674)" fill="#FFFFFF"/>
+<mask id="mask1_outline_ins">
+<use xlink:href="#path0_fill" fill="white" transform="translate(394 -2674)"/>
+</mask>
+<g mask="url(#mask1_outline_ins)">
+<use xlink:href="#path1_stroke_2x" transform="translate(394 -2674)" fill="#828282"/>
+</g>
+</g>
+<g id="Rectangle 48">
+<use xlink:href="#path2_fill" transform="translate(400.356 -2669.26)" fill="#BDBDBD"/>
+</g>
+<g id="Ellipse 6">
+<use xlink:href="#path3_fill" transform="translate(400.356 -2659.79)" fill="#E0E0E0"/>
+</g>
+<g id="Ellipse 6">
+<use xlink:href="#path3_fill" transform="translate(410.685 -2659.79)" fill="#E0E0E0"/>
+</g>
+</g>
+<g id="Group">
+<g id="Rectangle 47">
+<use xlink:href="#path0_fill" transform="translate(324 -2714)" fill="#FFFFFF"/>
+<mask id="mask2_outline_ins">
+<use xlink:href="#path0_fill" fill="white" transform="translate(324 -2714)"/>
+</mask>
+<g mask="url(#mask2_outline_ins)">
+<use xlink:href="#path1_stroke_2x" transform="translate(324 -2714)" fill="#828282"/>
+</g>
+</g>
+<g id="Rectangle 48">
+<use xlink:href="#path2_fill" transform="translate(330.356 -2709.26)" fill="#BDBDBD"/>
+</g>
+<g id="Ellipse 6">
+<use xlink:href="#path3_fill" transform="translate(330.356 -2699.79)" fill="#E0E0E0"/>
+</g>
+<g id="Ellipse 6">
+<use xlink:href="#path3_fill" transform="translate(340.685 -2699.79)" fill="#E0E0E0"/>
+</g>
+</g>
+<g id="Group">
+<g id="Rectangle 47">
+<use xlink:href="#path0_fill" transform="translate(324 -2674)" fill="#FFFFFF"/>
+<mask id="mask3_outline_ins">
+<use xlink:href="#path0_fill" fill="white" transform="translate(324 -2674)"/>
+</mask>
+<g mask="url(#mask3_outline_ins)">
+<use xlink:href="#path1_stroke_2x" transform="translate(324 -2674)" fill="#828282"/>
+</g>
+</g>
+<g id="Rectangle 48">
+<use xlink:href="#path2_fill" transform="translate(330.356 -2669.26)" fill="#BDBDBD"/>
+</g>
+<g id="Ellipse 6">
+<use xlink:href="#path3_fill" transform="translate(330.356 -2659.79)" fill="#E0E0E0"/>
+</g>
+<g id="Ellipse 6">
+<use xlink:href="#path3_fill" transform="translate(340.685 -2659.79)" fill="#E0E0E0"/>
+</g>
+</g>
+<g id="Vector 54">
+<use xlink:href="#path4_stroke" transform="translate(282 -2699)"/>
+</g>
+<g id="Vector 54">
+<use xlink:href="#path4_stroke" transform="matrix(-1 -1.48439e-17 1.48439e-17 -1 305.5 -2670)"/>
+</g>
+<g id="Ellipse 7">
+<use xlink:href="#path5_fill" transform="translate(180 -2727)" fill="#C4C4C4"/>
+</g>
+<g id="Vector 56">
+<use xlink:href="#path6_fill" transform="translate(173 -2722)" fill="#FFFFFF"/>
+</g>
+<g id="Rectangle 49">
+<use xlink:href="#path7_fill" transform="translate(195 -2708)" fill="#4F4F4F"/>
+</g>
+<g id="Rectangle 49">
+<use xlink:href="#path7_fill" transform="translate(195 -2694.12)" fill="#4F4F4F"/>
+</g>
+<g id="Rectangle 49">
+<use xlink:href="#path7_fill" transform="translate(195 -2680.24)" fill="#4F4F4F"/>
+</g>
+<g id="Ellipse 6">
+<use xlink:href="#path8_fill" transform="translate(199 -2705)" fill="#FFFFFF"/>
+</g>
+<g id="Ellipse 6">
+<use xlink:href="#path8_fill" transform="translate(199 -2691)" fill="#FFFFFF"/>
+</g>
+<g id="Ellipse 6">
+<use xlink:href="#path8_fill" transform="translate(199 -2678)" fill="#FFFFFF"/>
+</g>
+<g id="Vector 55">
+<use xlink:href="#path9_fill" transform="translate(226.5 -2669)" fill="#4F4F4F"/>
+</g>
+</g>
+<defs>
+<path id="path0_fill" d="M 0 0L 58 0L 58 30L 0 30L 0 0Z"/>
+<path id="path1_stroke_2x" d="M 0 0L 0 -1L -1 -1L -1 0L 0 0ZM 58 0L 59 0L 59 -1L 58 -1L 58 0ZM 58 30L 58 31L 59 31L 59 30L 58 30ZM 0 30L -1 30L -1 31L 0 31L 0 30ZM 0 1L 58 1L 58 -1L 0 -1L 0 1ZM 57 0L 57 30L 59 30L 59 0L 57 0ZM 58 29L 0 29L 0 31L 58 31L 58 29ZM 1 30L 1 0L -1 0L -1 30L 1 30Z"/>
+<path id="path2_fill" d="M 0 0L 42.9041 0L 42.9041 7.10526L 0 7.10526L 0 0Z"/>
+<path id="path3_fill" d="M 7.94521 3.94737C 7.94521 6.12744 6.16661 7.89474 3.9726 7.89474C 1.77859 7.89474 0 6.12744 0 3.94737C 0 1.7673 1.77859 0 3.9726 0C 6.16661 0 7.94521 1.7673 7.94521 3.94737Z"/>
+<path id="path4_stroke" d="M 0 7.5L -0.330811 7.12508L -0.755719 7.5L -0.330811 7.87492L 0 7.5ZM 23.5 7L 0 7L 0 8L 23.5 8L 23.5 7ZM 0.330811 7.87492L 8.83081 0.374919L 8.16919 -0.374919L -0.330811 7.12508L 0.330811 7.87492ZM -0.330811 7.87492L 8.16919 15.3749L 8.83081 14.6251L 0.330811 7.12508L -0.330811 7.87492Z"/>
+<path id="path5_fill" d="M 83 41.5C 83 64.4198 64.4198 83 41.5 83C 18.5802 83 0 64.4198 0 41.5C 0 18.5802 18.5802 0 41.5 0C 64.4198 0 83 18.5802 83 41.5Z"/>
+<path id="path6_fill" d="M 2.13713 20.2534C 4.3946 12.7354 15.1176 11.5788 23.0187 11.5788C 27.973 11.5788 34.1756 15.1317 38.2565 18.0602C 43.3358 11.8516 56.4291 -0.449954 68.1679 0.0126912C 79.9067 0.475337 89.6138 7.91622 93 11.5788L 93 41.0725C 88.1088 47.0483 75.5046 59 64.2173 59C 52.93 59 44.0883 53.988 41.0784 51.482L 33.1772 59C 23.9592 59 4.84609 57.4964 2.13713 51.482C -1.24907 43.964 -0.120333 27.7714 2.13713 20.2534Z"/>
+<path id="path7_fill" d="M 0 0L 53 0L 53 12.2449L 0 12.2449L 0 0Z"/>
+<path id="path8_fill" d="M 7 3.5C 7 5.433 5.433 7 3.5 7C 1.567 7 0 5.433 0 3.5C 0 1.567 1.567 0 3.5 0C 5.433 0 7 1.567 7 3.5Z"/>
+<path id="path9_fill" d="M 0.000381897 14.5L 0.000381897 0L 2.50035 0L 2.50035 14.5C 2.50035 16 2.50035 16 4.50035 16L 21.0004 16L 18.5004 18C 14.5004 18 0.00045112 18.5 0.00024421 18C -0.00037652 16.5 0.000244141 15.5 0.000381897 14.5Z"/>
+</defs>
+</svg>
