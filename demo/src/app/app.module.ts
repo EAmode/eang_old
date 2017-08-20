@@ -9,14 +9,16 @@ import { EangModule } from '../../../src/index'
 import { MenuTreeComponent } from './menu-tree/menu-tree.component'
 import { MarkdownComponent } from './markdown/markdown.component'
 import { AutocompleteComponent } from './autocomplete/autocomplete.component'
-import { AppRoutingModule } from './app.routing'
+import { AppRoutingModule } from './app.routing';
+import { LandingComponent } from './landing/landing.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuTreeComponent,
     MarkdownComponent,
-    AutocompleteComponent
+    AutocompleteComponent,
+    LandingComponent
   ],
   imports: [
     BrowserModule,

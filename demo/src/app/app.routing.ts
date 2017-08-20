@@ -3,12 +3,18 @@ import { Routes, RouterModule } from '@angular/router'
 import { MarkdownComponent } from './markdown/markdown.component'
 import { MenuTreeComponent } from './menu-tree/menu-tree.component'
 import { AutocompleteComponent } from './autocomplete/autocomplete.component'
+import { LandingComponent } from './landing/landing.component'
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/autocomplete',
+    redirectTo: '/landing',
     pathMatch: 'full'
+  },
+  {
+    path: 'landing',
+    component: LandingComponent,
+    children: []
   },
   {
     path: 'markdown',
