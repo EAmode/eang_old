@@ -10,7 +10,8 @@ import { MenuTreeComponent } from './menu-tree/menu-tree.component'
 import { MarkdownComponent } from './markdown/markdown.component'
 import { AutocompleteComponent } from './autocomplete/autocomplete.component'
 import { AppRoutingModule } from './app.routing';
-import { LandingComponent } from './landing/landing.component'
+import { LandingComponent } from './landing/landing.component';
+import { DocumentationComponent } from './documentation/documentation.component'
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { LandingComponent } from './landing/landing.component'
     MenuTreeComponent,
     MarkdownComponent,
     AutocompleteComponent,
-    LandingComponent
+    LandingComponent,
+    DocumentationComponent
   ],
   imports: [
     BrowserModule,
