@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
 
 @Component({
-  selector: 'app-documentation',
+  selector: 'demo-documentation',
   templateUrl: './documentation.component.html',
   styleUrls: ['./documentation.component.scss']
 })
