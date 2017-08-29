@@ -6,11 +6,13 @@ import { AutocompleteComponent } from './components/autocomplete'
 import { MenuTreeComponent } from './components/menu-tree'
 import { MarkdownComponent } from './components/markdown'
 import { PanelComponent } from './components/panel'
-
 export * from './components/autocomplete'
 export * from './components/menu-tree'
 export * from './components/markdown'
 export * from './components/panel'
+
+import { StateMachineService } from './services/state-machine'
+export * from './services/state-machine'
 
 @NgModule({
   declarations: [
