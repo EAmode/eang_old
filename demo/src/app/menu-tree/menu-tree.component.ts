@@ -7,6 +7,19 @@ import { Component, OnInit } from '@angular/core'
 })
 export class MenuTreeComponent implements OnInit {
 
+  tree = {
+    name: 'root',
+    children: [
+      {
+        name: 'First sub menu item',
+        children: [
+          {
+            name: 'Second sub menu item'
+          }
+        ]
+      }
+    ]
+  }
   constructor() { }
 
   ngOnInit() {

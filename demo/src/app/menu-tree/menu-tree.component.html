@@ -1,1 +1,11 @@
-<ea-menu-tree [nodes]="nodes"></ea-menu-tree>
+<ea-menu [item]="tree">
+    <div #itemTemplate ng-template="itemTemplate" let-item>
+        Inline template item #: {{item}}
+    </div>
+  <!-- <ng-template #itemTemplate let-item>
+    <mode-menu-item [item]="item"></mode-menu-item>
+  </ng-template> -->
+  <!-- <ng-template #itemTemplate let-item>
+    <i>{{item.name}}</i>
+  </ng-template> -->
+</ea-menu>
