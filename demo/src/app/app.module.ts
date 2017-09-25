@@ -9,9 +9,9 @@ import { EangModule } from '../../../src/index'
 import { MenuTreeComponent } from './menu-tree/menu-tree.component'
 import { MarkdownComponent } from './markdown/markdown.component'
 import { AutocompleteComponent } from './autocomplete/autocomplete.component'
-import { AppRoutingModule } from './app.routing';
-import { LandingComponent } from './landing/landing.component';
-import { DocumentationComponent } from './documentation/documentation.component';
+import { AppRoutingModule } from './app.routing'
+import { LandingComponent } from './landing/landing.component'
+import { DocumentationComponent } from './documentation/documentation.component'
 import { StateMachineComponent } from './state-machine/state-machine.component'
 
 @NgModule({
