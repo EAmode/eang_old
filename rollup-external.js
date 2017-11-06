@@ -1,4 +1,4 @@
-export const external = [
+module.exports = external = [
   '@angular/core',
   '@angular/common',
   '@angular/forms',

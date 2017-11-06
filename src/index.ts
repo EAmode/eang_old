@@ -1,9 +1,8 @@
-import { NgModule } from '@angular/core'
-import { CommonModule } from '@angular/common'
-import { ReactiveFormsModule } from '@angular/forms'
+import { NgModule, ModuleWithProviders } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 import { AutocompleteComponent } from './components/autocomplete'
-import { MenuComponent, MenuItemComponent, ModeMenuItemComponent } from './components/menu'
+import { MenuComponent, MenuItemComponent } from './components/menu'
 import { MarkdownComponent } from './components/markdown'
 import { PanelComponent } from './components/panel'
 export * from './components/autocomplete'
@@ -11,24 +10,31 @@ export * from './components/menu'
 export * from './components/markdown'
 export * from './components/panel'
 
-import { StateMachineService } from './services/state-machine'
-export * from './services/state-machine'
 
 @NgModule({
+  imports: [
+    CommonModule
+  ],
   declarations: [
     AutocompleteComponent,
     MenuComponent,
     MenuItemComponent,
-    ModeMenuItemComponent,
     MarkdownComponent,
-    PanelComponent],
+    PanelComponent
+  ],
   exports: [
     AutocompleteComponent,
     MenuComponent,
     MenuItemComponent,
-    ModeMenuItemComponent,
     MarkdownComponent,
-    PanelComponent],
-  imports: [CommonModule, ReactiveFormsModule]
+    PanelComponent
+  ]
 })
-export class EangModule { }
+export class EangModule {
+  static forRoot(): ModuleWithProviders {
+    return {
+      ngModule: EangModule,
+      providers: []
+    };
+  }
+}

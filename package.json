@@ -2,62 +2,79 @@
   "name": "eang",
   "version": "0.2.9",
   "description": "Reactive Angular component library",
-  "author": "Sebastian Kropp",
-  "license": "MIT",
-  "main": "./dist/eang.umd.js",
-  "module": "./dist/eang.es5.js",
-  "es2015": "./dist/eang.js",
-  "typings": "./dist/eang.d.ts",
+  "homepage": "https://github.com/eascientific/eang",
   "scripts": {
-    "start": "cd demo && ng serve",
-    "build": "npm run clean && npm run build:es5 && npm run build:umd && npm run build:es2015 && npm run copy",
-    "build:watch": "npm run build && onchange \"src/**/*\" -- npm run build",
-    "build:es5": "rimraf build && ngc -p src/tsconfig.es5.json && rollup -c rollup-config.js -i ./build/eang.es5.js -o ./dist/eang.es5.js",
-    "build:es2015": "rimraf build && ngc -p src && rollup -c rollup-config.js",
-    "build:umd": "rimraf build && ngc -p src/tsconfig.es5.json && rollup -c rollup-config.umd.js -i build/eang.es5.js -o dist/eang.umd.js",
-    "copy": "cpx \"build/**/!(*.js)\" dist",
-    "lint": "ng lint",
-    "prepublish": "npm run build",
-    "postpublish": "git push && git push --tags",
-    "clean": "rimraf build && rimraf dist"
+    "build": "gulp build",
+    "build:watch": "gulp",
+    "docs": "npm run docs:build",
+    "docs:build": "compodoc -p tsconfig.json -n eang -d docs --hideGenerator",
+    "docs:serve": "npm run docs:build -- -s",
+    "docs:watch": "npm run docs:build -- -s -w",
+    "lint": "tslint --type-check --project tsconfig.json src/**/*.ts",
+    "lite": "lite-server",
+    "playground:build": "tsc -p playground -w",
+    "playground": "concurrently \"npm run build:watch\" \"npm run playground:build\" \"npm run lite\"",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:ci": "jest --runInBand"
   },
-  "peerDependencies": {
-    "@angular/core": "^4.0.1",
-    "@angular/forms": "^4.0.1",
-    "rxjs": "^5.3.0",
-    "zone.js": "^0.8.5",
-    "markdown-it": "^8.3.2",
-    "lodash": "^4.17.4"
+  "jest": {
+    "preset": "jest-preset-angular",
+    "setupTestFrameworkScriptFile": "<rootDir>/src/jest.ts"
   },
-  "devDependencies": {
-    "@angular/common": "^4.3.2",
-    "@angular/compiler": "^4.0.1",
-    "@angular/compiler-cli": "^4.0.1",
-    "@angular/core": "^4.0.1",
-    "@angular/forms": "^4.0.1",
-    "codelyzer": "^3.1.2",
-    "cpx": "^1.5.0",
-    "cross-var": "^1.0.3",
-    "lodash": "^4.17.4",
-    "markdown-it": "^8.3.2",
-    "onchange": "^3.2.1",
-    "rollup": "^0.45.2",
-    "rollup-plugin-commonjs": "^8.1.0",
-    "rollup-plugin-node-resolve": "^3.0.0",
-    "rollup-plugin-uglify": "^2.0.1",
-    "rxjs": "^5.3.0",
-    "tslint": "^5.5.0",
-    "typescript": "^2.2.2",
-    "uglify-js": "^3.0.27",
-    "zone.js": "^0.8.5"
-  },
-  "dependencies": {},
   "repository": {
     "type": "git",
     "url": "https://github.com/eascientific/eang.git"
   },
+  "author": {
+    "name": "Sebastian Kropp",
+    "email": "sebastian@kropponline.de"
+  },
+  "keywords": [
+    "angular",
+    "reactive components"
+  ],
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/eascientific/eang/issues"
   },
-  "homepage": "https://github.com/eascientific/eang"
+  "devDependencies": {
+    "@angular/common": "^4.0.0",
+    "@angular/compiler": "^4.0.0",
+    "@angular/compiler-cli": "^4.0.0",
+    "@angular/core": "^4.0.0",
+    "@angular/forms": "^4.0.0",
+    "@angular/platform-browser": "^4.0.0",
+    "@angular/platform-browser-dynamic": "^4.0.0",
+    "@compodoc/compodoc": "^1.0.0-beta.10",
+    "@types/jest": "^19.2.3",
+    "@types/node": "~6.0.60",
+    "angular-in-memory-web-api": "^0.3.2",
+    "codelyzer": "~2.0.0",
+    "concurrently": "^3.4.0",
+    "core-js": "^2.4.1",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-rollup": "^2.11.0",
+    "jest": "^20.0.3",
+    "jest-preset-angular": "^2.0.2",
+    "lite-server": "^2.3.0",
+    "markdown-it": "^8.4.0",
+    "node-sass": "^4.5.2",
+    "node-sass-tilde-importer": "^1.0.0",
+    "node-watch": "^0.5.2",
+    "protractor": "~5.1.0",
+    "rollup": "^0.41.6",
+    "run-sequence": "^1.2.2",
+    "rxjs": "^5.1.0",
+    "systemjs": "^0.20.12",
+    "ts-node": "~2.0.0",
+    "tslint": "~4.5.0",
+    "typescript": "~2.2.0",
+    "zone.js": "^0.8.4"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  }
 }

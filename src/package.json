@@ -1,0 +1,31 @@
+{
+  "name": "eang",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/username/repo"
+  },
+  "author": {
+    "name": "Sebastian Kropp",
+    "email": "sebastian@kropponline.de"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/username/repo/issues"
+  },
+  "main": "eang.umd.js",
+  "module": "eang.js",
+  "jsnext:main": "eang.js",
+  "typings": "eang.d.ts",
+  "peerDependencies": {
+    "@angular/core": "^4.0.1",
+    "@angular/forms": "^4.0.1",
+    "rxjs": "^5.3.0",
+    "zone.js": "^0.8.5",
+    "markdown-it": "^8.3.2",
+    "lodash": "^4.17.4"
+  }
+}
