@@ -1,12 +1,12 @@
 // import commonjs from "rollup-plugin-commonjs";
-import resolve from "rollup-plugin-node-resolve";
-import sourcemaps from "rollup-plugin-sourcemaps";
+import resolve from 'rollup-plugin-node-resolve'
+import sourcemaps from 'rollup-plugin-sourcemaps'
 
 export default {
-  input: "build/index.js",
+  input: 'build/index.js',
   output: {
-    file: "dist/eang.js",
-    format: "es"
+    file: 'dist/eang.js',
+    format: 'es'
   },
   plugins: [
     sourcemaps(),
@@ -20,7 +20,7 @@ export default {
     // })
   ],
   external: [
-    "@angular/core",
+    '@angular/core'
     // "@angular/common",
     // "@angular/forms",
     // "rxjs/Observable",
@@ -32,4 +32,4 @@ export default {
     // "markdown-it",
     // "lodash"
   ]
-};
+}

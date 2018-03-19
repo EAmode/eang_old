@@ -1,6 +1,6 @@
-import {NgModule} from '@angular/core';
-import {PanelComponent} from './panel';
-export * from './panel';
+import { NgModule } from '@angular/core'
+import { PanelComponent } from './panel'
+export * from './panel'
 
 @NgModule({
   declarations: [PanelComponent],

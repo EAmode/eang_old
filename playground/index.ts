@@ -1,15 +1,15 @@
 /**
  * This is only for local test
  */
-import { BrowserModule } from "@angular/platform-browser";
-import { NgModule } from "@angular/core";
-import { Component } from "@angular/core";
-import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
+import { BrowserModule } from '@angular/platform-browser'
+import { NgModule } from '@angular/core'
+import { Component } from '@angular/core'
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic'
 
-import { PanelModule } from "eang";
+import { PanelModule } from 'eang'
 
 @Component({
-  selector: "app",
+  selector: 'app',
   template: `<ea-panel>sdfsdf</ea-panel>`
 })
 class AppComponent {}
@@ -21,4 +21,4 @@ class AppComponent {}
 })
 class AppModule {}
 
-platformBrowserDynamic().bootstrapModule(AppModule);
+platformBrowserDynamic().bootstrapModule(AppModule)
