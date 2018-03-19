@@ -27,7 +27,9 @@
       // other libraries
       rxjs: 'npm:rxjs',
       'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
-      'eang': '../dist'
+      'eang': '../dist/eang.umd.js',
+      "lodash": 'npm:lodash/lodash.js',
+      "markdown-it": 'npm:markdown-it/dist/markdown-it.js',
     },
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {
@@ -40,10 +42,6 @@
         }
       },
       rxjs: {
-        defaultExtension: 'js'
-      },
-      'eang': {
-        main: 'eang.umd.js',
         defaultExtension: 'js'
       }
     }
