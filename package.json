@@ -1,9 +1,14 @@
 {
-  "name": "angular-libraries-example",
+  "name": "eang",
   "version": "1.0.0",
-  "description": "Example of bundling Angular libraries",
-  "author": "Jason Aden",
+  "description": "eang - reactive angular framework",
+  "author": "Sebastian Kropp",
   "license": "MIT",
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "printWidth": 80
+  },
   "scripts": {
     "build": "npm run build:next && npm run build:umd && npm run copy",
     "build:next": "ngc -p src && rollup -c",
@@ -23,6 +28,7 @@
     "browser-sync": "^2.23.6",
     "concurrently": "^3.5.1",
     "cpx": "^1.5.0",
+    "prettier": "^1.11.1",
     "rimraf": "^2.6.2",
     "rollup": "^0.57.1",
     "rollup-plugin-commonjs": "^9.1.0",
