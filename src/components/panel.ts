@@ -1,28 +1,17 @@
-import { Component, OnInit, Output, EventEmitter, Input, TemplateRef, ContentChild } from '@angular/core'
-import { FormControl } from '@angular/forms'
-import { Observable } from 'rxjs/Observable'
-import 'rxjs/add/operator/debounceTime'
-import 'rxjs/add/operator/distinctUntilChanged'
-import 'rxjs/add/operator/switchMap'
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'ea-panel',
+  selector: "ea-panel",
   template: `
-  <ng-content></ng-content>
-  `
+    <div>{{title}}<ng-content></ng-content></div>
+  `,
+  styles: ["div {border: 1px solid black;}"]
 })
 export class PanelComponent {
-  // items: Observable<Array<string>>
-  // term = new FormControl()
-  // @Input() results: Observable<any>
-  // @ContentChild(TemplateRef) resultsTemplate: TemplateRef<any>
-  // private defaultTemplate: TemplateRef<any>
-  // @Output() search = new EventEmitter()
-
-  // ngOnInit() {
-  //   this.term.valueChanges
-  //     .debounceTime(400)
-  //     .distinctUntilChanged()
-  //     .subscribe(term => this.search.emit(term))
-  // }
+  title = "test";
+  constructor() {
+    const t = Array.of(1, 2, 3)
+    console.log(t)
+    console.log(this.title)
+  }
 }

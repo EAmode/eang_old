@@ -1,2 +1,2 @@
 
-export * from './components/box.module';
+export * from './components/panel.module';
