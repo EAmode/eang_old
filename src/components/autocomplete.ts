@@ -1,4 +1,12 @@
-import { Component, OnInit, Output, EventEmitter, Input, TemplateRef, ContentChild } from '@angular/core'
+import {
+  Component,
+  OnInit,
+  Output,
+  EventEmitter,
+  Input,
+  TemplateRef,
+  ContentChild
+} from '@angular/core'
 import { FormControl } from '@angular/forms'
 import { Observable } from 'rxjs/Observable'
 import 'rxjs/add/operator/debounceTime'

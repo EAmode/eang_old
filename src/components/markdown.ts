@@ -21,8 +21,11 @@ export class MarkdownComponent implements OnInit {
   compiledMarkdown: Observable<string>
 
   ngOnInit(): void {
-    this.compiledMarkdown = Observable
-      .combineLatest(this.doc, this.ctx, (doc, ctx) => ({ doc, ctx }))
+    this.compiledMarkdown = Observable.combineLatest(
+      this.doc,
+      this.ctx,
+      (doc, ctx) => ({ doc, ctx })
+    )
       .debounceTime(400)
       .distinctUntilChanged()
       .map(change => {
@@ -30,5 +33,4 @@ export class MarkdownComponent implements OnInit {
         return this.markdownIt.render(compiled(change.ctx))
       })
   }
-
 }
