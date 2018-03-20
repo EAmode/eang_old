@@ -12,11 +12,12 @@
   "scripts": {
     "build": "npm run build:next && npm run build:umd && npm run copy",
     "build:next": "ngc -p src && rollup -c",
-    "build:umd": "ngc -p src/tsconfig.json --target es5 --sourcemap && rollup -c -o dist/eang.umd.js -f umd -n eang --sourcemap",
-    "copy": "cpx \"build/**/*.{json,ts,map}\" dist && cpx src/package.json dist && cpx README.md dist ",
+    "build:umd": "npm run build:ngc && npm run build:rollup",
+    "build:ngc": "ngc -p src --target es5 --sourcemap",
+    "build:rollup": "rollup -c -o dist/eang.umd.js -f umd -n eang --sourcemap",
+    "copy": "cpx \"build/**/*.{json,ts}\" dist && cpx src/package.json dist && cpx README.md dist ",
     "clean": "rimraf dist build",
-    "playground:build": "tsc -p playground -w",
-    "playground": "concurrently \"npm run build\" \"npm run playground:build\" \"browser-sync start --config bs-config.json --no-open --no-ui\""
+    "playground": "concurrently \"npm run build:ngc -- -w\" \"npm run build:rollup -- -w\" \"tsc -p playground -w\" \"browser-sync start --config bs-config.js\""
   },
   "devDependencies": {
     "@angular/common": "^5.2.0",
