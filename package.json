@@ -10,6 +10,7 @@
     "printWidth": 80
   },
   "scripts": {
+    "format": "prettier --write src/**/*.{ts,json,js}",
     "build": "npm run build:next && npm run build:umd && npm run copy",
     "build:next": "ngc -p src && rollup -c",
     "build:nextngc": "ngc -p src",
@@ -18,9 +19,9 @@
     "build:umdngc": "ngc -p src --target es5 --sourcemap",
     "build:umdrollup": "rollup -c -o dist/eang.umd.js -f umd -n eang --sourcemap",
     "copy": "cpx \"build/**/*.{json,ts}\" dist && cpx src/package.json dist && cpx README.md dist ",
-    "clean": "rimraf dist build",
+    "clean": "rimraf dist build playground/dist",
     "build:watch": "concurrently \"npm run build:umdngc -- -w\" \"npm run build:umdrollup -- -w\" \"npm run build:nextngc -- -w\" \"npm run build:nextrollup -- -w\"",
-    "playground": "concurrently \"npm run build:umdngc -- -w\" \"npm run build:umdrollup -- -w\" \"npm run build:nextngc -- -w\" \"npm run build:nextrollup -- -w\" \"browser-sync start --config bs-config.js\""
+    "playground": "npm run build && concurrently \"npm run build:umdngc -- -w\" \"npm run build:umdrollup -- -w\" \"npm run build:nextngc -- -w\" \"npm run build:nextrollup -- -w\" \"tsc -p playground -w\" \"browser-sync start --config bs-config.js\""
   },
   "devDependencies": {
     "@angular/common": "^5.2.0",
