@@ -3,7 +3,8 @@
   "author": "Sebastian Kropp",
   "version": "0.0.1",
   "license": "MIT",
-  "module": "eang.es5.js",
+  "main": "eang.umd.js",
+  "module": "eang.js",
   "es2015": "eang.js",
   "typings": "eang.d.ts",
   "peerDependencies": {
