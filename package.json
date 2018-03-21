@@ -12,8 +12,8 @@
   "scripts": {
     "format": "prettier --write src/**/*.{ts,json,js}",
     "build": "npm run build:next && npm run build:umd && npm run copy",
-    "css:all": "postcss themes/*.css -d playground",
-    "css:mode": "postcss themes/all.css themes/mode.css themes/mode.css themes/mode/**/*.css -d playground/dist",
+    "css:all": "postcss themes/all.css -o playground/dist/all.css",
+    "css:mode": "postcss themes/all.css themes/mode.css themes/mode.css themes/mode/**/*.css -o playground/dist/mode.css",
     "css:material": "postcss themes/*.css -d playground/dist",
     "build:next": "ngc -p src && rollup -c",
     "build:nextngc": "ngc -p src",
@@ -24,7 +24,7 @@
     "copy": "cpx \"build/**/*.{json,ts}\" dist && cpx src/package.json dist && cpx README.md dist ",
     "clean": "rimraf dist build playground/dist",
     "build:watch": "concurrently \"npm run build:umdngc -- -w\" \"npm run build:umdrollup -- -w\" \"npm run build:nextngc -- -w\" \"npm run build:nextrollup -- -w\"",
-    "playground": "npm run build && concurrently \"npm run build:umdngc -- -w\" \"npm run build:umdrollup -- -w\" \"npm run build:nextngc -- -w\" \"npm run build:nextrollup -- -w\" \"tsc -p playground -w\" \"browser-sync start --config bs-config.js\""
+    "playground": "npm run build && concurrently \"npm run css:all -- -w\" \"npm run build:umdngc -- -w\" \"npm run build:umdrollup -- -w\" \"npm run build:nextngc -- -w\" \"npm run build:nextrollup -- -w\" \"tsc -p playground -w\" \"browser-sync start --config bs-config.js\""
   },
   "devDependencies": {
     "@angular/common": "^5.2.0",
@@ -41,6 +41,7 @@
     "postcss-cli": "^5.0.0",
     "postcss-cssnext": "^3.1.0",
     "postcss-import": "^11.1.0",
+    "postcss-nested": "^3.0.0",
     "prettier": "^1.11.1",
     "rimraf": "^2.6.2",
     "rollup": "^0.57.1",

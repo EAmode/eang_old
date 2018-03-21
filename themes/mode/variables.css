@@ -1,5 +1,5 @@
 .mode {
-  --ea-mainColor: #333333;
+  --ea-mainColor: red;
   --ea-color-2: #1d1d1d;
   
   --ea-accent-1: #426c0b;
@@ -13,3 +13,6 @@
   --ea-font-1: "Open Sans";
 }  
 
+body {
+  margin: 0;
+}

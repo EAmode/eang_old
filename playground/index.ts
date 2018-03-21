@@ -10,7 +10,15 @@ import { PanelModule } from 'eang'
 
 @Component({
   selector: 'app',
-  template: `<ea-panel>sdfsdf</ea-panel>`
+  template: `
+  <div class="mode">
+  <ea-panel state="minimized">
+    <div class="left">
+      <p>Test</p>
+      <p>Test</p>
+    </div>
+  </ea-panel>
+  </div>`
 })
 class AppComponent {}
 

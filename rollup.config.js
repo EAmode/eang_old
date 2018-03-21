@@ -20,10 +20,10 @@ export default {
     // })
   ],
   external: [
-    '@angular/core'
+    '@angular/core',
     // "@angular/common",
     // "@angular/forms",
-    // "rxjs/Observable",
+    "rxjs/Observable",
     // "rxjs/add/observable/combineLatest",
     // "rxjs/add/operator/debounceTime",
     // "rxjs/add/operator/distinctUntilChanged",

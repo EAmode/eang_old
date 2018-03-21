@@ -1,8 +1,14 @@
 module.exports = {
-    plugins: [
-      require('postcss-assets')(),
-      require('postcss-import')(),
-      require('postcss-cssnext')(),
-    ],
-  }
-  
+  plugins: [
+    require('postcss-import')(),
+    require('postcss-nested')(),
+    require('postcss-cssnext')({
+      features: {
+        customProperties: {
+          warnings: false
+        }
+      }
+    }),
+    require('postcss-assets')()
+  ]
+}
