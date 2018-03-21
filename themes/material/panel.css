@@ -1,0 +1,7 @@
+.material {
+  & ea-panel {
+    & div {
+      background: var(--ea-mainColor);
+    }
+  }
+}

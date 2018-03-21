@@ -1,0 +1,10 @@
+.mode {
+  > ea-panel {
+    & div {
+      padding: 20;
+      margin: 10;
+      border: 1px solid red;
+      background: var(--ea-mainColor);
+    }
+  }
+}
