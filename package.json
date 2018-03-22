@@ -39,8 +39,14 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm test"
+      "pre-commit": "npm run format && lint-staged"
     }
+  },
+  "lint-staged": {
+    "src/**/*.ts": [
+      "tslint -p src -t codeFrame",
+      "git add"
+    ]
   },
   "config": {
     "commitizen": {
