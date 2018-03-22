@@ -39,8 +39,8 @@
   },
   "husky": {
     "hooks": {
-      "commit-msg": "commitlint -x @commitlint/config-conventional -e $GIT_PARAMS",
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -x @commitlint/config-conventional -e $GIT_PARAMS"
     }
   },
   "lint-staged": {
