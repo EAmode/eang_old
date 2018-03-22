@@ -73,7 +73,7 @@
     }
   },
   "release": {
-    "verifyConditions": ["@semantic-release/npm", "@semantic-release/git"],
+    "verifyConditions": ["@semantic-release/npm"],
     "publish": [
       {
         "path": "@semantic-release/npm",
