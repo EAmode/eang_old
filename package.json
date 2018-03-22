@@ -28,7 +28,7 @@
     "build:umd": "npm run build:umdngc && npm run build:umdrollup",
     "build:umdngc": "ngc -p src --target es5 --sourcemap",
     "build:umdrollup": "rollup -c -o dist/eang.umd.js -f umd -n eang --sourcemap",
-    "copy": "cpx \"build/**/*.{json,ts}\" dist && cpx README.md dist ",
+    "copy": "cpx \"build/**/*.{json,ts}\" dist && cpx src/package.json dist && cpx README.md dist ",
     "clean": "rimraf dist build playground/dist",
     "build:watch": "concurrently \"npm run build:umdngc -- -w\" \"npm run build:umdrollup -- -w\" \"npm run build:nextngc -- -w\" \"npm run build:nextrollup -- -w\"",
     "playground": "npm run build && concurrently \"npm run css:all -- -w\" \"npm run build:umdngc -- -w\" \"npm run build:umdrollup -- -w\" \"npm run build:nextngc -- -w\" \"npm run build:nextrollup -- -w\" \"tsc -p playground -w\" \"browser-sync start --config bs-config.js\"",
@@ -77,6 +77,12 @@
   "release": {
     "verifyConditions": [
       "@semantic-release/npm"
+    ],
+    "prepare": [
+      {
+        "path": "@semantic-release/npm",
+        "pkgRoot": "dist"
+      }
     ],
     "publish": [
       {
