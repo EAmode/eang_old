@@ -76,16 +76,12 @@
   },
   "release": {
     "verifyConditions": [
-      "@semantic-release/npm", "@semantic-release/git"
+      "@semantic-release/npm"
     ],
     "publish": [
       {
         "path": "@semantic-release/npm",
         "pkgRoot": "dist"
-      },
-      {
-        "path": "@semantic-release/git",
-        "assets": ["package.json", "npm-shrinkwrap.json"]
       }
     ]
   }
