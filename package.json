@@ -76,7 +76,7 @@
     "publish": [
       {
         "path": "@semantic-release/npm",
-        "pkgRoot": "./dist"
+        "pkgRoot": "dist"
       }
     ]
   }
