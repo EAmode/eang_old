@@ -71,5 +71,13 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "release": {
+    "publish": [
+      {
+        "path": "@semantic-release/npm",
+        "pkgRoot": "./dist"
+      }
+    ]
   }
 }
