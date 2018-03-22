@@ -73,10 +73,11 @@
     }
   },
   "release": {
+    "verifyConditions": ["@semantic-release/npm", "@semantic-release/git"],
     "publish": [
       {
         "path": "@semantic-release/npm",
-        "pkgRoot": "dist"
+        "pkgRoot": "./dist"
       }
     ]
   }
