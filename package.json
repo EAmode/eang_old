@@ -74,7 +74,7 @@
   },
   "release": {
     "verifyConditions": ["@semantic-release/npm"],
-    "publish": [
+    "prepare": [
       {
         "path": "@semantic-release/npm",
         "pkgRoot": "dist"
