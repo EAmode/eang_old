@@ -7,10 +7,10 @@ notifications:
 node_js:
   - '9'
   - '8'
-  - '6'
-  - '4'
 after_success:
   - npm run travis-deploy-once "npm run semantic-release"
+script:
+  - npm run build
 branches:
   except:
     - /^v\d+\.\d+\.\d+$/
