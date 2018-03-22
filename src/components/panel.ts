@@ -1,24 +1,24 @@
-import { Component, Input, OnInit } from '@angular/core'
+import { Component, Input, OnInit, AfterViewInit } from '@angular/core'
+import { AsyncPipe } from '@angular/common'
+
 import { Observable } from 'rxjs/Observable'
+import { combineLatest } from 'rxjs/observable/combineLatest'
+import { map } from 'rxjs/operators'
+import { of } from 'rxjs/observable/of'
 
 @Component({
   selector: 'ea-panel',
-  template: `<div><ng-content></ng-content></div>`,
-  styles: ['div {border: 1px solid black;background-color: red;}']
+  template: `<div id="ea-panel-container" [class]="classNames | async"><ng-content></ng-content></div>`
 })
 export class PanelComponent implements OnInit {
-  @Input() state: Observable<string>
-  stateName: string
-
-  constructor() {
-    const t = Array.of(1, 2, 3)
-    console.log(t)
-  }
+  @Input() state = of('maximized')
+  @Input() orientation = of('left')
+  classNames: Observable<string>
+  stateName: any
 
   ngOnInit(): void {
-    this.state.subscribe(s => {
-      this.stateName = s
-    })
-    console.log(this.stateName)
+    this.classNames = combineLatest(this.state, this.orientation).pipe(
+      map(([state, orientation]) => `${state} ${orientation}`)
+    )
   }
 }
