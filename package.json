@@ -1,6 +1,6 @@
 {
   "name": "eang",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "description": "eang - reactive angular framework",
   "author": "Sebastian Kropp <sebastian@kropponline.de>",
   "repository": {
@@ -31,7 +31,9 @@
     "copy": "cpx \"build/**/*.{json,ts}\" dist && cpx src/package.json dist && cpx README.md dist ",
     "clean": "rimraf dist build playground/dist",
     "build:watch": "concurrently \"npm run build:umdngc -- -w\" \"npm run build:umdrollup -- -w\" \"npm run build:nextngc -- -w\" \"npm run build:nextrollup -- -w\"",
-    "playground": "npm run build && concurrently \"npm run css:all -- -w\" \"npm run build:umdngc -- -w\" \"npm run build:umdrollup -- -w\" \"npm run build:nextngc -- -w\" \"npm run build:nextrollup -- -w\" \"tsc -p playground -w\" \"browser-sync start --config bs-config.js\""
+    "playground": "npm run build && concurrently \"npm run css:all -- -w\" \"npm run build:umdngc -- -w\" \"npm run build:umdrollup -- -w\" \"npm run build:nextngc -- -w\" \"npm run build:nextrollup -- -w\" \"tsc -p playground -w\" \"browser-sync start --config bs-config.js\"",
+    "semantic-release": "semantic-release",
+    "travis-deploy-once": "travis-deploy-once"
   },
   "devDependencies": {
     "@angular/common": "^5.2.0",
@@ -43,6 +45,7 @@
     "browser-sync": "^2.23.6",
     "concurrently": "^3.5.1",
     "cpx": "^1.5.0",
+    "cz-conventional-changelog": "^2.1.0",
     "postcss": "^6.0.20",
     "postcss-assets": "^5.0.0",
     "postcss-cli": "^5.0.0",
@@ -56,10 +59,17 @@
     "rollup-plugin-node-resolve": "^3.3.0",
     "rollup-plugin-sourcemaps": "^0.4.2",
     "rxjs": "^5.5.2",
+    "semantic-release": "^15.1.4",
     "stylelint": "^9.1.3",
     "stylelint-config-recommended": "^2.1.0",
     "systemjs": "^0.21.0",
+    "travis-deploy-once": "^4.4.1",
     "typescript": "~2.7.2",
     "zone.js": "^0.8.14"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }

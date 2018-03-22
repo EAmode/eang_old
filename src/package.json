@@ -1,6 +1,6 @@
 {
   "name": "eang",
-  "version": "0.0.2",
+  "version": "0.0.0-development",
   "description": "eang - reactive angular framework",
   "author": "Sebastian Kropp <sebastian@kropponline.de>",
   "repository": {
