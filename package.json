@@ -28,12 +28,13 @@
     "build:umd": "npm run build:umdngc && npm run build:umdrollup",
     "build:umdngc": "ngc -p src --target es5 --sourcemap",
     "build:umdrollup": "rollup -c -o dist/eang.umd.js -f umd -n eang --sourcemap",
-    "copy": "cpx \"build/**/*.{json,ts}\" dist && cpx src/package.json dist && cpx README.md dist ",
+    "copy": "cpx \"build/**/*.{json,ts}\" dist && cpx README.md dist ",
     "clean": "rimraf dist build playground/dist",
     "build:watch": "concurrently \"npm run build:umdngc -- -w\" \"npm run build:umdrollup -- -w\" \"npm run build:nextngc -- -w\" \"npm run build:nextrollup -- -w\"",
     "playground": "npm run build && concurrently \"npm run css:all -- -w\" \"npm run build:umdngc -- -w\" \"npm run build:umdrollup -- -w\" \"npm run build:nextngc -- -w\" \"npm run build:nextrollup -- -w\" \"tsc -p playground -w\" \"browser-sync start --config bs-config.js\"",
     "semantic-release": "semantic-release",
-    "travis-deploy-once": "travis-deploy-once"
+    "travis-deploy-once": "travis-deploy-once",
+    "postpublish": "cp -r dist/package.json . && cp -r dist/npm-shrinkwrap.json ."
   },
   "devDependencies": {
     "@angular/common": "^5.2.0",
@@ -42,6 +43,7 @@
     "@angular/core": "^5.2.0",
     "@angular/platform-browser": "^5.2.0",
     "@angular/platform-browser-dynamic": "^5.2.0",
+    "@semantic-release/git": "^4.0.1",
     "browser-sync": "^2.23.6",
     "concurrently": "^3.5.1",
     "cpx": "^1.5.0",
@@ -73,11 +75,17 @@
     }
   },
   "release": {
-    "verifyConditions": ["@semantic-release/npm"],
-    "prepare": [
+    "verifyConditions": [
+      "@semantic-release/npm", "@semantic-release/git"
+    ],
+    "publish": [
       {
         "path": "@semantic-release/npm",
         "pkgRoot": "dist"
+      },
+      {
+        "path": "@semantic-release/git",
+        "assets": ["package.json", "npm-shrinkwrap.json"]
       }
     ]
   }
