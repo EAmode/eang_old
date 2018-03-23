@@ -1,5 +1,4 @@
 import { Component, Input, OnInit, AfterViewInit } from '@angular/core'
-import { AsyncPipe } from '@angular/common'
 
 import { Observable } from 'rxjs/Observable'
 import { combineLatest } from 'rxjs/observable/combineLatest'
