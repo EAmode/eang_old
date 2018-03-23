@@ -35,9 +35,10 @@
 
     & #ea-panel-container {
       
-      border: 1px solid red;
+      /* border: 1px solid red; */
       background: var(--ea-panel-background);
-
+      transition: width 2s, height 2s, transform 2s;
+      box-shadow: var(--ea-box-shadow);
 
     }
 
