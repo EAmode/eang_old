@@ -12,6 +12,7 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject'
   selector: 'pg-root',
   template: `
   <div class="mode">
+  <ea-panel state="maximized" style=" --ea-panel-top-maximized-height: 10rem;"></ea-panel>
   <ea-panel state="maximized" [orientation]="toolbarOrientation" style=" --ea-panel-top-maximized-height: 24rem;"></ea-panel>
   <ea-panel [state]="toolbarState" [orientation]="toolbarOrientation" style=" --ea-panel-top-minimized-height: 30px;">
     <div class="left">

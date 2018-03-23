@@ -10,8 +10,8 @@ import { of } from 'rxjs/observable/of'
   template: `<div id="ea-panel-container" [class]="classNames | async"><ng-content></ng-content></div>`
 })
 export class PanelComponent implements OnInit {
-  @Input() state
-  @Input() orientation
+  @Input() state = of('maximized')
+  @Input() orientation = of('top')
   classNames: Observable<string>
   stateName: any
 
