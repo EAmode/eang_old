@@ -1,7 +1,14 @@
 {
   "name": "eang",
-  "author": "Sebastian Kropp",
-  "version": "0.0.1",
+  "description": "eang - reactive angular framework",
+  "author": "Sebastian Kropp <sebastian@kropponline.de>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eascientific/eang.git"
+  },
+  "bugs": {
+    "url": "https://github.com/eascientific/eang/issues"
+  },
   "license": "MIT",
   "main": "eang.umd.js",
   "module": "eang.js",

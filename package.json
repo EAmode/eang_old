@@ -1,8 +1,15 @@
 {
   "name": "eang",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "description": "eang - reactive angular framework",
-  "author": "Sebastian Kropp",
+  "author": "Sebastian Kropp <sebastian@kropponline.de>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eascientific/eang.git"
+  },
+  "bugs": {
+    "url": "https://github.com/eascientific/eang/issues"
+  },
   "license": "MIT",
   "prettier": {
     "semi": false,
@@ -11,6 +18,8 @@
   },
   "scripts": {
     "format": "prettier --write src/**/*.{ts,json,js}",
+    "lint": "tslint -p src -t codeframe && tslint -p playground -t codeframe",
+    "commit": "git-cz",
     "build": "npm run build:next && npm run build:umd && npm run copy",
     "css:all": "postcss themes/all.css -o playground/dist/all.css",
     "css:mode": "postcss themes/all.css themes/mode.css themes/mode.css themes/mode/**/*.css -o playground/dist/mode.css",
@@ -21,21 +30,69 @@
     "build:umd": "npm run build:umdngc && npm run build:umdrollup",
     "build:umdngc": "ngc -p src --target es5 --sourcemap",
     "build:umdrollup": "rollup -c -o dist/eang.umd.js -f umd -n eang --sourcemap",
-    "copy": "cpx \"build/**/*.{json,ts}\" dist && cpx src/package.json dist && cpx README.md dist ",
+    "copy": "cpx \"build/**/*.{json,ts}\" dist && cpx src/package.json dist && cpx \"themes/**/*\" dist/themes && cpx README.md dist ",
     "clean": "rimraf dist build playground/dist",
     "build:watch": "concurrently \"npm run build:umdngc -- -w\" \"npm run build:umdrollup -- -w\" \"npm run build:nextngc -- -w\" \"npm run build:nextrollup -- -w\"",
-    "playground": "npm run build && concurrently \"npm run css:all -- -w\" \"npm run build:umdngc -- -w\" \"npm run build:umdrollup -- -w\" \"npm run build:nextngc -- -w\" \"npm run build:nextrollup -- -w\" \"tsc -p playground -w\" \"browser-sync start --config bs-config.js\""
+    "playground": "npm run build && concurrently \"npm run css:all -- -w\" \"npm run build:umdngc -- -w\" \"npm run build:umdrollup -- -w\" \"npm run build:nextngc -- -w\" \"npm run build:nextrollup -- -w\" \"tsc -p playground -w\" \"browser-sync start --config bs-config.js\"",
+    "semantic-release": "semantic-release",
+    "travis-deploy-once": "travis-deploy-once"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -x @commitlint/config-conventional -e $GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.ts": [
+      "tslint -p src -t codeFrame",
+      "git add"
+    ],
+    "playground/**/*.ts": [
+      "tslint -p playground -t codeFrame",
+      "git add"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "release": {
+    "verifyConditions": [
+      "@semantic-release/npm"
+    ],
+    "prepare": [
+      {
+        "path": "@semantic-release/npm",
+        "pkgRoot": "dist"
+      }
+    ],
+    "publish": [
+      {
+        "path": "@semantic-release/npm",
+        "pkgRoot": "dist"
+      }
+    ]
   },
   "devDependencies": {
     "@angular/common": "^5.2.0",
     "@angular/compiler": "^5.2.0",
     "@angular/compiler-cli": "^5.2.0",
     "@angular/core": "^5.2.0",
+    "@angular/forms": "^5.2.9",
     "@angular/platform-browser": "^5.2.0",
     "@angular/platform-browser-dynamic": "^5.2.0",
+    "@commitlint/cli": "^6.1.3",
+    "@commitlint/config-conventional": "^6.1.3",
+    "@semantic-release/git": "^4.0.1",
     "browser-sync": "^2.23.6",
+    "codelyzer": "^4.2.1",
     "concurrently": "^3.5.1",
     "cpx": "^1.5.0",
+    "cz-conventional-changelog": "^2.1.0",
+    "husky": "^0.15.0-rc.13",
+    "lint-staged": "^7.0.0",
     "postcss": "^6.0.20",
     "postcss-assets": "^5.0.0",
     "postcss-cli": "^5.0.0",
@@ -49,9 +106,12 @@
     "rollup-plugin-node-resolve": "^3.3.0",
     "rollup-plugin-sourcemaps": "^0.4.2",
     "rxjs": "^5.5.2",
+    "semantic-release": "^15.1.4",
     "stylelint": "^9.1.3",
     "stylelint-config-recommended": "^2.1.0",
     "systemjs": "^0.21.0",
+    "travis-deploy-once": "^4.4.1",
+    "tslint": "^5.9.1",
     "typescript": "~2.7.2",
     "zone.js": "^0.8.14"
   }

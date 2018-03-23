@@ -9,7 +9,7 @@ import { PanelModule } from 'eang'
 import { BehaviorSubject } from 'rxjs/BehaviorSubject'
 
 @Component({
-  selector: 'app',
+  selector: 'pg-root',
   template: `
   <div class="mode">
   <ea-panel [state]="toolbarState" [orientation]="toolbarOrientation" style=" --ea-panel-top-minimized-height: 30px;">
@@ -28,7 +28,7 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject'
   <button (click)="changeOrientation('left')">left</button>
   </div>`
 })
-class AppComponent implements OnInit{
+class AppComponent implements OnInit {
   public toolbarState = new BehaviorSubject('maximized')
   public toolbarOrientation = new BehaviorSubject('top')
 
@@ -37,14 +37,12 @@ class AppComponent implements OnInit{
   }
   changeState(state: string) {
     console.log(state)
-    this.toolbarState.next(state) 
+    this.toolbarState.next(state)
   }
   changeOrientation(orientation: string) {
     console.log(orientation)
-    this.toolbarOrientation.next(orientation) 
+    this.toolbarOrientation.next(orientation)
   }
-
-
 }
 
 @NgModule({

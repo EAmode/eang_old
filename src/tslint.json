@@ -1,7 +1,8 @@
 {
   "extends": "tslint:recommended",
-  "rulesDirectory": ["node_modules/codelyzer"],
+  "rulesDirectory": ["../node_modules/codelyzer"],
   "rules": {
+    "max-classes-per-file": false,
     "interface-name": false,
     "jsdoc-format": false,
     "arrow-return-shorthand": true,
@@ -78,7 +79,6 @@
         "variable-declaration": "nospace"
       }
     ],
-    "typeof-compare": true,
     "unified-signatures": true,
     "variable-name": false,
     "whitespace": [

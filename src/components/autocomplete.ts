@@ -15,8 +15,7 @@ import 'rxjs/add/operator/switchMap'
 
 @Component({
   selector: 'ea-autocomplete',
-  template: `
-  <input type="text" [formControl]="term" autocomplete="off" autocorrect="off" autocapitalize="off" aria-autocomplete="list">
+  template: `<input type="text" [formControl]="term" autocomplete="off" autocorrect="off" autocapitalize="off" aria-autocomplete="list">
   <ng-template #defaultTemplate let-item>{{item}}</ng-template>
   <ul>
     <li *ngFor="let item of results | async">
@@ -25,7 +24,7 @@ import 'rxjs/add/operator/switchMap'
   </ul>`
 })
 export class AutocompleteComponent implements OnInit {
-  items: Observable<Array<string>>
+  items: Observable<string[]>
   term = new FormControl()
   @Input() results: Observable<any>
   @ContentChild(TemplateRef) resultsTemplate: TemplateRef<any>
