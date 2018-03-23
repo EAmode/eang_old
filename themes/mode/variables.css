@@ -1,7 +1,7 @@
 .mode {
   --ea-mainColor: grey; /*rgb(150, 185, 225); */
   --ea-color-2: #1d1d1d;
-  --ea-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  --ea-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   
   --ea-accent-1: #426c0b;
   --ea-accent-2: #426c0b;
