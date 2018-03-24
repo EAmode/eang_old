@@ -33,7 +33,7 @@
     --ea-panel-left-closed-height: 0;
     --ea-panel-left-closed-width: 0;
 
-    & #ea-panel-container {
+    & .ea-panel-container {
       
       /* border: 1px solid red; */
       background: var(--ea-panel-background);
@@ -42,21 +42,21 @@
 
     }
 
-    & #ea-panel-container.top.maximized { 
+    & .ea-panel-container.top.maximized { 
       height: var(--ea-panel-top-maximized-height);
       width: var(--ea-panel-top-maximized-width);
     }
-    & #ea-panel-container.top.minimized { 
+    & .ea-panel-container.top.minimized { 
       height: var(--ea-panel-top-minimized-height);
       width: var(--ea-panel-top-minimized-width);
     }
-    & #ea-panel-container.top.closed {
+    & .ea-panel-container.top.closed {
       display: none;
       height: var(--ea-panel-top-minimized-height);
       width: var(--ea-panel-top-minimized-height);
     }
 
-    & #ea-panel-container.right.maximized { 
+    & .ea-panel-container.right.maximized { 
       display: inline-block;
       height: 100%;
       vertical-align: bottom;
@@ -64,29 +64,30 @@
       height: var(--ea-panel-right-maximized-height);
       width: var(--ea-panel-right-maximized-width);
     }
-    & #ea-panel-container.right.minimized {
+    & .ea-panel-container.right.minimized {
       display: table-cell;
-  vertical-align: bottom; 
+      vertical-align: bottom; 
       height: var(--ea-panel-right-minimized-height);
       width: var(--ea-panel-right-minimized-width);
     }
-    & #ea-panel-container.right.closed {
+    & .ea-panel-container.right.closed {
       display: table-cell;
-  vertical-align: bottom;
+      vertical-align: bottom;
+      
       display: none;
       height: var(--ea-panel-right-minimized-height);
       width: var(--ea-panel-right-minimized-height);
     }
 
-    & #ea-panel-container.left.maximized { 
+    & .ea-panel-container.left.maximized { 
       height: var(--ea-panel-left-maximized-height);
       width: var(--ea-panel-left-maximized-width);
     }
-    & #ea-panel-container.left.minimized { 
+    & .ea-panel-container.left.minimized { 
       height: var(--ea-panel-left-minimized-height);
       width: var(--ea-panel-left-minimized-width);
     }
-    & #ea-panel-container.left.closed {
+    & .ea-panel-container.left.closed {
       display: none;
       height: var(--ea-panel-left-minimized-height);
       width: var(--ea-panel-left-minimized-height);

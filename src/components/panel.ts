@@ -7,7 +7,7 @@ import { of } from 'rxjs/observable/of'
 
 @Component({
   selector: 'ea-panel',
-  template: `<div id="ea-panel-container" [class]="classNames | async"><ng-content></ng-content></div>`
+  template: `<div [class]="classNames | async"><ng-content></ng-content></div>`
 })
 export class PanelComponent implements OnInit {
   @Input() state = of('maximized')
@@ -24,7 +24,7 @@ export class PanelComponent implements OnInit {
     }
 
     this.classNames = combineLatest(this.state, this.orientation).pipe(
-      map(([state, orientation]) => `${state} ${orientation}`)
+      map(([state, orientation]) => `ea-panel-container ${state} ${orientation}`)
     )
   }
 }
