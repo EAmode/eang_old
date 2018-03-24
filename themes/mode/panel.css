@@ -3,7 +3,7 @@
   
 
   & ea-panel {
-    --ea-panel-background: var(--ea-mainColor);
+    --ea-panel-background: var(--ea-color-1);
 
     --ea-panel-top-maximized-height: 50vh;
     --ea-panel-top-maximized-width: 100vw;
@@ -73,7 +73,7 @@
     & .ea-panel-container.right.closed {
       display: table-cell;
       vertical-align: bottom;
-      
+
       display: none;
       height: var(--ea-panel-right-minimized-height);
       width: var(--ea-panel-right-minimized-height);
