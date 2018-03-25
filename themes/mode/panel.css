@@ -4,7 +4,7 @@
   width: 100vw;
 
   & ea-panel {
-    --ea-panel-background: var(--ea-mainColor);
+    --ea-panel-background: var(--ea-color-1);
 
     --ea-panel-top-maximized-height: 40vh;
     --ea-panel-top-maximized-width: 100vw;
@@ -34,69 +34,65 @@
     --ea-panel-left-closed-height: 0;
     --ea-panel-left-closed-width: 0;
 
-    & #ea-panel-container {
-      
-      
+    & .ea-panel-container {
       background: var(--ea-panel-background);
       box-shadow: var(--ea-box-shadow);
       line-height: 100vh;
 
     }
 
-    & #ea-panel-container.top.maximized {
+    & .ea-panel-container.top.maximized { 
       height: var(--ea-panel-top-maximized-height);
       width: var(--ea-panel-top-maximized-width);
     }
-    & #ea-panel-container.top.minimized {
+    & .ea-panel-container.top.minimized { 
       height: var(--ea-panel-top-minimized-height);
       width: var(--ea-panel-top-minimized-width); 
     }
-    & #ea-panel-container.top.closed {
+    & .ea-panel-container.top.closed {
       display: none;
     }
-    & #ea-panel-container.bottom.maximized {
+    & .ea-panel-container.bottom.maximized {
       position: absolute;
       bottom: 0;
       height: var(--ea-panel-bottom-maximized-height);
       width: var(--ea-panel-bottom-maximized-width);
     }
-    & #ea-panel-container.bottom.minimized {
+    & .ea-panel-container.bottom.minimized {
       position: absolute;
       bottom: 0;
       height: var(--ea-panel-bottom-minimized-height);
       width: var(--ea-panel-bottom-minimized-width);
     }
-    & #ea-panel-container.bottom.closed {
+    & .ea-panel-container.bottom.closed {
       bottom: 0;  */
       display: none;
     }
-    & #ea-panel-container.right.maximized { 
+    & .ea-panel-container.right.maximized { 
       float: right;
       height: var(--ea-panel-right-maximized-height); 
       width: var(--ea-panel-right-maximized-width);
     }
-    & #ea-panel-container.right.minimized {
-      transition: width 4s, transform 4s;
+    & .ea-panel-container.right.minimized {
       float: right;
       height: var(--ea-panel-right-minimized-height); 
       width: var(--ea-panel-right-minimized-width);
     }
-    & #ea-panel-container.right.closed {
+    & .ea-panel-container.right.closed {
       display: none; 
     }
 
-    & #ea-panel-container.left.maximized { 
-      transition: width 4s, transform 4s;
+    & .ea-panel-container.left.maximized { 
       float: left;
       height: var(--ea-panel-left-maximized-height); 
       width: var(--ea-panel-left-maximized-width);
     }
-    & #ea-panel-container.left.minimized { 
+    & .ea-panel-container.left.minimized { 
       float: left;
       height: var(--ea-panel-left-minimized-height);
       width: var(--ea-panel-left-minimized-width);
     }
-    & #ea-panel-container.left.closed {
+    & .ea-panel-container.left.closed {
       display: none;
     }
   }
