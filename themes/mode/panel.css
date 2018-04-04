@@ -1,98 +1,32 @@
-
 .mode {
-  height: 100vh;
-  width: 100vw;
-
   & ea-panel {
     --ea-panel-background: var(--ea-color-1);
+    --ea-panel-height: var(--ea-panel-height, initial);
+    --ea-panel-width: var(--ea-panel-width, initial);
+    --ea-panel-minimized-size-ratio: 0.5;
 
-    --ea-panel-top-maximized-height: 40vh;
-    --ea-panel-top-maximized-width: 100vw;
-    --ea-panel-top-minimized-height: 20vh;
-    --ea-panel-top-minimized-width: 100vw;
-    --ea-panel-top-closed-height: 0;
-    --ea-panel-top-closed-width: 0;
+    --ea-panel-maximized-height: var(--ea-panel-height);
+    --ea-panel-minimized-height: calc(var(--ea-panel-height) * var(--ea-panel-minimized-size-ratio));
 
-    --ea-panel-right-maximized-height: 100vh;
-    --ea-panel-right-maximized-width: 40vw;
-    --ea-panel-right-minimized-height: 100vh;
-    --ea-panel-right-minimized-width: 20vw;
-    --ea-panel-right-closed-height: 0;
-    --ea-panel-right-closed-width: 0;
-
-    --ea-panel-bottom-maximized-height: 40vh;
-    --ea-panel-bottom-maximized-width: 100vw;
-    --ea-panel-bottom-minimized-height: 20vh;
-    --ea-panel-bottom-minimized-width: 100vw;
-    --ea-panel-bottom-closed-height: 0;
-    --ea-panel-bottom-closed-width: 0;
-    
-    --ea-panel-left-maximized-height: 100vh;
-    --ea-panel-left-maximized-width: 40vw;
-    --ea-panel-left-minimized-height: 100vh;
-    --ea-panel-left-minimized-width: 20vw;
-    --ea-panel-left-closed-height: 0;
-    --ea-panel-left-closed-width: 0;
+    --ea-panel-maximized-width: var(--ea-panel-width);
+    --ea-panel-minimized-width: calc(var(--ea-panel-width) * var(--ea-panel-minimized-size-ratio));
 
     & .ea-panel-container {
       background: var(--ea-panel-background);
-      box-shadow: var(--ea-box-shadow);
-      line-height: 100vh;
-
+      /* box-shadow: var(--ea-box-shadow); */
     }
 
-    & .ea-panel-container.top.maximized { 
-      height: var(--ea-panel-top-maximized-height);
-      width: var(--ea-panel-top-maximized-width);
+    & .ea-panel-container.maximized { 
+      height: var(--ea-panel-maximized-height);
+      width: var(--ea-panel-maximized-width);
     }
-    & .ea-panel-container.top.minimized { 
-      height: var(--ea-panel-top-minimized-height);
-      width: var(--ea-panel-top-minimized-width); 
-    }
-    & .ea-panel-container.top.closed {
-      display: none;
-    }
-    & .ea-panel-container.bottom.maximized {
-      position: absolute;
-      bottom: 0;
-      height: var(--ea-panel-bottom-maximized-height);
-      width: var(--ea-panel-bottom-maximized-width);
-    }
-    & .ea-panel-container.bottom.minimized {
-      position: absolute;
-      bottom: 0;
-      height: var(--ea-panel-bottom-minimized-height);
-      width: var(--ea-panel-bottom-minimized-width);
-    }
-    & .ea-panel-container.bottom.closed {
-      bottom: 0;  */
-      display: none;
-    }
-    & .ea-panel-container.right.maximized { 
-      float: right;
-      height: var(--ea-panel-right-maximized-height); 
-      width: var(--ea-panel-right-maximized-width);
-    }
-    & .ea-panel-container.right.minimized {
-      float: right;
-      height: var(--ea-panel-right-minimized-height); 
-      width: var(--ea-panel-right-minimized-width);
-    }
-    & .ea-panel-container.right.closed {
-      display: none; 
+    
+    & .ea-panel-container.minimized { 
+      height: var(--ea-panel-minimized-height);
+      width: var(--ea-panel-minimized-width); 
     }
 
-    & .ea-panel-container.left.maximized { 
-      float: left;
-      height: var(--ea-panel-left-maximized-height); 
-      width: var(--ea-panel-left-maximized-width);
-    }
-    & .ea-panel-container.left.minimized { 
-      float: left;
-      height: var(--ea-panel-left-minimized-height);
-      width: var(--ea-panel-left-minimized-width);
-    }
-    & .ea-panel-container.left.closed {
+    & .ea-panel-container.closed {
       display: none;
     }
   }
