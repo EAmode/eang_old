@@ -1,0 +1,14 @@
+<div class="mode">
+  <ea-panel [state]="toolbarState" [orientation]="toolbarOrientation" style=" --ea-panel-top-minimized-height: 30px;">
+  </ea-panel>
+  <div class = "buttons">
+    <button (click)="changeState('minimized')">minimized</button>
+    <button (click)="changeState('maximized')">maximized</button>
+    <button (click)="changeState('closed')">closed</button>
+    <br>
+    <button (click)="changeOrientation('top')">top</button>
+    <button (click)="changeOrientation('right')">right</button>
+    <button (click)="changeOrientation('bottom')">bottom</button>
+    <button (click)="changeOrientation('left')">left</button>
+  </div>
+</div>

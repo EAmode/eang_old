@@ -4,31 +4,24 @@
 import { BrowserModule } from '@angular/platform-browser'
 import { NgModule, Component, OnInit } from '@angular/core'
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic'
+import { RouterModule, Routes } from '@angular/router'
 
 import { PanelModule } from 'eang'
 import { BehaviorSubject } from 'rxjs/BehaviorSubject'
+import { PanelPageComponent } from './app/panel'
+import { ButtonPageComponent } from './app/button'
 
 @Component({
   selector: 'pg-root',
   template: `
-  <div class="mode">
-    <ea-panel [state]="toolbarState" [orientation]="toolbarOrientation" style=" --ea-panel-top-minimized-height: 30px;">
-      <!--div class="left">
-        <p>Test</p>
-        <p>Test</p>
-      </div-->
-    </ea-panel>
-    <div class = "buttons">
-      <button (click)="changeState('minimized')">minimized</button>
-      <button (click)="changeState('maximized')">maximized</button>
-      <button (click)="changeState('closed')">closed</button>
-      <br>
-      <button (click)="changeOrientation('top')">top</button>
-      <button (click)="changeOrientation('right')">right</button>
-      <button (click)="changeOrientation('bottom')">bottom</button>
-      <button (click)="changeOrientation('left')">left</button>
-    </div>
-  </div>`
+  <h1>eang Playground</h1>
+  <nav>
+    <a routerLink="panel" routerLinkActive="active">Panel</a>
+    <a routerLink="button" routerLinkActive="active">Button</a>
+  </nav>
+  <router-outlet></router-outlet>
+
+  `
 })
 class AppComponent implements OnInit {
   public toolbarState = new BehaviorSubject('maximized')
@@ -47,11 +40,21 @@ class AppComponent implements OnInit {
   }
 }
 
+const appRoutes: Routes = [
+  { path: 'panel', component: PanelPageComponent },
+  { path: 'button', component: ButtonPageComponent },
+  { path: '', redirectTo: 'panel', pathMatch: 'full' }
+]
+
 @NgModule({
   bootstrap: [AppComponent],
-  declarations: [AppComponent],
-  imports: [BrowserModule, PanelModule]
+  declarations: [AppComponent, PanelPageComponent, ButtonPageComponent],
+  imports: [
+    BrowserModule,
+    RouterModule.forRoot(appRoutes, { enableTracing: true }),
+    PanelModule
+  ]
 })
-class AppModule { }
+class AppModule {}
 
 platformBrowserDynamic().bootstrapModule(AppModule)
