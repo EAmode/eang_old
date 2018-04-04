@@ -11,14 +11,16 @@
  |
  |
  */
+const historyApiFallback = require('connect-history-api-fallback')
+
 module.exports = {
   ui: false,
   open: false,
   files: ['dist/eang.umd.js', 'playground'],
   server: {
     baseDir: 'playground',
+    middleware: [ historyApiFallback() ],
     routes: {
-      '/': 'playground',
       '/node_modules/': 'node_modules',
       '/dist/': 'dist',
       '/.playground': '.playground'
