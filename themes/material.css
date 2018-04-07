@@ -1,1 +1,5 @@
-@import "material/autocomplete";
+@import "material/variables.css";
+@import "material/fonts.css";
+@import "material/button.css";
+@import "material/autocomplete.css";
+@import "material/panel.css";

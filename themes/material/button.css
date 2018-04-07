@@ -1,0 +1,41 @@
+.material {
+    & button {
+      color: var(--ea-button-color, var(--ea-color-2));
+      background-color: var(--ea-button-background-color, var(--ea-color-1));
+  
+      cursor: pointer;
+      line-height: 36px;
+      border: none;
+      padding: 0 16px;
+      box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+        0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    }
+    & button.primary {
+      color: var(--ea-color-1);
+      background-color: var(--ea-color-accent-1);
+    }
+    & button.secondary {
+      color: var(--ea-color-1);
+      background-color: var(--ea-color-accent-2);
+    }
+    & button.success {
+      color: var(--ea-color-1);
+      background-color: var(--ea-color-success);
+    }
+    & button.info {
+      color: var(--ea-color-1);
+      background-color: var(--ea-color-info);
+    }
+    & button.warning {
+      color: var(--ea-color-1);
+      background-color: var(--ea-color-warning);
+    }
+    & button.danger {
+      color: var(--ea-color-1);
+      background-color: var(--ea-color-danger);
+    }
+    & button[disabled] {
+      opacity: .65;
+    }
+  }
+  

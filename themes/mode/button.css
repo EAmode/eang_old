@@ -1,12 +1,72 @@
 .mode {
   & button {
+    color: var(--ea-button-color, var(--ea-color-2));
+    background-color: var(--ea-button-background-color, var(--ea-color-1));
+    
+    position: relative;
+    overflow: hidden;
+    transform: translate3d(0, 0, 0);
     cursor: pointer;
-    background-color: #673ab7;
+    border-radius: 4px;
     line-height: 36px;
+    white-space: nowrap;
+    touch-action: manipulation;
+    user-select: none;
     border: none;
-    padding: 0 16px;
+    /* padding: 0 16px; */
     box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2),
       0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-      color: #fff;
+  }
+  & button.primary {
+    color: var(--ea-color-1);
+    background-color: var(--ea-color-accent-1);
+  }
+  & button.secondary {
+    color: var(--ea-color-1);
+    background-color: var(--ea-color-accent-2);
+  }
+  & button.success {
+    color: var(--ea-color-1);
+    background-color: var(--ea-color-success);
+  }
+  & button.info {
+    color: var(--ea-color-1);
+    background-color: var(--ea-color-info);
+  }
+  & button.warning {
+    color: var(--ea-color-1);
+    background-color: var(--ea-color-warning);
+  }
+  & button.danger {
+    color: var(--ea-color-1);
+    background-color: var(--ea-color-danger);
+  }
+  & button[disabled] {
+    opacity: .65;
+  }
+  & button:hover {
+    transform:scale(0.9); 
+  }
+  & button:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background-image: radial-gradient(circle, #000 10%, transparent 10.01%);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    transform: scale(10,10);
+    opacity: 0;
+    transition: transform .5s, opacity 1s;
+  }
+
+  & button:active:after {
+    transform: scale(0,0);
+    opacity: .2;
+    transition: 0s;
   }
 }
