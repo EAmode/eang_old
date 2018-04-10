@@ -6,7 +6,7 @@ import { NgModule, Component, OnInit } from '@angular/core'
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic'
 import { RouterModule, Routes } from '@angular/router'
 
-import { PanelModule } from 'eang'
+import { PanelModule, LoggingService } from 'eang'
 import { BehaviorSubject } from 'rxjs/BehaviorSubject'
 import { PanelPageComponent } from './app/panel'
 import { ButtonPageComponent } from './app/button'
@@ -26,6 +26,10 @@ import { ButtonPageComponent } from './app/button'
 class AppComponent implements OnInit {
   public toolbarState = new BehaviorSubject('maximized')
   public toolbarOrientation = new BehaviorSubject('top')
+
+  constructor(private logger: LoggingService) {
+    logger.info('Starting playground!')
+  }
 
   ngOnInit(): void {
     this.toolbarState = new BehaviorSubject('maximized')
@@ -53,7 +57,8 @@ const appRoutes: Routes = [
     BrowserModule,
     RouterModule.forRoot(appRoutes, { enableTracing: true }),
     PanelModule
-  ]
+  ],
+  providers: [LoggingService]
 })
 class AppModule {}
 
