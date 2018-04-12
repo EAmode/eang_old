@@ -1,7 +1,9 @@
-<div class="mode">
-  <ea-panel [state]="toolbarState" [orientation]="toolbarOrientation" style=" --ea-panel-top-minimized-height: 30px;">
+<div id="mode" class="mode">
+  <ea-panel [state]="panelState" orientation="left" style="--ea-panel-background:var(--ea-color-success); --ea-panel-height: 100%; --ea-panel-width: 4rem;">
+    <p>Panel</p>
   </ea-panel>
-  <div class = "buttons">
+  <p>Browser Browser Browser Browser BrowserBrowserBrowser</p>
+  <div class="buttons">
     <button (click)="changeState('minimized')">minimized</button>
     <button (click)="changeState('maximized')">maximized</button>
     <button (click)="changeState('closed')">closed</button>
