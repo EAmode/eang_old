@@ -21,7 +21,7 @@
     "lint": "tslint -p src -t codeframe && tslint -p playground -t codeframe",
     "commit": "git-cz",
     "build": "npm run build:next && npm run build:umd && npm run copy",
-    "css:all": "postcss themes/all.css -o playground/dist/all.css",
+    "css:all": "postcss themes/*.css -d dist/css",
     "css:mode": "postcss themes/all.css themes/mode.css themes/mode.css themes/mode/**/*.css -o playground/dist/mode.css",
     "css:material": "postcss themes/*.css -d playground/dist",
     "build:next": "ngc -p src && rollup -c",

@@ -23,7 +23,7 @@ module.exports = {
     routes: {
       '/node_modules/': 'node_modules',
       '/dist/': 'dist',
-      '/.playground': '.playground'
+      '/css/': '/dist/css/'
     }
   }
 }
