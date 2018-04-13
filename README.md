@@ -9,7 +9,7 @@ Documentation | StackBlitz Template
 
 
 ## Why eang?
-eang is fast, fully reactive, and really flexible angular development framework with a set of themeable visual components. Through its native support for reactive programming, eang enables your angular apps to automatically update the user experience through CSS themes in response to event stream data from event sources. Eang plays well with your existing Angular architecture.
+eang is fast, fully reactive, and really flexible angular development framework with a set of themeable visual components. Through its native support for reactive programming, eang enables your angular apps to automatically update the user experience in response to event stream data from event sources. Eang plays well with your existing Angular architecture.
 
 
 ## Install
