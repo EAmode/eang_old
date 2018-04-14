@@ -20,7 +20,7 @@
     "format": "prettier --write src/**/*.{ts,json,js}",
     "lint": "tslint -p src -t codeframe && tslint -p playground -t codeframe",
     "commit": "git-cz",
-    "build": "npm run build:next && npm run build:umd && npm run copy",
+    "build": "npm run build:next && npm run build:umd && npm run copy && npm run css:all",
     "css:all": "postcss themes/*.css -d dist/css",
     "css:mode": "postcss themes/all.css themes/mode.css themes/mode.css themes/mode/**/*.css -o playground/dist/mode.css",
     "css:material": "postcss themes/*.css -d playground/dist",
