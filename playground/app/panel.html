@@ -1,17 +1,17 @@
 <div id="mode" class="mode">
-  <ea-panel [state]="panelState" orientation="left"  class="mode" style="--ea-panel-background:var(--ea-color-success); --ea-panel-height: 100%; --ea-panel-width: 4rem;">
+  <ea-panel [state]="panelState" [orientation]="panelOrientation" class="mode" style="--ea-panel-background:var(--ea-color-success); --ea-panel-height: 100%; --ea-panel-width: 4rem;">
     <p>Panel</p>
-    <p>orientation: {{state|async}}</p>
+    <p>state: {{panelState | async}}</p>
+    <p>orientation: {{panelOrientation | async}}</p>
   </ea-panel>
- 
   <div class="mode">
     <button (click)="changeState('minimized')">minimized</button>
     <button (click)="changeState('maximized')">maximized</button>
     <button (click)="changeState('closed')">closed</button>
     <br>
-    <button (click)="changeOrientation('top')">top</button>
-    <button (click)="changeOrientation('right')">right</button>
-    <button (click)="changeOrientation('bottom')">bottom</button>
-    <button (click)="changeOrientation('left')">left</button>
+    <button (click)="panelOrientation.next('top')">top</button>
+    <button (click)="panelOrientation.next('right')">right</button>
+    <button (click)="panelOrientation.next('bottom')">bottom</button>
+    <button (click)="panelOrientation.next('left')">left</button>
   </div>
 </div>

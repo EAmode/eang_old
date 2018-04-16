@@ -10,6 +10,8 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject'
 })
 export class PanelPageComponent {
   panelState = new BehaviorSubject<string>('maximized')
+  panelOrientation = new BehaviorSubject<string>('left')
+
   constructor() {}
 
   changeState(state: string) {

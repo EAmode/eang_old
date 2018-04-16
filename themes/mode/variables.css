@@ -2,7 +2,7 @@
   --ea-color-1: #fff; /*rgb(150, 185, 225); */
   --ea-color-2: #1f242c;
   --ea-color-3: #252a33;
-  
+
   --ea-color-accent-1: #2d71cb;
   --ea-color-accent-2: #398bf7;
 
@@ -24,8 +24,4 @@
   font-family: 'Josefin Sans', sans-serif;
   font-style: normal;
   font-weight: 400;
-}
-body {
-  margin: 0;
-  background-color: var(--ea-color-background-1);
 }
