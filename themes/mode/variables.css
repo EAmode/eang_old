@@ -21,10 +21,11 @@
 
   --ea-font-1: 'Open Sans';
 
-  font-family: 'Roboto';
+  font-family: 'Josefin Sans', sans-serif;
   font-style: normal;
   font-weight: 400;
 }
 body {
   margin: 0;
+  background-color: var(--ea-color-background-1);
 }

@@ -16,8 +16,11 @@ import { ButtonPageComponent } from './app/button'
   template: `
   <h1>eang Playground</h1>
   <nav>
-    <a routerLink="panel" routerLinkActive="active">Panel</a>
-    <a routerLink="button" routerLinkActive="active">Button</a>
+    <a routerLink="panel" routerLinkActive="active">Panel</a> |
+    <a routerLink="button" routerLinkActive="active">Button</a> |
+    <a routerLink="button" routerLinkActive="active">Autocomplete</a> |
+    <a routerLink="button" routerLinkActive="active">Checkbox</a>  |
+    <a routerLink="button" routerLinkActive="active">Datepicker</a>
   </nav>
   <router-outlet></router-outlet>
 

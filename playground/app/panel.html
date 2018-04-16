@@ -1,9 +1,10 @@
 <div id="mode" class="mode">
-  <ea-panel [state]="panelState" orientation="left" style="--ea-panel-background:var(--ea-color-success); --ea-panel-height: 100%; --ea-panel-width: 4rem;">
+  <ea-panel [state]="panelState" orientation="left"  class="mode" style="--ea-panel-background:var(--ea-color-success); --ea-panel-height: 100%; --ea-panel-width: 4rem;">
     <p>Panel</p>
+    <p>orientation: {{state|async}}</p>
   </ea-panel>
-  <p>Browser Browser Browser Browser BrowserBrowserBrowser</p>
-  <div class="buttons">
+ 
+  <div class="mode">
     <button (click)="changeState('minimized')">minimized</button>
     <button (click)="changeState('maximized')">maximized</button>
     <button (click)="changeState('closed')">closed</button>
