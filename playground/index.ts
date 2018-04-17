@@ -19,7 +19,7 @@ import { ThemePickerPageComponent } from './app/themepicker'
   <nav>
     <a routerLink="panel" routerLinkActive="active">Panel</a> |
     <a routerLink="button" routerLinkActive="active">Button</a> |
-    <a routerLink="themepicker" routerLinkActive="active">Themepicker</a>
+    <a routerLink="themepicker" routerLinkActive="active">Themepicker</a> |
     <a routerLink="button" routerLinkActive="active">Autocomplete</a> |
     <a routerLink="button" routerLinkActive="active">Checkbox</a>  |
     <a routerLink="button" routerLinkActive="active">Datepicker</a>
@@ -58,7 +58,7 @@ const appRoutes: Routes = [
 
 @NgModule({
   bootstrap: [AppComponent],
-  declarations: [AppComponent, PanelPageComponent, ButtonPageComponent],
+  declarations: [AppComponent, PanelPageComponent, ButtonPageComponent, ThemePickerPageComponent],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes, { enableTracing: true }),
