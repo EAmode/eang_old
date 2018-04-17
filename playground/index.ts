@@ -6,10 +6,11 @@ import { NgModule, Component, OnInit } from '@angular/core'
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic'
 import { RouterModule, Routes } from '@angular/router'
 
-import { PanelModule, LoggingService } from 'eang'
+import { PanelModule, LoggingService, ThemePickerModule } from 'eang'
 import { BehaviorSubject } from 'rxjs/BehaviorSubject'
 import { PanelPageComponent } from './app/panel'
 import { ButtonPageComponent } from './app/button'
+import { ThemePickerPageComponent } from './app/themepicker'
 
 @Component({
   selector: 'pg-root',
@@ -18,6 +19,7 @@ import { ButtonPageComponent } from './app/button'
   <nav>
     <a routerLink="panel" routerLinkActive="active">Panel</a> |
     <a routerLink="button" routerLinkActive="active">Button</a> |
+    <a routerLink="themepicker" routerLinkActive="active">Themepicker</a>
     <a routerLink="button" routerLinkActive="active">Autocomplete</a> |
     <a routerLink="button" routerLinkActive="active">Checkbox</a>  |
     <a routerLink="button" routerLinkActive="active">Datepicker</a>
@@ -50,6 +52,7 @@ class AppComponent implements OnInit {
 const appRoutes: Routes = [
   { path: 'panel', component: PanelPageComponent },
   { path: 'button', component: ButtonPageComponent },
+  { path: 'themepicker', component: ThemePickerPageComponent },
   { path: '', redirectTo: 'panel', pathMatch: 'full' }
 ]
 
@@ -59,7 +62,8 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes, { enableTracing: true }),
-    PanelModule
+    PanelModule,
+    ThemePickerModule
   ],
   providers: [LoggingService]
 })
