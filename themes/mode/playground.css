@@ -1,16 +1,16 @@
 .mode {
-    &root {
+    & playground {
         dispay: flex;
         flex-direction: row;
         flex-wrap: nowrap;
         justify-content: space-between;
     }
     
-    &nav {
-        
+    & nav {
+        width: 30%;
     }
     
-    &content {
+    & content {
 
     }
 }

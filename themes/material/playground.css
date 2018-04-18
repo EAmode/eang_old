@@ -1,0 +1,16 @@
+.material {
+    & playground {
+        dispay: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+    
+    & nav {
+        width: 30%;
+    }
+    
+    & content {
+
+    }
+}
