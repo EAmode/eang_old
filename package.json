@@ -22,6 +22,7 @@
     "commit": "git-cz",
     "build": "npm run build:next && npm run build:umd && npm run copy && npm run css:all",
     "css:all": "postcss themes/*.css -d dist/css",
+    "css:playground": "postcss playground/styles.css -d playground/dist/css",
     "css:mode": "postcss themes/all.css themes/mode.css themes/mode.css themes/mode/**/*.css -o playground/dist/mode.css",
     "css:material": "postcss themes/*.css -d playground/dist",
     "build:next": "ngc -p src && rollup -c",
