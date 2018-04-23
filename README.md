@@ -1,8 +1,10 @@
 # eang
 Reactive components for Angular with customizable UX themes
 
-![npm version](https://img.shields.io/npm/v/eang.svg)
-![travis build status](https://img.shields.io/travis/eascientific/eang.svg)
+[![npm version](https://img.shields.io/npm/v/eang.svg)](https://www.npmjs.com/package/eang)
+
+[![travis build](https://img.shields.io/travis/eascientific/eang.svg)](https://travis-ci.org/eascientific/eang)
+
 versionnumber
 testcoverage
 
