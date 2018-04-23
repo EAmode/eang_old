@@ -15,14 +15,18 @@ import { ButtonPageComponent } from './app/button'
   selector: 'pg-root',
   template: `
   <section class="mode">
-  <playground>
-    <nav>
-        <h1>eang Playground</h1>
-        <h2>Basics</h2>
+  <div class="playground">
+    <div class="header">
+      <h1>eang playground</h1>
+    </div>
+
+    <div class="body">
+      <div class="nav">
+        <h4>Basics</h4>
         <a routerLink="panel" routerLinkActive="active">Panel</a> |
         <a routerLink="button" routerLinkActive="active">Button</a>
 
-        <h2>Form Controls</h2>
+        <h4>Form Controls</h4>
         <a routerLink="autocomplete" routerLinkActive="active">Autocomplete</a> |
         <a routerLink="checkbox" routerLinkActive="active">Checkbox</a>  |
         <a routerLink="datepicker" routerLinkActive="active">Datepicker</a> |
@@ -33,12 +37,12 @@ import { ButtonPageComponent } from './app/button'
         <a routerLink="slider" routerLinkActive="active">Slider</a> |
         <a routerLink="slidetoggle" routerLinkActive="active">Slide toggle</a>
 
-        <h2>Navigation</h2>
+        <h4>Navigation</h4>
         <a routerLink="menu" routerLinkActive="active">Menu</a> |
         <a routerLink="sidenav" routerLinkActive="active">Sidenav</a> |
         <a routerLink="toolbar" routerLinkActive="active">Toolbar</a>
 
-        <h2>Layout</h2>
+        <h4>Layout</h4>
         <a routerLink="card" routerLinkActive="active">Card</a> |
         <a routerLink="divider" routerLinkActive="active">Divider</a> |
         <a routerLink="expansionpanel" routerLinkActive="active">Expansion Panel</a> |
@@ -47,7 +51,7 @@ import { ButtonPageComponent } from './app/button'
         <a routerLink="autocomplete" routerLinkActive="active">Autocomplete</a> |
         <a routerLink="autocomplete" routerLinkActive="active">Autocomplete</a>
 
-        <h2>Buttons &amp; Indicators</h2>
+        <h4>Buttons &amp; Indicators</h4>
         <a routerLink="button" routerLinkActive="active">Button</a> |
         <a routerLink="buttontoggle" routerLinkActive="active">Button Toggle</a> |
         <a routerLink="chips" routerLinkActive="active">Chips</a> |
@@ -55,20 +59,26 @@ import { ButtonPageComponent } from './app/button'
         <a routerLink="progressspinner" routerLinkActive="active">Progress Spinner</a> |
         <a routerLink="progressbar" routerLinkActive="active">Progress Bar</a>
 
-        <h2>Popups &amp; Modals</h2>
+        <h4>Popups &amp; Modals</h4>
         <a routerLink="dialog" routerLinkActive="active">Dialog</a> |
         <a routerLink="snackbar" routerLinkActive="active">Snackbar</a> |
         <a routerLink="tooltip" routerLinkActive="active">Tooltip</a>
 
-        <h2>Data Tables</h2>
+        <h4>Data Tables</h4>
         <a routerLink="paginator" routerLinkActive="active">Paginator</a> |
         <a routerLink="sortheader" routerLinkActive="active">Sort Header</a> |
         <a routerLink="table" routerLinkActive="active">Table</a>
-      </nav>
-    <content>
-      <router-outlet></router-outlet>
-    </content>
-    </playground>
+      </div>
+      <div div class="content">
+        <router-outlet></router-outlet>
+      </div>
+      </div>
+
+      <div class="footer">
+        License: MIT
+      </div>
+    </div>
+
   </section>
   `
 })
