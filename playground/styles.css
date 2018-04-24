@@ -3,6 +3,94 @@
 @import '../themes/mode/button.css';
 @import '../themes/material.css';
 
+@import 'content-panel.css';
+
 body {
-  background-color: aquamarine;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  font-family: 'Open Sans', Verdana, sans-serif;
+  justify-content: flex-start;
+}
+
+header {
+  background-color: rgb(33, 33, 33);
+  color: white;
+  height: 75px;
+  padding: 20px;
+  min-width: 1000px;
+  width: 100%;
+
+  a:link {
+    color: gray;
+  }
+  a:visited {
+    color: gray;
+  }
+  a:hover {
+    color: yellow;
+  }
+  a:active {
+    color: orange;
+  }
+}
+
+.pg-container-main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+nav {
+  background-color: rgb(60, 60, 60);
+  color: white;
+  padding: 20px;
+  width: 200px;
+  min-width: 200px;
+  
+  & a:link {
+    color: gray;
+  }
+
+  & a:visited {
+    color: gray;
+  }
+
+  & a:hover {
+    color: yellow;
+  }
+
+  & a:active {
+    color: orange;
+  }
+}
+
+footer {
+  background-color: gray;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+  min-width: 1000px;
+
+  a:link {
+    color: gray;
+  }
+  a:visited {
+    color: gray;
+  }
+  a:hover {
+    color: yellow;
+  }
+  a:active {
+    color: orange;
+  }
+}
+
+.code {
+  background-color: lightgray;
+  border-radius: 5px;
+  padding: 2px;
+  font-family: 'Lucida Console', Monaco, monospace;
 }
