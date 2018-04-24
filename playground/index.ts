@@ -6,18 +6,25 @@ import { NgModule, Component, OnInit } from '@angular/core'
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic'
 import { RouterModule, Routes } from '@angular/router'
 
-import { PanelModule, LoggingService } from 'eang'
+import { PanelModule, LoggingService, ThemePickerModule } from 'eang'
 import { BehaviorSubject } from 'rxjs/BehaviorSubject'
 import { PanelPageComponent } from './app/panel'
 import { ButtonPageComponent } from './app/button'
+import { ThemePickerPageComponent } from './app/themepicker'
 
 @Component({
   selector: 'pg-root',
   template: `
-  <div class="playground">
-    <header>
-      <h1>eang playground</h1>
-    </header>
+  <h1>eang Playground</h1>
+  <nav>
+    <a routerLink="panel" routerLinkActive="active">Panel</a> |
+    <a routerLink="button" routerLinkActive="active">Button</a> |
+    <a routerLink="themepicker" routerLinkActive="active">Themepicker</a> |
+    <a routerLink="button" routerLinkActive="active">Autocomplete</a> |
+    <a routerLink="button" routerLinkActive="active">Checkbox</a>  |
+    <a routerLink="button" routerLinkActive="active">Datepicker</a>
+  </nav>
+  <router-outlet></router-outlet>
 
     <div class="pg-container-wrapper">
       <nav>
@@ -103,16 +110,18 @@ class AppComponent implements OnInit {
 const appRoutes: Routes = [
   { path: 'panel', component: PanelPageComponent },
   { path: 'button', component: ButtonPageComponent },
+  { path: 'themepicker', component: ThemePickerPageComponent },
   { path: '', redirectTo: 'panel', pathMatch: 'full' }
 ]
 
 @NgModule({
   bootstrap: [AppComponent],
-  declarations: [AppComponent, PanelPageComponent, ButtonPageComponent],
+  declarations: [AppComponent, PanelPageComponent, ButtonPageComponent, ThemePickerPageComponent],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes, { enableTracing: true }),
-    PanelModule
+    PanelModule,
+    ThemePickerModule
   ],
   providers: [LoggingService]
 })
