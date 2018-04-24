@@ -1,17 +1,16 @@
-
 .playground {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  font-family: "Open Sans", Verdana, sans-serif;
+  font-family: 'Open Sans', Verdana, sans-serif;
   justify-content: flex-start;
 }
 
-.header {
+header {
   background-color: rgb(33, 33, 33);
   color: white;
   height: 75px;
-  padding: 20px; 
+  padding: 20px;
   min-width: 1000px;
   width: 100%;
 
@@ -29,46 +28,49 @@
   }
 }
 
-.body {
+.pg-container-wrapper {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-between;
 }
 
-.nav {
+nav {
   background-color: rgb(60, 60, 60);
   color: white;
   padding: 20px;
   width: 200px;
   min-width: 200px;
+  
+  & a:link {
+    color: gray;
+  }
 
-    a:link {
+  & a:visited {
     color: gray;
   }
-  a:visited {
-    color: gray;
-  }
-  a:hover {
+
+  & a:hover {
     color: yellow;
   }
-  a:active {
+
+  & a:active {
     color: orange;
   }
 }
 
 .content {
-    background-color: white;
-    color: black;
-    padding: 20px;
-    width: 70%;
-    min-width: 800px;
+  background-color: white;
+  color: black;
+  padding: 20px;
+  width: 70%;
+  min-width: 800px;
 }
 
-.footer {
+footer {
   background-color: gray;
   color: white;
-  padding: 20px; 
+  padding: 20px;
   text-align: center;
   width: 100%;
   min-width: 1000px;
@@ -88,8 +90,8 @@
 }
 
 .code {
-    background-color: lightgray;
-    border-radius: 5px;
-    padding: 2px;
-    font-family: "Lucida Console", Monaco, monospace;
+  background-color: lightgray;
+  border-radius: 5px;
+  padding: 2px;
+  font-family: 'Lucida Console', Monaco, monospace;
 }

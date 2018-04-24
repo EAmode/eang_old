@@ -14,14 +14,13 @@ import { ButtonPageComponent } from './app/button'
 @Component({
   selector: 'pg-root',
   template: `
-  <section class="mode">
   <div class="playground">
-    <div class="header">
+    <header>
       <h1>eang playground</h1>
-    </div>
+    </header>
 
-    <div class="body">
-      <div class="nav">
+    <div class="pg-container-wrapper">
+      <nav>
         <h4>Basics</h4>
         <a routerLink="panel" routerLinkActive="active">Panel</a> |
         <a routerLink="button" routerLinkActive="active">Button</a>
@@ -68,18 +67,16 @@ import { ButtonPageComponent } from './app/button'
         <a routerLink="paginator" routerLinkActive="active">Paginator</a> |
         <a routerLink="sortheader" routerLinkActive="active">Sort Header</a> |
         <a routerLink="table" routerLinkActive="active">Table</a>
-      </div>
-      <div div class="content">
+      </nav>
+      <ea-panel class="content">
         <router-outlet></router-outlet>
-      </div>
+      </ea-panel>
       </div>
 
-      <div class="footer">
+      <footer>
         License: MIT
-      </div>
+      </footer>
     </div>
-
-  </section>
   `
 })
 class AppComponent implements OnInit {
