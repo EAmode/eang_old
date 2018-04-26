@@ -3,6 +3,7 @@ import { FormArray, FormBuilder, FormGroup } from '@angular/forms'
 
 import { Address, Hero, states } from './data-model'
 import { HeroService } from './hero.service'
+import { of } from 'rxjs/observable/of'
 
 @Component({
   selector: 'pg-app-hero-detail',
@@ -15,10 +16,15 @@ export class HeroDetailComponent implements OnChanges {
   heroForm: FormGroup
   nameChangeLog: string[] = []
   states = states
+  results = of(['121', '122'])
 
   constructor(private fb: FormBuilder, private heroService: HeroService) {
     this.createForm()
     this.logNameChange()
+  }
+
+  onSearch($event: any) {
+    console.log($event)
   }
 
   createForm() {

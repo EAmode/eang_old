@@ -9,9 +9,7 @@ import {
 } from '@angular/core'
 import { FormControl } from '@angular/forms'
 import { Observable } from 'rxjs/Observable'
-import 'rxjs/add/operator/debounceTime'
-import 'rxjs/add/operator/distinctUntilChanged'
-import 'rxjs/add/operator/switchMap'
+import { debounceTime, distinctUntilChanged } from 'rxjs/operators'
 
 @Component({
   selector: 'ea-autocomplete',
@@ -19,22 +17,25 @@ import 'rxjs/add/operator/switchMap'
   <ng-template #defaultTemplate let-item>{{item}}</ng-template>
   <ul>
     <li *ngFor="let item of results | async">
-      <ng-template [ngTemplateOutlet]="resultsTemplate || defaultTemplate" [ngOutletContext]="{ $implicit: item }">{{item}}</ng-template>
+      <ng-template *ngTemplateOutlet="resultsTemplate || defaultTemplate" ngTemplateOutletContext="{ $implicit: item }">
+        {{item}}
+      </ng-template>
     </li>
   </ul>`
 })
 export class AutocompleteComponent implements OnInit {
+  @Input() results: Observable<any>
+  @Output() search = new EventEmitter()
+  @ContentChild(TemplateRef) resultsTemplate: TemplateRef<any>
   items: Observable<string[]>
   term = new FormControl()
-  @Input() results: Observable<any>
-  @ContentChild(TemplateRef) resultsTemplate: TemplateRef<any>
   private defaultTemplate: TemplateRef<any>
-  @Output() search = new EventEmitter()
 
   ngOnInit() {
     this.term.valueChanges
-      .debounceTime(400)
-      .distinctUntilChanged()
-      .subscribe(term => this.search.emit(term))
+      .pipe(debounceTime(400), distinctUntilChanged())
+      .subscribe(term => {
+        this.search.emit(term)
+      })
   }
 }

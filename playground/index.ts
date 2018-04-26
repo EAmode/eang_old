@@ -6,13 +6,14 @@ import { NgModule, Component, OnInit } from '@angular/core'
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic'
 import { RouterModule, Routes } from '@angular/router'
 
-import { PanelModule, LoggingService, ThemePickerModule } from 'eang'
+import { PanelModule, LoggingService, ThemePickerModule, AutoCompleteModule } from 'eang'
 import { BehaviorSubject } from 'rxjs/BehaviorSubject'
 import { PanelPageComponent } from './app/panel'
 import { ButtonPageComponent } from './app/button'
 import { ThemePickerPageComponent } from './app/themepicker'
 import { HeroDetailComponent } from './app/hero-detail.component'
 import { ReactiveFormsModule } from '@angular/forms'
+import { HeroService } from './app/hero.service'
 
 @Component({
   selector: 'pg-root',
@@ -116,10 +117,11 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes, { enableTracing: true }),
     PanelModule,
     ThemePickerModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AutoCompleteModule
   ],
-  exports: [AppComponent, HeroDetailComponent],
-  providers: [LoggingService]
+  exports: [],
+  providers: [LoggingService, HeroService]
 })
 class AppModule {}
 
