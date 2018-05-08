@@ -12,6 +12,9 @@ eang is fast, fully reactive, and really flexible angular development framework 
 ## Install eang
 To install eang into your angular project run: `npm install eang` 
 
+## Play with eang components
+To see examples of eang components and customize them run: `npm run playground` 
+
 ## How to use eang components
 You can mix and match eang components with your existing angular app. 
 
