@@ -17,9 +17,7 @@ import { debounceTime, distinctUntilChanged } from 'rxjs/operators'
   <ng-template #defaultTemplate let-item>{{item}}</ng-template>
   <ul>
     <li *ngFor="let item of results | async">
-      <ng-template *ngTemplateOutlet="resultsTemplate || defaultTemplate" ngTemplateOutletContext="{ $implicit: item }">
-        {{item}}
-      </ng-template>
+      <ng-container *ngTemplateOutlet="resultsTemplate || defaultTemplate; context: { $implicit: item }"></ng-container>
     </li>
   </ul>`
 })
@@ -30,6 +28,7 @@ export class AutocompleteComponent implements OnInit {
   items: Observable<string[]>
   term = new FormControl()
   private defaultTemplate: TemplateRef<any>
+  resultsContext
 
   ngOnInit() {
     this.term.valueChanges

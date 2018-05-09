@@ -11,9 +11,8 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject'
 import { PanelPageComponent } from './app/panel'
 import { ButtonPageComponent } from './app/button'
 import { ThemePickerPageComponent } from './app/themepicker'
-import { HeroDetailComponent } from './app/hero-detail.component'
 import { ReactiveFormsModule } from '@angular/forms'
-import { HeroService } from './app/hero.service'
+import { AutocompletePageComponent } from './app/autocomplete.page'
 
 @Component({
   selector: 'pg-root',
@@ -96,7 +95,7 @@ class AppComponent implements OnInit {
 }
 
 const appRoutes: Routes = [
-  { path: 'autocomplete', component: HeroDetailComponent }, // FIXME
+  { path: 'autocomplete', component: AutocompletePageComponent },
   { path: 'panel', component: PanelPageComponent },
   { path: 'button', component: ButtonPageComponent },
   { path: 'themepicker', component: ThemePickerPageComponent },
@@ -110,7 +109,7 @@ const appRoutes: Routes = [
     PanelPageComponent,
     ButtonPageComponent,
     ThemePickerPageComponent,
-    HeroDetailComponent
+    AutocompletePageComponent
   ],
   imports: [
     BrowserModule,
@@ -121,7 +120,7 @@ const appRoutes: Routes = [
     AutoCompleteModule
   ],
   exports: [],
-  providers: [LoggingService, HeroService]
+  providers: [LoggingService]
 })
 class AppModule {}
 
