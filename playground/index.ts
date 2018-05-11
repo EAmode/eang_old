@@ -3,6 +3,7 @@
  */
 import { BrowserModule } from '@angular/platform-browser'
 import { NgModule, Component, OnInit } from '@angular/core'
+import { HttpClientModule } from '@angular/common/http'
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic'
 import { RouterModule, Routes } from '@angular/router'
 
@@ -114,6 +115,7 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes, { enableTracing: true }),
+    HttpClientModule,
     PanelModule,
     ThemePickerModule,
     ReactiveFormsModule,

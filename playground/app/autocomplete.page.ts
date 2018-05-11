@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core'
+import { HttpClient, HttpHeaders } from '@angular/common/http'
+
 import { Observable } from 'rxjs/Observable'
 import { of } from 'rxjs/observable/of'
 
@@ -9,7 +11,7 @@ import { of } from 'rxjs/observable/of'
 export class AutocompletePageComponent {
   results = of([])
 
-  constructor() {
+  constructor(private http: HttpClient) {
     this.results.subscribe(i => {
       console.log(i)
     })
@@ -19,5 +21,17 @@ export class AutocompletePageComponent {
     console.log(term)
     console.log(Array.from(term))
     this.results = of(Array.from(term))
+  }
+
+  onNameSearch(name: string) {
+    this.http
+      .get(`uzby.com/api.php?min=3&max=8`, {
+        headers: new HttpHeaders({
+          'Content-Type': 'application/json'
+        })
+      })
+      .subscribe(data => {
+        console.log(data)
+      })
   }
 }
