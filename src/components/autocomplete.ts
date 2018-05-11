@@ -13,28 +13,33 @@ import { debounceTime, distinctUntilChanged } from 'rxjs/operators'
 
 @Component({
   selector: 'ea-autocomplete',
-  template: `<input type="text" [formControl]="term" autocomplete="off" autocorrect="off" autocapitalize="off" aria-autocomplete="list">
+  template: `<input type="text"
+    [formControl]="ea_autocomplete_searchterm"
+    autocomplete="off"
+    autocorrect="off"
+    autocapitalize="off"
+    aria-autocomplete="list">
   <ng-template #defaultTemplate let-item>{{item}}</ng-template>
   <ul>
-    <li *ngFor="let item of results | async">
+    <li *ngFor="let item of input | async">
       <ng-container *ngTemplateOutlet="resultsTemplate || defaultTemplate; context: { $implicit: item }"></ng-container>
     </li>
   </ul>`
 })
 export class AutocompleteComponent implements OnInit {
-  @Input() results: Observable<any>
-  @Output() search = new EventEmitter()
+  @Input() input: Observable<any>
+  @Output() output = new EventEmitter()
   @ContentChild(TemplateRef) resultsTemplate: TemplateRef<any>
-  items: Observable<string[]>
-  term = new FormControl()
+
+  ea_autocomplete_searchterm = new FormControl()
   private defaultTemplate: TemplateRef<any>
   resultsContext
 
   ngOnInit() {
-    this.term.valueChanges
+    this.ea_autocomplete_searchterm.valueChanges
       .pipe(debounceTime(400), distinctUntilChanged())
       .subscribe(term => {
-        this.search.emit(term)
+        this.output.emit(term)
       })
   }
 }

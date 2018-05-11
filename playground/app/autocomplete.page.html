@@ -1,9 +1,11 @@
 <div class="form-group">
   <label class="center-block">Search:
-    <ea-autocomplete [results]="results" (search)="onSearch($event)">
-      <ng-template #resultsTemplate let-item>test: {{item}}</ng-template>
-    </ea-autocomplete>
+    <ea-autocomplete [input]="results" (output)="onSearch($event)"></ea-autocomplete>
   </label>
 </div>
 
-<div *ngFor="let name of nameChangeLog">{{name}}</div>
+<div class="form-group">
+  <label class="center-block">Search with images:
+    <ea-autocomplete [input]="images" (output)="onSearch($event)"></ea-autocomplete>
+  </label>
+</div>
