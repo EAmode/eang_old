@@ -6,6 +6,10 @@
 
 <div class="form-group">
   <label class="center-block">Search with images:
-    <ea-autocomplete [input]="images" (output)="onNameSearch($event)"></ea-autocomplete>
+    <ea-autocomplete [input]="avatars" (output)="onNameSearch($event)">
+      <ng-template #resultsTemplate let-item>{{item.name}}
+        <img src="{{item.avatarUrl}}" alt="">
+      </ng-template>
+    </ea-autocomplete>
   </label>
 </div>
