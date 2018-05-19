@@ -5,9 +5,10 @@ import {
   EventEmitter,
   Input,
   TemplateRef,
-  ContentChild
+  ContentChild,
+  forwardRef
 } from '@angular/core'
-import { FormControl } from '@angular/forms'
+import { FormControl, ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms'
 import { Observable } from 'rxjs/Observable'
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators'
 
@@ -24,9 +25,12 @@ import { debounceTime, distinctUntilChanged } from 'rxjs/operators'
     <li *ngFor="let item of input | async">
       <ng-container *ngTemplateOutlet="resultsTemplate || defaultTemplate; context: { $implicit: item }"></ng-container>
     </li>
-  </ul>`
+  </ul>`,
+  providers: [
+    { provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() => AutocompleteComponent), multi: true },
+  ]
 })
-export class AutocompleteComponent implements OnInit {
+export class AutocompleteComponent implements OnInit, ControlValueAccessor {
   @Input() input: Observable<any>
   @Output() output = new EventEmitter()
   @ContentChild(TemplateRef) resultsTemplate: TemplateRef<any>
@@ -41,5 +45,18 @@ export class AutocompleteComponent implements OnInit {
       .subscribe(term => {
         this.output.emit(term)
       })
+  }
+
+  writeValue(obj: any): void {
+    console.log(obj)
+  }
+  registerOnChange(fn: any): void {
+    throw new Error('Method not implemented.')
+  }
+  registerOnTouched(fn: any): void {
+    throw new Error('Method not implemented.')
+  }
+  setDisabledState?(isDisabled: boolean): void {
+    throw new Error('Method not implemented.')
   }
 }
