@@ -56,6 +56,8 @@ export class AutocompleteComponent implements OnInit, ControlValueAccessor {
   set disabled(isDisabled) {
     this.setDisabledState(isDisabled)
   }
+  @Input() inputFieldDebounceTime = 400
+
   @Output() output = new EventEmitter()
   @Output() blur = new EventEmitter()
 
@@ -71,7 +73,7 @@ export class AutocompleteComponent implements OnInit, ControlValueAccessor {
 
   ngOnInit() {
     this.ea_autocomplete_searchterm.valueChanges
-      .pipe(debounceTime(400), distinctUntilChanged())
+      .pipe(debounceTime(this.inputFieldDebounceTime), distinctUntilChanged())
       .subscribe(term => {
         this.output.emit(term)
         this.propagateChange(term)

@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http'
 
 import { Observable } from 'rxjs/Observable'
 import { of } from 'rxjs/observable/of'
+import { map } from 'rxjs/operators'
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
 
 @Component({
@@ -11,8 +12,9 @@ import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
 })
 export class AutocompletePageComponent {
   results = of([])
+  avatars = of([])
 
-  avatars = of([
+  avatarsArr = [
     {
       name: 'Han Solo',
       avatarUrl: 'https://api.adorable.io/avatars/140/1.png'
@@ -41,7 +43,7 @@ export class AutocompletePageComponent {
       name: 'Lando Clarissian',
       avatarUrl: 'https://api.adorable.io/avatars/140/7.png'
     }
-  ])
+  ]
 
   avatarForm: FormGroup
 
@@ -52,9 +54,9 @@ export class AutocompletePageComponent {
       name: '',
       country: ['', Validators.required]
     })
-    this.avatarSearchTerm.valueChanges.subscribe(i => {
-      console.log('se', i)
-    })
+    this.avatars = this.avatarSearchTerm.valueChanges.pipe(
+      map(i => this.avatarsArr.filter(a => a.name.toLowerCase().startsWith(i)))
+    )
   }
 
   onSearch(term: string) {

@@ -1,7 +1,7 @@
 <section class="mode">
 <div class="form-group">
   <label class="center-block">Search:
-    <ea-autocomplete [input]="results" (output)="onSearch($event)" [disabled]="false"></ea-autocomplete>
+    <ea-autocomplete [inputFieldDebounceTime]="400" [input]="results" (output)="onSearch($event)" [disabled]="false"></ea-autocomplete>
   </label>
 </div>
 <P></P>
