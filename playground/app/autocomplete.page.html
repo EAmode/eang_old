@@ -1,0 +1,39 @@
+<section class="mode">
+<div class="form-group">
+  <label class="center-block">Search:
+    <ea-autocomplete [inputFieldDebounceTime]="400" [input]="results" (output)="onSearch($event)" [disabled]="false"></ea-autocomplete>
+  </label>
+</div>
+<P></P>
+<div class="form-group">
+  <h2>Inside a reactive form</h2>
+  <form [formGroup]="avatarForm">
+    <label>Name:
+      <input type="text" formControlName="name">
+    </label>
+    <br>
+    <label>Country:
+      <ea-autocomplete type="text" formControlName="country"></ea-autocomplete>
+    </label>
+    <div class="error" *ngIf="avatarForm.get('country').hasError('required') && avatarForm.get('country').touched">
+      Country is required
+    </div>
+  </form>
+  <p>Form value: {{ avatarForm.value | json }}</p>
+  <p>Form status: {{ avatarForm.status | json }}</p>
+
+</div>
+
+
+<div class="form-group">
+  <h2>Custom Template</h2>
+  <label class="center-block">Search with images:
+    <ea-autocomplete [input]="avatars" [formControl]="avatarSearchTerm">
+      <ng-template #resultsTemplate let-item>
+        <img src="{{item.avatarUrl}}" alt="">{{item.name}}
+      </ng-template>
+    </ea-autocomplete>
+  </label>
+</div>
+
+</section>

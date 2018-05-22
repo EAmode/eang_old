@@ -1,0 +1,12 @@
+ea-panel.content-panel {
+  & header {
+    background-color: white;
+    color: black;
+  }
+
+  background-color: white;
+  color: black;
+  padding: 20px;
+  width: 70%;
+  min-width: 800px;
+}
