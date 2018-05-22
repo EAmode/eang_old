@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http'
 
 import { Observable } from 'rxjs/Observable'
 import { of } from 'rxjs/observable/of'
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
 
 @Component({
   selector: 'pg-autocomplete',
@@ -42,9 +43,17 @@ export class AutocompletePageComponent {
     }
   ])
 
-  constructor(private http: HttpClient) {
-    this.results.subscribe(i => {
-      console.log(i)
+  avatarForm: FormGroup
+
+  avatarSearchTerm = new FormControl()
+
+  constructor(private fb: FormBuilder, private http: HttpClient) {
+    this.avatarForm = fb.group({
+      name: '',
+      country: ['', Validators.required]
+    })
+    this.avatarSearchTerm.valueChanges.subscribe(i => {
+      console.log('se', i)
     })
   }
 
@@ -55,7 +64,6 @@ export class AutocompletePageComponent {
   }
 
   onNameSearch(name: string) {
-
     const result = this.avatars.filter(a => a.name.startsWith(name))
     this.results = of(result)
     console.log(name)
