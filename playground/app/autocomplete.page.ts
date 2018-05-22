@@ -62,19 +62,4 @@ export class AutocompletePageComponent {
     console.log(Array.from(term))
     this.results = of(Array.from(term))
   }
-
-  onNameSearch(name: string) {
-    const result = this.avatars.filter(a => a.name.startsWith(name))
-    this.results = of(result)
-    console.log(name)
-    // this.http
-    //   .get(`uzby.com/api.php?min=3&max=8`, {
-    //     headers: new HttpHeaders({
-    //       'Content-Type': 'application/json'
-    //     })
-    //   })
-    //   .subscribe(data => {
-    //     console.log(data)
-    //   })
-  }
 }

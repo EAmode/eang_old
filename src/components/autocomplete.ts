@@ -29,11 +29,13 @@ import { debounceTime, distinctUntilChanged } from 'rxjs/operators'
     autocapitalize="off"
     aria-autocomplete="list">
   <ng-template #defaultTemplate let-item>{{item}}</ng-template>
-  <ul>
-    <li *ngFor="let item of input | async">
+  <ng-container *ngIf="(input | async) as input">
+  <ul *ngIf="input.length > 0">
+    <li *ngFor="let item of input">
       <ng-container *ngTemplateOutlet="resultsTemplate || defaultTemplate; context: { $implicit: item }"></ng-container>
     </li>
-  </ul>`,
+  </ul>
+  </ng-container>`,
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,

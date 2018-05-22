@@ -1,9 +1,10 @@
+<section class="mode">
 <div class="form-group">
   <label class="center-block">Search:
     <ea-autocomplete [input]="results" (output)="onSearch($event)" [disabled]="false"></ea-autocomplete>
   </label>
 </div>
-
+<P></P>
 <div class="form-group">
   <h2>Inside a reactive form</h2>
   <form [formGroup]="avatarForm">
@@ -28,9 +29,11 @@
   <h2>Custom Template</h2>
   <label class="center-block">Search with images:
     <ea-autocomplete [input]="avatars" [formControl]="avatarSearchTerm">
-      <ng-template #resultsTemplate let-item>{{item.name}}
-        <img src="{{item.avatarUrl}}" alt="">
+      <ng-template #resultsTemplate let-item>
+        <img src="{{item.avatarUrl}}" alt="">{{item.name}}
       </ng-template>
     </ea-autocomplete>
   </label>
 </div>
+
+</section>
