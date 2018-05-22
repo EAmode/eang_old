@@ -30,8 +30,8 @@ import { debounceTime, distinctUntilChanged } from 'rxjs/operators'
     aria-autocomplete="list">
   <ng-template #defaultTemplate let-item>{{item}}</ng-template>
   <ng-container *ngIf="(input | async) as input">
-  <ul *ngIf="input.length > 0">
-    <li *ngFor="let item of input">
+  <ul *ngIf="input.length > 0 && !selected">
+    <li *ngFor="let item of input" (click)="select(item)">
       <ng-container *ngTemplateOutlet="resultsTemplate || defaultTemplate; context: { $implicit: item }"></ng-container>
     </li>
   </ul>
@@ -68,6 +68,7 @@ export class AutocompleteComponent implements OnInit, ControlValueAccessor {
   ea_autocomplete_searchterm = new FormControl()
   private defaultTemplate: TemplateRef<any>
   resultsContext
+  selected = false
   propagateChange = _ => {}
   touched = () => {}
 
@@ -75,6 +76,7 @@ export class AutocompleteComponent implements OnInit, ControlValueAccessor {
     this.ea_autocomplete_searchterm.valueChanges
       .pipe(debounceTime(this.inputFieldDebounceTime), distinctUntilChanged())
       .subscribe(term => {
+        this.selected = false
         this.output.emit(term)
         this.propagateChange(term)
       })
@@ -92,6 +94,11 @@ export class AutocompleteComponent implements OnInit, ControlValueAccessor {
   }
   setDisabledState?(isDisabled: boolean): void {
     this.inputField.nativeElement.disabled = isDisabled
+  }
+
+  select(item) {
+    this.selected = true
+    this.inputField.nativeElement.value = 'item'
   }
 
   onInputBlur(event) {
