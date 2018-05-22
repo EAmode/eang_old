@@ -55,9 +55,7 @@ export class AutocompletePageComponent {
   }
 
   onNameSearch(name: string) {
-
-    const result = this.avatars.filter(a => a.name.startsWith(name))
-    this.results = of(result)
+    // this.results = of(result)
     console.log(name)
     // this.http
     //   .get(`uzby.com/api.php?min=3&max=8`, {

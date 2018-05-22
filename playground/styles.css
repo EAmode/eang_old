@@ -1,7 +1,5 @@
-@import '../themes/mode/variables.css';
-@import '../themes/mode/panel.css';
-@import '../themes/mode/button.css';
 @import '../themes/material.css';
+@import '../themes/mode.css';
 
 @import 'content-panel.css';
 

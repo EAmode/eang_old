@@ -1,15 +1,18 @@
+<section class="mode">
 <div class="form-group">
   <label class="center-block">Search:
     <ea-autocomplete [input]="results" (output)="onSearch($event)"></ea-autocomplete>
   </label>
 </div>
-
+<P></P>
 <div class="form-group">
   <label class="center-block">Search with images:
     <ea-autocomplete [input]="avatars" (output)="onNameSearch($event)">
-      <ng-template #resultsTemplate let-item>{{item.name}}
-        <img src="{{item.avatarUrl}}" alt="">
-      </ng-template>
+        <ng-template #resultsTemplate let-item>
+          <img src="{{item.avatarUrl}}" alt=""> {{item.name}}
+        </ng-template>
     </ea-autocomplete>
   </label>
 </div>
+</section>
+
