@@ -25,6 +25,7 @@ import { Subscription } from 'rxjs/Subscription'
   template: `<input #inputField type="text"
     [value]="inputFieldValue"
     (keyup)="onKeyup($event)"
+    (keydown)="onKeydown($event)"
     (blur)="onInputBlur($event)"
     autocomplete="off"
     autocorrect="off"
@@ -75,7 +76,7 @@ export class AutocompleteComponent implements OnInit, ControlValueAccessor {
   resultsContext
   selected = false
   hidden = false
-  selectedIndex = -1
+  selectedIndex = 0
   private _inputSubscription: Subscription
 
   propagateChange = _ => {}
@@ -112,13 +113,14 @@ export class AutocompleteComponent implements OnInit, ControlValueAccessor {
   setDisabledState?(isDisabled: boolean): void {
     this.inputField.nativeElement.disabled = isDisabled
   }
-
   onKeyup(event) {
     if (this.inputFieldValue !== event.target.value) {
       this.inputFieldValue = event.target.value
       this.output$.next(this.inputFieldValue)
     }
+  }
 
+  onKeydown(event) {
     switch (event.key) {
       case 'ArrowDown':
         this.selectedIndex = Math.abs(
@@ -126,6 +128,7 @@ export class AutocompleteComponent implements OnInit, ControlValueAccessor {
         )
         this.selectedItem = this.suggestions[this.selectedIndex]
         this.selectedItem$.next(this.selectedItem)
+        event.preventDefault()
         break
       case 'ArrowUp':
         this.selectedIndex = Math.abs(
@@ -133,11 +136,13 @@ export class AutocompleteComponent implements OnInit, ControlValueAccessor {
         )
         this.selectedItem = this.suggestions[this.selectedIndex]
         this.selectedItem$.next(this.selectedItem)
+        event.preventDefault()
         break
       case 'Escape':
         this.hidden = true
         break
     }
+
     console.log(event)
   }
 
