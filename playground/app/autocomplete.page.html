@@ -5,7 +5,7 @@
   </label>
 </div>
 <P></P>
-<div class="form-group">
+<!-- <div class="form-group">
   <h2>Inside a reactive form</h2>
   <form [formGroup]="avatarForm">
     <label>Name:
@@ -22,13 +22,13 @@
   <p>Form value: {{ avatarForm.value | json }}</p>
   <p>Form status: {{ avatarForm.status | json }}</p>
 
-</div>
+</div> -->
 
 
 <div class="form-group">
   <h2>Custom Template</h2>
   <label class="center-block">Search with images:
-    <ea-autocomplete [input]="avatars" [formControl]="avatarSearchTerm">
+    <ea-autocomplete [input]="avatars" [formControl]="avatarSearchTerm" [mapSelectItem]="mapSelectItem">
       <ng-template #resultsTemplate let-item>
         <img src="{{item.avatarUrl}}" alt="">{{item.name}}
       </ng-template>

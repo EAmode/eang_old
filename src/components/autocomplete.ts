@@ -17,25 +17,25 @@ import {
 } from '@angular/forms'
 import { Observable } from 'rxjs/Observable'
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators'
+import { Subject } from 'rxjs/Subject'
+import { Subscription } from 'rxjs/Subscription'
 
 @Component({
   selector: 'ea-autocomplete',
   template: `<input #inputField type="text"
     [value]="inputFieldValue"
+    (keyup)="onKeyup($event)"
     (blur)="onInputBlur($event)"
-    [formControl]="ea_autocomplete_searchterm"
     autocomplete="off"
     autocorrect="off"
     autocapitalize="off"
     aria-autocomplete="list">
   <ng-template #defaultTemplate let-item>{{item}}</ng-template>
-  <ng-container *ngIf="(input | async) as input">
-  <ul *ngIf="input.length > 0 && !selected">
-    <li *ngFor="let item of input" (click)="select(item)">
+  <ul *ngIf="!hidden && suggestions && suggestions.length > 0 ">
+    <li *ngFor="let item of suggestions" (click)="select(item)" [attr.selected]="item === selectedItem ? '' : null">
       <ng-container *ngTemplateOutlet="resultsTemplate || defaultTemplate; context: { $implicit: item }"></ng-container>
     </li>
-  </ul>
-  </ng-container>`,
+  </ul>`,
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
@@ -59,27 +59,44 @@ export class AutocompleteComponent implements OnInit, ControlValueAccessor {
   @Input() inputFieldDebounceTime = 400
 
   @Output() output = new EventEmitter()
+  @Output() output$ = new Subject<any>()
+
+  @Output() selectedItem = new EventEmitter()
+  @Output() selectedItem$ = new Subject<any>()
+
   @Output() blur = new EventEmitter()
 
   @ViewChild('inputField') inputField
   @ContentChild(TemplateRef) resultsTemplate: TemplateRef<any>
 
+  suggestions
   inputFieldValue = ''
-  ea_autocomplete_searchterm = new FormControl()
   private defaultTemplate: TemplateRef<any>
   resultsContext
   selected = false
+  hidden = false
+  selectedIndex = -1
+  private _inputSubscription: Subscription
+
   propagateChange = _ => {}
   touched = () => {}
-
+  @Input() mapSelectItem = (item: any) => item.toString()
   ngOnInit() {
-    this.ea_autocomplete_searchterm.valueChanges
-      .pipe(debounceTime(this.inputFieldDebounceTime), distinctUntilChanged())
+    this._inputSubscription = this.input.subscribe(s => {
+      this.suggestions = s
+    })
+
+    this.output$
+      .pipe(debounceTime(this.inputFieldDebounceTime))
       .subscribe(term => {
-        this.selected = false
+        this.hidden = false
         this.output.emit(term)
         this.propagateChange(term)
       })
+    this.selectedItem$.pipe(distinctUntilChanged()).subscribe(selectedItem => {
+      // this.selectedItem.emit(selectedItem)
+      this.propagateChange(selectedItem)
+    })
   }
 
   writeValue(obj: any): void {
@@ -96,9 +113,40 @@ export class AutocompleteComponent implements OnInit, ControlValueAccessor {
     this.inputField.nativeElement.disabled = isDisabled
   }
 
+  onKeyup(event) {
+    if (this.inputFieldValue !== event.target.value) {
+      this.inputFieldValue = event.target.value
+      this.output$.next(this.inputFieldValue)
+    }
+
+    switch (event.key) {
+      case 'ArrowDown':
+        this.selectedIndex = Math.abs(
+          --this.selectedIndex % this.suggestions.length
+        )
+        this.selectedItem = this.suggestions[this.selectedIndex]
+        this.selectedItem$.next(this.selectedItem)
+        break
+      case 'ArrowUp':
+        this.selectedIndex = Math.abs(
+          ++this.selectedIndex % this.suggestions.length
+        )
+        this.selectedItem = this.suggestions[this.selectedIndex]
+        this.selectedItem$.next(this.selectedItem)
+        break
+      case 'Escape':
+        this.hidden = true
+        break
+    }
+    console.log(event)
+  }
+
   select(item) {
-    this.selected = true
-    this.inputField.nativeElement.value = 'item'
+    this.selectedItem = item
+    this.selectedItem$.next(item)
+    const mappedItem = this.mapSelectItem(item)
+    this.inputFieldValue = mappedItem
+    this.hidden = true
   }
 
   onInputBlur(event) {
