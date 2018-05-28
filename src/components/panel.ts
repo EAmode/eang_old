@@ -1,9 +1,6 @@
 import { Component, Input, OnInit, AfterViewInit } from '@angular/core'
-
-import { Observable } from 'rxjs/Observable'
-import { combineLatest } from 'rxjs/observable/combineLatest'
+import { of, Observable, combineLatest } from 'rxjs'
 import { map } from 'rxjs/operators'
-import { of } from 'rxjs/observable/of'
 
 @Component({
   selector: 'ea-panel',
@@ -24,7 +21,9 @@ export class PanelComponent implements OnInit {
     }
 
     this.classNames = combineLatest(this.state, this.orientation).pipe(
-      map(([state, orientation]) => `ea-panel-container ${state} ${orientation}`)
+      map(
+        ([state, orientation]) => `ea-panel-container ${state} ${orientation}`
+      )
     )
   }
 }
