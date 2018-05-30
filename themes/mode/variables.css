@@ -1,14 +1,14 @@
 .mode {
-  --ea-color-1: #fff; /*rgb(150, 185, 225); */
+  --ea-color-1: #202225;
   --ea-color-2: #1f242c;
-  --ea-color-3: #252a33;
-
+  --ea-color-3: #fff; /*rgb(150, 185, 225); */
+  
   --ea-color-accent-1: #2d71cb;
   --ea-color-accent-2: #398bf7;
 
-  --ea-color-background-1: #e2f1fb;
-  --ea-color-background-2: red;
-  --ea-color-background-3: #355a7a;
+  --ea-color-background-1: #ffffff;
+  --ea-color-background-2: #355a7a;
+  --ea-color-background-3: #252a33;
 
   --ea-color-success: #5bb95b;
   --ea-color-info: #5ac1de;

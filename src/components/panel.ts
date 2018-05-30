@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, AfterViewInit } from '@angular/core'
+import { Component, Input, OnInit, AfterViewInit, HostBinding } from '@angular/core'
 import { of, Observable, combineLatest } from 'rxjs'
 import { map } from 'rxjs/operators'
 
@@ -7,6 +7,7 @@ import { map } from 'rxjs/operators'
   template: `<div [class]="classNames | async"><ng-content></ng-content></div>`
 })
 export class PanelComponent implements OnInit {
+  @HostBinding('attr.state') attrState = ''
   @Input() state = of('maximized')
   @Input() orientation = of('top')
   classNames: Observable<string>

@@ -18,7 +18,7 @@
       '@angular/core': 'npm:@angular/core/bundles/core.umd.js',
       '@angular/common': 'npm:@angular/common/bundles/common.umd.js',
       '@angular/common/http': 'npm:@angular/common/bundles/common-http.umd.js',
-      'tslib': 'npm:tslib/tslib.js',
+      tslib: 'npm:tslib/tslib.js',
       '@angular/compiler': 'npm:@angular/compiler/bundles/compiler.umd.js',
       '@angular/platform-browser':
         'npm:@angular/platform-browser/bundles/platform-browser.umd.js',
@@ -30,6 +30,9 @@
 
       // other libraries
       rxjs: 'npm:rxjs',
+      'rxjs-compat': 'npm:rxjs-compat',
+      // 'rxjs/operators': 'npm:rxjs/operators/index',
+      // 'rxjs-compat': 'npm:rxjs-compat',
       'angular-in-memory-web-api':
         'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
       eang: '../dist/eang.umd.js',
@@ -46,9 +49,17 @@
           }
         }
       },
-      rxjs: {
-        defaultExtension: 'js'
-      }
+      rxjs: { main: 'index.js', defaultExtension: 'js' },
+      'rxjs/ajax': { main: 'index.js', defaultExtension: 'js' },
+      'rxjs/operators': { main: 'index.js', defaultExtension: 'js' },
+      'rxjs/testing': { main: 'index.js', defaultExtension: 'js' },
+      'rxjs/websocket': { main: 'index.js', defaultExtension: 'js' },
+      'rxjs/internal-compatibility': { main: 'index.js', defaultExtension: 'js' },
+      'rxjs-compat/ajax': { main: 'index.js', defaultExtension: 'js' },
+      'rxjs-compat/operators': { main: 'index.js', defaultExtension: 'js' },
+      'rxjs-compat/testing': { main: 'index.js', defaultExtension: 'js' },
+      'rxjs-compat/websocket': { main: 'index.js', defaultExtension: 'js' },
+      'rxjs-compat': { main: 'index.js', defaultExtension: 'js' }
     }
   })
 })(this)

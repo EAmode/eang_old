@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core'
 import { HttpClient, HttpHeaders } from '@angular/common/http'
-
-import { Observable } from 'rxjs/Observable'
-import { of } from 'rxjs/observable/of'
-import { map } from 'rxjs/operators'
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
-import { Subject } from 'rxjs/Subject'
+
+import { Observable, Subject, of } from 'rxjs'
+import { map } from 'rxjs/operators'
 
 @Component({
   selector: 'pg-autocomplete',
@@ -60,7 +58,9 @@ export class AutocompletePageComponent {
     this.avatars = this.avatarSearchTerm.valueChanges.pipe(
       map(i => {
         console.log(i)
-        return this.avatarsArr.filter(a => a.name.toLowerCase().startsWith(i.toLowerCase()))
+        return this.avatarsArr.filter(a =>
+          a.name.toLowerCase().startsWith(i.toLowerCase())
+        )
       })
     )
   }
