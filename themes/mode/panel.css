@@ -1,5 +1,6 @@
 .mode {
   & ea-panel {
+    --ea-panel-color: var(--ea-color-1);
     --ea-panel-background: var(--ea-color-background-1);
     --ea-panel-height: var(--ea-panel-height, initial);
     --ea-panel-width: var(--ea-panel-width, initial);
@@ -15,24 +16,42 @@
       var(--ea-panel-width) * var(--ea-panel-minimized-size-ratio)
     );
 
-    & .ea-panel-container {
-      background: var(--ea-panel-background);
-      /* box-shadow: var(--ea-box-shadow); */
-    }
+    display: block;
+    color: var(--ea-panel-color);
+    background: var(--ea-panel-background);
+  }
 
-    & .ea-panel-container.maximized {
-      height: var(--ea-panel-maximized-height);
-      width: var(--ea-panel-maximized-width);
-    }
+  & ea-panel[orientation='left'] {
+    float: left;
+  }
 
-    & .ea-panel-container.minimized {
-      height: var(--ea-panel-minimized-height);
-      width: var(--ea-panel-minimized-width);
-    }
+  & ea-panel[orientation='right'] {
+    float: right;
+  }
 
-    & .ea-panel-container.closed {
-      display: none;
-    }
+  & ea-panel[orientation='bottom'] {
+    float: right;
+  }
 
+  & .ea-panel-host-element[ea-panel-host-orientation='bottom'] {
+    background: red;
+  }
+
+  & div.ea-panel-host-element {
+    background: red;
+  }
+
+  & ea-panel[state='maximized'] {
+    height: var(--ea-panel-maximized-height);
+    width: var(--ea-panel-maximized-width);
+  }
+
+  & ea-panel[state='minimized'] {
+    height: var(--ea-panel-minimized-height);
+    width: var(--ea-panel-minimized-width);
+  }
+
+  & ea-panel[state='closed'] {
+    display: none;
   }
 }
