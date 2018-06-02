@@ -1,7 +1,7 @@
 .mode {
   & button {
     color: var(--ea-button-color, var(--ea-color-2));
-    background-color: var(--ea-button-background-color, var(--ea-color-1));
+    background-color: var(--ea-button-background-color, var(--ea-color-background-2));
     
     position: relative;
     overflow: hidden;
