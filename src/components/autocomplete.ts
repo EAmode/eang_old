@@ -15,10 +15,8 @@ import {
   NG_VALUE_ACCESSOR,
   NG_VALIDATORS
 } from '@angular/forms'
-import { Observable } from 'rxjs/Observable'
+import { Observable, Subject, Subscription } from 'rxjs'
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators'
-import { Subject } from 'rxjs/Subject'
-import { Subscription } from 'rxjs/Subscription'
 
 @Component({
   selector: 'ea-autocomplete',

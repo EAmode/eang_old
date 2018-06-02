@@ -24,11 +24,7 @@ export default {
   external: [
     '@angular/core',
     '@angular/common',
-    '@angular/forms',
-    'rxjs/Observable',
-    'rxjs/operators',
-    'rxjs/observable/combineLatest',
-    'rxjs/observable/of'
+    '@angular/forms'
     // "rxjs/add/operator/switchMap",
     // "rxjs/add/operator/map",
     // "markdown-it",

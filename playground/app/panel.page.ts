@@ -5,12 +5,12 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject'
 
 @Component({
   selector: 'pg-panel',
-  templateUrl: './panel.html',
-  styleUrls: ['./panel.css']
+  templateUrl: './panel.page.html',
+  styleUrls: ['./panel.page.css']
 })
 export class PanelPageComponent {
   panelState = new BehaviorSubject<string>('maximized')
-  panelOrientation = new BehaviorSubject<string>('left')
+  panelOrientation = new BehaviorSubject<string>('bottom')
 
   constructor() {}
 

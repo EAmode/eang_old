@@ -9,7 +9,7 @@ import { RouterModule, Routes } from '@angular/router'
 
 import { PanelModule, LoggingService, ThemePickerModule, AutoCompleteModule } from 'eang'
 import { BehaviorSubject } from 'rxjs/BehaviorSubject'
-import { PanelPageComponent } from './app/panel'
+import { PanelPageComponent } from './app/panel.page'
 import { ButtonPageComponent } from './app/button'
 import { ThemePickerPageComponent } from './app/themepicker'
 import { ReactiveFormsModule } from '@angular/forms'

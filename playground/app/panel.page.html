@@ -8,7 +8,7 @@
 <h2>Mode Theme</h2>
 
 <div id="mode" class="mode">
-  <ea-panel [state]="panelState" [orientation]="panelOrientation" class="mode" style="--ea-panel-background:var(--ea-color-success); --ea-panel-height: 100%; --ea-panel-width: 4rem;">
+  <ea-panel state="minimized" [state]="panelState" orientation="right" class="mode" style="--ea-panel-background:var(--ea-color-success);">
     <p>Panel</p>
     <p>state: {{panelState | async}}</p>
     <p>orientation: {{panelOrientation | async}}</p>
