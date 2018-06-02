@@ -8,19 +8,26 @@
 <h2>Mode Theme</h2>
 
 <div id="mode" class="mode">
-  <ea-panel state="minimized" [state]="panelState" orientation="right" class="mode" style="--ea-panel-background:var(--ea-color-success);">
-    <p>Panel</p>
-    <p>state: {{panelState | async}}</p>
-    <p>orientation: {{panelOrientation | async}}</p>
-  </ea-panel>
+  <div class="screen">
+    <ea-panel [state]="panelState" [orientation]="panelOrientation">
+      <p>Panel ({{panelState | async}}, {{panelOrientation | async}})</p>
+    </ea-panel>
+  </div>
+
   <div class="mode">
-    <button (click)="changeState('minimized')">minimized</button>
-    <button (click)="changeState('maximized')">maximized</button>
-    <button (click)="changeState('closed')">closed</button>
+    <label>
+      state:
+      <button (click)="changeState('maximized')">maximized</button>
+      <button (click)="changeState('minimized')">minimized</button>
+      <button (click)="changeState('closed')">closed</button>
+    </label>
     <br>
-    <button (click)="panelOrientation.next('top')">top</button>
-    <button (click)="panelOrientation.next('right')">right</button>
-    <button (click)="panelOrientation.next('bottom')">bottom</button>
-    <button (click)="panelOrientation.next('left')">left</button>
+    <label>
+      orientation:
+      <button (click)="panelOrientation.next('top')">top</button>
+      <button (click)="panelOrientation.next('right')">right</button>
+      <button (click)="panelOrientation.next('bottom')">bottom</button>
+      <button (click)="panelOrientation.next('left')">left</button>
+    </label>
   </div>
 </div>
