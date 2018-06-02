@@ -22,8 +22,8 @@ export class PanelComponent implements OnInit {
   hostElement
   private sub
   constructor(private _renderer: Renderer, public currentElement: ElementRef) {}
-  ngOnInit(): void {
-    console.log(this.currentElement.nativeElement.parentElement)
+
+  ngOnInit() {
     if (
       this.currentElement &&
       this.currentElement.nativeElement.parentElement
@@ -35,7 +35,6 @@ export class PanelComponent implements OnInit {
         true
       )
     }
-    console.log(this.stateAttr)
     if (typeof this.state === 'string') {
       this.state = of(this.state)
     }
