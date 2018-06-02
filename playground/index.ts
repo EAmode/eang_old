@@ -7,13 +7,19 @@ import { HttpClientModule } from '@angular/common/http'
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic'
 import { RouterModule, Routes } from '@angular/router'
 
-import { PanelModule, LoggingService, ThemePickerModule, AutoCompleteModule } from 'eang'
+import {
+  PanelModule,
+  LoggingService,
+  ThemePickerModule,
+  AutoCompleteModule
+} from 'eang'
 import { BehaviorSubject } from 'rxjs/BehaviorSubject'
 import { PanelPageComponent } from './app/panel.page'
 import { ButtonPageComponent } from './app/button'
 import { ThemePickerPageComponent } from './app/themepicker'
 import { ReactiveFormsModule } from '@angular/forms'
 import { AutocompletePageComponent } from './app/autocomplete.page'
+import { InputPageComponent } from './app/input.page'
 
 @Component({
   selector: 'pg-root',
@@ -28,11 +34,10 @@ import { AutocompletePageComponent } from './app/autocomplete.page'
           <a routerLink="button" routerLinkActive="active">Button</a><br />
 
           <h4>Form Controls</h4>
-          <a routerLink="autocomplete" routerLinkActive="active">Autocomplete</a>
-          <a routerLink="checkbox" routerLinkActive="active">Checkbox</a><br />
+          <a routerLink="autocomplete" routerLinkActive="active">Autocomplete</a><br />
+          <a routerLink="input" routerLinkActive="active">Input</a><br />
           <a routerLink="datepicker" routerLinkActive="active">Datepicker</a><br />
           <a routerLink="formfield" routerLinkActive="active">Form field</a><br />
-          <a routerLink="input" routerLinkActive="active">Input</a><br />
           <a routerLink="radiobutton" routerLinkActive="active">Radio button</a><br />
           <a routerLink="select" routerLinkActive="active">Select</a><br />
           <a routerLink="slider" routerLinkActive="active">Slider</a><br />
@@ -96,6 +101,7 @@ class AppComponent implements OnInit {
 }
 
 const appRoutes: Routes = [
+  { path: 'input', component: InputPageComponent },
   { path: 'autocomplete', component: AutocompletePageComponent },
   { path: 'panel', component: PanelPageComponent },
   { path: 'button', component: ButtonPageComponent },
@@ -110,7 +116,8 @@ const appRoutes: Routes = [
     PanelPageComponent,
     ButtonPageComponent,
     ThemePickerPageComponent,
-    AutocompletePageComponent
+    AutocompletePageComponent,
+    InputPageComponent
   ],
   imports: [
     BrowserModule,
