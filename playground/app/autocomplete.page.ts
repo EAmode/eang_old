@@ -39,7 +39,7 @@ export class AutocompletePageComponent {
       avatarUrl: 'https://api.adorable.io/avatars/140/6.png'
     },
     {
-      name: 'Lando Clarissian',
+      name: 'Lando Calarissian',
       avatarUrl: 'https://api.adorable.io/avatars/140/7.png'
     }
   ]
@@ -52,7 +52,7 @@ export class AutocompletePageComponent {
 
   constructor(private fb: FormBuilder, private http: HttpClient) {
     this.avatarForm = fb.group({
-      name: '',
+      name: ['', Validators.required],
       country: ['', Validators.required]
     })
     this.avatars = this.avatarSearchTerm.valueChanges.pipe(
