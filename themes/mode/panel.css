@@ -1,38 +1,60 @@
 .mode {
   & ea-panel {
-    --ea-panel-background: var(--ea-color-1);
+    --ea-panel-color: var(--ea-color-1);
+    --ea-panel-background: var(--ea-color-background-1);
+
     --ea-panel-height: var(--ea-panel-height, initial);
     --ea-panel-width: var(--ea-panel-width, initial);
-    --ea-panel-minimized-size-ratio: 0.5;
+    --ea-panel-max-height: var(--ea-panel-max-height, 100%);
+    --ea-panel-max-width: var(--ea-panel-max-width, 100%);
+    --ea-panel-min-size-ratio: 0.5;
 
-    --ea-panel-maximized-height: var(--ea-panel-height);
-    --ea-panel-minimized-height: calc(
-      var(--ea-panel-height) * var(--ea-panel-minimized-size-ratio)
+    display: block;
+    color: var(--ea-panel-color);
+    background: var(--ea-panel-background);
+    height: var(--ea-panel-height);
+    width: var(--ea-panel-width);
+  }
+
+  & ea-panel[orientation='top'] {
+    --ea-panel-width: var(--ea-panel-max-width) !important;
+  }
+
+  & ea-panel[orientation='left'] {
+    --ea-panel-height: var(--ea-panel-max-height) !important;
+    float: left;
+  }
+
+  & ea-panel[orientation='right'] {
+    --ea-panel-height: var(--ea-panel-max-height) !important;
+    float: right;
+  }
+
+  & ea-panel[orientation='bottom'] {
+    --ea-panel-width: var(--ea-panel-max-width) !important;
+    position: absolute;
+    bottom: 0;
+  }
+
+  & .ea-panel-host-element[ea-panel-host-orientation='bottom'] {
+    position: relative;
+  }
+
+  & ea-panel[state='maximized'] {
+    --ea-panel-height: var(--ea-panel-max-height);
+    --ea-panel-width: var(--ea-panel-max-width);
+  }
+
+  & ea-panel[state='minimized'] {
+    --ea-panel-height: calc(
+      var(--ea-panel-max-height) * var(--ea-panel-min-size-ratio)
     );
-
-    --ea-panel-maximized-width: var(--ea-panel-width);
-    --ea-panel-minimized-width: calc(
-      var(--ea-panel-width) * var(--ea-panel-minimized-size-ratio)
+    --ea-panel-width: calc(
+      var(--ea-panel-max-width) * var(--ea-panel-min-size-ratio)
     );
+  }
 
-    & .ea-panel-container {
-      background: var(--ea-panel-background);
-      /* box-shadow: var(--ea-box-shadow); */
-    }
-
-    & .ea-panel-container.maximized {
-      height: var(--ea-panel-maximized-height);
-      width: var(--ea-panel-maximized-width);
-    }
-
-    & .ea-panel-container.minimized {
-      height: var(--ea-panel-minimized-height);
-      width: var(--ea-panel-minimized-width);
-    }
-
-    & .ea-panel-container.closed {
-      display: none;
-    }
-
+  & ea-panel[state='closed'] {
+    display: none;
   }
 }

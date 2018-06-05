@@ -2,6 +2,7 @@
 @import 'mode/fonts.css';
 @import 'mode/button.css';
 @import 'mode/autocomplete.css';
+@import 'mode/input.css';
 @import 'mode/panel.css';
 @import 'mode/text-elements.css';
 @import 'mode/themepicker.css';

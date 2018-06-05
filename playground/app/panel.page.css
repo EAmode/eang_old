@@ -1,0 +1,22 @@
+.screen {
+  width: 12rem;
+  height: 20rem;
+  background: var(--ea-color-background-2);
+}
+
+p {
+  margin: 0;
+}
+
+ea-panel {
+  --ea-panel-color: var(--ea-color-3);
+  --ea-panel-background: var(--ea-color-background-3);
+}
+
+ea-panel[orientation='left'], ea-panel[orientation='right'] {
+  --ea-panel-max-width: 6rem;
+}
+
+ea-panel[orientation='top'], ea-panel[orientation='bottom']  {
+  --ea-panel-max-height: 3rem;
+}

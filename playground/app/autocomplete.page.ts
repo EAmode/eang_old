@@ -1,17 +1,16 @@
 import { Component, OnInit } from '@angular/core'
 import { HttpClient, HttpHeaders } from '@angular/common/http'
-
-import { Observable } from 'rxjs/Observable'
-import { of } from 'rxjs/observable/of'
-import { map } from 'rxjs/operators'
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
+
+import { Observable, Subject, of } from 'rxjs'
+import { map } from 'rxjs/operators'
 
 @Component({
   selector: 'pg-autocomplete',
   templateUrl: './autocomplete.page.html'
 })
 export class AutocompletePageComponent {
-  results = of([])
+  results = new Subject()
   avatars = of([])
 
   avatarsArr = [
@@ -49,19 +48,24 @@ export class AutocompletePageComponent {
 
   avatarSearchTerm = new FormControl()
 
+  mapSelectItem = (item: any) => item.name
+
   constructor(private fb: FormBuilder, private http: HttpClient) {
     this.avatarForm = fb.group({
       name: ['', Validators.required],
       country: ['', Validators.required]
     })
     this.avatars = this.avatarSearchTerm.valueChanges.pipe(
-      map(i => this.avatarsArr.filter(a => a.name.toLowerCase().startsWith(i)))
+      map(i => {
+        console.log(i)
+        return this.avatarsArr.filter(a =>
+          a.name.toLowerCase().startsWith(i.toLowerCase())
+        )
+      })
     )
   }
 
   onSearch(term: string) {
-    console.log(term)
-    console.log(Array.from(term))
-    this.results = of(Array.from(term))
- }
+    this.results.next(Array.from(term))
+  }
 }

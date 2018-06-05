@@ -1,16 +1,15 @@
 import { Component } from '@angular/core'
-import { Observable } from 'rxjs/Observable'
-import { Subject } from 'rxjs/Subject'
-import { BehaviorSubject } from 'rxjs/BehaviorSubject'
+import { timer, BehaviorSubject, Observable } from 'rxjs'
+import { map, share } from 'rxjs/operators'
 
 @Component({
   selector: 'pg-panel',
-  templateUrl: './panel.html',
-  styleUrls: ['./panel.css']
+  templateUrl: './panel.page.html',
+  styleUrls: ['./panel.page.css']
 })
 export class PanelPageComponent {
   panelState = new BehaviorSubject<string>('maximized')
-  panelOrientation = new BehaviorSubject<string>('left')
+  panelOrientation = new BehaviorSubject<string>('top')
 
   constructor() {}
 
