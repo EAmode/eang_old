@@ -1,26 +1,23 @@
 .mode {
   --ea-color-1: #202225;
   --ea-color-2: #1f242c;
-  --ea-color-3: #fff; /*rgb(150, 185, 225); */
-  
+  --ea-color-3: #fff;
+  /*rgb(150, 185, 225); */
   --ea-color-accent-1: #2d71cb;
   --ea-color-accent-2: #398bf7;
-
   --ea-color-background-1: #ffffff;
-  --ea-color-background-2: #355a7a;
-  --ea-color-background-3: #252a33;
-
+  --ea-color-background-2: #f9fcff;
+  --ea-color-background-3: #e1effd;
+  --ea-color-background-4: #3c6a98;
+  --ea-color-background-5: #0d355d;
+  --ea-color-background-6: #00152b;
   --ea-color-success: #5bb95b;
   --ea-color-info: #5ac1de;
   --ea-color-warning: #f1ae4e;
   --ea-color-danger: #d9534f;
   --ea-color-error: #d9534f;
-
-  --ea-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-    0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
+  --ea-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   --ea-font-1: 'Open Sans';
-
   font-family: 'Nunito Sans', sans-serif;
   font-style: normal;
   font-weight: 400;

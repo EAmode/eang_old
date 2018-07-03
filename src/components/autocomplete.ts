@@ -51,6 +51,7 @@ import { debounceTime, distinctUntilChanged } from 'rxjs/operators'
 })
 export class AutocompleteComponent implements OnInit, ControlValueAccessor {
   @Input() input: Observable<any>
+  @Input() maxItems = Math.max
   @Input('disabled')
   set disabled(isDisabled) {
     this.setDisabledState(isDisabled)
