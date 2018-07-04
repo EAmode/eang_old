@@ -33,7 +33,7 @@
     "build:umdrollup": "rollup -c -o dist/eang.umd.js -f umd -n eang --sourcemap",
     "copy": "cpx \"build/**/*.{json,ts}\" dist && cpx src/package.json dist && cpx \"themes/**/*\" dist/themes && cpx README.md dist ",
     "clean": "rimraf dist build playground/dist",
-    "build:watch": "concurrently \"cpx themes/**/* dist/themes -w\" \"npm run build:umdngc -- -w\" \"npm run build:umdrollup -- -w\" \"npm run build:nextngc -- -w\" \"npm run build:nextrollup -- -w\"",
+    "build:watch": "concurrently \"cpx themes/**/* dist/themes -w\" \"npm run build:umdngc -- -w\" \"npm run build:umdrollup -- -w\" \"npm run build:nextngc -- -w\" \"npm run build:nextrollup -- -w\" \"npm run css:all -- -w\"",
     "playground": "npm run build && concurrently \"cpx \"playground/app/**/*.{html,css}\" playground/dist/app -w\" \"npm run css:all -- -w\" \"npm run css:playground -- -w\" \"npm run build:umdngc -- -w\" \"npm run build:umdrollup -- -w\" \"tsc -p playground -w\" \"browser-sync start --config bs-config.js\"",
     "semantic-release": "semantic-release",
     "travis-deploy-once": "travis-deploy-once"
