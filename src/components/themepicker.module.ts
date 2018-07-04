@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { ThemePickerComponent } from './themepicker'
-export * from './panel'
+export * from './themepicker'
 
 @NgModule({
   declarations: [ThemePickerComponent],
