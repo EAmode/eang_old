@@ -1,0 +1,173 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "",
+  "projects": {
+    "eang": {
+      "root": "libs/eang",
+      "sourceRoot": "libs/eang/src",
+      "projectType": "library",
+      "prefix": "ea",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "libs/eang/tsconfig.lib.json",
+            "project": "libs/eang/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "libs/eang/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/eang/src/test.ts",
+            "tsConfig": "libs/eang/tsconfig.spec.json",
+            "karmaConfig": "libs/eang/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/eang/tsconfig.lib.json",
+              "libs/eang/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "eang-io": {
+      "root": "apps/eang-io/",
+      "sourceRoot": "apps/eang-io/src",
+      "projectType": "application",
+      "prefix": "ea",
+      "schematics": {
+        "@schematics/angular:component": {
+          "inlineStyle": true
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/eang-io",
+            "index": "apps/eang-io/src/index.html",
+            "main": "apps/eang-io/src/main.ts",
+            "polyfills": "apps/eang-io/src/polyfills.ts",
+            "tsConfig": "apps/eang-io/tsconfig.app.json",
+            "assets": [
+              "apps/eang-io/src/favicon.ico",
+              "apps/eang-io/src/assets"
+            ],
+            "styles": [
+              "apps/eang-io/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/eang-io/src/environments/environment.ts",
+                  "with": "apps/eang-io/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "eang-io:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "eang-io:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "eang-io:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "apps/eang-io/src/test.ts",
+            "polyfills": "apps/eang-io/src/polyfills.ts",
+            "tsConfig": "apps/eang-io/tsconfig.spec.json",
+            "karmaConfig": "apps/eang-io/karma.conf.js",
+            "styles": [
+              "apps/eang-io/src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "apps/eang-io/src/favicon.ico",
+              "apps/eang-io/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/eang-io/tsconfig.app.json",
+              "apps/eang-io/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "eang-io-e2e": {
+      "root": "apps/eang-io-e2e/",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "apps/eang-io-e2e/protractor.conf.js",
+            "devServerTarget": "eang-io:serve"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/eang-io-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "warnings": {
+      "typescriptMismatch": false,
+      "versionMismatch": false
+    },
+    "defaultCollection": "@nrwl/schematics"
+  },
+  "defaultProject": "eang"
+}

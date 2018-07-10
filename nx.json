@@ -1,0 +1,21 @@
+{
+  "npmScope": "eang",
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": "*",
+    "tsconfig.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "projects": {
+    "eang": {
+      "tags": []
+    },
+    "eang-io": {
+      "tags": []
+    },
+    "eang-io-e2e": {
+      "tags": []
+    }
+  }
+}

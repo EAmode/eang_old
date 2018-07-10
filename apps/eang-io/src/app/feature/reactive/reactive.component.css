@@ -1,0 +1,14 @@
+
+
+ea-panel {
+  --ea-panel-color: var(--ea-color-3);
+  --ea-panel-background: var(--ea-color-background-5);
+}
+
+ea-panel[orientation='left'], ea-panel[orientation='right'] {
+  --ea-panel-max-width: 4rem;
+}
+
+ea-panel[orientation='top'], ea-panel[orientation='bottom']  {
+  --ea-panel-max-height: 2rem;
+}

@@ -1,0 +1,19 @@
+.material {
+  & ea-autocomplete {
+    & ul {
+      list-style: none;
+      padding: 20;
+      margin: 0;
+      border: 1px solid lightgrey;
+      background: #1d1d1d;
+    }
+    & li {
+      color: white;
+    }
+    & input {
+      background: #181d5a;
+      color: white;
+      outline: none;
+    }
+  }
+}
