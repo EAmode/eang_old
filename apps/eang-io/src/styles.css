@@ -1,5 +1,4 @@
 @import 'eang/css/all.css';
-
 body {
   margin: 0;
   padding: 0;
@@ -27,38 +26,61 @@ body {
   flex-direction: column;
   align-items: center;
 }
+
 #features {
   max-width: 85%;
-
 }
 
-#features > h1 {
+#features>h1 {
   text-align: center;
 }
-#features section {
 
+#features section {
   border-top: 1px solid #e9ecef;
 }
 
 .feature {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
-  flex-wrap: wrap;
+  /* justify-content: space-between; */
 }
 
 .example {
   padding: 1rem;
 }
+.example.reactive .screen {
+  height: 14rem;
+  width: 18rem;
+  background-color: var(--ea-color-background-3);
+}
+
+.example.reactive ea-panel {
+  --ea-panel-color: var(--ea-color-3);
+  --ea-panel-background: var(--ea-color-background-5);
+}
+
+.example.reactive ea-panel[orientation='left'],
+ea-panel[orientation='right'] {
+  --ea-panel-max-width: 4rem;
+}
+
+.example.reactive ea-panel[orientation='top'],
+ea-panel[orientation='bottom'] {
+  --ea-panel-max-height: 2rem;
+}
 
 .feature-description {
   margin-left: 1rem;
-  min-width: 10%;
-  max-width: 60%;
+max-width: 80rem;
 }
 
-.screen {
+.example.theming .screen {
   height: 18rem;
-  width: 22rem;
-  background-color: var(--ea-color-background-3);
+  width: 18rem;
+  background-color: var(--ea-color-background-2);
+  display: flex;
+}
+
+.autocomplete {
+  flex-direction: row;
 }

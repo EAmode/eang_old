@@ -6,19 +6,19 @@
       ways on how to interact with your comopent. </p>
   </div>
 
-  <div class="example autocomplete">
+  <div class="example autocomplete" style="width: 800px">
     <h3>Airport Lookup</h3>
-    <div class="screen">
-      <div class="mode" style="max-width: 400px">
-        <style> </style>
-        <p>Mode Theme</p>
-        <ea-autocomplete  [input]="airportResult1$" [formControl]="airportSearchTerm1" [mapSelectItem]="mapSelectItem">
-          <ng-template #resultsTemplate let-item>
-            <span class="matched" [innerHTML]="item.match"></span>
-          </ng-template>
-        </ea-autocomplete>
-      </div>
-      <div class="material">
+    <div class="screen theming">
+      <div class="autocomplete">
+        <div class="mode" >
+          <p>Mode Theme</p>
+          <ea-autocomplete [input]="airportResult1$" [formControl]="airportSearchTerm1" [mapSelectItem]="mapSelectItem">
+            <ng-template #resultsTemplate let-item>
+              <span class="matched" [innerHTML]="item.match"></span>
+            </ng-template>
+          </ea-autocomplete>
+        </div>
+        <div class="material">
           <p>Material Theme</p>
           <ea-autocomplete [input]="airportResult1$" [formControl]="airportSearchTerm1" [mapSelectItem]="mapSelectItem">
             <ng-template #resultsTemplate let-item>
@@ -26,6 +26,7 @@
             </ng-template>
           </ea-autocomplete>
         </div>
+      </div>
     </div>
     <!-- <div class="material">
         <ea-autocomplete [input]="airportResult$" [formControl]="airportSearchTerm" [mapSelectItem]="mapSelectItem">

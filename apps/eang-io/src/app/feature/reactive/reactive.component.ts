@@ -4,8 +4,7 @@ import { map, switchMap, share } from 'rxjs/operators'
 
 @Component({
   selector: 'ea-feature-reactive',
-  templateUrl: './reactive.component.html',
-  styleUrls: ['./reactive.component.css']
+  templateUrl: './reactive.component.html'
 })
 export class ReactiveComponent implements OnInit {
   panelState = new BehaviorSubject<string>('maximized')
