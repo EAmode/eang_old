@@ -13,6 +13,8 @@ export class ReactiveComponent implements OnInit {
     map(i => this.orientations[i % this.orientations.length]),
     share()
   )
+
+  md = 'test markdown'
   constructor() {}
 
   ngOnInit() {}
