@@ -31,7 +31,7 @@ body {
   max-width: 85%;
 }
 
-#features>h1 {
+#features > h1 {
   text-align: center;
 }
 
@@ -40,14 +40,26 @@ body {
 }
 
 .feature {
-  display: flex;
-  flex-direction: row;
-  /* justify-content: space-between; */
+  height: auto;
+  width: auto;
+  // background-color: blue;
+
+  & .example {
+    lost-column: 1/4 2 0px;
+    // background: red;
+  }
+
+  & .feature-description {
+    lost-column: 3/4 2 0px;
+    // margin-left: 1rem;
+    // background: green;
+  }
+
+  // display: flex;
+  // flex-direction: row;
+  // justify-content: space-between;
 }
 
-.example {
-  padding: 1rem;
-}
 .example.reactive .screen {
   height: 14rem;
   width: 18rem;
@@ -69,18 +81,8 @@ ea-panel[orientation='bottom'] {
   --ea-panel-max-height: 2rem;
 }
 
-.feature-description {
-  margin-left: 1rem;
-max-width: 80rem;
-}
-
 .example.theming .screen {
   height: 18rem;
   width: 18rem;
   background-color: var(--ea-color-background-2);
-  display: flex;
-}
-
-.autocomplete {
-  flex-direction: row;
 }
