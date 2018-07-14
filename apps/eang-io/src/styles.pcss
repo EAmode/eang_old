@@ -1,23 +1,28 @@
 @import 'eang/css/all.css';
+@custom-media --small-screen (width <= 1200px);
+
 body {
   margin: 0;
   padding: 0;
-  background: #f9fcff;
+  background: var(--ea-color-3);
 }
 
 #toolbar {
   width: auto;
+  height: 6vh;
   color: var(--ea-color-3);
-  background: var(--ea-color-background-5);
+  background: var(--ea-color-background-2);
   display: flex;
   padding: 0.2rem 1rem;
   justify-content: space-between;
   align-items: center;
-}
-
-#toolbar .name {
-  font-size: 2rem;
-  font-weight: 400;
+  & .name {
+    font-size: 2rem;
+    font-weight: 400;
+    & h2 {
+      margin: 0;
+    }
+  }
 }
 
 #main {
@@ -39,50 +44,92 @@ body {
   border-top: 1px solid #e9ecef;
 }
 
+#reactive {
+  padding: 4rem;
+}
+
+@media (--small-screen) {
+  #reactive {
+    padding: 4rem 0 4rem 0;
+  }
+}
+
 .feature {
-  height: auto;
-  width: auto;
-  // background-color: blue;
-
-  & .example {
-    lost-column: 1/4 2 0px;
-    // background: red;
-  }
-
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
   & .feature-description {
-    lost-column: 3/4 2 0px;
-    // margin-left: 1rem;
-    // background: green;
+    width: 60%;
   }
-
-  // display: flex;
-  // flex-direction: row;
-  // justify-content: space-between;
+  @media (--small-screen) {
+    .feature-description {
+      padding-left: 0;
+      width: 100%;
+    }
+  }
+  & .example {
+    & .screen {
+      height: 14rem;
+      width: 18rem;
+      background-color: var(--ea-color-background-2);
+      & ea-panel {
+        --ea-panel-color: var(--ea-color-3);
+        --ea-panel-background: var(--ea-color-accent-2);
+      }
+      & ea-panel[orientation='left'],
+      ea-panel[orientation='right'] {
+        --ea-panel-max-width: 4rem;
+      }
+      & ea-panel[orientation='top'],
+      ea-panel[orientation='bottom'] {
+        --ea-panel-max-height: 2rem;
+      }
+    }
+    @media (--small-screen) {
+      .example {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+  &.themeing {
+    & .example {
+      width: 45%;
+      min-width: 464.344px;
+    }
+    @media (--small-screen) {
+      & .example {
+        width: 100%;
+        min-width: 0;
+      }
+    }
+    .autocomplete {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: flex-end;
+      flex-wrap: wrap;
+    }
+    & .feature-description {
+      width: 40%;
+      min-width: 410px;
+    }
+    @media (--small-screen) {
+      .feature-description {
+        padding-left: 0rem;
+        width: 100%;
+        min-width: 0;
+      }
+    }
+  }
 }
 
-.example.reactive .screen {
-  height: 14rem;
-  width: 18rem;
-  background-color: var(--ea-color-background-3);
-}
-
-.example.reactive ea-panel {
-  --ea-panel-color: var(--ea-color-3);
-  --ea-panel-background: var(--ea-color-background-5);
-}
-
-.example.reactive ea-panel[orientation='left'],
-ea-panel[orientation='right'] {
-  --ea-panel-max-width: 4rem;
-}
-
-.example.reactive ea-panel[orientation='top'],
-ea-panel[orientation='bottom'] {
-  --ea-panel-max-height: 2rem;
-}
-
-.example.theming .screen {
-  height: 18rem;
-  width: 18rem;
-  background-color: var(--ea-color-background-2);
+footer {
+  width: 100%;
+  background: var(--ea-color-background-2);
+  position: fixed;
+  bottom: 0;
+  & p {
+    color: var(--ea-color-3);
+  }
 }
