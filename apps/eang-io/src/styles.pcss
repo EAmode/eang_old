@@ -1,5 +1,5 @@
 @import 'eang/css/all.css';
-@custom-media --only-medium-screen (width >= 300px) and (width <= 1200px);
+@custom-media --small-screen (width <= 1200px);
 
 body {
   margin: 0;
@@ -48,7 +48,7 @@ body {
   padding: 4rem;
 }
 
-@media (--only-medium-screen) {
+@media (--small-screen) {
   #reactive {
     padding: 4rem 0 4rem 0;
   }
@@ -61,7 +61,7 @@ body {
   & .feature-description {
     width: 60%;
   }
-  @media (--only-medium-screen) {
+  @media (--small-screen) {
     .feature-description {
       padding-left: 0;
       width: 100%;
@@ -85,7 +85,7 @@ body {
         --ea-panel-max-height: 2rem;
       }
     }
-    @media (--only-medium-screen) {
+    @media (--small-screen) {
       .example {
         width: 100%;
         display: flex;
@@ -98,7 +98,7 @@ body {
       width: 45%;
       min-width: 464.344px;
     }
-    @media (--only-medium-screen) {
+    @media (--small-screen) {
       & .example {
         width: 100%;
         min-width: 0;
@@ -114,7 +114,7 @@ body {
       width: 40%;
       min-width: 410px;
     }
-    @media (--only-medium-screen) {
+    @media (--small-screen) {
       .feature-description {
         padding-left: 0rem;
         width: 100%;
