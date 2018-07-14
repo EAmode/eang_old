@@ -1,23 +1,30 @@
 @import 'eang/css/all.css';
+@custom-media --only-medium-screen (width >= 400px) and (width <= 1200px);
+
 body {
   margin: 0;
   padding: 0;
-  background: #f9fcff;
+  background: var(--ea-color-3);
 }
+
+
 
 #toolbar {
   width: auto;
+  height: 6vh;
   color: var(--ea-color-3);
-  background: var(--ea-color-background-5);
+  background: var(--ea-color-background-2);
   display: flex;
   padding: 0.2rem 1rem;
   justify-content: space-between;
   align-items: center;
-}
-
-#toolbar .name {
-  font-size: 2rem;
-  font-weight: 400;
+  & .name {
+      font-size: 2rem;
+      font-weight: 400;
+    & h2 {
+      margin: 0; 
+    }
+  }
 }
 
 #main {
@@ -40,49 +47,105 @@ body {
 }
 
 .feature {
-  height: auto;
-  width: auto;
-  // background-color: blue;
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: space-around;
+}
 
-  & .example {
-    lost-column: 1/4 2 0px;
-    // background: red;
+#reactive {
+  padding: 4rem 0 4rem 4rem;
+}
+
+.example.reactive {
+      & .screen {
+        height: 14rem;
+        width: 18rem;
+        background-color: var(--ea-color-background-2);
+        &  ea-panel {
+          --ea-panel-color: var(--ea-color-3);
+          --ea-panel-background: var(--ea-color-accent-2);
+        }
+        & ea-panel[orientation='left'], ea-panel[orientation='right'] {
+          --ea-panel-max-width: 4rem;
+        }
+        & ea-panel[orientation='top'], ea-panel[orientation='bottom'] {
+          --ea-panel-max-height: 2rem;  
+        }
+     
+  }
+}
+  @media (--only-medium-screen) {
+
+    .example.reactive {    
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
   }
 
-  & .feature-description {
-    lost-column: 3/4 2 0px;
-    // margin-left: 1rem;
-    // background: green;
+
+
+.feature-description {
+  padding-left: 4rem;
+  width: 40%;
+  min-width: 410px;
+}
+
+.feature-description-1 {
+  padding-left: 4rem;
+  width: 60%;
+}
+
+  @media (--only-medium-screen) {
+    .feature-description-1 {
+        padding-left: 0 ;
+        width: 100%  ;
+      }
+
+      #reactive {
+        padding-left: 0 ;
+      }
+      .feature-description {
+        padding-left: 0rem ;
+        width: 100% ;
+          min-width: 0;
+      }
   }
 
-  // display: flex;
-  // flex-direction: row;
-  // justify-content: space-between;
+.autocomplete {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
 }
 
-.example.reactive .screen {
-  height: 14rem;
-  width: 18rem;
-  background-color: var(--ea-color-background-3);
+
+
+#themeing{
+    & .example {
+      width: 45%;
+      min-width: 464.344px;
+  }
 }
 
-.example.reactive ea-panel {
-  --ea-panel-color: var(--ea-color-3);
-  --ea-panel-background: var(--ea-color-background-5);
-}
 
-.example.reactive ea-panel[orientation='left'],
-ea-panel[orientation='right'] {
-  --ea-panel-max-width: 4rem;
-}
+  @media (--only-medium-screen) {
+    #themeing{
+        & .example {
+          width: 100%;
+          min-width: 0;
+      }
+     & .autocomplete {
+       flex-wrap: wrap;
+     }
+    }
+  }
 
-.example.reactive ea-panel[orientation='top'],
-ea-panel[orientation='bottom'] {
-  --ea-panel-max-height: 2rem;
-}
-
-.example.theming .screen {
-  height: 18rem;
-  width: 18rem;
-  background-color: var(--ea-color-background-2);
-}
+  footer {
+    width: 100%;
+    background: var(--ea-color-background-2);
+    position: fixed;
+    bottom: 0;
+    & p {
+          color: var(--ea-color-3);
+    }
+  }
