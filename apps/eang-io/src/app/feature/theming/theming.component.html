@@ -1,24 +1,23 @@
 <div class="feature">
   <div class="feature-description">
     <h2>Theming</h2>
-    <p>Each component in eang can be directly hooked up to event streams. They observe changes and react to them. The main benefit
-      of reactive components is that you can compose them very easily through streams. This ways you can combine mutiple
-      ways on how to interact with your comopent. </p>
+    <p>eang supports multiple themes and additional themes can be be added. This allows users of eang to fully customize the
+      the look and feel of each component and makes it easy to comply with Coporate Design guidelines. eang embraces CSS
+      and takes advatage of upcoming CSS features. PostCSS is used to support all older browsers.</p>
   </div>
 
-  <div class="example autocomplete">
-    <div class="screen">
-      <h3>Airport Lookup</h3>
-      <div class="mode" style="width: 200px">
-        <style> </style>
-        <p>Mode Theme</p>
-        <ea-autocomplete  [input]="airportResult1$" [formControl]="airportSearchTerm1" [mapSelectItem]="mapSelectItem">
-          <ng-template #resultsTemplate let-item>
-            <span class="matched" [innerHTML]="item.match"></span>
-          </ng-template>
-        </ea-autocomplete>
-      </div>
-      <div class="material">
+  <div class="example">
+    <h3>Airport Lookup</h3>
+      <div class="autocomplete">
+        <div class="mode">
+          <p>Mode Theme</p>
+          <ea-autocomplete [input]="airportResult1$" [formControl]="airportSearchTerm1" [mapSelectItem]="mapSelectItem">
+            <ng-template #resultsTemplate let-item>
+              <span class="matched" [innerHTML]="item.match"></span>
+            </ng-template>
+          </ea-autocomplete>
+        </div>
+        <div class="material">
           <p>Material Theme</p>
           <ea-autocomplete [input]="airportResult1$" [formControl]="airportSearchTerm1" [mapSelectItem]="mapSelectItem">
             <ng-template #resultsTemplate let-item>
@@ -26,7 +25,7 @@
             </ng-template>
           </ea-autocomplete>
         </div>
-    </div>
+      </div>
     <!-- <div class="material">
         <ea-autocomplete [input]="airportResult$" [formControl]="airportSearchTerm" [mapSelectItem]="mapSelectItem">
           <ng-template #resultsTemplate let-item>

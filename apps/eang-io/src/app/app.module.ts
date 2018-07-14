@@ -5,7 +5,12 @@ import { RouterModule } from '@angular/router'
 
 import { AppComponent } from './app.component'
 import { NxModule } from '@nrwl/nx'
-import { PanelModule, AutoCompleteModule, ThemePickerModule } from '@eang/eang'
+import {
+  PanelModule,
+  AutoCompleteModule,
+  ThemePickerModule,
+  MarkdownModule
+} from '@eang/eang'
 
 import { ReactiveComponent } from './feature/reactive/reactive.component'
 import { ThemingComponent } from './feature/theming/theming.component'
@@ -19,7 +24,8 @@ import { ThemingComponent } from './feature/theming/theming.component'
     RouterModule.forRoot([], { initialNavigation: 'enabled' }),
     AutoCompleteModule,
     PanelModule,
-    ThemePickerModule
+    ThemePickerModule,
+    MarkdownModule
   ],
   providers: [],
   bootstrap: [AppComponent]

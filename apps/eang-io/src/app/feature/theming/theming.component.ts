@@ -8,7 +8,8 @@ import { airports } from './airports'
 @Component({
   selector: 'ea-feature-theming',
   templateUrl: './theming.component.html',
-  styleUrls: ['./theming.component.css']
+  styleUrls: ['./theming.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class ThemingComponent implements OnInit {
   maxResults = 10
