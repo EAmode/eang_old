@@ -5,6 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "concurrently \"ng serve\" \"npm run css:build -- -w\" \"npm run css:copy -- -w\" \"npm run css:eangio -- -w\"",
+    "build:prod": "npm run css && npm run css:eangio && ng build --project=eang-io --prod",
     "build": "ng build && npm run css",
     "css": "npm run css:build && npm run css:copy",
     "css:eangio": "postcss apps/eang-io/src/*.pcss -d apps/eang-io/src/ --config apps/eang-io/postcss.config.js --ext css",
