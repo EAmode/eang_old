@@ -14,7 +14,7 @@ export class ReactiveComponent implements OnInit {
     share()
   )
 
-  md = 'test markdown'
+  md = 'test `markdown`'
   constructor() {}
 
   ngOnInit() {}

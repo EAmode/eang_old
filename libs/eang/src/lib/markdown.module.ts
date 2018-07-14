@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
-import { MarkdownComponent } from './markdown'
+import { MarkdownComponent, MdComponent } from './markdown'
 export * from './markdown'
 
 @NgModule({
-  declarations: [MarkdownComponent],
-  exports: [MarkdownComponent],
+  declarations: [MarkdownComponent, MdComponent],
+  exports: [MarkdownComponent, MdComponent],
   imports: [CommonModule]
 })
 export class MarkdownModule {}
