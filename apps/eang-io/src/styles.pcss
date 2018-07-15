@@ -17,8 +17,6 @@ body {
   justify-content: space-between;
   align-items: center;
   & .name {
-    font-size: 2rem;
-    font-weight: 400;
     & h2 {
       margin: 0;
     }
@@ -44,14 +42,38 @@ body {
   border-top: 1px solid #e9ecef;
 }
 
+// get rid of these as they will go on a lower level
+
 #reactive {
   padding: 4rem;
 }
-
 @media (--small-screen) {
   #reactive {
     padding: 4rem 0 4rem 0;
   }
+
+#features > h1 {
+    font-size: 28px;
+}
+}
+
+pre {
+  background: var(--ea-color-1);
+  padding: 2rem;
+  width: 100%;
+  border-radius: 5px;
+  color: aliceblue;
+  overflow-x: scroll;
+}
+
+@media (--small-screen) {
+  pre {
+    width: auto;
+  }
+}
+
+.hljs-name {
+  color: #8bdff8;
 }
 
 .feature {
@@ -64,10 +86,18 @@ body {
   @media (--small-screen) {
     .feature-description {
       padding-left: 0;
-      width: 100%;
+      width: 95%;
     }
   }
   & .example {
+    display: flex;
+    align-items: center;
+    @media (--small-screen) {
+      & .example {
+        width: 100%;
+        min-width: 0;
+      }
+    }
     & .screen {
       height: 14rem;
       width: 18rem;
@@ -99,9 +129,13 @@ body {
       min-width: 464.344px;
     }
     @media (--small-screen) {
-      & .example {
+      .example {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
         width: 100%;
-        min-width: 0;
+        min-width: auto;
+          margin-bottom: 10rem;
       }
     }
     .autocomplete {
@@ -129,7 +163,35 @@ footer {
   background: var(--ea-color-background-2);
   position: fixed;
   bottom: 0;
+  height: 8vh;
   & p {
     color: var(--ea-color-3);
+  }
+  & span {
+    align-items: center;
+    width: 90%;
+    display: flex;
+    /* justify-content: space-evenly; */
+    height: 8vh;
+    height: 100%; 
+    align-items: center;
+    & p {
+      margin:0;
+      height: 100%; 
+      display: flex;
+      align-items: center;
+      margin: 0 0.5rem 0 1rem;
+    }
+    & div {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    color: white;
+    }
+    & a {
+      font-size: 14px !important; 
+      color: white;
+      margin-left: 0.35rem;
+    }
   }
 }
