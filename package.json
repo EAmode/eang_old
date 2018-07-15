@@ -51,6 +51,7 @@
     "@ngrx/store-devtools": "5.2.0",
     "@nrwl/nx": "6.1.0",
     "core-js": "^2.5.4",
+    "highlight.js": "^9.12.0",
     "markdown-it": "^8.4.1",
     "ngrx-store-freeze": "0.2.2",
     "rxjs": "6.2.1",
