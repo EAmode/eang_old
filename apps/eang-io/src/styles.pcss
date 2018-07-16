@@ -18,6 +18,7 @@ body {
   align-items: center;
   position: fixed;
   width: 100vw;
+  z-index: 9999;
   & .name {
     & h2 {
       margin: 0;
@@ -48,7 +49,6 @@ body {
   border-top: 1px solid #e9ecef;
 }
 
-// get rid of these as they will go on a lower level
 
 #reactive {
   padding: 4rem;
@@ -63,24 +63,6 @@ body {
   }
 }
 
-pre {
-  background: var(--ea-color-1);
-  padding: 2rem;
-  width: 100%;
-  border-radius: 5px;
-  color: aliceblue;
-  overflow-x: scroll;
-}
-
-@media (--small-screen) {
-  pre {
-    width: auto;
-  }
-}
-
-.hljs-name {
-  color: #8bdff8;
-}
 
 .feature {
   display: flex;
@@ -98,12 +80,6 @@ pre {
   & .example {
     display: flex;
     align-items: center;
-    @media (--small-screen) {
-      & .example {
-        width: 100%;
-        min-width: 0;
-      }
-    }
     & .screen {
       height: 14rem;
       width: 18rem;
@@ -133,6 +109,7 @@ pre {
     & .example {
       width: 45%;
       min-width: 464.344px;
+      flex-direction: column;
     }
     @media (--small-screen) {
       .example {
@@ -149,6 +126,7 @@ pre {
       justify-content: space-evenly;
       align-items: flex-end;
       flex-wrap: wrap;
+      width: 100%;
     }
     & .feature-description {
       width: 40%;
