@@ -15,9 +15,11 @@ export class ReactiveComponent {
   )
 
   md = `
-  *reactive-panel.component.html*
+*reactive-panel.component.html*
 ~~~html
-<ea-panel [state]="panelState" [orientation]="panelOrientation">panel ({{panelOrientation | async}})</ea-panel>
+<ea-panel [state]="panelState" [orientation]="panelOrientation">
+  panel ({{panelOrientation | async}})
+</ea-panel>
 ~~~
   *reactive-panel.component.ts*
   ~~~ts
