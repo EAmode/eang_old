@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core'
+import { FormControl, ReactiveFormsModule, FormGroup, NgForm } from '@angular/forms';
 import { BehaviorSubject, timer } from 'rxjs'
 import { map, switchMap, share } from 'rxjs/operators'
+import { MdcRadioChange } from '@angular-mdc/web';
 
 @Component({
   selector: 'ea-feature-reactive',
@@ -35,4 +37,10 @@ export class ReactiveComponent {
   }
   ~~~
   `
+  favoriteFruit: string;
+
+  onChange(evt: MdcRadioChange): void {
+    console.log(evt.value)
+    this.favoriteFruit = evt.value;
+  }
 }

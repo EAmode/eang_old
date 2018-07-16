@@ -12,6 +12,13 @@ import {
   MarkdownModule
 } from '@eang/eang'
 
+import {
+  MdcButtonModule,
+  MdcRippleModule,
+  MdcRadioModule
+} from '@angular-mdc/web';
+
+
 import { ReactiveComponent } from './feature/reactive/reactive.component'
 import { ThemingComponent } from './feature/theming/theming.component'
 
@@ -25,7 +32,10 @@ import { ThemingComponent } from './feature/theming/theming.component'
     AutoCompleteModule,
     PanelModule,
     ThemePickerModule,
-    MarkdownModule
+    MarkdownModule,
+    MdcButtonModule,
+    MdcRippleModule,
+    MdcRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]

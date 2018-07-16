@@ -5,6 +5,17 @@
         panel ({{panelOrientation | async}})
       </ea-panel>
     </div>
+        <mdc-radio #demoRadioApple name="radioGroup" value="apple" (change)="onChange($event)"></mdc-radio>
+        <label>Apple</label>
+
+
+        <mdc-radio #demoRadioBanana name="radioGroup" value="banana" (change)="onChange($event)"></mdc-radio>
+        <label>Banana</label>
+
+        <mdc-radio #demoRadioMango name="radioGroup" value="mango" (change)="onChange($event)"></mdc-radio>
+        <label>Mango</label>
+
+
   </div>
   <div class="feature-description">
     <h2>Reactive</h2>

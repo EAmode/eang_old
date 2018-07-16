@@ -1,4 +1,5 @@
 module.exports = {
+  syntax: 'postcss-scss',
   plugins: [
     require('postcss-import')(),
     require('postcss-nested')(),
@@ -10,6 +11,6 @@ module.exports = {
       }
     }),
     require('postcss-assets')(),
-    require('lost')()
+    require('lost')(),
   ]
 }
