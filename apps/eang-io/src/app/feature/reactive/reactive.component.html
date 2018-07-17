@@ -1,16 +1,22 @@
 <div class="feature">
   <div class="example">
-    <div class="screen">
+    <label class="exp-label" for="example-label">&lt; ea-panel &gt;</label>
+    <div id="example-label" class="screen">
+      <div class="text-container">
+          <p class="container-text">({{panelOrientation | async}}, {{panelState | async}})</p>
+      </div>
       <ea-panel [state]="panelState" [orientation]="panelOrientation">
-        panel ({{panelOrientation | async}}, {{panelState | async}})
+          ea-panel
       </ea-panel>
     </div>
-    <mdc-radio name="radioGroup" checked="true" value="maximized" (change)="onChange($event)"></mdc-radio>
-    <label>maximized</label>
-    <mdc-radio name="radioGroup" value="minimized" (change)="onChange($event)"></mdc-radio>
-    <label>minimized</label>
-    <mdc-radio name="radioGroup" value="closed" (change)="onChange($event)"></mdc-radio>
-    <label>closed</label>
+    <div class="panel-buttons">
+      <mdc-radio name="radioGroup" checked="true" value="maximized" (change)="onChange($event)"></mdc-radio>
+      <label>maximized</label>
+      <mdc-radio name="radioGroup" value="minimized" (change)="onChange($event)"></mdc-radio>
+      <label>minimized</label>
+      <mdc-radio name="radioGroup" value="closed" (change)="onChange($event)"></mdc-radio>
+      <label>closed</label>
+    </div>
 
 
   </div>

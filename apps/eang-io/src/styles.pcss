@@ -9,7 +9,7 @@ body {
 
 #toolbar {
   width: auto;
-  height: 6vh;
+  height: 4rem;
   color: var(--ea-color-3);
   background: var(--ea-color-background-2);
   display: flex;
@@ -56,7 +56,7 @@ body {
 .feature {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   & .feature-description {
     width: 60%;
     & h2 {
@@ -72,21 +72,53 @@ body {
   & .example {
     display: flex;
     align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    & .exp-label {
+      position: absolute;
+      left: 0;
+      top: 18%;
+    }
     & .screen {
-      height: 20rem;
-      width: 18rem;
+      height: 22rem;
+      width: 25rem;
       background-color: var(--ea-color-background-2);
+      position: relative;
+      & .text-container {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      & .container-text {
+        margin: 0;
+        color: var(--ea-color-3);
+      }
       & ea-panel {
         --ea-panel-color: var(--ea-color-3);
         --ea-panel-background: var(--ea-color-accent-2);
+        & p {
+          margin: 0;
+        }
       }
       & ea-panel[orientation='left'],
       ea-panel[orientation='right'] {
-        --ea-panel-max-width: 4rem;
+        --ea-panel-max-width: 6rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
       }
       & ea-panel[orientation='top'],
       ea-panel[orientation='bottom'] {
-        --ea-panel-max-height: 2rem;
+        --ea-panel-max-height: 4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
     }
     @media (--small-screen) {
@@ -95,6 +127,11 @@ body {
         display: flex;
         justify-content: center;
       }
+    }
+    & .panel-buttons {
+      display: flex;
+      align-items: center;
+      width: 100%;
     }
   }
   &.themeing {
@@ -151,17 +188,17 @@ footer {
   width: 100%;
   background: var(--ea-color-background-2);
   height: 4.5rem;
+  display: flex;
+  align-items: center;
   & p {
     color: var(--ea-color-3);
   }
   & span {
     align-items: center;
-    width: 90%;
     display: flex;
-    height: 8vh;
-    height: 100%;
     align-items: center;
-    padding-left: 2rem;
+    padding: 3.2px 16px;
+    width: 100%;
     & p {
       margin: 0;
       height: 100%;
@@ -172,11 +209,11 @@ footer {
     & div {
       height: 100%;
       display: flex;
-      align-items: center;
+      align-items: baseline;
       color: white;
     }
     & a {
-      font-size: 14px !important;
+      font-size: 16px !important;
       color: white;
       margin-left: 0.35rem;
     }
