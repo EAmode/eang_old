@@ -1,7 +1,8 @@
 module.exports = {
-  syntax: 'postcss-scss',
   plugins: [
-    require('postcss-import')(),
+    require('postcss-import')({
+      path:['libs/eang/themes']
+    }),
     require('postcss-nested')(),
     require('postcss-cssnext')({
       features: {
