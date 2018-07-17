@@ -16,12 +16,16 @@ body {
   padding: 0.2rem 1rem;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+  width: 100vw;
+  z-index: 9999;
   & .name {
-    font-size: 2rem;
-    font-weight: 400;
     & h2 {
       margin: 0;
     }
+  }
+  & a {
+    padding-right: 2rem;
   }
 }
 
@@ -34,23 +38,18 @@ body {
 
 #features {
   max-width: 85%;
-}
-
-#features > h1 {
-  text-align: center;
-}
-
-#features section {
-  border-top: 1px solid #e9ecef;
-}
-
-#reactive {
-  padding: 4rem;
-}
-
-@media (--small-screen) {
-  #reactive {
-    padding: 4rem 0 4rem 0;
+  & section {
+    padding: 4rem;
+    border-top: 1px solid #e9ecef;
+  }
+  & > h1 {
+    text-align: center;
+    margin-top: 5rem;
+  }
+  @media (--small-screen) {
+    section {
+      padding: 4rem 0 4rem 0;
+    }
   }
 }
 
@@ -60,16 +59,21 @@ body {
   justify-content: space-around;
   & .feature-description {
     width: 60%;
+    & h2 {
+      margin-top: 0;
+    }
   }
   @media (--small-screen) {
     .feature-description {
       padding-left: 0;
-      width: 100%;
+      width: 95%;
     }
   }
   & .example {
+    display: flex;
+    align-items: center;
     & .screen {
-      height: 14rem;
+      height: 20rem;
       width: 18rem;
       background-color: var(--ea-color-background-2);
       & ea-panel {
@@ -95,23 +99,42 @@ body {
   }
   &.themeing {
     & .example {
-      width: 45%;
+      width: 100%;
       min-width: 464.344px;
+      flex-direction: column;
+      & h3 {
+        width: 100%;
+      }
     }
     @media (--small-screen) {
-      & .example {
+      .example {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
         width: 100%;
-        min-width: 0;
+        min-width: auto;
+        margin-bottom: 10rem;
       }
     }
     .autocomplete {
       display: flex;
       justify-content: space-evenly;
-      align-items: flex-end;
+      align-items: flex-start;
       flex-wrap: wrap;
+      width: 100%;
+      min-height: 5rem;
+      padding-top: 3rem;
+    }
+    & ea-autocomplete {
+      & input {
+        width: 16rem;
+      }
+      & mark {
+        background-color: var(--ea-color1);
+      }
     }
     & .feature-description {
-      width: 40%;
+      width: 50%;
       min-width: 410px;
     }
     @media (--small-screen) {
@@ -127,9 +150,35 @@ body {
 footer {
   width: 100%;
   background: var(--ea-color-background-2);
-  position: fixed;
-  bottom: 0;
+  height: 4.5rem;
   & p {
     color: var(--ea-color-3);
+  }
+  & span {
+    align-items: center;
+    width: 90%;
+    display: flex;
+    height: 8vh;
+    height: 100%;
+    align-items: center;
+    padding-left: 2rem;
+    & p {
+      margin: 0;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      margin: 0 0.5rem 0 1rem;
+    }
+    & div {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      color: white;
+    }
+    & a {
+      font-size: 14px !important;
+      color: white;
+      margin-left: 0.35rem;
+    }
   }
 }

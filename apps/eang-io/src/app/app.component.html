@@ -1,17 +1,17 @@
 <ea-panel id="toolbar" #toolbar>
-    <div class="name">
-      <span class="logo"></span>
-      <h2>eang</h2>
-    </div>
-    <a alt="GitHub" href="https://github.com/eascientific/eang" rel="noopener noreferrer" target="_blank" role="button">
-      <img height="26" src="/assets/images/github-circle-white-transparent.svg">
-    </a>
-    <!-- <ea-themepicker select="section" [themes]="['mode', 'material']"></ea-themepicker> -->
-  </ea-panel>
+  <div class="name">
+    <span class="logo"></span>
+    <h2>eang</h2>
+  </div>
+  <a alt="GitHub" href="https://github.com/eascientific/eang" rel="noopener noreferrer" target="_blank" role="button">
+    <img height="26" src="/assets/images/github-circle-white-transparent.svg">
+  </a>
+  <!-- <ea-themepicker select="section" [themes]="['mode', 'material']"></ea-themepicker> -->
+</ea-panel>
 
-  <div id="main">
+<div id="main">
 
-    <!-- <section id="welcome">
+  <!-- <section id="welcome">
         <img id="eang-graphic" src="../assets/images/eang.png" alt="">
       <div id="reactive-card">
         <h2>Eang</h2>
@@ -20,19 +20,21 @@
       <div class="arrow-down"></div>
     </section> -->
 
-    <section id="features">
-      <h1>Feature Highlights</h1>
-      <section id="reactive">
-        <ea-feature-reactive></ea-feature-reactive>
-      </section>
+  <section id="features">
 
-      <section id="themeing">
-        <ea-feature-theming></ea-feature-theming>
-      </section>
+    <h1>Feature Highlights</h1>
 
+    <section>
+      <ea-feature-reactive></ea-feature-reactive>
     </section>
 
-    <!-- <section id="cta">
+    <section>
+      <ea-feature-theming></ea-feature-theming>
+    </section>
+
+  </section>
+
+  <!-- <section id="cta">
       <div class="open-source">
         <main>
           <h2>Supporting Open Source</h2>
@@ -54,8 +56,12 @@
       </div>
     </section>-->
 
-    <!-- <footer>
-      <p>eang</p>
-    </footer>  -->
+  <footer>
+    <span>
+      <div>Powered by
+        <a href="https://eamode.com">EA Mode</a>
+      </div>
+    </span>
+  </footer>
 
-  </div>
+</div> 
