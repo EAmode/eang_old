@@ -2,9 +2,17 @@
   <div class="example">
     <div class="screen">
       <ea-panel [state]="panelState" [orientation]="panelOrientation">
-        panel ({{panelOrientation | async}})
+        panel ({{panelOrientation | async}}, {{panelState | async}})
       </ea-panel>
     </div>
+    <mdc-radio name="radioGroup" checked="true" value="maximized" (change)="onChange($event)"></mdc-radio>
+    <label>maximized</label>
+    <mdc-radio name="radioGroup" value="minimized" (change)="onChange($event)"></mdc-radio>
+    <label>minimized</label>
+    <mdc-radio name="radioGroup" value="closed" (change)="onChange($event)"></mdc-radio>
+    <label>closed</label>
+
+
   </div>
   <div class="feature-description">
     <h2>Reactive</h2>

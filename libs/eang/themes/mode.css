@@ -1,7 +1,8 @@
 @import 'mode/variables.css';
 @import 'mode/fonts.css';
 @import 'mode/highlight.css';
-@import 'mode/button.css';
+/* @import 'mode/button.css'; */
+@import 'mode/mdc-button.css';
 @import 'mode/autocomplete.css';
 @import 'mode/panel.css';
 @import 'mode/text-elements.css';
