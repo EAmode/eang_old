@@ -2,18 +2,15 @@
   <div class="example">
     <div class="screen">
       <ea-panel [state]="panelState" [orientation]="panelOrientation">
-        panel ({{panelOrientation | async}})
+        panel ({{panelOrientation | async}}, {{panelState | async}})
       </ea-panel>
     </div>
-        <mdc-radio #demoRadioApple name="radioGroup" value="apple" (change)="onChange($event)"></mdc-radio>
-        <label>Apple</label>
-
-
-        <mdc-radio #demoRadioBanana name="radioGroup" value="banana" (change)="onChange($event)"></mdc-radio>
-        <label>Banana</label>
-
-        <mdc-radio #demoRadioMango name="radioGroup" value="mango" (change)="onChange($event)"></mdc-radio>
-        <label>Mango</label>
+    <mdc-radio name="radioGroup" checked="true" value="maximized" (change)="onChange($event)"></mdc-radio>
+    <label>maximized</label>
+    <mdc-radio name="radioGroup" value="minimized" (change)="onChange($event)"></mdc-radio>
+    <label>minimized</label>
+    <mdc-radio name="radioGroup" value="closed" (change)="onChange($event)"></mdc-radio>
+    <label>closed</label>
 
 
   </div>
