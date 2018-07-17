@@ -38,31 +38,20 @@ body {
 
 #features {
   max-width: 85%;
-}
-
-#features > h1 {
-  text-align: center;
-  margin-top: 5rem;
-}
-
-#features section {
-  border-top: 1px solid #e9ecef;
-}
-
-
-#reactive {
-  padding: 4rem;
-}
-@media (--small-screen) {
-  #reactive {
-    padding: 4rem 0 4rem 0;
+  & section {
+    padding: 4rem;
+    border-top: 1px solid #e9ecef;
   }
-
-  #features > h1 {
-    font-size: 28px;
+  & > h1 {
+    text-align: center;
+    margin-top: 5rem;
+  }
+  @media (--small-screen) {
+    section {
+      padding: 4rem 0 4rem 0;
+    }
   }
 }
-
 
 .feature {
   display: flex;
@@ -70,6 +59,9 @@ body {
   justify-content: space-around;
   & .feature-description {
     width: 60%;
+    & h2 {
+      margin-top: 0;
+    }
   }
   @media (--small-screen) {
     .feature-description {
@@ -81,7 +73,7 @@ body {
     display: flex;
     align-items: center;
     & .screen {
-      height: 14rem;
+      height: 20rem;
       width: 18rem;
       background-color: var(--ea-color-background-2);
       & ea-panel {
@@ -107,9 +99,12 @@ body {
   }
   &.themeing {
     & .example {
-      width: 45%;
+      width: 100%;
       min-width: 464.344px;
       flex-direction: column;
+      & h3 {
+        width: 100%;
+      }
     }
     @media (--small-screen) {
       .example {
@@ -124,12 +119,22 @@ body {
     .autocomplete {
       display: flex;
       justify-content: space-evenly;
-      align-items: flex-end;
+      align-items: flex-start;
       flex-wrap: wrap;
       width: 100%;
+      min-height: 5rem;
+      padding-top: 3rem;
+    }
+    & ea-autocomplete {
+      & input {
+        width: 16rem;
+      }
+      & mark {
+        background-color: var(--ea-color1);
+      }
     }
     & .feature-description {
-      width: 40%;
+      width: 50%;
       min-width: 410px;
     }
     @media (--small-screen) {
@@ -145,9 +150,7 @@ body {
 footer {
   width: 100%;
   background: var(--ea-color-background-2);
-  position: fixed;
-  bottom: 0;
-  height: 8vh;
+  height: 4.5rem;
   & p {
     color: var(--ea-color-3);
   }

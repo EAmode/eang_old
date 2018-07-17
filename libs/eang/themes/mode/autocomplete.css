@@ -1,7 +1,6 @@
 .mode {
   --ea-autocomplete-width: var(--ea-autocomplete-width, auto);
   & ea-autocomplete {
-
     display: block;
 
     & ul {
@@ -27,23 +26,37 @@
       transform-origin: 1.43em -0.43em;
     }
     & li {
-      color: black;
-      font-size: 1em;
+      color: var(--ea-color-1);
+      font-size: 0.9rem;
       height: 30px;
+      cursor: pointer;
+      padding-left: 1rem;
+      padding-top: 0.25rem;
     }
     & li:hover,
     li[selected] {
-      background-color: #cccccc;
+      background-color: var(--ea-color-accent-2);
+      & .matched {
+        color: var(--ea-color-3);
+      }
+      & mark {
+        color: var(--ea-color-3);
+      }
     }
     & input {
       background: white;
-      border: 2px solid #cccccc;
+      border-width: 1.5px;
+      border-style: solid;
+      border-image: var(--ea-gradient) 1, 100%;
       border-radius: 8px;
       color: black;
       outline: none;
+      border-radius: 3px;
       font-size: 1em;
       height: 30px;
       width: var(--ea-autocomplete-width);
+      padding-left: 1rem;
+      box-shadow: var(--ea-box-shadow);
     }
     & img {
       height: 20px;

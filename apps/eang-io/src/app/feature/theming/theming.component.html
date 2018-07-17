@@ -6,26 +6,30 @@
       and takes advatage of upcoming CSS features. PostCSS is used to support all older browsers.</p>
   </div>
 
+  <pre style="width: 50%">
+      ea-markdown code snippet here
+  </pre>
+
   <div class="example">
     <h3>Airport Lookup</h3>
-      <div class="autocomplete">
-        <div class="mode">
-          <p>Mode Theme</p>
-          <ea-autocomplete [input]="airportResult1$" [formControl]="airportSearchTerm1" [mapSelectItem]="mapSelectItem">
-            <ng-template #resultsTemplate let-item>
-              <span class="matched" [innerHTML]="item.match"></span>
-            </ng-template>
-          </ea-autocomplete>
-        </div>
-        <div class="material">
-          <p>Material Theme</p>
-          <ea-autocomplete [input]="airportResult1$" [formControl]="airportSearchTerm1" [mapSelectItem]="mapSelectItem">
-            <ng-template #resultsTemplate let-item>
-              <span class="matched" [innerHTML]="item.match"></span>
-            </ng-template>
-          </ea-autocomplete>
-        </div>
+    <div class="autocomplete">
+      <div class="mode">
+        <label id="mode-auto">Mode Theme</label>
+        <ea-autocomplete id="mode-auto" [input]="airportResult1$" [formControl]="airportSearchTerm1" [mapSelectItem]="mapSelectItem">
+          <ng-template #resultsTemplate let-item>
+            <span class="matched" [innerHTML]="item.match"></span>
+          </ng-template>
+        </ea-autocomplete>
       </div>
+      <div class="material">
+        <label id="mat-auto">Material Theme</label>
+        <ea-autocomplete id="mat-auto" [input]="airportResult1$" [formControl]="airportSearchTerm1" [mapSelectItem]="mapSelectItem">
+          <ng-template #resultsTemplate let-item>
+            <span class="matched" [innerHTML]="item.match"></span>
+          </ng-template>
+        </ea-autocomplete>
+      </div>
+    </div>
     <!-- <div class="material">
         <ea-autocomplete [input]="airportResult$" [formControl]="airportSearchTerm" [mapSelectItem]="mapSelectItem">
           <ng-template #resultsTemplate let-item>

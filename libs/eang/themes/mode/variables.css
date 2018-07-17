@@ -3,11 +3,11 @@
   --ea-color-2: #1f242c;
   --ea-color-3: #fff;
 
-  --ea-color-accent-1: #298C1D;
-  --ea-color-accent-2: #8929C1;
+  --ea-color-accent-1: #298c1d;
+  --ea-color-accent-2: #8929c1;
   --ea-color-background-1: #ffffff;
-  --ea-color-background-2: #3E3E3E;
-  --ea-color-background-3: #5D5D5D;
+  --ea-color-background-2: #3e3e3e;
+  --ea-color-background-3: #5d5d5d;
   --ea-color-background-4: #3c6a98;
   --ea-color-background-5: #0d355d;
   --ea-color-background-6: #00152b;
@@ -17,7 +17,8 @@
   --ea-color-warning: #f1ae4e;
   --ea-color-danger: #d9534f;
   --ea-color-error: #d9534f;
-  --ea-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  --ea-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
   --ea-font-1: 'Open Sans';
   font-family: 'Titillium Web', sans-serif;
   font-style: normal;
