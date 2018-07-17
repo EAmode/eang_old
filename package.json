@@ -37,6 +37,7 @@
     "printWidth": 80
   },
   "dependencies": {
+    "@angular-mdc/web": "^0.37.1",
     "@angular/animations": "6.0.7",
     "@angular/common": "6.0.7",
     "@angular/compiler": "6.0.7",

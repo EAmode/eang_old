@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core'
+import { Component } from '@angular/core'
 import { BehaviorSubject, timer } from 'rxjs'
-import { map, switchMap, share } from 'rxjs/operators'
+import { map, share } from 'rxjs/operators'
 
 @Component({
   selector: 'ea-feature-reactive',
@@ -23,6 +23,9 @@ export class ReactiveComponent {
 ~~~
   *reactive-panel.component.ts*
   ~~~ts
+  import { Component } from '@angular/core'
+  import { BehaviorSubject, timer } from 'rxjs'
+  import { map, share } from 'rxjs/operators'
   @Component({
     selector: 'reactive-panel',
     templateUrl: './reactive-panel.component.html'
@@ -34,7 +37,14 @@ export class ReactiveComponent {
       map(i => this.orientations[i % this.orientations.length]),
       share()
     )
+    onChange(evt): void {
+      this.panelState.next(evt.value)
+    }
   }
   ~~~
   `
+
+  onChange(evt): void {
+    this.panelState.next(evt.value)
+  }
 }
