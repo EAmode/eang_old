@@ -14,6 +14,16 @@ import {
 import { of, Observable, combineLatest } from 'rxjs'
 import MarkdownIt from 'markdown-it'
 import hljs from 'highlight.js'
+import Prism from 'prismjs'
+import 'prismjs/plugins/toolbar/prism-toolbar';
+import 'prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard';
+import 'prismjs/components/prism-css';
+import 'prismjs/components/prism-javascript';
+import 'prismjs/components/prism-java';
+import 'prismjs/components/prism-markup';
+import 'prismjs/components/prism-typescript';
+import 'prismjs/components/prism-sass';
+import 'prismjs/components/prism-scss';
 import * as _ from 'lodash'
 import { map } from 'rxjs/operators'
 
@@ -61,9 +71,11 @@ export class MarkdownComponent implements OnInit, AfterContentInit {
     // or '' if the source string is not changed and should be escaped externally.
     // If result starts with <pre... internal wrapper is skipped.
     highlight: function (str, lang) {
+      // let hilighted = Prism.highlight(str, Prism.languages.javascript, 'javascript')
       if (lang && hljs.getLanguage(lang)) {
         try {
-          return hljs.highlight(lang, str).value;
+          return Prism.highlight(str, Prism.languages['lang'], lang)
+          // return hljs.highlight(lang, str).value;
         } catch (__) {}
       }
 

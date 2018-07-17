@@ -51,6 +51,19 @@ export class ThemingComponent implements OnInit {
     })
   )
 
+  variables = `
+  #### CSS Custom Properties
+
+  Custom properties can be used to customize each theme.
+
+  ~~~ less
+  :root {
+    --ea-color-1: green;
+  }
+  ~~~
+
+  `
+
   mapSelectItem = item => item.name
 
   constructor() {
