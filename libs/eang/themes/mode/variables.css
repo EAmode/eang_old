@@ -23,4 +23,8 @@
   font-family: 'Titillium Web', sans-serif;
   font-style: normal;
   font-weight: 400;
+  --panel-border-radius: 0.25rem;
+
+  --min-font-size: 1rem;
+  --max-font-size: 3rem; 
 }

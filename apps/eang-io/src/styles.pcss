@@ -7,6 +7,12 @@ body {
   background: var(--ea-color-3);
 }
 
+#features > h1 {
+  font-size: responsive 1.5rem 3rem; /* min-size, max-size */
+  font-range: 420px 1280px; /* viewport widths between which font-size is fluid */
+}
+
+
 #toolbar {
   width: auto;
   height: 4rem;
@@ -41,15 +47,17 @@ body {
   & section {
     padding: 4rem;
     border-top: 1px solid #e9ecef;
+    @media (--small-screen) {
+      padding: 4rem 0 4rem 0;
+    }
   }
   & > h1 {
     text-align: center;
     margin-top: 5rem;
-  }
-  @media (--small-screen) {
-    section {
-      padding: 4rem 0 4rem 0;
-    }
+    /* @media (--small-screen) {
+      margin-top: 8rem;
+      font-size: 1.5rem;
+    } */
   }
 }
 
@@ -59,14 +67,13 @@ body {
   justify-content: space-between;
   & .feature-description {
     width: 60%;
+    @media (--small-screen) {
+      padding-left: 0;
+      width: 100%;
+    }
     & h2 {
       margin-top: 0;
-    }
-  }
-  @media (--small-screen) {
-    .feature-description {
-      padding-left: 0;
-      width: 95%;
+      line-height: 100%;
     }
   }
   & .example {
@@ -75,6 +82,12 @@ body {
     flex-direction: column;
     justify-content: center;
     position: relative;
+    @media (--small-screen) {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
     & .exp-label {
       position: absolute;
       left: 0;
@@ -85,6 +98,10 @@ body {
       width: 25rem;
       background-color: var(--ea-color-background-2);
       position: relative;
+      border-radius: var(--panel-border-radius);
+      @media (--small-screen) {
+        width: 100%;
+      }
       & .text-container {
         height: 100%;
         width: 100%;
@@ -120,18 +137,29 @@ body {
         justify-content: center;
         align-items: center;
       }
-    }
-    @media (--small-screen) {
-      .example {
-        width: 100%;
-        display: flex;
-        justify-content: center;
+      & ea-panel[orientation='right'] {
+        border-top-right-radius: var(--panel-border-radius);
+        border-bottom-right-radius: var(--panel-border-radius);
+      }
+        & ea-panel[orientation='left'] {
+        border-top-left-radius: var(--panel-border-radius);
+        border-bottom-left-radius: var(--panel-border-radius);
+      }
+          & ea-panel[orientation='top'] {
+        border-top-right-radius: var(--panel-border-radius);
+        border-top-left-radius: var(--panel-border-radius);
+      }
+        & ea-panel[orientation='bottom'] {
+        border-bottom-left-radius: var(--panel-border-radius);
+        border-bottom-right-radius: var(--panel-border-radius);
       }
     }
     & .panel-buttons {
       display: flex;
       align-items: center;
       width: 100%;
+      padding-top:2rem;
+      padding-bottom: 2rem;
     }
   }
   &.themeing {
@@ -139,18 +167,16 @@ body {
       width: 100%;
       min-width: 464.344px;
       flex-direction: column;
-      & h3 {
-        width: 100%;
-      }
-    }
-    @media (--small-screen) {
-      .example {
+      @media (--small-screen) {
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
         width: 100%;
         min-width: auto;
-        margin-bottom: 10rem;
+        padding-bottom: 0;
+      }
+      & h3 {
+        width: 100%;
       }
     }
     .autocomplete {
@@ -161,10 +187,16 @@ body {
       width: 100%;
       min-height: 5rem;
       padding-top: 3rem;
+      @media (--small-screen) {
+        min-height: 15rem;
+      }
     }
     & ea-autocomplete {
       & input {
         width: 16rem;
+      }
+      & ul {
+        margin-bottom: 3rem;
       }
       & mark {
         background-color: var(--ea-color1);
@@ -173,9 +205,7 @@ body {
     & .feature-description {
       width: 50%;
       min-width: 410px;
-    }
-    @media (--small-screen) {
-      .feature-description {
+      @media (--small-screen) {
         padding-left: 0rem;
         width: 100%;
         min-width: 0;
