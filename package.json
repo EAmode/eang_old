@@ -55,6 +55,7 @@
     "highlight.js": "^9.12.0",
     "markdown-it": "^8.4.1",
     "ngrx-store-freeze": "0.2.2",
+    "prismjs": "^1.15.0",
     "rxjs": "6.2.1",
     "rxjs-compat": "6.0.0",
     "zone.js": "^0.8.26"
