@@ -56,7 +56,7 @@ export class ThemingComponent implements OnInit {
 
   Custom properties can be used to customize each theme.
 
-  ~~~ less
+  ~~~ css
   :root {
     --ea-color-1: green;
   }
