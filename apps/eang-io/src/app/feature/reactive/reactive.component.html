@@ -1,14 +1,7 @@
 <div class="feature">
-  <div class="example">
-    <label class="exp-label" for="example-label">&lt; ea-panel &gt;</label>
-    <div id="example-label" class="screen">
-      <div class="text-container">
-          <p class="container-text">({{panelOrientation | async}}, {{panelState | async}})</p>
-      </div>
-      <ea-panel [state]="panelState" [orientation]="panelOrientation">
-          ea-panel
-      </ea-panel>
-    </div>
+  <h3 class="component-name">&lt;ea-panel&gt;</h3>
+  <div class="component-title">
+    <h3>Reactive</h3>
     <div class="panel-buttons">
       <mdc-radio name="radioGroup" checked="true" value="maximized" (change)="onChange($event)"></mdc-radio>
       <label>maximized</label>
@@ -17,11 +10,20 @@
       <mdc-radio name="radioGroup" value="closed" (change)="onChange($event)"></mdc-radio>
       <label>closed</label>
     </div>
+  </div>
+  <div class="example">
+    <div id="example-label" class="screen">
+      <div class="text-container">
+        <p class="container-text">({{panelOrientation | async}}, {{panelState | async}})</p>
+      </div>
+      <ea-panel [state]="panelState" [orientation]="panelOrientation">
+        ea-panel
+      </ea-panel>
+    </div>
 
 
   </div>
   <div class="feature-description">
-    <h2>Reactive</h2>
     <p>Each component in eang can be directly hooked up to event streams. They observe changes and react to them. The main benefit
       of reactive components is that you can compose them very easily through streams. This ways you can combine mutiple
       ways on how to interact with your component.</p>

@@ -1,15 +1,10 @@
 <div class="feature themeing">
-  <div class="feature-description">
-    <h2>Theming</h2>
-    <p>eang supports multiple themes and additional themes can be be added. This allows users of eang to fully customize the
-      the look and feel of each component and makes it easy to comply with Coporate Design guidelines. eang embraces CSS
-      and takes advatage of upcoming CSS features. PostCSS is used to support all older browsers.</p>
-  </div>
-
-  <ea-markdown [doc]="variables"></ea-markdown>
-
-  <div class="example">
+  <h3 class="component-name">&lt;ea-autocomplete&gt;</h3>
+  <div class="component-title">
+    <h3>Themeing</h3>
     <h3>Airport Lookup</h3>
+  </div>
+  <div class="example">
     <div class="autocomplete">
       <div class="mode">
         <label id="mode-auto">Mode Theme</label>
@@ -28,12 +23,13 @@
         </ea-autocomplete>
       </div>
     </div>
-    <!-- <div class="material">
-        <ea-autocomplete [input]="airportResult$" [formControl]="airportSearchTerm" [mapSelectItem]="mapSelectItem">
-          <ng-template #resultsTemplate let-item>
-            <span class="matched" [innerHTML]="item.match"></span>
-          </ng-template>
-        </ea-autocomplete>
-      </div> -->
   </div>
+  <div class="feature-description">
+      <p>eang supports multiple themes and additional themes can be be added. This allows users of eang to fully customize the
+      the look and feel of each component and makes it easy to comply with Coporate Design guidelines. eang embraces CSS
+      and takes advatage of upcoming CSS features. PostCSS is used to support all older browsers.</p>
+  </div>
+
+  <ea-markdown [doc]="variables"></ea-markdown>
+
 </div>

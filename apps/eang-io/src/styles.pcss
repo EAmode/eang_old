@@ -12,7 +12,6 @@ body {
   font-range: 420px 1280px; /* viewport widths between which font-size is fluid */
 }
 
-
 #toolbar {
   width: auto;
   height: 4rem;
@@ -43,9 +42,12 @@ body {
 }
 
 #features {
-  max-width: 85%;
+  max-width: 70%;
+  @media (--small-screen) {
+    max-width: 90%;
+  }
   & section {
-    padding: 4rem;
+    padding: 4rem 0 4rem 0;
     border-top: 1px solid #e9ecef;
     @media (--small-screen) {
       padding: 4rem 0 4rem 0;
@@ -53,7 +55,7 @@ body {
   }
   & > h1 {
     text-align: center;
-    margin-top: 5rem;
+    margin-top: 8rem;
     /* @media (--small-screen) {
       margin-top: 8rem;
       font-size: 1.5rem;
@@ -65,8 +67,15 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  & .component-name {
+    border-bottom: 1px solid var(--ea-color-1);
+    padding-right: 4rem;
+    line-height: 3;
+    font-size: responsive 1.8rem 2.8rem; /* min-size, max-size */
+    font-range: 420px 1280px; /* viewport widths between which font-size is fluid */
+    margin-top: 0;
+  }
   & .feature-description {
-    width: 60%;
     @media (--small-screen) {
       padding-left: 0;
       width: 100%;
@@ -75,6 +84,27 @@ body {
       margin-top: 0;
       line-height: 100%;
     }
+    & p {
+      font-size: responsive 1.25rem 1.5rem; /* min-size, max-size */
+      font-range: 420px 1280px; /* viewport widths between which font-size is fluid */
+    }
+  }
+  & .component-title {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 5rem;
+    align-items: center;
+    flex-wrap: wrap;
+    & h3 {
+      margin: 0;
+      font-size: responsive 1.5rem 2.5rem; /* min-size, max-size */
+      font-range: 420px 1280px; /* viewport widths between which font-size is fluid */
+    }
+    & .panel-buttons {
+      display: flex;
+      align-items: center;
+    }
   }
   & .example {
     display: flex;
@@ -82,6 +112,9 @@ body {
     flex-direction: column;
     justify-content: center;
     position: relative;
+    width: 100%;
+    background: var(--ea-color-background-7);
+    padding: 8rem 0;
     @media (--small-screen) {
       width: 100%;
       display: flex;
@@ -94,13 +127,13 @@ body {
       top: 18%;
     }
     & .screen {
-      height: 22rem;
+      height: 12rem;
       width: 25rem;
       background-color: var(--ea-color-background-2);
       position: relative;
       border-radius: var(--panel-border-radius);
       @media (--small-screen) {
-        width: 100%;
+        width: 90%;
       }
       & .text-container {
         height: 100%;
@@ -141,25 +174,18 @@ body {
         border-top-right-radius: var(--panel-border-radius);
         border-bottom-right-radius: var(--panel-border-radius);
       }
-        & ea-panel[orientation='left'] {
+      & ea-panel[orientation='left'] {
         border-top-left-radius: var(--panel-border-radius);
         border-bottom-left-radius: var(--panel-border-radius);
       }
-          & ea-panel[orientation='top'] {
+      & ea-panel[orientation='top'] {
         border-top-right-radius: var(--panel-border-radius);
         border-top-left-radius: var(--panel-border-radius);
       }
-        & ea-panel[orientation='bottom'] {
+      & ea-panel[orientation='bottom'] {
         border-bottom-left-radius: var(--panel-border-radius);
         border-bottom-right-radius: var(--panel-border-radius);
       }
-    }
-    & .panel-buttons {
-      display: flex;
-      align-items: center;
-      width: 100%;
-      padding-top:2rem;
-      padding-bottom: 2rem;
     }
   }
   &.themeing {
@@ -174,6 +200,7 @@ body {
         width: 100%;
         min-width: auto;
         padding-bottom: 0;
+        padding-top: 3rem;
       }
       & h3 {
         width: 100%;
@@ -189,6 +216,7 @@ body {
       padding-top: 3rem;
       @media (--small-screen) {
         min-height: 15rem;
+        padding-top: 0;
       }
     }
     & ea-autocomplete {
@@ -203,7 +231,7 @@ body {
       }
     }
     & .feature-description {
-      width: 50%;
+      /* width: 50%; */
       min-width: 410px;
       @media (--small-screen) {
         padding-left: 0rem;
@@ -211,6 +239,22 @@ body {
         min-width: 0;
       }
     }
+  }
+}
+
+ea-markdown {
+  & .toolbar-item a {
+    font-size: 22px;
+    background: var(--ea-color-background-2);
+    color: white;
+    padding: 0 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  code {
+    font-size: responsive 0.75rem 1rem; /* min-size, max-size */
+    font-range: 420px 1280px; /* viewport widths between which font-size is fluid */
   }
 }
 
