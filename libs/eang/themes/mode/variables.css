@@ -28,4 +28,8 @@
 
   --min-font-size: 1rem;
   --max-font-size: 3rem;
+
+  --ea-padding: 4rem;
+  --ea-scale-factor: 0.5;
+
 }

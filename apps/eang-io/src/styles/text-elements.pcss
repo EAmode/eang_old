@@ -1,0 +1,33 @@
+p::selection {
+  background: var(--ea-color-accent-2);
+  color: white;
+}
+
+.mode p {
+  font-size: responsive 1.25rem 1.5rem; /* min-size, max-size */
+  font-range: 420px 1280px; /* viewport widths between which font-size is fluid */
+}
+
+.mode h3 {
+  @media (--small-screen) {
+    padding-top: calc(var(--ea-padding) * var(--ea-scale-factor));
+  }
+}
+
+#features > h1 {
+  font-size: responsive 2rem 3rem; /* min-size, max-size */
+  font-range: 420px 1280px; /* viewport widths between which font-size is fluid */
+  margin-top: 8rem;
+  font-weight: 600;
+}
+
+& .example-toolbar {
+  & h3 {
+    margin: 0;
+    padding-left: 1rem;
+    @media (--small-screen) {
+      padding-left: 0.5rem;
+    }
+  }
+}
+
