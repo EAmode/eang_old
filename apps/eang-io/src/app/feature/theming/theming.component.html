@@ -1,10 +1,35 @@
 <div class="feature themeing">
-
+    <h3 class="component-name">Themeing</h3>
+    <div class="feature-description">
+      <p>Theming in eang is fully customizable. eang has multiple build-in themes. Each theme can be extensively customized with
+          CSS variables.
+        </p>
+    </div>
+    <div class="example">
+        <div class="example-toolbar">
+            <h3>&lt;ea-autocomplete&gt;</h3>
+        </div>
+        <div class="autocomplete">
+          <div class="mode">
+            <label id="mode-auto">Airport Lookup (Mode Theme)</label>
+            <ea-autocomplete id="mode-auto" [input]="airportResult1$" [formControl]="airportSearchTerm1" [mapSelectItem]="mapSelectItem">
+              <ng-template #resultsTemplate let-item>
+                <span class="matched" [innerHTML]="item.match"></span>
+              </ng-template>
+            </ea-autocomplete>
+          </div>
+          <div class="material">
+            <label id="mat-auto">Airport lookup (Material Theme)</label>
+            <ea-autocomplete id="mat-auto" [input]="airportResult1$" [formControl]="airportSearchTerm1" [mapSelectItem]="mapSelectItem">
+              <ng-template #resultsTemplate let-item>
+                <span class="matched" [innerHTML]="item.match"></span>
+              </ng-template>
+            </ea-autocomplete>
+          </div>
+        </div>
+      </div>
   <div class="feature-description">
-    <h2>Theming</h2>
-    <p>Theming in eang is fully customizable. eang has multiple build-in themes. Each theme can be extensively customized with
-      CSS variables.
-    </p>
+
     <p>Unlike other component frameworks, eang does not abstract or encapsulates away the power of CSS. Instead it embraces
       the new capabilities of CSS and puts design back into the hand of the designer. Components and designs are continously
       evolving. eang's philosophy is to allow developers and designers to work idependently from eachother as much as possible
@@ -27,34 +52,6 @@
 
   <ea-markdown [doc]="variables"></ea-markdown>
 
-
-  </div>
-  <div class="example">
-    <div class="example-toolbar">
-        <h3>&lt;ea-autocomplete&gt;</h3>
-    </div>
-    <div class="autocomplete">
-      <div class="mode">
-        <label id="mode-auto">Airport Lookup (Mode Theme)</label>
-        <ea-autocomplete id="mode-auto" [input]="airportResult1$" [formControl]="airportSearchTerm1" [mapSelectItem]="mapSelectItem">
-          <ng-template #resultsTemplate let-item>
-            <span class="matched" [innerHTML]="item.match"></span>
-          </ng-template>
-        </ea-autocomplete>
-      </div>
-      <div class="material">
-        <label id="mat-auto">Airport lookup (Material Theme)</label>
-        <ea-autocomplete id="mat-auto" [input]="airportResult1$" [formControl]="airportSearchTerm1" [mapSelectItem]="mapSelectItem">
-          <ng-template #resultsTemplate let-item>
-            <span class="matched" [innerHTML]="item.match"></span>
-          </ng-template>
-        </ea-autocomplete>
-      </div>
-    </div>
-  </div>
-  <div class="feature-description">
-
-  </div>
   <ea-markdown [doc]="variables"></ea-markdown>
 
 </div>
