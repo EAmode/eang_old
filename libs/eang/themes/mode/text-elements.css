@@ -24,6 +24,10 @@
   & p {
     font-size: 1.1rem;
   }
+  p::selection {
+    background: var(--ea-color-accent-2);
+    color: white;
+  }
   & a {
     font-size: 1.8rem;
     text-decoration: none;
