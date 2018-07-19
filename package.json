@@ -89,6 +89,7 @@
     "postcss-cssnext": "^3.1.0",
     "postcss-import": "^11.1.0",
     "postcss-nested": "^3.0.0",
+    "postcss-responsive-type": "^1.0.0",
     "prettier": "1.10.2",
     "protractor": "~5.3.0",
     "ts-node": "~5.0.1",

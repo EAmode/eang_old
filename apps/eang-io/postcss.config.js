@@ -4,6 +4,7 @@ module.exports = {
       path:['libs/eang/themes']
     }),
     require('postcss-nested')(),
+    require('postcss-responsive-type')(),
     require('postcss-cssnext')({
       features: {
         customProperties: {

@@ -1,24 +1,37 @@
 <div class="feature">
-  <div class="example">
-    <div class="screen">
-      <ea-panel [state]="panelState" [orientation]="panelOrientation">
-        panel ({{panelOrientation | async}}, {{panelState | async}})
-      </ea-panel>
-    </div>
-    <mdc-radio name="radioGroup" checked="true" value="maximized" (change)="onChange($event)"></mdc-radio>
-    <label>maximized</label>
-    <mdc-radio name="radioGroup" value="minimized" (change)="onChange($event)"></mdc-radio>
-    <label>minimized</label>
-    <mdc-radio name="radioGroup" value="closed" (change)="onChange($event)"></mdc-radio>
-    <label>closed</label>
-
-
-  </div>
-  <div class="feature-description">
-    <h2>Reactive</h2>
+  <h3 class="component-name">Reactive</h3>
+  <div class="component-title">
     <p>Each component in eang can be directly hooked up to event streams. They observe changes and react to them. The main benefit
       of reactive components is that you can compose them very easily through streams. This ways you can combine mutiple
       ways on how to interact with your component.</p>
+
+
+  </div>
+  <div class="example">
+    <div class="example-toolbar">
+      <h3>&lt;ea-panel&gt;</h3>
+    </div>
+    <div id="example-label" class="screen">
+      <div class="text-container">
+        <p class="container-text">({{panelOrientation | async}}, {{panelState | async}})</p>
+      </div>
+      <ea-panel [state]="panelState" [orientation]="panelOrientation">
+        ea-panel
+      </ea-panel>
+    </div>
+    <div class="panel-buttons">
+      <mdc-radio name="radioGroup" checked="true" value="maximized" (change)="onChange($event)"></mdc-radio>
+      <label>maximized</label>
+      <mdc-radio name="radioGroup" value="minimized" (change)="onChange($event)"></mdc-radio>
+      <label>minimized</label>
+      <mdc-radio name="radioGroup" value="closed" (change)="onChange($event)"></mdc-radio>
+      <label>closed</label>
+    </div>
+
+  </div>
+
+  <div class="feature-description">
+
     <ea-markdown [doc]="md"></ea-markdown>
   </div>
 </div>

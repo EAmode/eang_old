@@ -11,16 +11,21 @@
   --ea-color-background-4: #3c6a98;
   --ea-color-background-5: #0d355d;
   --ea-color-background-6: #00152b;
+  --ea-color-background-7: #f6f6f6;
 
   --ea-color-success: #5bb95b;
   --ea-color-info: #5ac1de;
   --ea-color-warning: #f1ae4e;
   --ea-color-danger: #d9534f;
   --ea-color-error: #d9534f;
-  --ea-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  --ea-box-shadow: 0 4px 12px rgba(0,0,0,.09);
+
   --ea-font-1: 'Open Sans';
   font-family: 'Titillium Web', sans-serif;
   font-style: normal;
   font-weight: 400;
+  --panel-border-radius: 0.25rem;
+
+  --min-font-size: 1rem;
+  --max-font-size: 3rem;
 }

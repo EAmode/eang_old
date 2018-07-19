@@ -1,4 +1,5 @@
 <div class="feature themeing">
+
   <div class="feature-description">
     <h2>Theming</h2>
     <p>Theming in eang is fully customizable. eang has multiple build-in themes. Each theme can be extensively customized with
@@ -26,11 +27,15 @@
 
   <ea-markdown [doc]="variables"></ea-markdown>
 
+
+  </div>
   <div class="example">
-    <h3>Airport Lookup</h3>
+    <div class="example-toolbar">
+        <h3>&lt;ea-autocomplete&gt;</h3>
+    </div>
     <div class="autocomplete">
       <div class="mode">
-        <label id="mode-auto">Mode Theme</label>
+        <label id="mode-auto">Airport Lookup (Mode Theme)</label>
         <ea-autocomplete id="mode-auto" [input]="airportResult1$" [formControl]="airportSearchTerm1" [mapSelectItem]="mapSelectItem">
           <ng-template #resultsTemplate let-item>
             <span class="matched" [innerHTML]="item.match"></span>
@@ -38,7 +43,7 @@
         </ea-autocomplete>
       </div>
       <div class="material">
-        <label id="mat-auto">Material Theme</label>
+        <label id="mat-auto">Airport lookup (Material Theme)</label>
         <ea-autocomplete id="mat-auto" [input]="airportResult1$" [formControl]="airportSearchTerm1" [mapSelectItem]="mapSelectItem">
           <ng-template #resultsTemplate let-item>
             <span class="matched" [innerHTML]="item.match"></span>
@@ -46,12 +51,10 @@
         </ea-autocomplete>
       </div>
     </div>
-    <!-- <div class="material">
-        <ea-autocomplete [input]="airportResult$" [formControl]="airportSearchTerm" [mapSelectItem]="mapSelectItem">
-          <ng-template #resultsTemplate let-item>
-            <span class="matched" [innerHTML]="item.match"></span>
-          </ng-template>
-        </ea-autocomplete>
-      </div> -->
   </div>
+  <div class="feature-description">
+
+  </div>
+  <ea-markdown [doc]="variables"></ea-markdown>
+
 </div>

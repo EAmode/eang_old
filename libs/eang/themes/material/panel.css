@@ -16,18 +16,18 @@
       /* box-shadow: var(--ea-box-shadow); */
     }
 
-    & .ea-panel-container.maximized { 
+    & .ea-panel-container.maximized {
       height: var(--ea-panel-maximized-height);
       width: var(--ea-panel-maximized-width);
     }
-    
-    & .ea-panel-container.minimized { 
+
+    & .ea-panel-container.minimized {
       height: var(--ea-panel-minimized-height);
-      width: var(--ea-panel-minimized-width); 
+      width: var(--ea-panel-minimized-width);
     }
 
     & .ea-panel-container.closed {
-      display: none;
+      display: none !important;
     }
   }
 }

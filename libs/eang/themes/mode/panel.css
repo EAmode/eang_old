@@ -55,6 +55,6 @@
   }
 
   & ea-panel[state='closed'] {
-    display: none;
+    display: none !important;
   }
 }
