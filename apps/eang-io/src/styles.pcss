@@ -6,13 +6,11 @@
 @custom-media --small-screen (width <= 1200px);
 @custom-media --large-screen (width >= 1300px);
 
-
 body {
   margin: 0;
   padding: 0;
   background: var(--ea-color-3);
 }
-
 
 #main {
   color: var(--ea-color-1);
@@ -23,7 +21,7 @@ body {
 
 #features {
   max-width: 70%;
-    @media (--large-screen) {
+  @media (--large-screen) {
     max-width: 1200px;
   }
   @media (--small-screen) {
@@ -36,5 +34,3 @@ body {
     }
   }
 }
-
-
