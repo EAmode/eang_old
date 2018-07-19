@@ -52,11 +52,8 @@ export class ThemingComponent implements OnInit {
   )
 
   variables = `
-  #### CSS Custom Properties
-
-  Custom properties can be used to customize each theme.
-
   ~~~ css
+  /* setting common properties accross all themes on a page. */
   :root {
     --ea-color-1: green;
   }

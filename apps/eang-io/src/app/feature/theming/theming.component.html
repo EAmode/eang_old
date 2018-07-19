@@ -1,41 +1,46 @@
 <div class="feature themeing">
-    <h3 class="component-name">Themeing</h3>
-    <div class="feature-description">
-      <p>Theming in eang is fully customizable. eang has multiple build-in themes. Each theme can be extensively customized with
-          CSS variables.
-        </p>
-    </div>
+  <h3 class="component-name">Themeing</h3>
+  <div class="feature-description">
+    <p>Styling and theming in eang is fully customizable and can be easily changed.</p>
+    <p>Unlike other component frameworks, the style is not set in stone and does not abstract or encapsulates away the power of CSS.
+      Instead it embraces the new capabilities of CSS and puts design back into the hand of the designer.
+    </p>
     <div class="example">
-        <div class="example-toolbar">
-            <h3>&lt;ea-autocomplete&gt;</h3>
+      <div class="example-toolbar">
+        <h3>Theme examples</h3>
+      </div>
+      <div class="autocomplete">
+        <div class="mode">
+          <h3>Mode Theme</h3>
+          <h4>Flight origin</h4>
+          <p><small>Select the airport you are flying from.</small></p>
+          <label id="mode-auto">Airport Lookup</label>
+          <ea-autocomplete id="mode-auto" [input]="airportResult1$" [formControl]="airportSearchTerm1" [mapSelectItem]="mapSelectItem">
+            <ng-template #resultsTemplate let-item>
+              <span class="matched" [innerHTML]="item.match"></span>
+            </ng-template>
+          </ea-autocomplete>
         </div>
-        <div class="autocomplete">
-          <div class="mode">
-            <label id="mode-auto">Airport Lookup (Mode Theme)</label>
-            <ea-autocomplete id="mode-auto" [input]="airportResult1$" [formControl]="airportSearchTerm1" [mapSelectItem]="mapSelectItem">
-              <ng-template #resultsTemplate let-item>
-                <span class="matched" [innerHTML]="item.match"></span>
-              </ng-template>
-            </ea-autocomplete>
-          </div>
-          <div class="material">
-            <label id="mat-auto">Airport lookup (Material Theme)</label>
-            <ea-autocomplete id="mat-auto" [input]="airportResult1$" [formControl]="airportSearchTerm1" [mapSelectItem]="mapSelectItem">
-              <ng-template #resultsTemplate let-item>
-                <span class="matched" [innerHTML]="item.match"></span>
-              </ng-template>
-            </ea-autocomplete>
-          </div>
+        <div class="material">
+          <h3>Material Theme</h3>
+          <h4>Flight destination</h4>
+          <p><small>Select the airport you are flying to.</small></p>
+          <label id="mat-auto">Airport lookup</label>
+          <ea-autocomplete id="mat-auto" [input]="airportResult1$" [formControl]="airportSearchTerm1" [mapSelectItem]="mapSelectItem">
+            <ng-template #resultsTemplate let-item>
+              <span class="matched" [innerHTML]="item.match"></span>
+            </ng-template>
+          </ea-autocomplete>
         </div>
       </div>
-  <div class="feature-description">
+    </div>
+    <p>New and upcoming features of CSS eliviate a lot of the maintainability problems of CSS. eang relies heavily on CSS Custom Properties and nesting.</p>
+    <p>eang has multiple build-in themes, which . Each theme can be extensively customized with CSS custom properties. Each theme has global variables as well as component based CSS variables.</p>
 
-    <p>Unlike other component frameworks, eang does not abstract or encapsulates away the power of CSS. Instead it embraces
-      the new capabilities of CSS and puts design back into the hand of the designer. Components and designs are continously
-      evolving. eang's philosophy is to allow developers and designers to work idependently from eachother as much as possible
-      by providing a sematic contract. This allows design changes and features to be deployed on a different cadence. It
-      is not necessary to redeploy the whole application just because colors changed.
-    </p>
+    <ea-markdown [doc]="variables"></ea-markdown>
+  </div>
+
+  <div class="feature-description">
     <p>To enable and designs to evolve at a different speed, it is often a common practice to create a design prototype as a
       seperate application. As much as this provides the necessary flexibility for product development, it is costly and
       limited. The protype often does not have the same data or functionality as the real application. With eang and it's
@@ -50,7 +55,7 @@
       all older browsers.</p>
   </div>
 
-  <ea-markdown [doc]="variables"></ea-markdown>
+
 
   <ea-markdown [doc]="variables"></ea-markdown>
 
