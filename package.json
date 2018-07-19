@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "concurrently \"ng serve\" \"npm run css:build -- -w\" \"npm run css:copy -- -w\" \"npm run css:eangio -- -w\"",
+    "start": "concurrently \"npm run css:build -- -w\" \"npm run css:copy -- -w\" \"npm run css:eangio -- -w\" \"ng serve\"",
     "build:prod": "npm run css && npm run css:eangio && ng build --project=eang-io --prod",
     "build": "ng build && npm run css",
     "css": "npm run css:build && npm run css:copy",

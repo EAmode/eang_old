@@ -53,12 +53,44 @@ export class ThemingComponent implements OnInit {
 
   variables = `
   ~~~ css
-  /* setting common properties accross all themes on a page. */
+  /* overriding one common property accross all themes */
   :root {
     --ea-color-1: green;
   }
-  ~~~
 
+  /* overriding some common properties for the mode theme */
+  .mode {
+    --ea-color-2: #1f242c;
+    --ea-color-3: #fff;
+
+    --ea-color-accent-1: #298c1d;
+    --ea-color-accent-2: #3f6eb5;
+    --ea-color-background-1: #ffffff;
+    --ea-color-background-2: #3e3e3e;
+  }
+
+  /* changing the properties of a left aligned panel */
+  ea-panel[orientation='left'] {
+    --ea-panel-color: var(--ea-color-3);
+    --ea-panel-max-width: 6rem;
+  }
+  ~~~
+  `
+
+  scope = `
+  ~~~ html
+  <div class="my-secial-green-div">
+    <style>
+      /* all ea-panels have a green background within this div */
+      ea-panel {
+        --ea-panel-background: green;
+      }
+    </style>
+    ...
+  </div>
+  <!-- component properties can also be changed individually -->
+  <ea-panel style="--ea-panel-background: pink;"></ea-panel>
+  ~~~
   `
 
   mapSelectItem = item => item.name
