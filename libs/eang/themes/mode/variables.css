@@ -18,7 +18,7 @@
   --ea-color-warning: #f1ae4e;
   --ea-color-danger: #d9534f;
   --ea-color-error: #d9534f;
-  --ea-box-shadow: 0 4px 12px rgba(0,0,0,.09);
+  --ea-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.09);
 
   --ea-font-1: 'Open Sans';
   font-family: 'Titillium Web', sans-serif;
@@ -28,4 +28,7 @@
 
   --min-font-size: 1rem;
   --max-font-size: 3rem;
+
+  --ea-padding: 4rem;
+  --ea-scale-factor: 0.5;
 }
