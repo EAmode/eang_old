@@ -66,7 +66,7 @@ body {
 .feature {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   & .component-name {
     border-bottom: 1px solid var(--ea-color-1);
     padding-right: 4rem;
@@ -76,6 +76,7 @@ body {
     margin-top: 0;
   }
   & .feature-description {
+    width: 100%;
     @media (--small-screen) {
       padding-left: 0;
       width: 100%;
@@ -101,10 +102,6 @@ body {
       font-size: responsive 1.5rem 2.5rem; /* min-size, max-size */
       font-range: 420px 1280px; /* viewport widths between which font-size is fluid */
     }
-    & .panel-buttons {
-      display: flex;
-      align-items: center;
-    }
   }
   & .example {
     display: flex;
@@ -112,22 +109,40 @@ body {
     flex-direction: column;
     justify-content: center;
     position: relative;
-    width: 100%;
-    background: var(--ea-color-background-7);
-    padding: 8rem 0;
+    width: 80%;
+    background: var(--ea-color-3);
+    box-shadow: var(--ea-box-shadow);
+    border: 1px solid var(--ea-color-background-7);
+    padding: 0 0 3rem 0;
     @media (--small-screen) {
       width: 100%;
       display: flex;
       justify-content: center;
     }
-
+    & .example-toolbar {
+      height: 4rem;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      margin-bottom: 3rem;
+      & h3 {
+        margin: 0;
+        padding-left: 1rem;
+      }
+    }
+    & .panel-buttons {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
     & .exp-label {
       position: absolute;
       left: 0;
       top: 18%;
     }
     & .screen {
-      height: 12rem;
+      height: 15rem;
       width: 25rem;
       background-color: var(--ea-color-background-2);
       position: relative;
