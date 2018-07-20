@@ -1,20 +1,22 @@
 .mode {
   & ea-themepicker {
     & .icon-button {
-      width: 50px;
-      height: 50px;
+      width: 3rem;
+      height: 3rem;
       border: none;
+      background: inline('mode/icon/palette.svg');
     }
-
-    & .eang-theme-dropdown-list {
+    & .ea-themepicker-dropdown {
+      position: absolute;
+    }
+    & .ea-themepicker-dropdown-list {
       position: relative;
       display: inline-block;
       list-style-type: none;
       padding: 0;
       margin: 0;
     }
-
-    & .eang-theme-dropdown-element {
+    & .ea-themepicker-list-item {
       color: black;
       text-emphasis: none;
       text-decoration: none;
@@ -28,8 +30,7 @@
       display: block;
       text-align: center;
     }
-
-    & .eang-theme-dropdown-element:hover {
+    & .ea-themepicker-list-item:hover {
       background-color: #f1f1f1;
     }
   }

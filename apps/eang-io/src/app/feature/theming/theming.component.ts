@@ -15,6 +15,10 @@ export class ThemingComponent implements OnInit {
   maxResults = 10
   airportResult1$
   airportSearchTerm1 = new FormControl()
+
+  airportResult2$
+  airportSearchTerm2 = new FormControl()
+
   airportSearchPipe = pipe(
     map((searchTerm: string) => {
       const results = []
@@ -97,6 +101,9 @@ export class ThemingComponent implements OnInit {
 
   constructor() {
     this.airportResult1$ = this.airportSearchTerm1.valueChanges.pipe(
+      this.airportSearchPipe
+    )
+    this.airportResult2$ = this.airportSearchTerm2.valueChanges.pipe(
       this.airportSearchPipe
     )
   }
