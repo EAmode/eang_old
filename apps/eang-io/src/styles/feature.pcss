@@ -1,52 +1,24 @@
 .feature {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   padding-bottom: var(--ea-padding);
-  @media (--small-screen) {
-  }
-  & .component-name {
-    width: 100%;
-    font-size: responsive 1.8rem 2.8rem; /* min-size, max-size */
-    font-range: 420px 1280px; /* viewport widths between which font-size is fluid */
-    margin-top: 0;
-  }
-  & .feature-description {
-    width: 100%;
-    @media (--small-screen) {
-      padding-left: 0;
-      width: 100%;
-    }
-  }
-  & .component-title {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    height: 5rem;
-    align-items: center;
-    flex-wrap: wrap;
-    & h3 {
-      margin: 0;
-      font-size: responsive 1.5rem 2.5rem; /* min-size, max-size */
-      font-range: 420px 1280px; /* viewport widths between which font-size is fluid */
-    }
-  }
   & .example {
     display: flex;
-    align-items: center;
-    flex-direction: column;
     justify-content: center;
-    position: relative;
-    width: 80%;
-    background: var(--ea-color-3);
-    box-shadow: var(--ea-box-shadow);
-    border: 1px solid var(--ea-color-background-7);
-    padding: 0 0 3rem 0;
-    margin: 2rem 0rem;
-    @media (--small-screen) {
-      width: 100%;
+    width: 100%;
+    & .ea-card {
+      background: var(--ea-color-3);
+      box-shadow: var(--ea-box-shadow);
+      border: 1px solid var(--ea-color-background-7);
+      padding: 0 0 3rem 0;
+      margin: 2rem 0rem;
+      width: 60%;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      @media (--small-screen) {
+        width: 95%;
+      }
     }
     & .example-toolbar {
       width: 100%;
@@ -86,6 +58,9 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        & p {
+          width: auto;
+        }
       }
       & .container-text {
         margin: 0;
@@ -133,22 +108,10 @@
     }
   }
   &.themeing {
-    & .example {
+    & .ea-card {
       width: 80%;
-      min-width: 464.344px;
-      flex-direction: column;
-      padding-bottom: 6rem;
       @media (--small-screen) {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        width: 100%;
-        min-width: auto;
-        padding-bottom: 0;
-        padding-top: 0rem;
-      }
-      & h3 {
-        width: 100%;
+        width: 95%;
       }
     }
     .autocomplete {
@@ -173,15 +136,6 @@
       }
       & mark {
         background-color: var(--ea-color1);
-      }
-    }
-    & .feature-description {
-      /* width: 50%; */
-      min-width: 410px;
-      @media (--small-screen) {
-        padding-left: 0rem;
-        width: 100%;
-        min-width: 0;
       }
     }
   }
