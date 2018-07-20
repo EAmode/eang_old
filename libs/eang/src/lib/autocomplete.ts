@@ -21,7 +21,6 @@ import { debounceTime, distinctUntilChanged } from 'rxjs/operators'
 @Component({
   selector: 'ea-autocomplete',
   template: `
-  <div>
   <input #inputField type="text"
     [value]="inputFieldValue"
     (keyup)="onKeyup($event)"
@@ -37,7 +36,7 @@ import { debounceTime, distinctUntilChanged } from 'rxjs/operators'
       <ng-container *ngTemplateOutlet="resultsTemplate || defaultTemplate; context: { $implicit: item }"></ng-container>
     </li>
   </ul>
-  </div>`,
+  `,
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,

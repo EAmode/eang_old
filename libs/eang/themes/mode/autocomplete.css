@@ -2,11 +2,8 @@
   --ea-autocomplete-width: var(--ea-autocomplete-width, auto);
   & ea-autocomplete {
     display: block;
-    & div {
-      display: block;
-      position: absolute;
-      overflow: auto;
-    }
+    position: absolute;
+    overflow: auto;
     & ul {
       /* left: 0; */
       z-index: 1;
