@@ -9,6 +9,8 @@ module.exports = {
         }
       }
     }),
-    require('postcss-assets')()
+    require('postcss-assets')({
+      relative: 'libs/eang/themes'
+    })
   ]
 }

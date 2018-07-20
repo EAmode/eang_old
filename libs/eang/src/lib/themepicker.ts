@@ -2,7 +2,7 @@ import { Component, OnInit, Input, AfterViewInit } from '@angular/core'
 
 @Component({
   selector: 'ea-themepicker',
-  template: `<button class="icon-button" [ngStyle]="{'background-image': 'url(assets/images/palette.svg)'}" (click)="toggleThemes()">
+  template: `<button class="icon-button" (click)="toggleThemes()">
   </button>
   <div *ngIf="showThemes" class="ea-themepicker-dropdown">
     <ul class="ea-themepicker-dropdown-list">
