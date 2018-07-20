@@ -30,7 +30,7 @@
             <small>Select the airport you are flying to.</small>
           </p>
           <label id="mat-auto">Airport lookup</label>
-          <ea-autocomplete id="mat-auto" [input]="airportResult1$" [formControl]="airportSearchTerm1" [mapSelectItem]="mapSelectItem">
+          <ea-autocomplete id="mat-auto" [input]="airportResult2$" [formControl]="airportSearchTerm2" [mapSelectItem]="mapSelectItem">
             <ng-template #resultsTemplate let-item>
               <span class="matched" [innerHTML]="item.match"></span>
             </ng-template>
@@ -50,7 +50,7 @@
     <ea-markdown [doc]="scope"></ea-markdown>
 
     <p>If overriding variables and properties for some reason does not work in your case, there is nothing prevents you to create your
-      own theme. You can integrate 
+      own theme. You can integrate
     </p>
     <p></p>
     <p>

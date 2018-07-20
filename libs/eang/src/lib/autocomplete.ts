@@ -20,7 +20,9 @@ import { debounceTime, distinctUntilChanged } from 'rxjs/operators'
 
 @Component({
   selector: 'ea-autocomplete',
-  template: `<input #inputField type="text"
+  template: `
+  <div>
+  <input #inputField type="text"
     [value]="inputFieldValue"
     (keyup)="onKeyup($event)"
     (keydown)="onKeydown($event)"
@@ -34,7 +36,8 @@ import { debounceTime, distinctUntilChanged } from 'rxjs/operators'
     <li *ngFor="let item of suggestions" (click)="select(item)" [attr.selected]="item === selectedItem ? '' : null">
       <ng-container *ngTemplateOutlet="resultsTemplate || defaultTemplate; context: { $implicit: item }"></ng-container>
     </li>
-  </ul>`,
+  </ul>
+  </div>`,
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
@@ -94,8 +97,8 @@ export class AutocompleteComponent implements OnInit, ControlValueAccessor {
         this.propagateChange(term)
       })
     this.selectedItem$.pipe(distinctUntilChanged()).subscribe(selectedItem => {
-      // this.selectedItem.emit(selectedItem)
-      this.propagateChange(selectedItem)
+      this.selectedItem.emit(selectedItem)
+      // this.propagateChange(selectedItem)
     })
   }
 
@@ -122,16 +125,19 @@ export class AutocompleteComponent implements OnInit, ControlValueAccessor {
   onKeydown(event) {
     switch (event.key) {
       case 'ArrowDown':
+      this.selectedIndex++
         this.selectedIndex = Math.abs(
-          --this.selectedIndex % this.suggestions.length
+          this.selectedIndex % this.suggestions.length
         )
         this.selectedItem = this.suggestions[this.selectedIndex]
         this.selectedItem$.next(this.selectedItem)
+
         event.preventDefault()
         break
       case 'ArrowUp':
+      this.selectedIndex--
         this.selectedIndex = Math.abs(
-          ++this.selectedIndex % this.suggestions.length
+          this.selectedIndex % this.suggestions.length
         )
         this.selectedItem = this.suggestions[this.selectedIndex]
         this.selectedItem$.next(this.selectedItem)
