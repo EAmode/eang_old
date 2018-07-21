@@ -82,7 +82,7 @@
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
     "lost": "^8.3.0",
-    "ng-packagr": "^3.0.0-rc.2",
+    "ng-packagr": "^3.0.3",
     "postcss-assets": "^5.0.0",
     "postcss-cli": "^5.0.1",
     "postcss-cssnext": "^3.1.0",
