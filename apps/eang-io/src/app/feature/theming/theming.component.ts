@@ -1,9 +1,16 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core'
+import {
+  Component,
+  OnInit,
+  ViewEncapsulation,
+  ViewChild,
+  ElementRef
+} from '@angular/core'
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
 
 import { BehaviorSubject, timer, of, pipe } from 'rxjs'
 import { map, switchMap, share, take } from 'rxjs/operators'
 import { airports } from './airports'
+import { AutocompleteComponent } from 'dist/eang'
 
 @Component({
   selector: 'ea-feature-theming',
@@ -12,9 +19,10 @@ import { airports } from './airports'
   encapsulation: ViewEncapsulation.None
 })
 export class ThemingComponent implements OnInit {
+  @ViewChild('from') from: AutocompleteComponent
   maxResults = 10
   airportResult1$
-  airportSearchTerm1 = new FormControl()
+  airportSearchTerm1 = new FormControl('was')
 
   airportResult2$
   airportSearchTerm2 = new FormControl()
@@ -26,8 +34,11 @@ export class ThemingComponent implements OnInit {
         return results
       }
 
-      const regex = new RegExp(searchTerm, 'gi')
-      console.log(searchTerm)
+      const regex = new RegExp(
+        searchTerm.replace(/[#-.]|[[-^]|[?|{}]/g, '\\$&'),
+        'gi'
+      )
+      console.log('starting new search with:', searchTerm)
       for (const a of airports) {
         if (results.length >= this.maxResults) {
           break
@@ -108,5 +119,7 @@ export class ThemingComponent implements OnInit {
     )
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.from.itemSelected.subscribe(i => console.log('item selected', i))
+  }
 }

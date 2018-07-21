@@ -17,7 +17,7 @@
             <small>Select the airport you are flying from.</small>
           </p>
           <label>Airport Lookup</label>
-          <ea-autocomplete [input]="airportResult1$" [formControl]="airportSearchTerm1" [mapSelectItem]="mapSelectItem">
+          <ea-autocomplete #from [suggestions]="airportResult1$" [formControl]="airportSearchTerm1" [mapSelectItem]="mapSelectItem">
             <ng-template #resultsTemplate let-item>
               <span class="matched" [innerHTML]="item.match"></span>
             </ng-template>
@@ -30,7 +30,7 @@
             <small>Select the airport you are flying to.</small>
           </p>
           <label>Airport lookup</label>
-          <ea-autocomplete [input]="airportResult2$" [formControl]="airportSearchTerm2" [mapSelectItem]="mapSelectItem">
+          <ea-autocomplete [suggestions]="airportResult2$" [formControl]="airportSearchTerm2" [mapSelectItem]="mapSelectItem">
             <ng-template #resultsTemplate let-item>
               <span class="matched" [innerHTML]="item.match"></span>
             </ng-template>

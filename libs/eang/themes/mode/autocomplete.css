@@ -30,7 +30,8 @@
       padding-top: 0.25rem;
     }
     & li:hover,
-    li[selected] {
+    li[selected],
+    li[selection-focus] {
       background-color: var(--ea-color-accent-2);
       & .matched {
         color: var(--ea-color-3);
