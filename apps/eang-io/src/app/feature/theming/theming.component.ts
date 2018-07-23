@@ -60,7 +60,6 @@ export class ThemingComponent implements OnInit {
   .mode {
     --ea-color-2: #1f242c;
     --ea-color-3: #fff;
-
     --ea-color-accent-1: #298c1d;
     --ea-color-accent-2: #3f6eb5;
     --ea-color-background-1: #ffffff;
@@ -88,6 +87,54 @@ export class ThemingComponent implements OnInit {
   </div>
   <!-- component properties can also be changed individually -->
   <ea-panel style="--ea-panel-background: pink;"></ea-panel>
+  ~~~
+  `
+
+  component = `
+  ~~~ css
+
+  ea-panel {
+    --ea-panel-color: var(--ea-color-1);
+    --ea-panel-background: var(--ea-color-background-2);
+    --ea-panel-height: var(--ea-panel-height, initial);
+    --ea-panel-width: var(--ea-panel-width, initial);
+    --ea-panel-max-height: var(--ea-panel-max-height, 100%);
+    --ea-panel-max-width: var(--ea-panel-max-width, 100%);
+    --ea-panel-min-size-ratio: 0.5;
+
+    display: block;
+    color: var(--ea-panel-color);
+    background: var(--ea-panel-background);
+    height: var(--ea-panel-height);
+    width: var(--ea-panel-width);
+  }
+
+  & ea-panel[state='minimized'] {
+    --ea-panel-height: calc(
+      var(--ea-panel-max-height) * var(--ea-panel-min-size-ratio)
+    );
+
+  ~~~
+  ` 
+
+  corporate = `
+  ~~~ css
+
+  /* overriding some common properties for the mode theme */
+  .yourCorporateTheme {
+    --theme-color-2: #1f242c;
+    --theme-color-3: #fff;
+    --theme-color-accent-1: #298c1d;
+    --theme-color-accent-2: #3f6eb5;
+    --theme-color-background-1: #ffffff;
+    --theme-color-background-2: #3e3e3e;
+  }
+
+  /* changing the properties of a left aligned panel */
+  ea-panel[orientation='left'] {
+    --ea-panel-color: var(--ea-color-3);
+    --ea-panel-max-width: 6rem;
+  }
   ~~~
   `
 

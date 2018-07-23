@@ -6,6 +6,7 @@
       margin: 0;
       border-radius: 0;
       background: var(--ea-color-3);
+      width: 100%;
     }
     & li {
       color: var(--ea-color2);
@@ -19,10 +20,11 @@
     li[selected] {
       background-color: var(--ea-color-background-2);
       & .matched {
-        color: var(--ea-color-1);
+        color: var(--ea-color-3);
       }
       & mark {
-        color: var(--ea-color-1);
+        color: var(--ea-color-3);
+        font-weight: 700;
       }
     }
     & input {
