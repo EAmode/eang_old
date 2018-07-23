@@ -15,8 +15,8 @@ import { of, Observable, combineLatest } from 'rxjs'
 import MarkdownIt from 'markdown-it'
 import hljs from 'highlight.js'
 import Prism from 'prismjs'
-import 'prismjs/plugins/toolbar/prism-toolbar';
-import 'prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard';
+// import 'prismjs/plugins/toolbar/prism-toolbar';
+// import 'prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard';
 import 'prismjs/components/prism-css';
 import 'prismjs/components/prism-javascript';
 import 'prismjs/components/prism-java';
