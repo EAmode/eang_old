@@ -26,7 +26,7 @@
       align-items: center;
       margin-bottom: 3rem;
       @media (--small-screen) {
-        margin-bottom: 0;
+        margin-bottom: 1rem;
       }
       & h3 {
         font-weight: 400;
@@ -68,6 +68,9 @@
       & .container-text {
         margin: 0;
         color: var(--ea-color-1);
+        @media (--small-screen) {
+          font-size: 0.8rem;
+        }
       }
       & ea-panel {
         --ea-panel-color: var(--ea-color-3);
@@ -117,6 +120,22 @@
         width: 95%;
       }
     }
+    & .example {
+      & .ea-card {
+      padding: 0 0 0rem 0;
+      @media (--small-screen) {
+        width: 100%;
+      }
+      & h3 {
+        padding-top: 0;
+      }
+    }
+    & .ea-card-header {
+      @media (--small-screen) {
+        margin-bottom: 0rem;
+      }
+    }
+
     .autocomplete {
       display: flex;
       justify-content: space-evenly;
@@ -126,8 +145,11 @@
       min-height: 15rem;
       padding-bottom: 3rem;
       @media (--small-screen) {
-        min-height: 15rem;
-        padding-top: 0;
+        min-height: 25rem;
+      }
+      & label {
+        position: absolute;
+        top: 50%;
       }
       & h1,
       h2,
