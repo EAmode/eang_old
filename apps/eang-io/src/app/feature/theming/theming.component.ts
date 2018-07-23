@@ -15,7 +15,7 @@ export class ThemingComponent implements OnInit {
   @ViewChild('from') from: AutocompleteComponent
   maxResults = 10
   airportResult1$
-  airportSearchTerm1 = new FormControl('was')
+  airportSearchTerm1 = new FormControl()
 
   airportResult2$
   airportSearchTerm2 = new FormControl()
