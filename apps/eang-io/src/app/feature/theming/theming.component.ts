@@ -10,13 +10,12 @@ import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
 import { BehaviorSubject, timer, of, pipe } from 'rxjs'
 import { map, switchMap, share, take } from 'rxjs/operators'
 import { airports } from './airports'
-import { AutocompleteComponent } from 'dist/eang'
+import { AutocompleteComponent } from '@eang/eang'
 
 @Component({
   selector: 'ea-feature-theming',
   templateUrl: './theming.component.html',
-  styleUrls: ['./theming.component.css'],
-  encapsulation: ViewEncapsulation.None
+  styleUrls: ['./theming.component.css']
 })
 export class ThemingComponent implements OnInit {
   @ViewChild('from') from: AutocompleteComponent

@@ -11,20 +11,23 @@ import {
   AfterViewInit,
   ChangeDetectionStrategy
 } from '@angular/core'
-import {
-  FormControl,
-  ControlValueAccessor,
-  NG_VALUE_ACCESSOR,
-  NG_VALIDATORS
-} from '@angular/forms'
-import { Observable, Subject, Subscription } from 'rxjs'
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms'
+import { Observable, Subscription } from 'rxjs'
 import { debounceTime, distinctUntilChanged, map, filter } from 'rxjs/operators'
+import { preserveWhitespacesDefault } from '@angular/compiler'
 
 @Component({
   selector: 'ea-autocomplete',
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => AutocompleteComponent),
+      multi: true
+    }
+  ],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
   <input #inputField type="text"
-    (value)="value.emit($event)"
     (input)="input.emit($event)"
     (keyup)="keyup.emit($event)"
     (keydown)="keydown.emit($event)"
@@ -37,7 +40,7 @@ import { debounceTime, distinctUntilChanged, map, filter } from 'rxjs/operators'
     aria-autocomplete="list">
   <ng-template #defaultTemplate let-item>{{item}}</ng-template>
   <ng-container *ngIf="suggestions | async as list">
-    <ul *ngIf="!hidden && list.length > 0">
+    <ul *ngIf="showPanel && list.length > 0">
       <li *ngFor="let item of list; index as i"
         (click)="select(item,i)"
         [attr.data-index]="i"
@@ -47,21 +50,7 @@ import { debounceTime, distinctUntilChanged, map, filter } from 'rxjs/operators'
       </li>
     </ul>
   </ng-container>
-  `,
-  providers: [
-    {
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => AutocompleteComponent),
-      multi: true
-    }
-    // ,
-    // {
-    //   provide: NG_VALIDATORS,
-    //   useExisting: forwardRef(() => AutocompleteComponent),
-    //   multi: true
-    // }
-  ],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  `
 })
 export class AutocompleteComponent
   implements OnInit, AfterViewInit, ControlValueAccessor {
@@ -91,14 +80,12 @@ export class AutocompleteComponent
 
   currentSuggestions
   inputFieldValue = ''
-  private defaultTemplate: TemplateRef<any>
   resultsContext
   selected = false
-  hidden = false
+  showPanel = true
   selectionFocusIndex = -1
   selectionFocusItem
   private _inputSubscription: Subscription
-  private _prevInputValue: string
   propagateChange = _ => {}
   touched = () => {}
   @Input() mapSelectItem = (item: any) => item.toString()
@@ -108,35 +95,22 @@ export class AutocompleteComponent
       console.log('new suggestions', s)
       this.currentSuggestions = s
     })
-    this.value.subscribe(v=>{
-      console.log('value changed', v)
-    })
-    this.input.subscribe(i=>{
-      console.log('input changed', i)
-    })
-    this.keyup
+
+    this.input
       .pipe(
-        filter(e => {
-          return !!(
-            this._prevInputValue !== (<HTMLInputElement>event.target).value
-          )
-        }),
-        map(e => (<HTMLInputElement>event.target).value),
-        // filter(v => this._prevSearchTerm !== v),
         debounceTime(this.inputFieldDebounceTime),
+        map(e => (<HTMLInputElement>e.target).value),
         distinctUntilChanged()
       )
       .subscribe(term => {
         console.log('search term changed', term)
-        this.hidden = false
-        this._prevInputValue = term
+        this.showPanel = true
         this.searchTerm.emit(term)
         this.propagateChange(term)
       })
 
     this.keydown.subscribe(event => {
-      this._prevInputValue = (<HTMLInputElement>event.target).value
-      this.hidden = false
+      this.showPanel = true
       switch (event.key) {
         case 'ArrowDown':
           this.selectionFocusIndex++
@@ -170,10 +144,9 @@ export class AutocompleteComponent
         case 'Tab':
         case 'Enter':
           this.select(this.selectionFocusItem, this.selectionFocusIndex)
-          event.preventDefault()
           break
         case 'Escape':
-          this.hidden = true
+          this.showPanel = true
           break
       }
     })
@@ -189,7 +162,7 @@ export class AutocompleteComponent
     })
     this.click.subscribe(e => {
       console.log('got clicked', e)
-      this.hidden = !this.hidden
+      this.showPanel = !this.showPanel
     })
   }
 
@@ -226,7 +199,7 @@ export class AutocompleteComponent
     this.selectionFocusIndex = index
     const mappedItem = this.mapSelectItem(item)
     this.inputField.nativeElement.value = mappedItem
-    this.hidden = true
+    this.showPanel = false
     this.itemSelected.emit(item)
   }
 
