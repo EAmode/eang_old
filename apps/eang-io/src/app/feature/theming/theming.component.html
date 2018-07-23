@@ -12,9 +12,10 @@
       <div class="autocomplete">
         <div class="mode">
           <h3>Mode Theme</h3>
-            <small>Select the airport you are flying from.</small>
+          <small>Select the airport you are flying from.</small>
           <label>Airport Lookup</label>
-          <ea-autocomplete #from [suggestions]="airportResult1$" [formControl]="airportSearchTerm1" [mapSelectItem]="mapSelectItem">
+          <ea-autocomplete #from [suggestions]="airportResult1$" [formControl]="airportSearchTerm1" [mapSelectItem]="mapSelectItem"
+            placeholder="from*">
             <ng-template #resultsTemplate let-item>
               <span class="matched" [innerHTML]="item.match"></span>
             </ng-template>
@@ -23,9 +24,9 @@
         <div class="material">
           <h3>Material Theme</h3>
 
-            <small>Select the airport you are flying to.</small>
+          <small>Select the airport you are flying to.</small>
           <label>Airport lookup</label>
-          <ea-autocomplete [suggestions]="airportResult2$" [formControl]="airportSearchTerm2" [mapSelectItem]="mapSelectItem">
+          <ea-autocomplete [suggestions]="airportResult2$" [formControl]="airportSearchTerm2" [mapSelectItem]="mapSelectItem" placeholder="to*">
             <ng-template #resultsTemplate let-item>
               <span class="matched" [innerHTML]="item.match"></span>
             </ng-template>

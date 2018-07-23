@@ -33,6 +33,7 @@ import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators'
     (focus)="focus.emit($event)"
     (blur)="blur.emit($event)"
     (click)="click.emit($event)"
+    [placeholder]="placeholder"
     autocomplete="off"
     autocorrect="off"
     autocapitalize="off"
@@ -54,6 +55,7 @@ import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators'
 export class AutocompleteComponent
   implements OnInit, OnDestroy, ControlValueAccessor {
   @Input() suggestions: Observable<any>
+  @Input() placeholder
   @Input() maxItems = Math.max // should rather limit suggestion in first place
   @Input('disabled')
   set disabled(isDisabled) {
