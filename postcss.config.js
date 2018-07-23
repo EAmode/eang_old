@@ -1,4 +1,5 @@
 module.exports = {
+  to:'',
   plugins: [
     require('postcss-import')(),
     require('postcss-nested')(),
@@ -10,6 +11,7 @@ module.exports = {
       }
     }),
     require('postcss-assets')({
+      basePath: 'libs/eang/themes',
       relative: 'libs/eang/themes'
     })
   ]

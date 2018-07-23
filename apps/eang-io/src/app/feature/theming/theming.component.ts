@@ -1,20 +1,21 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core'
-import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
+import { Component, OnInit, ViewChild } from '@angular/core'
+import { FormControl } from '@angular/forms'
 
-import { BehaviorSubject, timer, of, pipe } from 'rxjs'
-import { map, switchMap, share, take } from 'rxjs/operators'
+import { pipe } from 'rxjs'
+import { map } from 'rxjs/operators'
 import { airports } from './airports'
+import { AutocompleteComponent } from '@eang/eang'
 
 @Component({
   selector: 'ea-feature-theming',
   templateUrl: './theming.component.html',
-  styleUrls: ['./theming.component.css'],
-  encapsulation: ViewEncapsulation.None
+  styleUrls: ['./theming.component.css']
 })
 export class ThemingComponent implements OnInit {
+  @ViewChild('from') from: AutocompleteComponent
   maxResults = 10
   airportResult1$
-  airportSearchTerm1 = new FormControl()
+  airportSearchTerm1 = new FormControl('was')
 
   airportResult2$
   airportSearchTerm2 = new FormControl()
@@ -26,8 +27,11 @@ export class ThemingComponent implements OnInit {
         return results
       }
 
-      const regex = new RegExp(searchTerm, 'gi')
-      console.log(searchTerm)
+      const regex = new RegExp(
+        searchTerm.replace(/[#-.]|[[-^]|[?|{}]/g, '\\$&'),
+        'gi'
+      )
+      console.log('starting new search with:', searchTerm)
       for (const a of airports) {
         if (results.length >= this.maxResults) {
           break
@@ -42,16 +46,6 @@ export class ThemingComponent implements OnInit {
         }
       }
       return results
-      // return airports
-      //   .map(a => {
-      //     let hasMatched = false
-      //     const match = a.Name.replace(regex, m => {
-      //       hasMatched = true
-      //       return `<mark>${m}</mark>`
-      //     })
-      //     return hasMatched ? { name: a.Name, match } : undefined
-      //   })
-      //   .filter(matchedItem => !!matchedItem)
     })
   )
 
@@ -108,5 +102,7 @@ export class ThemingComponent implements OnInit {
     )
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.from.itemSelected.subscribe(i => console.log('item selected', i))
+  }
 }
