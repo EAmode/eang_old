@@ -122,64 +122,65 @@
     }
     & .example {
       & .ea-card {
-      padding: 0 0 0rem 0;
-      @media (--small-screen) {
-        width: 100%;
-      }
-      & h3 {
-        padding-top: 0;
-      }
-    }
-    & .ea-card-header {
-      @media (--small-screen) {
-        margin-bottom: 0rem;
-      }
-    }
-
-    .autocomplete {
-      display: flex;
-      justify-content: space-evenly;
-      align-items: space-between;
-      flex-wrap: wrap;
-      width: 100%;
-      min-height: 15rem;
-      padding-bottom: 3rem;
-      @media (--small-screen) {
-        min-height: 25rem;
-      }
-      & label {
-        position: absolute;
-        top: 50%;
-      }
-      & h1,
-      h2,
-      h3,
-      h4,
-      p {
-        margin: 0;
-      }
-      & .mode,
-      .material {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        position: relative;
-        & small {
-          position: absolute;
-          bottom: 0;
+        padding: 0 0 0rem 0;
+        @media (--small-screen) {
+          width: 100%;
+        }
+        & h3 {
+          padding-top: 0;
         }
       }
-    }
-    & ea-autocomplete {
-      & input {
-        width: 16rem;
+      & .ea-card-header {
+        @media (--small-screen) {
+          margin-bottom: 0rem;
+        }
       }
-      & ul {
-        margin-bottom: 3rem;
+
+      .autocomplete {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: space-between;
+        flex-wrap: wrap;
+        width: 100%;
+        min-height: 15rem;
+        padding-bottom: 3rem;
+        @media (--small-screen) {
+          min-height: 25rem;
+        }
+        & label {
+          position: absolute;
+          top: 50%;
+        }
+        & h1,
+        h2,
+        h3,
+        h4,
+        p {
+          margin: 0;
+        }
+        & .mode,
+        .material {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          position: relative;
+          & small {
+            position: absolute;
+            bottom: 0;
+          }
+        }
       }
-      & mark {
-        font-weight: 700;
-        background-color: inherit;
+      & ea-autocomplete {
+        & input {
+          width: 16rem;
+        }
+        & ul {
+          margin-bottom: 3rem;
+        }
+        & mark {
+          font-weight: 700;
+          background-color: inherit;
+        }
       }
     }
   }
