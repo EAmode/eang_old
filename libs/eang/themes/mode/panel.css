@@ -1,7 +1,7 @@
 .mode {
   & ea-panel {
     --ea-panel-color: var(--ea-color-1);
-    --ea-panel-background: var(--ea-color-background-1);
+    --ea-panel-background: var(--ea-color-background-2);
 
     --ea-panel-height: var(--ea-panel-height, initial);
     --ea-panel-width: var(--ea-panel-width, initial);

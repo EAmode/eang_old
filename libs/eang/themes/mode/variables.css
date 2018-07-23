@@ -5,6 +5,7 @@
 
   --ea-color-accent-1: #298c1d;
   --ea-color-accent-2: #3f6eb5;
+
   --ea-color-background-1: #ffffff;
   --ea-color-background-2: #3e3e3e;
   --ea-color-background-3: #5d5d5d;
@@ -19,6 +20,8 @@
   --ea-color-danger: #d9534f;
   --ea-color-error: #d9534f;
   --ea-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.09);
+
+  --ea-markdown-property: #f8c555;
 
   --ea-font-1: 'Open Sans';
   font-family: 'Titillium Web', sans-serif;
