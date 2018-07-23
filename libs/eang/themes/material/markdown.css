@@ -17,7 +17,7 @@
 
     code[class*='language-'],
     pre[class*='language-'] {
-      color: #ccc;
+      color: var(--ea-color-1);
       background: none;
       font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
       text-align: left;
@@ -42,7 +42,7 @@
     }
     :not(pre) > code[class*='language-'],
     pre[class*='language-'] {
-      background: var(--ea-color-background-2);
+      background: var(--ea-color-background-4);
     }
     /* Inline code */
     :not(pre) > code[class*='language-'] {
@@ -92,7 +92,7 @@
     .token.attr-value,
     .token.regex,
     .token.variable {
-      color: #7ec699;
+      color: var(--ea-color-accent-1);
     }
     .token.operator,
     .token.entity,

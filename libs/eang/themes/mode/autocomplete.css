@@ -2,14 +2,15 @@
   --ea-autocomplete-width: var(--ea-autocomplete-width, auto);
   & ea-autocomplete {
     display: block;
-    position: absolute;
+    /* position: absolute; */
     overflow: auto;
     & ul {
       /* left: 0; */
       z-index: 1;
+      position: absolute;
       /* min-width: 100%; */
       box-sizing: border-box;
-      /* list-style: none; */
+      list-style: none;
       padding: 0;
       border-radius: 0.3em;
       margin: 0.2em 0 0;

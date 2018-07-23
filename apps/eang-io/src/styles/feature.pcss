@@ -17,7 +17,7 @@
       flex-direction: column;
       align-items: center;
       @media (--small-screen) {
-        width: 95%;
+        width: 100%;
       }
     }
     & .ea-card-header {
@@ -25,6 +25,9 @@
       display: flex;
       align-items: center;
       margin-bottom: 3rem;
+      @media (--small-screen) {
+        margin-bottom: 0;
+      }
       & h3 {
         font-weight: 400;
         font-size: 22px;
@@ -45,7 +48,7 @@
     & .screen {
       height: 15rem;
       width: 25rem;
-      background-color: var(--ea-color-background-2);
+      background-color: var(--ea-color-background-4);
       position: relative;
       border-radius: var(--panel-border-radius);
       @media (--small-screen) {
@@ -64,11 +67,11 @@
       }
       & .container-text {
         margin: 0;
-        color: var(--ea-color-3);
+        color: var(--ea-color-1);
       }
       & ea-panel {
         --ea-panel-color: var(--ea-color-3);
-        --ea-panel-background: var(--ea-color-accent-2);
+        --ea-panel-background: var(--ea-color-background-2);
         & p {
           margin: 0;
         }
@@ -117,14 +120,32 @@
     .autocomplete {
       display: flex;
       justify-content: space-evenly;
-      align-items: flex-start;
+      align-items: space-between;
       flex-wrap: wrap;
       width: 100%;
-      min-height: 5rem;
-      padding-top: 3rem;
+      min-height: 15rem;
+      padding-bottom: 3rem;
       @media (--small-screen) {
         min-height: 15rem;
         padding-top: 0;
+      }
+      & h1,
+      h2,
+      h3,
+      h4,
+      p {
+        margin: 0;
+      }
+      & .mode,
+      .material {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        position: relative;
+        & small {
+          position: absolute;
+          bottom: 0;
+        }
       }
     }
     & ea-autocomplete {
@@ -135,7 +156,8 @@
         margin-bottom: 3rem;
       }
       & mark {
-        background-color: var(--ea-color1);
+        font-weight: 700;
+        background-color: inherit;
       }
     }
   }

@@ -7,9 +7,9 @@
   --ea-color-accent-2: #398bf7;
 
   --ea-color-background-1: #ffffff;
-  --ea-color-background-2: #e8e8e8;
+  --ea-color-background-2: #425b9a;
   --ea-color-background-3: #e1effd;
-  --ea-color-background-4: #3c6a98;
+  --ea-color-background-4: hsl(0, 0%, 96%);
   --ea-color-background-5: #0c0e0f;
   --ea-color-background-6: #00152b;
 
@@ -27,4 +27,6 @@
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
+  --ea-padding: 4rem;
+
 }
