@@ -28,6 +28,7 @@
     font-size: responsive 1.25rem 1.5rem; /* min-size, max-size */
     font-range: 420px 1280px; /* viewport widths between which font-size is fluid */
     width: 100%;
+    line-height: 1.8rem;
   }
   p::selection {
     background: var(--ea-color-accent-2);
