@@ -1,14 +1,8 @@
-import {
-  Component,
-  OnInit,
-  ViewEncapsulation,
-  ViewChild,
-  ElementRef
-} from '@angular/core'
-import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
+import { Component, OnInit, ViewChild } from '@angular/core'
+import { FormControl } from '@angular/forms'
 
-import { BehaviorSubject, timer, of, pipe } from 'rxjs'
-import { map, switchMap, share, take } from 'rxjs/operators'
+import { pipe } from 'rxjs'
+import { map } from 'rxjs/operators'
 import { airports } from './airports'
 import { AutocompleteComponent } from '@eang/eang'
 
@@ -52,16 +46,6 @@ export class ThemingComponent implements OnInit {
         }
       }
       return results
-      // return airports
-      //   .map(a => {
-      //     let hasMatched = false
-      //     const match = a.Name.replace(regex, m => {
-      //       hasMatched = true
-      //       return `<mark>${m}</mark>`
-      //     })
-      //     return hasMatched ? { name: a.Name, match } : undefined
-      //   })
-      //   .filter(matchedItem => !!matchedItem)
     })
   )
 
