@@ -13,7 +13,8 @@ module.exports = {
       }
     }),
     require('postcss-assets')({
-      loadPaths: ['libs/eang/themes']
+      relative: true, 
+      loadPaths: ['libs/eang/themes', 'src']
     }),
     require('lost')(),
   ]
