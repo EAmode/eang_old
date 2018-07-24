@@ -131,6 +131,8 @@ export class AutocompleteComponent
           event.preventDefault()
           break
         case 'Tab':
+          this.select(this.selectionFocusItem, this.selectionFocusIndex, false)
+          break
         case 'Enter':
           this.select(this.selectionFocusItem, this.selectionFocusIndex)
           break
@@ -164,11 +166,14 @@ export class AutocompleteComponent
     this.inputField.nativeElement.disabled = isDisabled
   }
 
-  select(item, index) {
+  select(item, index, focus = true) {
     this.selectedItem = item
     this.selectionFocusIndex = index
     this.inputField.nativeElement.value = this.mapSelectItem(item)
     this.showPanel = false
+    if (focus) {
+      this.inputField.nativeElement.focus()
+    }
     this.itemSelected.emit(item)
   }
 

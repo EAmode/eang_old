@@ -51,12 +51,14 @@ export class ThemingComponent implements OnInit {
 
   variables = `
   ~~~ css
-  /* overriding one common property accross all themes */
+  /* overriding one common property accross all
+     themes */
   :root {
     --ea-color-1: green;
   }
 
-  /* overriding some common properties for the mode theme */
+  /* overriding some common properties for
+     the mode theme */
   .mode {
     --ea-color-2: #1f242c;
     --ea-color-3: #fff;
@@ -78,14 +80,16 @@ export class ThemingComponent implements OnInit {
   ~~~ html
   <div class="my-secial-green-div">
     <style>
-      /* all ea-panels have a green background within this div */
+      <!-- all ea-panels have a green background within
+           this div -->
       ea-panel {
         --ea-panel-background: green;
       }
     </style>
     ...
   </div>
-  <!-- component properties can also be changed individually -->
+  <!-- component properties can also be changed
+       individually -->
   <ea-panel style="--ea-panel-background: pink;"></ea-panel>
   ~~~
   `
@@ -115,7 +119,7 @@ export class ThemingComponent implements OnInit {
     );
 
   ~~~
-  ` 
+  `
 
   corporate = `
   ~~~ css
