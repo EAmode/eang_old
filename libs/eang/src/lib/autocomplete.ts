@@ -102,7 +102,6 @@ export class AutocompleteComponent
         distinctUntilChanged()
       )
       .subscribe(term => {
-        console.log('search term changed', term)
         this.showPanel = true
         this.searchTerm.emit(term)
         this.propagateChange(term)
@@ -143,7 +142,6 @@ export class AutocompleteComponent
     })
 
     this.click.subscribe(e => {
-      console.log('got clicked', e)
       this.showPanel = !this.showPanel
     })
   }
