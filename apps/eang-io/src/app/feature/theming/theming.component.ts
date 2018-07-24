@@ -49,6 +49,7 @@ export class ThemingComponent implements OnInit {
   )
 
   variables = `
+  *style.pcss*
   ~~~ css
   /* overriding one common property accross all
      themes */

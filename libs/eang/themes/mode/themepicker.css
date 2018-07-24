@@ -4,8 +4,8 @@
     outline: none;
     & .icon-button {
       cursor: pointer;
-      width: 2rem;
-      height: 2rem;
+      width: 1.6rem;
+      height: 1.6rem;
       border: none;
       background: inline('mode/icon/palette.svg');
       background-repeat: no-repeat;

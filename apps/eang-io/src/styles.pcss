@@ -19,6 +19,32 @@ body {
   align-items: center;
 }
 
+#welcome {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5rem;
+  width: 70%;
+  @media (--large-screen) {
+    max-width: 1200px;
+  }
+  @media (--small-screen) {
+    max-width: 90%;
+  }
+}
+
+#title {
+  & p {
+    margin: 0;
+  }
+}
+
+.logos {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 40%;
+}
+
 #features {
   max-width: 70%;
   @media (--large-screen) {
