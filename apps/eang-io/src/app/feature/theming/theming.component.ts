@@ -31,7 +31,6 @@ export class ThemingComponent implements OnInit {
         searchTerm.replace(/[#-.]|[[-^]|[?|{}]/g, '\\$&'),
         'gi'
       )
-      console.log('starting new search with:', searchTerm)
       for (const a of airports) {
         if (results.length >= this.maxResults) {
           break
