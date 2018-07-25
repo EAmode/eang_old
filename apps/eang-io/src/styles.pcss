@@ -6,13 +6,28 @@
 @custom-media --small-screen (width <= 1200px);
 @custom-media --large-screen (width >= 1300px);
 
+:root {
+  --toolbar-height: 4rem;
+}
+
+html {
+  font-size: 1rem;
+}
+
 body {
   margin: 0;
   padding: 0;
   background: var(--ea-color-3);
 }
 
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
 #main {
+  padding-top: var(--toolbar-height);
   color: var(--ea-color-1);
   display: flex;
   flex-direction: column;

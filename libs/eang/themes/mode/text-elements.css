@@ -1,12 +1,12 @@
 .mode {
   & h1 {
-    font-size: 2.6rem;
+    --ea-h1-font-size: var(--ea-h1-font-size, 2.6rem);
+    font-size: var(--ea-h1-font-size);
     font-weight: 500;
     margin-bottom: 0.6em;
   }
   & h2 {
-    font-size: responsive 1.8rem 2.8rem; /* min-size, max-size */
-    font-range: 420px 1280px; /* viewport widths between which font-size is fluid */
+    font-size: 1.8rem; /* min-size, max-size */
     font-weight: 500;
     margin-bottom: 0.4em;
   }
@@ -14,9 +14,6 @@
     font-size: 1.8rem;
     font-weight: 500;
     margin-bottom: 0.1em;
-    @media (--small-screen) {
-      padding-top: calc(var(--ea-padding) * var(--ea-scale-factor));
-    }
   }
   & h4 {
     font-size: 1.2rem;
@@ -25,13 +22,12 @@
     font-size: 1.1rem;
   }
   & p {
-    font-size: responsive 1.25rem 1.5rem; /* min-size, max-size */
-    font-range: 420px 1280px; /* viewport widths between which font-size is fluid */
+    font-size: 1.25rem; /* min-size, max-size */
     width: 100%;
   }
-  p::selection {
+  & p::selection {
     background: var(--ea-color-accent-2);
-    color: white;
+    color: var(--ea-color-3);
   }
   & a {
     font-size: 1.8rem;
