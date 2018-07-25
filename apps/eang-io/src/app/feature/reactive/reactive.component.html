@@ -12,13 +12,15 @@
       <div class="ea-card-header">
         <h3>&lt;ea-panel&gt;</h3>
       </div>
-      <div id="example-label" class="screen">
-        <div class="text-container">
-          <p class="container-text">({{panelOrientation | async}}, {{panelState | async}})</p>
+      <div id="example-label" class="ea-card-content">
+        <div class="screen">
+          <div class="text-container">
+            <p class="container-text">({{panelOrientation | async}}, {{panelState | async}})</p>
+          </div>
+          <ea-panel [state]="panelState" [orientation]="panelOrientation">
+            ea-panel
+          </ea-panel>
         </div>
-        <ea-panel [state]="panelState" [orientation]="panelOrientation">
-          ea-panel
-        </ea-panel>
       </div>
       <div class="panel-buttons">
         <mdc-radio name="radioGroup" checked="true" value="maximized" (change)="onChange($event)"></mdc-radio>

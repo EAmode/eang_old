@@ -3,11 +3,22 @@
     background: var(--ea-color-3);
     box-shadow: var(--ea-box-shadow);
     border: 1px solid var(--ea-color-background-7);
-    padding: 0 0 3rem 0;
-    margin: 2rem 0rem;
-    width: 60%;
+    /* padding: 0.5rem 1rem; */
+    margin: 1rem 0.5rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: left;
+    & .ea-card-header {
+      padding: 0.5rem 1rem;
+      border-bottom: 1px solid;
+      justify-content: left;
+      padding-bottom: 1.5rem;
+    }
+    & .ea-card-content {
+      padding: 0.5rem 1rem;
+      border-bottom: 1px solid;
+      justify-content: left;
+      padding-bottom: 1.5rem;
+    }
   }
 }
