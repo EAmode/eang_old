@@ -9,7 +9,7 @@
     "build": "npm run css && ng build && ng build --project=eang-io",
     "css": "npm run css:build && npm run css:copy",
     "css:eangio": "postcss apps/eang-io/src/*.pcss -d apps/eang-io/src/ --config apps/eang-io/postcss.config.js --ext css",
-    "css:build": "postcss ./libs/eang/themes/**/*.css --base libs/eang/themes --dir dist/eang/css/",
+    "css:build": "postcss \"./libs/eang/themes/**/*.css\" --base libs/eang/themes --dir dist/eang/css/",
     "css:copy": "cpx \"libs/eang/themes/**/*\" \"dist/eang/themes\"",
     "css:watch": "concurrently  \"npm run css:build -- -w\" \"npm run css:copy -- -w\"",
     "test": "ng test",
