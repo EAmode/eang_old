@@ -1,0 +1,13 @@
+.mode {
+  & .ea-card {
+    background: var(--ea-color-3);
+    box-shadow: var(--ea-box-shadow);
+    border: 1px solid var(--ea-color-background-7);
+    padding: 0 0 3rem 0;
+    margin: 2rem 0rem;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
