@@ -12,8 +12,7 @@ import {
   QueryList
 } from '@angular/core'
 import { of, Observable, combineLatest } from 'rxjs'
-import MarkdownIt from 'markdown-it'
-import hljs from 'highlight.js'
+import * as MarkdownIt from 'markdown-it'
 import Prism from 'prismjs'
 // import 'prismjs/plugins/toolbar/prism-toolbar';
 // import 'prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard';
@@ -72,7 +71,7 @@ export class MarkdownComponent implements OnInit, AfterContentInit {
     // If result starts with <pre... internal wrapper is skipped.
     highlight: function (str, lang) {
       // let hilighted = Prism.highlight(str, Prism.languages.javascript, 'javascript')
-      if (lang && hljs.getLanguage(lang)) {
+      if (lang) {
         try {
           return Prism.highlight(str, Prism.languages['lang'], lang)
           // return hljs.highlight(lang, str).value;
