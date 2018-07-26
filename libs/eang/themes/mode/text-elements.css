@@ -24,8 +24,6 @@
   }
   & p {
     font-size: 1.25rem;
-    /* min-size, max-size */
-    width: 100%;
   }
   & p::selection {
     background: var(--ea-color-accent-2);
