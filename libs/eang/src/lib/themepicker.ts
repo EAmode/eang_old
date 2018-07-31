@@ -33,10 +33,6 @@ export class ThemePickerComponent implements OnInit {
       this.themeMatch.push(element)
     })
 
-    this.focus.subscribe(e => {
-      console.log('focus', e)
-    })
-
     this.blur.subscribe(e => {
       this.showThemes = false
     })
