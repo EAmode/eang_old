@@ -144,6 +144,11 @@ export class AutocompleteComponent
     this.click.subscribe(e => {
       this.showPanel = !this.showPanel
     })
+
+    this.blur.subscribe(e => {
+      this.touched()
+      this.showPanel = false
+    })
   }
 
   writeValue(value: any): void {
@@ -173,11 +178,6 @@ export class AutocompleteComponent
       this.inputField.nativeElement.focus()
     }
     this.itemSelected.emit(item)
-  }
-
-  onInputBlur(event) {
-    this.touched()
-    this.blur.emit(event)
   }
 
   ngOnDestroy(): void {

@@ -1,8 +1,15 @@
-import { Component, OnInit, Input, AfterViewInit } from '@angular/core'
+import {
+  Component,
+  OnInit,
+  Input,
+  AfterViewInit,
+  Output,
+  EventEmitter
+} from '@angular/core'
 
 @Component({
   selector: 'ea-themepicker',
-  template: `<button class="icon-button" (click)="toggleThemes()">
+  template: `<button class="icon-button" (click)="toggleThemes()" (blur)="blur.emit($event)" (focus)="focus.emit($event)">
   </button>
   <div *ngIf="showThemes" class="ea-themepicker-dropdown">
     <ul class="ea-themepicker-dropdown-list">
@@ -14,12 +21,24 @@ import { Component, OnInit, Input, AfterViewInit } from '@angular/core'
 export class ThemePickerComponent implements OnInit {
   @Input() themes
   @Input() select
+
+  @Output() readonly focus = new EventEmitter<FocusEvent>()
+  @Output() readonly blur = new EventEmitter<FocusEvent>()
+
   themeMatch = []
   showThemes = false
 
   ngOnInit() {
     this.themes.forEach(element => {
       this.themeMatch.push(element)
+    })
+
+    this.focus.subscribe(e => {
+      console.log('focus', e)
+    })
+
+    this.blur.subscribe(e => {
+      this.showThemes = false
     })
   }
 
