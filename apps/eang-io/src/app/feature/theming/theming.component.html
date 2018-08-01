@@ -19,7 +19,7 @@
           <small>Select the airport you are flying from.</small>
           <label>Airport Lookup</label>
           <ea-autocomplete #from [suggestions]="airportResult1$" [formControl]="airportSearchTerm1" [mapSelectItem]="mapSelectItem"
-            placeholder="from*">
+            placeholder="from*" [selectFirst]="true">
             <ng-template #resultsTemplate let-item>
               <span class="matched" [innerHTML]="item.match"></span>
             </ng-template>

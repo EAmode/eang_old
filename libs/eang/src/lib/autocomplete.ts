@@ -56,6 +56,7 @@ export class AutocompleteComponent
   implements OnInit, OnDestroy, ControlValueAccessor {
   @Input() suggestions: Observable<any>
   @Input() placeholder
+  @Input() selectFirst = false
   @Input() maxItems = Math.max // should rather limit suggestion in first place
   @Input('disabled')
   set disabled(isDisabled) {
@@ -80,7 +81,7 @@ export class AutocompleteComponent
   @ViewChild('suggestionPanel') suggestionPanel
   @ContentChild(TemplateRef) resultsTemplate: TemplateRef<any>
 
-  currentSuggestions
+  currentSuggestions: any[]
   showPanel = true
   selectionFocusIndex = -1
   selectionFocusItem
@@ -130,7 +131,17 @@ export class AutocompleteComponent
           event.preventDefault()
           break
         case 'Tab':
-          this.select(this.selectionFocusItem, this.selectionFocusIndex, false)
+          if (this.selectionFocusItem) {
+            this.select(
+              this.selectionFocusItem,
+              this.selectionFocusIndex,
+              false
+            )
+          } else if (this.selectFirst && this.currentSuggestions.length > 0) {
+            this.select(this.currentSuggestions[0], 0, false)
+          } else {
+            this.showPanel = false
+          }
           break
         case 'Enter':
           this.select(this.selectionFocusItem, this.selectionFocusIndex)
@@ -147,7 +158,7 @@ export class AutocompleteComponent
 
     this.blur.subscribe(e => {
       this.touched()
-      this.showPanel = false
+      //    this.showPanel = false
     })
   }
 
