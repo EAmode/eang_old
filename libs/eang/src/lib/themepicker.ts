@@ -9,7 +9,7 @@ import {
 
 @Component({
   selector: 'ea-themepicker',
-  template: `<button class="icon-button" (click)="toggleThemes()" (blur)="blur.emit($event)" (focus)="focus.emit($event)">
+  template: `<button class="icon-button" (click)="toggleThemes()" (focus)="focus.emit($event)">
   </button>
   <div *ngIf="showThemes" class="ea-themepicker-dropdown">
     <ul class="ea-themepicker-dropdown-list">
@@ -33,9 +33,6 @@ export class ThemePickerComponent implements OnInit {
       this.themeMatch.push(element)
     })
 
-    this.blur.subscribe(e => {
-      this.showThemes = false
-    })
   }
 
   selectTheme(theme) {
