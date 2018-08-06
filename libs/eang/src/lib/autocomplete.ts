@@ -13,7 +13,7 @@ import {
 } from '@angular/core'
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms'
 import { Observable, Subscription } from 'rxjs'
-import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators'
+import { debounceTime, distinctUntilChanged, map, delay } from 'rxjs/operators'
 
 @Component({
   selector: 'ea-autocomplete',
@@ -91,6 +91,8 @@ export class AutocompleteComponent
 
   ngOnInit() {
     this._suggestionSub = this.suggestions.subscribe(s => {
+      this.selectedItem = undefined
+      this.selectionFocusItem = undefined
       this.selectionFocusIndex = -1
       this.currentSuggestions = s
       this.suggestionOptions.emit(s)
@@ -131,6 +133,13 @@ export class AutocompleteComponent
           event.preventDefault()
           break
         case 'Tab':
+          this.showPanel = false
+          if (
+            this.selectedItem &&
+            this.selectedItem === this.selectionFocusItem
+          ) {
+            break
+          }
           if (this.selectionFocusItem) {
             this.select(
               this.selectionFocusItem,
@@ -139,8 +148,6 @@ export class AutocompleteComponent
             )
           } else if (this.selectFirst && this.currentSuggestions.length > 0) {
             this.select(this.currentSuggestions[0], 0, false)
-          } else {
-            this.showPanel = false
           }
           break
         case 'Enter':
@@ -158,7 +165,7 @@ export class AutocompleteComponent
 
     this.blur.subscribe(e => {
       this.touched()
-      //    this.showPanel = false
+      this.showPanel = false
     })
   }
 
