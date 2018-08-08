@@ -3,7 +3,7 @@
 @import 'styles/toolbar.pcss';
 @import 'styles/footer.pcss';
 @import 'styles/text-elements.pcss';
-@custom-media --small-screen (width <= 1200px);
+@custom-media --small-screen (width <= 700px);
 @custom-media --large-screen (width >= 1300px);
 
 :root {
@@ -18,6 +18,11 @@ body {
   margin: 0;
   padding: 0;
   background: var(--ea-color-3);
+}
+.mode p {
+  @media (--small-screen) {
+    font-size: 1.2rem;
+  }
 }
 
 .sticky {
