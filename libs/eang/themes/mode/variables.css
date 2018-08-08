@@ -21,9 +21,8 @@
   --ea-color-error: #d9534f;
   --ea-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.09);
 
-
   --ea-font-1: 'Open Sans';
-  font-family: 'Titillium Web', sans-serif;
+  font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
   --panel-border-radius: 0.25rem;

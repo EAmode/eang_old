@@ -6,6 +6,20 @@
     display: flex;
     justify-content: center;
     width: 100%;
+    & .ea-card {
+      width: 50%;
+      @media (--small-screen) {
+        width: 95%;
+      }
+    }
+    & .ea-card-footer {
+      flex-wrap: wrap;
+      & label {
+        display: flex;
+        align-items: center;
+      }
+    }
+
     & .panel-buttons {
       width: 100%;
       display: flex;
@@ -41,7 +55,7 @@
       }
       & ea-panel {
         --ea-panel-color: var(--ea-color-3);
-        --ea-panel-background: var(--ea-color-background-2);
+        --ea-panel-background: var(--ea-color-background-5);
         & p {
           margin: 0;
         }
@@ -103,12 +117,19 @@
         }
       } */
 
+      & .ea-card {
+        width: 80%;
+        @media (--small-screen) {
+          width: 95%;
+        }
+      }
+
       .autocomplete {
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-around;
         align-items: space-between;
         flex-wrap: wrap;
-        width: 100%;
+        /* width: 100%; */
         min-height: 15rem;
         padding-bottom: 3rem;
         @media (--small-screen) {

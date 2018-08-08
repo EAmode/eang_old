@@ -1,8 +1,8 @@
 .mode {
   & h1 {
-    --ea-h1-font-size: var(--ea-h1-font-size, 2.6rem);
+    --ea-h1-font-size: var(--ea-h1-font-size, 2.5rem);
     font-size: var(--ea-h1-font-size);
-    font-weight: 500;
+    font-weight: 400;
     margin-bottom: 0.6em;
   }
   & h2 {
@@ -12,7 +12,7 @@
     margin-bottom: 0.4em;
   }
   & h3 {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: 500;
     margin: 0.2rem 0 0.1rem 0;
   }
@@ -23,7 +23,8 @@
     font-size: 1.1rem;
   }
   & p {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
+    font-weight: 400;
   }
   & p::selection {
     background: var(--ea-color-accent-2);
