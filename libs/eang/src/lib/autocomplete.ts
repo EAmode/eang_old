@@ -165,7 +165,6 @@ export class AutocompleteComponent
 
     this.blur.subscribe(e => {
       this.touched()
-      this.showPanel = false
     })
   }
 
