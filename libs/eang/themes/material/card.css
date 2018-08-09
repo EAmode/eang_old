@@ -1,4 +1,4 @@
-.mode {
+.material {
   & .ea-card {
     background: var(--ea-color-3);
     box-shadow: var(--ea-box-shadow);
