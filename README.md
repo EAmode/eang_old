@@ -3,6 +3,13 @@ Reactive components for Angular with customizable UX themes
 
 [![npm version](https://img.shields.io/npm/v/eang.svg)](https://www.npmjs.com/package/eang) [![travis build](https://img.shields.io/travis/eascientific/eang.svg)](https://travis-ci.org/eascientific/eang) version testcoverage
 
+## Getting started
+
+```
+# Add peer dependencies
+npm i -S markdown-it prismjs prismjs/components/prism-css prismjs/components/prism-java prismjs/components/prism-javascript prismjs/components/prism-markup prismjs/components/prism-sass prismjs/components/prism-scss prismjs/components/prism-typescript
+```
+
 ### quicklinks
 Documentation | StackBlitz Template
 
