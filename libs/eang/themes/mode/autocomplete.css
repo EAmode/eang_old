@@ -19,8 +19,6 @@
       var(--ea-color-3)
     );
 
-    /* --ea-autocomplete-selected-background: var(--ea-autocomplete-selected-background, --ea-color-background-2); */
-    /* --ea-li-selected-border-color:  calc(var(--ea-darkness-factor, 60%) * var(--ea-panel-color); */
     display: block;
     overflow: auto;
     & ul {

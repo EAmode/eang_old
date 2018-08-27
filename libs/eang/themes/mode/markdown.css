@@ -42,7 +42,7 @@
     }
     :not(pre) > code[class*='language-'],
     pre[class*='language-'] {
-      background: var(--ea-color-background-2);
+      background: var(--ea-color-background-4);
     }
     /* Inline code */
     :not(pre) > code[class*='language-'] {

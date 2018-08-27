@@ -1,4 +1,4 @@
-/* .material {
+.material {
   & button {
     color: var(--ea-button-color, var(--ea-color-2));
     background-color: var(--ea-button-background-color, var(--ea-color-1));
@@ -35,4 +35,4 @@
   & button[disabled] {
     opacity: .65;
   }
-} */
+}

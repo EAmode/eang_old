@@ -1,6 +1,15 @@
 .mode {
   & .ea-card {
-    background: var(--ea-color-3);
+    /* --ea-card-border: var(none, 1px solid var(--ea-color-1)); */
+    --ea-card-background: var(--ea-card-background, var(--ea-color-3));
+    --ea-card-color: var(--ea-card-color, var(--ea-color-1));
+
+    --ea-card-header-background: var(--ea-card-header-background, var(--ea-card-background));
+    --ea-card-header-color: var(--ea-card-header-color, var(--ea-card-color));
+
+    --ea-card-footer-background: var(--ea-card-footer-background , var(--ea-card-header-background, var(--ea-card-background)));
+
+    background: var(--ea-card-background);
     box-shadow: var(--ea-box-shadow);
     border: 1px solid var(--ea-color-background-7);
     margin: 1rem 0.5rem;
@@ -9,8 +18,8 @@
     & .ea-card-header {
       padding: 1rem 1.5rem;
       border-bottom: 1px solid var(--ea-color-background-7);
-      background: var(--ea-color-background-1);
-      color: var(--ea-color-4);
+      background: var(--ea-card-header-background);
+      color: var(--ea-card-header-color);
     }
     & .ea-card-content {
       padding: 1rem 1.5rem;

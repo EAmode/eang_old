@@ -32,6 +32,9 @@
       height: 30px;
       display: block;
       text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
     & .ea-themepicker-list-item:hover {
       background-color: #f1f1f1;
