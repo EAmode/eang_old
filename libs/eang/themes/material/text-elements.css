@@ -3,6 +3,7 @@
     font-size: 2.6rem;
     font-weight: 500;
     margin-bottom: 0.6em;
+    font-family: var(--ea-font-1);
   }
   & h2 {
     font-size: 1.8rem; /* min-size, max-size */

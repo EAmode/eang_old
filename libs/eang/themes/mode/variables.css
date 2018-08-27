@@ -2,20 +2,17 @@
   --ea-color-1: #202225;
   --ea-color-2: #1f242c;
   --ea-color-3: #fff;
-  --ea-color-4: #00152b;
 
-
-  --ea-color-accent-1: #298c1d;
-  --ea-color-accent-2: #3f6eb5;
+  --ea-color-accent-1: #6a9c45;
+  --ea-color-accent-2: #61429a;
 
   --ea-color-background-1: #ffffff;
-  --ea-color-background-2: #3e3e3e;
-  --ea-color-background-3: #5d5d5d;
-  --ea-color-background-4: hsl(0, 0%, 96%);
-  --ea-color-background-5: #0d355d;
-  --ea-color-background-6: #00152b;
+  --ea-color-background-2: #425b9a;
+  --ea-color-background-3: #52638d;
+  --ea-color-background-4: #333333;
+  --ea-color-background-5: #666a74;
+  --ea-color-background-6: #A9B4D1;
   --ea-color-background-7: #f6f6f6;
-  --ea-color-background-8: #EDB72B;
 
   --ea-color-success: #5bb95b;
   --ea-color-info: #5ac1de;
@@ -24,7 +21,7 @@
   --ea-color-error: #d9534f;
   --ea-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.09);
 
-  --ea-font-1: 'Open Sans';
+  --ea-font-1: 'Roboto';
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;

@@ -1,12 +1,19 @@
 .mode {
   & h1 {
-    --ea-h1-font-size: var(--ea-h1-font-size, 2.5rem);
+    --ea-h1-font-size: var(--ea-h1-font-size, 2.6rem);
+    --ea-h1-font-family: var(--ea-h1-font-family, var(--ea-font-1));
+
     font-size: var(--ea-h1-font-size);
-    font-weight: 400;
+    font-family: var(--ea-h1-font-family);
+    font-weight: 500;
     margin-bottom: 0.6em;
   }
   & h2 {
-    font-size: 1.8rem;
+    --ea-h2-font-family: var(--ea-font-1);
+    --ea-h2-font-size: var(--ea-h2-font-size, 1.8rem);
+
+    font-family: var(--ea-font-1);
+    font-size: var(--ea-h2-font-size);
     /* min-size, max-size */
     font-weight: 500;
     margin-bottom: 0.4em;
@@ -27,7 +34,7 @@
     font-weight: 400;
   }
   & p::selection {
-    background: var(--ea-color-accent-2);
+    background: var(--ea-color-background-3);
     color: var(--ea-color-3);
   }
   & a {

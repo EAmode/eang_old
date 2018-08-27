@@ -7,7 +7,7 @@
   --ea-color-accent-2: #398bf7;
 
   --ea-color-background-1: #ffffff;
-  --ea-color-background-2: #425b9a;
+  --ea-color-background-2: #0d355d;
   --ea-color-background-3: #e1effd;
   --ea-color-background-4: hsl(0, 0%, 96%);
   --ea-color-background-5: #0c0e0f;
@@ -22,7 +22,7 @@
   --ea-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
     0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
-  --ea-font-1: 'Open Sans';
+  --ea-font-1: 'Roboto';
 
   font-family: 'Roboto';
   font-style: normal;
