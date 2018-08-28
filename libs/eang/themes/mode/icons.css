@@ -1,0 +1,42 @@
+.mode {
+  --ea-icon-hamburger-menu: inline('mode/icon/menu.svg');
+
+  & .ea-icon-button {
+    --ea-button-icon: var(--ea-button-icon, inherit);
+    background: var(--ea-button-icon);
+    background-repeat: no-repeat;
+  }
+
+  & .ea-icon-hamburger-menu {
+    background: var(--ea-icon-hamburger-menu);
+    background-repeat: no-repeat;
+  }
+  & .ea-icon-minimized {
+    background: inline('mode/icon/minimized.svg');
+    background-repeat: no-repeat;
+  }
+  & .ea-icon-maximized-2 {
+    background: inline('mode/icon/maximized-2.svg');
+    background-repeat: no-repeat;
+  }
+  & .ea-icon-close {
+    background: inline('mode/icon/close.svg');
+    background-repeat: no-repeat;
+  }
+  & .ea-icon-sign-in {
+    background: inline('mode/icon/sign-in.svg');
+    background-repeat: no-repeat;
+  }
+  & .ea-download {
+    background: inline('mode/icon/download.svg');
+    background-repeat: no-repeat;
+  }
+  & .ea-right-chevron {
+    background: inline('mode/icon/right-chevron.svg');
+    background-repeat: no-repeat;
+  }
+  & .ea-menu-close {
+    background: inline('mode/icon/menu-close.svg');
+    background-repeat: no-repeat;
+  }
+}
