@@ -14,12 +14,9 @@
   --ea-icon-vertical-menu-dark: inline('mode/icon/vertical-menu-dark.svg');
   --ea-icon-chevron: inline('mode/icon/chevron.svg');
 
-
-
   & .ea-icon-button {
     --ea-button-icon: var(--ea-button-icon, inherit);
     background: var(--ea-button-icon);
     background-repeat: no-repeat;
   }
-
 }
