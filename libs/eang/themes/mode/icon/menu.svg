@@ -1,5 +1,5 @@
 <svg viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg">
-    <g stroke="var(--ea-color-3, white)" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+    <g stroke="var(--ea-color-1, white)" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
         <path d="M1 7h18M1 1h18M1 13h18"/>
     </g>
 </svg>

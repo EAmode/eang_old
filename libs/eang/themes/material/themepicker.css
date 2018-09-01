@@ -8,6 +8,7 @@
       border: none;
       background: inline('material/icon/palette.svg');
       background-repeat: no-repeat;
+      box-shadow: none;
     }
     & .ea-themepicker-dropdown {
       position: absolute;
