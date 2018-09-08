@@ -2,6 +2,7 @@
 Reactive components for Angular with customizable UX themes
 
 [![npm version](https://img.shields.io/npm/v/eang.svg)](https://www.npmjs.com/package/eang) [![travis build](https://img.shields.io/travis/eascientific/eang.svg)](https://travis-ci.org/eascientific/eang) version testcoverage
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
 ## Getting started
 
