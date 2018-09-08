@@ -5,6 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "concurrently \"npm run css:build -- -w\" \"npm run css:copy -- -w\" \"npm run css:eangio -- -w\" \"ng serve\"",
+    "commit": "git-cz",
     "build:prod": "npm run css && npm run css:eangio && ng build --project=eang-io --prod",
     "build": "npm run css && ng build && ng build --project=eang-io",
     "css": "npm run css:build && npm run css:copy",
@@ -117,12 +118,12 @@
     }
   },
   "lint-staged": {
-    "src/**/*.ts": [
+    "libs/eang/src/**/*.ts": [
       "tslint -p libs/eang/tsconfig.lib.json -t codeFrame",
       "git add"
     ],
-    "playground/**/*.ts": [
-      "tslint -p playground -t codeFrame",
+    "apps/eang-io/src/**/*.ts": [
+      "tslint -p apps/eang-io/tsconfig.app.json -t codeFrame",
       "git add"
     ]
   },
