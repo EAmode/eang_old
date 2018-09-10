@@ -32,7 +32,6 @@ export class ThemePickerComponent implements OnInit {
     this.themes.forEach(element => {
       this.themeMatch.push(element)
     })
-
   }
 
   selectTheme(theme) {

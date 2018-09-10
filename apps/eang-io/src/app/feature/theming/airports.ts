@@ -1,5 +1,5 @@
 export const airports = [
-  { ATACode: 'ORD', Name: 'Chicago, IL, US (ORD - O\u0027Hare)'},
+  { ATACode: 'ORD', Name: 'Chicago, IL, US (ORD - O\u0027Hare)' },
   { ATACode: 'DEN', Name: 'Denver, CO' },
   { ATACode: 'GUM', Name: 'Guam, GU' },
   { ATACode: 'IAH', Name: 'Houston, TX, US (IAH - Intercontinental)' },

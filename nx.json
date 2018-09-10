@@ -1,5 +1,5 @@
 {
-  "npmScope": "eang",
+  "npmScope": "eamode",
   "implicitDependencies": {
     "angular.json": "*",
     "package.json": "*",
