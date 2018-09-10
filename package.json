@@ -4,12 +4,11 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "concurrently \"npm run css:build -- -w\" \"npm run css:copy -- -w\" \"npm run css:eangio -- -w\" \"ng serve\"",
+    "start": "concurrently \"npm run css:build -- -w\" \"npm run css:copy -- -w\" \"ng serve\"",
     "commit": "git-cz",
     "build:prod": "npm run css && npm run css:eangio && ng build --project=eang-io --prod",
     "build": "npm run css && ng build && ng build --project=eang-io",
     "css": "npm run css:build && npm run css:copy",
-    "css:eangio": "postcss apps/eang-io/src/*.pcss -d apps/eang-io/src/ --config apps/eang-io/postcss.config.js --ext css",
     "css:build": "postcss \"./libs/eang/themes/**/*.css\" --base libs/eang/themes --dir dist/eang/css/",
     "css:copy": "cpx \"libs/eang/themes/**/*\" \"dist/eang/themes\"",
     "css:watch": "concurrently  \"npm run css:build -- -w\" \"npm run css:copy -- -w\"",
@@ -38,6 +37,31 @@
     "semi": false,
     "singleQuote": true,
     "printWidth": 80
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/EAmode/eang.git"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -x @commitlint/config-conventional -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "libs/eang/src/**/*.ts": [
+      "tslint -p libs/eang/tsconfig.lib.json -t codeFrame",
+      "git add"
+    ],
+    "apps/eang-io/src/**/*.ts": [
+      "tslint -p apps/eang-io/tsconfig.app.json -t codeFrame",
+      "git add"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   },
   "dependencies": {
     "@angular-mdc/web": "^0.37.1",
@@ -106,30 +130,5 @@
     "tslib": "^1.7.1",
     "tslint": "~5.9.1",
     "typescript": "2.7.2"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/EAmode/eang.git"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "commitlint -x @commitlint/config-conventional -E HUSKY_GIT_PARAMS"
-    }
-  },
-  "lint-staged": {
-    "libs/eang/src/**/*.ts": [
-      "tslint -p libs/eang/tsconfig.lib.json -t codeFrame",
-      "git add"
-    ],
-    "apps/eang-io/src/**/*.ts": [
-      "tslint -p apps/eang-io/tsconfig.app.json -t codeFrame",
-      "git add"
-    ]
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
   }
 }

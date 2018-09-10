@@ -67,7 +67,6 @@
               "apps/eang-io/src/assets"
             ],
             "styles": [
-              "apps/eang-io/src/styles.css",
               "apps/eang-io/src/styles.scss"
             ],
             "scripts": []

@@ -16,8 +16,7 @@ import {
   MdcButtonModule,
   MdcRippleModule,
   MdcRadioModule
-} from '@angular-mdc/web';
-
+} from '@angular-mdc/web'
 
 import { ReactiveComponent } from './feature/reactive/reactive.component'
 import { ThemingComponent } from './feature/theming/theming.component'
