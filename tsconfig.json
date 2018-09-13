@@ -1,8 +1,11 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
+    "module": "es2015",
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -14,15 +17,13 @@
       "es2017",
       "dom"
     ],
-    "baseUrl": ".",
     "paths": {
-      "@eang/eang": [
-        "libs/eang/src/index.ts"
+      "@eamode/eang": [
+        "projects/eamode/eang/src/public_api"
+      ],
+      "@eamode/eang/*": [
+        "dist/eamode/eang/*"
       ]
     }
-  },
-  "exclude": [
-    "node_modules",
-    "tmp"
-  ]
+  }
 }

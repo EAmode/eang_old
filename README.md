@@ -1,49 +1,27 @@
-# eang
-Reactive components for Angular with customizable UX themes
+# EangIo
 
-[![npm version](https://img.shields.io/npm/v/eang.svg)](https://www.npmjs.com/package/eang) [![travis build](https://img.shields.io/travis/eascientific/eang.svg)](https://travis-ci.org/eascientific/eang) version testcoverage
-[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.1.
 
-## Getting started
+## Development server
 
-```
-# Add peer dependencies
-npm i -S markdown-it prismjs prismjs/components/prism-css prismjs/components/prism-java prismjs/components/prism-javascript prismjs/components/prism-markup prismjs/components/prism-sass prismjs/components/prism-scss prismjs/components/prism-typescript
-```
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-### quicklinks
-Documentation | StackBlitz Template
+## Code scaffolding
 
-## Why eang?
-eang is fast, fully reactive, and really flexible angular development framework with a set of themeable visual components. Through its native support for reactive programming, eang enables your angular apps to automatically update the user experience in response to event stream data from event sources. Eang plays well with your existing Angular architecture.
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Install eang
-To install eang into your angular project run: `npm install eang` 
+## Build
 
-## Play with eang components
-To see examples of eang components and customize them run: `npm run playground` 
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## How to use eang components
-You can mix and match eang components with your existing angular app. 
+## Running unit tests
 
-### Create your own eang CSS theme
-By default, eang components are styled using the theme called 'mode'. However, you can create your own custom theme by following the steps below.
-1. Create a file: `themes/<nameofyourtheme>.css`
-2. Create a directory: `themes/<nameofyourtheme>`
-3. Inside the `themes/<nameofyourtheme>` directory...
-  * create a file called `variables.css` (you can copy a variables.css file from one of the other existing theme directories)
-  * create a file `<nameofeangcomponen>.css`
-4. to modify fonts and colors, you can play with the values inside the file `themes/<nameofyourtheme>/variables.css`
-5. set up a post-css pipeline
-  * add a line into the file `'`package.json`'` inside of the `'` "scripts": {`'` section as follows: `"css:<nameofyourtheme>": "postcss themes/all.css themes/<nameofyourtheme>.css themes/<nameofyourtheme>.css themes/<nameofyourtheme>/**/*.css -o playground/dist/<nameofyourtheme>.css",`
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Create your own eang component
-You can create new eange components. Each eang component has three files:
-* `<nameofcomponent>.ts`
-* `<nameofcomponent>.html`
-* `<nameofcomponent>.css`
+## Running end-to-end tests
 
-### travis (build, publish to npm, reference docs)
-eang's build scripts enforce linting to prevent errors.
-to commit your changes to eang, just  run `npm run commit` and follow the prompts
-### test
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

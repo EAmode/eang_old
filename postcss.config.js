@@ -11,8 +11,8 @@ module.exports = {
       }
     }),
     require('postcss-assets')({
-      basePath: 'libs/eang/themes',
-      relative: 'libs/eang/themes'
+      basePath: 'projects/eamode/eang/themes',
+      relative: 'projects/eamode/eang/themes'
     })
   ]
 }

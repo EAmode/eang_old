@@ -4,9 +4,6 @@
 /dist
 /tmp
 /out-tsc
-.playground
-playground/dist
-/apps/eang-io/src/styles.css
 
 # dependencies
 /node_modules
