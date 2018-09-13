@@ -21,6 +21,9 @@
     "singleQuote": true,
     "printWidth": 80
   },
+  "release": {
+    "pkgRoot": "dist"
+  },
   "dependencies": {
     "@angular-mdc/web": "^0.39.2",
     "@angular/animations": "^6.1.0",
