@@ -1,6 +1,16 @@
 {
-  "name": "eang-io",
+  "name": "@eamode/eang",
   "version": "0.0.0-development",
+  "description": "eang - reactive angular framework",
+  "author": "Sebastian Kropp <sebastian@kropponline.de>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/EAmode/eang.git"
+  },
+  "bugs": {
+    "url": "https://github.com/EAmode/eang/issues"
+  },
+  "license": "MIT",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -34,6 +44,7 @@
     "@angular/platform-browser": "^6.1.0",
     "@angular/platform-browser-dynamic": "^6.1.0",
     "@angular/router": "^6.1.0",
+    "@eamode/eang": "^1.0.0",
     "core-js": "^2.5.4",
     "markdown-it": "^8.4.2",
     "prismjs": "^1.15.0",
@@ -81,9 +92,5 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/EAmode/eang.git"
   }
 }

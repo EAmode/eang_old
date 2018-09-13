@@ -1,6 +1,16 @@
 {
   "name": "@eamode/eang",
   "version": "0.0.0-development",
+  "description": "eang - reactive angular framework",
+  "author": "Sebastian Kropp <sebastian@kropponline.de>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/EAmode/eang.git"
+  },
+  "bugs": {
+    "url": "https://github.com/EAmode/eang/issues"
+  },
+  "license": "MIT",
   "peerDependencies": {
     "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
     "@angular/core": "^6.0.0-rc.0 || ^6.0.0"
