@@ -20,7 +20,7 @@
     "css:build": "postcss \"projects/eamode/eang/themes/**/*.css\" --base projects/eamode/eang/themes --dir dist/eamode/eang/css/",
     "css:copy": "cpx \"projects/eamode/eang/themes/**/*\" \"dist/eamode/eang/themes\"",
     "css:watch": "concurrently  \"npm run css:build -- -w\" \"npm run css:copy -- -w\"",
-    "format": "prettier --write src/**/*.{ts,json,js} && prettier --write projects/eamode/eang/src/**/*.{ts,json,js}",
+    "format": "prettier --write src/**/*.{ts,json,js} && prettier --write projects/eamode/eang/src/**/*.{ts,json,js} && prettier --write e2e/src/**/*.{ts,json,js}",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "semantic-release": "semantic-release",
