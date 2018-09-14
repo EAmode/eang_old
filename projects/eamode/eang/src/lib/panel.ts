@@ -4,25 +4,24 @@ import {
   OnInit,
   HostBinding,
   ElementRef,
-  Renderer
+  Renderer,
+  OnDestroy
 } from '@angular/core'
-import { of, combineLatest } from 'rxjs'
+import { of, combineLatest, Subscription } from 'rxjs'
 
 @Component({
   selector: 'ea-panel',
   template: `<ng-content></ng-content>`
 })
-export class PanelComponent implements OnInit {
+export class PanelComponent implements OnInit, OnDestroy {
   @HostBinding('attr.state') stateAttr
   @Input() state = of('maximized')
   @HostBinding('attr.orientation') orientationAttr
   @Input() orientation = of('top')
   hostElement
-  private sub
-  constructor(
-    private _renderer: Renderer,
-    public currentElement: ElementRef
-  ) {}
+  private _sub: Subscription
+
+  constructor(private _renderer: Renderer, public currentElement: ElementRef) {}
 
   ngOnInit() {
     if (
@@ -43,7 +42,7 @@ export class PanelComponent implements OnInit {
       this.orientation = of(this.orientation)
     }
 
-    this.sub = combineLatest(this.state, this.orientation).subscribe(
+    this._sub = combineLatest(this.state, this.orientation).subscribe(
       ([state, orientation]) => {
         this.stateAttr = state
         this.orientationAttr = orientation
@@ -61,5 +60,11 @@ export class PanelComponent implements OnInit {
         }
       }
     )
+  }
+
+  ngOnDestroy(): void {
+    if (this._sub) {
+      this._sub.unsubscribe()
+    }
   }
 }
