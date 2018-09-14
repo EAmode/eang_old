@@ -3,14 +3,39 @@ Reactive components for Angular with customizable UX themes
 
 [![npm version](https://img.shields.io/npm/v/eang.svg)](https://www.npmjs.com/package/@eamode/eang) [![travis build](https://img.shields.io/travis/EAmode/eang.svg)](https://travis-ci.org/EAmode/eang) version testcoverage
 
-### quicklinks
-Documentation | StackBlitz Template
-
 ## Why eang?
 eang is fast, fully reactive, and really flexible angular development framework with a set of themeable visual components. Through its native support for reactive programming, eang enables your angular apps to automatically update the user experience in response to event stream data from event sources. Eang plays well with your existing Angular architecture.
 
-## Install eang
-To install eang into your angular project run: `npm install eang` 
+## Install
+1. Add `eang` to your Angular project by running:
+
+```npm install -S @eamode/eang``` 
+
+2. Import selected `eang` modules in your project module file. e.g. `app.module.ts`:
+
+```
+import { PanelModule, AutoCompleteModule, ...} from '@eamode/eang'
+@NgModule({
+  ...
+  imports: [..., PanelModule, AutoCompleteModule, ...],
+  ...
+})
+```
+
+3. In order to select a theme, add the name of that theme to the class names of your component root:
+
+```
+...
+<body>
+  <mycomponent-root class="mode"></mycomponent-root>
+</body>
+...
+```
+| Theme name | Description |
+|------------|-------------|
+| mode       | default theme of `MODE` |
+| material   | Components designed following Google's Material design |
+| your-theme-here | It is easy to add your own completely customized theme as well.|
 
 ## Play with eang components
 To see examples of eang components and customize them run: `npm run playground` 
