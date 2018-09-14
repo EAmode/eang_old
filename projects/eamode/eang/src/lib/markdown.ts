@@ -1,15 +1,10 @@
 import {
   Component,
   Input,
-  OnDestroy,
   OnInit,
-  ContentChild,
-  Directive,
   AfterContentInit,
   ElementRef,
-  ViewChild,
-  ContentChildren,
-  QueryList
+  ViewChild
 } from '@angular/core'
 import { of, Observable, combineLatest } from 'rxjs'
 import * as MarkdownIt from 'markdown-it'
@@ -103,13 +98,10 @@ export class MarkdownComponent implements OnInit, AfterContentInit {
       this.doc = of(this.doc)
     }
 
-    this.compiledMarkdown = combineLatest(this.doc, this.ctx, (doc, ctx) => ({
-      doc,
-      ctx
-    })).pipe(
-      map(change => {
-        const compiled = _.template(change.doc)
-        return this.markdownIt.render(compiled(change.ctx))
+    this.compiledMarkdown = combineLatest(this.doc, this.ctx).pipe(
+      map((doc, ctx) => {
+        const compiled = _.template(doc)
+        return this.markdownIt.render(compiled(ctx))
       })
     )
   }

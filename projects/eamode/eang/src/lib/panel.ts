@@ -2,13 +2,11 @@ import {
   Component,
   Input,
   OnInit,
-  AfterViewInit,
   HostBinding,
   ElementRef,
   Renderer
 } from '@angular/core'
-import { of, Observable, combineLatest } from 'rxjs'
-import { hostElement } from '@angular/core/src/render3/instructions'
+import { of, combineLatest } from 'rxjs'
 
 @Component({
   selector: 'ea-panel',
@@ -21,7 +19,10 @@ export class PanelComponent implements OnInit {
   @Input() orientation = of('top')
   hostElement
   private sub
-  constructor(private _renderer: Renderer, public currentElement: ElementRef) {}
+  constructor(
+    private _renderer: Renderer,
+    public currentElement: ElementRef
+  ) {}
 
   ngOnInit() {
     if (

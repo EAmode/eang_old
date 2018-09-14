@@ -97,7 +97,9 @@ export class ThemingComponent implements OnInit {
   component = `
   ## Compose-ability
 
-  The ability to override specific aspects of a component, and to default to base eang value is made easier with custom properties. Below is an example of the ea-card component and how it can be easily configured to have differing colors and backgrounds for the ea-card-header and the ea-card-footer.
+  The ability to override specific aspects of a component, and to default to base eang value is made easier with custom properties.
+  Below is an example of the ea-card component and how it can be easily configured to have differing colors and backgrounds
+  for the ea-card-header and the ea-card-footer.
 
   *card.css*
   ~~~ css
@@ -118,7 +120,8 @@ The default values for the ea-card are the *--ea-card-color* and the *--ea-card-
   --ea-card-header-background: var(--ea-card-header-background, var(--ea-card-background));
 }
 ~~~
-The way it is written, unless --ea-card-header-color is defined, the header color will default to being the same color that is defined for the --ea-card-color. The same method is applied to the --ea-card-header-background.
+The way it is written, unless --ea-card-header-color is defined, the header color will default to being the same color that is defined
+for the --ea-card-color. The same method is applied to the --ea-card-header-background.
   ~~~ css
   .mode {
     & .ea-card {

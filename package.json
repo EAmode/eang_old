@@ -20,6 +20,7 @@
     "css:build": "postcss \"projects/eamode/eang/themes/**/*.css\" --base projects/eamode/eang/themes --dir dist/eamode/eang/css/",
     "css:copy": "cpx \"projects/eamode/eang/themes/**/*\" \"dist/eamode/eang/themes\"",
     "css:watch": "concurrently  \"npm run css:build -- -w\" \"npm run css:copy -- -w\"",
+    "format": "prettier --write src/**/*.{ts,json,js} && prettier --write projects/eamode/eang/src/**/*.{ts,json,js}",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "semantic-release": "semantic-release",
@@ -29,6 +30,27 @@
     "semi": false,
     "singleQuote": true,
     "printWidth": 80
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -x @commitlint/config-conventional -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.ts": [
+      "tslint -p src/tslint.json -t codeFrame",
+      "git add"
+    ],
+    "projects/eamode/eang/src/**/*.ts": [
+      "tslint -p projects/eamode/eang/tslint.json -t codeFrame",
+      "git add"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   },
   "release": {
     "pkgRoot": "dist/eamode/eang"
@@ -57,10 +79,13 @@
     "@angular/cli": "~6.2.1",
     "@angular/compiler-cli": "^6.1.0",
     "@angular/language-service": "^6.1.0",
+    "@commitlint/cli": "^7.1.2",
+    "@commitlint/config-conventional": "^7.1.2",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
     "codelyzer": "~4.3.0",
+    "commitizen": "^2.10.1",
     "concurrently": "^4.0.1",
     "cpx": "^1.5.0",
     "cz-conventional-changelog": "^2.1.0",
@@ -72,6 +97,7 @@
     "karma-coverage-istanbul-reporter": "~2.0.1",
     "karma-jasmine": "~1.1.2",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "lint-staged": "^7.2.2",
     "ng-packagr": "^4.1.0",
     "postcss-assets": "^5.0.0",
     "postcss-cli": "^6.0.0",
@@ -79,18 +105,14 @@
     "postcss-import": "^12.0.0",
     "postcss-nested": "^4.1.0",
     "postcss-preset-env": "^5.3.0",
+    "prettier": "^1.13.7",
     "protractor": "~5.4.0",
+    "semantic-release": "^15.9.15",
+    "travis-deploy-once": "^5.0.7",
     "ts-node": "~7.0.0",
     "tsickle": ">=0.29.0",
     "tslib": "^1.9.0",
     "tslint": "~5.11.0",
-    "typescript": "~2.9.2",
-    "semantic-release": "^15.9.15",
-    "travis-deploy-once": "^5.0.7"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
+    "typescript": "~2.9.2"
   }
 }
