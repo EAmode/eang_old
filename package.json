@@ -15,7 +15,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build:prod": "ng build @eamode/eang && npm run css && ng build eang-io --prod",
-    "build": "npm run css && ng build @eamode/eang",
+    "build": "npm run css && ng build @eamode/eang && cpx \"README.md\" \"dist/eamode/eang\"",
     "css": "npm run css:build && npm run css:copy",
     "css:build": "postcss \"projects/eamode/eang/themes/**/*.css\" --base projects/eamode/eang/themes --dir dist/eamode/eang/css/",
     "css:copy": "cpx \"projects/eamode/eang/themes/**/*\" \"dist/eamode/eang/themes\"",
