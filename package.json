@@ -13,7 +13,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "concurrently \"ng serve\" \"ng build @eamode/eang --watch\"  \"npm run css:build -- -w\" \"npm run css:copy -- -w\"",
     "build:prod": "ng build @eamode/eang && npm run css && ng build eang-io --prod",
     "build": "ng build @eamode/eang && npm run css && cpx \"README.md\" \"dist/eamode/eang\"",
     "css": "npm run css:build && npm run css:copy",
