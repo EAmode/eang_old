@@ -1,0 +1,13 @@
+
+<svg width="100%" height="100%" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="plus-circle" transform="translate(1.000000, 1.000000)" stroke-width="1.5">
+            <circle id="Oval" stroke="#000000" cx="10" cy="10" r="10"></circle>
+            <path d="M10,6 L10,14" id="Shape" stroke="#6A9C45"></path>
+            <path d="M6,10 L14,10" id="Shape" stroke="#6A9C45"></path>
+        </g>
+    </g>
+</svg>
