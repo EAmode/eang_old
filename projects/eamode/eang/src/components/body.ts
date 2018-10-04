@@ -17,7 +17,7 @@ import { debounceTime, distinctUntilChanged, map, delay } from 'rxjs/operators'
   selector: 'ea-body',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-  <ea-panel>ea-body</ea-panel>
+  <ng-content></ng-content>
   `,
   styles: []
 })

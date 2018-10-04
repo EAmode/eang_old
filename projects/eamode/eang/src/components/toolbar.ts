@@ -14,14 +14,14 @@ import { Observable, Subscription } from 'rxjs'
 import { debounceTime, distinctUntilChanged, map, delay } from 'rxjs/operators'
 
 @Component({
-  selector: 'ea-header',
+  selector: 'ea-toolbar',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-  <ea-panel>ea-header</ea-panel>
+  <ng-content></ng-content>
   `,
   styles: []
 })
-export class Header implements OnInit, OnDestroy {
+export class Toolbar implements OnInit, OnDestroy {
   @Input() suggestions: Observable<any>
   @Input() enabled
 

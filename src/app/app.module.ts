@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router'
 
 import { AppComponent } from './app.component'
 import {
+  LayoutModule,
   PanelModule,
   AutoCompleteModule,
   ThemePickerModule,
@@ -26,6 +27,7 @@ import { ThemingComponent } from './feature/theming/theming.component'
     BrowserModule,
     ReactiveFormsModule,
     RouterModule.forRoot([], { initialNavigation: 'enabled' }),
+    LayoutModule,
     AutoCompleteModule,
     PanelModule,
     ThemePickerModule,

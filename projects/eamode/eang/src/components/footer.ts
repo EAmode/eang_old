@@ -17,7 +17,7 @@ import { debounceTime, distinctUntilChanged, map, delay } from 'rxjs/operators'
   selector: 'ea-footer',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-  <ea-panel>ea-footer</ea-panel>
+  <ng-content></ng-content>
   `,
   styles: []
 })
