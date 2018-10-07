@@ -16,6 +16,7 @@
     "start": "concurrently \"ng serve\" \"ng build @eamode/eang --watch\"  \"npm run css:build -- -w\" \"npm run css:copy -- -w\"",
     "build:prod": "ng build @eamode/eang && npm run css && ng build eang-io --prod",
     "build": "ng build @eamode/eang && npm run css && cpx \"README.md\" \"dist/eamode/eang\"",
+    "commit": "git-cz",
     "css": "npm run css:build && npm run css:copy",
     "css:build": "postcss \"projects/eamode/eang/themes/**/*.css\" --base projects/eamode/eang/themes --dir dist/eamode/eang/css/",
     "css:copy": "cpx \"projects/eamode/eang/themes/**/*\" \"dist/eamode/eang/themes\"",

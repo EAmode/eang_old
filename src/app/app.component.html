@@ -16,10 +16,13 @@
     </ea-panel>
   </ea-toolbar>
 
-  <ea-body>
-    <div id="main">
+  <ea-drawer></ea-drawer>
 
-      <!-- <section id="welcome">
+  <ea-main>
+    <ea-body>
+      <div id="main">
+
+        <!-- <section id="welcome">
           <div id="title">
             <h2>Eang</h2>
             <p>Reactive Enterprise Components</p>
@@ -35,33 +38,33 @@
           </div>
         </section> -->
 
-      <section id="features">
+        <section id="features">
 
-        <h1>Feature Highlights</h1>
+          <h1>Feature Highlights</h1>
 
-        <section>
-          <eangio-feature-reactive></eangio-feature-reactive>
+          <section>
+            <eangio-feature-reactive></eangio-feature-reactive>
+          </section>
+
+          <section>
+            <eangio-feature-theming></eangio-feature-theming>
+          </section>
+
         </section>
 
-        <section>
-          <eangio-feature-theming></eangio-feature-theming>
-        </section>
 
-      </section>
+      </div>
 
-
-    </div>
-  </ea-body>
-  <ea-drawer></ea-drawer>
-
-  <ea-footer>
-    <footer>
-      <span>
-        <div>Powered by
-          <a href="https://eamode.com">EA Mode</a>
-        </div>
-      </span>
-    </footer>
-  </ea-footer>
-
+    </ea-body>
+    <ea-footer>
+      <footer>
+        <span>
+          <div>Powered by
+            <a href="https://eamode.com">EA Mode</a>
+          </div>
+        </span>
+      </footer>
+    </ea-footer>
+  </ea-main>
+  
 </ea-layout>
