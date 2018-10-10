@@ -22,6 +22,7 @@
       height: var(--ea-toolbar-height);
       background: var(--ea-color-background-2);
       width: 100%;
+      z-index: 1;
       &[shadow] {
         box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);
       }
