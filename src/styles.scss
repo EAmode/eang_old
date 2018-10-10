@@ -31,7 +31,9 @@ body {
   @media (--large-screen) {
     max-width: 1200px;
   }
-
+  &.drawer-open {
+    max-width: 85%;
+  }
   @media only screen and (max-width: 500px) {
     max-width: 90%;
   }
@@ -43,9 +45,10 @@ body {
   }
 }
 
-.holder {
+.drawer-menu {
   position: fixed;
   top: var(--toolbar-height);
+  color: white;
 }
 
 .mode {
@@ -55,28 +58,25 @@ body {
   --mdc-theme-secondary: var(--ea-color-2);
 }
 
-#toolbar {
-  --ea-panel-max-height: var(--toolbar-height);
-  height: var(--toolbar-height);
-  width: auto;
-  display: flex;
-  padding: 0rem 1rem;
-  justify-content: space-between;
-  align-items: center;
-  width: 100vw;
-  z-index: 9999;
-  & .name {
-    width: 8rem;
+ea-toolbar {
+  & [ea-toolbar-header] {
+    max-width: 300px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     align-items: center;
+    &.drawer-color{
+      background: var(--ea-color-background-4);
+      border-bottom: 1px solid var(--ea-color-3);
+    }
     & .menu-open {
       background: var(--ea-icon-hamburger-menu);
       background-position: center;
       background-repeat: no-repeat;
-      width: 1.4rem;
+      width: 1.8rem;
       height: 1.4rem;
       cursor:pointer;
+      margin-left: 1rem;
+      margin-right: 0.5rem;
     }
     & .menu-close {
       background: var(--ea-icon-chevrons-left);
@@ -85,6 +85,8 @@ body {
       width: 1.8rem;
       height: 1.8rem;
       cursor:pointer;
+      margin-left: 1rem;
+      margin-right: 0.5rem;
     }
     & h2 {
       margin: 0;
@@ -104,10 +106,9 @@ body {
     background-position: center;
 
   }
-  & .toolbar-buttons {
-    width: 6.5rem;
+  & [ea-toolbar-buttons] {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     padding-right: 3rem;
     @media (--small-screen) {
@@ -115,8 +116,11 @@ body {
       padding-right: 0rem;
     }
   }
+  & ea-themepicker {
+    padding-right: 1rem;
+  }
   & a {
-    padding-right: 2rem;
+    padding-right: 1rem;
   }
 }
 

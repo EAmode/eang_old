@@ -17,6 +17,9 @@ import { debounceTime, distinctUntilChanged, map, delay } from 'rxjs/operators'
   selector: 'ea-toolbar',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
+  <ng-content select="[ea-toolbar-header]"></ng-content>
+  <ng-content select="[ea-toolbar-action]"></ng-content>
+  <ng-content select="[ea-toolbar-buttons]"></ng-content>
   <ng-content></ng-content>
   `,
   styles: []

@@ -1,22 +1,27 @@
-<ea-layout>
-  <ea-toolbar shadow sticky>
-    <ea-panel id="toolbar" #toolbar class="sticky">
-      <div class="name">
+<ea-layout sticky>
+  <ea-toolbar flex shadow>
+
+      <ea-panel ea-toolbar-header>
         <div class="ea-icon-button" (click)="drawerToggle()"
         [class.menu-close]="drawer"
-        [class.menu-open]="!drawer"
-        ></div>
-        <span class="logo">
-          <!-- <img height="26" src="/assets/images/eang-logo.svg"> -->
-        </span>
-      </div>
-      <div class="toolbar-buttons">
+        [class.menu-open]="!drawer">
+        </div>
+        <span class="logo"></span>
+      </ea-panel> <!--First container in the ea-toolbar-->
+
+      <ea-panel ea-toolbar-action>
+      </ea-panel><!--Second container in the ea-toolbar-->
+
+      <ea-panel ea-toolbar-buttons>
         <ea-themepicker select="eangio-root" [themes]="['mode', 'material']"></ea-themepicker>
         <a alt="GitHub" href="https://github.com/eascientific/eang" rel="noopener noreferrer" target="_blank" role="button">
           <img height="26" src="/assets/images/github-circle-white-transparent.svg">
         </a>
-      </div>
-    </ea-panel>
+        <a alt="GitHub" href="https://www.eamode.com" rel="noopener noreferrer" target="_blank" role="button">
+          <img height="26" src="/assets/images/eamode-logo.svg">
+        </a>
+      </ea-panel>
+
   </ea-toolbar>
 
   <ea-drawer resize *ngIf="drawer">
@@ -27,7 +32,6 @@
 
   <ea-main>
     <ea-body>
-        <div shim>TESTING </div>
       <div id="main">
 
         <!-- <section id="welcome">
@@ -47,7 +51,8 @@
         </section> -->
 
 
-        <section id="features">
+        <section id="features"
+        [class.drawer-open]="drawer">
           <h1>Feature highlights</h1>
 
           <section>
@@ -59,8 +64,6 @@
           </section>
 
         </section>
-
-
       </div>
 
     </ea-body>

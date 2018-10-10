@@ -3,12 +3,13 @@
     cursor: pointer;
     & .icon-button {
       cursor: pointer;
-      width: 2rem;
-      height: 2rem;
+      width: 1rem;
+      height: 1.5rem;
       border: none;
       background: inline('material/icon/palette.svg');
       background-repeat: no-repeat;
       box-shadow: none;
+      background-position: center;
     }
     & .ea-themepicker-dropdown {
       position: absolute;

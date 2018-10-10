@@ -5,31 +5,46 @@
     grid-template-columns: auto 1fr;
     grid-template-rows: auto 1fr;
     grid-template-areas:
-      'sidebar sidebar '
-      'sidebar main ';
+      'toolbar toolbar'
+      'drawer main';
+
+    &[sticky] > ea-main {
+      overflow: auto;
+    }
 
     & ea-toolbar {
-      grid-area: header;
-      position: fixed;
-      top: 0;
+      --ea-toolbar-height: var(--ea-toolbar-height, inherit);
+      --ea-toolbar-display: var(--ea-toolbar-display, inherit);
+      --ea-toolbar-max-width: var(--ea-toolbar-max-width, inherit);
+
+      grid-area: toolbar;
+      display: var(--ea-toolbar-display);
+      height: var(--ea-toolbar-height);
+      background: var(--ea-color-background-2);
+      width: 100%;
       &[shadow] {
         box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);
+      }
+      &[flex] {
+        --ea-toolbar-display: flex;
+      }
+      &[grid] {
+        --ea-toolbar-display: grid;
       }
     }
 
     & ea-drawer {
-      grid-area: sidebar;
+      grid-area: drawer;
       width: 300px;
       background: var(--ea-color-background-4);
-      transition: transform 0.3s ease-in-out;
+      &[resize] {
+        resize: horizontal;
+        overflow: auto;
+      }
     }
 
     & ea-main {
       grid-area: main;
-    }
-
-    & ea-footer {
-      grid-area: footer;
     }
   }
 }
