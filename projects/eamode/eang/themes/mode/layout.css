@@ -1,0 +1,49 @@
+.mode {
+  ea-layout {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      'toolbar toolbar '
+      'drawer main ';
+
+    & ea-toolbar {
+      grid-area: toolbar;
+      &[sticky] {
+        position: fixed;
+        top: 0;
+      }
+      &[shadow] {
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);
+      }
+    }
+
+    & ea-drawer {
+      grid-area: drawer;
+      width: 300px;
+      background: var(--ea-color-background-4);
+      &[resize] {
+        resize: horizontal;
+        overflow: auto;
+      }
+    }
+
+    & ea-body {
+      &[shim] {
+        z-index: 99999;
+        background-color: #000;
+        opacity: 0.9;
+        position: fixed;
+      }
+    }
+
+    & ea-main {
+      grid-area: main;
+    }
+
+    & ea-footer {
+      grid-area: footer;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+.material {
+  ea-layout {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      'sidebar sidebar '
+      'sidebar main ';
+
+    & ea-toolbar {
+      grid-area: header;
+      position: fixed;
+      top: 0;
+      &[shadow] {
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);
+      }
+    }
+
+    & ea-drawer {
+      grid-area: sidebar;
+      width: 300px;
+      background: var(--ea-color-background-4);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    & ea-main {
+      grid-area: main;
+    }
+
+    & ea-footer {
+      grid-area: footer;
+    }
+  }
+}

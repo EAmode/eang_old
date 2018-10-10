@@ -1,11 +1,14 @@
 <ea-layout>
-  <ea-toolbar>
+  <ea-toolbar shadow sticky>
     <ea-panel id="toolbar" #toolbar class="sticky">
       <div class="name">
+        <div class="ea-icon-button" (click)="drawerToggle()"
+        [class.menu-close]="drawer"
+        [class.menu-open]="!drawer"
+        ></div>
         <span class="logo">
           <!-- <img height="26" src="/assets/images/eang-logo.svg"> -->
         </span>
-        <h2>eang</h2>
       </div>
       <div class="toolbar-buttons">
         <ea-themepicker select="eangio-root" [themes]="['mode', 'material']"></ea-themepicker>
@@ -16,10 +19,15 @@
     </ea-panel>
   </ea-toolbar>
 
-  <ea-drawer></ea-drawer>
+  <ea-drawer resize *ngIf="drawer">
+    <section class="drawer-menu">
+      <div>ea-drawer</div>
+    </section>
+  </ea-drawer>
 
   <ea-main>
     <ea-body>
+        <div shim>TESTING </div>
       <div id="main">
 
         <!-- <section id="welcome">
@@ -38,9 +46,9 @@
           </div>
         </section> -->
 
-        <section id="features">
 
-          <h1>Feature Highlights</h1>
+        <section id="features">
+          <h1>Feature highlights</h1>
 
           <section>
             <eangio-feature-reactive></eangio-feature-reactive>
@@ -59,12 +67,12 @@
     <ea-footer>
       <footer>
         <span>
-          <div>Powered by
-            <a href="https://eamode.com">EA Mode</a>
+          <div class="powered-by">Powered by
+            <a class="ea-mode-logo" href="https://eamode.com"></a>
           </div>
         </span>
       </footer>
     </ea-footer>
   </ea-main>
-  
+
 </ea-layout>

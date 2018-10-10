@@ -7,4 +7,10 @@ import { Component } from '@angular/core'
 })
 export class AppComponent {
   title = 'eang-io'
+
+  drawer = true
+
+  drawerToggle() {
+    this.drawer = !this.drawer
+  }
 }

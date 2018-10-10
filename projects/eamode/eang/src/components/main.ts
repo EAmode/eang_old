@@ -14,16 +14,15 @@ import { Observable, Subscription } from 'rxjs'
 import { debounceTime, distinctUntilChanged, map, delay } from 'rxjs/operators'
 
 @Component({
-  selector: 'ea-layout',
+  selector: 'ea-main',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-  <ng-content select="ea-toolbar"></ng-content>
-  <ng-content select="ea-main"></ng-content>
-  <ng-content select="ea-drawer"></ng-content>
+  <ng-content select="ea-body"></ng-content>
+  <ng-content select="ea-footer"></ng-content>
   `,
   styles: []
 })
-export class Layout implements OnInit, OnDestroy {
+export class Main implements OnInit, OnDestroy {
   @Input() suggestions: Observable<any>
   @Input() enabled
 

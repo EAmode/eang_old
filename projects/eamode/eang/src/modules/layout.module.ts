@@ -7,16 +7,18 @@ import { Body } from '../components/body'
 import { Drawer } from '../components/drawer'
 import { Footer } from '../components/footer'
 import { PanelModule } from './panel.module'
+import { Main } from '../components/main'
 
 export * from '../components/layout'
 export * from '../components/toolbar'
 export * from '../components/body'
 export * from '../components/drawer'
 export * from '../components/footer'
+export * from '../components/main'
 
 @NgModule({
-  declarations: [Layout, Toolbar, Body, Drawer, Footer],
-  exports: [Layout, Toolbar, Body, Drawer, Footer],
+  declarations: [Layout, Toolbar, Body, Drawer, Footer, Main],
+  exports: [Layout, Toolbar, Body, Drawer, Footer, Main],
   imports: [CommonModule, PanelModule]
 })
 export class LayoutModule {}

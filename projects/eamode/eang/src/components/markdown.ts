@@ -99,7 +99,7 @@ export class MarkdownComponent implements OnInit, AfterContentInit {
     }
 
     this.compiledMarkdown = combineLatest(this.doc, this.ctx).pipe(
-      map((doc, ctx) => {
+      map(([doc, ctx]) => {
         const compiled = _.template(doc)
         return this.markdownIt.render(compiled(ctx))
       })

@@ -1,26 +1,21 @@
 @import '../dist/eamode/eang/css/mode.css';
 @import '../dist/eamode/eang/css/material.css';
-
-// @import '~@eamode/eang/css/all.css';
-// @import '~@eamode/eang/css/mode/variables.css';
-// @import '~@eamode/eang/css/mode/fonts.css';
-// @import '~@eamode/eang/css/mode/markdown.css';
-// @import '~@eamode/eang/css/mode/autocomplete.css';
-// @import '~@eamode/eang/css/mode/panel.css';
-// @import '~@eamode/eang/css/mode/text-elements.css';
-// @import '~@eamode/eang/css/mode/themepicker.css';
-// @import '~@eamode/eang/css/mode/card.css';
-// // @import '~@eamode/eang/css/mode/button.css';
-// @import '~@eamode/eang/css/mode/icons.css';
 @import '~@angular-mdc/theme/material';
 
 @custom-media --small-screen (width <= 1200px);
 @custom-media --large-screen (width >= 1300px);
 
+:root {
+  --ea-media-small: 500px;
+  --toolbar-height: 4rem;
+
+}
+
 body {
   margin: 0;
   padding: 0;
   background: var(--ea-color-3);
+  overflow-x: hidden;
 }
 
 #main {
@@ -28,6 +23,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: var(--toolbar-height);
 }
 
 #features {
@@ -35,7 +31,8 @@ body {
   @media (--large-screen) {
     max-width: 1200px;
   }
-  @media (--small-screen) {
+
+  @media only screen and (max-width: 500px) {
     max-width: 90%;
   }
   & section {
@@ -44,6 +41,11 @@ body {
     @media (--small-screen) {
     }
   }
+}
+
+.holder {
+  position: fixed;
+  top: var(--toolbar-height);
 }
 
 .mode {
@@ -55,18 +57,35 @@ body {
 
 #toolbar {
   --ea-panel-max-height: var(--toolbar-height);
+  height: var(--toolbar-height);
   width: auto;
   display: flex;
-  padding: 0.2rem 1rem;
+  padding: 0rem 1rem;
   justify-content: space-between;
   align-items: center;
   width: 100vw;
   z-index: 9999;
   & .name {
-    width: 6rem;
+    width: 8rem;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    & .menu-open {
+      background: var(--ea-icon-hamburger-menu);
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 1.4rem;
+      height: 1.4rem;
+      cursor:pointer;
+    }
+    & .menu-close {
+      background: var(--ea-icon-chevrons-left);
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 1.8rem;
+      height: 1.8rem;
+      cursor:pointer;
+    }
     & h2 {
       margin: 0;
       color: white;
@@ -79,13 +98,11 @@ body {
   }
   & .logo {
     background: url('assets/images/eang-logo.svg');
-    height: 2rem;
-    width: 2rem;
+    height: 4rem;
+    width: 4rem;
     background-repeat: no-repeat;
-    /* & img {
-      height: 2rem;
-      width: 2rem;
-    } */
+    background-position: center;
+
   }
   & .toolbar-buttons {
     width: 6.5rem;
@@ -113,9 +130,14 @@ body {
     width: 100%;
     & .ea-card {
       width: 50%;
-      @media (--small-screen) {
+      z-index: -2;
+      @media only screen and (max-width: 500px) {
         width: 95%;
       }
+    }
+    & #example-label {
+      --ea-card-content-grid: repeat(1, 1fr);
+      z-index: -1;
     }
     & .ea-card-footer {
       flex-wrap: wrap;
@@ -133,11 +155,12 @@ body {
     }
     & .screen {
       height: 15rem;
-      width: 25rem;
+      max-width: 25rem;
+      width: 100%;
       background-color: var(--ea-color-background-7);
       position: relative;
       border-radius: var(--panel-border-radius);
-      @media (--small-screen) {
+      @media only screen and (max-width: 500px) {
         width: 90%;
       }
       & .text-container {
@@ -154,7 +177,7 @@ body {
       & .container-text {
         margin: 0;
         color: var(--ea-color-1);
-        @media (--small-screen) {
+        @media only screen and (max-width: 500px) {
           font-size: 0.8rem;
         }
       }
@@ -199,7 +222,7 @@ body {
       }
     }
   }
-  & .themeing {
+  &.themeing {
     /* & .ea-card {
       width: 80%;
       @media (--small-screen) {
@@ -207,62 +230,22 @@ body {
       }
     } */
     & .example {
-      /* & .ea-card {
-        padding: 0 0 0rem 0;
-        @media (--small-screen) {
-          width: 100%;
-        }
-        & h3 {
-          padding-top: 0;
-        }
-      } */
-      /* & .ea-card-header {
-        @media (--small-screen) {
-          margin-bottom: 0rem;
-        }
-      } */
-
       & .ea-card {
-        width: 80%;
-        @media (--small-screen) {
+        width: 70%;
+        @media only screen and (max-width: 500px) {
           width: 95%;
         }
-      }
-
-    & .autocomplete {
-        display: flex;
-        justify-content: space-around;
-        align-items: space-between;
-        flex-wrap: wrap;
-        /* width: 100%; */
-        min-height: 15rem;
-        padding-bottom: 3rem;
-        @media (--small-screen) {
-          min-height: 25rem;
-        }
-        & label {
-          position: absolute;
-          top: 50%;
-        }
-        & h1,
-        & h2,
-        & h3,
-        & h4,
-        & p {
-          margin: 0;
-        }
-        & .mode,
-        & .material {
-          display: flex;
-          flex-direction: column;
-          justify-content: space-evenly;
-          position: relative;
-          & small {
-            position: absolute;
-            bottom: 0;
+        & .ea-card-content.autocomplete {
+          padding: 2rem;
+          @media only screen and (max-width: 500px) {
+            --ea-card-content-grid: repeat(1, 1fr);
+            grid-template-rows: var(--ea-card-content-grid);
+            padding: 2rem 0 2rem 0;
+            grid-row-gap: 2rem;
           }
         }
       }
+
       & ea-autocomplete {
         & input {
           width: 16rem;
@@ -304,13 +287,20 @@ footer {
     & div {
       height: 100%;
       display: flex;
-      align-items: baseline;
+      align-items: center;
       color: white;
     }
     & a {
       font-size: 16px !important;
       color: white;
       margin-left: 0.35rem;
+    }
+    .ea-mode-logo {
+      background: url('assets/images/eamode-logo.svg');
+      height: 4rem;
+      width: 4rem;
+      background-repeat: no-repeat;
+      background-position: center;
     }
   }
 }

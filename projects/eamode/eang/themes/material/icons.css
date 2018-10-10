@@ -1,0 +1,22 @@
+.material {
+  --ea-icon-hamburger-menu: inline('material/icon/menu.svg');
+  --ea-icon-minimized: inline('material/icon/minimized.svg');
+  --ea-icon-maximized-2: inline('material/icon/maximized-2.svg');
+  --ea-icon-close: inline('material/icon/close.svg');
+  --ea-icon-sign-in: inline('material/icon/sign-in.svg');
+  --ea-icon-download: inline('material/icon/download.svg');
+  --ea-icon-chevron-right: inline('material/icon/right-chevron.svg');
+  --ea-icon-chevron-right-neg: inline('material/icon/right-chevron-hover.svg');
+  --ea-icon-menu-close: inline('material/icon/menu-close.svg');
+  --ea-icon-chevron-down: inline('material/icon/chevron-down.svg');
+  --ea-icon-chevron-down-neg: inline('material/icon/chevron-down-neg.svg');
+  --ea-icon-vertical-menu: inline('material/icon/vertical-menu.svg');
+  --ea-icon-vertical-menu-dark: inline('material/icon/vertical-menu-dark.svg');
+  --ea-icon-chevron: inline('material/icon/chevron.svg');
+
+  & .ea-icon-button {
+    --ea-button-icon: var(--ea-button-icon, inherit);
+    background: var(--ea-button-icon);
+    background-repeat: no-repeat;
+  }
+}
