@@ -21,10 +21,21 @@
   --ea-color-error: #d9534f;
   --ea-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.09);
 
-  --ea-font-1: 'Roboto';
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
+  --ea-font-1-family: 'Roboto';
+  --ea-font-1-style: normal;
+  --ea-font-1-weight: 400;
+  --ea-font-1-size: 16px;
+  /*
+    12 / 16 = 0.75rem
+    14 / 16 = 0.875rem
+    16 / 16 = 1rem
+    18 / 16 = 1.125rem
+    20 / 16 = 1.25rem
+    24 / 16 = 1.5rem
+    30 / 16 = 1.875rem
+    36 / 16 = 2.25rem
+    48 / 16 = 3rem */
+
   --panel-border-radius: 0.25rem;
 
   --min-font-size: 1rem;
@@ -34,6 +45,10 @@
   --ea-scale-factor: 0.5;
   --ea-toolbar-height: 4rem;
 
- 
+
+  font-family: var(--ea-font-1-family);
+  font-style: var(--ea-font-1-style);
+  font-weight: var(--ea-font-1-weight);
+  /* font-size: var(--ea-font-1-size); */
 
 }

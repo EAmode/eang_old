@@ -2,7 +2,7 @@
   "name": "@eamode/eang",
   "version": "0.0.0-development",
   "description": "eang - reactive angular framework",
-  "author": "Sebastian Kropp <sebastian@kropponline.de>",
+  "author": "Sebastian Kropp",
   "repository": {
     "type": "git",
     "url": "https://github.com/EAmode/eang.git"

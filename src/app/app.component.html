@@ -1,6 +1,5 @@
 <ea-layout sticky>
   <ea-toolbar flex shadow>
-
       <ea-panel ea-toolbar-header>
         <div class="ea-icon-button" (click)="drawerToggle()"
         [class.menu-close]="drawer"
@@ -25,8 +24,10 @@
   </ea-toolbar>
 
   <ea-drawer resize *ngIf="drawer">
-    <section class="drawer-menu">
-      <div>ea-drawer</div>
+    <section class="ea-drawer">
+      <a routerLink="/reactive" class="ea-drawer"><div class="ea-drawer">Reactive</div></a>
+      <a routerLink="/theming"class="ea-drawer"><div class="ea-drawer">Theming</div></a>
+      <a routerLink="/layout" class="ea-drawer"><div class="ea-drawer">Layout</div></a>
     </section>
   </ea-drawer>
 
@@ -55,13 +56,7 @@
         [class.drawer-open]="drawer">
           <h1>Feature highlights</h1>
 
-          <section>
-            <eangio-feature-reactive></eangio-feature-reactive>
-          </section>
-
-          <section>
-            <eangio-feature-theming></eangio-feature-theming>
-          </section>
+          <router-outlet></router-outlet>
 
         </section>
       </div>
