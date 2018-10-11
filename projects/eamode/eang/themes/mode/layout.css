@@ -28,9 +28,22 @@
       }
       &[flex] {
         --ea-toolbar-display: flex;
+        justify-content: space-between;
       }
       &[grid] {
         --ea-toolbar-display: grid;
+      }
+      header {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding-left: 2rem;
+      }
+      aside {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding-right: 3rem;
       }
     }
 
@@ -44,9 +57,6 @@
       }
     }
 
-    & ea-drawer {
-
-    }
 
     & div.ea-drawer {
       padding: 0.5em;
