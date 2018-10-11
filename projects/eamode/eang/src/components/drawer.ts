@@ -17,6 +17,9 @@ import { debounceTime, distinctUntilChanged, map, delay } from 'rxjs/operators'
   selector: 'ea-drawer',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
+  <ng-content select="[ea-drawer-header]"></ng-content>
+  <ng-content select="[ea-drawer-body]"></ng-content>
+  <ng-content select="[ea-drawer-footer]"></ng-content>
   <ng-content></ng-content>
   `,
   styles: []
