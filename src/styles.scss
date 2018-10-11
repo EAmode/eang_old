@@ -53,33 +53,24 @@
 }
 
 ea-toolbar {
-  & [ea-toolbar-header] {
+  & header{
     max-width: 300px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    &.drawer-color{
-      background: var(--ea-color-background-4);
-      border-bottom: 1px solid var(--ea-color-3);
-    }
-    & .menu-open {
+    & .ea-icon-button.menu-open {
       background: var(--ea-icon-hamburger-menu);
       background-position: center;
       background-repeat: no-repeat;
       width: 1.8rem;
       height: 1.4rem;
       cursor:pointer;
-      margin-left: 1rem;
       margin-right: 0.5rem;
     }
-    & .menu-close {
+    & .ea-icon-button.menu-close {
       background: var(--ea-icon-chevrons-left);
       background-position: center;
       background-repeat: no-repeat;
       width: 1.8rem;
       height: 1.8rem;
       cursor:pointer;
-      margin-left: 1rem;
       margin-right: 0.5rem;
     }
     & h2 {
@@ -99,16 +90,6 @@ ea-toolbar {
     background-repeat: no-repeat;
     background-position: center;
 
-  }
-  & [ea-toolbar-buttons] {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding-right: 3rem;
-    @media (--small-screen) {
-      width: 7rem;
-      padding-right: 0rem;
-    }
   }
   & ea-themepicker {
     padding-right: 1rem;
