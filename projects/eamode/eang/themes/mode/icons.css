@@ -13,6 +13,8 @@
   --ea-icon-vertical-menu: inline('mode/icon/vertical-menu.svg');
   --ea-icon-vertical-menu-dark: inline('mode/icon/vertical-menu-dark.svg');
   --ea-icon-chevron: inline('mode/icon/chevron.svg');
+  --ea-icon-chevrons-left: inline('mode/icon/chevrons-left.svg');
+  --ea-icon-chevrons-right: inline('mode/icon/chevrons-right.svg');
 
   & .ea-icon-button {
     --ea-button-icon: var(--ea-button-icon, inherit);

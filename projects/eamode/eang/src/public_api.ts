@@ -1,5 +1,7 @@
-export * from './lib/markdown.module'
-export * from './lib/panel.module'
-export * from './lib/themepicker.module'
-export * from './lib/autocomplete.module'
-export * from './lib/logging.service'
+export * from './modules/autocomplete.module'
+export * from './modules/layout.module'
+export * from './modules/markdown.module'
+export * from './modules/panel.module'
+export * from './modules/themepicker.module'
+
+export * from './services/logging.service'

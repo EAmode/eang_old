@@ -1,78 +1,76 @@
-<ea-panel id="toolbar" #toolbar class="sticky">
-  <div class="name">
-    <span class="logo">
-      <!-- <img height="26" src="/assets/images/eang-logo.svg"> -->
-    </span>
-    <h2>eang</h2>
-  </div>
-  <div class="toolbar-buttons">
-    <ea-themepicker select="eangio-root" [themes]="['mode', 'material']"></ea-themepicker>
-    <a alt="GitHub" href="https://github.com/EAmode/eang" rel="noopener noreferrer" target="_blank" role="button">
-      <img height="26" src="/assets/images/github-circle-white-transparent.svg">
-    </a>
-  </div>
-</ea-panel>
-
-<div id="main">
-
-  <!-- <section id="welcome">
-      <div id="title">
-        <h2>Eang</h2>
-        <p>Reactive Enterprise Components</p>
-      </div>
-      <div class="logos">
-          <img height="96" src="/assets/images/angular.svg">
-          <img height="36" src="/assets/images/plus.svg">
-
-          <img height="96" src="/assets/images/Rx_Logo-512-512.png">
-          <img height="36" src="/assets/images/plus.svg">
-
-          <img height="96" src="/assets/images/postcss.svg">
-      </div>
-    </section> -->
-
-  <section id="features">
-
-    <h1>Feature Highlights</h1>
-
-    <section>
-      <eangio-feature-reactive></eangio-feature-reactive>
-    </section>
-
-    <section>
-      <eangio-feature-theming></eangio-feature-theming>
-    </section>
-
-  </section>
-
-  <!-- <section id="cta">
-      <div class="open-source">
-        <main>
-          <h2>Supporting Open Source</h2>
-          <h3>This is a thing about open source code</h3>
-        </main>
-        <aside>
-            <img src="../assets/images/angular-logo.svg" alt="">
-          </aside>
-      </div>
-      <div class="get-started">
-        <div class="github">
-          <img src="../assets/images/Octocat.png" alt="">
-          <p>Download on Github</p>
+<ea-layout sticky>
+  <ea-toolbar flex shadow>
+      <ea-panel ea-toolbar-header>
+        <div class="ea-icon-button" (click)="drawerToggle()"
+        [class.menu-close]="drawer"
+        [class.menu-open]="!drawer">
         </div>
-        <div class="npm">
-            <img src="../assets/images/npm-logo.png" alt="">
-            <p>Install via npm</p>
-        </div>
-      </div>
-    </section>-->
+        <span class="logo"></span>
+      </ea-panel> <!--First container in the ea-toolbar-->
 
-  <footer>
-    <span>
-      <div>Powered by
-        <a href="https://eamode.com">EA Mode</a>
-      </div>
-    </span>
-  </footer>
+      <ea-panel ea-toolbar-action>
+      </ea-panel><!--Second container in the ea-toolbar-->
 
-</div>
+      <ea-panel ea-toolbar-buttons>
+        <ea-themepicker select="eangio-root" [themes]="['mode', 'material']"></ea-themepicker>
+        <a alt="GitHub" href="https://github.com/eascientific/eang" rel="noopener noreferrer" target="_blank" role="button">
+          <img height="26" src="/assets/images/github-circle-white-transparent.svg">
+        </a>
+        <a alt="GitHub" href="https://www.eamode.com" rel="noopener noreferrer" target="_blank" role="button">
+          <img height="26" src="/assets/images/eamode-logo.svg">
+        </a>
+      </ea-panel>
+
+  </ea-toolbar>
+
+  <ea-drawer resize *ngIf="drawer">
+    <section class="ea-drawer">
+      <a routerLink="/reactive" class="ea-drawer"><div class="ea-drawer">Reactive</div></a>
+      <a routerLink="/theming"class="ea-drawer"><div class="ea-drawer">Theming</div></a>
+      <a routerLink="/layout" class="ea-drawer"><div class="ea-drawer">Layout</div></a>
+    </section>
+  </ea-drawer>
+
+  <ea-main>
+    <ea-body>
+      <div id="main">
+
+        <!-- <section id="welcome">
+          <div id="title">
+            <h2>Eang</h2>
+            <p>Reactive Enterprise Components</p>
+          </div>
+          <div class="logos">
+              <img height="96" src="/assets/images/angular.svg">
+              <img height="36" src="/assets/images/plus.svg">
+
+              <img height="96" src="/assets/images/Rx_Logo-512-512.png">
+              <img height="36" src="/assets/images/plus.svg">
+
+              <img height="96" src="/assets/images/postcss.svg">
+          </div>
+        </section> -->
+
+
+        <section id="features"
+        [class.drawer-open]="drawer">
+          <h1>Feature highlights</h1>
+
+          <router-outlet></router-outlet>
+
+        </section>
+      </div>
+
+    </ea-body>
+    <ea-footer>
+      <footer>
+        <span>
+          <div class="powered-by">Powered by
+            <a class="ea-mode-logo" href="https://eamode.com"></a>
+          </div>
+        </span>
+      </footer>
+    </ea-footer>
+  </ea-main>
+
+</ea-layout>

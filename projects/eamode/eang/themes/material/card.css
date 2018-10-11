@@ -13,9 +13,12 @@
       color: var(--ea-color-4);
     }
     & .ea-card-content {
-      padding: 1rem 1.5rem;
-      display: flex;
-      justify-content: center;
+      --ea-card-content-grid: var(--ea-card-content-grid, repeat(2, 1fr));
+      display: grid;
+      grid-template-columns: var(--ea-card-content-grid);
+      grid-column-gap: 2rem;
+      justify-items: center;
+      margin: 1rem;
     }
     & .ea-card-footer {
       display: flex;

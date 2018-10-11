@@ -6,7 +6,6 @@
       margin: 0;
       border-radius: 0;
       background: var(--ea-color-3);
-      width: 100%;
     }
     & li {
       color: var(--ea-color2);

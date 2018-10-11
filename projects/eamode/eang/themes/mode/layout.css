@@ -1,0 +1,81 @@
+.mode {
+  & ea-layout {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      'toolbar toolbar'
+      'drawer main';
+
+    &[sticky] > ea-main {
+      overflow: auto;
+    }
+
+    & ea-toolbar {
+      --ea-toolbar-height: var(--ea-toolbar-height, inherit);
+      --ea-toolbar-display: var(--ea-toolbar-display, inherit);
+      --ea-toolbar-max-width: var(--ea-toolbar-max-width, inherit);
+
+      grid-area: toolbar;
+      display: var(--ea-toolbar-display);
+      height: var(--ea-toolbar-height);
+      background: var(--ea-color-background-2);
+      width: 100%;
+      z-index: 1;
+      &[shadow] {
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);
+      }
+      &[flex] {
+        --ea-toolbar-display: flex;
+      }
+      &[grid] {
+        --ea-toolbar-display: grid;
+      }
+    }
+
+    & ea-drawer {
+      grid-area: drawer;
+      width: 300px;
+      background: var(--ea-color-background-4);
+      &[resize] {
+        resize: horizontal;
+        overflow: auto;
+      }
+    }
+
+    & ea-drawer {
+
+    }
+
+    & div.ea-drawer {
+      padding: 0.5em;
+    }
+
+    & div.ea-drawer:hover {
+      background-color: gray;
+    }
+
+    & a.ea-drawer {
+      font-size: 1.0rem;
+      color:white;
+      text-decoration: none;
+    }
+
+    a.ea-drawer:hover {
+      text-decoration: none;
+    }
+
+    a.ea-drawer:active {
+      color: white;
+    }
+
+    a.ea-drawer:visited {
+      color: white;
+    }
+
+    & ea-main {
+      grid-area: main;
+    }
+  }
+}

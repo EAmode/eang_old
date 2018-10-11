@@ -7,7 +7,7 @@ import {
   Renderer,
   OnDestroy
 } from '@angular/core'
-import { of, combineLatest, Subscription } from 'rxjs'
+import { of, combineLatest, Subscription, Observable } from 'rxjs'
 
 @Component({
   selector: 'ea-panel',
@@ -15,7 +15,7 @@ import { of, combineLatest, Subscription } from 'rxjs'
 })
 export class PanelComponent implements OnInit, OnDestroy {
   @HostBinding('attr.state') stateAttr
-  @Input() state = of('maximized')
+  @Input() state: Observable<string> = of('maximized')
   @HostBinding('attr.orientation') orientationAttr
   @Input() orientation = of('top')
   hostElement
