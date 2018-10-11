@@ -12,11 +12,15 @@ import {
 } from '@angular/core'
 import { Observable, Subscription } from 'rxjs'
 import { debounceTime, distinctUntilChanged, map, delay } from 'rxjs/operators'
+import { LayoutService } from '../services/layout.service'
 
 @Component({
   selector: 'ea-layout',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
+  <ng-container *ngIf="(layout.drawerState$ | async) as drawerState">
+    <p>display button</p>
+  </ng-container>
   <ng-content select="ea-toolbar"></ng-content>
   <ng-content select="ea-main"></ng-content>
   <ng-content select="ea-drawer"></ng-content>
@@ -34,7 +38,7 @@ export class Layout implements OnInit, OnDestroy {
   @ViewChild('suggestionPanel') suggestionPanel
   @ContentChild(TemplateRef) resultsTemplate: TemplateRef<any>
 
-  constructor() {}
+  constructor(public layout: LayoutService) {}
 
   ngOnInit() {}
 

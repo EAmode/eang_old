@@ -12,6 +12,7 @@ import {
 } from '@angular/core'
 import { Observable, Subscription } from 'rxjs'
 import { debounceTime, distinctUntilChanged, map, delay } from 'rxjs/operators'
+import { LayoutService, DrawerState } from '../services/layout.service'
 
 @Component({
   selector: 'ea-drawer',
@@ -22,19 +23,12 @@ import { debounceTime, distinctUntilChanged, map, delay } from 'rxjs/operators'
   styles: []
 })
 export class Drawer implements OnInit, OnDestroy {
-  @Input() suggestions: Observable<any>
-  @Input() enabled
 
-  @Output() readonly searchTerm = new EventEmitter<string>()
-  @Output() selectedItem
+  constructor(public layout: LayoutService) {}
 
-  @ViewChild('inputField') inputField
-  @ViewChild('suggestionPanel') suggestionPanel
-  @ContentChild(TemplateRef) resultsTemplate: TemplateRef<any>
-
-  constructor() {}
-
-  ngOnInit() {}
+  ngOnInit() {
+    this.layout.drawerState$.next(DrawerState.maximized)
+  }
 
   ngOnDestroy() {}
 }

@@ -8,6 +8,7 @@ import { Drawer } from '../components/drawer'
 import { Footer } from '../components/footer'
 import { PanelModule } from './panel.module'
 import { Main } from '../components/main'
+import { LayoutService } from '../services/layout.service'
 
 export * from '../components/layout'
 export * from '../components/toolbar'
@@ -19,6 +20,7 @@ export * from '../components/main'
 @NgModule({
   declarations: [Layout, Toolbar, Body, Drawer, Footer, Main],
   exports: [Layout, Toolbar, Body, Drawer, Footer, Main],
-  imports: [CommonModule, PanelModule]
+  imports: [CommonModule, PanelModule],
+  providers: [LayoutService]
 })
 export class LayoutModule {}
