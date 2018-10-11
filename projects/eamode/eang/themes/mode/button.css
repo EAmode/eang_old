@@ -1,9 +1,4 @@
 .mode {
-  .myButton {
-
-  }
-
-
   & button {
     --ea-button-color: var(--ea-button-color, var(--ea-color-2));
     --ea-button-background-color: var(
