@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser'
 import { NgModule } from '@angular/core'
 import { ReactiveFormsModule } from '@angular/forms'
 import { RouterModule } from '@angular/router'
+import { AppRoutingModule } from './app-routing.module'
 
 import { AppComponent } from './app.component'
 import {
@@ -20,13 +21,13 @@ import {
 
 import { ReactiveComponent } from './feature/reactive/reactive.component'
 import { ThemingComponent } from './feature/theming/theming.component'
+import { LayoutComponent } from './feature/layout/layout.component'
 
 @NgModule({
-  declarations: [AppComponent, ReactiveComponent, ThemingComponent],
+  declarations: [AppComponent, ReactiveComponent, ThemingComponent, LayoutComponent],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    RouterModule.forRoot([], { initialNavigation: 'enabled' }),
     LayoutModule,
     AutoCompleteModule,
     PanelModule,
@@ -34,7 +35,8 @@ import { ThemingComponent } from './feature/theming/theming.component'
     MarkdownModule,
     MdcButtonModule,
     MdcRippleModule,
-    MdcRadioModule
+    MdcRadioModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

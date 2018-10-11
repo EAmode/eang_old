@@ -44,6 +44,36 @@
       }
     }
 
+    & ea-drawer {
+
+    }
+
+    & div.ea-drawer {
+      padding: 0.5em;
+    }
+
+    & div.ea-drawer:hover {
+      background-color: gray;
+    }
+
+    & a.ea-drawer {
+      font-size: 1.0rem;
+      color:white;
+      text-decoration: none;
+    }
+
+    a.ea-drawer:hover {
+      text-decoration: none;
+    }
+
+    a.ea-drawer:active {
+      color: white;
+    }
+
+    a.ea-drawer:visited {
+      color: white;
+    }
+
     & ea-main {
       grid-area: main;
     }

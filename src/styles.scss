@@ -128,14 +128,12 @@ ea-toolbar {
     width: 100%;
     & .ea-card {
       width: 50%;
-      z-index: -2;
       @media only screen and (max-width: 500px) {
         width: 95%;
       }
     }
     & #example-label {
       --ea-card-content-grid: repeat(1, 1fr);
-      z-index: -1;
     }
     & .ea-card-footer {
       flex-wrap: wrap;
