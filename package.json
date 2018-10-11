@@ -22,7 +22,7 @@
     "css:copy": "cpx \"projects/eamode/eang/themes/**/*\" \"dist/eamode/eang/themes\"",
     "css:watch": "concurrently  \"npm run css:build -- -w\" \"npm run css:copy -- -w\"",
     "format": "prettier --write src/**/*.{ts,json,js} && prettier --write projects/eamode/eang/src/**/*.{ts,json,js} && prettier --write e2e/src/**/*.{ts,json,js}",
-    "lint": "ng lint",
+    "lint": "ng lint && stylelint \"projects/eamode/eang/themes/**/*.css\"",
     "e2e": "ng e2e",
     "semantic-release": "semantic-release",
     "travis-deploy-once": "travis-deploy-once"
@@ -109,6 +109,8 @@
     "prettier": "^1.13.7",
     "protractor": "~5.4.0",
     "semantic-release": "^15.9.15",
+    "stylelint": "^9.6.0",
+    "stylelint-config-recommended": "^2.1.0",
     "travis-deploy-once": "^5.0.7",
     "ts-node": "~7.0.0",
     "tsickle": ">=0.29.0",
