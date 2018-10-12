@@ -18,6 +18,9 @@ import { LayoutService, DrawerState } from '../services/layout.service'
   selector: 'ea-drawer',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
+  <ng-content select="header"></ng-content>
+  <ng-content select="section"></ng-content>
+  <ng-content select="footer"></ng-content>
   <ng-content></ng-content>
   `,
   styles: []
