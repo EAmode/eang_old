@@ -15,7 +15,7 @@
   </ea-toolbar>
 
 
-  <ea-drawer *ngIf="(layout.drawerState$ | async)" [drawerState$]="layout.drawerState$">
+  <ea-drawer resize [drawerState$]="layout.drawerState$">
     <header>
         <a alt="logo" href="https://www.eamode.com" rel="noopener noreferrer" target="_blank" role="button">
           <img height="26" src="/assets/images/eamode-logo.svg">
