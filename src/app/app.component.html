@@ -15,7 +15,7 @@
   </ea-toolbar>
 
 
-  <ea-drawer *ngIf="(layout.drawerState$ | async)" [drawerState$]="layout.drawerState$">
+  <ea-drawer>
     <header>
         <a alt="logo" href="https://www.eamode.com" rel="noopener noreferrer" target="_blank" role="button">
           <img height="26" src="/assets/images/eamode-logo.svg">
@@ -25,6 +25,7 @@
       <a routerLink="/reactive" class="ea-drawer"><div class="ea-drawer">Reactive</div></a>
       <a routerLink="/theming"class="ea-drawer"><div class="ea-drawer">Theming</div></a>
       <a routerLink="/layout" class="ea-drawer"><div class="ea-drawer">Layout</div></a>
+      <a routerLink="/button" class="ea-drawer"><div class="ea-drawer">Buttons</div></a>
     </section>
     <footer>
         <a alt="logo" href="https://www.eamode.com" rel="noopener noreferrer" target="_blank" role="button">

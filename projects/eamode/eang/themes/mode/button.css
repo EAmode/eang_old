@@ -1,25 +1,50 @@
 .mode {
   & button {
-    --ea-button-color: var(--ea-button-color, var(--ea-color-2));
-    --ea-button-background-color: var(
-      --ea-button-background-color,
-      var(--ea-color-background-2)
-    );
-    --ea-button-border: var(--ea-button-border, none);
+    --ea-button-color: var(--ea-button-color, var(--ea-color-2)); /* Sets the button font-color */
+    --ea-button-background-color: var(--ea-button-background-color, var(--ea-color-background-2)); /* Sets the button background color */
+    --ea-button-border: var(--ea-button-border, var(--ea-color-background-4));
+    --ea-button-border-outline: 0.09em; /*Sets the initial em for the border outline*/
+    --ea-button-font-size: var(--ea-button-font-size, var(--ea-font-1-size)); /*Sets the scale factor for the button*/
+    --ea-button-border-radius: 0.25em; /*Sets the border radius for the button*/
+    --ea-button-padding: 1em;
 
-    box-shadow: inset 0px 1px 0px 0px #7a8eb9;
-    background: linear-gradient(to bottom, #637aad 5%, #5972a7 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#637aad', endColorstr='#5972a7',GradientType=0);
-    background-color: #637aad;
-    border: 1px solid #314179;
-    display: inline-block;
+    font-size: var(--ea-button-font-size);
+    padding: var(--ea-button-padding);
+    background-color: var(--ea-button-background-color);
+    margin: 1rem;
+    color: var(--ea-color-3);
+    border-radius: var(--ea-button-border-radius);
+    border: var(--ea-button-border-outline) solid var(--ea-button-border);
     cursor: pointer;
-    color: #ffffff;
-    font-family: Arial;
-    font-size: 13px;
-    font-weight: bold;
-    padding: 6px 12px;
-    text-decoration: none;
+  }
+  & [small] {
+    font-size: calc(var(--ea-button-font-size) * 0.8);
+  }
+  & [medium] {
+    font-size: calc(var(--ea-button-font-size) * 1.25);
+  }
+  & [large] {
+    font-size: calc(var(--ea-button-font-size) * 1.5);
+  }
+  & [icon] {
+    & section {
+      display: flex;
+      align-items:center;
+    }
+    & aside {
+      --ea-button-icon: var(--ea-button-icon, inherit);
+      background: var(--ea-button-icon);
+      background-repeat: no-repeat;
+      background-position:center;
+      height: 1em;
+      width: 1em;
+      margin-right: 1em;
+    }
+  }
+  & [custom] {
+    border: none;
+    background: none;
+    padding: 0;
   }
   &[primary] {
     color: var(--ea-color-1);
@@ -55,8 +80,5 @@
   & button:after {
 
   }
-  & button:active {
-    position: relative;
-    top: 1px;
-  }
+
 }

@@ -28,7 +28,7 @@
       color: var(--ea-card-header-color);
     }
     & .ea-card-content {
-      --ea-card-content-grid: var(--ea-card-content-grid, repeat(2, 1fr));
+      --ea-card-content-grid: var(--ea-card-content-grid, repeat(1, 1fr));
       display: grid;
       grid-template-columns: var(--ea-card-content-grid);
       grid-column-gap: 2rem;
