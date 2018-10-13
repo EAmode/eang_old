@@ -8,11 +8,12 @@ import {
   ContentChild,
   ViewChild,
   ChangeDetectionStrategy,
-  OnDestroy
+  OnDestroy,
+  HostBinding
 } from '@angular/core'
-import { Observable, Subscription } from 'rxjs'
+import { Observable, Subscription, Subject } from 'rxjs'
 import { debounceTime, distinctUntilChanged, map, delay } from 'rxjs/operators'
-import { LayoutService, DrawerState } from '../services/layout.service'
+import { LayoutService } from '../services/layout.service'
 
 @Component({
   selector: 'ea-drawer',
@@ -27,10 +28,25 @@ import { LayoutService, DrawerState } from '../services/layout.service'
 })
 export class Drawer implements OnInit, OnDestroy {
 
-  constructor(public layout: LayoutService) {}
+  @HostBinding('attr.state') stateAttr
+
+
+  @Input() drawerState$: Subject<string>
+
+
+  constructor(public layout: LayoutService) {
+  }
 
   ngOnInit() {
-    this.layout.drawerState$.next(DrawerState.maximized)
+    if (!this.drawerState$) {
+      this.drawerState$ = new Subject<string>()
+    }
+
+    this.drawerState$.subscribe(d => {
+      this.stateAttr = d
+    })
+
+    this.drawerState$.next('maximized')
   }
 
   ngOnDestroy() {}

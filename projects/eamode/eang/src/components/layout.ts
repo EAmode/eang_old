@@ -18,9 +18,6 @@ import { LayoutService } from '../services/layout.service'
   selector: 'ea-layout',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-  <ng-container *ngIf="(layout.drawerState$ | async) as drawerState">
-    <p>display button</p>
-  </ng-container>
   <ng-content select="ea-toolbar"></ng-content>
   <ng-content select="ea-main"></ng-content>
   <ng-content select="ea-drawer"></ng-content>

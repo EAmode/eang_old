@@ -1,10 +1,7 @@
 <ea-layout sticky>
   <ea-toolbar flex shadow>
       <header>
-        <div class="ea-icon-button" (click)="drawerToggle()"
-        [class.menu-close]="drawer"
-        [class.menu-open]="!drawer">
-        </div>
+
         <span class="logo"></span>
       </header> <!--First container in the ea-toolbar-->
 
@@ -17,7 +14,8 @@
 
   </ea-toolbar>
 
-  <ea-drawer *ngIf="drawer">
+
+  <ea-drawer *ngIf="(layout.drawerState$ | async)" [drawerState$]="layout.drawerState$">
     <header>
         <a alt="logo" href="https://www.eamode.com" rel="noopener noreferrer" target="_blank" role="button">
           <img height="26" src="/assets/images/eamode-logo.svg">
