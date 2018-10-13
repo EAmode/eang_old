@@ -12,21 +12,19 @@ import {
 } from '@angular/core'
 import { Observable, Subscription } from 'rxjs'
 import { debounceTime, distinctUntilChanged, map, delay } from 'rxjs/operators'
+import { LayoutService } from '../services/layout.service'
 
 @Component({
   selector: 'ea-layout',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
   <ng-content select="ea-toolbar"></ng-content>
-  <ng-content select="ea-main"></ng-content>
-  <ng-content select="ea-drawer"></ng-content>
+  <ng-content  select="ea-main"></ng-content>
+  <ng-content *ngIf="isDrawerOpen$ | async" select="ea-drawer"></ng-content>
   `,
   styles: []
 })
 export class Layout implements OnInit, OnDestroy {
-  @Input() suggestions: Observable<any>
-  @Input() enabled
-
   @Output() readonly searchTerm = new EventEmitter<string>()
   @Output() selectedItem
 
@@ -34,7 +32,13 @@ export class Layout implements OnInit, OnDestroy {
   @ViewChild('suggestionPanel') suggestionPanel
   @ContentChild(TemplateRef) resultsTemplate: TemplateRef<any>
 
-  constructor() {}
+  isDrawerOpen$ = this.layout.drawerState$.pipe(
+    map(d => {
+      return d === 'maximized'
+    })
+  )
+
+  constructor(public layout: LayoutService) {}
 
   ngOnInit() {}
 

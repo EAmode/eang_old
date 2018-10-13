@@ -1,4 +1,5 @@
 import { Component } from '@angular/core'
+import { LayoutService } from 'projects/eamode/eang/src/services/layout.service'
 
 @Component({
   selector: 'eangio-root',
@@ -8,9 +9,5 @@ import { Component } from '@angular/core'
 export class AppComponent {
   title = 'eang-io'
 
-  drawer = true
-
-  drawerToggle() {
-    this.drawer = !this.drawer
-  }
+  constructor (public layout: LayoutService) {}
 }
