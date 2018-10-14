@@ -65,6 +65,9 @@
     & .token.deleted {
       color: #e2777a;
     }
+    & .token.attr-name {
+      color: #77a7e2;
+    }
     & .token.function-name {
       color: #6196cc;
     }
