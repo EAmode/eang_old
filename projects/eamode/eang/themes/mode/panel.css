@@ -57,4 +57,10 @@
   & ea-panel[state='closed'] {
     display: none !important;
   }
+
+  & ea-panel[flex-centered] {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
 }

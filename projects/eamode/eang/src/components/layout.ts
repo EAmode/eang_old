@@ -25,15 +25,6 @@ import { LayoutService } from '../services/layout.service'
   styles: []
 })
 export class Layout implements OnInit, OnDestroy {
-  @Input() suggestions: Observable<any>
-  @Input() enabled
-
-  @Output() readonly searchTerm = new EventEmitter<string>()
-  @Output() selectedItem
-
-  @ViewChild('inputField') inputField
-  @ViewChild('suggestionPanel') suggestionPanel
-  @ContentChild(TemplateRef) resultsTemplate: TemplateRef<any>
 
   constructor(public layout: LayoutService) {}
 

@@ -1,5 +1,10 @@
 .mode {
-  & ea-layout {
+  ea-layout {
+     /* <ea-drawer> variables */
+  --ea-drawer-header-height: 4rem;
+  --ea-drawer-footer-height: 4rem;
+
+
     display: grid;
     height: 100vh;
     grid-template-columns: auto 1fr;
@@ -48,22 +53,48 @@
     }
 
     & ea-drawer {
+
       grid-area: drawer;
       width: 300px;
       background: var(--ea-color-background-4);
-      display: flex;
+      display:flex;
       flex-direction: column;
       justify-content: space-between;
+
       &[resize] {
         resize: horizontal;
         overflow: auto;
       }
+      & [ea-drawer-header] {
+
+        height: var(--ea-drawer-header-height);
+        display:flex;
+        justify-content: center;
+        align-items: center;
+      }
+      & [ea-drawer-body] {
+
+        height: calc(100% - (var(--ea-drawer-header-height) + var(--ea-drawer-footer-height)));
+        display:flex;
+        justify-content: center;
+        align-items: flex-start;
+      }
+      & [ea-drawer-footer] {
+
+        height: var(--ea-drawer-footer-height);
+        display:flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+
+      &[state='closed'] {
+        display: none !important;
+      }
 
       & section {
         flex-grow: 1;
-      }
-      & footer {
-   
       }
     }
 
