@@ -22,9 +22,10 @@ import {
 import { ReactiveComponent } from './feature/reactive/reactive.component'
 import { ThemingComponent } from './feature/theming/theming.component'
 import { LayoutComponent } from './feature/layout/layout.component'
+import { ButtonComponent } from './feature/button/button.component'
 
 @NgModule({
-  declarations: [AppComponent, ReactiveComponent, ThemingComponent, LayoutComponent],
+  declarations: [AppComponent, ReactiveComponent, ThemingComponent, LayoutComponent, ButtonComponent],
   imports: [
     BrowserModule,
     ReactiveFormsModule,

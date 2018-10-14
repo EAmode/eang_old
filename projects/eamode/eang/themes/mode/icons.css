@@ -16,9 +16,14 @@
   --ea-icon-chevrons-left: inline('mode/icon/chevrons-left.svg');
   --ea-icon-chevrons-right: inline('mode/icon/chevrons-right.svg');
 
-  & .ea-icon-button {
+  & span[role="icon"] {
+    --ea-icon-margin: 0 1em 0 0;
+    display: block;
     --ea-button-icon: var(--ea-button-icon, inherit);
     background: var(--ea-button-icon);
     background-repeat: no-repeat;
+    height: 1em;
+    width: 1em;
+    margin: var(--ea-icon-margin);
   }
 }
