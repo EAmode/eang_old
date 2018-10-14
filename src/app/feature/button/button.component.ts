@@ -82,7 +82,7 @@ export class ButtonComponent implements OnInit {
   ~~~
   *app-component.html*
   ~~~html
-  <button class="hamburger" icon small>
+  <button style="--ea-button-icon: var(--ea-icon-sign-in);" icon small>
     <section>
       <aside></aside>
       Button
@@ -93,13 +93,6 @@ export class ButtonComponent implements OnInit {
   Setting the icon in the source code of our application is very simple.
   Using one of the pre-defined custom properties that represent an icon from \`/icons.css\` you
   can quickly set the button to have an icon.
-
-  *app.css*
-  ~~~css
-  button[icon].hamberger {
-    --ea-button-icon: var(--ea-icon-sign-in);
-  }
-  ~~~
   `
   constructor() {}
 
