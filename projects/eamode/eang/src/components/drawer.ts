@@ -8,36 +8,45 @@ import {
   ContentChild,
   ViewChild,
   ChangeDetectionStrategy,
-  OnDestroy
+  OnDestroy,
+  HostBinding
 } from '@angular/core'
-import { Observable, Subscription } from 'rxjs'
+import { Observable, Subscription, Subject } from 'rxjs'
 import { debounceTime, distinctUntilChanged, map, delay } from 'rxjs/operators'
+import { LayoutService } from '../services/layout.service'
 
 @Component({
   selector: 'ea-drawer',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-  <ng-content select="[ea-drawer-header]"></ng-content>
-  <ng-content select="[ea-drawer-body]"></ng-content>
-  <ng-content select="[ea-drawer-footer]"></ng-content>
-  <ng-content></ng-content>
+
+  <ng-container *ngIf="(drawerState$ | async) !== 'closed'">
+    <ng-content select="header"></ng-content>
+    <ng-content select="section"></ng-content>
+    <ng-content select="footer"></ng-content>
+    <ng-content></ng-content>
+  </ng-container>
   `,
   styles: []
 })
 export class Drawer implements OnInit, OnDestroy {
-  @Input() suggestions: Observable<any>
-  @Input() enabled
+  @HostBinding('attr.state') stateAttr
 
-  @Output() readonly searchTerm = new EventEmitter<string>()
-  @Output() selectedItem
+  @Input() drawerState$: Subject<string>
 
-  @ViewChild('inputField') inputField
-  @ViewChild('suggestionPanel') suggestionPanel
-  @ContentChild(TemplateRef) resultsTemplate: TemplateRef<any>
+  constructor(public layout: LayoutService) {}
 
-  constructor() {}
+  ngOnInit() {
+    if (!this.drawerState$) {
+      this.drawerState$ = new Subject<string>()
+    }
 
-  ngOnInit() {}
+    this.drawerState$.subscribe(d => {
+      this.stateAttr = d
+    })
+
+    this.drawerState$.next('maximized')
+  }
 
   ngOnDestroy() {}
 }

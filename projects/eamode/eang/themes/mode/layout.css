@@ -33,9 +33,22 @@
       }
       &[flex] {
         --ea-toolbar-display: flex;
+        justify-content: space-between;
       }
       &[grid] {
         --ea-toolbar-display: grid;
+      }
+      header {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding-left: 2rem;
+      }
+      aside {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding-right: 3rem;
       }
     }
 
@@ -47,6 +60,7 @@
       display:flex;
       flex-direction: column;
       justify-content: space-between;
+
       &[resize] {
         resize: horizontal;
         overflow: auto;
@@ -74,8 +88,14 @@
       }
     }
 
-    & ea-drawer {
 
+      &[state='closed'] {
+        display: none !important;
+      }
+
+      & section {
+        flex-grow: 1;
+      }
     }
 
     & div.ea-drawer {
@@ -87,8 +107,8 @@
     }
 
     & a.ea-drawer {
-      font-size: 1.0rem;
-      color:white;
+      font-size: 1rem;
+      color: white;
       text-decoration: none;
     }
 

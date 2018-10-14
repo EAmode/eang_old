@@ -38,13 +38,18 @@ import { PanelModule, AutoCompleteModule, ...} from '@eamode/eang'
 | material   | Components designed following Google's Material design |
 | your-theme-here | It is easy to add your own completely customized theme as well.|
 
-## Play with eang components
-To see examples of eang components and customize them run: `npm run playground` 
+## Develop
+```sh
+git clone https://github.com/EAmode/eang.git
+cd eang
+npm install
+npm start
+```
+Go to http://localhost:4204/
 
-## How to use eang components
-You can mix and match eang components with your existing angular app. 
+Start `npm run watch` in a different terminal. At that point everything should be hot-reloading during development.
 
-### Create your own eang CSS theme
+### Createing your own eang CSS theme
 By default, eang components are styled using the theme called 'mode'. However, you can create your own custom theme by following the steps below.
 1. Create a file: `themes/<nameofyourtheme>.css`
 2. Create a directory: `themes/<nameofyourtheme>`
@@ -55,13 +60,7 @@ By default, eang components are styled using the theme called 'mode'. However, y
 5. set up a post-css pipeline
   * add a line into the file `'`package.json`'` inside of the `'` "scripts": {`'` section as follows: `"css:<nameofyourtheme>": "postcss themes/all.css themes/<nameofyourtheme>.css themes/<nameofyourtheme>.css themes/<nameofyourtheme>/**/*.css -o playground/dist/<nameofyourtheme>.css",`
 
-## Create your own eang component
-You can create new eange components. Each eang component has three files:
-* `<nameofcomponent>.ts`
-* `<nameofcomponent>.html`
-* `<nameofcomponent>.css`
 
 ### travis (build, publish to npm, reference docs)
 eang's build scripts enforce linting to prevent errors.
 to commit your changes to eang, just  run `npm run commit` and follow the prompts
-### test
