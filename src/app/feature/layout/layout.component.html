@@ -1,2 +1,76 @@
-<ea-markdown [doc]="layout"></ea-markdown>
+<h1>Layout Module</h1>
 
+<p>
+  The layout module allows to easily create a reactive web-app layout working across desktop and mobile.
+  It consists of <code class="language-html">&lt;ea-layout&gt;</code> , <code class="language-html">&lt;ea-toolbar&gt;</code>,
+  <code class="language-html">&lt;ea-main&gt;</code>, <code class="language-html">&lt;ea-body&gt;</code> , <code class="language-html">&lt;ea-drawer&gt;</code>,
+  <code class="language-html">&lt;ea-footer&gt;</code>, and the LayoutService.
+</p>
+
+<div class="ea-card">
+  <div class="ea-card-header">
+    <h3>Layout Module</h3>
+  </div>
+  <div class="ea-card-content">
+    <img style="width: 50rem;" src="../../../assets/images/layouts.svg" alt="">
+  </div>
+  <div class="ea-card-footer">
+
+  </div>
+</div>
+<ea-markdown [doc]="ea_layout_attrs"></ea-markdown>
+<p>
+  We use CSS grid to define the layout of the different components.
+</p>
+<ea-markdown [doc]="ea_layout_grid"></ea-markdown>
+
+<!--
+<p>
+    This is inspired by  <a href="https://www.polymer-project.org/3.0/toolbox/app-layout">Polymer's App Layout</a>.
+</p> -->
+
+<h2>&lt;ea-toolbar&gt;</h2>
+<p> <code class="language-html">&lt;ea-toolbar&gt;</code> has a button that is dynamically generated based off whether
+  or not
+  there is currently in <code class="language-html">&lt;ea-drawer&gt;</code> initialized in the application.</p>
+
+<div class="ea-card">
+  <div class="ea-card-header">
+    <h3>&lt;ea-toolbar&gt;</h3>
+  </div>
+  <div class="ea-card-content">
+    <img style="width: 70rem;" src="../../../assets/images/ea-toolbar.svg" alt="">
+  </div>
+  <div class="ea-card-footer">
+
+  </div>
+</div>
+
+<h2>&lt;ea-drawer&gt;</h2>
+<p>The ea-drawer is designed to have a ,<code class="language-html">&lt;header&gt;</code>, <code class="language-html">&lt;section&gt;</code>,
+  and <code class="language-html">&lt;footer&gt;</code>.
+  A <code class="language-html">&lt;header&gt;</code> element will always sit at the top of the drawer. The <code class="language-html">&lt;section&gt;</code>
+  is stretched to be the
+  space between the header and the footer aligned at the top. The <code class="language-html">&lt;footer&gt;</code> is
+  aligned at the bottom always.
+  For simplicity sake we accomplish this we flexbox which makes it ideal to only have 3 elements, header, section, and
+  footer to maintain this layout easily.</p>
+
+<div class="ea-card">
+  <div class="ea-card-header">
+    <h3>&lt;ea-drawer&gt;</h3>
+  </div>
+  <div class="ea-card-content">
+    <img style="width: 10rem;" src="../../../assets/images/drawer.svg" alt="">
+  </div>
+  <div class="ea-card-footer">
+
+  </div>
+</div>
+<p>The drawer uses different an event stream to inform the application what state it is in. The first two states we've
+  introduced are maximized and closed.
+  We plan to introduce new states to make it so that you can adjust the size of your drawer to different states we
+  think have utility.
+</p>
+<h3>Attributes</h3>
+<ea-markdown [doc]="ea_drawer_attrs"></ea-markdown>

@@ -1,0 +1,49 @@
+
+<svg width="100%" height="100%" viewBox="0 0 1440 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="952" width="1440" height="72"></rect>
+        <rect id="path-2" x="0" y="62" width="280" height="962"></rect>
+        <rect id="path-3" x="1410" y="129" width="16" height="863" rx="8"></rect>
+        <rect id="path-4" x="244" y="129" width="16" height="863" rx="8"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard">
+            <g id="Group">
+                <g id="Rectangle-2">
+                    <use fill="#D8D8D8" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    <rect stroke="#979797" stroke-width="1" x="0.5" y="952.5" width="1439" height="71"></rect>
+                </g>
+                <rect id="Rectangle" fill="#D8D8D8" x="0" y="0" width="1440" height="62"></rect>
+                <g id="Rectangle">
+                    <use fill="#9A9A9A" fill-rule="evenodd" xlink:href="#path-2"></use>
+                    <rect stroke="#979797" stroke-width="1" x="0.5" y="62.5" width="279" height="961"></rect>
+                </g>
+                <text id="&lt;ea-toolbar&gt;&lt;/ea-too" font-family="PTMono-Regular, PT Mono" font-size="21" font-weight="normal" fill="#4B4B4B">
+                    <tspan x="35" y="38">&lt;ea-toolbar&gt;&lt;/ea-toolbar&gt;</tspan>
+                </text>
+                <text id="&lt;ea-drawer&gt;&lt;/ea-draw" font-family="PTMono-Regular, PT Mono" font-size="19" font-weight="normal" fill="#4B4B4B">
+                    <tspan x="11" y="101">&lt;ea-drawer&gt;&lt;/ea-drawer&gt;</tspan>
+                </text>
+                <g id="Rectangle-5">
+                    <use fill="#838383" fill-rule="evenodd" xlink:href="#path-3"></use>
+                    <rect stroke="#979797" stroke-width="1" x="1410.5" y="129.5" width="15" height="862" rx="7.5"></rect>
+                </g>
+                <g id="Rectangle-5">
+                    <use fill="#D8D8D8" fill-rule="evenodd" xlink:href="#path-4"></use>
+                    <rect stroke="#979797" stroke-width="1" x="244.5" y="129.5" width="15" height="862" rx="7.5"></rect>
+                </g>
+                <text id="&lt;ea-main&gt;" font-family="PTMono-Regular, PT Mono" font-size="23" font-weight="normal" fill="#4B4B4B">
+                    <tspan x="307" y="110">&lt;ea-main&gt;</tspan>
+                </text>
+                <text id="&lt;ea-body&gt;&lt;/ea-body&gt;" font-family="PTMono-Regular, PT Mono" font-size="23" font-weight="normal" fill="#4B4B4B">
+                    <tspan x="307" y="149">&lt;ea-body&gt;&lt;/ea-body&gt;</tspan>
+                </text>
+                <text id="&lt;ea-footer&gt;&lt;/ea-foot" font-family="PTMono-Regular, PT Mono" font-size="23" font-weight="normal" fill="#4B4B4B">
+                    <tspan x="673" y="997">&lt;ea-footer&gt;&lt;/ea-footer&gt;</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

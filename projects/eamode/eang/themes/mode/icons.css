@@ -22,8 +22,9 @@
     --ea-button-icon: var(--ea-button-icon, inherit);
     background: var(--ea-button-icon);
     background-repeat: no-repeat;
+    background-position: center;
     height: 1em;
-    width: 1em;
+    width: 2em;
     margin: var(--ea-icon-margin);
   }
 }

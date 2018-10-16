@@ -6,15 +6,16 @@
     --ea-button-border-outline: 0.09em; /*Sets the initial em for the border outline*/
     --ea-button-font-size: var(--ea-button-font-size, var(--ea-font-1-size)); /*Sets the scale factor for the button*/
     --ea-button-border-radius: 0.25em; /*Sets the border radius for the button*/
-    --ea-button-padding: 1em;
+    --ea-button-padding: 1em 2em;
+    --ea-button-margin: var(--ea-button-margin, 0);
 
     font-size: var(--ea-button-font-size);
     padding: var(--ea-button-padding);
     background-color: var(--ea-button-background-color);
-    margin: 1em;
     color: var(--ea-color-3);
     border-radius: var(--ea-button-border-radius);
     border: var(--ea-button-border-outline) solid var(--ea-button-border);
+    margin: var(--ea-button-margin);
     cursor: pointer;
     display:flex;
     align-items: center;

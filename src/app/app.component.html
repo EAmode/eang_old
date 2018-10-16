@@ -1,67 +1,59 @@
 <ea-layout sticky>
   <ea-toolbar flex shadow>
-      <header>
-
-        <span class="logo"></span>
-      </header> <!--First container in the ea-toolbar-->
-
-      <aside>
-        <ea-themepicker select="eangio-root" [themes]="['mode', 'material']"></ea-themepicker>
-        <a alt="GitHub" href="https://github.com/eamode/eang" rel="noopener noreferrer" target="_blank" role="button">
-          <img height="26" src="/assets/images/github-circle-white-transparent.svg">
-        </a>
-      </aside>
+    <header>
+      <a routerLink="/">
+        <span style="margin-left:0.5rem;" class="logo"></span>
+      </a>
+    </header>
+    <aside>
+      <ea-themepicker select="eangio-root" [themes]="['mode', 'material']"></ea-themepicker>
+      <a alt="GitHub" href="https://github.com/eamode/eang" rel="noopener noreferrer" target="_blank" role="button">
+        <img height="26" src="/assets/images/github-circle-white-transparent.svg">
+      </a>
+    </aside>
 
   </ea-toolbar>
 
 
-  <ea-drawer resize [drawerState$]="layout.drawerState$">
-
+  <ea-drawer [drawerState$]="layout.drawerState$">
     <header>
-        <a alt="logo" href="https://www.eamode.com" rel="noopener noreferrer" target="_blank" role="button">
-          <img height="26" src="/assets/images/eamode-logo.svg">
-        </a>
     </header>
-    <section class="ea-drawer">
-      <a routerLink="/reactive" class="ea-drawer"><div class="ea-drawer">Reactive</div></a>
-      <a routerLink="/theming"class="ea-drawer"><div class="ea-drawer">Theming</div></a>
-      <a routerLink="/layout" class="ea-drawer"><div class="ea-drawer">Layout</div></a>
-      <a routerLink="/button" class="ea-drawer"><div class="ea-drawer">Buttons</div></a>
+    <section class="ea-menu-item">
+      <!-- <a routerLink="/reactive" class="ea-menu-item">
+        <div class="ea-menu-item">
+          <span role="icon" style="--ea-button-icon: var(--ea-icon-activity); --ea-icon-margin: 0;" icon></span>
+          Reactive
+        </div>
+      </a>
+      <a routerLink="/theming" class="ea-menu-item">
+        <div class="ea-menu-item">
+          <span role="icon" style="--ea-button-icon: var(--ea-icon-pallete); --ea-icon-margin: 0;" icon></span>
+          Theming
+        </div>
+      </a> -->
+      <a routerLink="/layout" class="ea-menu-item">
+        <div class="ea-menu-item">
+          <span role="icon" style="--ea-button-icon: var(--ea-icon-layout); --ea-icon-margin: 0;" icon></span>
+          Layout
+        </div>
+      </a>
+      <a routerLink="/button" class="ea-menu-item">
+        <div class="ea-menu-item">
+          <span role="icon" style="--ea-button-icon: var(--ea-icon-button-icon); --ea-icon-margin: 0;" icon></span>
+          Buttons
+        </div>
+      </a>
     </section>
     <footer>
-        <a alt="logo" href="https://www.eamode.com" rel="noopener noreferrer" target="_blank" role="button">
-          <img height="26" src="/assets/images/eamode-logo.svg">
-        </a>
+      <p>Version 1.3.2</p>
     </footer>
   </ea-drawer>
 
   <ea-main>
     <ea-body>
       <div id="main">
-
-        <!-- <section id="welcome">
-          <div id="title">
-            <h2>Eang</h2>
-            <p>Reactive Enterprise Components</p>
-          </div>
-          <div class="logos">
-              <img height="96" src="/assets/images/angular.svg">
-              <img height="36" src="/assets/images/plus.svg">
-
-              <img height="96" src="/assets/images/Rx_Logo-512-512.png">
-              <img height="36" src="/assets/images/plus.svg">
-
-              <img height="96" src="/assets/images/postcss.svg">
-          </div>
-        </section> -->
-
-
-        <section id="features"
-        [class.drawer-open]="drawer">
-          <h1>Feature highlights</h1>
-
+        <section id="features" [class.drawer-open]="drawer">
           <router-outlet></router-outlet>
-
         </section>
       </div>
 

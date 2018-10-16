@@ -1,5 +1,9 @@
 .material {
   ea-layout {
+    /* <ea-drawer> variables */
+    --ea-drawer-header-height: 4rem;
+    --ea-drawer-footer-height: 4rem;
+
     display: grid;
     height: 100vh;
     grid-template-columns: auto 1fr;
@@ -28,9 +32,21 @@
       }
       &[flex] {
         --ea-toolbar-display: flex;
+        justify-content: space-between;
       }
       &[grid] {
         --ea-toolbar-display: grid;
+      }
+      header {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+      }
+      aside {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding-right: 3rem;
       }
     }
 
@@ -38,44 +54,47 @@
       grid-area: drawer;
       width: 300px;
       background: var(--ea-color-background-4);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
       &[resize] {
         resize: horizontal;
         overflow: auto;
       }
-    }
-
-    & ea-drawer {
-
-    }
-
-    & div.ea-drawer {
-      padding: 0.5em;
-    }
-
-    & div.ea-drawer:hover {
-      background-color: rgb(209, 209, 209);
-    }
-
-    & a.ea-drawer {
-      font-size: 1.0rem;
-      color:rgb(0, 43, 124);
-      text-decoration: none;
-    }
-
-    a.ea-drawer:hover {
-      text-decoration: none;
-    }
-
-    a.ea-drawer:active {
-      color:rgb(0, 43, 124);
-    }
-
-    a.ea-drawer:visited {
-      color:rgb(0, 43, 124);
+      & [ea-drawer-header] {
+        height: var(--ea-drawer-header-height);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      & [ea-drawer-body] {
+        height: calc(
+          100% -
+            (var(--ea-drawer-header-height) + var(--ea-drawer-footer-height))
+        );
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+      }
+      & [ea-drawer-footer] {
+        height: var(--ea-drawer-footer-height);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      &[state='closed'] {
+        display: none !important;
+      }
     }
 
     & ea-main {
       grid-area: main;
     }
+
+    & section {
+      flex-grow: 1;
+    }
   }
+
 }

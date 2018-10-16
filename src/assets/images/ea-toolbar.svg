@@ -1,0 +1,31 @@
+
+<svg width="100%" height="100%" viewBox="0 0 1440 103" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="3" y="48" width="394" height="56"></rect>
+        <rect id="path-2" x="1044" y="48" width="394" height="56"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-2" transform="translate(0.000000, -4.000000)">
+            <rect id="Rectangle" fill="#D8D8D8" x="0" y="45" width="1440" height="62"></rect>
+            <rect id="Rectangle" fill="#838383" x="1384" y="51" width="45" height="50"></rect>
+            <rect id="Rectangle" fill="#838383" x="1319" y="51" width="45" height="50"></rect>
+            <rect id="Rectangle" fill="#838383" x="1254" y="51" width="45" height="50"></rect>
+            <g id="Rectangle-3">
+                <use fill="#808080" fill-rule="evenodd" xlink:href="#path-1"></use>
+                <rect stroke="#979797" stroke-width="1" x="3.5" y="48.5" width="393" height="55"></rect>
+            </g>
+            <text id="&lt;header&gt;&lt;/header&gt;" font-family="AndaleMono, Andale Mono" font-size="23" font-weight="normal" fill="#4B4B4B">
+                <tspan x="83.1809082" y="84">&lt;header&gt;&lt;/header&gt;</tspan>
+            </text>
+            <g id="Rectangle-3">
+                <use fill="#808080" fill-rule="evenodd" xlink:href="#path-2"></use>
+                <rect stroke="#979797" stroke-width="1" x="1044.5" y="48.5" width="393" height="55"></rect>
+            </g>
+            <text id="&lt;aside&gt;&lt;/aside&gt;" font-family="AndaleMono, Andale Mono" font-size="23" font-weight="normal" fill="#4B4B4B">
+                <tspan x="1137.48315" y="84">&lt;aside&gt;&lt;/aside&gt;</tspan>
+            </text>
+        </g>
+    </g>
+</svg>
