@@ -23,9 +23,17 @@ import { ReactiveComponent } from './feature/reactive/reactive.component'
 import { ThemingComponent } from './feature/theming/theming.component'
 import { LayoutComponent } from './feature/layout/layout.component'
 import { ButtonComponent } from './feature/button/button.component'
+import { HomeComponent } from './feature/home/home.component'
 
 @NgModule({
-  declarations: [AppComponent, ReactiveComponent, ThemingComponent, LayoutComponent, ButtonComponent],
+  declarations: [
+    AppComponent,
+    ReactiveComponent,
+    ThemingComponent,
+    LayoutComponent,
+    ButtonComponent,
+    HomeComponent
+  ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,

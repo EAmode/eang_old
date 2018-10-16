@@ -6,14 +6,7 @@ import { Component, OnInit } from '@angular/core'
   styles: []
 })
 export class ButtonComponent implements OnInit {
-  intro = `
-  ## Proportional sizing buttons
 
-  Eang uses a combination of em, custom properties, and the calc()
-  function to make implementing proportional sized buttons more simple.
-  It capitalizes on the inherit features of em that allow elements of the
-  button to scale relative to a set font-size defined within the component.
-  `
 
   props = `
 *Custom Properties*
@@ -38,9 +31,7 @@ export class ButtonComponent implements OnInit {
       --ea-button-padding: 1em;
   ~~~
 
-  These variables can all be adjusted to customize aspects of your button that you
-  want to scale with. We've added a few attributes to allow you to easily scale up and
-  down to preset measurements.
+
 
   |  [small]   | Scales the button down proportionally to 80% of regular button based off the font-size set for the button   |
   |---|---|
@@ -62,37 +53,14 @@ export class ButtonComponent implements OnInit {
   `
 
   icons = `
-  *button.css*
-  ~~~css
-  & [icon] {
-    & section {
-      display: flex;
-      align-items:center;
-    }
-    & aside {
-      --ea-button-icon: var(--ea-button-icon, inherit);
-      background: var(--ea-button-icon);
-      background-repeat: no-repeat;
-      background-position:center;
-      height: 1em;
-      width: 1em;
-      margin-right: 1em;
-    }
-  }
-  ~~~
   *app-component.html*
   ~~~html
-  <button style="--ea-button-icon: var(--ea-icon-sign-in);" icon small>
-    <section>
-      <aside></aside>
-      Button
-    </section>
+  <button style="--ea-button-margin: 1em; --ea-button-padding: 1em 1em;" large>
+    <span role="icon" style="--ea-button-icon: var(--ea-icon-sign-in); --ea-icon-margin: 0 0.5em 0 0;" icon></span>
+    {{Button}}
   </button>
   ~~~
 
-  Setting the icon in the source code of our application is very simple.
-  Using one of the pre-defined custom properties that represent an icon from \`/icons.css\` you
-  can quickly set the button to have an icon.
   `
   constructor() {}
 

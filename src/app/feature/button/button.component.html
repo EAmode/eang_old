@@ -1,20 +1,26 @@
-<ea-markdown [doc]="intro"></ea-markdown>
-
+<h2>Buttons</h2>
+<p> Eang uses a combination of em, custom properties, and the calc() function to make implementing proportional sized
+  buttons more simple. It capitalizes on the inherit features of em that allow elements of the button to scale relative
+  to a set font-size defined within the component.
+</p>
 
 <section class="ea-card">
   <div class="ea-card-header">
     <h3>&lt;button&gt;</h3>
   </div>
   <div class="ea-card-content buttons">
-    <button small>Button</button>
-    <button>Regular</button>
-    <button medium>Button</button>
-    <button large>Button</button>
+    <button style="--ea-button-margin:1em" small>Button</button>
+    <button style="--ea-button-margin:1em">Regular</button>
+    <button style="--ea-button-margin:1em" medium>Button</button>
+    <button style="--ea-button-margin:1em" large>Button</button>
   </div>
   <div class="ea-card-footer"></div>
 </section>
 
 <ea-markdown [doc]="props"></ea-markdown>
+<p> These variables can all be adjusted to customize aspects of your button that you
+  want to scale with. We've added a few attributes to allow you to easily scale up and
+  down to preset measurements.</p>
 
 <h2>Adding Icons</h2>
 <p>Eang makes it easy to add icons into your buttons with a preset lay out that also scales up proportionally based off
@@ -29,21 +35,21 @@
     <h3>&lt;button&gt;</h3>
   </div>
   <div class="ea-card-content buttons">
-    <button small>
-      <span role="icon" style="--ea-button-icon: var(--ea-icon-sign-in);" icon></span>
+    <button style="--ea-button-margin: 1em; --ea-button-padding: 1em 0.5em;" small>
+      <span role="icon" style="--ea-button-icon: var(--ea-icon-sign-in); --ea-icon-margin: 0 0.25em 0 0;" icon></span>
       Button
     </button>
-    <button>
-      <span role="icon" style="--ea-button-icon: var(--ea-icon-sign-in);" icon></span>
+    <button style="--ea-button-margin: 1em; --ea-button-padding: 1em 0.5em;">
+      <span role="icon" style="--ea-button-icon: var(--ea-icon-sign-in); --ea-icon-margin: 0 0.25em 0 0;" icon></span>
       Button
     </button>
-    <button medium>
-      <span role="icon" style="--ea-button-icon: var(--ea-icon-sign-in);" icon></span>
+    <button style="--ea-button-margin: 1em; --ea-button-padding: 1em 0.5em;" medium>
+      <span role="icon" style="--ea-button-icon: var(--ea-icon-sign-in); --ea-icon-margin: 0 0.25em 0 0;" icon></span>
       Button
     </button>
-    <button large>
-        <span role="icon" style="--ea-button-icon: var(--ea-icon-sign-in);" icon></span>
-        Button
+    <button style="--ea-button-margin: 1em; --ea-button-padding: 1em 0.5em;" large>
+      <span role="icon" style="--ea-button-icon: var(--ea-icon-sign-in); --ea-icon-margin: 0 0.25em 0 0;" icon></span>
+      Button
     </button>
   </div>
   <div class="ea-card-footer">
@@ -53,3 +59,7 @@
 <ea-markdown [doc]="icons"></ea-markdown>
 
 <ea-markdown [doc]="attrs"></ea-markdown>
+
+<p>Setting the icon in the source code of our application is very simple.
+  Using one of the pre-defined custom properties that represent an icon from icons.css you
+  can quickly set the button to have an icon.</p>

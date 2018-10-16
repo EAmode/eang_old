@@ -9,5 +9,5 @@ import { LayoutService } from 'projects/eamode/eang/src/services/layout.service'
 export class AppComponent {
   title = 'eang-io'
 
-  constructor (public layout: LayoutService) {}
+  constructor(public layout: LayoutService) {}
 }

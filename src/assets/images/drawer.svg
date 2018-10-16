@@ -1,0 +1,40 @@
+
+<svg width="100%" height="100%" viewBox="0 0 280 1044" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="280" height="1044"></rect>
+        <rect id="path-2" x="0" y="0" width="280" height="68"></rect>
+        <rect id="path-3" x="0" y="976" width="280" height="68"></rect>
+        <rect id="path-4" x="0" y="79" width="280" height="556"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-4">
+            <g id="Rectangle">
+                <use fill="#9A9A9A" fill-rule="evenodd" xlink:href="#path-1"></use>
+                <rect stroke="#979797" stroke-width="1" x="0.5" y="0.5" width="279" height="1043"></rect>
+            </g>
+            <g id="Rectangle-6">
+                <use fill="#D8D8D8" fill-rule="evenodd" xlink:href="#path-2"></use>
+                <rect stroke="#979797" stroke-width="1" x="0.5" y="0.5" width="279" height="67"></rect>
+            </g>
+            <g id="Rectangle-6">
+                <use fill="#D8D8D8" fill-rule="evenodd" xlink:href="#path-3"></use>
+                <rect stroke="#979797" stroke-width="1" x="0.5" y="976.5" width="279" height="67"></rect>
+            </g>
+            <g id="Rectangle-6">
+                <use fill="#BFBFBF" fill-rule="evenodd" xlink:href="#path-4"></use>
+                <rect stroke="#979797" stroke-width="1" x="0.5" y="79.5" width="279" height="555"></rect>
+            </g>
+            <text id="&lt;header&gt;&lt;header&gt;" font-family="AndaleMono, Andale Mono" font-size="22" font-weight="normal" fill="#4B4B4B">
+                <tspan x="34.3828125" y="42">&lt;header&gt;&lt;header&gt;</tspan>
+            </text>
+            <text id="&lt;section&gt;&lt;section&gt;" font-family="AndaleMono, Andale Mono" font-size="22" font-weight="normal" fill="#4B4B4B">
+                <tspan x="21.1806641" y="118">&lt;section&gt;&lt;section&gt;</tspan>
+            </text>
+            <text id="&lt;aside&gt;&lt;aside&gt;" font-family="AndaleMono, Andale Mono" font-size="22" font-weight="normal" fill="#4B4B4B">
+                <tspan x="48.0849609" y="1018">&lt;aside&gt;&lt;aside&gt;</tspan>
+            </text>
+        </g>
+    </g>
+</svg>
