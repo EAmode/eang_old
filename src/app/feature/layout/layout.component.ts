@@ -51,9 +51,11 @@ export class LayoutComponent implements OnInit {
   `
 
   ea_drawer_attrs = `
-  |  maximized   | this would set the drawer to width value that shows the drawer open  |
+  |  Attributes   | Description  |
   |---|---|
-  |  closed   |  this would set the panel to its closed state   |
+  |  Closed   |  this would set the panel to its closed state   |
+  |  Maximized   |  this would set the panel to its maximized, or open, state   |
+
   `
   constructor() {}
 

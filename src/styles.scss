@@ -292,15 +292,15 @@
     }
   }
 
-  ea-drawer {
-    section {
+ & ea-drawer {
+   & section {
       margin: 1rem 0 0 0;
     }
-    footer {
+   & footer {
       display: flex;
       justify-content: flex-end;
       margin-right: 1rem;
-      p {
+    &  p {
         font-size: 0.8rem;
         color: white;
       }
@@ -312,6 +312,8 @@
 }
 
 ea-toolbar {
+  padding-left: 1rem;
+
   & header {
   & a {
     display: flex;
