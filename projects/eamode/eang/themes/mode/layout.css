@@ -1,5 +1,5 @@
 .mode {
-  ea-layout {
+  & ea-layout {
     /* <ea-drawer> variables */
     --ea-drawer-header-height: 4rem;
     --ea-drawer-footer-height: 4rem;
@@ -38,11 +38,13 @@
         --ea-toolbar-display: grid;
       }
       header {
+        color: var(--ea-color-3);
         display: flex;
         justify-content: flex-start;
         align-items: center;
       }
       aside {
+        color: var(--ea-color-3);
         display: flex;
         justify-content: flex-end;
         align-items: center;
