@@ -1,4 +1,5 @@
 .mode {
+
   & button {
     --ea-button-color: var(--ea-button-color, var(--ea-color-2)); /* Sets the button font-color */
     --ea-button-background-color: var(--ea-button-background-color, var(--ea-color-background-2)); /* Sets the button background color */
@@ -33,7 +34,13 @@
     border: none;
     background: none;
     padding: 0;
+    outline: none;
   }
+
+  & [custom]:hover {
+    background-color:none;
+  }
+
   &[primary] {
     color: var(--ea-color-1);
     background-color: var(--ea-color-accent-1);
@@ -61,7 +68,7 @@
   & button[disabled] {
     opacity: 0.65;
   }
-  & button:hover {
+  & button[hover]:hover {
     background: linear-gradient(to bottom, #5972a7 5%, #637aad 100%);
     background-color: #5972a7;
   }

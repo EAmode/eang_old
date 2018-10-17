@@ -1,5 +1,5 @@
 .material {
-  ea-layout {
+  & ea-layout {
     /* <ea-drawer> variables */
     --ea-drawer-header-height: 4rem;
     --ea-drawer-footer-height: 4rem;
@@ -38,11 +38,13 @@
         --ea-toolbar-display: grid;
       }
       header {
+        color: var(--ea-color-3);
         display: flex;
         justify-content: flex-start;
         align-items: center;
       }
       aside {
+        color: var(--ea-color-3);
         display: flex;
         justify-content: flex-end;
         align-items: center;
@@ -53,7 +55,7 @@
     & ea-drawer {
       grid-area: drawer;
       width: 300px;
-      background: var(--ea-color-background-4);
+      background: var(--ea-color-background-6);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -91,7 +93,7 @@
       }
       & a {
         font-size: 1rem;
-        color: var(--ea-color-2);
+        color: var(--ea-color-3);
         text-decoration: none;
       }
 
@@ -100,11 +102,11 @@
       }
 
       a:active {
-        color: var(--ea-color-2);
+        color: var(--ea-color-3);
       }
 
       a:visited {
-        color: var(--ea-color-2);
+        color: var(--ea-color-3);
       }
       & a > div {
         padding: 0.5em;
@@ -113,7 +115,7 @@
       }
 
       & a > div:hover {
-        background-color: var(--ea-color-background-3);
+        background-color: var(--ea-color-background-2);
       }
     }
 
