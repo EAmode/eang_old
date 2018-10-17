@@ -13,9 +13,14 @@
       'toolbar toolbar'
       'drawer main';
 
-    & ea-main {
-      overflow: auto;
-    }
+      & ea-main {
+        --ea-main-padding: var(--ea-main-padding, 0);
+        --ea-main-background: var(--ea-main-background, var(--ea-color-background-7));
+        grid-area: main;
+        overflow: auto;
+        background: var(--ea-color-background-7);
+        padding: var(--ea-main-padding);
+      }
 
     & ea-toolbar {
       --ea-toolbar-height: var(--ea-toolbar-height, inherit);
@@ -31,19 +36,24 @@
       &[shadow] {
         box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);
       }
+
       &[flex] {
         --ea-toolbar-display: flex;
       }
+
       &[grid] {
         --ea-toolbar-display: grid;
       }
-      header {
+
+      & header {
         color: var(--ea-color-3);
         display: flex;
         justify-content: flex-start;
         align-items: center;
+        flex-grow: 1;
       }
-      aside {
+
+      & aside {
         color: var(--ea-color-3);
         display: flex;
         justify-content: flex-end;
@@ -53,23 +63,27 @@
     }
 
     & ea-drawer {
+      --ea-drawer-width: var(--ea-drawer-width, 300px);
+
       grid-area: drawer;
-      width: 300px;
-      background: var(--ea-color-background-6);
+      background: var(--ea-color-background-4);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      width: var(--ea-drawer-width);
 
       &[resize] {
         resize: horizontal;
         overflow: auto;
       }
+
       & [ea-drawer-header] {
         height: var(--ea-drawer-header-height);
         display: flex;
         justify-content: center;
         align-items: center;
       }
+
       & [ea-drawer-body] {
         height: calc(
           100% -
@@ -79,35 +93,41 @@
         justify-content: center;
         align-items: flex-start;
       }
+
       & [ea-drawer-footer] {
         height: var(--ea-drawer-footer-height);
         display: flex;
         justify-content: center;
         align-items: center;
       }
+
       &[state='closed'] {
         display: none !important;
+        width: 0;
       }
+
       & section {
         flex-grow: 1;
       }
+
       & a {
         font-size: 1rem;
         color: var(--ea-color-3);
         text-decoration: none;
       }
 
-      a:hover {
+      &a:hover {
         text-decoration: none;
       }
 
-      a:active {
+      &a:active {
         color: var(--ea-color-3);
       }
 
-      a:visited {
+      &a:visited {
         color: var(--ea-color-3);
       }
+
       & a > div {
         padding: 0.5em;
         display: flex;
@@ -115,12 +135,8 @@
       }
 
       & a > div:hover {
-        background-color: var(--ea-color-background-2);
+        background-color: var(--ea-color-background-3);
       }
-    }
-
-    & ea-main {
-      grid-area: main;
     }
   }
 }

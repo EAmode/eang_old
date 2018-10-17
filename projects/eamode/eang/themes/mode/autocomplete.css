@@ -46,7 +46,6 @@
       padding-top: 0.25rem;
       display: flex;
       align-items: center;
-      padding-top: 0;
     }
     & li:hover {
       background-color: var(--ea-autocomplete-hover-background);
@@ -75,7 +74,6 @@
       border-radius: 8px;
       color: black;
       outline: none;
-      border-radius: 3px;
       font-size: 1em;
       height: 30px;
       width: var(--ea-autocomplete-width);

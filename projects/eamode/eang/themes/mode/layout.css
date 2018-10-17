@@ -1,5 +1,4 @@
 .mode {
-
   & ea-layout {
     /* <ea-drawer> variables */
     --ea-drawer-header-height: 4rem;
@@ -14,12 +13,14 @@
       'toolbar toolbar'
       'drawer main';
 
-    & ea-main {
-      grid-area: main;
-      background: var(--ea-color-background-7);
-      overflow: auto;
-      padding: 0.8em 1em;
-    }
+      & ea-main {
+        --ea-main-padding: var(--ea-main-padding, 0);
+        --ea-main-background: var(--ea-main-background, var(--ea-color-background-7));
+        grid-area: main;
+        overflow: auto;
+        background: var(--ea-color-background-7);
+        padding: var(--ea-main-padding);
+      }
 
     & ea-toolbar {
       --ea-toolbar-height: var(--ea-toolbar-height, inherit);
@@ -62,11 +63,14 @@
     }
 
     & ea-drawer {
+      --ea-drawer-width: var(--ea-drawer-width, 300px);
+
       grid-area: drawer;
       background: var(--ea-color-background-4);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      width: var(--ea-drawer-width);
 
       &[resize] {
         resize: horizontal;
@@ -99,7 +103,7 @@
 
       &[state='closed'] {
         display: none !important;
-        width:0;
+        width: 0;
       }
 
       & section {

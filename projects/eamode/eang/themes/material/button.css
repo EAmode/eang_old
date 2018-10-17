@@ -9,9 +9,8 @@
     --ea-button-border-radius: 0.25em; /*Sets the border radius for the button*/
     --ea-button-padding: 1em 2em;
     --ea-button-margin: var(--ea-button-margin, 0);
-
     --ea-button-font-size: 16px;
-    
+
     font-size: var(--ea-button-font-size);
     padding: var(--ea-button-padding);
     background-color: var(--ea-button-background-color);
@@ -74,8 +73,4 @@
     background: linear-gradient(to bottom, #5972a7 5%, #637aad 100%);
     background-color: #5972a7;
   }
-  & button:after {
-
-  }
-
 }

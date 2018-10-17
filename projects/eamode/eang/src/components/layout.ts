@@ -25,7 +25,6 @@ import { LayoutService } from '../services/layout.service'
   styles: []
 })
 export class Layout implements OnInit, OnDestroy {
-
   constructor(public layout: LayoutService) {}
 
   ngOnInit() {}
