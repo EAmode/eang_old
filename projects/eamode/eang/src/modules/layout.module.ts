@@ -16,6 +16,7 @@ export * from '../components/body'
 export * from '../components/drawer'
 export * from '../components/footer'
 export * from '../components/main'
+export * from '../services/layout.service'
 
 @NgModule({
   declarations: [Layout, Toolbar, Body, Drawer, Footer, Main],
