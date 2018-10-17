@@ -1,5 +1,5 @@
 .mode {
-  
+
   & ea-layout {
     /* <ea-drawer> variables */
     --ea-drawer-header-height: 4rem;
@@ -15,6 +15,7 @@
       'drawer main';
 
     & ea-main {
+      grid-area: main;
       background: var(--ea-color-background-7);
       overflow: auto;
       padding: 0.8em 1em;
@@ -62,7 +63,6 @@
 
     & ea-drawer {
       grid-area: drawer;
-      width: 300px;
       background: var(--ea-color-background-4);
       display: flex;
       flex-direction: column;
@@ -99,6 +99,7 @@
 
       &[state='closed'] {
         display: none !important;
+        width:0;
       }
 
       & section {
