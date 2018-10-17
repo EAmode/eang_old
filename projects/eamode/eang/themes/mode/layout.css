@@ -14,6 +14,7 @@
       'drawer main';
 
     & ea-main {
+      background: var(--ea-color-background-7);
       overflow: auto;
     }
 
@@ -42,6 +43,7 @@
         display: flex;
         justify-content: flex-start;
         align-items: center;
+        flex-grow: 1;
       }
       aside {
         color: var(--ea-color-3);
