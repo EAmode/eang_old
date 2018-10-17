@@ -292,34 +292,6 @@
   ea-drawer {
     section {
       margin: 1rem 0 0 0;
-
-      & div.ea-menu-item {
-        padding: 0.5em;
-        display: flex;
-        align-items: center;
-      }
-
-      & div.ea-menu-item:hover {
-        background-color: gray;
-      }
-
-      & a.ea-menu-item {
-        font-size: 1rem;
-        color: white;
-        text-decoration: none;
-      }
-
-      a.ea-menu-item:hover {
-        text-decoration: none;
-      }
-
-      a.ea-menu-item:active {
-        color: white;
-      }
-
-      a.ea-menu-item:visited {
-        color: white;
-      }
     }
     footer {
       display: flex;

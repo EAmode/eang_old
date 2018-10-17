@@ -13,7 +13,7 @@
       'toolbar toolbar'
       'drawer main';
 
-    &[sticky] > ea-main {
+    & ea-main {
       overflow: auto;
     }
 
@@ -86,15 +86,39 @@
       &[state='closed'] {
         display: none !important;
       }
+      & section {
+        flex-grow: 1;
+      }
+      & a {
+        font-size: 1rem;
+        color: var(--ea-color-3);
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: none;
+      }
+
+      a:active {
+        color: var(--ea-color-3);
+      }
+
+      a:visited {
+        color: var(--ea-color-3);
+      }
+      & a > div {
+        padding: 0.5em;
+        display: flex;
+        align-items: center;
+      }
+
+      & a > div:hover {
+        background-color: var(--ea-color-background-3);
+      }
     }
 
     & ea-main {
       grid-area: main;
     }
-
-    & section {
-      flex-grow: 1;
-    }
   }
-
 }

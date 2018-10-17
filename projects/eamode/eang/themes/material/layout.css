@@ -6,13 +6,14 @@
 
     display: grid;
     height: 100vh;
+    overflow: hidden;
     grid-template-columns: auto 1fr;
     grid-template-rows: auto 1fr;
     grid-template-areas:
       'toolbar toolbar'
       'drawer main';
 
-    &[sticky] > ea-main {
+    & ea-main {
       overflow: auto;
     }
 
@@ -32,7 +33,6 @@
       }
       &[flex] {
         --ea-toolbar-display: flex;
-        justify-content: space-between;
       }
       &[grid] {
         --ea-toolbar-display: grid;
@@ -86,15 +86,39 @@
       &[state='closed'] {
         display: none !important;
       }
+      & section {
+        flex-grow: 1;
+      }
+      & a {
+        font-size: 1rem;
+        color: var(--ea-color-2);
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: none;
+      }
+
+      a:active {
+        color: var(--ea-color-2);
+      }
+
+      a:visited {
+        color: var(--ea-color-2);
+      }
+      & a > div {
+        padding: 0.5em;
+        display: flex;
+        align-items: center;
+      }
+
+      & a > div:hover {
+        background-color: var(--ea-color-background-3);
+      }
     }
 
     & ea-main {
       grid-area: main;
     }
-
-    & section {
-      flex-grow: 1;
-    }
   }
-
 }
