@@ -68,7 +68,7 @@ export class MarkdownComponent implements OnInit, AfterContentInit {
       // let hilighted = Prism.highlight(str, Prism.languages.javascript, 'javascript')
       if (lang) {
         try {
-          return Prism.highlight(str, Prism.languages['lang'], lang)
+          return Prism.highlight(str, Prism.languages[lang], lang)
           // return hljs.highlight(lang, str).value;
         } catch (__) {}
       }

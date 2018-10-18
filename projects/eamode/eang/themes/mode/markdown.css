@@ -33,9 +33,12 @@
       padding: 1em;
       margin: 0.5em 0;
       overflow: auto;
+      background: var(--ea-color-background-4);
     }
-    & :not(pre) > code[class*='language-'],
-    & pre[class*='language-'] {
+    & pre {
+      padding: 1em;
+      margin: 0.5em 0;
+      overflow: auto;
       background: var(--ea-color-background-4);
     }
     /* Inline code */
