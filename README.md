@@ -4,15 +4,17 @@
 # eang
 Reactive components for Angular with customizable UX themes
 
-## Why eang?
+## eang
 eang is fast, fully reactive, and really flexible angular development framework with a set of themeable visual components. Through its native support for reactive programming, eang enables your angular apps to automatically update the user experience in response to event stream data from event sources. Eang plays well with your existing Angular architecture.
 
-## Install
-1. Add `eang` to your Angular project by running:
+## Installation
+Add `eang` to your Angular project by running:
 
 ```npm install -S @eamode/eang``` 
 
-2. Import selected `eang` modules in your project module file. e.g. `app.module.ts`:
+## 
+
+Import selected `eang` modules in your project module file. e.g. `app.module.ts`:
 
 ```
 import { PanelModule, AutoCompleteModule, ...} from '@eamode/eang'
@@ -38,7 +40,8 @@ import { PanelModule, AutoCompleteModule, ...} from '@eamode/eang'
 | material   | Components designed following Google's Material design |
 | your-theme-here | It is easy to add your own completely customized theme as well.|
 
-## Develop
+## Your first eang project
+
 ```sh
 git clone https://github.com/EAmode/eang.git
 cd eang
