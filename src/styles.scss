@@ -81,6 +81,22 @@
     max-width: 75%;
   }
 
+
+     .ea-card .ea-card-content.buttons {
+      --ea-card-content-grid: repeat(4, 1fr);
+      align-items: flex-end;
+      justify-items: center;
+    }
+    @media only screen and (max-width: 700px) {
+
+      .ea-card .ea-card-content.buttons {
+        --ea-card-content-grid: repeat(1, 1fr);
+        align-items: flex-end;
+        justify-items: center;
+        grid-row-gap: 1rem;
+      }    }
+
+
   #welcome {
     background: url('./assets/images/eang-background-21.jpg');
     background-size: cover;
@@ -104,7 +120,7 @@
   }
 
   eangio-home {
-    h1{
+    h1 {
       padding-bottom: 1rem;
       border-bottom: 1px solid lightgrey;
       @media only screen and (max-width: 500px) {
@@ -165,6 +181,7 @@
       justify-content: center;
       width: 100%;
       & .ea-card {
+        min-width: 60%;
         @media only screen and (max-width: 500px) {
           width: 95%;
         }
@@ -191,13 +208,11 @@
         max-width: 25rem;
         width: 100%;
         background-color: var(--ea-color-background-7);
+        border: 1px solid lightgrey;
         position: relative;
         border-radius: var(--panel-border-radius);
         @media only screen and (max-width: 500px) {
           width: 90%;
-        }
-        &.material .screen {
-          background: var(--ea-background-color-4);
         }
         & .text-container {
           height: 100%;
@@ -292,15 +307,15 @@
     }
   }
 
- & ea-drawer {
-   & section {
+  & ea-drawer {
+    & section {
       margin: 1rem 0 0 0;
     }
-   & footer {
+    & footer {
       display: flex;
       justify-content: flex-end;
       margin-right: 1rem;
-    &  p {
+      & p {
         font-size: 0.8rem;
         color: white;
       }
@@ -315,10 +330,10 @@ ea-toolbar {
   padding-left: 1rem;
 
   & header {
-  & a {
-    display: flex;
-    width: 4rem;
-  }
+    & a {
+      display: flex;
+      width: 4rem;
+    }
     & h2 {
       margin: 0;
       color: white;
@@ -347,14 +362,7 @@ ea-toolbar {
   }
 }
 
-button.hamberger[icon] {
-  --ea-button-icon: var(--ea-icon-sign-in);
-}
-.ea-card-content.buttons {
-  display: flex !important;
-  align-items: flex-end;
-  justify-content: center;
-}
+
 
 ea-footer {
   width: 100%;
@@ -395,16 +403,6 @@ ea-footer {
       width: 4rem;
       background-repeat: no-repeat;
       background-position: center;
-    }
-  }
-}
-
-.example-toolbar {
-  & h3 {
-    margin: 0;
-    padding-left: 1rem;
-    @media (--small-screen) {
-      padding-left: 0.5rem;
     }
   }
 }
