@@ -1,28 +1,8 @@
-.mode {
+.material {
   table,
   th,
   td {
     border: none;
-  }
-
-  thead {
-    --ea-table-thead-background: var(--ea-table-thead-background, var(--ea-color-background-3));
-    background: var(--ea-table-thead-background);
-    & th {
-      border-radius: 0;
-      color: var(--ea-color-3);
-    }
-  }
-
-  tbody {
-    background: var(--ea-color-3);
-
-    &[striped] > tr:nth-child(odd) {
-        background-color: rgba(242, 242, 242, 0.5);
-    }
-    & tr[clean] {
-      border: none;
-    }
   }
 
   table {
@@ -36,6 +16,9 @@
     border-bottom: none;
   }
 
+  table.striped > tbody > tr:nth-child(odd) {
+    background-color: rgba(242, 242, 242, 0.5);
+  }
 
   table.striped > tbody > tr > td {
     border-radius: 0;
@@ -57,20 +40,11 @@
 
   tr {
     border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-    &[center] > td {
-      text-align: center;
-    }
-    &[center] > th {
-      text-align: center;
-    }
   }
-
 
   td,
   th {
-    --ea-table-padding: var(--ea-table-padding, 15px 5px);
-
-    padding: var(--ea-table-padding);
+    padding: 15px 5px;
     display: table-cell;
     text-align: left;
     vertical-align: middle;

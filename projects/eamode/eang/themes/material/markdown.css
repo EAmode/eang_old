@@ -10,11 +10,6 @@
       cursor: pointer;
     }
 
-    & code {
-      font-size: responsive 0.75rem 1rem; /* min-size, max-size */
-      font-range: 420px 1280px; /* viewport widths between which font-size is fluid */
-    }
-
     & code[class*='language-'],
     & pre[class*='language-'] {
       color: var(--ea-color-1);

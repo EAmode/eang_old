@@ -10,11 +10,6 @@
       cursor: pointer;
     }
 
-    & code {
-      font-size: responsive 0.75rem 1rem; /* min-size, max-size */
-      font-range: 420px 1280px; /* viewport widths between which font-size is fluid */
-    }
-
     & code[class*='language-'],
     & pre[class*='language-'] {
       color: #ccc;
@@ -38,9 +33,12 @@
       padding: 1em;
       margin: 0.5em 0;
       overflow: auto;
+      background: var(--ea-color-background-4);
     }
-    & :not(pre) > code[class*='language-'],
-    & pre[class*='language-'] {
+    & pre {
+      padding: 1em;
+      margin: 0.5em 0;
+      overflow: auto;
       background: var(--ea-color-background-4);
     }
     /* Inline code */

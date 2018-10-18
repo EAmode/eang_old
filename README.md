@@ -45,11 +45,39 @@ cd eang
 npm install
 npm start
 ```
-Go to http://localhost:4204/
+Go to http://localhost:4204/ to bring up the website eang-io using `@eamode/eang` itself.
 
-Start `npm run watch` in a different terminal. At that point everything should be hot-reloading during development.
+In order for eang-io to reflect changes made in `@eamode/eang`, eang-io needs to be linked to `@eamode/eang`.
 
-### Createing your own eang CSS theme
+```sh
+npm run build
+cd dist/eamode/eang
+npm link
+cd ../../../
+npm link @eamode/eang
+```
+
+Start `npm run watch` and then `npm run start` in a different terminal. At that point everything should be hot-reloading during development.
+
+You can do that with every angular project using `eang`. The project's `npm start` might break, when `npm run watch` is run in eang, because `watch` deletes files in the dist folder that the project is linked to. Just restart `watch` and then `npm start` in your project again.
+
+NPM scripts:
+- `npm start`: Starts eang-io in watch mode.
+- `npm run watch`: Compiles `@eamode/eang` in watch mode.
+- `npm run commit`: CLI tool `git-cz` to commit to git with `conventional` style.
+- `npm run format`: Automatic code formating the whole project.
+- `npm run lint`: Linting Angular and CSS.
+
+Recommended VS Code extensions:
+- Angular Language Service
+- agular2-inline
+- Debugger for Chrome
+- PostCSS syntax
+- Prettier
+- TSLint
+- stylelint
+
+### Create your own eang CSS theme
 By default, eang components are styled using the theme called 'mode'. However, you can create your own custom theme by following the steps below.
 1. Create a file: `themes/<nameofyourtheme>.css`
 2. Create a directory: `themes/<nameofyourtheme>`

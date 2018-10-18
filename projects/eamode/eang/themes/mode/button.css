@@ -1,10 +1,19 @@
 .mode {
   & button {
-    --ea-button-color: var(--ea-button-color, var(--ea-color-2)); /* Sets the button font-color */
-    --ea-button-background-color: var(--ea-button-background-color, var(--ea-color-background-2)); /* Sets the button background color */
+    --ea-button-color: var(
+      --ea-button-color,
+      var(--ea-color-2)
+    ); /* Sets the button font-color */
+    --ea-button-background-color: var(
+      --ea-button-background-color,
+      var(--ea-color-background-2)
+    ); /* Sets the button background color */
     --ea-button-border: var(--ea-button-border, var(--ea-color-background-4));
     --ea-button-border-outline: 0.09em; /*Sets the initial em for the border outline*/
-    --ea-button-font-size: var(--ea-button-font-size, var(--ea-font-1-size)); /*Sets the scale factor for the button*/
+    --ea-button-font-size: var(
+      --ea-button-font-size,
+      var(--ea-font-1-size)
+    ); /*Sets the scale factor for the button*/
     --ea-button-border-radius: 0.25em; /*Sets the border radius for the button*/
     --ea-button-padding: 1em 2em;
     --ea-button-margin: var(--ea-button-margin, 0);
@@ -17,7 +26,7 @@
     border: var(--ea-button-border-outline) solid var(--ea-button-border);
     margin: var(--ea-button-margin);
     cursor: pointer;
-    display:flex;
+    display: flex;
     align-items: center;
   }
   & [small] {
@@ -33,7 +42,13 @@
     border: none;
     background: none;
     padding: 0;
+    outline: none;
   }
+
+  & [custom]:hover {
+    background-color: none;
+  }
+
   &[primary] {
     color: var(--ea-color-1);
     background-color: var(--ea-color-accent-1);
@@ -61,12 +76,8 @@
   & button[disabled] {
     opacity: 0.65;
   }
-  & button:hover {
+  & button[hover]:hover {
     background: linear-gradient(to bottom, #5972a7 5%, #637aad 100%);
     background-color: #5972a7;
   }
-  & button:after {
-
-  }
-
 }

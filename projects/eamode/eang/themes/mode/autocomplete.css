@@ -20,10 +20,9 @@
     );
 
     display: block;
-    overflow: auto;
+    position:relative;
     & ul {
       z-index: 1;
-      position: absolute;
       box-sizing: border-box;
       list-style: none;
       padding: 0;
@@ -36,6 +35,7 @@
       text-shadow: none;
       transition: 0.3s cubic-bezier(0.4, 0.2, 0.5, 1.4);
       transform-origin: 1.43em -0.43em;
+      position: absolute;
     }
     & li {
       color: var(--ea-color-1);
@@ -46,7 +46,6 @@
       padding-top: 0.25rem;
       display: flex;
       align-items: center;
-      padding-top: 0;
     }
     & li:hover {
       background-color: var(--ea-autocomplete-hover-background);
@@ -75,7 +74,6 @@
       border-radius: 8px;
       color: black;
       outline: none;
-      border-radius: 3px;
       font-size: 1em;
       height: 30px;
       width: var(--ea-autocomplete-width);
