@@ -10,8 +10,9 @@ export class ButtonComponent implements OnInit {
 
   props = `
 *Custom Properties*
-  |  \`--ea-button-font-size\`  | This property sets the font-size for the button and is the basis for all proportional scaling |
+  |  Custom Property  | Description |
   |---|---|
+  |  \`--ea-button-font-size\`  | This property sets the font-size for the button and is the basis for all proportional scaling |
   |  \`--ea-button-background-color\`  |  This sets the background color of the button
   | \`--ea-button-border\` | Sets the color of the button border
   | \`--ea-button-border-outline\` | Sets the size, type, and color of the border
@@ -33,8 +34,9 @@ export class ButtonComponent implements OnInit {
 
 
 
-  |  [small]   | Scales the button down proportionally to 80% of regular button based off the font-size set for the button   |
+  |  Size Attribute  | Description |
   |---|---|
+  |  [small]   | Scales the button down proportionally to 80% of regular button based off the font-size set for the button   |
   |  [medium]   |  Scales the button to 125% of the size when using the base font-size
   | [large] | Scales the button to 150% of the size when using the base font-size
 
