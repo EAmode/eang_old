@@ -1,7 +1,7 @@
 .fluentdark {
-  --ea-color-1: #000000;
+  --ea-color-1: #ffffff;
   --ea-color-2: #000000;
-  --ea-color-3: #fff;
+  --ea-color-3: #ffffff;
 
   --ea-color-accent-1: #6a9c45;
   --ea-color-accent-2: #0078d4;
@@ -12,7 +12,7 @@
   --ea-color-background-4: #333333;
   --ea-color-background-5: #7c7c7c;
   --ea-color-background-6: #bdbdbd;
-  --ea-color-background-7: #eeeeee;
+  --ea-color-background-7: #000000;
 
   --ea-color-success: #5bb95b;
   --ea-color-info: #5ac1de;
