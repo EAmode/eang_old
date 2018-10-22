@@ -1,0 +1,83 @@
+.fluentdark {
+  & button {
+    --ea-button-color: var(
+      --ea-button-color,
+      var(--ea-color-2)
+    ); /* Sets the button font-color */
+    --ea-button-background-color: var(
+      --ea-button-background-color,
+      var(--ea-color-background-2)
+    ); /* Sets the button background color */
+    --ea-button-border: var(--ea-button-border, var(--ea-color-background-4));
+    --ea-button-border-outline: 0.09em; /*Sets the initial em for the border outline*/
+    --ea-button-font-size: var(
+      --ea-button-font-size,
+      var(--ea-font-1-size)
+    ); /*Sets the scale factor for the button*/
+    --ea-button-border-radius: 0.25em; /*Sets the border radius for the button*/
+    --ea-button-padding: 1em 2em;
+    --ea-button-margin: var(--ea-button-margin, 0);
+
+    font-size: var(--ea-button-font-size);
+    padding: var(--ea-button-padding);
+    background-color: var(--ea-button-background-color);
+    color: var(--ea-color-3);
+    border-radius: var(--ea-button-border-radius);
+    border: var(--ea-button-border-outline) solid var(--ea-button-border);
+    margin: var(--ea-button-margin);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  & [small] {
+    font-size: calc(var(--ea-button-font-size) * 0.8);
+  }
+  & [medium] {
+    font-size: calc(var(--ea-button-font-size) * 1.25);
+  }
+  & [large] {
+    font-size: calc(var(--ea-button-font-size) * 1.5);
+  }
+  & [custom] {
+    border: none;
+    background: none;
+    padding: 0;
+    outline: none;
+  }
+
+  & [custom]:hover {
+    background-color: none;
+  }
+
+  &[primary] {
+    color: var(--ea-color-1);
+    background-color: var(--ea-color-accent-1);
+  }
+  &[secondary] {
+    color: var(--ea-color-1);
+    background-color: var(--ea-color-accent-2);
+  }
+  &[success] {
+    color: var(--ea-color-1);
+    background-color: var(--ea-color-success);
+  }
+  &[info] {
+    color: var(--ea-color-1);
+    background-color: var(--ea-color-info);
+  }
+  &[warning] {
+    color: var(--ea-color-1);
+    background-color: var(--ea-color-warning);
+  }
+  &[danger] {
+    color: var(--ea-color-1);
+    background-color: var(--ea-color-danger);
+  }
+  & button[disabled] {
+    opacity: 0.65;
+  }
+  & button[hover]:hover {
+    background: linear-gradient(to bottom, #5972a7 5%, #637aad 100%);
+    background-color: #5972a7;
+  }
+}
