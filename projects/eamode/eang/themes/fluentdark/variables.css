@@ -1,18 +1,18 @@
 .fluentdark {
-  --ea-color-1: #ffffff;
+  --ea-color-1: #757575;
   --ea-color-2: #000000;
-  --ea-color-3: #ffffff;
+  --ea-color-3: #ffffffd8;
 
   --ea-color-accent-1: #6a9c45;
   --ea-color-accent-2: #0078d4;
 
   --ea-color-background-1: #ffffff;
-  --ea-color-background-2: #000000;
+  --ea-color-background-2: #525252;
   --ea-color-background-3: #0078d4;
   --ea-color-background-4: #333333;
   --ea-color-background-5: #7c7c7c;
   --ea-color-background-6: #bdbdbd;
-  --ea-color-background-7: #000000;
+  --ea-color-background-7: #252525;
 
   --ea-color-success: #5bb95b;
   --ea-color-info: #5ac1de;

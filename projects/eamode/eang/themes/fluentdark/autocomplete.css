@@ -1,4 +1,5 @@
 .fluentdark {
+
   & ea-autocomplete {
     --ea-autocomplete-width: var(--ea-autocomplete-width, auto);
 
@@ -26,7 +27,7 @@
       box-sizing: border-box;
       list-style: none;
       padding: 0;
-      border-radius: 0.3em;
+      border-radius: 0.0em;
       margin: 0.2em 0 0;
       background: var(--ea-color-background-1);
       background: linear-gradient(to bottom right, white, hsla(0, 0%, 100%, 1));
@@ -48,7 +49,7 @@
       align-items: center;
     }
     & li:hover {
-      background-color: var(--ea-autocomplete-hover-background);
+      background-color: #0091ff;
       & .matched {
         color: var(--ea-color-3);
       }
@@ -71,7 +72,7 @@
       border-width: 1.5px;
       border-style: solid;
       border-image: var(--ea-gradient) 1, 100%;
-      border-radius: 8px;
+      border-radius: 0px;
       color: black;
       outline: none;
       font-size: 1em;
