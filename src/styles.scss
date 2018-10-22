@@ -1,5 +1,4 @@
-@import '../dist/eamode/eang/css/mode.css';
-@import '../dist/eamode/eang/css/material.css';
+@import '../dist/eamode/eang/css/all.css';
 @import '~@angular-mdc/theme/material';
 
 @custom-media --small-screen (width <= 1200px);
@@ -43,6 +42,7 @@
   color: white;
 }
 
+.fluentdark,
 .mode,
 .material {
   --mdc-theme-secondary: var(--ea-color-2);

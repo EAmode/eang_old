@@ -1,7 +1,5 @@
-.material {
-  justify-content: space-between;
-    display: flex;
-    flex-direction: column;
+.fluentdark {
+
   & ea-autocomplete {
     --ea-autocomplete-width: var(--ea-autocomplete-width, auto);
 
@@ -29,7 +27,7 @@
       box-sizing: border-box;
       list-style: none;
       padding: 0;
-      border-radius: 0.3em;
+      border-radius: 0.0em;
       margin: 0.2em 0 0;
       background: var(--ea-color-background-1);
       background: linear-gradient(to bottom right, white, hsla(0, 0%, 100%, 1));
@@ -41,32 +39,50 @@
       position: absolute;
     }
     & li {
-      color: var(--ea-color2);
-      height: 3rem;
+      color: var(--ea-color-1);
+      font-size: 0.9rem;
+      height: 30px;
       cursor: pointer;
+      padding-left: 1rem;
+      padding-top: 0.25rem;
       display: flex;
       align-items: center;
-      padding: 0 1rem;
     }
-    & li:hover,
-    & li[selected] {
-      background-color: var(--ea-color-background-2);
+    & li:hover {
+      background-color: #0091ff;
       & .matched {
         color: var(--ea-color-3);
       }
       & mark {
         color: var(--ea-color-3);
-        font-weight: 700;
       }
     }
+    & li[selected],
+    & li[selection-focus] {
+      color: var(--ea-autocomplete-selected-color);
+      background: var(--ea-autocomplete-selected-background);
+    }
+    & li[selected]:hover,
+    & li[selected] .matched mark,
+    & li[selected]:hover .matched mark {
+      color: var(--ea-color-3);
+    }
     & input {
-      /* background: var(--ea-color-background-2); */
-      border: none;
-      border-radius: 0;
-      color: var(--ea-color-1);
+      background: white;
+      border-width: 1.5px;
+      border-style: solid;
+      border-image: var(--ea-gradient) 1, 100%;
+      border-radius: 0px;
+      color: black;
       outline: none;
+      font-size: 1em;
+      height: 30px;
+      width: var(--ea-autocomplete-width);
       padding-left: 1rem;
-      box-shadow: none;
+      box-shadow: var(--ea-box-shadow);
+    }
+    & img {
+      height: 20px;
     }
   }
 }
