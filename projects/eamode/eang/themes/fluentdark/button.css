@@ -9,31 +9,36 @@
       var(--ea-color-background-2)
     ); /* Sets the button background color */
     --ea-button-border: var(--ea-button-border, var(--ea-color-background-4));
-    --ea-button-border-outline: 0.09em; /*Sets the initial em for the border outline*/
+    --ea-button-border-outline: 0em; /*Sets the initial em for the border outline*/
     --ea-button-font-size: var(
       --ea-button-font-size,
       var(--ea-font-1-size)
     ); /*Sets the scale factor for the button*/
-    --ea-button-border-radius: 0.25em; /*Sets the border radius for the button*/
-    --ea-button-padding: 1em 2em;
+    --ea-button-border-radius: 0em; /*Sets the border radius for the button*/
+    --ea-button-padding: .5em 1.5em;
     --ea-button-margin: var(--ea-button-margin, 0);
 
     font-size: var(--ea-button-font-size);
     padding: var(--ea-button-padding);
     background-color: var(--ea-button-background-color);
     color: var(--ea-color-3);
-    border-radius: var(--ea-button-border-radius);
-    border: var(--ea-button-border-outline) solid var(--ea-button-border);
+    border: var(--ea-button-background-color) solid calc(var(--ea-button-font-size) * 0.1);
     margin: var(--ea-button-margin);
     cursor: pointer;
     display: flex;
     align-items: center;
+    box-sizing: border-box;
+    outline: none;
+    transition-property: all;
+    transition-duration: 0.25s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
   }
   & [small] {
     font-size: calc(var(--ea-button-font-size) * 0.8);
   }
   & [medium] {
-    font-size: calc(var(--ea-button-font-size) * 1.25);
+    font-size: calc(var(--ea-button-font-size) * 1.2);
   }
   & [large] {
     font-size: calc(var(--ea-button-font-size) * 1.5);
@@ -76,8 +81,11 @@
   & button[disabled] {
     opacity: 0.65;
   }
-  & button[hover]:hover {
-    background: linear-gradient(to bottom, #5972a7 5%, #637aad 100%);
-    background-color: #5972a7;
+  & button:hover {
+    border: var(--ea-color-background-6) solid calc(var(--ea-button-font-size) * 0.1);
+  }
+
+  & button:active {
+    background-color: var(--ea-color-background-5);
   }
 }
