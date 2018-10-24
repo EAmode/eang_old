@@ -18,7 +18,7 @@
     --ea-button-padding: .5em 1.5em;
     --ea-button-margin: var(--ea-button-margin, 0);
 
-    font-size: var(--ea-button-font-size);
+    font-size: calc(var(--ea-button-font-size) * 1rem);
     padding: var(--ea-button-padding);
     background-color: var(--ea-button-background-color);
     color: var(--ea-color-3);
@@ -80,6 +80,8 @@
   }
   & button[disabled] {
     opacity: 0.65;
+    cursor: not-allowed;
+    border: var(--ea-color-background-6) solid calc(var(--ea-button-font-size) * 0.1);
   }
   & button:hover {
     border: var(--ea-color-background-6) solid calc(var(--ea-button-font-size) * 0.1);
