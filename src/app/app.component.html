@@ -1,4 +1,4 @@
-<ea-layout>
+<ea-layout overlay>
   <ea-toolbar flex shadow>
     <header>
       <a routerLink="/">
@@ -18,17 +18,13 @@
     <header>
     </header>
     <section class="ea-menu-item">
-      <!-- <a routerLink="/reactive" class="ea-menu-item">
-        <div class="ea-menu-item">
-          <span role="icon" style="--ea-button-icon: var(--ea-icon-activity); --ea-icon-margin: 0;" icon></span>
-          Reactive
-        </div>
+      <!-- <a routerLinkActive="active" routerLink="/reactive" class="ea-menu-item">
+        <span role="icon" style="--ea-button-icon: var(--ea-icon-activity); --ea-icon-margin: 0;" icon></span>
+        Reactive
       </a>
-      <a routerLink="/theming" class="ea-menu-item">
-        <div class="ea-menu-item">
-          <span role="icon" style="--ea-button-icon: var(--ea-icon-pallete); --ea-icon-margin: 0;" icon></span>
-          Theming
-        </div>
+      <a routerLinkActive="active" routerLink="/theming" class="ea-menu-item">
+        <span role="icon" style="--ea-button-icon: var(--ea-icon-pallete); --ea-icon-margin: 0;" icon></span>
+        Theming
       </a> -->
       <a routerLinkActive="active" routerLink="/layout" class="ea-menu-item">
         <span role="icon" style="--ea-button-icon: var(--ea-icon-layout); --ea-icon-margin: 0;" icon></span>
@@ -50,21 +46,14 @@
 
   <ea-main>
     <ea-body>
-      <div id="main" >
-        <section id="features">
-          <router-outlet></router-outlet>
-        </section>
-      </div>
-
+      <router-outlet></router-outlet>
     </ea-body>
     <ea-footer>
-      <footer>
         <span>
           <div class="powered-by">Powered by
             <a class="ea-mode-logo" href="https://eamode.com"></a>
           </div>
         </span>
-      </footer>
     </ea-footer>
   </ea-main>
 

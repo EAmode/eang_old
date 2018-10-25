@@ -3,6 +3,8 @@
     /* <ea-drawer> variables */
     --ea-drawer-header-height: 4rem;
     --ea-drawer-footer-height: 4rem;
+    --ea-drawer-width: 300px;
+
 
     display: grid;
     height: 100vh;
@@ -13,40 +15,54 @@
       'toolbar toolbar'
       'drawer main';
 
-      & ea-main {
-        --ea-main-padding: var(--ea-main-padding, 0);
-        --ea-main-background: var(--ea-main-background, var(--ea-color-background-7));
-        grid-area: main;
-        overflow-y:scroll;
-        overflow-x:hidden;
-        background: var(--ea-main-background);
-        padding: var(--ea-main-padding);
-        -webkit-overflow-scrolling: touch;
-        &[shim] {
-          position: absolute;
-          background: #000;
-          top: 0;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          opacity: 0.5;
-        }
-      }
+    &[overlay] {
+      display: grid;
+      grid-template-rows: var(--toolbar-height) 1fr;
+      grid-template-columns: var(--drawer-width) 1fr;
+      height: 100vh;
+    }
+    &[overlay] > ea-main {
+      grid-row: 2 / 4;
+      grid-column: 1 / 4;
+      height: 100%;
+    }
+    &[overlay] > ea-toolbar {
+      grid-row: 1;
+      grid-column: 1 / 4;
+    }
+    &[overlay] > ea-drawer {
+      grid-row: 2 / 4;
+      grid-column: 1;
+      z-index: 1;
+    }
+
+    & ea-main {
+      --ea-main-padding: var(--ea-main-padding, 0);
+      --ea-main-background: var(
+        --ea-main-background,
+        var(--ea-color-background-7)
+      );
+
+      grid-area: main;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      background: var(--ea-main-background);
+      padding: var(--ea-main-padding);
+      -webkit-overflow-scrolling: touch;
+    }
 
     & ea-toolbar {
-      --ea-toolbar-height: var(--ea-toolbar-height, inherit);
+      /* --ea-toolbar-height: var(--ea-toolbar-height, inherit);
       --ea-toolbar-display: var(--ea-toolbar-display, inherit);
       --ea-toolbar-max-width: var(--ea-toolbar-max-width, inherit);
 
+      height: var(--ea-toolbar-height);*/
       grid-area: toolbar;
       display: var(--ea-toolbar-display);
-      height: var(--ea-toolbar-height);
       background: var(--ea-color-background-2);
-      width: 100%;
-      z-index: 1;
+      grid-row: 1;
+      grid-column: 1 / 4;
+      z-index: 2;
       &[shadow] {
         box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);
       }
@@ -77,14 +93,16 @@
     }
 
     & ea-drawer {
-      --ea-drawer-width: var(--ea-drawer-width, 300px);
-
+      /* --ea-drawer-width: var(--ea-drawer-width, 300px);
+      --ea-drawer-a-hover: var(--ea-drawer-a-hover,  none);
+*/
       grid-area: drawer;
-      background: var(--ea-color-background-6);
-      display: flex;
       flex-direction: column;
       justify-content: space-between;
+      display: flex;
       width: var(--ea-drawer-width);
+      background: var(--ea-color-background-4);
+
 
       &[resize] {
         resize: horizontal;
@@ -114,6 +132,18 @@
         justify-content: center;
         align-items: center;
       }
+      & [shim] {
+        position: absolute;
+        background: #000;
+        top: 0;
+        bottom: 0;
+        left: 300px;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0.5;
+      }
 
       &[state='closed'] {
         width: 0;
@@ -138,8 +168,7 @@
       }
 
       & a.active {
-        background-color: var(--ea-color-background-2);
-        color: white;
+        background-color: var(--ea-color-background-3);
       }
 
       &a:visited {
@@ -153,10 +182,8 @@
       }
 
       & a:hover {
-        background-color: var(--ea-color-background-2);
+        background-color: var(--ea-drawer-a-hover);
       }
     }
   }
 }
-
-
