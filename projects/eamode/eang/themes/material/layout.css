@@ -17,9 +17,23 @@
         --ea-main-padding: var(--ea-main-padding, 0);
         --ea-main-background: var(--ea-main-background, var(--ea-color-background-7));
         grid-area: main;
-        overflow: auto;
-        background: var(--ea-color-background-7);
+        overflow-y:scroll;
+        overflow-x:hidden;
+        background: var(--ea-main-background);
         padding: var(--ea-main-padding);
+        -webkit-overflow-scrolling: touch;
+        &[shim] {
+          position: absolute;
+          background: #000;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          opacity: 0.5;
+        }
       }
 
     & ea-toolbar {
@@ -102,7 +116,6 @@
       }
 
       &[state='closed'] {
-        display: none !important;
         width: 0;
       }
 
@@ -114,14 +127,19 @@
         font-size: 1rem;
         color: var(--ea-color-3);
         text-decoration: none;
+        display: flex;
+        padding-left: 1rem;
+        line-height: 2.5em;
+        align-items: center;
       }
 
       &a:hover {
         text-decoration: none;
       }
 
-      &a:active {
-        color: var(--ea-color-3);
+      & a.active {
+        background-color: var(--ea-color-background-2);
+        color: white;
       }
 
       &a:visited {
@@ -134,9 +152,11 @@
         align-items: center;
       }
 
-      & a > div:hover {
+      & a:hover {
         background-color: var(--ea-color-background-2);
       }
     }
   }
 }
+
+

@@ -19,7 +19,7 @@
 
 #features {
   width: 75%;
-  margin: 4rem 0;
+  margin: 2rem 0;
   @media (--large-screen) {
     max-width: 1200px;
   }
@@ -51,6 +51,11 @@
   --ea-icon-button-icon: url('./assets/images/button-icon.svg');
   --ea-icon-pallete: url('./assets/images/pallete.svg');
 
+  & a:hover {
+    --ea-drawer-a-hover: var(--ea-color-background-3);
+
+  }
+
   & code[class*='language-'],
   & pre[class*='language-'] {
     color: #000;
@@ -81,21 +86,40 @@
     max-width: 75%;
   }
 
+  .buttons-container {
+    display: flex;
+    justify-content: center;
+  }
+  .code-example {
+    display: grid;
+    grid-template-columns: minmax(20%, 50%) minmax(60%, 50%);
+    grid-gap: 2rem;
+    align-items: center;
+  }
 
-     .ea-card .ea-card-content.buttons {
-      --ea-card-content-grid: repeat(4, 1fr);
+
+
+  .ea-card .ea-card-content.buttons {
+    --ea-card-content-grid: repeat(4, 1fr);
+    align-items: flex-end;
+    justify-items: center;
+  }
+  @media only screen and (max-width: 1150px) and (min-width: 700px) {
+    .ea-card .ea-card-content.buttons {
+      --ea-card-content-grid: repeat(2, 1fr);
       align-items: flex-end;
       justify-items: center;
+      grid-row-gap: 1rem;
     }
-    @media only screen and (max-width: 700px) {
-
-      .ea-card .ea-card-content.buttons {
-        --ea-card-content-grid: repeat(1, 1fr);
-        align-items: flex-end;
-        justify-items: center;
-        grid-row-gap: 1rem;
-      }    }
-
+  }
+  @media only screen and (max-width: 700px) {
+    .ea-card .ea-card-content.buttons {
+      --ea-card-content-grid: repeat(1, 1fr);
+      align-items: flex-end;
+      justify-items: center;
+      grid-row-gap: 1rem;
+    }
+  }
 
   #welcome {
     background: url('./assets/images/eang-background-21.jpg');
@@ -315,9 +339,21 @@
       display: flex;
       justify-content: flex-end;
       margin-right: 1rem;
+      height: 3rem;
+      align-items: center;
       & p {
         font-size: 0.8rem;
         color: white;
+      }
+    }
+  }
+  @media only screen and (min-width: 2000px) {
+    & ea-drawer {
+      & section {
+        & a {
+          font-size: 1.125rem;
+          line-height: 2.5em;
+        }
       }
     }
   }
@@ -361,8 +397,6 @@ ea-toolbar {
     padding-right: 1rem;
   }
 }
-
-
 
 ea-footer {
   width: 100%;

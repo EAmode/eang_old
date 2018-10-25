@@ -10,9 +10,13 @@ export class LayoutComponent implements OnInit {
   *layout.component.html*
   ~~~html
     <ea-layout>
-      <ea-toolbar> <!-- Toolbar Content here --> </ea-toolbar>
+      <ea-toolbar>
+        <!-- Toolbar Content here -->
+      </ea-toolbar>
 
-      <ea-drawer> <!-- Drawer Content here --> </ea-drawer>
+      <ea-drawer>
+        <!-- Drawer Content here -->
+      </ea-drawer>
 
       <ea-main>
         <ea-body>

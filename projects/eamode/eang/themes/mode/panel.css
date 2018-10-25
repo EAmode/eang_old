@@ -55,7 +55,7 @@
   }
 
   & ea-panel[state='closed'] {
-    display: none !important;
+width: 0;
   }
 
   & ea-panel[flex-centered] {

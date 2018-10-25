@@ -6,20 +6,19 @@
   <code class="language-html">&lt;ea-main&gt;</code>, <code class="language-html">&lt;ea-body&gt;</code> , <code class="language-html">&lt;ea-drawer&gt;</code>,
   <code class="language-html">&lt;ea-footer&gt;</code>, and the LayoutService.
 </p>
-
-<div class="ea-card">
-  <div class="ea-card-header">
-    <h3>Layout Module</h3>
-  </div>
-  <div class="ea-card-content">
-    <img style="max-width: 70rem;" src="../../../assets/images/layouts.svg" alt="">
+<div class="code-example">
+  <ea-markdown [doc]="ea_layout_attrs"></ea-markdown>
+  <div class="ea-card">
+    <div class="ea-card-header">
+      <h3>Layout Module</h3>
+    </div>
+    <div class="ea-card-content">
+      <img style="max-width: 70rem;" src="../../../assets/images/layouts.svg" alt="">
+    </div>
   </div>
 </div>
-<ea-markdown [doc]="ea_layout_attrs"></ea-markdown>
-<p>
-  We use CSS grid to define the layout of the different components.
-</p>
-<ea-markdown [doc]="ea_layout_grid"></ea-markdown>
+<ea-markdown [doc]="ea_drawer_attrs"></ea-markdown>
+
 
 <!--
 <p>
@@ -50,12 +49,15 @@
   For simplicity sake we accomplish this we flexbox which makes it ideal to only have 3 elements, header, section, and
   footer to maintain this layout easily.</p>
 
-<div class="ea-card">
-  <div class="ea-card-header">
-    <h3>&lt;ea-drawer&gt;</h3>
-  </div>
-  <div class="ea-card-content">
-    <img style="width: 10rem;" src="../../../assets/images/drawer.svg" alt="">
+<div class="code-example">
+  <ea-markdown [doc]="ea_layout_attrs"></ea-markdown>
+  <div class="ea-card">
+    <div class="ea-card-header">
+      <h3>&lt;ea-drawer&gt;</h3>
+    </div>
+    <div class="ea-card-content">
+      <img style="width: 10rem;" src="../../../assets/images/drawer.svg" alt="">
+    </div>
   </div>
 </div>
 <p>The drawer uses different an event stream to inform the application what state it is in. The first two states we've
