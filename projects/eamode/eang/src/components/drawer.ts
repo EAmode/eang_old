@@ -19,7 +19,7 @@ import { LayoutService } from '../services/layout.service'
   selector: 'ea-drawer',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-  <div shim *ngIf="(drawerState$ | async) !== 'closed'" (click)="closeDrawer()"></div>
+  <div overlay *ngIf="(drawerState$ | async) !== 'closed'" (click)="closeDrawer()"></div>
   <ng-container *ngIf="(drawerState$ | async) !== 'closed'">
     <ng-content select="header"></ng-content>
     <ng-content select="section"></ng-content>
