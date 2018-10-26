@@ -2,9 +2,7 @@
 @import '../dist/eamode/eang/css/material.css';
 @import '~@angular-mdc/theme/material';
 
-:root {
-  --toolbar-height: 4rem;
-}
+
 
 /* ICONS FOR DIFFERENT THEMES */
 .mode {
@@ -12,6 +10,12 @@
   --ea-icon-layout: url('./assets/images/layout-icon.svg');
   --ea-icon-button-icon: url('./assets/images/button-icon.svg');
   --ea-icon-pallete: url('./assets/images/pallete.svg');
+
+  ea-layout {
+    &[nav-overlay] {
+      --ea-toolbar-height: 3.5rem;
+    }
+  }
 }
 
 .material {

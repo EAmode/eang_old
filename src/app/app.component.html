@@ -1,7 +1,7 @@
-<ea-layout nav-overlay>
+<ea-layout nav-overlay [drawerState$]="layout.drawerState$">
   <ea-toolbar flex shadow>
     <header>
-      <a routerLink="/">
+      <a (click)="layout.drawerState$.next('closed')" routerLink="/">
         <span style="margin-left:0.5rem;" class="logo"></span>
       </a>
     </header>
@@ -26,11 +26,11 @@
         <span role="icon" style="--ea-button-icon: var(--ea-icon-pallete); --ea-icon-margin: 0;" icon></span>
         Theming
       </a> -->
-      <a routerLinkActive="active" routerLink="/layout" class="ea-menu-item">
+      <a (click)="layout.drawerState$.next('closed')" routerLinkActive="active" routerLink="/layout" class="ea-menu-item">
         <span role="icon" style="--ea-button-icon: var(--ea-icon-layout); --ea-icon-margin: 0;" icon></span>
         Layout
       </a>
-      <a routerLinkActive="active" routerLink="/button" class="ea-menu-item">
+      <a (click)="layout.drawerState$.next('closed')" routerLinkActive="active" routerLink="/button" class="ea-menu-item">
         <span role="icon" style="--ea-button-icon: var(--ea-icon-button-icon); --ea-icon-margin: 0;" icon></span>
         Buttons
       </a>
