@@ -6,8 +6,6 @@ import { Component, OnInit } from '@angular/core'
   styles: []
 })
 export class ButtonComponent implements OnInit {
-
-
   props = `
 *Custom Properties*
   |  Custom Property  | Description |

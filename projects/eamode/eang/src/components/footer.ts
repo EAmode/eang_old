@@ -30,5 +30,4 @@ export class Footer {
   @ContentChild(TemplateRef) resultsTemplate: TemplateRef<any>
 
   constructor() {}
-
 }

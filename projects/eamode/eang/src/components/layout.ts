@@ -1,7 +1,4 @@
-import {
-  Component,
-  ChangeDetectionStrategy
-} from '@angular/core'
+import { Component, ChangeDetectionStrategy } from '@angular/core'
 import { LayoutService } from '../services/layout.service'
 
 @Component({
