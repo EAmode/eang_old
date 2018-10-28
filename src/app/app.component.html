@@ -1,7 +1,7 @@
-<ea-layout>
+<ea-layout nav-overlay [drawerState$]="layout.drawerState$">
   <ea-toolbar flex shadow>
     <header>
-      <a routerLink="/">
+      <a (click)="layout.drawerState$.next('closed')" routerLink="/">
         <span style="margin-left:0.5rem;" class="logo"></span>
       </a>
     </header>
@@ -18,53 +18,42 @@
     <header>
     </header>
     <section class="ea-menu-item">
-      <!-- <a routerLink="/reactive" class="ea-menu-item">
-        <div class="ea-menu-item">
-          <span role="icon" style="--ea-button-icon: var(--ea-icon-activity); --ea-icon-margin: 0;" icon></span>
-          Reactive
-        </div>
+      <!-- <a routerLinkActive="active" routerLink="/reactive" class="ea-menu-item">
+        <span role="icon" style="--ea-button-icon: var(--ea-icon-activity); --ea-icon-margin: 0;" icon></span>
+        Reactive
       </a>
-      <a routerLink="/theming" class="ea-menu-item">
-        <div class="ea-menu-item">
-          <span role="icon" style="--ea-button-icon: var(--ea-icon-pallete); --ea-icon-margin: 0;" icon></span>
-          Theming
-        </div>
+      <a routerLinkActive="active" routerLink="/theming" class="ea-menu-item">
+        <span role="icon" style="--ea-button-icon: var(--ea-icon-pallete); --ea-icon-margin: 0;" icon></span>
+        Theming
       </a> -->
-      <a routerLink="/layout" class="ea-menu-item">
-        <div class="ea-menu-item">
-          <span role="icon" style="--ea-button-icon: var(--ea-icon-layout); --ea-icon-margin: 0;" icon></span>
-          Layout
-        </div>
+      <a (click)="layout.drawerState$.next('closed')" routerLinkActive="active" routerLink="/layout" class="ea-menu-item">
+        <span role="icon" style="--ea-button-icon: var(--ea-icon-layout); --ea-icon-margin: 0;" icon></span>
+        Layout
       </a>
-      <a routerLink="/button" class="ea-menu-item">
-        <div class="ea-menu-item">
-          <span role="icon" style="--ea-button-icon: var(--ea-icon-button-icon); --ea-icon-margin: 0;" icon></span>
-          Buttons
-        </div>
+      <a (click)="layout.drawerState$.next('closed')" routerLinkActive="active" routerLink="/button" class="ea-menu-item">
+        <span role="icon" style="--ea-button-icon: var(--ea-icon-button-icon); --ea-icon-margin: 0;" icon></span>
+        Buttons
       </a>
     </section>
     <footer>
-      <p>Version 1.3.2</p>
+      <img style="padding-right: 1rem;" src="https://camo.githubusercontent.com/369cc2fa7d48781a040878c8b6e9bf8ff7ba4a30/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f762f4065616d6f64652f65616e672e737667"
+        alt="">
+      <img src="https://camo.githubusercontent.com/e66b89ea6f74ba6585d8ed3705e81bfa5d31c405/68747470733a2f2f696d672e736869656c64732e696f2f7472617669732f45416d6f64652f65616e672e737667"
+        alt="">
+
     </footer>
   </ea-drawer>
 
   <ea-main>
     <ea-body>
-      <div id="main">
-        <section id="features" [class.drawer-open]="drawer">
-          <router-outlet></router-outlet>
-        </section>
-      </div>
-
+      <router-outlet></router-outlet>
     </ea-body>
     <ea-footer>
-      <footer>
         <span>
           <div class="powered-by">Powered by
             <a class="ea-mode-logo" href="https://eamode.com"></a>
           </div>
         </span>
-      </footer>
     </ea-footer>
   </ea-main>
 
