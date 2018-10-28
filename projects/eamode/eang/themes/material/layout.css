@@ -1,8 +1,10 @@
 .material {
   & ea-layout {
-    /* <ea-drawer> variables */
     --ea-drawer-header-height: 4rem;
     --ea-drawer-footer-height: 4rem;
+    --ea-drawer-width: 300px;
+    --ea-toolbar-height: var(--ea-toolbar-height, 4rem);
+    --drawer-width: 300px;
 
     display: grid;
     height: 100vh;
@@ -13,38 +15,36 @@
       'toolbar toolbar'
       'drawer main';
 
-      & ea-main {
-        --ea-main-padding: var(--ea-main-padding, 0);
-        --ea-main-background: var(--ea-main-background, var(--ea-color-background-7));
-        grid-area: main;
-        overflow: auto;
-        background: var(--ea-color-background-7);
-        padding: var(--ea-main-padding);
-      }
+    & ea-main {
+      --ea-main-padding: var(--ea-main-padding, 0);
+      --ea-main-background: var(
+        --ea-main-background,
+        var(--ea-color-background-7)
+      );
+
+      grid-area: main;
+      overflow: auto;
+      background: var(--ea-main-background);
+      padding: var(--ea-main-padding);
+      -webkit-overflow-scrolling: touch;
+    }
 
     & ea-toolbar {
-      --ea-toolbar-height: var(--ea-toolbar-height, inherit);
-      --ea-toolbar-display: var(--ea-toolbar-display, inherit);
-      --ea-toolbar-max-width: var(--ea-toolbar-max-width, inherit);
-
       grid-area: toolbar;
       display: var(--ea-toolbar-display);
-      height: var(--ea-toolbar-height);
       background: var(--ea-color-background-2);
-      width: 100%;
-      z-index: 1;
+      grid-row: 1;
+      grid-column: 1 / 4;
+      z-index: 2;
       &[shadow] {
         box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);
       }
-
       &[flex] {
         --ea-toolbar-display: flex;
       }
-
       &[grid] {
         --ea-toolbar-display: grid;
       }
-
       & header {
         color: var(--ea-color-3);
         display: flex;
@@ -54,89 +54,84 @@
       }
 
       & aside {
+        --ea-toolbar-aside-padding: var(--ea-toolbar-aside-padding, 3rem);
         color: var(--ea-color-3);
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        padding-right: 3rem;
+        padding-right: var(--ea-toolbar-aside-padding);
       }
     }
 
     & ea-drawer {
-      --ea-drawer-width: var(--ea-drawer-width, 300px);
-
       grid-area: drawer;
-      background: var(--ea-color-background-6);
-      display: flex;
       flex-direction: column;
       justify-content: space-between;
+      display: flex;
       width: var(--ea-drawer-width);
+      background: var(--ea-color-background-4);
+
+      & section {
+        flex-grow: 1;
+      }
 
       &[resize] {
         resize: horizontal;
         overflow: auto;
       }
 
-      & [ea-drawer-header] {
-        height: var(--ea-drawer-header-height);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      & [ea-drawer-body] {
-        height: calc(
-          100% -
-            (var(--ea-drawer-header-height) + var(--ea-drawer-footer-height))
-        );
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-      }
-
-      & [ea-drawer-footer] {
-        height: var(--ea-drawer-footer-height);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
       &[state='closed'] {
-        display: none !important;
         width: 0;
-      }
-
-      & section {
-        flex-grow: 1;
       }
 
       & a {
         font-size: 1rem;
         color: var(--ea-color-3);
         text-decoration: none;
-      }
-
-      &a:hover {
-        text-decoration: none;
-      }
-
-      &a:active {
-        color: var(--ea-color-3);
-      }
-
-      &a:visited {
-        color: var(--ea-color-3);
-      }
-
-      & a > div {
-        padding: 0.5em;
         display: flex;
+        padding-left: 1rem;
+        line-height: 2.5em;
         align-items: center;
+        &:hover {
+          text-decoration: none;
+          background-color: var(--ea-drawer-a-hover);
+        }
+        &.active {
+          background-color: var(--ea-color-background-3);
+        }
+        &:visited {
+          color: var(--ea-color-3);
+        }
       }
+    }
 
-      & a > div:hover {
-        background-color: var(--ea-color-background-2);
-      }
+    &[nav-overlay] {
+      display: grid;
+      grid-template-rows: [ea-toolbar-start] var(--ea-toolbar-height) [ea-toolbar-end ea-main-start] 1fr [ea-footer-start ea-main-end];
+      grid-template-columns: [ea-drawer-start] var(--drawer-width) [ea-drawer-end ea-main-start] 1fr [ea-main-end];
+      height: 100vh;
+    }
+    &[nav-overlay] > ea-main {
+      grid-row: ea-toolbar-end / ea-main-end;
+      grid-column: ea-drawer-start / ea-main-end;
+      overflow: auto;
+    }
+    &[nav-overlay] > ea-toolbar {
+      grid-row: ea-toolbar-start;
+      grid-column: ea-drawer-start / ea-main-end;
+    }
+    &[nav-overlay] > ea-drawer {
+      grid-row: 2 / 4;
+      grid-column: 1;
+      z-index: 1;
+    }
+
+    & [overlay] {
+      grid-row: ea-toolbar-end / ea-main-end;
+      grid-column: ea-drawer-end / ea-main-end;
+      background: #000;
+      opacity: 0.5;
+      z-index: 1;
     }
   }
 }
