@@ -14,7 +14,8 @@
       'drawer main';
 
       & ea-main {
-        --ea-main-padding: var(--ea-main-padding, 0);
+        font-size: 1rem;
+        --ea-main-padding: var(--ea-main-padding, .5em 1em);
         --ea-main-background: var(--ea-main-background, var(--ea-color-background-7));
         grid-area: main;
         overflow: auto;
@@ -23,9 +24,11 @@
       }
 
     & ea-toolbar {
+      font-size: 1rem;
       --ea-toolbar-height: var(--ea-toolbar-height, inherit);
       --ea-toolbar-display: var(--ea-toolbar-display, inherit);
       --ea-toolbar-max-width: var(--ea-toolbar-max-width, inherit);
+      --ea-toolbar-padding: var(--ea-toolbar-padding, .5em 1em);
 
       grid-area: toolbar;
       display: var(--ea-toolbar-display);
@@ -33,6 +36,8 @@
       background: var(--ea-color-background-2);
       width: 100%;
       z-index: 1;
+      padding: var(--ea-toolbar-padding);
+
       &[shadow] {
         box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);
       }
