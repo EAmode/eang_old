@@ -16,7 +16,8 @@
       'drawer main';
 
     & ea-main {
-      --ea-main-padding: var(--ea-main-padding, 0);
+      font-size: 1rem;
+      --ea-main-padding: var(--ea-main-padding, .5em 1em);
       --ea-main-background: var(
         --ea-main-background,
         var(--ea-color-background-7)
@@ -30,6 +31,10 @@
     }
 
     & ea-toolbar {
+      font-size: 1rem;
+      --ea-toolbar-padding: var(--ea-toolbar-padding, .5em 1em);
+
+      padding: var(--ea-toolbar-padding);
       grid-area: toolbar;
       display: var(--ea-toolbar-display);
       background: var(--ea-color-background-2);
