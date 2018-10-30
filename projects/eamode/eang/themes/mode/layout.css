@@ -33,6 +33,7 @@
       grid-area: toolbar;
       display: var(--ea-toolbar-display);
       background: var(--ea-color-background-2);
+      height: var(--ea-toolbar-height);
       grid-row: 1;
       grid-column: 1 / 4;
       z-index: 2;
