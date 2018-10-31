@@ -11,7 +11,7 @@
   --ea-color-background-3: #52638d;
   --ea-color-background-4: #333333;
   --ea-color-background-5: #666a74;
-  --ea-color-background-6: #A9B4D1;
+  --ea-color-background-6: #a9b4d1;
   --ea-color-background-7: #f6f6f6;
 
   --ea-color-success: #5bb95b;
@@ -45,10 +45,57 @@
   --ea-scale-factor: 0.5;
   --ea-toolbar-height: 4rem;
 
-
   font-family: var(--ea-font-1-family);
   font-style: var(--ea-font-1-style);
   font-weight: var(--ea-font-1-weight);
   /* font-size: var(--ea-font-1-size); */
 
+  /*************************************************** FLUENT VARIABLES ************************************************************/
+
+  --base-color: 66, 91, 154;
+
+  --base-high: rgba(var(--base-color), 1);
+  --base-high-medium: rgba(var(--base-color), 0.8);
+  --base-medium: rgba(var(--base-color), 0.6);
+  --base-medium-low: rgba(var(--base-color), 0.4);
+  --base-low: rgba(var(--base-color), 0.2);
+
+  --chrome-color: 66, 91, 154;
+
+  --chrome-white: #fff;
+  --chrome-high: rgba(var(--base-color), 1);
+  --chrome-disabled-high: rgba(var(--base-color), 0.5);
+  --chrome-high-medium: rgba(var(--base-color), 0.8);
+  --chrome-medium: rgba(var(--base-color), 0.6);
+  --chrome-medium-low: rgba(var(--base-color), 0.4);
+  --chrome-disabled-low: rgba(var(--base-color), 0.3);
+  --chrome-low: rgba(var(--base-color), 0.2);
+
+  --chrome-dark-color: 66, 91, 154;
+
+  --chrome-dark-high: rgba(var(--base-color), 1);
+  --chrome-dark-disabled-high: rgba(var(--base-color), 0.5);
+  --chrome-high-medium: rgba(var(--base-color), 0.8);
+  --chrome-dark-medium: rgba(var(--base-color), 0.6);
+  --chrome-dark-medium-low: rgba(var(--base-color), 0.4);
+  --chrome-dark-disabled-low: rgba(var(--base-color), 0.3);
+  --chrome-dark-low: rgba(var(--base-color), 0.2);
+
+  --accent-color: 66, 91, 154;
+
+  --accent-list: rgba(var(--accent-color), 1);
+  --accent-list-accent-high: rgba(var(--accent-color), 0.7);
+  --accent-list-accent-medium: rgba(var(--accent-color), 0.6);
+  --accent-list-accent-low: rgba(var(--accent-color), 0.4);
+
+  --alt-base-color: 66, 91, 154;
+
+  --alt-base-high: rgba(var(--accent-color), 1);
+  --alt-base-medium-high: rgba(var(--accent-color), 0.8);
+  --alt-base-medium: rgba(var(--accent-color), 0.6);
+  --alt-base-medium-low: rgba(var(--accent-color), 0.4);
+  --alt-base-low: rgba(var(--accent-color), 0.2);
+
+  --list-low: rgba(var(--base-color), 0.1);
+  --list-medium: rgba(var(--base-color), 0.2);
 }
