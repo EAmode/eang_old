@@ -250,6 +250,15 @@ ea-main {
         --ea-grid-minmax: minmax(30%, 55%) minmax(45%, 40%);
       }
     }
+    & eangio-card {
+      .ea-card {
+        .ea-card-content[grid]{
+          --ea-card-content-grid: repeat(1 , minmax(30%, 50%));
+          grid-gap: 2em;
+          margin: 2em;
+        }
+      }
+    }
   }
   & ea-footer {
     width: 100%;

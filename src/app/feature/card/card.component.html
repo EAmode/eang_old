@@ -1,0 +1,51 @@
+<h1>.ea-card</h1>
+
+<p>The ea-card is built to hold a header, content, and footer labeled as .ea-card-header, .ea-card-content, and
+  .ea-card-footer respectively.
+</p>
+<p>
+  The `.ea-card` class is designed to hold the three objects The `.ea-card-content` is intended to hold what is in
+  the
+  card that is not the header or the footer. </p>
+<div class="ea-card">
+  <div class="ea-card-content" grid style="--ea-card-content-grid: repeat(2 , minmax(30%, 50%)); grid-gap: 2em;">
+    <ea-markdown [doc]="card"></ea-markdown>
+    <img style="width: 100%;" src="../../../assets/images/ea-card.svg" alt="">
+  </div>
+</div>
+
+<h2>.ea-card-header</h2>
+
+<p>The `.ea-card-header` holds the title of the card and can optionally hold a button that toggles an `ea-card-menu`.
+  The header can either be aligned with flexbox or grid depending on what attribute you choose for it. </p>
+
+<div class="ea-card">
+  <div class="ea-card-content" grid style="--ea-card-content-grid: repeat(2 , minmax(30%, 50%)); grid-gap: 2em;">
+    <ea-markdown [doc]="card"></ea-markdown>
+    <img style="width: 100%;" src="../../../assets/images/ea-card-header.svg" alt="">
+  </div>
+</div>
+
+<h2>.ea-card-content</h2>
+<p>The `.ea-card-content` is meant to hold the content of the card. If there is no header and no footer, it would be
+  the only child of the `ea.card`, which would many it a potentially unecessary child element.
+
+  We planned for having a header and or a footer more often then not on average.
+</p>
+
+<div class="ea-card">
+  <div class="ea-card-content" grid style="--ea-card-content-grid: repeat(1 , 1fr);">
+    <img src="../../../assets/images/card-content.svg" alt="">
+  </div>
+</div>
+
+<p>The `.ea-card-content` is meant to hold the content of the card. If there is no header and no footer, it would be
+  the only child of the `ea.card`, which would many it a potentially unecessary child element.
+</p>
+
+<div class="ea-card">
+    <div class="ea-card-content" grid style="--ea-card-content-grid: repeat(2 , minmax(30%, 50%)); grid-gap: 2em;">
+      <ea-markdown style="display: flex; align-items: center;" [doc]="ea_card_content_grid"></ea-markdown>
+      <img style="width: 100%;" src="../../../assets/images/ea-card-content.svg" alt="">
+    </div>
+  </div>
