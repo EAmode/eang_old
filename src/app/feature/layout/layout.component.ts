@@ -10,9 +10,13 @@ export class LayoutComponent implements OnInit {
   *layout.component.html*
   ~~~html
     <ea-layout>
-      <ea-toolbar> <!-- Toolbar Content here --> </ea-toolbar>
+      <ea-toolbar>
+        <!-- Toolbar Content here -->
+      </ea-toolbar>
 
-      <ea-drawer> <!-- Drawer Content here --> </ea-drawer>
+      <ea-drawer>
+        <!-- Drawer Content here -->
+      </ea-drawer>
 
       <ea-main>
         <ea-body>
@@ -39,14 +43,20 @@ export class LayoutComponent implements OnInit {
   }
   ~~~
   `
-  ea_layout_toolbar_drawer = `
+  ea_layout_drawer = `
+  *layout.component.html*
   ~~~html
-  <button custom *ngIf="drawerState === 'maximized'" (click)="layout.drawerState$.next('closed')">
-    <span role="icon" style="--ea-button-icon: var(--ea-icon-chevrons-left); --ea-icon-margin: 0; height: 2em;" icon></span>
-  </button>
-  <button custom *ngIf="drawerState === 'closed'" (click)="layout.drawerState$.next('maximized')">
-    <span role="icon" style="--ea-button-icon: var(--ea-icon-hamburger-menu); --ea-icon-margin: 0;" icon></span>
-  </button>
+    <ea-drawer [drawerState$]="layout.drawerState$">
+      <header>
+      <!-- Drawer <header> content-->
+      </header>
+      <section>
+        <a href="/your-link-here"></a>
+      </section>
+      <footer>
+        <!-- Drawer <footer> content-->
+      </footer>
+    </ea-drawer>
   ~~~
   `
 

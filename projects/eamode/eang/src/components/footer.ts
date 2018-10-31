@@ -1,17 +1,14 @@
 import {
   Component,
-  OnInit,
   Output,
   EventEmitter,
   Input,
   TemplateRef,
   ContentChild,
   ViewChild,
-  ChangeDetectionStrategy,
-  OnDestroy
+  ChangeDetectionStrategy
 } from '@angular/core'
-import { Observable, Subscription } from 'rxjs'
-import { debounceTime, distinctUntilChanged, map, delay } from 'rxjs/operators'
+import { Observable } from 'rxjs'
 
 @Component({
   selector: 'ea-footer',
@@ -21,7 +18,7 @@ import { debounceTime, distinctUntilChanged, map, delay } from 'rxjs/operators'
   `,
   styles: []
 })
-export class Footer implements OnInit, OnDestroy {
+export class Footer {
   @Input() suggestions: Observable<any>
   @Input() enabled
 
@@ -33,8 +30,4 @@ export class Footer implements OnInit, OnDestroy {
   @ContentChild(TemplateRef) resultsTemplate: TemplateRef<any>
 
   constructor() {}
-
-  ngOnInit() {}
-
-  ngOnDestroy() {}
 }

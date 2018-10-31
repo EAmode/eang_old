@@ -1,33 +1,17 @@
-import {
-  Component,
-  OnInit,
-  Output,
-  EventEmitter,
-  Input,
-  TemplateRef,
-  ContentChild,
-  ViewChild,
-  ChangeDetectionStrategy,
-  OnDestroy
-} from '@angular/core'
-import { Observable, Subscription } from 'rxjs'
-import { debounceTime, distinctUntilChanged, map, delay } from 'rxjs/operators'
+import { Component, ChangeDetectionStrategy } from '@angular/core'
 import { LayoutService } from '../services/layout.service'
 
 @Component({
   selector: 'ea-layout',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
+  <div overlay *ngIf="(layout.drawerState$ | async) !== 'closed'" (click)="layout.drawerState$.next('closed')"></div>
   <ng-content select="ea-toolbar"></ng-content>
   <ng-content select="ea-main"></ng-content>
   <ng-content select="ea-drawer"></ng-content>
   `,
   styles: []
 })
-export class Layout implements OnInit, OnDestroy {
+export class Layout {
   constructor(public layout: LayoutService) {}
-
-  ngOnInit() {}
-
-  ngOnDestroy() {}
 }

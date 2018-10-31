@@ -1,7 +1,7 @@
 .mode {
   & ea-panel {
     --ea-panel-color: var(--ea-color-1);
-    --ea-panel-background:  var(--ea-color-background-2);
+    --ea-panel-background: var(--ea-color-background-2);
 
     --ea-panel-height: var(--ea-panel-height, initial);
     --ea-panel-width: var(--ea-panel-width, initial);
@@ -55,11 +55,11 @@
   }
 
   & ea-panel[state='closed'] {
-    display: none !important;
+    width: 0;
   }
 
   & ea-panel[flex-centered] {
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
   }

@@ -65,7 +65,7 @@ NPM scripts:
 - `npm start`: Starts eang-io in watch mode.
 - `npm run watch`: Compiles `@eamode/eang` in watch mode.
 - `npm run commit`: CLI tool `git-cz` to commit to git with `conventional` style.
-- `npm run format`: Automatic code formating the whole project.
+- `npm run format`: Automatic code formatting the whole project.
 - `npm run lint`: Linting Angular and CSS.
 
 Recommended VS Code extensions:

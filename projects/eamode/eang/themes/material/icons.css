@@ -15,6 +15,9 @@
   --ea-icon-chevron: inline('material/icon/chevron.svg');
   --ea-icon-chevrons-left: inline('material/icon/chevrons-left.svg');
   --ea-icon-chevrons-right: inline('material/icon/chevrons-right.svg');
+  --ea-icon-save: inline('material/icon/save.svg');
+  --ea-icon-edit: inline('material/icon/edit.svg');
+  --ea-icon-add-file: inline('material/icon/add-file.svg');
 
   & span[role="icon"] {
     --ea-icon-margin: 0 1em 0 0;
