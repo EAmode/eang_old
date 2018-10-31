@@ -46,6 +46,11 @@
 
   & [custom]:hover {
     background-color: none;
+    border: none;
+  }
+
+  & [custom]:active {
+    background-color: transparent;
   }
 
   &[primary] {
