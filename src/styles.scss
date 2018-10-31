@@ -1,5 +1,4 @@
-@import '../dist/eamode/eang/css/mode.css';
-@import '../dist/eamode/eang/css/material.css';
+@import '../dist/eamode/eang/css/all.css';
 @import '~@angular-mdc/theme/material';
 
 
@@ -18,6 +17,10 @@
   }
 }
 
+
+
+.fluentdark,
+.mode,
 .material {
   --ea-icon-activity: url('./assets/images/material/reactive.svg');
   --ea-icon-layout: url('./assets/images/material/layout.svg');
@@ -48,6 +51,27 @@ ea-toolbar {
   }
 }
 
+
+     .ea-card .ea-card-content.buttons {
+      --ea-card-content-grid: repeat(5, 1fr);
+      align-items: flex-end;
+      justify-items: center;
+    }
+    
+    @media only screen and (max-width: 700px) {
+      .ea-card .ea-card-content.buttons {
+        --ea-card-content-grid: repeat(1, 1fr);
+        align-items: flex-end;
+        justify-items: center;
+        grid-row-gap: 1rem;
+      }    
+    }
+
+
+  #welcome {
+    background: url('./assets/images/eang-background-21.jpg');
+    background-size: cover;
+}
 ea-drawer {
   & section {
     margin: 1rem 0 0 0;
