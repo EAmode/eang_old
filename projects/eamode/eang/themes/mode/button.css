@@ -12,7 +12,7 @@
     --ea-button-border-outline: 0.09em; /*Sets the initial em for the border outline*/
     --ea-button-font-size: var(
       --ea-button-font-size,
-      var(--ea-font-1-size)
+      1em
     ); /*Sets the scale factor for the button*/
     --ea-button-border-radius: 0.25em; /*Sets the border radius for the button*/
     --ea-button-padding: 1em 2em;

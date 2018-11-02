@@ -18,6 +18,7 @@
   --ea-icon-save: inline('mode/icon/save.svg');
   --ea-icon-edit: inline('mode/icon/edit.svg');
   --ea-icon-add-file: inline('mode/icon/add-file.svg');
+  --ea-icon-x: inline('mode/icon/x.svg');
 
   & span[role="icon"] {
     --ea-icon-margin: 0 1em 0 0;

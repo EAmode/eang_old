@@ -11,13 +11,37 @@ export class CardComponent implements OnInit {
 
   ngOnInit() {}
 
+  sizing = `
+  |  Class   | Description  |
+  |---|---|
+  |  .ea-card   |  this would set the panel to its closed state   |
+  |  .ea-card-header   |  this would set the panel to its maximized, or open, state   |
+  |  .ea-card-content   |  this would set the panel to its maximized, or open, state   |
+  |  .ea-card-footer   |  this would set the panel to its maximized, or open, state   |
+  `
+
   card = `
   ~~~css
-  .ea-card {
-    /* defaults to flex with a wrap */
-    display:flex;
-    flex-direction: column;
-  }
+  <div class="ea-card">
+  <div class="ea-card-header" style="--ea-card-header-background: var(--ea-color-background-2); --ea-card-header-color: white;">
+    <p>ea-card-header</p>
+    <div>
+      <button custom><span role="icon" style="--ea-button-icon: var(--ea-icon-download); --ea-icon-margin: 0;" icon></span></button>
+      <button custom><span role="icon" style="--ea-button-icon: var(--ea-icon-add-file); --ea-icon-margin: 0;" icon></span></button>
+    </div>
+    <button custom><span role="icon" style="--ea-button-icon: var(--ea-icon-x); --ea-icon-margin: 0;" icon></span></button>
+  </div>
+  <div class="ea-card-content">
+    <h2>ea-card-content</h2>
+    <h3>Sub title</h3>
+    <p>Body of what you want this card to do</p>
+  </div>
+  <div class="ea-card-footer">
+    <button small>back</button>
+    1/2
+    <button small>next</button>
+  </div>
+</div>
   ~~~
   `
 
