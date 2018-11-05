@@ -25,6 +25,7 @@ import { LayoutComponent } from './feature/layout/layout.component'
 import { ButtonComponent } from './feature/button/button.component'
 import { HomeComponent } from './feature/home/home.component'
 import { CardComponent } from './feature/card/card.component'
+import { IconComponent } from './feature/icon/icon.component'
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { CardComponent } from './feature/card/card.component'
     LayoutComponent,
     ButtonComponent,
     HomeComponent,
-    CardComponent
+    CardComponent,
+    IconComponent
   ],
   imports: [
     BrowserModule,

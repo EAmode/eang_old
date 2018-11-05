@@ -19,11 +19,11 @@ import { LayoutService } from '../services/layout.service'
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
   <ng-container *ngIf="(layout.drawerState$ | async) as drawerState">
-    <button custom *ngIf="drawerState === 'maximized'" (click)="layout.drawerState$.next('closed')">
-     <span role="icon" style="--ea-button-icon: var(--ea-icon-chevrons-left); --ea-icon-margin: 0; height: 2em;" icon></span>
+    <button icon *ngIf="drawerState === 'maximized'" (click)="layout.drawerState$.next('closed')">
+     <span icon chevrons-left style="--ea-icon-margin: 0; height: 2em;"></span>
     </button>
-    <button custom *ngIf="drawerState === 'closed'" (click)="layout.drawerState$.next('maximized')">
-      <span role="icon" style="--ea-button-icon: var(--ea-icon-hamburger-menu); --ea-icon-margin: 0;" icon></span>
+    <button icon *ngIf="drawerState === 'closed'" (click)="layout.drawerState$.next('maximized')">
+      <span icon hamburger-menu style="--ea-icon-margin: 0;"></span>
     </button>
   </ng-container>
   <ng-content select="header"></ng-content>

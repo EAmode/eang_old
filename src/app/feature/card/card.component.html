@@ -1,26 +1,24 @@
-<h1>.ea-card</h1>
-
-<p>The ea-card is built to hold a header, content, and footer labeled as .ea-card-header, .ea-card-content, and
-  .ea-card-footer respectively.
-</p>
-
 <div class="ea-card" unset>
+  <div class="ea-card-header">
+    <h1>.ea-card</h1>
+    <span icon x negative></span>
+  </div>
   <div class="ea-card-content">
+    <p>The ea-card has a header, content, and footer labeled as <code>.ea-card-header</code>, <code>.ea-card-content</code>,
+      and <code>.ea-card-footer</code> respectively. </p>
     <ea-markdown [doc]="card"></ea-markdown>
     <div class="ea-card">
-      <div class="ea-card-header" style="--ea-card-header-background: var(--ea-color-background-2); --ea-card-header-color: white;">
+      <div class="ea-card-header">
         <p>ea-card-header</p>
         <div content>
-          <button custom>
-            <span role="icon" style="--ea-button-icon: var(--ea-icon-download); --ea-icon-margin: 0;" icon></span>
-          </button>
-          <button custom>
-            <span role="icon" style="--ea-button-icon: var(--ea-icon-add-file); --ea-icon-margin: 0;" icon></span>
+
+          <button icon>
+            <span icon x></span>
           </button>
         </div>
-        <button custom>
-          <span role="icon" style="--ea-button-icon: var(--ea-icon-x); --ea-icon-margin: 0;" icon></span>
-        </button>
+
+        <!-- <svg><use xlink:href="../../../projects/eamode/eang/themes/mode/icon/x.svg#x" /></svg> -->
+
       </div>
       <div class="ea-card-content header" style="flex-direction: column;">
         <h2>ea-card-content</h2>
@@ -116,8 +114,8 @@
     <div class="ea-card" style="width:20em;">
       <div class="ea-card-header" style="--ea-card-header-background: var(--ea-color-background-2); --ea-card-header-color: white;">
         <p>ea-card-header</p>
-        <button custom>
-          <span role="icon" style="--ea-button-icon: var(--ea-icon-x); --ea-icon-margin: 0;" icon></span>
+        <button icon>
+          <span icon x></span>
         </button>
       </div>
       <div class="ea-card-content header" style="flex-direction: column;">
@@ -135,15 +133,15 @@
           <p>ea-card-header</p>
         </section>
         <div content>
-          <button custom>
-            <span role="icon" style="--ea-button-icon: var(--ea-icon-download); --ea-icon-margin: 0;" icon></span>
+          <button icon>
+            <span icon download></span>
           </button>
-          <button custom>
-            <span role="icon" style="--ea-button-icon: var(--ea-icon-add-file); --ea-icon-margin: 0;" icon></span>
+          <button icon>
+            <span icon add-file></span>
           </button>
         </div>
-        <button custom>
-          <span role="icon" style="--ea-button-icon: var(--ea-icon-x); --ea-icon-margin: 0;" icon></span>
+        <button icon>
+          <span icon x></span>
         </button>
       </div>
       <div class="ea-card-content header" style="flex-direction: column;">
@@ -231,6 +229,6 @@
   </div>
   <div class="ea-card-content" style="flex-direction: column;">
     <p>The <code>[unset]</code> attribute is used to void all of the visual properties of a card, but maintain the
-      layout properties. This allows the <code>ea-card</code> to be used for layout purposes. 
+      layout properties. This allows the <code>ea-card</code> to be used for layout purposes.
     </p>
   </div>

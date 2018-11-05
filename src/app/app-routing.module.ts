@@ -6,6 +6,7 @@ import { LayoutComponent } from './feature/layout/layout.component'
 import { ButtonComponent } from './feature/button/button.component'
 import { HomeComponent } from './feature/home/home.component'
 import { CardComponent } from './feature/card/card.component'
+import { IconComponent } from './feature/icon/icon.component'
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -13,7 +14,9 @@ const routes: Routes = [
   { path: 'theming', component: ThemingComponent },
   { path: 'layout', component: LayoutComponent },
   { path: 'button', component: ButtonComponent },
-  { path: 'card', component: CardComponent }
+  { path: 'card', component: CardComponent },
+  { path: 'icon', component: IconComponent }
+
 ]
 
 @NgModule({
