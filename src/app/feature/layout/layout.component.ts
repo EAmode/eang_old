@@ -65,7 +65,6 @@ export class LayoutComponent implements OnInit {
   |---|---|
   |  Closed   |  this would set the panel to its closed state   |
   |  Maximized   |  this would set the panel to its maximized, or open, state   |
-
   `
   constructor() {}
 

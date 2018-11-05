@@ -3,12 +3,22 @@
 
 /* ICONS FOR DIFFERENT THEMES */
 .mode {
-  --ea-icon-activity: url('./assets/images/activity.svg');
-  --ea-icon-layout: url('./assets/images/layout-icon.svg');
-  --ea-icon-button-icon: url('./assets/images/button-icon.svg');
-  --ea-icon-pallete: url('./assets/images/pallete.svg');
 
-  ea-layout {
+    & [activity] {
+      background: url('./assets/images/activity.svg');
+    }
+    & [layout] {
+      background: url('./assets/images/layout-icon.svg');
+    }
+    & [button-icon] {
+      background: url('./assets/images/button-icon.svg');
+    }
+    & [pallete] {
+      background: url('./assets/images/pallete.svg');
+    }
+
+
+  & ea-layout {
     &[nav-overlay] {
       --ea-toolbar-height: 3.5rem;
     }
@@ -279,10 +289,10 @@ ea-main {
           justify-content: space-between;
           align-items: center;
           & ea-markdown {
-            width: 45%;
+            width: 60%;
           }
           & .ea-card {
-            width: 45%;
+            width: 35%;
           }
           @media only screen and (max-width: 900px) {
             flex-direction: column;

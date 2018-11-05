@@ -23,18 +23,24 @@ export class CardComponent implements OnInit {
   card = `
   ~~~css
   <div class="ea-card">
-  <div class="ea-card-header" style="--ea-card-header-background: var(--ea-color-background-2); --ea-card-header-color: white;">
+  <div class="ea-card-header">
     <p>ea-card-header</p>
-    <div>
-      <button custom><span role="icon" style="--ea-button-icon: var(--ea-icon-download); --ea-icon-margin: 0;" icon></span></button>
-      <button custom><span role="icon" style="--ea-button-icon: var(--ea-icon-add-file); --ea-icon-margin: 0;" icon></span></button>
+    <div content>
+      <button icon>
+        <span icon download></span>
+      </button>
+      <button icon>
+        <span icon sign-in</span>
+      </button>
     </div>
-    <button custom><span role="icon" style="--ea-button-icon: var(--ea-icon-x); --ea-icon-margin: 0;" icon></span></button>
+    <button icon>
+      <span icon x></span>
+    </button>
   </div>
   <div class="ea-card-content">
     <h2>ea-card-content</h2>
-    <h3>Sub title</h3>
-    <p>Body of what you want this card to do</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum volutpat purus ac ultrices maximus.
+    Maecenas lacinia ipsum id est suscipit, non sollicitudin odio imperdiet.</p>
   </div>
   <div class="ea-card-footer">
     <button small>back</button>
