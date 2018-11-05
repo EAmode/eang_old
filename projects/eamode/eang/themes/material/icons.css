@@ -1,33 +1,78 @@
 .material {
-  --ea-icon-hamburger-menu: inline('material/icon/menu.svg');
-  --ea-icon-minimized: inline('material/icon/minimized.svg');
-  --ea-icon-maximized-2: inline('material/icon/maximized-2.svg');
-  --ea-icon-close: inline('material/icon/close.svg');
-  --ea-icon-sign-in: inline('material/icon/sign-in.svg');
-  --ea-icon-download: inline('material/icon/download.svg');
-  --ea-icon-chevron-right: inline('material/icon/right-chevron.svg');
-  --ea-icon-chevron-right-neg: inline('material/icon/right-chevron-hover.svg');
-  --ea-icon-menu-close: inline('material/icon/menu-close.svg');
-  --ea-icon-chevron-down: inline('material/icon/chevron-down.svg');
-  --ea-icon-chevron-down-neg: inline('material/icon/chevron-down-neg.svg');
-  --ea-icon-vertical-menu: inline('material/icon/vertical-menu.svg');
-  --ea-icon-vertical-menu-dark: inline('material/icon/vertical-menu-dark.svg');
-  --ea-icon-chevron: inline('material/icon/chevron.svg');
-  --ea-icon-chevrons-left: inline('material/icon/chevrons-left.svg');
-  --ea-icon-chevrons-right: inline('material/icon/chevrons-right.svg');
-  --ea-icon-save: inline('material/icon/save.svg');
-  --ea-icon-edit: inline('material/icon/edit.svg');
-  --ea-icon-add-file: inline('material/icon/add-file.svg');
-
-  & span[role="icon"] {
-    --ea-icon-margin: 0 1em 0 0;
+  & span[icon] {
     display: block;
-    --ea-button-icon: var(--ea-button-icon, inherit);
-    background: var(--ea-button-icon);
-    background-repeat: no-repeat;
     background-position: center;
+    background-repeat: no-repeat;
     height: 1em;
     width: 2em;
-    margin: var(--ea-icon-margin);
+
+    &[hamburger-menu] {
+      background-image: inline('material/icon/menu.svg');
+    }
+    &[minimized] {
+      background-image: inline('material/icon/minimized.svg');
+    }
+    &[maximized-2] {
+      background-image: inline('material/icon/maximized-2.svg');
+    }
+    &[x] {
+      background-image: inline('material/icon/x.svg');
+    }
+    & [close] {
+      background-image: inline('material/icon/close.svg');
+    }
+    &[sign-in] {
+      background-image: inline('material/icon/sign-in.svg');
+    }
+
+    &[download] {
+      background-image: inline('material/icon/download.svg');
+    }
+    &[chevron-right] {
+      background-image: inline('material/icon/right-chevron.svg');
+    }
+    & [menu-close] {
+      background-image: inline('material/icon/menu-close.svg');
+    }
+    &[chevron-down] {
+      background-image: inline('material/icon/chevron-down.svg');
+    }
+    &[vertical-menu] {
+      background-image: inline('material/icon/vertical-menu.svg');
+    }
+    &[chevron] {
+      background-image: inline('material/icon/chevron.svg');
+    }
+    &[chevrons-left] {
+      background-image: inline('material/icon/chevrons-left.svg');
+    }
+    &[chevrons-right] {
+      background-image: inline('material/icon/chevrons-right.svg');
+    }
+    &[save] {
+      background-image: inline('material/icon/save.svg');
+    }
+    &[edit] {
+      background-image: inline('material/icon/edit.svg');
+    }
+    &[add-file] {
+      background-image: inline('material/icon/add-file.svg');
+    }
+    &[negative] {
+      filter: invert(100%);
+    }
+    &[aliceblue] {
+      filter: invert(98%) sepia(77%) saturate(7219%) hue-rotate(178deg)
+        brightness(112%) contrast(101%);
+    }
+    &[AntiqueWhite] {
+      filter: invert(82%) sepia(28%) saturate(168%) hue-rotate(344deg)
+        brightness(109%) contrast(96%);
+    }
+    &[aqua] {
+      filter: invert(96%) sepia(34%) saturate(4436%) hue-rotate(107deg)
+        brightness(101%) contrast(104%);
+    }
   }
 }
+

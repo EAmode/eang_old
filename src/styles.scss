@@ -2,7 +2,9 @@
 @import '~@angular-mdc/theme/material';
 
 /* ICONS FOR DIFFERENT THEMES */
-.mode {
+.fluentdark,
+.mode,
+.material {
 
     & [activity] {
       background: url('./assets/images/activity.svg');
@@ -65,14 +67,14 @@ ea-toolbar {
       align-items: flex-end;
       justify-items: center;
     }
-    
+
     @media only screen and (max-width: 700px) {
       .ea-card .ea-card-content.buttons {
         --ea-card-content-grid: repeat(1, 1fr);
         align-items: flex-end;
         justify-items: center;
         grid-row-gap: 1rem;
-      }    
+      }
     }
 
 

@@ -3,19 +3,21 @@
     <h1>.ea-card</h1>
     <span icon x negative></span>
   </div>
-  <div class="ea-card-content">
-    <p>The ea-card has a header, content, and footer labeled as <code>.ea-card-header</code>, <code>.ea-card-content</code>,
-      and <code>.ea-card-footer</code> respectively. </p>
+  <p>The ea-card has a header, content, and footer labeled as <code>.ea-card-header</code>, <code>.ea-card-content</code>,
+    and <code>.ea-card-footer</code> respectively. </p>
+  <div class="ea-card-content" grid style="--ea-card-content-grid: minmax(60% , 50%) minmax(40%, 50%); grid-gap: 2em; align-items: center;">
     <ea-markdown [doc]="card"></ea-markdown>
     <div class="ea-card">
       <div class="ea-card-header">
         <p>ea-card-header</p>
         <div content>
-
-          <button icon>
-            <span icon x></span>
-          </button>
+            <button icon>
+                <span icon sign-in></span>
+              </button>
         </div>
+            <button icon>
+              <span icon x></span>
+            </button>
       </div>
       <div class="ea-card-content header" style="flex-direction: column;">
         <h2>ea-card-content</h2>

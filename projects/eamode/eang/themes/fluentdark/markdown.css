@@ -33,13 +33,13 @@
       padding: 1em;
       margin: 0.5em 0;
       overflow: auto;
-      background: var(--ea-color-background-4);
+      background: var(--ea-color-3);
     }
     & pre {
       padding: 1em;
       margin: 0.5em 0;
       overflow: auto;
-      background: var(--ea-color-background-4);
+      background: var(--ea-color-3);
     }
     /* Inline code */
     & :not(pre) > code[class*='language-'] {
@@ -61,7 +61,7 @@
     & .token.attr-name,
     & .token.namespace,
     & .token.deleted {
-      color: #e2777a;
+      color: var(--ea-color-background-3);
     }
     & .token.attr-name {
       color: #77a7e2;
