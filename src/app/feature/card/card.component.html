@@ -1,0 +1,246 @@
+<h1>.ea-card</h1>
+
+<p>The ea-card is built to hold a header, content, and footer labeled as .ea-card-header, .ea-card-content, and
+  .ea-card-footer respectively.
+</p>
+
+<div class="ea-card" unset>
+  <div class="ea-card-content">
+    <ea-markdown [doc]="card"></ea-markdown>
+    <div class="ea-card">
+      <div class="ea-card-header" style="--ea-card-header-background: var(--ea-color-background-2); --ea-card-header-color: white;">
+        <p>ea-card-header</p>
+        <div content>
+          <button custom>
+            <span role="icon" style="--ea-button-icon: var(--ea-icon-download); --ea-icon-margin: 0;" icon></span>
+          </button>
+          <button custom>
+            <span role="icon" style="--ea-button-icon: var(--ea-icon-add-file); --ea-icon-margin: 0;" icon></span>
+          </button>
+        </div>
+        <button custom>
+          <span role="icon" style="--ea-button-icon: var(--ea-icon-x); --ea-icon-margin: 0;" icon></span>
+        </button>
+      </div>
+      <div class="ea-card-content header" style="flex-direction: column;">
+        <h2>ea-card-content</h2>
+        <h3>Sub title</h3>
+        <p>Body of what you want this card to do</p>
+      </div>
+      <div class="ea-card-footer">
+        <button small>back</button>
+        1/2
+        <button small>next</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ea-markdown [doc]="sizing"></ea-markdown>
+
+
+<h1>Card Sizing</h1>
+
+<p>The ea-card is built to hold a header, content, and footer labeled as .ea-card-header, .ea-card-content, and
+    .ea-card-footer respectively.
+  </p>
+
+<div class="ea-card" unset>
+  <div class="ea-card-content" flex-end>
+    <div class="ea-card" sm style="width:20em;">
+      <div class="ea-card-header" style="padding:0;">
+        <img style="width: 100%;" src="https://images.unsplash.com/photo-1541059782659-8bf4c1260517?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ef9d38bcc4a470cebdc3a9f1dd4e762e"
+          alt="">
+      </div>
+      <div class="ea-card-content" style="flex-direction: column;">
+        <h2>Title</h2>
+        <h3>Sub title</h3>
+        <p>Body of what you want this card to do</p>
+      </div>
+      <div class="ea-card-footer">
+        <button>Save</button>
+      </div>
+    </div>
+    <div class="ea-card" style="width:20em;">
+      <div class="ea-card-header" style="padding:0;">
+        <img style="width: 100%;" src="https://images.unsplash.com/photo-1541059782659-8bf4c1260517?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ef9d38bcc4a470cebdc3a9f1dd4e762e"
+          alt="">
+      </div>
+      <div class="ea-card-content" style="flex-direction: column;">
+        <h2>Title</h2>
+        <h3>Sub title</h3>
+        <p>Body of what you want this card to do</p>
+      </div>
+      <div class="ea-card-footer">
+        <button>Save</button>
+      </div>
+    </div>
+    <div class="ea-card" md style="width:20em;">
+      <div class="ea-card-header" style="padding:0;">
+        <img style="width: 100%;" src="https://images.unsplash.com/photo-1541059782659-8bf4c1260517?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ef9d38bcc4a470cebdc3a9f1dd4e762e"
+          alt="">
+      </div>
+      <div class="ea-card-content" style="flex-direction: column;">
+        <h2>Title</h2>
+        <h3>Sub title</h3>
+        <p>Body of what you want this card to do</p>
+      </div>
+      <div class="ea-card-footer">
+        <button>Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<h2>.ea-card-header</h2>
+<p>The `.ea-card-header` holds the title of the card and can optionally hold a button that toggles an `ea-card-menu`.
+  The header can either be aligned with flexbox or grid depending on what attribute you choose for it. </p>
+
+<div class="ea-card" unset>
+  <div class="ea-card-content" flex-end>
+    <div class="ea-card" style="width:20em;">
+      <div class="ea-card-header">
+        <p>ea-card-header</p>
+      </div>
+      <div class="ea-card-content header" style="flex-direction: column;">
+        <h2>ea-card-content</h2>
+        <h3>Sub title</h3>
+        <p>Body of what you want this card to do</p>
+      </div>
+      <div class="ea-card-footer header">
+        <p style="margin:0;">ea-card-footer</p>
+      </div>
+    </div>
+    <div class="ea-card" style="width:20em;">
+      <div class="ea-card-header" style="--ea-card-header-background: var(--ea-color-background-2); --ea-card-header-color: white;">
+        <p>ea-card-header</p>
+        <button custom>
+          <span role="icon" style="--ea-button-icon: var(--ea-icon-x); --ea-icon-margin: 0;" icon></span>
+        </button>
+      </div>
+      <div class="ea-card-content header" style="flex-direction: column;">
+        <h2>ea-card-content</h2>
+        <h3>Sub title</h3>
+        <p>Body of what you want this card to do</p>
+      </div>
+      <div class="ea-card-footer header">
+        <p style="margin:0;">ea-card-footer</p>
+      </div>
+    </div>
+    <div class="ea-card" style="width:20em;">
+      <div class="ea-card-header" style="--ea-card-header-background: var(--ea-color-background-2); --ea-card-header-color: white;">
+        <section>
+          <p>ea-card-header</p>
+        </section>
+        <div content>
+          <button custom>
+            <span role="icon" style="--ea-button-icon: var(--ea-icon-download); --ea-icon-margin: 0;" icon></span>
+          </button>
+          <button custom>
+            <span role="icon" style="--ea-button-icon: var(--ea-icon-add-file); --ea-icon-margin: 0;" icon></span>
+          </button>
+        </div>
+        <button custom>
+          <span role="icon" style="--ea-button-icon: var(--ea-icon-x); --ea-icon-margin: 0;" icon></span>
+        </button>
+      </div>
+      <div class="ea-card-content header" style="flex-direction: column;">
+        <h2>ea-card-content</h2>
+        <h3>Sub title</h3>
+        <p>Body of what you want this card to do</p>
+      </div>
+      <div class="ea-card-footer header">
+        <p style="margin:0;">ea-card-footer</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2>.ea-card-content</h2>
+<p>The `.ea-card-content` is meant to hold the content of the card. If there is no header and no footer, it would be
+  the only child of the `ea.card`, which would many it a potentially unecessary child element.
+
+  We planned for having a header and or a footer more often then not on average.
+</p>
+
+<div class="ea-card">
+  <div class="ea-card-content" grid style="--ea-card-content-grid: repeat(1 , 1fr);">
+    <img src="../../../assets/images/card-content.svg" alt="">
+  </div>
+</div>
+
+<p>The `.ea-card-content` is meant to hold the content of the card. If there is no header and no footer, it would be
+  the only child of the `ea.card`, which would many it a potentially unecessary child element.
+</p>
+
+
+<h2>.ea-card-footer</h2>
+<p>The `.ea-card-content` is meant to hold the content of the card. If there is no header and no footer, it would be
+  the only child of the `ea.card`, which would many it a potentially unecessary child element.
+
+  We planned for having a header and or a footer more often then not on average.
+</p>
+
+<div class="ea-card" unset>
+  <div class="ea-card-content" flex-end>
+    <div class="ea-card" style="width:20em;">
+      <div class="ea-card-header header">
+        <p>ea-card-header</p>
+
+      </div>
+      <div class="ea-card-content header" style="flex-direction: column;">
+        <h2>ea-card-content</h2>
+        <h3>Sub title</h3>
+        <p>Body of what you want this card to do</p>
+      </div>
+      <div class="ea-card-footer">
+        <button small>save</button>
+      </div>
+    </div>
+    <div class="ea-card" style="width:20em;">
+      <div class="ea-card-header header">
+        <p>ea-card-header</p>
+      </div>
+      <div class="ea-card-content header" style="flex-direction: column;">
+        <h2>ea-card-content</h2>
+        <h3>Sub title</h3>
+        <p>Body of what you want this card to do</p>
+      </div>
+      <div class="ea-card-footer">
+        <button small>back</button>
+        <button small>next</button>
+      </div>
+    </div>
+    <div class="ea-card" style="width:20em;">
+      <div class="ea-card-header header">
+        <p>ea-card-header</p>
+      </div>
+      <div class="ea-card-content header" style="flex-direction: column;">
+        <h2>ea-card-content</h2>
+        <h3>Sub title</h3>
+        <p>Body of what you want this card to do</p>
+      </div>
+      <div class="ea-card-footer">
+        <button small>back</button>
+        1/2
+        <button small>next</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="ea-card" unset>
+  <div class="ea-card-header">
+    <h2>.ea-card[unset]</h2>
+  </div>
+  <div class="ea-card-content" style="flex-direction: column;">
+    <p>The `.ea-card-content` is meant to hold the content of the card. If there is no header and no footer, it would
+      be
+      the only child of the `ea.card`, which would many it a potentially unecessary child element.
+
+      We planned for having a header and or a footer more often then not on average.
+    </p>
+  </div>
+

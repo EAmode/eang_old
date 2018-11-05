@@ -26,10 +26,12 @@
   }
 
   table {
-    width: 100%;
+    width: auto;
     display: table;
     border-collapse: collapse;
     border-spacing: 0;
+    margin: 2em 0;
+    box-shadow: var(--ea-box-shadow);
   }
 
   table.striped tr {
@@ -68,7 +70,7 @@
 
   td,
   th {
-    --ea-table-padding: var(--ea-table-padding, 15px 5px);
+    --ea-table-padding: var(--ea-table-padding, 0.8em 1.5em);
 
     padding: var(--ea-table-padding);
     display: table-cell;

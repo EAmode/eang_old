@@ -1,8 +1,6 @@
 @import '../dist/eamode/eang/css/all.css';
 @import '~@angular-mdc/theme/material';
 
-
-
 /* ICONS FOR DIFFERENT THEMES */
 .mode {
   --ea-icon-activity: url('./assets/images/activity.svg');
@@ -267,11 +265,36 @@ ea-main {
       }
     }
     & eangio-layout {
-     & .code-example {
+      & .code-example {
         --ea-grid-minmax: minmax(30%, 35%) minmax(65%, 40%);
       }
       & .code-example.drawer {
         --ea-grid-minmax: minmax(30%, 55%) minmax(45%, 40%);
+      }
+    }
+    & eangio-card {
+      .ea-card {
+        .ea-card-content:nth-child(1) {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          & ea-markdown {
+            width: 45%;
+          }
+          & .ea-card {
+            width: 45%;
+          }
+          @media only screen and (max-width: 900px) {
+            flex-direction: column;
+
+            & ea-markdown {
+              width: 100%;
+            }
+            & .ea-card {
+              width: 100%;
+            }
+          }
+        }
       }
     }
   }

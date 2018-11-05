@@ -1,44 +1,48 @@
 .mode {
   & h1 {
-    --ea-h1-font-size: var(--ea-h1-font-size, 2.6rem);
+    --ea-h1-font-size: var(--ea-h1-font-size, 2.875em);
     --ea-h1-font-family: var(--ea-h1-font-family, var(--ea-font-1));
 
     font-size: var(--ea-h1-font-size);
+    line-height: 3.5rem;
     font-family: var(--ea-h1-font-family);
-    font-weight: 500;
+    font-weight: lighter;
     margin-bottom: 0.6em;
   }
   & h2 {
     --ea-h2-font-family: var(--ea-font-1);
-    --ea-h2-font-size: var(--ea-h2-font-size, 1.8rem);
+    --ea-h2-font-size: var(--ea-h2-font-size, 2.125rem);
 
     font-family: var(--ea-font-1);
     font-size: var(--ea-h2-font-size);
     /* min-size, max-size */
-    font-weight: 500;
+    font-weight: lighter;
     margin-bottom: 0.4em;
   }
   & h3 {
-    font-size: 1.5rem;
-    font-weight: 500;
+    font-size: 1.5em;
+    font-weight: 400;
+    line-height: 1.75em;
     margin: 0.2rem 0 0.1rem 0;
   }
   & h4 {
-    font-size: 1.2rem;
+    font-size: 1.2em;
   }
   & h5 {
-    font-size: 1.1rem;
+    font-size: 1.1em;
   }
   & p {
-    font-size: 1.5rem;
+    font-size: 1em;
+    line-height: 1.33rem;
     font-weight: 400;
+    margin: 1em 0;
   }
   & p::selection {
     background: var(--ea-color-background-3);
     color: var(--ea-color-3);
   }
   & a {
-    font-size: 1.8rem;
+    font-size: 1.8em;
     text-decoration: none;
   }
 }

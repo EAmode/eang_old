@@ -1,4 +1,4 @@
-<ea-layout nav-overlay>
+<ea-layout>
   <ea-toolbar flex shadow>
     <header>
       <a (click)="layout.drawerState$.next('closed')" routerLink="/">
@@ -18,22 +18,22 @@
     <header>
     </header>
     <section class="ea-menu-item">
-      <!-- <a routerLinkActive="active" routerLink="/reactive" class="ea-menu-item">
-        <span role="icon" style="--ea-button-icon: var(--ea-icon-activity); --ea-icon-margin: 0;" icon></span>
-        Reactive
-      </a>
-      <a routerLinkActive="active" routerLink="/theming" class="ea-menu-item">
-        <span role="icon" style="--ea-button-icon: var(--ea-icon-pallete); --ea-icon-margin: 0;" icon></span>
-        Theming
-      </a> -->
       <a (click)="layout.drawerState$.next('closed')" routerLinkActive="active" routerLink="/layout" class="ea-menu-item">
         <span role="icon" style="--ea-button-icon: var(--ea-icon-layout); --ea-icon-margin: 0;" icon></span>
         Layout
+      </a>
+      <a (click)="layout.drawerState$.next('closed')" routerLinkActive="active" routerLink="/card" class="ea-menu-item">
+        <span role="icon" style="--ea-button-icon: var(--ea-icon-pallete); --ea-icon-margin: 0;" icon></span>
+        Cards
       </a>
       <a (click)="layout.drawerState$.next('closed')" routerLinkActive="active" routerLink="/button" class="ea-menu-item">
         <span role="icon" style="--ea-button-icon: var(--ea-icon-button-icon); --ea-icon-margin: 0;" icon></span>
         Buttons
       </a>
+      <!-- <a routerLinkActive="active" routerLink="/reactive" class="ea-menu-item">
+        <span role="icon" style="--ea-button-icon: var(--ea-icon-activity); --ea-icon-margin: 0;" icon></span>
+        Icons
+      </a> -->
     </section>
     <footer>
       <img style="padding-right: 1rem;" src="https://camo.githubusercontent.com/369cc2fa7d48781a040878c8b6e9bf8ff7ba4a30/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f762f4065616d6f64652f65616e672e737667"

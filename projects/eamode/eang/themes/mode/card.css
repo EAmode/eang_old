@@ -1,45 +1,138 @@
 .mode {
   & .ea-card {
-    /* --ea-card-border: var(none, 1px solid var(--ea-color-1)); */
+    --ea-card-border: var(--ea-car-border, 1px solid var(--ea-color-background-7));
     --ea-card-background: var(--ea-card-background, var(--ea-color-3));
     --ea-card-color: var(--ea-card-color, var(--ea-color-1));
+    --ea-card-font-size: var(--ea-card-font-size , 1rem);
+    --ea-card-width: var(--ea-card-width, 100%);
 
-    --ea-card-header-background: var(
-      --ea-card-header-background,
-      var(--ea-card-background)
-    );
-    --ea-card-header-color: var(--ea-card-header-color, var(--ea-card-color));
-
-    --ea-card-footer-background: var(
-      --ea-card-footer-background,
-      var(--ea-card-header-background, var(--ea-card-background))
-    );
-
+    font-size: var(--ea-card-font-size);
     background: var(--ea-card-background);
     box-shadow: var(--ea-box-shadow);
-    border: 1px solid var(--ea-color-background-7);
-    margin: 1rem 0.5rem;
+    border: var(--ea-card-border);
+    margin: 1.5em 0;
     display: flex;
     flex-direction: column;
+    height: fit-content;
+    width: var(--ea-card-width);
+
+    &[sm] {
+      --ea-card-font-size: 0.7rem;
+      font-size: var(--ea-card-font-size);
+    }
+
+    &[md] {
+      --ea-card-font-size: 1.25rem;
+      font-size: var(--ea-card-font-size);
+    }
+
+    &[lg] {
+      --ea-card-font-size: 1.5rem;
+      font-size: var(--ea-card-font-size);
+    }
+
+    [xl] {
+      --ea-card-font-size: 2rem;
+      font-size: var(--ea-card-font-size);
+    }
+
+    &[unset] {
+      box-shadow: none;
+      border: none;
+      background: none;
+      & > .ea-card-header {
+        background: none;
+        padding: 0;
+      }
+      & > .ea-card-content {
+        padding: 0;
+      }
+      & > .ea-card-footer {
+        padding: 0;
+      }
+    }
+
+    &[grid] {
+      --ea-card-grid-template: var( --ea-card-grid-template, 'ea-card-header' auto 'ea-card-content' auto 'ea-card-footer' auto / auto );
+
+      display: grid;
+      grid-template: var(--ea-card-grid-template);
+
+      & > .ea-card-header {
+        grid-area: ea-card-header;
+      }
+      & > .ea-card-content {
+        grid-area: ea-card-content;
+      }
+      & > .ea-card-footer {
+        grid-area: ea-card-footer;
+      }
+    }
+
     & .ea-card-header {
-      padding: 1rem 1.5rem;
+      --ea-card-header-background: var( --ea-card-header-background, var(--ea-card-background));
+      --ea-card-header-color: var(--ea-card-header-color, var(--ea-card-color));
+
       border-bottom: 1px solid var(--ea-color-background-7);
       background: var(--ea-card-header-background);
       color: var(--ea-card-header-color);
+      padding: 0 1em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      & [content] {
+        flex-grow: 1;
+        display: flex;
+      }
+
+      &[grid] {
+       --ea-card-header-grid-template: var( --ea-card-header-grid-template, 'header section aside' / 1fr 3fr 1fr );
+        display: grid;
+        grid-template: var( --ea-card-header-grid-template );
+      }
     }
     & .ea-card-content {
-      --ea-card-content-grid: var(--ea-card-content-grid, repeat(1, 1fr));
-      display: grid;
-      grid-template-columns: var(--ea-card-content-grid);
-      grid-column-gap: 2rem;
-      justify-items: center;
-      margin: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      padding: 1em;
+
+      &[flex-center] {
+        align-items: center;
+        justify-content: space-between;
+      }
+      &[flex-end]{
+        align-items: flex-end;
+        justify-content: space-between;
+      }
+
+      &[flex-start] {
+        align-items: flex-start;
+        justify-content: space-between;
+      }
+      &[grid]{
+        --ea-card-content-grid: var(--ea-card-content-grid, repeat(1 , 1fr));
+
+        display: grid;
+        grid-template-columns: var(--ea-card-content-grid);
+      }
     }
     & .ea-card-footer {
-      display: flex;
-      justify-content: center;
-      padding: 1rem 1.5rem;
+      --ea-card-footer-background: var( --ea-card-footer-background, var(--ea-card-background)));
+
+      background: var(--ea-card-footer-background);
       border-top: 1px solid var(--ea-color-background-7);
+      padding: 1em 1em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &[grid] {
+        --ea-card-footer-grid: var(--ea-card-footer-grid, 'header section aside' / 1fr 3fr 1fr );
+
+        display: grid;
+        grid-template-columns: var(--ea-card-footer-grid);
+      }
     }
   }
 }

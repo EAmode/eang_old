@@ -24,6 +24,7 @@ import { ThemingComponent } from './feature/theming/theming.component'
 import { LayoutComponent } from './feature/layout/layout.component'
 import { ButtonComponent } from './feature/button/button.component'
 import { HomeComponent } from './feature/home/home.component'
+import { CardComponent } from './feature/card/card.component'
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { HomeComponent } from './feature/home/home.component'
     ThemingComponent,
     LayoutComponent,
     ButtonComponent,
-    HomeComponent
+    HomeComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
