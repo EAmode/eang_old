@@ -31,9 +31,9 @@
   </div>
   <div class="ea-card-content" grid style="grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   grid-gap: 2rem;">
-    <div class="ea-card">
+    <div class="ea-card" *ngFor="let i of iconset">
       <div class="ea-card-content">
-        <span icon></span>
+        <span {{i.name}} icon></span>
       </div>
       <div class="ea-card-footer">
       </div>
