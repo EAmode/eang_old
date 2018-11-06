@@ -9,7 +9,7 @@ import {
 
 @Component({
   selector: 'ea-themepicker',
-  template: `<button custom class="icon-button" style="--ea-button-padding: 0;" (click)="toggleThemes()" (focus)="focus.emit($event)">
+  template: `<button icon class="icon-button" style="--ea-button-padding: 0;" (click)="toggleThemes()" (focus)="focus.emit($event)">
   </button>
   <div *ngIf="showThemes" class="ea-themepicker-dropdown">
     <ul class="ea-themepicker-dropdown-list">
