@@ -6,6 +6,153 @@
     height: 1em;
     width: 2em;
 
+    &[alert-circle] {
+      background-image: inline('mode/icon/alert-circle.svg');
+    }
+    &[alert-octagon] {
+      background-image: inline('mode/icon/alert-octagon.svg');
+    }
+    &[align-justify] {
+      background-image: inline('mode/icon/align-justify.svg');
+    }
+    &[alert-triangle] {
+      background-image: inline('mode/icon/alert-triangle.svg');
+    }
+    &[align-center] {
+      background-image: inline('mode/icon/align-center.svg');
+    }
+    &[align-left] {
+      background-image: inline('mode/icon/align-left.svg');
+    }
+    &[align-right] {
+      background-image: inline('mode/icon/align-right.svg');
+    }
+    &[archive] {
+      background-image: inline('mode/icon/archive.svg');
+    }
+    &[arrow-down-circle] {
+      background-image: inline('mode/icon/arrow-down-circle.svg');
+    }
+    &[arrow-down-left] {
+      background-image: inline('mode/icon/arrow-down-left.svg');
+    }
+    &[arrow-down-right] {
+      background-image: inline('mode/icon/arrow-down-right.svg');
+    }
+    &[arrow-down] {
+      background-image: inline('mode/icon/arrow-down.svg');
+    }
+    &[arrow-left-circle] {
+      background-image: inline('mode/icon/arrow-left-circle.svg');
+    }
+    &[arrow-left] {
+      background-image: inline('mode/icon/arrow-left.svg');
+    }
+    &[bar-chart] {
+      background-image: inline('mode/icon/bar-chart.svg');
+    }
+    &[bell-off] {
+      background-image: inline('mode/icon/bell-off.svg');
+    }
+    &[bell] {
+      background-image: inline('mode/icon/bell.svg');
+    }
+    &[bluetooth] {
+      background-image: inline('mode/icon/bluetooth.svg');
+    }
+    &[bookmark] {
+      background-image: inline('mode/icon/bookmark.svg');
+    }
+    &[calendar] {
+      background-image: inline('mode/icon/calendar.svg');
+    }
+    &[check-circle] {
+      background-image: inline('mode/icon/check-circle.svg');
+    }
+    &[check-square] {
+      background-image: inline('mode/icon/check-square.svg');
+    }
+    &[code] {
+      background-image: inline('mode/icon/code.svg');
+    }
+    &[crosshair] {
+      background-image: inline('mode/icon/crosshair.svg');
+    }
+    &[database] {
+      background-image: inline('mode/icon/database.svg');
+    }
+    &[download-cloud] {
+      background-image: inline('mode/icon/download-cloud.svg');
+    }
+    &[external-link] {
+      background-image: inline('mode/icon/external-link.svg');
+    }
+    &[filter] {
+      background-image: inline('mode/icon/filter.svg');
+    }
+    &[folder-plus] {
+      background-image: inline('mode/icon/folder-plus.svg');
+    }
+    &[help-circle] {
+      background-image: inline('mode/icon/help-circle.svg');
+    }
+    &[inbox] {
+      background-image: inline('mode/icon/inbox.svg');
+    }
+    &[link-2] {
+      background-image: inline('mode/icon/link-2.svg');
+    }
+    &[link] {
+      background-image: inline('mode/icon/link.svg');
+    }
+    &[paperclip] {
+      background-image: inline('mode/icon/paperclip.svg');
+    }
+    &[plus-circle] {
+      background-image: inline('mode/icon/plus-circle.svg');
+    }
+    &[printer] {
+      background-image: inline('mode/icon/printer.svg');
+    }
+    &[refresh-cw] {
+      background-image: inline('mode/icon/refresh-cw.svg');
+    }
+    &[share] {
+      background-image: inline('mode/icon/share.svg');
+    }
+    &[toggle-left] {
+      background-image: inline('mode/icon/toggle-left.svg');
+    }
+    &[toggle-right] {
+      background-image: inline('mode/icon/toggle-right.svg');
+    }
+    &[trash-2] {
+      background-image: inline('mode/icon/trash-2.svg');
+    }
+    &[upload] {
+      background-image: inline('mode/icon/upload.svg');
+    }
+    &[volume-1] {
+      background-image: inline('mode/icon/volume-1.svg');
+    }
+    &[volume-2] {
+      background-image: inline('mode/icon/volume-2.svg');
+    }
+    &[volume-x] {
+      background-image: inline('mode/icon/volume-x.svg');
+    }
+    &[wifi-off] {
+      background-image: inline('mode/icon/wifi-off.svg');
+    }
+    &[wifi] {
+      background-image: inline('mode/icon/wifi.svg');
+    }
+    &[zoom-in] {
+      background-image: inline('mode/icon/zoom-in.svg');
+    }
+    &[zoom-out] {
+      background-image: inline('mode/icon/zoom-out.svg');
+    }
     &[hamburger-menu] {
       background-image: inline('mode/icon/menu.svg');
     }
@@ -18,7 +165,7 @@
     &[x] {
       background-image: inline('mode/icon/x.svg');
     }
-    & [close] {
+    &[close] {
       background-image: inline('mode/icon/close.svg');
     }
     &[sign-in] {
@@ -75,4 +222,3 @@
     }
   }
 }
-
