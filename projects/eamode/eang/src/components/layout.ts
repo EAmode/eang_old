@@ -1,5 +1,12 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core'
+import {
+  Component,
+  ChangeDetectionStrategy,
+  Input,
+  OnInit,
+  HostBinding
+} from '@angular/core'
 import { LayoutService } from '../services/layout.service'
+import { Observable } from 'rxjs'
 
 @Component({
   selector: 'ea-layout',
@@ -12,6 +19,24 @@ import { LayoutService } from '../services/layout.service'
   `,
   styles: []
 })
-export class Layout {
+export class Layout implements OnInit {
+  @HostBinding('attr.nav-overlay')
+  stateAttr
+
+  @Input()
+  drawerState$: Observable<string>
+
   constructor(public layout: LayoutService) {}
+
+  ngOnInit() {
+    if (this.drawerState$) {
+      this.drawerState$.subscribe(this.layout.drawerState$)
+    }
+
+    this.layout.breakpoint$.subscribe(b => {
+      this.layout.screenSize = b
+      this.layout.isDrawerOverlay = b === 'XSmall' ? true : false
+      this.stateAttr = this.layout.isDrawerOverlay ? '' : null
+    })
+  }
 }

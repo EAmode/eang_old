@@ -32,11 +32,7 @@ export class Drawer implements OnInit, OnDestroy {
   constructor(public layout: LayoutService) {}
 
   ngOnInit() {
-    if (!this.drawerState$) {
-      this.drawerState$ = new Subject<string>()
-    }
-
-    this.drawerState$.subscribe(d => {
+    this.layout.drawerState$.subscribe(d => {
       this.stateAttr = d
     })
 

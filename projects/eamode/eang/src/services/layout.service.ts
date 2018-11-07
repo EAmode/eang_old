@@ -1,15 +1,13 @@
 import { Injectable } from '@angular/core'
 import { BehaviorSubject, merge } from 'rxjs'
-import {
-  BreakpointObserver,
-  BreakpointState,
-  Breakpoints
-} from '@angular/cdk/layout'
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout'
 import { filter, map } from 'rxjs/operators'
 
 @Injectable()
 export class LayoutService {
-  drawerState$ = new BehaviorSubject<string>(null)
+  screenSize: String
+  isDrawerOverlay = false
+  drawerState$ = new BehaviorSubject<string>('maximized')
   breakpoint$ = merge(
     this.bm.observe(Breakpoints.XSmall).pipe(
       filter(s => s.matches),
@@ -26,43 +24,43 @@ export class LayoutService {
     this.bm.observe(Breakpoints.XLarge).pipe(
       filter(s => s.matches),
       map(_ => 'XLarge')
-    ),
-    this.bm.observe(Breakpoints.Handset).pipe(
-      filter(s => s.matches),
-      map(_ => 'Handset')
-    ),
-    this.bm.observe(Breakpoints.Tablet).pipe(
-      filter(s => s.matches),
-      map(_ => 'Tablet')
-    ),
-    this.bm.observe(Breakpoints.Web).pipe(
-      filter(s => s.matches),
-      map(_ => 'Web')
-    ),
-    this.bm.observe(Breakpoints.HandsetPortrait).pipe(
-      filter(s => s.matches),
-      map(_ => 'HandsetPortrait')
-    ),
-    this.bm.observe(Breakpoints.TabletPortrait).pipe(
-      filter(s => s.matches),
-      map(_ => 'TabletPortrait')
-    ),
-    this.bm.observe(Breakpoints.WebPortrait).pipe(
-      filter(s => s.matches),
-      map(_ => 'WebPortrait')
-    ),
-    this.bm.observe(Breakpoints.HandsetLandscape).pipe(
-      filter(s => s.matches),
-      map(_ => 'HandsetLandscape')
-    ),
-    this.bm.observe(Breakpoints.TabletLandscape).pipe(
-      filter(s => s.matches),
-      map(_ => 'TabletLandscape')
-    ),
-    this.bm.observe(Breakpoints.WebLandscape).pipe(
-      filter(s => s.matches),
-      map(_ => 'WebLandscape')
     )
+    // this.bm.observe(Breakpoints.Handset).pipe(
+    //   filter(s => s.matches),
+    //   map(_ => 'Handset')
+    // ),
+    // this.bm.observe(Breakpoints.Tablet).pipe(
+    //   filter(s => s.matches),
+    //   map(_ => 'Tablet')
+    // ),
+    // this.bm.observe(Breakpoints.Web).pipe(
+    //   filter(s => s.matches),
+    //   map(_ => 'Web')
+    // ),
+    // this.bm.observe(Breakpoints.HandsetPortrait).pipe(
+    //   filter(s => s.matches),
+    //   map(_ => 'HandsetPortrait')
+    // ),
+    // this.bm.observe(Breakpoints.TabletPortrait).pipe(
+    //   filter(s => s.matches),
+    //   map(_ => 'TabletPortrait')
+    // ),
+    // this.bm.observe(Breakpoints.WebPortrait).pipe(
+    //   filter(s => s.matches),
+    //   map(_ => 'WebPortrait')
+    // ),
+    // this.bm.observe(Breakpoints.HandsetLandscape).pipe(
+    //   filter(s => s.matches),
+    //   map(_ => 'HandsetLandscape')
+    // ),
+    // this.bm.observe(Breakpoints.TabletLandscape).pipe(
+    //   filter(s => s.matches),
+    //   map(_ => 'TabletLandscape')
+    // ),
+    // this.bm.observe(Breakpoints.WebLandscape).pipe(
+    //   filter(s => s.matches),
+    //   map(_ => 'WebLandscape')
+    // )
   )
   constructor(public bm: BreakpointObserver) {}
 }
