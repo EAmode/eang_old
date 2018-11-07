@@ -7,13 +7,6 @@
     width: 1em;
     margin: 0.3em;
 
-    /* &:hover{
-    }
-
-    &:active {
-      background-color: rgba(0, 0, 0, 0.2);
-    } */
-
     &[alert-circle] {
       background-image: inline('mode/icon/alert-circle.svg');
     }
