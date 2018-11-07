@@ -1,17 +1,4 @@
-import {
-  Component,
-  OnInit,
-  Output,
-  EventEmitter,
-  Input,
-  TemplateRef,
-  ContentChild,
-  ViewChild,
-  ChangeDetectionStrategy,
-  OnDestroy
-} from '@angular/core'
-import { Observable, Subscription } from 'rxjs'
-import { debounceTime, distinctUntilChanged, map, delay } from 'rxjs/operators'
+import { Component, ChangeDetectionStrategy } from '@angular/core'
 import { LayoutService } from '../services/layout.service'
 
 @Component({
@@ -33,10 +20,6 @@ import { LayoutService } from '../services/layout.service'
   `,
   styles: []
 })
-export class Toolbar implements OnInit, OnDestroy {
+export class Toolbar {
   constructor(public layout: LayoutService) {}
-
-  ngOnInit() {}
-
-  ngOnDestroy() {}
 }

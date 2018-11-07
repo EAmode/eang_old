@@ -40,7 +40,8 @@ export class MdComponent implements OnInit, AfterContentInit {
   `
 })
 export class MarkdownComponent implements OnInit, AfterContentInit {
-  @ViewChild('content') content: ElementRef
+  @ViewChild('content')
+  content: ElementRef
 
   markdownIt = new MarkdownIt({
     html: true, // Enable HTML tags in source
@@ -77,8 +78,10 @@ export class MarkdownComponent implements OnInit, AfterContentInit {
     }
   })
 
-  @Input() doc: Observable<string>
-  @Input() ctx = of(null)
+  @Input()
+  doc: Observable<string>
+  @Input()
+  ctx = of(null)
   compiledMarkdown: Observable<string>
 
   hasInnermarkdown = false

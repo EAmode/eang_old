@@ -7,7 +7,11 @@ import { LayoutService } from 'projects/eamode/eang/src/services/layout.service'
   styles: []
 })
 export class AppComponent {
-  title = 'eang-io'
-
   constructor(public layout: LayoutService) {}
+
+  shouldCloseDrawer() {
+    if (this.layout.isDrawerOverlay) {
+      this.layout.drawerState$.next('closed')
+    }
+  }
 }

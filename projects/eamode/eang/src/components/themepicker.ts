@@ -20,11 +20,15 @@ import {
   `
 })
 export class ThemePickerComponent implements OnInit {
-  @Input() themes
-  @Input() select
+  @Input()
+  themes
+  @Input()
+  select
 
-  @Output() readonly focus = new EventEmitter<FocusEvent>()
-  @Output() readonly blur = new EventEmitter<FocusEvent>()
+  @Output()
+  readonly focus = new EventEmitter<FocusEvent>()
+  @Output()
+  readonly blur = new EventEmitter<FocusEvent>()
 
   themeMatch = []
   showThemes = false

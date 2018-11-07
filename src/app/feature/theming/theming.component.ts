@@ -12,7 +12,8 @@ import { AutocompleteComponent } from '@eamode/eang'
   styleUrls: ['./theming.component.css']
 })
 export class ThemingComponent implements OnInit {
-  @ViewChild('from') from: AutocompleteComponent
+  @ViewChild('from')
+  from: AutocompleteComponent
   maxResults = 10
   airportResult1$
   airportSearchTerm1 = new FormControl()

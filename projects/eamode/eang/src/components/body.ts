@@ -1,17 +1,14 @@
 import {
   Component,
-  OnInit,
   Output,
   EventEmitter,
   Input,
   TemplateRef,
   ContentChild,
   ViewChild,
-  ChangeDetectionStrategy,
-  OnDestroy
+  ChangeDetectionStrategy
 } from '@angular/core'
-import { Observable, Subscription } from 'rxjs'
-import { debounceTime, distinctUntilChanged, map, delay } from 'rxjs/operators'
+import { Observable } from 'rxjs'
 
 @Component({
   selector: 'ea-body',
@@ -21,20 +18,23 @@ import { debounceTime, distinctUntilChanged, map, delay } from 'rxjs/operators'
   `,
   styles: []
 })
-export class Body implements OnInit, OnDestroy {
-  @Input() suggestions: Observable<any>
-  @Input() enabled
+export class Body {
+  @Input()
+  suggestions: Observable<any>
+  @Input()
+  enabled
 
-  @Output() readonly searchTerm = new EventEmitter<string>()
-  @Output() selectedItem
+  @Output()
+  readonly searchTerm = new EventEmitter<string>()
+  @Output()
+  selectedItem
 
-  @ViewChild('inputField') inputField
-  @ViewChild('suggestionPanel') suggestionPanel
-  @ContentChild(TemplateRef) resultsTemplate: TemplateRef<any>
+  @ViewChild('inputField')
+  inputField
+  @ViewChild('suggestionPanel')
+  suggestionPanel
+  @ContentChild(TemplateRef)
+  resultsTemplate: TemplateRef<any>
 
   constructor() {}
-
-  ngOnInit() {}
-
-  ngOnDestroy() {}
 }
