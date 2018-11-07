@@ -1,8 +1,20 @@
 <h1>Layout Module</h1>
 
+
 <p>
-  The layout module allows to easily create a reactive web-app layout working across desktop and mobile.
-</p>
+  Responsive layout grid that automatically adapts to screen size and orientation ensuring an
+  optimal experience across smartphones, tablets, and desktop computers. The layout module consists of the Layout
+  Service and a set of visual layout components: </p>
+<ul>
+  <li><code class="language-html">&lt;ea-layout&gt;</code></li>
+  <li><code class="language-html">&lt;ea-toolbar&gt;</code></li>
+  <li><code class="language-html">&lt;ea-main&gt;</code></li>
+  <li><code class="language-html">&lt;ea-body&gt;</code></li>
+  <li><code class="language-html">&lt;ea-drawer&gt;</code></li>
+  <li><code class="language-html">&lt;ea-footer&gt;</code></li>
+</ul>
+
+
 <div class="code-example">
   <ea-markdown [doc]="ea_layout_attrs"></ea-markdown>
   <div class="ea-card">
@@ -14,8 +26,11 @@
     </div>
   </div>
 </div>
-<ea-markdown [doc]="ea_drawer_attrs"></ea-markdown>
 
+<p>
+  We use CSS grid to define the layout of the different components.
+</p>
+<ea-markdown [doc]="ea_layout_grid"></ea-markdown>
 
 <!--
 <p>
@@ -23,9 +38,11 @@
 </p> -->
 
 <h2>&lt;ea-toolbar&gt;</h2>
-<p> <code class="language-html">&lt;ea-toolbar&gt;</code> has a button that is dynamically generated based off whether
+<p>Holds the navigation elements at the top of the screen. <code class="language-html">&lt;ea-toolbar&gt;</code>
+  has a button that is dynamically generated based off whether
   or not
   there is currently in <code class="language-html">&lt;ea-drawer&gt;</code> initialized in the application.</p>
+
 
 <div class="ea-card">
   <div class="ea-card-header">
@@ -35,16 +52,29 @@
     <img style="width: 100%;" src="../../../assets/images/ea-toolbar.svg" alt="">
   </div>
 </div>
+<ea-markdown [doc]="ea_toolbar_attrs"></ea-markdown>
+
 
 <h2>&lt;ea-drawer&gt;</h2>
-<p>The ea-drawer is designed to have a ,<code class="language-html">&lt;header&gt;</code>, <code class="language-html">&lt;section&gt;</code>,
+<p>(optional) panel that expands/collapses from one side of the screen.
+  The ea-drawer is designed to have a ,<code class="language-html">&lt;header&gt;</code>, <code class="language-html">&lt;section&gt;</code>,
   and <code class="language-html">&lt;footer&gt;</code>.
   A <code class="language-html">&lt;header&gt;</code> element will always sit at the top of the drawer. The <code class="language-html">&lt;section&gt;</code>
   is stretched to be the
-  space between the header and the footer aligned at the top. The <code class="language-html">&lt;footer&gt;</code> is
+  space between the header and the footer aligned at the top. The <code class="language-html">&lt;footer&gt;</code>
+  is
   aligned at the bottom always.
-  For simplicity sake we accomplish this we flexbox which makes it ideal to only have 3 elements, header, section, and
+  For simplicity sake we accomplish this we flexbox which makes it ideal to only have 3 elements, header,
+  section, and
   footer to maintain this layout easily.</p>
+
+<p>The drawer uses different an event stream to inform the application what state it is in. The first two states
+  we've
+  introduced are maximized and closed.
+  We plan to introduce new states to make it so that you can adjust the size of your drawer to different states
+  we
+  think have utility.
+</p>
 
 <div class="code-example drawer">
   <ea-markdown [doc]="ea_layout_drawer"></ea-markdown>
@@ -58,9 +88,5 @@
 
   </div>
 </div>
-<p>The drawer uses different an event stream to inform the application what state it is in. The first two states we've
-  introduced are maximized and closed.
-  We plan to introduce new states to make it so that you can adjust the size of your drawer to different states we
-  think have utility.
-</p>
+
 <ea-markdown [doc]="ea_drawer_attrs"></ea-markdown>

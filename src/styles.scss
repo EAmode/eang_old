@@ -1,6 +1,10 @@
 @import '../dist/eamode/eang/css/all.css';
 @import '~@angular-mdc/theme/material';
 
+
+[sm] {
+  --ea-font-size: 10px;
+}
 /* ICONS FOR DIFFERENT THEMES */
 .fluentdark,
 .mode,

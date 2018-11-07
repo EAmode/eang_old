@@ -66,6 +66,13 @@ export class LayoutComponent implements OnInit {
   |  Closed   |  this would set the panel to its closed state   |
   |  Maximized   |  this would set the panel to its maximized, or open, state   |
   `
+
+  ea_toolbar_attrs = `
+  |  Attributes   | Description  |
+  |---|---|
+  |  Shadow   |  Sets a drop shadow on the ea-toolbar   |
+  |  Flex   |  Sets the properties of the toolbar to be flex with space-between a two child element layout  |
+  `
   constructor() {}
 
   ngOnInit() {}

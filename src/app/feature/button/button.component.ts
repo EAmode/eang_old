@@ -12,6 +12,29 @@ export class ButtonComponent implements OnInit {
   <button outline>Click me!</button>
   ~~~
   `
+
+  button_sizing = `
+  ~~~html
+  <button small>Click me!</button>
+  <button large>Click me!</button>
+
+  ~~~
+  `
+
+  button_icon = `
+  ~~~html
+  <button icon>
+    <span icon sign-in></span>
+  </button>
+  <button icon>
+    <span icon trash></span>
+  </button>
+  <button icon>
+    <span icon filter></span>
+  </button>
+  ~~~
+  `
+
   props = `
 
   ### Attributes

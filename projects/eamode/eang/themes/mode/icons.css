@@ -4,7 +4,15 @@
     background-position: center;
     background-repeat: no-repeat;
     height: 1em;
-    width: 2em;
+    width: 1em;
+    margin: 0.3em;
+
+    /* &:hover{
+    }
+
+    &:active {
+      background-color: rgba(0, 0, 0, 0.2);
+    } */
 
     &[alert-circle] {
       background-image: inline('mode/icon/alert-circle.svg');
