@@ -1,31 +1,33 @@
-<h1>Layout Module</h1>
-
-
-<p>
-  Responsive layout grid that automatically adapts to screen size and orientation ensuring an
-  optimal experience across smartphones, tablets, and desktop computers. The layout module consists of the Layout
-  Service and a set of visual layout components: </p>
-<ul>
-  <li><code class="language-html">&lt;ea-layout&gt;</code></li>
-  <li><code class="language-html">&lt;ea-toolbar&gt;</code></li>
-  <li><code class="language-html">&lt;ea-main&gt;</code></li>
-  <li><code class="language-html">&lt;ea-body&gt;</code></li>
-  <li><code class="language-html">&lt;ea-drawer&gt;</code></li>
-  <li><code class="language-html">&lt;ea-footer&gt;</code></li>
-</ul>
-
-
-<div class="code-example">
-  <ea-markdown [doc]="ea_layout_attrs"></ea-markdown>
-  <div class="ea-card">
-    <div class="ea-card-header">
-      <h3>Layout Module</h3>
-    </div>
-    <div class="ea-card-content" grid>
-      <img style="max-width: 70rem;" src="../../../assets/images/layouts.svg" alt="">
+<div class="ea-card" unset>
+  <div class="ea-card-header">
+    <h1>Layout Module</h1>
+    <span icon layout negative style="width: 2em; height: 2em;"></span>
+  </div>
+  <p>
+    Responsive layout grid that automatically adapts to screen size and orientation ensuring an
+    optimal experience across smartphones, tablets, and desktop computers. The layout module consists of the Layout
+    Service and a set of visual layout components: </p>
+  <ul>
+    <li><code class="language-html">&lt;ea-layout&gt;</code></li>
+    <li><code class="language-html">&lt;ea-toolbar&gt;</code></li>
+    <li><code class="language-html">&lt;ea-main&gt;</code></li>
+    <li><code class="language-html">&lt;ea-body&gt;</code></li>
+    <li><code class="language-html">&lt;ea-drawer&gt;</code></li>
+    <li><code class="language-html">&lt;ea-footer&gt;</code></li>
+  </ul>
+  <div class="ea-card-content example" grid>
+    <ea-markdown [doc]="ea_layout_attrs"></ea-markdown>
+    <div class="ea-card">
+      <div class="ea-card-header">
+        <h3>Layout Module</h3>
+      </div>
+      <div class="ea-card-content" grid>
+        <img style="max-width: 70rem;" src="../../../assets/images/layouts.svg" alt="">
+      </div>
     </div>
   </div>
 </div>
+
 
 <p>
   We use CSS grid to define the layout of the different components.
