@@ -2,7 +2,10 @@
   <div class="ea-card-header">
     <h1>Buttons</h1>
   </div>
-  <p> Eang uses a combination of em, custom properties, and the calc() function to make implementing proportional sized
+  <p>
+    Buttons allow users to take actions, and make choices, with a single tap.
+
+    Eang uses a combination of em, custom properties, and the calc() function to make implementing proportional sized
     buttons more simple. It capitalizes on the inherit features of em that allow elements of the button to scale
     relative
     to a set font-size defined within the component.
@@ -18,31 +21,10 @@
       <button style="--ea-button-margin:0rem 1em" outline>Click me!</button>
     </div>
 
-    <!-- <button hover disabled style="--ea-button-margin:0rem 1em">Disabled</button>
-    <button hover style="--ea-button-margin:0rem 1em" large>Large</button> -->
-
-    <!-- <button style="--ea-button-margin:0em 1em; --ea-button-padding: 1em 0.5em;">
-      <span role="icon" style="--ea-button-icon: var(--ea-icon-sign-in); --ea-icon-margin: 0 0.25em 0 0;" icon></span>
-      Icon
-    </button> -->
-
   </div>
 </section>
 
-
 <ea-markdown [doc]="props"></ea-markdown>
-<p> These variables can all be adjusted to customize aspects of your button that you
-  want to scale with. We've added a few attributes to allow you to easily scale up and
-  down to preset measurements.</p>
-<p>Eang makes it easy to add icons into your buttons with a preset lay out that also scales up proportionally based off
-  font-size.
-  the <code>[icon]</code> attribute can be added to a button to take care of some basic icon work.
-</p>
-
-<p>Setting the icon in the source code of our application is very simple.
-  Using one of the pre-defined custom properties that represent an icon from icons.css you
-  can quickly set the button to have an icon.</p>
-
 
 <h2>Examples</h2>
 
@@ -50,22 +32,29 @@
   <div class="ea-card-header">
     <h3>Re-Sizable Buttons</h3>
   </div>
-  <div class="buttons-container">
-    <div class="ea-card-content buttons">
-      <button style="--ea-button-margin:0em 1em; --ea-button-padding: 1em 0.5em;" small>
-        Button
-      </button>
-      <button style="--ea-button-margin:0em 1em; --ea-button-padding: 1em 0.5em;">
-        Button
-      </button>
-      <button style="--ea-button-margin:0em 1em; --ea-button-padding: 1em 0.5em;" medium>
-        Button
-      </button>
-      <button style="--ea-button-margin:0em 1em; --ea-button-padding: 1em 0.5em;" large>
-        Button
-      </button>
+  <p> These variables can all be adjusted to customize aspects of your button that you
+    want to scale with. We've added a few attributes to allow you to easily scale up and
+    down to preset measurements.</p>
+
+  <div class="ea-card-content" grid style="--ea-card-content-grid: repeat(2, 1fr); grid-gap: 2rem;
+  align-items: center; justify-items: center;">
+    <ea-markdown [doc]="button_sizing"></ea-markdown>
+    <!-- <button hover style="--ea-button-margin:0rem 1em" small>Small</button> -->
+
+    <div style="width: 100%; display: flex; justify-content: center;">
+      <div class="buttons-container">
+        <div class="ea-card-content buttons">
+          <button small style="--ea-button-margin:0em 1em;">
+            Click Me!
+          </button>
+          <button large style="--ea-button-margin:0em 1em;">
+            Click Me!
+          </button>
+        </div>
+      </div>
     </div>
   </div>
+
   <div class="ea-card-footer">
   </div>
 </section>
@@ -74,30 +63,32 @@
   <div class="ea-card-header">
     <h3>Icon Buttons</h3>
   </div>
-  <div class="buttons-container">
-    <div class="ea-card-content buttons">
-      <button style="--ea-button-margin:0em 1em; --ea-button-padding: 1em 0.5em;" >
-        <span role="icon" style="--ea-button-icon: var(--ea-icon-sign-in); --ea-icon-margin: 0 0.25em 0 0;" icon></span>
-        Button
+  <p>Eang makes it easy to add icons into your buttons with a preset lay out that also scales up proportionally based
+    off
+    font-size.
+    the <code>[icon]</code> attribute can be added to a button to take care of some basic icon work.
+  </p>
+  <div class="ea-card-content" grid style="--ea-card-content-grid: repeat(2, 1fr); grid-gap: 2rem;
+      align-items: center; justify-items: center;">
+    <ea-markdown [doc]="button_icon"></ea-markdown>
+    <!-- <button hover style="--ea-button-margin:0rem 1em" small>Small</button> -->
+
+    <div style="width: 100%; display: flex; justify-content: center;">
+      <button icon style="--ea-button-margin:0em 1em; --ea-button-padding: 1em 0.5em;">
+        <span icon sign-in></span>
       </button>
-      <button style="--ea-button-margin:0em 1em; --ea-button-padding: 1em 0.5em;">
-        <span role="icon" style="--ea-button-icon: var(--ea-icon-sign-in); --ea-icon-margin: 0 0.25em 0 0;" icon></span>
-        Button
+      <button icon style="--ea-button-margin:0em 1em; --ea-button-padding: 1em 0.5em;">
+        <span icon trash-2></span>
       </button>
-      <button style="--ea-button-margin:0em 1em; --ea-button-padding: 1em 0.5em;" >
-        <span role="icon" style="--ea-button-icon: var(--ea-icon-sign-in); --ea-icon-margin: 0 0.25em 0 0;" icon></span>
-        Button
-      </button>
-      <button style="--ea-button-margin:0em 1em; --ea-button-padding: 1em 0.5em;" >
-        <span role="icon" style="--ea-button-icon: var(--ea-icon-sign-in); --ea-icon-margin: 0 0.25em 0 0;" icon></span>
-        Button
+      <button icon style="--ea-button-margin:0em 1em; --ea-button-padding: 1em 0.5em;">
+        <span icon filter></span>
       </button>
     </div>
   </div>
+  <!-- <div class="ea-card-content buttons">
+
+    </div> -->
+
   <div class="ea-card-footer">
   </div>
 </section>
-
-
-
-

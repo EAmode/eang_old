@@ -10,7 +10,10 @@
     ); /* Sets the button background color */
     --ea-button-border: var(--ea-button-border, var(--ea-color-background-2));
     --ea-button-border-outline: 0em; /*Sets the initial em for the border outline*/
-    --ea-button-font-size: var( --ea-button-font-size, 1rem); /*Sets the scale factor for the button*/
+    --ea-button-font-size: var(
+      --ea-button-font-size,
+      1rem
+    ); /*Sets the scale factor for the button*/
     --ea-button-border-radius: 0em; /*Sets the border radius for the button*/
     --ea-button-padding: 1em 1.5em;
     --ea-button-margin: var(--ea-button-margin, 0);
@@ -28,6 +31,22 @@
     box-sizing: border-box;
     outline: none;
     transition: all 0.25s ease 0s;
+
+    &[icon] {
+      border: none;
+      background: none;
+      padding: 0;
+      outline: none;
+    }
+
+    &[icon]:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+      border: none;
+    }
+
+    &[icon]:active {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
   }
   & [small] {
     font-size: calc(var(--ea-button-font-size) * 0.8);
@@ -37,21 +56,6 @@
   }
   & [large] {
     font-size: calc(var(--ea-button-font-size) * 1.5);
-  }
-  & [icon] {
-    border: none;
-    background: none;
-    padding: 0;
-    outline: none;
-  }
-
-  & [icon]:hover {
-    background-color: none;
-    border: none;
-  }
-
-  & [icon]:active {
-    background-color: transparent;
   }
 
   & [outline] {
@@ -89,7 +93,7 @@
     border: var(--ea-color-background-6) solid 0.1em;
   }
   & button:hover {
-    border: var(--ea-color-background-6) solid  0.1em;
+    border: var(--ea-color-background-6) solid 0.1em;
   }
 
   & button:active {

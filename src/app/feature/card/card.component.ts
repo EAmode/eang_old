@@ -14,10 +14,10 @@ export class CardComponent implements OnInit {
   sizing = `
   |  Class   | Description  |
   |---|---|
-  |  .ea-card   |  this would set the panel to its closed state   |
-  |  .ea-card-header   |  this would set the panel to its maximized, or open, state   |
-  |  .ea-card-content   |  this would set the panel to its maximized, or open, state   |
-  |  .ea-card-footer   |  this would set the panel to its maximized, or open, state   |
+  |  .ea-card   |  the container for the card, where the box-shadow is set |
+  |  .ea-card-header   |  container for holding the title and navigation elements of the card at the top  |
+  |  .ea-card-content   |  meant for holding the main content of the card   |
+  |  .ea-card-footer   |  located at the bottom of the card and meant for holding action buttons and error messages  |
   `
 
   card = `
