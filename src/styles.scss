@@ -1,25 +1,22 @@
 @import '../dist/eamode/eang/css/all.css';
 @import '~@angular-mdc/theme/material';
 
-
 /* ICONS FOR DIFFERENT THEMES */
 .fluentdark,
 .mode,
 .material {
-
-    & [activity] {
-      background: url('./assets/images/activity.svg');
-    }
-    & [layout] {
-      background: url('./assets/images/layout-icon.svg');
-    }
-    & [button-icon] {
-      background: url('./assets/images/button-icon.svg');
-    }
-    & [pallete] {
-      background: url('./assets/images/pallete.svg');
-    }
-
+  & [activity] {
+    background: url('./assets/images/activity.svg');
+  }
+  & [layout] {
+    background: url('./assets/images/layout-icon.svg');
+  }
+  & [button-icon] {
+    background: url('./assets/images/button-icon.svg');
+  }
+  & [pallete] {
+    background: url('./assets/images/pallete.svg');
+  }
 
   & ea-layout {
     &[nav-overlay] {
@@ -32,7 +29,27 @@
   justify-content: center;
 }
 
+.mode .ea-card > .ea-card-content[grid].example {
+  --ea-card-content-grid: repeat(2, 1fr);
+  grid-gap: 2rem;
+  align-items: center;
+  @media only screen and (max-width: 770px) {
+    --ea-card-content-grid: auto-fill repeat(2, 1fr);
+  }
+}
 
+.mode eangio-card .ea-card > .ea-card-content[grid].example {
+  --ea-card-content-grid: minmax(40%, 50%) 1fr;
+  grid-gap: 2rem;
+  align-items: center;
+  @media only screen and (max-width: 770px) {
+    --ea-card-content-grid: auto-fill repeat(2, 1fr);
+    ea-markdown {
+      overflow-x: scroll;
+      width: auto;
+    }
+  }
+}
 
 .fluentdark,
 .mode,
@@ -66,27 +83,25 @@ ea-toolbar {
   }
 }
 
+.ea-card .ea-card-content.buttons {
+  --ea-card-content-grid: repeat(5, 1fr);
+  align-items: flex-end;
+  justify-items: flex-start;
+  width: 100%;
+}
 
-     .ea-card .ea-card-content.buttons {
-      --ea-card-content-grid: repeat(5, 1fr);
-      align-items: flex-end;
-      justify-items: flex-start;
-      width: 100%;
-    }
+@media only screen and (max-width: 700px) {
+  .ea-card .ea-card-content.buttons {
+    --ea-card-content-grid: repeat(1, 1fr);
+    align-items: flex-end;
+    justify-items: center;
+    grid-row-gap: 1rem;
+  }
+}
 
-    @media only screen and (max-width: 700px) {
-      .ea-card .ea-card-content.buttons {
-        --ea-card-content-grid: repeat(1, 1fr);
-        align-items: flex-end;
-        justify-items: center;
-        grid-row-gap: 1rem;
-      }
-    }
-
-
-  #welcome {
-    background: url('./assets/images/eang-background-21.jpg');
-    background-size: cover;
+#welcome {
+  background: url('./assets/images/eang-background-21.jpg');
+  background-size: cover;
 }
 ea-drawer {
   & section {

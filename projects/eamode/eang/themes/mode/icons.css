@@ -58,6 +58,12 @@
     &[bell] {
       background-image: inline('mode/icon/bell.svg');
     }
+    &[layers] {
+      background-image: inline('mode/icon/layers.svg');
+    }
+    &[grid] {
+      background-image: inline('mode/icon/grid.svg');
+    }
     &[bluetooth] {
       background-image: inline('mode/icon/bluetooth.svg');
     }

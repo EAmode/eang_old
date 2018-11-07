@@ -17,7 +17,6 @@ export class ButtonComponent implements OnInit {
   ~~~html
   <button small>Click me!</button>
   <button large>Click me!</button>
-
   ~~~
   `
 
