@@ -1,18 +1,12 @@
 import {
   Component,
   OnInit,
-  Output,
-  EventEmitter,
   Input,
-  TemplateRef,
-  ContentChild,
-  ViewChild,
   ChangeDetectionStrategy,
   OnDestroy,
   HostBinding
 } from '@angular/core'
-import { Observable, Subscription, Subject } from 'rxjs'
-import { debounceTime, distinctUntilChanged, map, delay } from 'rxjs/operators'
+import { Subject } from 'rxjs'
 import { LayoutService } from '../services/layout.service'
 
 @Component({
@@ -29,9 +23,11 @@ import { LayoutService } from '../services/layout.service'
   styles: []
 })
 export class Drawer implements OnInit, OnDestroy {
-  @HostBinding('attr.state') stateAttr
+  @HostBinding('attr.state')
+  stateAttr
 
-  @Input() drawerState$: Subject<string>
+  @Input()
+  drawerState$: Subject<string>
 
   constructor(public layout: LayoutService) {}
 

@@ -61,6 +61,7 @@
   "dependencies": {
     "@angular-mdc/web": "^0.41.1",
     "@angular/animations": "^6.1.0",
+    "@angular/cdk": "^7.0.3",
     "@angular/common": "^6.1.0",
     "@angular/compiler": "^6.1.0",
     "@angular/core": "^6.1.0",
