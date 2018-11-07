@@ -5,13 +5,10 @@ import { Component, OnInit } from '@angular/core'
   templateUrl: './icon.component.html',
   styles: []
 })
-
 export class IconComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   icon = `
   ~~~html
@@ -29,13 +26,16 @@ export class IconComponent implements OnInit {
     {
       name: 'chevron',
       title: 'close'
-    }, {
+    },
+    {
       name: 'x',
       title: 'close'
-    }, {
+    },
+    {
       name: 'x',
       title: 'close'
-    }, {
+    },
+    {
       name: 'x',
       title: 'close'
     }

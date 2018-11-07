@@ -19,15 +19,22 @@ import { Observable } from 'rxjs'
   styles: []
 })
 export class Footer {
-  @Input() suggestions: Observable<any>
-  @Input() enabled
+  @Input()
+  suggestions: Observable<any>
+  @Input()
+  enabled
 
-  @Output() readonly searchTerm = new EventEmitter<string>()
-  @Output() selectedItem
+  @Output()
+  readonly searchTerm = new EventEmitter<string>()
+  @Output()
+  selectedItem
 
-  @ViewChild('inputField') inputField
-  @ViewChild('suggestionPanel') suggestionPanel
-  @ContentChild(TemplateRef) resultsTemplate: TemplateRef<any>
+  @ViewChild('inputField')
+  inputField
+  @ViewChild('suggestionPanel')
+  suggestionPanel
+  @ContentChild(TemplateRef)
+  resultsTemplate: TemplateRef<any>
 
   constructor() {}
 }

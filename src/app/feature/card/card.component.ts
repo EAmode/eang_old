@@ -6,8 +6,7 @@ import { Component, OnInit } from '@angular/core'
   styles: []
 })
 export class CardComponent implements OnInit {
-
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {}
 
@@ -68,6 +67,4 @@ export class CardComponent implements OnInit {
   }
   ~~~
   `
-
-
 }

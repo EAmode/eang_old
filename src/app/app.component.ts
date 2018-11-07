@@ -7,6 +7,5 @@ import { LayoutService } from 'projects/eamode/eang/src/services/layout.service'
   styles: []
 })
 export class AppComponent {
-
   constructor(public layout: LayoutService) {}
 }
