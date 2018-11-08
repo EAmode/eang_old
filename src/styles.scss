@@ -17,37 +17,40 @@
   & [pallete] {
     background: url('./assets/images/pallete.svg');
   }
-
-  & ea-layout {
-    &[nav-overlay] {
-      --ea-toolbar-height: 3.5rem;
-    }
-  }
 }
 
 .icon-tiles .ea-card > .ea-card-content {
   justify-content: center;
 }
 
-.mode .ea-card > .ea-card-content[grid].example {
-  --ea-card-content-grid: repeat(2, 1fr);
-  grid-gap: 2rem;
-  align-items: center;
-  @media only screen and (max-width: 770px) {
-    --ea-card-content-grid: auto-fill repeat(2, 1fr);
-  }
-}
-
-.mode eangio-card .ea-card > .ea-card-content[grid].example {
+.mode eangio-card .ea-card > .ea-card-content[grid].example,
+.material eangio-card .ea-card > .ea-card-content[grid].example {
   --ea-card-content-grid: minmax(40%, 50%) 1fr;
   grid-gap: 2rem;
   align-items: center;
   @media only screen and (max-width: 770px) {
-    --ea-card-content-grid: auto-fill repeat(2, 1fr);
-    ea-markdown {
-      overflow-x: scroll;
-      width: auto;
-    }
+    --ea-card-content-grid:  repeat(auto-fill, 2, 1fr);
+  }
+}
+.mode .ea-card > .ea-card-content[grid].example,
+.material .ea-card > .ea-card-content[grid].example {
+  --ea-card-content-grid: repeat(2, 1fr);
+  grid-gap: 2rem;
+  align-items: center;
+  @media only screen and (max-width: 770px) {
+    --ea-card-content-grid:  repeat(auto-fill, 2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 770px) {
+ea-markdown {
+    --ea-card-content-grid:  repeat(auto-fill, 2, 1fr);
+    overflow-x: scroll;
+  }
+
+  .mode ea-layout ea-toolbar aside,
+  .material ea-layout ea-toolbar aside {
+   --ea-toolbar-aside-padding: 0;
   }
 }
 

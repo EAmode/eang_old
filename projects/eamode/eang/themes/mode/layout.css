@@ -25,7 +25,6 @@
       grid-area: main;
       overflow: auto;
       background: var(--ea-main-background);
-      -webkit-overflow-scrolling: touch;
     }
 
     & ea-body {
@@ -45,6 +44,7 @@
       grid-row: 1;
       grid-column: 1 / 4;
       z-index: 2;
+      box-sizing: border-box;
       &[shadow] {
         box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);
       }
@@ -91,6 +91,7 @@
 
       &[state='closed'] {
         width: 0;
+        display: none;
       }
 
       & a {
