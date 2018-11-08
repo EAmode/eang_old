@@ -1,6 +1,6 @@
 .material {
   & ea-markdown {
-    width: 100%;
+    width: auto;
     & .toolbar-item a {
       font-size: 22px;
       background: var(--ea-color-background-2);
@@ -12,7 +12,7 @@
 
     & code[class*='language-'],
     & pre[class*='language-'] {
-      color: var(--ea-color-1);
+      color: #ccc;
       background: none;
       font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
       text-align: left;
@@ -29,7 +29,6 @@
       -ms-hyphens: none;
       hyphens: none;
     }
-    /* Code blocks */
     & pre[class*='language-'] {
       padding: 1em;
       margin: 0.5em 0;
@@ -63,6 +62,9 @@
     & .token.namespace,
     & .token.deleted {
       color: #e2777a;
+    }
+    & .token.attr-name {
+      color: #77a7e2;
     }
     & .token.function-name {
       color: #6196cc;

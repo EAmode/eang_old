@@ -1,6 +1,6 @@
 .mode {
   & ea-markdown {
-    width: 100%;
+    width: auto;
     & .toolbar-item a {
       font-size: 22px;
       background: var(--ea-color-background-2);
