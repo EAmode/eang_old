@@ -89,9 +89,6 @@ export class MarkdownComponent implements OnInit, AfterContentInit {
   constructor(public elementRef: ElementRef) {}
 
   ngOnInit(): void {
-    console.log('native:', this.elementRef.nativeElement)
-    console.log('content after:', this.content)
-
     if (this.content && this.content.nativeElement.innerHTML) {
       this.hasInnermarkdown = true
       console.log('inner text', this.content.nativeElement.innerHTML)

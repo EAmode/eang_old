@@ -13,17 +13,16 @@
     </aside>
   </ea-toolbar>
 
-
   <ea-drawer>
     <header>
     </header>
     <section class="ea-menu-item">
-      <a (click)="shouldCloseDrawer()" routerLinkActive="active" routerLink="/layout" class="ea-menu-item">
+      <a (click)="shouldCloseDrawer()" routerLinkActive="active" [routerLink]="['/layout']" class="ea-menu-item">
         <span icon layout style="--ea-icon-margin: 0;"></span>
         Layout
       </a>
 
-      <a (click)="shouldCloseDrawer()" routerLinkActive="active" routerLink="/card" class="ea-menu-item">
+      <a (click)="shouldCloseDrawer()" routerLinkActive="active" [routerLink]="['/card']" class="ea-menu-item">
         <span icon pallete style="--ea-icon-margin: 0;"></span>
 
         Cards
@@ -34,8 +33,7 @@
       </a>
 
       <a (click)="shouldCloseDrawer()" routerLinkActive="active" routerLink="/icon" class="ea-menu-item">
-        <span icon activity style=" --ea-icon-margin: 0;" ></span>
-
+        <span icon activity style=" --ea-icon-margin: 0;"></span>
         Icons
       </a>
     </section>
@@ -48,16 +46,16 @@
     </footer>
   </ea-drawer>
 
-  <ea-main>
+  <ea-main #scrollContainer>
     <ea-body>
-      <router-outlet></router-outlet>
+      <router-outlet (activate)="onActivate($event, scrollContainer)"></router-outlet>
     </ea-body>
     <ea-footer>
-        <span>
-          <div class="powered-by">Powered by
-            <a class="ea-mode-logo" href="https://eamode.com"></a>
-          </div>
-        </span>
+      <span>
+        <div class="powered-by">Powered by
+          <a class="ea-mode-logo" href="https://eamode.com"></a>
+        </div>
+      </span>
     </ea-footer>
   </ea-main>
 
