@@ -8,8 +8,8 @@ Reactive components for Angular with customizable UX themes
 eang is fast, fully reactive, and really flexible angular development framework with a set of themeable visual components. Through its native support for reactive programming, eang enables your angular apps to automatically update the user experience in response to event stream data from event sources. Eang plays well with your existing Angular architecture.
 
 
-## Getting Started Section
-1. Create a new empty project use Angular CLI:
+## Getting Started
+1. Create a new project use Angular CLI:
 
 ```ng new [project name]```
 
@@ -20,22 +20,22 @@ eang is fast, fully reactive, and really flexible angular development framework 
 3. Import selected `eang` modules in your project module file. e.g. `app.module.ts`:
 
 ```
-import { PanelModule, AutoCompleteModule, ...} from '@eamode/eang'
+import { PanelModule, AutoCompleteModule, LayoutModule, ... } from '@eamode/eang'
 @NgModule({
   ...
-  imports: [..., PanelModule, AutoCompleteModule, ...],
+  imports: [..., PanelModule, AutoCompleteModule, LayoutModule, ...],
   ...
 })
 
 ```
 
-4. To use eang themes add ```@import '~@eamode/eang/css/all.css' ```at your ```styles.css``` file.
+4. To use eang themes add ```@import '~@eamode/eang/css/all.css';``` to your ```styles.css``` file.
 
-5. If app will be generated with the help of Angular CLI root component will be named ```<app-root></app-root>```.In the file ```index.html``` add a class to your root component:
+5. In ```index.html``` add a class to the body tag to apply the selected theme.
 ```
 ...
-<body>
-  <app-root class="mode"></app-root>
+<body class="mode">
+  <app-root></app-root>
 </body>
 ...
 ```
@@ -46,43 +46,45 @@ import { PanelModule, AutoCompleteModule, ...} from '@eamode/eang'
 | material   | Components designed following Google's Material design |
 | your-theme-here | It is easy to add your own completely customized theme as well.|
 
-6. In the template of your root component add, for example: 
+6. To use the eang `LayoutModule`, paste the following into the root component of the app: 
 ```
-...
 <ea-layout>
   <ea-toolbar>
-    <!-- Toolbar Content here -->
+    <h1>Logo here</h1>
   </ea-toolbar>
 
   <ea-drawer>
-    <!-- Drawer Content here -->
+    <a href="">Link in Drawer</a>
   </ea-drawer>
 
   <ea-main>
     <ea-body>
-      <!-- Body content here -->
+      <p lg>Body</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eget mollis nisi. Vivamus vel enim turpis.</p>
     </ea-body>
+    <ea-footer>
+      <p sm>your company here TM</p>
+    </ea-footer>
   </ea-main>
 </ea-layout>
-...
 ```
 
-7. If you do not like the theme color or another component attributes, just override them. Use ```.<class name>``` to change the value of the variable for all components in your ```style.css``` file:
+7. If you want to change the theme color or another component attributes, just override them using CSS Properties. Use ```.<class name>``` to change the value of the variable for all components in your ```style.css``` file:
   
 ```
 .mode {
-  --ea-color-background-2: "your value";
+  --ea-color-background-2: navy;
 }
 ```
-Use ```<tag name>``` to change the value of the variable for some component:
+Use ```<tag name>``` to change the value of variables for a component:
 
 ```
 ea-drawer {
-  --ea-drawer-width: "your value";
+  --ea-drawer-width: 12em;
 }
 ```
 
-8. Launch your app by using the CLI command ```ng serve```.  Enjoy.
+8. Launch your app by running ```npm start```.  Enjoy.
 
 ## Develop
 ```sh
