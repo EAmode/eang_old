@@ -1,7 +1,8 @@
 <ea-layout>
+  
   <ea-toolbar flex shadow>
     <header>
-      <a (click)="layout.drawerState$.next('closed')" routerLink="/">
+      <a routerLink="/">
         <span style="margin-left:0.5rem;" class="logo"></span>
       </a>
     </header>
@@ -21,7 +22,6 @@
         <span icon layout style="--ea-icon-margin: 0;"></span>
         Layout
       </a>
-
       <a (click)="shouldCloseDrawer()" routerLinkActive="active" [routerLink]="['/card']" class="ea-menu-item">
         <span icon layers negative style="--ea-icon-margin: 0;"></span>
         Cards
@@ -30,7 +30,6 @@
         <span icon button-icon style="--ea-icon-margin: 0;"></span>
         Buttons
       </a>
-
       <a (click)="shouldCloseDrawer()" routerLinkActive="active" [routerLink]="['/icon']" class="ea-menu-item">
         <span icon grid negative style=" --ea-icon-margin: 0;"></span>
         Icons
@@ -41,13 +40,12 @@
         alt="">
       <img src="https://camo.githubusercontent.com/e66b89ea6f74ba6585d8ed3705e81bfa5d31c405/68747470733a2f2f696d672e736869656c64732e696f2f7472617669732f45416d6f64652f65616e672e737667"
         alt="">
-
     </footer>
   </ea-drawer>
-
-  <ea-main>
+  
+  <ea-main #scrollContainer>
     <ea-body>
-      <router-outlet></router-outlet>
+      <router-outlet (activate)="onActivate($event, scrollContainer)"></router-outlet>
     </ea-body>
     <ea-footer>
       <span>

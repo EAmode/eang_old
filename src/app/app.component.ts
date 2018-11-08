@@ -14,4 +14,8 @@ export class AppComponent {
       this.layout.drawerState$.next('closed')
     }
   }
+
+  onActivate(e, scrollContainer) {
+    document.getElementsByTagName('ea-main')[0].scrollTop = 0
+  }
 }

@@ -1,8 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser'
 import { NgModule } from '@angular/core'
 import { ReactiveFormsModule } from '@angular/forms'
-import { RouterModule } from '@angular/router'
-import { AppRoutingModule } from './app-routing.module'
+import { RouterModule, Routes } from '@angular/router'
 
 import { AppComponent } from './app.component'
 import {
@@ -27,6 +26,15 @@ import { HomeComponent } from './feature/home/home.component'
 import { CardComponent } from './feature/card/card.component'
 import { IconComponent } from './feature/icon/icon.component'
 
+const routes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'reactive', component: ReactiveComponent },
+  { path: 'theming', component: ThemingComponent },
+  { path: 'layout', component: LayoutComponent },
+  { path: 'button', component: ButtonComponent },
+  { path: 'card', component: CardComponent },
+  { path: 'icon', component: IconComponent }
+]
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +57,7 @@ import { IconComponent } from './feature/icon/icon.component'
     MdcButtonModule,
     MdcRippleModule,
     MdcRadioModule,
-    AppRoutingModule
+    RouterModule.forRoot(routes, { scrollPositionRestoration: 'top' })
   ],
   providers: [],
   bootstrap: [AppComponent]
