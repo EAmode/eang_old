@@ -7,36 +7,84 @@ Reactive components for Angular with customizable UX themes
 ## Why eang?
 eang is fast, fully reactive, and really flexible angular development framework with a set of themeable visual components. Through its native support for reactive programming, eang enables your angular apps to automatically update the user experience in response to event stream data from event sources. Eang plays well with your existing Angular architecture.
 
-## Install
-1. Add `eang` to your Angular project by running:
+
+## Getting Started
+1. Create a new project use Angular CLI:
+
+```ng new [project name]```
+
+2. Add `eang` to your Angular project by running:
 
 ```npm install -S @eamode/eang``` 
 
-2. Import selected `eang` modules in your project module file. e.g. `app.module.ts`:
+3. Import selected `eang` modules in your project module file. e.g. `app.module.ts`:
 
 ```
-import { PanelModule, AutoCompleteModule, ...} from '@eamode/eang'
+import { PanelModule, AutoCompleteModule, LayoutModule, ... } from '@eamode/eang'
 @NgModule({
   ...
-  imports: [..., PanelModule, AutoCompleteModule, ...],
+  imports: [..., PanelModule, AutoCompleteModule, LayoutModule, ...],
   ...
 })
+
 ```
 
-3. In order to select a theme, add the name of that theme to the class names of your component root:
+4. To use eang themes add ```@import '~@eamode/eang/css/all.css';``` to your ```styles.css``` file.
 
+5. In ```index.html``` add a class to the body tag to apply the selected theme.
 ```
 ...
-<body>
-  <mycomponent-root class="mode"></mycomponent-root>
+<body class="mode">
+  <app-root></app-root>
 </body>
 ...
 ```
+
 | Theme Name | Description |
 |------------|-------------|
 | mode       | default theme of [MODE](https://www.eamode.com) |
 | material   | Components designed following Google's Material design |
 | your-theme-here | It is easy to add your own completely customized theme as well.|
+
+6. To use the eang `LayoutModule`, paste the following into the root component of the app: 
+```
+<ea-layout>
+  <ea-toolbar>
+    <h1>Logo here</h1>
+  </ea-toolbar>
+
+  <ea-drawer>
+    <a href="">Link in Drawer</a>
+  </ea-drawer>
+
+  <ea-main>
+    <ea-body>
+      <p lg>Body</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eget mollis nisi. Vivamus vel enim turpis.</p>
+    </ea-body>
+    <ea-footer>
+      <p sm>your company here TM</p>
+    </ea-footer>
+  </ea-main>
+</ea-layout>
+```
+
+7. If you want to change the theme color or another component attributes, just override them using CSS Properties. Use ```.<class name>``` to change the value of the variable for all components in your ```style.css``` file:
+  
+```
+.mode {
+  --ea-color-background-2: navy;
+}
+```
+Use ```<tag name>``` to change the value of variables for a component:
+
+```
+ea-drawer {
+  --ea-drawer-width: 12em;
+}
+```
+
+8. Launch your app by running ```npm start```.  Enjoy.
 
 ## Develop
 ```sh
