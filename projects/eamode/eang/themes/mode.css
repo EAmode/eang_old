@@ -2,6 +2,7 @@
 @import 'mode/variables.css';
 @import 'mode/fonts.css';
 
+@import 'mode/menu.css';
 @import 'mode/autocomplete.css';
 @import 'mode/button.css';
 @import 'mode/card.css';
