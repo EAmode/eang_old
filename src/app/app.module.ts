@@ -25,6 +25,7 @@ import { ButtonComponent } from './feature/button/button.component'
 import { HomeComponent } from './feature/home/home.component'
 import { CardComponent } from './feature/card/card.component'
 import { IconComponent } from './feature/icon/icon.component'
+import { GetStartedComponent } from './feature/get-started/get-started.component'
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -44,7 +45,8 @@ const routes: Routes = [
     ButtonComponent,
     HomeComponent,
     CardComponent,
-    IconComponent
+    IconComponent,
+    GetStartedComponent
   ],
   imports: [
     BrowserModule,
