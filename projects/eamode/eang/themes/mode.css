@@ -1,6 +1,7 @@
 @import 'mode/variables.css';
 @import 'mode/fonts.css';
 @import 'mode/markdown.css';
+@import 'mode/menu.css';
 @import 'mode/autocomplete.css';
 @import 'mode/panel.css';
 @import 'mode/text-elements.css';
