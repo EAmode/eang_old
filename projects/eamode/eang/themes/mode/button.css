@@ -1,7 +1,7 @@
 
 .mode {
   & button {
-    --ea-button-color: var(--ea-button-color, var(--ea-color-1)); /* Sets the button font-color */
+    --ea-button-color: var(--ea-button-color, var(--ea-color-3)); /* Sets the button font-color */
     --ea-button-background-color: var(--ea-button-background-color, var(--ea-color-background-2)); /* Sets the button background color */
     --ea-button-border: var(--ea-button-border, var(--ea-color-background-2));
     --ea-button-border-outline: 0em; /*Sets the initial em for the border outline*/
@@ -24,7 +24,7 @@
     transition: all 0.25s ease 0s;
 
     &[icon] {
-      border: none;
+      border: none !important;
       background: none;
       padding: 0;
       outline: none;

@@ -1,5 +1,4 @@
 <ea-layout>
-
   <ea-toolbar flex shadow>
     <header>
       <a routerLink="/">
@@ -7,54 +6,95 @@
       </a>
     </header>
     <aside>
-      <ea-themepicker select="eangio-root" [themes]="['mode', 'material']"></ea-themepicker>
-      <a style="margin-left:1rem" alt="GitHub" href="https://github.com/eamode/eang" rel="noopener noreferrer" target="_blank" role="button">
-        <img height="26" src="/assets/images/github-circle-white-transparent.svg">
+      <ea-themepicker
+        select="eangio-root"
+        [themes]="['mode', 'material']"
+      ></ea-themepicker>
+      <a
+        style="margin-left:1rem"
+        alt="GitHub"
+        href="https://github.com/eamode/eang"
+        rel="noopener noreferrer"
+        target="_blank"
+        role="button"
+      >
+        <img
+          height="26"
+          src="/assets/images/github-circle-white-transparent.svg"
+        />
       </a>
     </aside>
   </ea-toolbar>
 
   <ea-drawer>
-    <header>
-    </header>
-    <section class="ea-menu-item">
-      <a (click)="shouldCloseDrawer()" routerLinkActive="active" [routerLink]="['/layout']" class="ea-menu-item">
+    <section class="ea-menu">
+      <div class="ea-menu-item">
         <span icon layout style="--ea-icon-margin: 0;"></span>
-        Layout
+        <a
+          (click)="shouldCloseDrawer()"
+          routerLinkActive="active"
+          [routerLink]="['/layout']"
+        >
+          Layout
+        </a>
+      </div>
+      <a
+        (click)="shouldCloseDrawer()"
+        routerLinkActive="active"
+        [routerLink]="['/card']"
+        class="ea-menu-item"
+      >
+        <span icon layers negative style="--ea-icon-margin: 0;"></span> Cards
       </a>
-      <a (click)="shouldCloseDrawer()" routerLinkActive="active" [routerLink]="['/card']" class="ea-menu-item">
-        <span icon layers negative style="--ea-icon-margin: 0;"></span>
-        Cards
+      <a
+        (click)="shouldCloseDrawer()"
+        routerLinkActive="active"
+        [routerLink]="['/button']"
+        class="ea-menu-item"
+      >
+        <span icon button-icon style="--ea-icon-margin: 0;"></span> Buttons
       </a>
-      <a (click)="shouldCloseDrawer()" routerLinkActive="active" [routerLink]="['/button']" class="ea-menu-item">
-        <span icon button-icon style="--ea-icon-margin: 0;"></span>
-        Buttons
+      <a
+        (click)="shouldCloseDrawer()"
+        routerLinkActive="active"
+        [routerLink]="['/icon']"
+        class="ea-menu-item"
+      >
+        <span icon grid negative style=" --ea-icon-margin: 0;"></span> Icons
       </a>
-      <a (click)="shouldCloseDrawer()" routerLinkActive="active" [routerLink]="['/icon']" class="ea-menu-item">
-        <span icon grid negative style=" --ea-icon-margin: 0;"></span>
-        Icons
-      </a>
-      <!-- <a (click)="shouldCloseDrawer()" routerLinkActive="active" [routerLink]="['/variables']" class="ea-menu-item">
-        <span icon terminal negative style=" --ea-icon-margin: 0;"></span>
-        Variables
-      </a> -->
+      <!--
+        <a (click)="shouldCloseDrawer()" routerLinkActive="active" [routerLink]="['/variables']" class="ea-menu-item">
+          <span icon terminal negative style=" --ea-icon-margin: 0;"></span>
+          Variables
+        </a>
+      -->
     </section>
     <footer>
-      <img style="padding-right: 1rem;" src="https://camo.githubusercontent.com/369cc2fa7d48781a040878c8b6e9bf8ff7ba4a30/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f762f4065616d6f64652f65616e672e737667"
-        alt="">
-      <img src="https://camo.githubusercontent.com/e66b89ea6f74ba6585d8ed3705e81bfa5d31c405/68747470733a2f2f696d672e736869656c64732e696f2f7472617669732f45416d6f64652f65616e672e737667"
-        alt="">
+      <img
+        style="padding-right: 1rem;"
+        src="https://camo.githubusercontent.com/369cc2fa7d48781a040878c8b6e9bf8ff7ba4a30/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f762f4065616d6f64652f65616e672e737667"
+        alt=""
+      />
+      <img
+        src="https://camo.githubusercontent.com/e66b89ea6f74ba6585d8ed3705e81bfa5d31c405/68747470733a2f2f696d672e736869656c64732e696f2f7472617669732f45416d6f64652f65616e672e737667"
+        alt=""
+      />
     </footer>
   </ea-drawer>
 
   <ea-main #scrollContainer>
     <ea-body>
-      <router-outlet (activate)="onActivate($event, scrollContainer)"></router-outlet>
+      <router-outlet
+        (activate)="onActivate($event, scrollContainer)"
+      ></router-outlet>
     </ea-body>
     <ea-footer>
       <p>Powered by</p>
-      <a style="margin-left:0.5rem;"class="ea-mode-logo" href="https://eamode.com"></a>
+      <a
+        style="margin-left:0.5rem;"
+        class="ea-mode-logo"
+        href="https://eamode.com"
+      ></a>
     </ea-footer>
   </ea-main>
-
 </ea-layout>
