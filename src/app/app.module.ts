@@ -25,6 +25,7 @@ import { ButtonComponent } from './feature/button/button.component'
 import { HomeComponent } from './feature/home/home.component'
 import { CardComponent } from './feature/card/card.component'
 import { IconComponent } from './feature/icon/icon.component'
+import { VariablesComponent } from './variables/variables.component'
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -33,7 +34,8 @@ const routes: Routes = [
   { path: 'layout', component: LayoutComponent },
   { path: 'button', component: ButtonComponent },
   { path: 'card', component: CardComponent },
-  { path: 'icon', component: IconComponent }
+  { path: 'icon', component: IconComponent },
+  { path: 'variables', component: VariablesComponent }
 ]
 @NgModule({
   declarations: [
@@ -44,7 +46,8 @@ const routes: Routes = [
     ButtonComponent,
     HomeComponent,
     CardComponent,
-    IconComponent
+    IconComponent,
+    VariablesComponent
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,4 @@
+.fluentdark,
 .mode {
   & ea-autocomplete {
     --ea-autocomplete-width: var(--ea-autocomplete-width, auto);
