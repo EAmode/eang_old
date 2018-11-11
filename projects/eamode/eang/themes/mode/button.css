@@ -1,4 +1,3 @@
-
 .mode {
   & button {
     --ea-button-color: var(--ea-button-color, var(--ea-color-3)); /* Sets the button font-color */
