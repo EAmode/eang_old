@@ -28,16 +28,13 @@
 
   <ea-drawer>
     <section class="ea-menu">
-      <div class="ea-menu-item">
-        <span icon layout style="--ea-icon-margin: 0;"></span>
-        <a
-          (click)="shouldCloseDrawer()"
-          routerLinkActive="active"
-          [routerLink]="['/layout']"
-        >
-          Layout
-        </a>
-      </div>
+      <a
+        (click)="shouldCloseDrawer()"
+        routerLinkActive="active"
+        [routerLink]="['/layout']"
+      >
+        <span icon layout style="--ea-icon-margin: 0;"></span> Layout
+      </a>
       <a
         (click)="shouldCloseDrawer()"
         routerLinkActive="active"
