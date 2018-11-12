@@ -1,5 +1,5 @@
-@define-mixin button {
-  & button {
+@define-mixin button-base {
+
     --ea-button-color: var(--ea-button-color, var(--ea-color-3)); /* Sets the button font-color */
     --ea-button-background-color: var(--ea-button-background-color, var(--ea-color-background-2)); /* Sets the button background color */
     --ea-button-border: var(--ea-button-border, var(--ea-color-background-2));
@@ -14,6 +14,12 @@
     color: var(--ea-button-color);
     border: var(--ea-button-border) solid 0.1em;
     margin: var(--ea-button-margin);
+}
+
+
+@define-mixin button-mode {
+  & button {
+    @mixin button-base;
     border-radius: 0.2em;
     cursor: pointer;
     display: flex;

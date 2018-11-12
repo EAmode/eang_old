@@ -12,12 +12,20 @@
 @import 'mode/layout.css';
 @import 'mode/table.css';
 
+@import 'mode/button.css';
 @import 'fluent/button.css';
 
 .fluent {
-  @mixin autocomplete;
-  @mixin button;
-
-
+  @mixin autocomplete-mode;
+  @mixin button-mode;
+  @mixin button-fluent;
+  @mixin card-mode;
+  @mixin icons;
+  @mixin layout-mode;
+  @mixin markdown-mode;
+  @mixin panel-mode;
+  @mixin typography;
+  @mixin themepicker;
+  @mixin table-mode;
 }
 

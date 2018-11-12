@@ -1,24 +1,26 @@
-@define-mixin autocomplete {
+@define-mixin autocomplete-base {
+  --ea-autocomplete-width: var(--ea-autocomplete-width, auto);
+
+  --ea-autocomplete-hover-color: var(
+    --ea-autocomplete-hover-color,
+    var(--ea-color-background-1)
+  );
+  --ea-autocomplete-hover-background: var(
+    --ea-autocomplete-hover-background,
+    var(--ea-color-background-2)
+  );
+  --ea-autocomplete-selected-background: var(
+    --ea-autocomplete-selected-background,
+    var(--ea-color-background-3)
+  );
+  --ea-autocomplete-selected-color: var(
+    --ea-autocomplete-selected-color,
+    var(--ea-color-3)
+  );
+}
+@define-mixin autocomplete-mode {
   & ea-autocomplete {
-    --ea-autocomplete-width: var(--ea-autocomplete-width, auto);
-
-    --ea-autocomplete-hover-color: var(
-      --ea-autocomplete-hover-color,
-      var(--ea-color-background-1)
-    );
-    --ea-autocomplete-hover-background: var(
-      --ea-autocomplete-hover-background,
-      var(--ea-color-background-2)
-    );
-    --ea-autocomplete-selected-background: var(
-      --ea-autocomplete-selected-background,
-      var(--ea-color-background-3)
-    );
-    --ea-autocomplete-selected-color: var(
-      --ea-autocomplete-selected-color,
-      var(--ea-color-3)
-    );
-
+    @mixin autocomplete-base;
     display: block;
     position:relative;
     & ul {
