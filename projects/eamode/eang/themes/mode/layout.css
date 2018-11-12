@@ -1,4 +1,4 @@
-.mode {
+@define-mixin layout {
   & ea-layout {
     --ea-drawer-header-height: 4rem;
     --ea-drawer-footer-height: 4rem;

@@ -1,4 +1,4 @@
-.mode {
+@define-mixin panel {
   & ea-panel {
     --ea-panel-color: var(--ea-color-1);
     --ea-panel-background: var(--ea-color-background-2);

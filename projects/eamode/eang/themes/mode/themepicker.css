@@ -1,4 +1,4 @@
-.mode {
+@define-mixin themepicker {
   & ea-themepicker {
     cursor: pointer;
     outline: none;

@@ -1,20 +1,22 @@
-@import 'mode/variables.css';
+@import '_base.css';
+
+@import 'fluent/variables.css';
 @import 'mode/fonts.css';
 @import 'mode/markdown.css';
 @import 'mode/autocomplete.css';
 @import 'mode/panel.css';
-@import 'mode/text-elements.css';
+@import 'mode/typography.css';
 @import 'mode/themepicker.css';
 @import 'mode/card.css';
 @import 'mode/icons.css';
 @import 'mode/layout.css';
 @import 'mode/table.css';
-@import '_base.css';
 
 @import 'fluent/button.css';
 
 .fluent {
-  @mixin button ;
+  @mixin autocomplete;
+  @mixin button;
 
 
 }
