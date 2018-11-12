@@ -48,7 +48,7 @@ const routes: Routes = [
     HomeComponent,
     CardComponent,
     IconComponent,
-    VariablesComponent
+    VariablesComponent,
     GetStartedComponent
   ],
   imports: [
