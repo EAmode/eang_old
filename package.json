@@ -42,10 +42,12 @@
   },
   "lint-staged": {
     "src/**/*.ts": [
+      "prettier --write",
       "tslint -p src/tslint.json -t codeFrame",
       "git add"
     ],
     "projects/eamode/eang/src/**/*.ts": [
+      "prettier --write",
       "tslint -p projects/eamode/eang/tslint.json -t codeFrame",
       "git add"
     ]
@@ -60,7 +62,7 @@
   },
   "dependencies": {
     "@angular-mdc/web": "^0.41.1",
-    "@angular/animations": "^7.0.3", 
+    "@angular/animations": "^7.0.3",
     "@angular/cdk": "^7.0.3",
     "@angular/common": "^7.0.3",
     "@angular/compiler": "^7.0.3",
