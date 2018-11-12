@@ -1,4 +1,4 @@
-.mode {
+@define-mixin card {
   & .ea-card {
     --ea-card-border: var(--ea-car-border, 1px solid var(--ea-color-background-7));
     --ea-card-background: var(--ea-card-background, var(--ea-color-3));

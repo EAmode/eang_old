@@ -35,8 +35,6 @@ export class Drawer implements OnInit, OnDestroy {
     this.layout.drawerState$.subscribe(d => {
       this.stateAttr = d
     })
-
-    this.drawerState$.next('maximized')
   }
 
   ngOnDestroy() {}

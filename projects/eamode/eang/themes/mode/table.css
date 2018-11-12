@@ -1,4 +1,4 @@
-.mode {
+@define-mixin table {
   table,
   th,
   td {

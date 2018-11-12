@@ -23,7 +23,6 @@
   }
   & p {
     font-size: 1.25rem; /* min-size, max-size */
-    width: 100%;
     line-height: 1.8rem;
   }
   & p::selection {

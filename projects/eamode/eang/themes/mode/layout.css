@@ -1,10 +1,17 @@
-.mode {
+@define-mixin layout {
   & ea-layout {
     --ea-drawer-header-height: 4rem;
     --ea-drawer-footer-height: 4rem;
-    --ea-drawer-width: 300px;
+    --ea-drawer-width: var(--ea-drawer-width, 300px);
     --ea-toolbar-height: var(--ea-toolbar-height, 4rem);
     --drawer-width: 300px;
+    --ea-footer-height: var(--ea-footer-height, 4.5rem);
+    --ea-toolbar-color: var(--ea-toolbar-color, var(--ea-color-3));
+    --ea-drawer-background: var(
+      --ea-drawer-background,
+      var(--ea-color-background-4)
+    );
+    --ea-body-display: var(--ea-body-display, block);
 
     display: grid;
     height: 100vh;
@@ -25,15 +32,30 @@
       grid-area: main;
       overflow: auto;
       background: var(--ea-main-background);
-      -webkit-overflow-scrolling: touch;
+
+      & ea-footer {
+        width: 100%;
+        height: var(--ea-footer-height);
+        display: flex;
+        align-items: center;
+        background: var(--ea-color-background-2);
+        padding: 1rem;
+        box-sizing: border-box;
+        & p {
+          color: var(--ea-color-3);
+        }
+      }
     }
 
     & ea-body {
-      --ea-main-padding: var(--ea-main-padding, 0.5em 1em);
-      padding: var(--ea-main-padding);
+      --ea-main-margin: var(--ea-main-padding, 0.5em 1em);
+      margin: var(--ea-main-margin);
+      display: var(--ea-body-display);
+      min-height: 100%;
     }
 
     & ea-toolbar {
+      --ea-toolbar-display: var(--ea-toolbar-display, flex);
       font-size: 1rem;
       --ea-toolbar-padding: var(--ea-toolbar-padding, 0.5em 1em);
 
@@ -45,6 +67,9 @@
       grid-row: 1;
       grid-column: 1 / 4;
       z-index: 2;
+      box-sizing: border-box;
+      align-items: center;
+      color: var(--ea-toolbar-color);
       &[shadow] {
         box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);
       }
@@ -70,6 +95,20 @@
         align-items: center;
         padding-right: var(--ea-toolbar-aside-padding);
       }
+
+      & p,
+      h1,
+      h2,
+      h3 {
+        margin: 0;
+      }
+
+      & a {
+        color: var(--ea-color-3);
+        text-decoration: none;
+        font-size: 1rem;
+        margin: 0.5em;
+      }
     }
 
     & ea-drawer {
@@ -78,10 +117,14 @@
       justify-content: space-between;
       display: flex;
       width: var(--ea-drawer-width);
-      background: var(--ea-color-background-4);
+      background: var(--ea-drawer-background);
 
       & section {
         flex-grow: 1;
+      }
+
+      & footer {
+        padding: 1rem;
       }
 
       &[resize] {
@@ -91,6 +134,7 @@
 
       &[state='closed'] {
         width: 0;
+        display: none;
       }
 
       & a {
@@ -103,7 +147,7 @@
         align-items: center;
         &:hover {
           text-decoration: none;
-          background-color: var(--ea-drawer-a-hover);
+          background-color: var(--ea-color-background-3);
         }
         &.active {
           background-color: var(--ea-color-background-3);
@@ -117,7 +161,7 @@
     &[nav-overlay] {
       display: grid;
       grid-template-rows: [ea-toolbar-start] var(--ea-toolbar-height) [ea-toolbar-end ea-main-start] 1fr [ea-footer-start ea-main-end];
-      grid-template-columns: [ea-drawer-start] var(--drawer-width) [ea-drawer-end ea-main-start] 1fr [ea-main-end];
+      grid-template-columns: [ea-drawer-start] var(--ea-drawer-width) [ea-drawer-end ea-main-start] 1fr [ea-main-end];
       height: 100vh;
     }
     &[nav-overlay] > ea-main {
@@ -137,7 +181,7 @@
 
     & [overlay] {
       grid-row: ea-toolbar-end / ea-main-end;
-      grid-column: ea-drawer-end / ea-main-end;
+      grid-column: ea-drawer-start / ea-main-end;
       background: #000;
       opacity: 0.5;
       z-index: 1;

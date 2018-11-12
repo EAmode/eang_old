@@ -37,6 +37,9 @@ export class Layout implements OnInit {
       this.layout.screenSize = b
       this.layout.isDrawerOverlay = b === 'XSmall' ? true : false
       this.stateAttr = this.layout.isDrawerOverlay ? '' : null
+      if (this.layout.isDrawerOverlay) {
+        this.layout.drawerState$.next('closed')
+      }
     })
   }
 }

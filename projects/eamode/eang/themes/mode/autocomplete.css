@@ -1,4 +1,4 @@
-.mode {
+@define-mixin autocomplete {
   & ea-autocomplete {
     --ea-autocomplete-width: var(--ea-autocomplete-width, auto);
 
