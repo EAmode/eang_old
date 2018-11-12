@@ -213,6 +213,9 @@
     &[add-file] {
       background-image: inline('mode/icon/add-file.svg');
     }
+    &[terminal] {
+      background-image: inline('mode/icon/terminal.svg');
+    }
     &[negative] {
       filter: invert(100%);
     }
