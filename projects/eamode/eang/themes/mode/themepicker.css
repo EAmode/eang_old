@@ -2,7 +2,6 @@
   & ea-themepicker {
     cursor: pointer;
     outline: none;
-
     & .icon-button {
       cursor: pointer;
       width: 1.6rem;

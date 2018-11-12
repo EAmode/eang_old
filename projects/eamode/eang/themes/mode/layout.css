@@ -39,6 +39,8 @@
         display: flex;
         align-items: center;
         background: var(--ea-color-background-2);
+        padding: 1rem;
+        box-sizing: border-box;
         & p {
           color: var(--ea-color-3);
         }
@@ -100,6 +102,13 @@
       h3 {
         margin: 0;
       }
+
+      & a {
+        color: var(--ea-color-3);
+        text-decoration: none;
+        font-size: 1rem;
+        margin: 0.5em;
+      }
     }
 
     & ea-drawer {
@@ -112,6 +121,10 @@
 
       & section {
         flex-grow: 1;
+      }
+
+      & footer {
+        padding: 1rem;
       }
 
       &[resize] {
