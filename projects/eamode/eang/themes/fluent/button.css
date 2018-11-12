@@ -1,4 +1,4 @@
-.fluentdark {
+@define-mixin button {
   & button {
     --ea-button-color: var(
       --ea-button-color,

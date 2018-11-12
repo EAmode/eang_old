@@ -1,14 +1,21 @@
-@import 'fluentdark/variables.css';
-@import 'fluentdark/button.css';
-/* @import 'fluentdark/fonts.css';
-@import 'fluentdark/markdown.css';
-@import 'fluentdark/autocomplete.css';
-@import 'fluentdark/panel.css';
-@import 'fluentdark/text-elements.css';
-@import 'fluentdark/themepicker.css';
-@import 'fluentdark/card.css';
-@import 'fluentdark/icons.css';
-@import 'fluentdark/layout.css';
-@import 'fluentdark/table.css';
-@import '_base.css'; */
+@import 'mode/variables.css';
+@import 'mode/fonts.css';
+@import 'mode/markdown.css';
+@import 'mode/autocomplete.css';
+@import 'mode/panel.css';
+@import 'mode/text-elements.css';
+@import 'mode/themepicker.css';
+@import 'mode/card.css';
+@import 'mode/icons.css';
+@import 'mode/layout.css';
+@import 'mode/table.css';
+@import '_base.css';
+
+@import 'fluent/button.css';
+
+.fluent {
+  @mixin button ;
+
+
+}
 
