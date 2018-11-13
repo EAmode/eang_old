@@ -1,14 +1,16 @@
-@define-mixin panel {
+@define-mixin panel-base {
+  --ea-panel-color: var(--ea-color-1);
+  --ea-panel-background: var(--ea-color-background-2);
+
+  --ea-panel-height: var(--ea-panel-height, initial);
+  --ea-panel-width: var(--ea-panel-width, initial);
+  --ea-panel-max-height: var(--ea-panel-max-height, 100%);
+  --ea-panel-max-width: var(--ea-panel-max-width, 100%);
+  --ea-panel-min-size-ratio: 0.5;
+}
+@define-mixin panel-mode {
   & ea-panel {
-    --ea-panel-color: var(--ea-color-1);
-    --ea-panel-background: var(--ea-color-background-2);
-
-    --ea-panel-height: var(--ea-panel-height, initial);
-    --ea-panel-width: var(--ea-panel-width, initial);
-    --ea-panel-max-height: var(--ea-panel-max-height, 100%);
-    --ea-panel-max-width: var(--ea-panel-max-width, 100%);
-    --ea-panel-min-size-ratio: 0.5;
-
+    @mixin panel-base;
     display: block;
     color: var(--ea-panel-color);
     background: var(--ea-panel-background);

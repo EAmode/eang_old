@@ -14,15 +14,15 @@
 @import 'mode/table.css';
 
 .mode {
-  @mixin autocomplete;
-  @mixin button;
-  @mixin card;
+  @mixin autocomplete-mode;
+  @mixin button-mode;
+  @mixin card-mode;
   @mixin icons;
-  @mixin layout;
-  @mixin markdown;
-  @mixin panel;
+  @mixin layout-mode;
+  @mixin markdown-mode;
+  @mixin panel-base;
   @mixin typography;
   @mixin themepicker;
-  @mixin table;
-  @mixin panel;
+  @mixin table-mode;
+  @mixin panel-mode;
 }

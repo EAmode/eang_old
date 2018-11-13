@@ -1,18 +1,20 @@
-@define-mixin layout {
+@define-mixin layout-base {
+  --ea-drawer-header-height: 4rem;
+  --ea-drawer-footer-height: 4rem;
+  --ea-drawer-width: var(--ea-drawer-width, 300px);
+  --ea-toolbar-height: var(--ea-toolbar-height, 4rem);
+  --drawer-width: 300px;
+  --ea-footer-height: var(--ea-footer-height, 4.5rem);
+  --ea-toolbar-color: var(--ea-toolbar-color, var(--ea-color-3));
+  --ea-drawer-background: var(
+    --ea-drawer-background,
+    var(--ea-color-background-4)
+  );
+  --ea-body-display: var(--ea-body-display, block);
+}
+@define-mixin layout-mode {
   & ea-layout {
-    --ea-drawer-header-height: 4rem;
-    --ea-drawer-footer-height: 4rem;
-    --ea-drawer-width: var(--ea-drawer-width, 300px);
-    --ea-toolbar-height: var(--ea-toolbar-height, 4rem);
-    --drawer-width: 300px;
-    --ea-footer-height: var(--ea-footer-height, 4.5rem);
-    --ea-toolbar-color: var(--ea-toolbar-color, var(--ea-color-3));
-    --ea-drawer-background: var(
-      --ea-drawer-background,
-      var(--ea-color-background-4)
-    );
-    --ea-body-display: var(--ea-body-display, block);
-
+    @mixin layout-base;
     display: grid;
     height: 100vh;
     overflow: hidden;
