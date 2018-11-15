@@ -11,23 +11,9 @@
     --ea-button-border,
     var(--ea-color-background-2) solid 0.1em
   );
-  --ea-button-border-outline: 0em; /*Sets the initial em for the border outline*/
-  --ea-button-border-radius: 0em; /*Sets the border radius for the button*/
-  --ea-button-height: var(--ea-button-height, 2.19em);
-  --ea-button-padding: var(--ea-button-padding, 0 1.5em);
-  --ea-button-margin: var(--ea-button-margin, 0);
-  --ea-button-border-radius: var(--ea-button-border-radius, 0.25em);
-
-  font-size: var(--ea-card-font-size);
-  padding: var(--ea-button-padding);
-  height: var(--ea-button-height);
   background-color: var(--ea-button-background-color);
   color: var(--ea-button-color);
   border: var(--ea-button-border);
-  border-radius: var(--ea-button-border-radius);
-  margin: var(--ea-button-margin);
-  cursor: pointer;
-  outline: none;
 }
 
 @define-mixin button-mode {
@@ -38,8 +24,20 @@
 
     @mixin button-base;
 
-    box-sizing: border-box;
+    font-size: 1em;
+    border: 0.1em inset transparent;
+    height: 2.19em;
+    padding:0 1.5em;
+    margin: 0;
+    border-radius: 0.25em;
+    box-sizing: content-box;
+    cursor: pointer;
+    outline: none;
     transition: all 0.25s ease 0s;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &:active {
       border: 0.1em inset #212d4d;
@@ -56,11 +54,6 @@
       border: var(--ea-color-background-6) solid 0.1em;
     }
 
-
-
-
-
-
 /*------------------------------------*\
   #BUTTON[OUTLINE]
 \*------------------------------------*/
@@ -68,6 +61,7 @@
     &[outline] {
       --ea-button-background-color: transparent;
       color: var(--ea-alt-color-1);
+      border: 0.1em inset #212d4d;
 
       &:active {
         --ea-button-background-color: rgba(0, 0, 0, 0.05);
@@ -87,26 +81,23 @@
       }
     }
 
-
-
-
-
-/*------------------------------------*\
+    /*------------------------------------*\
   #BUTTON[FLAT]
 \*------------------------------------*/
 
     &[flat] {
       background-color: transparent;
-      border: 1px solid rgba(0,0,0,0);
+      border: 1px solid rgba(0, 0, 0, 0);
+      color: var(--ea-color-1);
 
       &:active {
-        border: 1px solid #d3d3d3;
+        border: 1px solid rgba(0, 0, 0, 0);
         box-shadow: unset;
         background-color: rgba(0, 0, 0, 0.25);
       }
 
       &:hover:not(:active) {
-        border: 1px solid rgba(0,0,0,0);
+        border: 1px solid rgba(0, 0, 0, 0);
         background-color: rgba(0, 0, 0, 0.1);
       }
     }
@@ -115,29 +106,32 @@
     #BUTTON[ICON]
     \*------------------------------------*/
     &[icon] {
-      border: none !important;
-      background: none;
-      padding: 0;
-      outline: none;
+      height: min-content;
+      padding: 0.2em;
     }
 
-    &[icon]:hover {
-      background-color: rgba(0, 0, 0, 0.1);
-      border: none;
+    &[left] {
+      & > span[icon] {
+        margin-left:0;
+      }
     }
 
-    &[icon]:active {
-      background-color: rgba(0, 0, 0, 0.2);
+    &[right] {
+      & > span[icon] {
+        margin-right: 0;
+      }
     }
 
-    & [small] {
-      font-size: 0.8rem;
+    /*------------------------------------*\
+    #BUTTON[Rounded]
+    \*------------------------------------*/
+
+    &[rounded] {
+      border-radius: 1.5rem;
     }
-    & [medium] {
-      font-size: calc(var(--ea-card-font-size) * 1.2);
-    }
-    & [large] {
-      font-size: calc(var(--ea-card-font-size) * 1.5);
+
+    &[circle] {
+      border-radius: 50%;
     }
 
     /*------------------------------------*\
