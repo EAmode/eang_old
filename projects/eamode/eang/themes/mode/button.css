@@ -21,7 +21,6 @@
     /*------------------------------------*\
       #BUTTON
     \*------------------------------------*/
-
     @mixin button-base;
 
     font-size: 1em;
@@ -40,18 +39,21 @@
     align-items: center;
 
     &:active {
+      background-color: var(--ea-button-background-color);
       border: 0.1em inset #212d4d;
-      box-shadow: inset 2px 1px 9px 0px rgba(0, 0, 0, 0.25);
+      box-shadow: var(--ea-button-box-shadow);
     }
 
     &:hover:not(:active) {
-      border: 0.1em solid #5779cc;
+      background-color: white;
+      border:  0.1em solid #5779cc;
     }
 
     &[disabled] {
+      --ea-button-border: var(--ea-color-background-6) solid 0.1em;
       opacity: 0.65;
       cursor: not-allowed;
-      border: var(--ea-color-background-6) solid 0.1em;
+      border: var(--ea-button-border);
     }
 
 /*------------------------------------*\
@@ -64,20 +66,16 @@
       border: 0.1em inset #212d4d;
 
       &:active {
-        --ea-button-background-color: rgba(0, 0, 0, 0.05);
-
-        border: 0.1em inset #212d4d;
-        box-shadow: inset 2px 1px 9px 0px rgba(0, 0, 0, 0.15);
+        background-color: rgba(0, 0, 0, 0.05);
+        border:0.1em inset #212d4d;
       }
 
       &:hover:not(:active) {
-        border: 0.1em solid #212d4d;
+       border: 0.1em solid #212d4d;
       }
 
       &[disabled] {
-        opacity: 0.65;
-        cursor: not-allowed;
-        border: var(--ea-color-background-6) solid 0.1em;
+       border: var(--ea-color-background-6) solid 0.1em;
       }
     }
 
@@ -101,6 +99,9 @@
         background-color: rgba(0, 0, 0, 0.1);
       }
     }
+
+
+
 
     /*------------------------------------*\
     #BUTTON[ICON]
