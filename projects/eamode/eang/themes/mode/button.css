@@ -1,33 +1,20 @@
 @define-mixin button-base {
-  --ea-button-color: var(
-    --ea-button-color,
-    var(--ea-color-3)
-  ); /* Sets the button font-color */
-  --ea-button-background-color: var(
-    --ea-button-background-color,
-    var(--ea-color-background-2)
-  ); /* Sets the button background color */
-  --ea-button-border: var(
-    --ea-button-border,
-    var(--ea-color-background-2) solid 0.1em
-  );
-  --ea-button-border-outline: 0em; /*Sets the initial em for the border outline*/
-  --ea-button-border-radius: 0em; /*Sets the border radius for the button*/
-  --ea-button-height: var(--ea-button-height, 2.19em);
-  --ea-button-padding: var(--ea-button-padding, 0 1.5em);
-  --ea-button-margin: var(--ea-button-margin, 0);
-  --ea-button-border-radius: var(--ea-button-border-radius, 0.25em);
+  --ea-button-color: var( --ea-button-color,var(--ea-color-3)); 
+  --ea-button-background-color: var(--ea-button-background-color, var(--ea-color-background-2)); 
+  --ea-button-border: var(--ea-button-border, var(--ea-color-background-2) solid 0.1em);
 
-  font-size: var(--ea-card-font-size);
-  padding: var(--ea-button-padding);
-  height: var(--ea-button-height);
   background-color: var(--ea-button-background-color);
   color: var(--ea-button-color);
-  border: var(--ea-button-border);
-  border-radius: var(--ea-button-border-radius);
-  margin: var(--ea-button-margin);
+  font-size: var(--ea-card-font-size);
+  border-outline: 0em; 
+  height: 2.19em;
+  padding: 0 1.5em;
+  margin: 0;
+  border-radius: 0.25em;
+  box-shadow: inset 2px 1px 9px 0px rgba(0, 0, 0, 0.25);
   cursor: pointer;
   outline: none;
+  box-sizing: content-box;
 }
 
 @define-mixin button-mode {
@@ -35,25 +22,24 @@
     /*------------------------------------*\
       #BUTTON
     \*------------------------------------*/
-
     @mixin button-base;
-
-    box-sizing: border-box;
-    transition: all 0.25s ease 0s;
-
+    
     &:active {
+      background-color: var(--ea-button-background-color);
       border: 0.1em inset #212d4d;
-      box-shadow: inset 2px 1px 9px 0px rgba(0, 0, 0, 0.25);
+      box-shadow: var(--ea-button-box-shadow);
     }
 
     &:hover:not(:active) {
-      border: 0.1em solid #5779cc;
+      background-color: white;
+      border:  0.1em solid #5779cc;
     }
 
     &[disabled] {
+      --ea-button-border: var(--ea-color-background-6) solid 0.1em;
       opacity: 0.65;
       cursor: not-allowed;
-      border: var(--ea-color-background-6) solid 0.1em;
+      border: var(--ea-button-border);
     }
 
 
@@ -66,24 +52,19 @@
 \*------------------------------------*/
 
     &[outline] {
-      --ea-button-background-color: transparent;
-      color: var(--ea-alt-color-1);
+      color: transparent;
 
       &:active {
-        --ea-button-background-color: rgba(0, 0, 0, 0.05);
-
-        border: 0.1em inset #212d4d;
-        box-shadow: inset 2px 1px 9px 0px rgba(0, 0, 0, 0.15);
+        background-color: rgba(0, 0, 0, 0.05);
+        border:0.1em inset #212d4d;
       }
-
+  
       &:hover:not(:active) {
-        border: 0.1em solid #212d4d;
+       border: 0.1em solid #212d4d;
       }
-
+  
       &[disabled] {
-        opacity: 0.65;
-        cursor: not-allowed;
-        border: var(--ea-color-background-6) solid 0.1em;
+       border: var(--ea-color-background-6) solid 0.1em;
       }
     }
 
@@ -98,36 +79,40 @@
     &[flat] {
       background-color: transparent;
       border: 1px solid rgba(0,0,0,0);
+      box-shadow: unset;
 
       &:active {
-        border: 1px solid #d3d3d3;
-        box-shadow: unset;
-        background-color: rgba(0, 0, 0, 0.25);
+          box-shadow: unset;
+          border: 1px solid #d3d3d3;
+          background-color: rgba(0, 0, 0, 0.25);
       }
 
       &:hover:not(:active) {
-        border: 1px solid rgba(0,0,0,0);
-        background-color: rgba(0, 0, 0, 0.1);
+        --ea-button-border: 1px solid rgba(0,0,0,0);
+        --ea-button-background-color: rgba(0, 0, 0, 0.1);
       }
     }
+
+
+
 
     /*------------------------------------*\
     #BUTTON[ICON]
     \*------------------------------------*/
     &[icon] {
-      border: none !important;
-      background: none;
-      padding: 0;
-      outline: none;
+      --ea-button-border: none;
+      --ea-button-background: none;
+      --ea-button-padding: 0;
+      --ea-button-outline: none;
     }
 
     &[icon]:hover {
-      background-color: rgba(0, 0, 0, 0.1);
-      border: none;
+      --ea-button-background-color: rgba(0, 0, 0, 0.1);
+      --ea-button-border: none;
     }
 
     &[icon]:active {
-      background-color: rgba(0, 0, 0, 0.2);
+      --ea-button-background-color: rgba(0, 0, 0, 0.2);
     }
 
     & [small] {
