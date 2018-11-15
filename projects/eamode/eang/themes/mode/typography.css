@@ -4,7 +4,6 @@
     --ea-h1-font-family: var(--ea-h1-font-family, var(--ea-font-1));
 
     font-size: var(--ea-h1-font-size);
-    line-height: 3.5rem;
     font-family: var(--ea-h1-font-family);
     font-weight: lighter;
     margin-bottom: 0.6em;
@@ -22,7 +21,6 @@
   & h3 {
     font-size: 1.5em;
     font-weight: 400;
-    line-height: 1.75em;
     margin: 0.2rem 0 0.1rem 0;
   }
   & h4 {

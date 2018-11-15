@@ -1,33 +1,119 @@
 @define-mixin button-base {
+  --ea-button-color: var(
+    --ea-button-color,
+    var(--ea-color-3)
+  ); /* Sets the button font-color */
+  --ea-button-background-color: var(
+    --ea-button-background-color,
+    var(--ea-color-background-2)
+  ); /* Sets the button background color */
+  --ea-button-border: var(
+    --ea-button-border,
+    var(--ea-color-background-2) solid 0.1em
+  );
+  --ea-button-border-outline: 0em; /*Sets the initial em for the border outline*/
+  --ea-button-border-radius: 0em; /*Sets the border radius for the button*/
+  --ea-button-height: var(--ea-button-height, 2.19em);
+  --ea-button-padding: var(--ea-button-padding, 0 1.5em);
+  --ea-button-margin: var(--ea-button-margin, 0);
+  --ea-button-border-radius: var(--ea-button-border-radius, 0.25em);
 
-    --ea-button-color: var(--ea-button-color, var(--ea-color-3)); /* Sets the button font-color */
-    --ea-button-background-color: var(--ea-button-background-color, var(--ea-color-background-2)); /* Sets the button background color */
-    --ea-button-border: var(--ea-button-border, var(--ea-color-background-2));
-    --ea-button-border-outline: 0em; /*Sets the initial em for the border outline*/
-    --ea-button-border-radius: 0em; /*Sets the border radius for the button*/
-    --ea-button-padding: var(--ea-button-padding, 0.7em 1.6em);
-    --ea-button-margin: var(--ea-button-margin, 0);
-
-    font-size: var(--ea-card-font-size);
-    padding: var(--ea-button-padding);
-    background-color: var(--ea-button-background-color);
-    color: var(--ea-button-color);
-    border: var(--ea-button-border) solid 0.1em;
-    margin: var(--ea-button-margin);
+  font-size: var(--ea-card-font-size);
+  padding: var(--ea-button-padding);
+  height: var(--ea-button-height);
+  background-color: var(--ea-button-background-color);
+  color: var(--ea-button-color);
+  border: var(--ea-button-border);
+  border-radius: var(--ea-button-border-radius);
+  margin: var(--ea-button-margin);
+  cursor: pointer;
+  outline: none;
 }
-
 
 @define-mixin button-mode {
   & button {
+    /*------------------------------------*\
+      #BUTTON
+    \*------------------------------------*/
+
     @mixin button-base;
-    border-radius: 0.2em;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
+
     box-sizing: border-box;
-    outline: none;
     transition: all 0.25s ease 0s;
 
+    &:active {
+      border: 0.1em inset #212d4d;
+      box-shadow: inset 2px 1px 9px 0px rgba(0, 0, 0, 0.25);
+    }
+
+    &:hover:not(:active) {
+      border: 0.1em solid #5779cc;
+    }
+
+    &[disabled] {
+      opacity: 0.65;
+      cursor: not-allowed;
+      border: var(--ea-color-background-6) solid 0.1em;
+    }
+
+
+
+
+
+
+/*------------------------------------*\
+  #BUTTON[OUTLINE]
+\*------------------------------------*/
+
+    &[outline] {
+      --ea-button-background-color: transparent;
+      color: var(--ea-alt-color-1);
+
+      &:active {
+        --ea-button-background-color: rgba(0, 0, 0, 0.05);
+
+        border: 0.1em inset #212d4d;
+        box-shadow: inset 2px 1px 9px 0px rgba(0, 0, 0, 0.15);
+      }
+
+      &:hover:not(:active) {
+        border: 0.1em solid #212d4d;
+      }
+
+      &[disabled] {
+        opacity: 0.65;
+        cursor: not-allowed;
+        border: var(--ea-color-background-6) solid 0.1em;
+      }
+    }
+
+
+
+
+
+/*------------------------------------*\
+  #BUTTON[FLAT]
+\*------------------------------------*/
+
+    &[flat] {
+      background-color: transparent;
+      border: 1px solid rgba(0,0,0,0);
+
+      &:active {
+        border: 1px solid #d3d3d3;
+        box-shadow: unset;
+        background-color: rgba(0, 0, 0, 0.25);
+      }
+
+      &:hover:not(:active) {
+        border: 1px solid rgba(0,0,0,0);
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+    }
+
+    /*------------------------------------*\
+    #BUTTON[ICON]
+    \*------------------------------------*/
     &[icon] {
       border: none !important;
       background: none;
@@ -43,56 +129,44 @@
     &[icon]:active {
       background-color: rgba(0, 0, 0, 0.2);
     }
-  }
-  & [small] {
-    font-size: calc(var(--ea-card-font-size) * 0.8);
-  }
-  & [medium] {
-    font-size: calc(var(--ea-card-font-size) * 1.2);
-  }
-  & [large] {
-    font-size: calc(var(--ea-card-font-size) * 1.5);
-  }
 
-  & [outline] {
-    --ea-button-background-color: none;
-    color: var(--ea-alt-color-1);
-  }
+    & [small] {
+      font-size: 0.8rem;
+    }
+    & [medium] {
+      font-size: calc(var(--ea-card-font-size) * 1.2);
+    }
+    & [large] {
+      font-size: calc(var(--ea-card-font-size) * 1.5);
+    }
 
-  &[primary] {
-    color: var(--ea-color-1);
-    background-color: var(--ea-color-accent-1);
-  }
-  &[secondary] {
-    color: var(--ea-color-1);
-    background-color: var(--ea-color-accent-2);
-  }
-  &[success] {
-    color: var(--ea-color-1);
-    background-color: var(--ea-color-success);
-  }
-  &[info] {
-    color: var(--ea-color-1);
-    background-color: var(--ea-color-info);
-  }
-  &[warning] {
-    color: var(--ea-color-1);
-    background-color: var(--ea-color-warning);
-  }
-  &[danger] {
-    color: var(--ea-color-1);
-    background-color: var(--ea-color-danger);
-  }
-  & button[disabled] {
-    opacity: 0.65;
-    cursor: not-allowed;
-    border: var(--ea-color-background-6) solid 0.1em;
-  }
-  & button:hover {
-    border: var(--ea-color-background-6) solid 0.1em;
-  }
+    /*------------------------------------*\
+  #BUTTON-COLORS
+\*------------------------------------*/
 
-  & button:active {
-    background-color: var(--ea-color-background-6);
+    &[primary] {
+      color: var(--ea-color-1);
+      background-color: var(--ea-color-accent-1);
+    }
+    &[secondary] {
+      color: var(--ea-color-1);
+      background-color: var(--ea-color-accent-2);
+    }
+    &[success] {
+      color: var(--ea-color-1);
+      background-color: var(--ea-color-success);
+    }
+    &[info] {
+      color: var(--ea-color-1);
+      background-color: var(--ea-color-info);
+    }
+    &[warning] {
+      color: var(--ea-color-1);
+      background-color: var(--ea-color-warning);
+    }
+    &[danger] {
+      color: var(--ea-color-1);
+      background-color: var(--ea-color-danger);
+    }
   }
 }
