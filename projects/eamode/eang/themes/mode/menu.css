@@ -1,26 +1,38 @@
-.mode {
+
+  @define-mixin menu {
   & ea-menu {
+  
     user-select: none;
     cursor: pointer;
     display: flex;
-    align-items: center;
+    align-items: left;
+    justify-content: flex-start;
+    flex-direction: column;
     font-weight: 400;
-    justify-content: space-between;
     line-height: 25px;
 
     & .node-toggle {
       padding: 0;
-      width: 1.4rem;
+      min-width: 1.4rem;
+      width: 1.4em;
       height: 1.2rem;
       background: none;
+      border: none;
       cursor: pointer;
       display: flex;
       justify-content: center;
       align-items: center;
 
       & span {
-        height: 0.8em;
-        width: 0.8em;
+        margin: 0
+      }
+
+      &:hover {
+        border: none
+      }
+
+      &[disabled] {
+        border: none
       }
     }
 
@@ -32,78 +44,80 @@
       align-items: center;
     }
 
-    & .chevron {
-      --ea-button-icon: var(--ea-icon-chevron);
-      width: 1.2rem;
-    }
-
     & aside {
       width: 1rem;
       height: 1rem;
     }
 
-    &.has-children {
-      & .ea-icon-button .chevron-right {
-        --ea-button-icon: var(--ea-icon-chevron-right);
+    & .node {
+      display: flex;
+      line-height: 2.5em;
+      align-items: center;
 
-        height: 0.7rem;
-        width: 0.8rem;
-        background-position: center;
-        background-position-x: right;
-      }
-
-      & .ea-icon-button .chevron-down {
-        --ea-button-icon: var(--ea-icon-chevron-down);
-
-        height: 0.7rem;
-        width: 0.8rem;
-        background-position: center;
-        background-position-x: right;
-        margin-left: 0.2rem;
-      }
-
-      & .node-toggle {
-        &:hover {
-          background: rgba(0, 0, 0, 0.1);
+      &.has-children {
+        line-height: 2.5em;
+        & .node-toggle span[chevron-right] {
+          height: 0.7rem;
+          width: 0.8rem;
+          background-position: center;
         }
-      }
-
-      & .ea-tree-children {
-        & .node .name {
-          margin-left: 10px;
+  
+        & .node-toggle span[chevron-down] {
+          height: 0.7rem;
+          width: 0.8rem;
+          background-position: center;
+          margin-left: 0.2rem;
         }
-      }
-    }
-
-    &[active] {
-      background: var(--ea-color-background-6);
-      color: var(--ea-color-1);
-    }
-
-    &:hover {
-      background: var(--ea-color-background-2);
-      color: var(--ea-color-3);
-
-      & .ea-icon-button.chevron-right.chevron-down {
-        --ea-button-icon: var(--ea-icon-chevron-down-neg);
+  
+        & .node-toggle {
+          &:hover {
+            background: rgba(0, 0, 0, 0.1);
+          }
+        }
+  
       }
 
-      & .ea-icon-button.chevron-right {
-        --ea-button-icon: var(--ea-icon-chevron-right-neg);
+      &[active] {
+        background: var(--ea-color-background-6);
+        color: var(--ea-color-1);
       }
 
-      & .ea-icon-button.object-menu {
-        --ea-button-icon: var(--ea-icon-vertical-menu);
-
-        display: block;
-        background-position: center;
-        cursor: pointer;
-
-        &:hover {
-          transform: scale(1.2);
+      &:hover {
+        background: var(--ea-color-background-2);
+        color: var(--ea-color-3);
+  
+        & .node-toggle span[chevron-down] {
+          --ea-button-icon: var(--ea-icon-chevron-down-neg);
+        }
+  
+        & .node-toggle span[chevron-right] {
+          --ea-button-icon: var(--ea-icon-chevron-right-neg);
+        }
+  
+        & .node-toggle.object-menu {
+          --ea-button-icon: var(--ea-icon-vertical-menu);
+  
+          display: block;
+          background-position: center;
+          cursor: pointer;
+  
+          &:hover {
+            transform: scale(1.2);
+          }
         }
       }
     }
+
+    & .ea-tree-children {
+
+      &.horizontal {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+      }
+
+    }
+
   }
-
-}
+  }

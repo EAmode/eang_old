@@ -7,223 +7,294 @@
     width: 1em;
     margin: 0.3em;
 
-    &[alert-circle] {
+    &[alert-circle],
+    &.alert-circle {
       background-image: inline('mode/icon/alert-circle.svg');
     }
-    &[alert-octagon] {
+    &[alert-octagon],
+    &.alert-octagon {
       background-image: inline('mode/icon/alert-octagon.svg');
     }
-    &[align-justify] {
+    &[align-justify],
+    &.align-justify {
       background-image: inline('mode/icon/align-justify.svg');
     }
-    &[alert-triangle] {
+    &[alert-triangle],
+    &.alert-triangle {
       background-image: inline('mode/icon/alert-triangle.svg');
     }
-    &[align-center] {
+    &[align-center],
+    &.align-center {
       background-image: inline('mode/icon/align-center.svg');
     }
-    &[align-left] {
+    &[align-left],
+    &.align-left {
       background-image: inline('mode/icon/align-left.svg');
     }
-    &[align-right] {
+    &[align-right],
+    &.align-right {
       background-image: inline('mode/icon/align-right.svg');
     }
-    &[archive] {
+    &[archive],
+    &.archive {
       background-image: inline('mode/icon/archive.svg');
     }
-    &[arrow-down-circle] {
+    &[arrow-down-circle],
+    &.arrow-down-circle {
       background-image: inline('mode/icon/arrow-down-circle.svg');
     }
-    &[arrow-down-left] {
+    &[arrow-down-left],
+    &.arrow-down-left {
       background-image: inline('mode/icon/arrow-down-left.svg');
     }
-    &[arrow-down-right] {
+    &[arrow-down-right],
+    &.arrow-down-right {
       background-image: inline('mode/icon/arrow-down-right.svg');
     }
-    &[arrow-down] {
+    &[arrow-down],
+    &.arrow-down {
       background-image: inline('mode/icon/arrow-down.svg');
     }
-    &[arrow-left-circle] {
+    &[arrow-left-circle],
+    &.arrow-left-circle {
       background-image: inline('mode/icon/arrow-left-circle.svg');
     }
-    &[arrow-left] {
+    &[arrow-left],
+    &.arrow-left {
       background-image: inline('mode/icon/arrow-left.svg');
     }
-    &[bar-chart] {
+    &[bar-chart],
+    &.bar-chart {
       background-image: inline('mode/icon/bar-chart.svg');
     }
-    &[bell-off] {
+    &[bell-off],
+    &.bell-off {
       background-image: inline('mode/icon/bell-off.svg');
     }
-    &[bell] {
+    &[bell],
+    &.bell {
       background-image: inline('mode/icon/bell.svg');
     }
-    &[layers] {
+    &[layers],
+    &.layers {
       background-image: inline('mode/icon/layers.svg');
     }
-    &[grid] {
+    &[grid],
+    &.grid {
       background-image: inline('mode/icon/grid.svg');
     }
-    &[bluetooth] {
+    &[bluetooth],
+    &.bluetooth {
       background-image: inline('mode/icon/bluetooth.svg');
     }
-    &[bookmark] {
+    &[bookmark],
+    &.bookmark {
       background-image: inline('mode/icon/bookmark.svg');
     }
-    &[calendar] {
+    &[calendar],
+    &.calendar {
       background-image: inline('mode/icon/calendar.svg');
     }
-    &[check-circle] {
+    &[check-circle],
+    &.check-circle {
       background-image: inline('mode/icon/check-circle.svg');
     }
-    &[check-square] {
+    &[check-square],
+    &.check-square {
       background-image: inline('mode/icon/check-square.svg');
     }
-    &[code] {
+    &[code],
+    &.code {
       background-image: inline('mode/icon/code.svg');
     }
-    &[crosshair] {
+    &[crosshair],
+    &.crosshair  {
       background-image: inline('mode/icon/crosshair.svg');
     }
-    &[database] {
+    &[database],
+    &.database {
       background-image: inline('mode/icon/database.svg');
     }
-    &[download-cloud] {
+    &[download-cloud],
+    &.downdload-cloud {
       background-image: inline('mode/icon/download-cloud.svg');
     }
-    &[external-link] {
+    &[external-link],
+    &.external-link {
       background-image: inline('mode/icon/external-link.svg');
     }
-    &[filter] {
+    &[filter],
+    &.filter {
       background-image: inline('mode/icon/filter.svg');
     }
-    &[folder-plus] {
+    &[folder-plus],
+    &.folder-plus {
       background-image: inline('mode/icon/folder-plus.svg');
     }
-    &[help-circle] {
+    &[help-circle],
+    &.help-circle {
       background-image: inline('mode/icon/help-circle.svg');
     }
-    &[inbox] {
+    &[inbox],
+    &.inbox {
       background-image: inline('mode/icon/inbox.svg');
     }
-    &[link-2] {
+    &[link-2],
+    &.link-2 {
       background-image: inline('mode/icon/link-2.svg');
     }
-    &[link] {
+    &[link],
+    &.link {
       background-image: inline('mode/icon/link.svg');
     }
-    &[paperclip] {
+    &[paperclip],
+    &.paperclip {
       background-image: inline('mode/icon/paperclip.svg');
     }
-    &[plus-circle] {
+    &[plus-circle],
+    &.plus-circle {
       background-image: inline('mode/icon/plus-circle.svg');
     }
-    &[printer] {
+    &[printer],
+    &.printer {
       background-image: inline('mode/icon/printer.svg');
     }
-    &[refresh-cw] {
+    &[refresh-cw],
+    &.refresh-cw {
       background-image: inline('mode/icon/refresh-cw.svg');
     }
-    &[share] {
+    &[share],
+    &.share {
       background-image: inline('mode/icon/share.svg');
     }
-    &[toggle-left] {
+    &[toggle-left],
+    &.toggle-left {
       background-image: inline('mode/icon/toggle-left.svg');
     }
-    &[toggle-right] {
+    &[toggle-right],
+    &.toggle-right {
       background-image: inline('mode/icon/toggle-right.svg');
     }
-    &[trash-2] {
+    &[trash-2],
+    &.trash-2 {
       background-image: inline('mode/icon/trash-2.svg');
     }
-    &[upload] {
+    &[upload],
+    &.upload {
       background-image: inline('mode/icon/upload.svg');
     }
-    &[volume-1] {
+    &[volume-1],
+    &.volume-1 {
       background-image: inline('mode/icon/volume-1.svg');
     }
-    &[volume-2] {
+    &[volume-2]
+    &.volume-2 {
       background-image: inline('mode/icon/volume-2.svg');
     }
-    &[volume-x] {
+    &[volume-x]
+    &.volume-x {
       background-image: inline('mode/icon/volume-x.svg');
     }
-    &[wifi-off] {
+    &[wifi-off]
+    &.wifi-off {
       background-image: inline('mode/icon/wifi-off.svg');
     }
-    &[wifi] {
+    &[wifi],
+    &.wifi {
       background-image: inline('mode/icon/wifi.svg');
     }
-    &[zoom-in] {
+    &[zoom-in],
+    &.zoom-in {
       background-image: inline('mode/icon/zoom-in.svg');
     }
-    &[zoom-out] {
+    &[zoom-out],
+    &.zoom-out {
       background-image: inline('mode/icon/zoom-out.svg');
     }
-    &[hamburger-menu] {
+    &[hamburger-menu],
+    &.hamburger-menu {
       background-image: inline('mode/icon/menu.svg');
     }
-    &[minimized] {
+    &[minimized],
+    &.minimized {
       background-image: inline('mode/icon/minimized.svg');
     }
-    &[maximized-2] {
+    &[maximized-2],
+    &.maximized-2 {
       background-image: inline('mode/icon/maximized-2.svg');
     }
-    &[x] {
+    &[x],
+    &.x {
       background-image: inline('mode/icon/x.svg');
     }
-    &[close] {
+    &[close],
+    &.close {
       background-image: inline('mode/icon/close.svg');
     }
-    &[sign-in] {
+    &[sign-in],
+    &.sign-in {
       background-image: inline('mode/icon/sign-in.svg');
     }
-
-    &[download] {
+    &[download],
+    &.download {
       background-image: inline('mode/icon/download.svg');
     }
-    &[chevron-right] {
+    &[chevron-right],
+    &.chevron-right {
       background-image: inline('mode/icon/right-chevron.svg');
     }
-    & [menu-close] {
+    &[menu-close],
+    &.menu-close {
       background-image: inline('mode/icon/menu-close.svg');
     }
-    &[chevron-down] {
+    &[chevron-down],
+    &.chevron-down {
       background-image: inline('mode/icon/chevron-down.svg');
     }
-    &[vertical-menu] {
+    &[vertical-menu],
+    &.vertical-menu {
       background-image: inline('mode/icon/vertical-menu.svg');
     }
-    &[chevron] {
+    &[chevron],
+    &.chevron {
       background-image: inline('mode/icon/chevron.svg');
     }
-    &[chevrons-left] {
+    &[chevrons-left],
+    &.chevrons-left {
       background-image: inline('mode/icon/chevrons-left.svg');
     }
-    &[chevrons-right] {
+    &[chevrons-right],
+    &.chevrons-rifht {
       background-image: inline('mode/icon/chevrons-right.svg');
     }
-    &[save] {
+    &[save],
+    &.save {
       background-image: inline('mode/icon/save.svg');
     }
-    &[edit] {
+    &[edit],
+    &.edit {
       background-image: inline('mode/icon/edit.svg');
     }
-    &[add-file] {
+    &[add-file],
+    &.add-file {
       background-image: inline('mode/icon/add-file.svg');
     }
-    &[negative] {
+    &[negative],
+    &.negative {
       filter: invert(100%);
     }
-    &[aliceblue] {
+    &[aliceblue],
+    &.aliceblue {
       filter: invert(98%) sepia(77%) saturate(7219%) hue-rotate(178deg)
         brightness(112%) contrast(101%);
     }
-    &[AntiqueWhite] {
+    &[AntiqueWhite],
+    &.AntiqueWhite {
       filter: invert(82%) sepia(28%) saturate(168%) hue-rotate(344deg)
         brightness(109%) contrast(96%);
     }
-    &[aqua] {
+    &[aqua],
+    &.aqua {
       filter: invert(96%) sepia(34%) saturate(4436%) hue-rotate(107deg)
         brightness(101%) contrast(104%);
     }

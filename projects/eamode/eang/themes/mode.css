@@ -17,7 +17,6 @@
   @mixin autocomplete-mode;
   @mixin button-mode;
   @mixin card-mode;
-  @mixin icons;
   @mixin layout-mode;
   @mixin markdown-mode;
   @mixin panel-base;
@@ -25,4 +24,5 @@
   @mixin themepicker;
   @mixin table-mode;
   @mixin panel-mode;
+  @mixin menu;
 }
