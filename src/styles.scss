@@ -5,19 +5,24 @@
 .fluentdark,
 .mode,
 .material {
-  & [activity] {
+  & [activity]
+  & .activity {
     background: url('./assets/images/activity.svg');
   }
-  & [layout] {
+  & [layout],
+  & .layout {
     background: url('./assets/images/layout-icon.svg');
   }
-  & [button-icon] {
+  & [button-icon],
+  & .button-icon {
     background: url('./assets/images/button-icon.svg');
   }
-  & [pallete] {
+  & [pallete],
+  & .pallete {
     background: url('./assets/images/pallete.svg');
   }
-  & [terminal] {
+  & [terminal],
+  & .terminal {
     background-image: inline('mode/icon/terminal.svg');
   }
 }

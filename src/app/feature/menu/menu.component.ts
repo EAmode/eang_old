@@ -57,14 +57,21 @@ export class MenuComponent implements OnInit {
 
   nodeHorizontal
   nodeHiddenFalse
+  nodeWithTemplate
 
   constructor() {}
 
   ngOnInit() {
     this.nodeHorizontal = JSON.parse(JSON.stringify(this.node))
-    this.nodeHiddenFalse = JSON.parse(JSON.stringify(this.node))
     this.nodeHorizontal.horizontal = true
+
+    this.nodeHiddenFalse = JSON.parse(JSON.stringify(this.node))
     this.nodeHiddenFalse.isHidden = false
+
+    this.nodeWithTemplate = JSON.parse(JSON.stringify(this.node))
+    this.nodeWithTemplate.children[0].data.description =
+      'Notification description'
+    this.nodeWithTemplate.children[1].data.description = 'Cards description'
   }
 
   ea_menu = `

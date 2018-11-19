@@ -62,6 +62,25 @@
         </div>
       </div>
     </div>
+
+    <h1>Add your own template</h1>
+    <div class="ea-card-content example" grid>
+      <div class="ea-card" style="background:#333333;">
+        <div class="ea-card-header">
+          <p>ea-menu</p>
+        </div>
+        <div class="ea-card-content header" style="flex-direction: column;">
+          <ea-menu
+          [node]="nodeWithTemplate"
+          [controlPanelTemplate]="templateMenu">
+          </ea-menu> 
+        </div>
+        <ng-template #templateMenu let-data="node.data">
+          <div *ngIf="data">{{data.description}}</div>
+        </ng-template> 
+      </div>
+    </div>
+
     <p>Use these attributes in node.</p>
     <div>
       <h3>Attributes</h3>
@@ -117,4 +136,4 @@
         </tbody>
         </table>
     </div>
-    
+</div>

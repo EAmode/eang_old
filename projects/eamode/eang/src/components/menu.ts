@@ -22,21 +22,17 @@ export interface MenuTreeItem {
 @Component({
   selector: 'ea-menu',
   template: `
-  <div class="node" *ngIf="!node.isHidden"
+  <div class="node"
     [class.has-children]="node.children?.length > 0"
     [style.padding-left]="depth * 15 + 'px'"
+    [attr.hidden]="node.isHidden ? '' : null"
     [attr.active]="node.isActive ? '' : null">
       <ng-container *ngIf="node.icon">
-        <button *ngIf="node.children?.length > 0 else noChildren" (click)="onToggle()" class="node-toggle" custom>
+        <button [attr.disabled]="node.children?.length < 1 ? '' : null" (click)="onToggle()" class="node-toggle">
           <span icon class="{{node.icon}} {{node.iconStyle}}"></span>
         </button>
-        <ng-template #noChildren>
-          <button class="node-toggle" custom disabled>
-            <span icon class="{{node.icon}} {{node.iconStyle}}"></span>
-          </button>
-        </ng-template>
       </ng-container>
-      <button *ngIf="!node.icon && node.children?.length > 0" (click)="onToggle()" class="node-toggle" custom>
+      <button *ngIf="!node.icon && node.children?.length > 0" (click)="onToggle()" class="node-toggle">
           <span icon chevron-down *ngIf="node.isOpen" role="icon" style="margin: 0">
           </span>
           <span icon chevron-right *ngIf="!node.isOpen" role="icon" style="margin: 0">
