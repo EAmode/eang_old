@@ -8,7 +8,7 @@
 @define-mixin card-mode {
   & .ea-card {
     @mixin card-base;
-    font-size: var(--ea-card-font-size);
+    font-size: var(--ea-font-size, 1rem);
     background: var(--ea-card-background);
     box-shadow: var(--ea-box-shadow);
     border: var(--ea-card-border);

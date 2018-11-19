@@ -9,43 +9,46 @@ export class ButtonComponent implements OnInit {
   button = `
   ~~~html
   <button>Click me!</button>
+  <button rounded>Click me!</button>
   <button outline>Click me!</button>
+  <button outline rounded>Click me!</button>
+  <button flat>Click me!</button>
+  <button flat rounded>Click me!</button>
   ~~~
   `
 
   button_sizing = `
   ~~~html
-  <button small>Click me!</button>
-  <button large>Click me!</button>
+  <button sm rounded><span icon filter></span>[sm]</button>
+  <button md outline rounded>[md]</button>
+  <button lg rounded>[lg]</button>
+  <button xl flat>[xl]</button>
+  <button xxl>[xxl]</button>
   ~~~
   `
 
   button_icon = `
   ~~~html
-  <button icon>
-    <span icon sign-in></span>
-  </button>
-  <button icon>
-    <span icon trash></span>
-  </button>
-  <button icon>
-    <span icon filter></span>
-  </button>
+  <button icon><span icon sign-in></span></button>
+  <button rounded><span icon sign-in></span></button>
+  <button icon outline><span icon trash></span></button>
+  <button  outline rounded>Button<span icon filter></span></button>
+  <button icon outline rounded><span icon filter></span></button>
+  <button outline rounded>Delete<span icon filter></span></button>
+  <button icon flat><span icon trash></span></button>
+  <button icon flat rounded><span icon filter></span></button>
   ~~~
   `
 
   props = `
 
   ### Attributes
-  |  Custom Property  | Description |
+  |  Attribute  | Description |
   |---|---|
-  | outline  | This property sets the font-size for the button and is the basis for all proportional scaling |
-  | link-button  |  This sets the background color of the button
-  | icon-button | Sets the color of the button border
-  | small | Sets the size, type, and color of the border
-  | medium | The padding of the button set to be proportional to the font-size
-  | large | Sets the border-radius proprty in em to allow it to scale
-
+  | outline  | Removes the background and has only an outline around the button |
+  | rounded  |  Sets the border radius to 8rem to allow the highest possible curve |
+  | flat | Removes all background and border for only :hover and :active effects |
+  | icon | Removes majority of the padding to handle icon buttons that are meant to have smaller sizes |
   `
 
   icons = `

@@ -12,6 +12,8 @@
 @import 'mode/themepicker.css';
 @import 'mode/icons.css';
 @import 'mode/table.css';
+@import 'mode/utilities.css';
+
 
 .mode {
   @mixin autocomplete-mode;
@@ -25,4 +27,5 @@
   @mixin themepicker;
   @mixin table-mode;
   @mixin panel-mode;
+  @mixin utilities;
 }

@@ -1,11 +1,17 @@
 @define-mixin icons {
+
+  & button:not([icon]) > span[icon] {
+    margin: 0.3em;
+  }
+  & button:not([icon])[left] > span[icon] {
+    margin-right: 0;
+  }
   & span[icon] {
     display: block;
     background-position: center;
     background-repeat: no-repeat;
     height: 1em;
     width: 1em;
-    margin: 0.3em;
 
     &[alert-circle] {
       background-image: inline('mode/icon/alert-circle.svg');

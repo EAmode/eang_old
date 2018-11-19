@@ -197,6 +197,9 @@
         &:visited {
           color: var(--ea-color-3);
         }
+        & span[icon] {
+          margin: 0.3em;
+        }
       }
     }
 
