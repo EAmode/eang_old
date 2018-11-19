@@ -6,23 +6,23 @@
 .mode,
 .material {
   & [activity]
-  & .activity {
+  & .ea-activity {
     background: url('./assets/images/activity.svg');
   }
   & [layout],
-  & .layout {
+  & .ea-layout {
     background: url('./assets/images/layout-icon.svg');
   }
   & [button-icon],
-  & .button-icon {
+  & .ea-button-icon {
     background: url('./assets/images/button-icon.svg');
   }
   & [pallete],
-  & .pallete {
+  & .ea-pallete {
     background: url('./assets/images/pallete.svg');
   }
   & [terminal],
-  & .terminal {
+  & .ea-terminal {
     background-image: inline('mode/icon/terminal.svg');
   }
 }

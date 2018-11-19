@@ -8,44 +8,44 @@ import { Component, OnInit } from '@angular/core'
 export class MenuComponent implements OnInit {
   node = {
     name: 'Main menu',
-    icon: 'hamburger-menu',
-    iconStyle: 'negative',
+    icon: 'ea-hamburger-menu',
+    iconStyle: 'ea-negative',
     isHidden: true,
     children: [
       {
         name: 'Notification',
-        icon: 'bell',
-        iconStyle: 'aqua',
+        icon: 'ea-bell',
+        iconStyle: 'ea-aqua',
         data: {
           link: '/card'
         }
       },
       {
         name: 'Cards',
-        icon: 'layers',
-        iconStyle: 'AntiqueWhite',
+        icon: 'ea-layers',
+        iconStyle: 'ea-AntiqueWhite',
         data: {
           link: '/card'
         }
       },
       {
         name: 'Library',
-        icon: 'align-right',
-        iconStyle: 'aliceblue',
+        icon: 'ea-align-right',
+        iconStyle: 'ea-aliceblue',
         data: {
           link: '/icon'
         },
         children: [
           {
             name: 'Book',
-            icon: 'bookmark',
+            icon: 'ea-bookmark',
             data: {
               link: '/special'
             }
           },
           {
             name: 'Book2',
-            icon: 'bookmark',
+            icon: 'ea-bookmark',
             data: {
               link: '/special2'
             }
@@ -96,6 +96,19 @@ export class MenuComponent implements OnInit {
       ...
   }
   `
+
+  ea_menu_template = `
+  *component.html*
+  ~~~html
+  <ea-menu
+    [node]="nodeWithTemplate"
+    [controlPanelTemplate]="templateMenu">
+  </ea-menu>
+  <ng-template #templateMenu let-data="node.data">
+    <div *ngIf="data">{{data.description}}</div>
+  </ng-template>
+  `
+
   node_example = `
   *component.ts*
   ~~~ts

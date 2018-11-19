@@ -9,38 +9,38 @@ export const SIDE_MENU = {
   children: [
     {
       name: 'Layout',
-      icon: 'layout',
+      icon: 'ea-layout',
       data: {
         link: '/layout'
       }
     },
     {
       name: 'Cards',
-      icon: 'layers',
-      iconStyle: 'negative',
+      icon: 'ea-layers',
+      iconStyle: 'ea-negative',
       data: {
         link: '/card'
       }
     },
     {
       name: 'Buttons',
-      icon: 'button-icon',
+      icon: 'ea-button-icon',
       data: {
         link: '/button'
       }
     },
     {
       name: 'Icons',
-      icon: 'grid',
-      iconStyle: 'negative',
+      icon: 'ea-grid',
+      iconStyle: 'ea-negative',
       data: {
         link: '/icon'
       }
     },
     {
       name: 'Menu',
-      icon: 'hamburger-menu',
-      iconStyle: 'negative',
+      icon: 'ea-hamburger-menu',
+      iconStyle: 'ea-negative',
       data: {
         link: '/menu'
       }

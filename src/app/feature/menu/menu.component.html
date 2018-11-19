@@ -17,7 +17,8 @@
           [node]="node">
           </ea-menu> 
         </div>
-      </div>
+    </div>
+
     <h1>Menu Structure/Example Node</h1>
     <p>This is the example of menu structure. Paste it in your <em>component.ts</em> </p>
     <div grid>
@@ -39,6 +40,7 @@
         </div>
       </div>
     </div>
+
     <p>Below two menus are displayed. The first menu with attribute <em>isHidden: true</em> in the parent node and the second - <em>isHidden: false</em>.</p>
     <div class="ea-card-content example" grid>
       <div class="ea-card" style="background:#333333;">
@@ -64,10 +66,13 @@
     </div>
 
     <h1>Add your own template</h1>
+    <p>Use [controlPanelTemplate] attribute to show your own template.</p>
+    <p>For example, description inside data attribute will be shown after you move mouse over the sub menus.</p>
     <div class="ea-card-content example" grid>
+      <ea-markdown [doc]="ea_menu_template"></ea-markdown>
       <div class="ea-card" style="background:#333333;">
         <div class="ea-card-header">
-          <p>ea-menu</p>
+          <p>Move mouse over the sub-menus to see the description.</p>
         </div>
         <div class="ea-card-content header" style="flex-direction: column;">
           <ea-menu
@@ -106,12 +111,12 @@
         <tr>
         <td>icon (optional) </td>
         <td>string</td>
-        <td>To add an icon before the node name use next link to see all <a href="https://eang.io/icon" rel="nowfollow" style="font-size: 0.9em !important;" target="_blank">icons</a> names.</td>
+        <td>To add an icon before the node name use next link to see all <a href="https://eang.io/icon" rel="nowfollow" style="font-size: 0.9em !important;" target="_blank">icons</a> names. You should add prefix 'ea-' to correctly using of icons names in node attribute. Example: 'ea-bell' instead of 'bell'.</td>
         </tr>
         <tr>
         <td>iconStyle (optional) </td>
         <td>string</td>
-        <td>We offer you to change icon style. All availables styles you can find more information here <a href="https://eang.io/icon" rel="nowfollow" style="font-size: 0.9em !important;" target="_blank">icons</a> .</td>
+        <td>We offer you to change icon style. All availables styles you can find more information here <a href="https://eang.io/icon" rel="nowfollow" style="font-size: 0.9em !important;" target="_blank">icons</a> . Add prefix 'ea-' as with the icons.</td>
         </tr>
         <tr>
         <td>horizontal (optional) </td>
