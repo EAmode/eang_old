@@ -6,15 +6,21 @@
   --ea-button-background-color: var(
     --ea-button-background-color,
     var(--ea-color-background-2)
-  ); /* Sets the button background color */
-  --ea-button-border: var(
-    --ea-button-border,
-    var(--ea-color-background-2) solid 0.1em
-  );
+    ); /* Sets the button background color */
+    --ea-button-border: var(
+      --ea-button-border,
+      var(--ea-color-background-2) solid 0.1em
+      );
+
+  --ea-button-border-color__active: #212d4d;
+  --ea-button-border-color__hover: #5779cc;
+
   background-color: var(--ea-button-background-color);
   color: var(--ea-button-color);
   border: var(--ea-button-border);
+
 }
+
 
 @define-mixin button-mode {
   & button {
@@ -37,12 +43,13 @@
 
     &:active {
       background-color: var(--ea-button-background-color);
-      border: 0.1em inset #212d4d;
+      border: 0.1em inset var(--ea-button-border-color__active);
       box-shadow: var(--ea-button-box-shadow);
     }
 
+    /* this is to set the border-color when the button is :hover and not :active */
     &:hover:not(:active) {
-      border: 0.1em solid #5779cc;
+      border: 0.1em solid var(--ea-button-border-color__hover);
     }
 
     &[disabled] {
@@ -55,15 +62,13 @@
     &[outline] {
       --ea-button-background-color: transparent;
       color: var(--ea-alt-color-1);
-      border: 0.1em inset #212d4d;
+      border: var(--ea-button-border);
 
       &:active {
-        border: 0.1em inset #212d4d;
         background-color: rgba(0, 0, 0, 0.15);
       }
 
       &:hover:not(:active) {
-        border: 0.1em solid #212d4d;
         box-shadow: unset;
         background-color: rgba(0, 0, 0, 0.05);
       }
@@ -79,13 +84,13 @@
       color: var(--ea-color-1);
 
       &:active {
-        border: 1px solid rgba(0, 0, 0, 0);
+        --ea-button-border-color__active: rgba(0,0,0,0.25);
         box-shadow: unset;
         background-color: rgba(0, 0, 0, 0.25);
       }
 
       &:hover:not(:active) {
-        border: 1px solid rgba(0, 0, 0, 0);
+        --ea-button-border-color__hover: rgba(0,0,0,0);
         background-color: rgba(0, 0, 0, 0.1);
       }
     }
