@@ -6,8 +6,7 @@ import { Component, OnInit } from '@angular/core'
   styles: []
 })
 export class GetStartedComponent implements OnInit {
-  ngOnInit() {
-  }
+  ngOnInit() {}
   ngnew = `
   ~~~html
   ng new [project name]
@@ -92,5 +91,4 @@ export class GetStartedComponent implements OnInit {
   </ea-layout>
   ~~~
    `
-
 }

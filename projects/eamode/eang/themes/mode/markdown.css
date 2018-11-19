@@ -1,4 +1,4 @@
-.mode {
+@define-mixin markdown-mode {
   & ea-markdown {
     width: auto;
     & .toolbar-item a {

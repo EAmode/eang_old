@@ -1,0 +1,144 @@
+<div class="ea-card" unset>
+    <div class="ea-card-header">
+      <h1>Menu</h1>
+      <span icon hamburger-menu style="width: 2rem; height:2rem;"></span>
+    </div>
+    <p>If you are looking for the easier way of adding menu for your site - use <em>ea-menu</em>.</p>
+    <p>To add menu use next piece of code. Where "node" is a structure describe in "Menu Structure/Example Node" paragraph.</p>
+    <div class="ea-card-content example" grid>
+      <ea-markdown [doc]="ea_menu"></ea-markdown>
+    </div>
+    <div class="ea-card" style="background:#333333;">
+        <div class="ea-card-header">
+          <p>Result menu view. Try to click each sub-menu.</p>
+        </div>
+        <div class="ea-card-content header" style="flex-direction: column;">
+          <ea-menu
+          [node]="node">
+          </ea-menu> 
+        </div>
+    </div>
+
+    <h1>Menu Structure/Example Node</h1>
+    <p>This is the example of menu structure. Paste it in your <em>component.ts</em> </p>
+    <div grid>
+        <ea-markdown [doc]="node_example"></ea-markdown>
+      </div>
+    <h1>Customize your menu</h1>
+    <p>You can add attribute <em>horizontal: true/false</em> in your parent node to switch menu orientation.</p>
+    <p>Default orientation is vertical.</p>
+    <div class="ea-card-content example" grid>
+      <ea-markdown [doc]="ea_menu_horizontal"></ea-markdown>
+      <div class="ea-card" style="background:#333333;">
+        <div class="ea-card-header">
+          <p>ea-menu</p>
+        </div>
+        <div class="ea-card-content header" style="flex-direction: column;">
+          <ea-menu
+          [node]="nodeHorizontal">
+          </ea-menu> 
+        </div>
+      </div>
+    </div>
+
+    <p>Below two menus are displayed. The first menu with attribute <em>isHidden: true</em> in the parent node and the second - <em>isHidden: false</em>.</p>
+    <div class="ea-card-content example" grid>
+      <div class="ea-card" style="background:#333333;">
+        <div class="ea-card-header">
+          <p>IsHidden: true</p>
+        </div>
+        <div class="ea-card-content header" style="flex-direction: column;">
+          <ea-menu
+          [node]="node">
+          </ea-menu> 
+        </div>
+      </div>
+      <div class="ea-card" style="background:#333333;">
+        <div class="ea-card-header">
+          <p>IsHidden: false</p>
+        </div>
+        <div class="ea-card-content header" style="flex-direction: column;">
+          <ea-menu
+          [node]="nodeHiddenFalse">
+          </ea-menu> 
+        </div>
+      </div>
+    </div>
+
+    <h1>Add your own template</h1>
+    <p>Use [controlPanelTemplate] attribute to show your own template.</p>
+    <p>For example, description inside data attribute will be shown after you move mouse over the sub menus.</p>
+    <div class="ea-card-content example" grid>
+      <ea-markdown [doc]="ea_menu_template"></ea-markdown>
+      <div class="ea-card" style="background:#333333;">
+        <div class="ea-card-header">
+          <p>Move mouse over the sub-menus to see the description.</p>
+        </div>
+        <div class="ea-card-content header" style="flex-direction: column;">
+          <ea-menu
+          [node]="nodeWithTemplate"
+          [controlPanelTemplate]="templateMenu">
+          </ea-menu> 
+        </div>
+        <ng-template #templateMenu let-data="node.data">
+          <div *ngIf="data">{{data.description}}</div>
+        </ng-template> 
+      </div>
+    </div>
+
+    <p>Use these attributes in node.</p>
+    <div>
+      <h3>Attributes</h3>
+      <table>
+        <thead>
+        <tr>
+        <th>Attribute</th>
+        <th>Type</th>
+        <th>Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td>id (optional)</td>
+        <td>Better to use string or number types</td>
+        <td>Add identificator for your current node.</td>
+        </tr>
+        <tr>
+        <td>name</td>
+        <td>string</td>
+        <td>Node name will be displayed on the site view.</td>
+        </tr>
+        <tr>
+        <td>icon (optional) </td>
+        <td>string</td>
+        <td>To add an icon before the node name use next link to see all <a href="https://eang.io/icon" rel="nowfollow" style="font-size: 0.9em !important;" target="_blank">icons</a> names. You should add prefix 'ea-' to correctly using of icons names in node attribute. Example: 'ea-bell' instead of 'bell'.</td>
+        </tr>
+        <tr>
+        <td>iconStyle (optional) </td>
+        <td>string</td>
+        <td>We offer you to change icon style. All availables styles you can find more information here <a href="https://eang.io/icon" rel="nowfollow" style="font-size: 0.9em !important;" target="_blank">icons</a> . Add prefix 'ea-' as with the icons.</td>
+        </tr>
+        <tr>
+        <td>horizontal (optional) </td>
+        <td>boolean</td>
+        <td>Value used to change menu orientation.</td>
+        </tr>
+        <tr>
+        <td>isHidden (optional) </td>
+        <td>boolean</td>
+        <td>Place this attribute as "true" to hide parent node for children.</td>
+        </tr>
+        <tr>
+        <td>children (optional) </td>
+        <td>array[]</td>
+        <td>Define array of children in that attribute.</td>
+        </tr>
+        <tr>
+        <td>data (optional) </td>
+        <td>any</td>
+        <td>Place inside of this attribute any data.</td>
+        </tr>
+        </tbody>
+        </table>
+    </div>
+</div>

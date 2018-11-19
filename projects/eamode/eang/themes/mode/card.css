@@ -1,11 +1,13 @@
-.mode {
+@define-mixin card-base{
+  --ea-card-border: var(--ea-car-border, 1px solid var(--ea-color-background-7));
+--ea-card-background: var(--ea-card-background, var(--ea-color-3));
+--ea-card-color: var(--ea-card-color, var(--ea-color-1));
+--ea-card-font-size: var(--ea-card-font-size , 1rem);
+--ea-card-width: var(--ea-card-width, 100%);
+}
+@define-mixin card-mode {
   & .ea-card {
-    --ea-card-border: var(--ea-car-border, 1px solid var(--ea-color-background-7));
-    --ea-card-background: var(--ea-card-background, var(--ea-color-3));
-    --ea-card-color: var(--ea-card-color, var(--ea-color-1));
-    --ea-card-font-size: var(--ea-card-font-size , 1rem);
-    --ea-card-width: var(--ea-card-width, 100%);
-
+    @mixin card-base;
     font-size: var(--ea-card-font-size);
     background: var(--ea-card-background);
     box-shadow: var(--ea-box-shadow);

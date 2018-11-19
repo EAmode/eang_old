@@ -5,152 +5,70 @@
 .fluentdark,
 .mode,
 .material {
-  & [activity] {
+  & [activity]
+  & .ea-activity {
     background: url('./assets/images/activity.svg');
   }
-  & [layout] {
+  & [layout],
+  & .ea-layout {
     background: url('./assets/images/layout-icon.svg');
   }
-  & [button-icon] {
+  & [button-icon],
+  & .ea-button-icon {
     background: url('./assets/images/button-icon.svg');
   }
-  & [pallete] {
+  & [pallete],
+  & .ea-pallete {
     background: url('./assets/images/pallete.svg');
   }
+  & [terminal],
+  & .ea-terminal {
+    background-image: inline('mode/icon/terminal.svg');
+  }
 }
 
 .mode,
 .material {
-  & ea-body {
-    --ea-body-display: flex;
-    justify-content: center;
-  }
-}
-
-.icon-tiles .ea-card > .ea-card-content {
-  justify-content: center;
-}
-
-.mode eangio-card .ea-card > .ea-card-content[grid].example,
-.material eangio-card .ea-card > .ea-card-content[grid].example {
-  --ea-card-content-grid: minmax(40%, 50%) 1fr;
-  grid-gap: 2rem;
-  align-items: center;
-  @media only screen and (max-width: 770px) {
-    --ea-card-content-grid: repeat(auto-fill, 2, 1fr);
-  }
-}
-.mode .ea-card > .ea-card-content[grid].example,
-.material .ea-card > .ea-card-content[grid].example {
-  --ea-card-content-grid: repeat(2, 1fr);
-  grid-gap: 2rem;
-  align-items: center;
-  @media only screen and (max-width: 770px) {
-    --ea-card-content-grid: repeat(auto-fill, 2, 1fr);
-  }
-}
-
-@media only screen and (max-width: 770px) {
-  ea-markdown {
-    --ea-card-content-grid: repeat(auto-fill, 2, 1fr);
-    overflow-x: scroll;
-  }
-
-  .mode ea-layout ea-toolbar aside,
-  .material ea-layout ea-toolbar aside {
-    --ea-toolbar-aside-padding: 0;
-  }
-}
-
-.fluentdark,
-.mode,
-.material {
-  --ea-icon-activity: url('./assets/images/material/reactive.svg');
-  --ea-icon-layout: url('./assets/images/material/layout.svg');
-  --ea-icon-button-icon: url('./assets/images/material/button.svg');
-  --ea-icon-pallete: url('./assets/images/material/pallette.svg');
-}
-
-ea-toolbar {
-  padding-left: 1rem;
-  & header {
-    & a {
-      display: flex;
-      width: 4rem;
-    }
-  }
-  & .logo {
-    background: url('assets/images/eang-logo.svg');
-    height: 4rem;
-    width: 4rem;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-  & ea-themepicker {
-    padding-right: 1rem;
-  }
-  & a {
-    padding-right: 1rem;
-  }
-}
-
-.ea-card .ea-card-content.buttons {
-  --ea-card-content-grid: repeat(5, 1fr);
-  align-items: flex-end;
-  justify-items: flex-start;
-  width: 100%;
-}
-
-@media only screen and (max-width: 700px) {
-  .ea-card .ea-card-content.buttons {
-    --ea-card-content-grid: repeat(1, 1fr);
-    align-items: flex-end;
-    justify-items: center;
-    grid-row-gap: 1rem;
-  }
-}
-
-#welcome {
-  background: url('./assets/images/eang-background-21.jpg');
-  background-size: cover;
-}
-ea-drawer {
-  & section {
-    margin: 1rem 0 0 0;
-    @media only screen and (min-width: 2000px) {
-      & a {
-        font-size: 1.125rem;
-        line-height: 2.5em;
+  & .ea-card {
+    & .ea-card-content.example {
+      --ea-card-content-grid: minmax(40%, 50%) 1fr;
+      grid-gap: 2rem;
+      align-items: center;
+      @media only screen and (max-width: 770px) {
+        --ea-card-content-grid: repeat(auto-fill, 2, 1fr);
       }
     }
   }
-  & footer {
-    display: flex;
-    justify-content: flex-end;
-    margin-right: 1rem;
-    height: 3rem;
-    align-items: center;
-    & p {
-      font-size: 0.8rem;
-      color: white;
+  ea-layout {
+    & ea-toolbar {
+      & aside {
+        @media only screen and (max-width: 500px) {
+          --ea-toolbar-aside-padding: 0rem;
+        }
+      }
+      & a {
+        display: flex;
+        & .logo {
+          background: url('assets/images/eang-logo.svg');
+          height: 4rem;
+          width: 4rem;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+      }
     }
-  }
-}
-
-.mode,
-.material {
-  ea-main {
-    color: var(--ea-color-1);
     & ea-body {
-      margin: 2rem 0;
-      & .code-example {
-        --ea-grid-minmax: minmax(50%, 50%) minmax(50%, 50%);
-        display: grid;
-        grid-template-columns: var(--ea-grid-minmax);
-        grid-gap: 2rem;
-        align-items: center;
-        @media only screen and (max-width: 700px) {
-          grid-template-columns: 100%;
+      --ea-body-display: flex;
+      justify-content: center;
+      & eangio-home,
+      eangio-card,
+      eangio-button,
+      eangio-icon,
+      eangio-layout,
+      eangio-variables {
+        width: 75%;
+        @media only screen and (max-width: 500px) {
+          width: 95%;
         }
       }
       & eangio-home {
@@ -158,34 +76,7 @@ ea-drawer {
         @media only screen and (max-width: 500px) {
           width: 95%;
         }
-        & #welcome {
-          background: url('./assets/images/eang-background-21.jpg');
-          background-size: cover;
-          display: flex;
-          justify-content: space-evenly;
-          align-items: center;
-          padding: 4rem 0rem;
-          & .title-text {
-            color: white;
-            h1 {
-              margin: 0;
-            }
-            h2 {
-              margin: 0 0 1rem 0;
-            }
-          }
-          & .banner-card-row {
-            display: flex;
-            align-items: center;
-          }
-        }
-        & h1 {
-          padding-bottom: 1rem;
-          border-bottom: 1px solid lightgrey;
-          @media only screen and (max-width: 500px) {
-            font-size: 2.2rem;
-          }
-        }
+
         & .why-eang {
           display: flex;
           flex-direction: column;
@@ -230,39 +121,14 @@ ea-drawer {
           }
         }
       }
-      & eangio-button {
-        width: 75%;
-        @media only screen and (max-width: 500px) {
-          width: 95%;
-        }
-        & .buttons-container {
-          display: flex;
-          justify-content: center;
-        }
-        & .ea-card .ea-card-content.buttons {
-          --ea-card-content-grid: repeat(4, 1fr);
-          align-items: flex-end;
-          justify-items: center;
-          @media only screen and (max-width: 1150px) and (min-width: 700px) {
-            --ea-card-content-grid: repeat(2, 1fr);
-            align-items: flex-end;
-            justify-items: center;
-            grid-row-gap: 1rem;
-          }
-          @media only screen and (max-width: 700px) {
-            --ea-card-content-grid: repeat(1, 1fr);
-            align-items: flex-end;
-            justify-items: center;
-            grid-row-gap: 1rem;
-          }
-        }
-      }
       & eangio-feature-reactive {
-        width: 75%;
-        @media only screen and (max-width: 500px) {
-          width: 95%;
-        }
         & .screen {
+          & ea-panel[orientation="left"],
+          ea-panel[orientation='right'] {
+            @media only screen and (max-width: 500px) {
+              --ea-panel-max-width: 4.1rem;
+            }
+          }
           height: 15rem;
           max-width: 25rem;
           width: 100%;
@@ -312,88 +178,128 @@ ea-drawer {
           }
         }
       }
-      & eangio-layout {
-        width: 75%;
+      & ea-markdown {
         @media only screen and (max-width: 500px) {
-          width: 95%;
-        }
-        & .code-example {
-          --ea-grid-minmax: minmax(30%, 35%) minmax(65%, 40%);
-        }
-        & .code-example.drawer {
-          --ea-grid-minmax: minmax(30%, 55%) minmax(45%, 40%);
-        }
-      }
-      & eangio-card {
-        width: 75%;
-        @media only screen and (max-width: 500px) {
-          width: 95%;
-        }
-        .ea-card {
-          .ea-card-content:nth-child(1) {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            & ea-markdown {
-              width: 60%;
-            }
-            & .ea-card {
-              width: 35%;
-            }
-            @media only screen and (max-width: 900px) {
-              flex-direction: column;
-
-              & ea-markdown {
-                width: 100%;
-              }
-              & .ea-card {
-                width: 100%;
-              }
-            }
-          }
-        }
-      }
-      & eangio-icon {
-        width: 75%;
-        @media only screen and (max-width: 500px) {
-          width: 95%;
-        }
-      }
-    }
-    & ea-footer {
-      margin-top: 4.5rem;
-      & span {
-        align-items: center;
-        display: flex;
-        align-items: center;
-        padding: 3.2px 16px;
-        width: 100%;
-        & p {
-          margin: 0;
-          height: 100%;
-          display: flex;
-          align-items: center;
-          margin: 0 0.5rem 0 1rem;
-        }
-        & div {
-          height: 100%;
-          display: flex;
-          align-items: center;
-          color: white;
-        }
-        & a {
-          font-size: 16px !important;
-          color: white;
-          margin-left: 0.35rem;
-        }
-        .ea-mode-logo {
-          background: url('assets/images/eamode-logo.svg');
-          height: 4rem;
-          width: 4rem;
-          background-repeat: no-repeat;
-          background-position: center;
+          overflow-x: overlay;
         }
       }
     }
   }
+}
+
+.ea-mode-logo {
+  background: url('assets/images/eamode-logo.svg');
+  height: 4rem;
+  width: 4rem;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.background-1 {
+  width: 10rem;
+  height: 10rem;
+  background: var(--ea-background-color-1);
+}
+.background-2 {
+  width: 10rem;
+  height: 10rem;
+  background: var(--ea-background-color-2);
+}
+.background-3 {
+  width: 10rem;
+  height: 10rem;
+  background: var(--ea-background-color-3);
+}
+.background-4 {
+  width: 10rem;
+  height: 10rem;
+  background: var(--ea-background-color-4);
+}
+.background-5 {
+  width: 10rem;
+  height: 10rem;
+  background: var(--ea-background-color-5);
+}
+
+.alt-background-1 {
+  width: 10rem;
+  height: 10rem;
+  background: var(--ea-alt-background-color-1);
+}
+.alt-background-2 {
+  width: 10rem;
+  height: 10rem;
+  background: var(--ea-alt-background-color-2);
+}
+.alt-background-3 {
+  width: 10rem;
+  height: 10rem;
+  background: var(--ea-alt-background-color-3);
+}
+.alt-background-4 {
+  width: 10rem;
+  height: 10rem;
+  background: var(--ea-alt-background-color-4);
+}
+.alt-background-5 {
+  width: 10rem;
+  height: 10rem;
+  background: var(--ea-alt-background-color-5);
+}
+
+.accent-background-1 {
+  width: 10rem;
+  height: 10rem;
+  background: var(--ea-accent-background-color-1);
+}
+.accent-background-2 {
+  width: 10rem;
+  height: 10rem;
+  background: var(--ea-accent-background-color-2);
+}
+.accent-background-3 {
+  width: 10rem;
+  height: 10rem;
+  background: var(--ea-accent-background-color-3);
+}
+.accent-background-4 {
+  width: 10rem;
+  height: 10rem;
+  background: var(--ea-accent-background-color-4);
+}
+
+.chrome-color-1 {
+  width: 10rem;
+  height: 10rem;
+  background: var(--ea-chrome-color-1);
+}
+.chrome-color-2 {
+  width: 10rem;
+  height: 10rem;
+  background: var(--ea-chrome-color-2);
+}
+.chrome-color-3 {
+  width: 10rem;
+  height: 10rem;
+  background: var(--ea-chrome-color-3);
+}
+.chrome-color-4 {
+  width: 10rem;
+  height: 10rem;
+  background: var(--ea-chrome-color-4);
+}
+.chrome-color-5 {
+  width: 10rem;
+  height: 10rem;
+  background: var(--ea-chrome-color-5);
+}
+.chrome-color-disabled-1 {
+  width: 10rem;
+  height: 10rem;
+  background: var(--ea-chrome-color-diabled-1);
+}
+.chrome-color-disabled-2 {
+  width: 10rem;
+  height: 10rem;
+  background: var(--ea-chrome-color-disabled-2);
 }

@@ -1,81 +1,86 @@
-.mode {
-  table,
-  th,
-  td {
-    border: none;
-  }
+@define-mixin table-base {
+  --ea-table-thead-background: var(
+    --ea-table-thead-background,
+    var(--ea-color-background-3)
+  );
+  --ea-table-padding: var(--ea-table-padding, 0.8em 1.5em);
+}
 
-  thead {
-    --ea-table-thead-background: var(--ea-table-thead-background, var(--ea-color-background-3));
-    background: var(--ea-table-thead-background);
-    & th {
-      border-radius: 0;
-      color: var(--ea-color-3);
-    }
-  }
-
-  tbody {
-    background: var(--ea-color-3);
-
-    &[striped] > tr:nth-child(odd) {
-        background-color: rgba(242, 242, 242, 0.5);
-    }
-    & tr[clean] {
+@define-mixin table-mode {
+  table {
+    @mixin table-base
+    th,
+    td {
       border: none;
     }
-  }
 
-  table {
-    width: auto;
-    display: table;
-    border-collapse: collapse;
-    border-spacing: 0;
-    margin: 2em 0;
-    box-shadow: var(--ea-box-shadow);
-  }
+    thead {
+      background: var(--ea-table-thead-background);
+      & th {
+        border-radius: 0;
+        color: var(--ea-color-3);
+      }
+    }
 
-  table.striped tr {
-    border-bottom: none;
-  }
+    tbody {
+      background: var(--ea-color-3);
 
+      &[striped] > tr:nth-child(odd) {
+        background-color: rgba(242, 242, 242, 0.5);
+      }
+      & tr[clean] {
+        border: none;
+      }
+    }
 
-  table.striped > tbody > tr > td {
-    border-radius: 0;
-  }
+    table {
+      width: auto;
+      display: table;
+      border-collapse: collapse;
+      border-spacing: 0;
+      margin: 2em 0;
+      box-shadow: var(--ea-box-shadow);
+    }
 
-  table.highlight > tbody > tr {
-    -webkit-transition: background-color 0.25s ease;
-    transition: background-color 0.25s ease;
-  }
+    table.striped tr {
+      border-bottom: none;
+    }
 
-  table.highlight > tbody > tr:hover {
-    background-color: rgba(242, 242, 242, 0.5);
-  }
+    table.striped > tbody > tr > td {
+      border-radius: 0;
+    }
 
-  table.centered thead tr th,
-  table.centered tbody tr td {
-    text-align: center;
-  }
+    table.highlight > tbody > tr {
+      -webkit-transition: background-color 0.25s ease;
+      transition: background-color 0.25s ease;
+    }
 
-  tr {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-    &[center] > td {
+    table.highlight > tbody > tr:hover {
+      background-color: rgba(242, 242, 242, 0.5);
+    }
+
+    table.centered thead tr th,
+    table.centered tbody tr td {
       text-align: center;
     }
-    &[center] > th {
-      text-align: center;
+
+    tr {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+      &[center] > td {
+        text-align: center;
+      }
+      &[center] > th {
+        text-align: center;
+      }
     }
-  }
 
-
-  td,
-  th {
-    --ea-table-padding: var(--ea-table-padding, 0.8em 1.5em);
-
-    padding: var(--ea-table-padding);
-    display: table-cell;
-    text-align: left;
-    vertical-align: middle;
-    border-radius: 2px;
+    td,
+    th {
+      padding: var(--ea-table-padding);
+      display: table-cell;
+      text-align: left;
+      vertical-align: middle;
+      border-radius: 2px;
+    }
   }
 }

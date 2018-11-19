@@ -114,6 +114,10 @@
         flex-grow: 1;
       }
 
+      & footer {
+        padding: 1rem;
+      }
+
       &[resize] {
         resize: horizontal;
         overflow: auto;

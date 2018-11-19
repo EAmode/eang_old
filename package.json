@@ -42,10 +42,12 @@
   },
   "lint-staged": {
     "src/**/*.ts": [
+      "prettier --write",
       "tslint -p src/tslint.json -t codeFrame",
       "git add"
     ],
     "projects/eamode/eang/src/**/*.ts": [
+      "prettier --write",
       "tslint -p projects/eamode/eang/tslint.json -t codeFrame",
       "git add"
     ]
@@ -105,7 +107,9 @@
     "postcss-assets": "^5.0.0",
     "postcss-cli": "^6.0.0",
     "postcss-cssnext": "^3.1.0",
+    "postcss-easy-import": "^3.0.0",
     "postcss-import": "^12.0.0",
+    "postcss-mixins": "^6.2.0",
     "postcss-nested": "^4.1.0",
     "postcss-preset-env": "^5.3.0",
     "prettier": "^1.14.3",

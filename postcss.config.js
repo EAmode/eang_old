@@ -2,6 +2,7 @@ module.exports = {
   to:'',
   plugins: [
     require('postcss-import')(),
+    require('postcss-mixins')(),
     require('postcss-nested')(),
     require('postcss-cssnext')({
       features: {

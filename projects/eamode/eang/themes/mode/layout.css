@@ -1,18 +1,20 @@
-.mode {
+@define-mixin layout-base {
+  --ea-drawer-header-height: 4rem;
+  --ea-drawer-footer-height: 4rem;
+  --ea-drawer-width: var(--ea-drawer-width, 300px);
+  --ea-toolbar-height: var(--ea-toolbar-height, 4rem);
+  --drawer-width: 300px;
+  --ea-footer-height: var(--ea-footer-height, 4.5rem);
+  --ea-toolbar-color: var(--ea-toolbar-color, var(--ea-color-3));
+  --ea-drawer-background: var(
+    --ea-drawer-background,
+    var(--ea-color-background-4)
+  );
+  --ea-body-display: var(--ea-body-display, block);
+}
+@define-mixin layout-mode {
   & ea-layout {
-    --ea-drawer-header-height: 4rem;
-    --ea-drawer-footer-height: 4rem;
-    --ea-drawer-width: var(--ea-drawer-width, 300px);
-    --ea-toolbar-height: var(--ea-toolbar-height, 4rem);
-    --drawer-width: 300px;
-    --ea-footer-height: var(--ea-footer-height, 4.5rem);
-    --ea-toolbar-color: var(--ea-toolbar-color, var(--ea-color-3));
-    --ea-drawer-background: var(
-      --ea-drawer-background,
-      var(--ea-color-background-4)
-    );
-    --ea-body-display: var(--ea-body-display, block);
-
+    @mixin layout-base;
     display: grid;
     height: 100vh;
     overflow: hidden;
@@ -39,6 +41,8 @@
         display: flex;
         align-items: center;
         background: var(--ea-color-background-2);
+        padding: 1rem;
+        box-sizing: border-box;
         & p {
           color: var(--ea-color-3);
         }
@@ -100,6 +104,13 @@
       h3 {
         margin: 0;
       }
+
+      & a {
+        color: var(--ea-color-3);
+        text-decoration: none;
+        font-size: 1rem;
+        margin: 0.5em;
+      }
     }
 
     & ea-drawer {
@@ -112,6 +123,10 @@
 
       & section {
         flex-grow: 1;
+      }
+
+      & footer {
+        padding: 1rem;
       }
 
       &[resize] {
