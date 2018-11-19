@@ -6,11 +6,9 @@ import { Component, OnInit } from '@angular/core'
   styles: []
 })
 export class VariablesComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
+  ngOnInit() {}
   variables_1 = `
   ~~~css
   here are som vars

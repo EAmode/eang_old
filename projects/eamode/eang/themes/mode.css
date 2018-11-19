@@ -1,7 +1,7 @@
 @import '_base.css';
 @import 'mode/variables.css';
 @import 'mode/fonts.css';
-
+@import 'mode/menu.css';
 @import 'mode/autocomplete.css';
 @import 'mode/button.css';
 @import 'mode/card.css';
@@ -18,7 +18,6 @@
   @mixin autocomplete-mode;
   @mixin button-mode;
   @mixin card-mode;
-  @mixin icons;
   @mixin layout-mode;
   @mixin markdown-mode;
   @mixin panel-base;
@@ -27,4 +26,5 @@
   @mixin table-mode;
   @mixin panel-mode;
   @mixin utilities;
+  @mixin menu;
 }
