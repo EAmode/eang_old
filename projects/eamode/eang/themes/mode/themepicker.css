@@ -2,15 +2,6 @@
   & ea-themepicker {
     cursor: pointer;
     outline: none;
-    & .icon-button {
-      cursor: pointer;
-      width: 1.6rem;
-      height: 1.6rem;
-      border: none;
-      background: inline('mode/icon/palette.svg');
-      background-repeat: no-repeat;
-      box-shadow: none;
-    }
     & .ea-themepicker-dropdown {
       position: absolute;
     }

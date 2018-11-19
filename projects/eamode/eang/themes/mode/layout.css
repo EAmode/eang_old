@@ -13,9 +13,6 @@
   --ea-body-display: var(--ea-body-display, block);
 }
 @define-mixin layout-mode {
-/*------------------------------------*\
-  #ea-layout
-\*------------------------------------*/
   & ea-layout {
     @mixin layout-base;
     display: grid;
@@ -27,13 +24,6 @@
       'toolbar toolbar'
       'drawer main';
 
-
-
-
-
-  /*------------------------------------*\
-    #ea-main
-  \*------------------------------------*/
 
     & ea-main {
       font-size: 1rem;
@@ -47,12 +37,6 @@
       background: var(--ea-main-background);
 
 
-
-
-
-/*------------------------------------*\
-  #ea-footer
-\*------------------------------------*/
       & ea-footer {
         width: 100%;
         height: var(--ea-footer-height);
@@ -67,14 +51,6 @@
       }
     }
 
-
-
-
-
-/*------------------------------------*\
-  #ea-body
-\*------------------------------------*/
-
     & ea-body {
       --ea-main-margin: var(--ea-main-padding, 0.5em 1em);
       margin: var(--ea-main-margin);
@@ -82,13 +58,6 @@
       min-height: 100%;
     }
 
-
-
-
-
-/*------------------------------------*\
-  #ea-toolbar
-\*------------------------------------*/
     & ea-toolbar {
       --ea-toolbar-display: var(--ea-toolbar-display, flex);
       font-size: 1rem;
@@ -146,13 +115,6 @@
       }
     }
 
-
-
-
-
-/*------------------------------------*\
-  #ea-drawer
-\*------------------------------------*/
     & ea-drawer {
       grid-area: drawer;
       flex-direction: column;
@@ -203,14 +165,6 @@
       }
     }
 
-
-
-
-
-
-/*------------------------------------*\
-  #overlay
-\*------------------------------------*/
     &[nav-overlay] {
       display: grid;
       grid-template-rows: [ea-toolbar-start] var(--ea-toolbar-height) [ea-toolbar-end ea-main-start] 1fr [ea-footer-start ea-main-end];

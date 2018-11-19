@@ -7,7 +7,7 @@
   --ea-color-accent-2: #61429a;
 
   --ea-color-background-1: #ffffff;
-  --ea-color-background-2: #425b9a;
+  --ea-color-background-2: rgb(66, 91, 154);
   --ea-color-background-3: #52638d;
   --ea-color-background-4: #333333;
   --ea-color-background-5: #666a74;
@@ -50,5 +50,10 @@
   font-style: var(--ea-font-1-style);
   font-weight: var(--ea-font-1-weight);
   /* font-size: var(--ea-font-1-size); */
+
+  --ea-background-color: 66, 91, 154;
+
+  --ea-background-color-1:rgba(var(--ea-background-color), 1);
+  --ea-background-color-light:rgba(var(--ea-background-color), 0.8);
 
 }

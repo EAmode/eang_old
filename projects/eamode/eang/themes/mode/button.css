@@ -18,9 +18,6 @@
 
 @define-mixin button-mode {
   & button {
-    /*------------------------------------*\
-      #BUTTON
-    \*------------------------------------*/
     @mixin button-base;
 
     font-size: var(--ea-font-size, 1rem);
@@ -55,10 +52,6 @@
       border: var(--ea-button-border);
     }
 
-    /*------------------------------------*\
-  #BUTTON[OUTLINE]
-\*------------------------------------*/
-
     &[outline] {
       --ea-button-background-color: transparent;
       color: var(--ea-alt-color-1);
@@ -80,10 +73,6 @@
       }
     }
 
-    /*------------------------------------*\
-  #BUTTON[FLAT]
-\*------------------------------------*/
-
     &[flat] {
       background-color: transparent;
       border: 1px solid rgba(0, 0, 0, 0);
@@ -101,9 +90,6 @@
       }
     }
 
-    /*------------------------------------*\
-    #BUTTON[ICON]
-    \*------------------------------------*/
     &[icon] {
       padding: 0.5em;
       height: min-content;
@@ -121,21 +107,9 @@
       }
     }
 
-    /*------------------------------------*\
-    #BUTTON[Rounded]
-    \*------------------------------------*/
-
     &[rounded] {
       border-radius: 1.5rem;
     }
-
-    &[circle] {
-      border-radius: 50%;
-    }
-
-    /*------------------------------------*\
-  #BUTTON-COLORS
-\*------------------------------------*/
 
     &[primary] {
       color: var(--ea-color-1);
