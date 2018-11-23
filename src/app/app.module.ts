@@ -29,9 +29,10 @@ import { IconComponent } from './feature/icon/icon.component'
 import { VariablesComponent } from './variables/variables.component'
 import { GetStartedComponent } from './feature/get-started/get-started.component'
 import { MenuComponent } from './feature/menu/menu.component'
+import { LandingComponent } from './feature/landing/landing.component'
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: LandingComponent },
   { path: 'reactive', component: ReactiveComponent },
   { path: 'theming', component: ThemingComponent },
   { path: 'layout', component: LayoutComponent },
@@ -53,7 +54,8 @@ const routes: Routes = [
     IconComponent,
     VariablesComponent,
     MenuComponent,
-    GetStartedComponent
+    GetStartedComponent,
+    LandingComponent
   ],
   imports: [
     BrowserModule,

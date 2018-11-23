@@ -27,6 +27,130 @@
   }
 }
 
+
+#eang-welcome {
+  align-items: center;
+  align-content: center;
+  background: url('./assets/images/flickr-14202459710.jpg');
+  background-size: contain;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 4rem 0rem;
+  text-align: center;
+}
+
+.layout-one-by-three {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-column-gap: 5rem;
+  text-align: center;
+}
+
+.layout-two-by-two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 5rem;
+  text-align: center;
+}
+
+.layout-three-by-one {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 5rem;
+  text-align: center;
+}
+
+#getting-started {
+  border: 1px solid red;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 4rem 0rem;
+  & .title-text {
+    color: white;
+    h1 {
+      margin: 0;
+    }
+    h2 {
+      margin: 0 0 1rem 0;
+    }
+  }
+  & .banner-card-row {
+    display: flex;
+    align-items: center;
+  }
+}
+
+#eang-resources {
+  border: 1px solid orange;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 4rem 0rem;
+  & .title-text {
+    color: white;
+    h1 {
+      margin: 0;
+    }
+    h2 {
+      margin: 0 0 1rem 0;
+    }
+  }
+  & .banner-card-row {
+    display: flex;
+    align-items: center;
+  }
+}
+
+#open-standards {
+  border: 1px solid purple;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 4rem 0rem;
+  & .title-text {
+    color: white;
+    h1 {
+      margin: 0;
+    }
+    h2 {
+      margin: 0 0 1rem 0;
+    }
+  }
+  & .banner-card-row {
+    display: flex;
+    align-items: center;
+    background-color: aqua;
+  }
+}
+
+.footer-text {
+  color: white;
+  font-size: .8em;
+
+  a {
+    color: white;
+    font-size: .8em;
+    text-decoration: underline;
+  }
+
+  a:active {
+    color: orange;
+  }
+
+  a:hover {
+    color: yellow;
+  }
+
+  a:visted {
+    color: white;
+  }
+}
+
 .mode,
 .material {
   & .ea-card {
