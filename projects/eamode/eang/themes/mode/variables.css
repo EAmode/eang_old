@@ -7,7 +7,7 @@
   --ea-color-accent-2: #61429a;
 
   --ea-color-background-1: #ffffff;
-  --ea-color-background-2: #425b9a;
+  --ea-color-background-2: hsl(223, 40%, 43%);
   --ea-color-background-3: #52638d;
   --ea-color-background-4: #333333;
   --ea-color-background-5: #666a74;
@@ -56,4 +56,11 @@
   --ea-background-color-1:rgba(var(--ea-background-color), 1);
   --ea-background-color-light:rgba(var(--ea-background-color), 0.8);
 
+  --ea-base-color: hsl(223, 40%,43%);
+  --ea-base-color-high: hsl(223, 40%, 53%);
+
+  --ea-text-color-dark: #333;
+  --ea-text-color-light: #f6f6f6;
+
+  --ea-background-hover: var(--ea-base-color-high);
 }

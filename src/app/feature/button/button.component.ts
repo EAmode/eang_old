@@ -8,12 +8,12 @@ import { Component, OnInit } from '@angular/core'
 export class ButtonComponent implements OnInit {
   button = `
   ~~~html
-  <button>Click me!</button>
-  <button rounded>Click me!</button>
-  <button outline>Click me!</button>
-  <button outline rounded>Click me!</button>
-  <button flat>Click me!</button>
-  <button flat rounded>Click me!</button>
+  <button>Button</button>
+  <button rounded>Rounded</button>
+  <button outline>Outline</button>
+  <button outline rounded>Outline Rounded</button>
+  <button flat>Flat</button>
+  <button flat rounded>Flat Rounded</button>
   ~~~
   `
 

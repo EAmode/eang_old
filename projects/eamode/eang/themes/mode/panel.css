@@ -1,39 +1,32 @@
 @define-mixin panel-base {
-  --ea-panel-color: var(--ea-color-1);
-  --ea-panel-background: var(--ea-color-background-2);
-
-  --ea-panel-height: var(--ea-panel-height, initial);
-  --ea-panel-width: var(--ea-panel-width, initial);
-  --ea-panel-max-height: var(--ea-panel-max-height, 100%);
-  --ea-panel-max-width: var(--ea-panel-max-width, 100%);
+  color: var(--ea-panel-color, --ea-color-1);
+  background: var(--ea-panel-background, --ea-color-background-2);
+  height: var(--ea-panel-height, initial);
+  width: var(--ea-panel-width, initial);
   --ea-panel-min-size-ratio: 0.5;
 }
 @define-mixin panel-mode {
   & ea-panel {
     @mixin panel-base;
     display: block;
-    color: var(--ea-panel-color);
-    background: var(--ea-panel-background);
-    height: var(--ea-panel-height);
-    width: var(--ea-panel-width);
   }
 
   & ea-panel[orientation='top'] {
-    --ea-panel-width: var(--ea-panel-max-width) !important;
+    --ea-panel-width: var(--ea-panel-max-width, 100%) !important;
   }
 
   & ea-panel[orientation='left'] {
-    --ea-panel-height: var(--ea-panel-max-height) !important;
+    --ea-panel-height: var(--ea-panel-max-height, 100%) !important;
     float: left;
   }
 
   & ea-panel[orientation='right'] {
-    --ea-panel-height: var(--ea-panel-max-height) !important;
+    --ea-panel-height: var(--ea-panel-max-height, 100%) !important;
     float: right;
   }
 
   & ea-panel[orientation='bottom'] {
-    --ea-panel-width: var(--ea-panel-max-width) !important;
+    --ea-panel-width: var(--ea-panel-max-width, 100%) !important;
     position: absolute;
     bottom: 0;
   }

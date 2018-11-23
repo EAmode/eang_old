@@ -1,23 +1,11 @@
 @define-mixin button-base {
-  --ea-button-color: var(
-    --ea-button-color,
-    var(--ea-color-3)
-  ); /* Sets the button font-color */
-  --ea-button-background-color: var(
-    --ea-button-background-color,
-    var(--ea-color-background-2)
-    ); /* Sets the button background color */
-    --ea-button-border: var(
-      --ea-button-border,
-      var(--ea-color-background-2) solid 0.1em
-      );
 
-  --ea-button-border-color__active: #212d4d;
-  --ea-button-border-color__hover: #5779cc;
+  --ea-button-background-active: red;
+  --ea-button-border-color-hover: #5779cc;
 
-  background-color: var(--ea-button-background-color);
-  color: var(--ea-button-color);
-  border: var(--ea-button-border);
+  background: var(--ea-button-background-color, var(--ea-color-background-2));
+  color: var(--ea-button-color, var(--ea-color-3));
+  border: var(--ea-button-border, var(--ea-color-background-2) solid 0.1em);
 
 }
 
@@ -26,7 +14,7 @@
   & button {
     @mixin button-base;
 
-    font-size: var(--ea-font-size, 1rem);
+    font-size: var(--ea-font-size, 1em);
     border: 0.1em inset transparent;
     height: 2.19em;
     padding: 0 1.5em;
@@ -40,16 +28,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    user-select: none;
 
     &:active {
-      background-color: var(--ea-button-background-color);
-      border: 0.1em inset var(--ea-button-border-color__active);
+      --ea-button-background-color: var(--ea-base-color);
+      /* border: var(--ea-button-border); */
       box-shadow: var(--ea-button-box-shadow);
     }
 
     /* this is to set the border-color when the button is :hover and not :active */
     &:hover:not(:active) {
-      border: 0.1em solid var(--ea-button-border-color__hover);
+      /* border: var(--ea-button-border); */
+      background: var(--ea-button-background-hover, var(--ea-background-hover));
     }
 
     &[disabled] {
@@ -61,16 +51,21 @@
 
     &[outline] {
       --ea-button-background-color: transparent;
+      --ea-button-border: 0.1em solid var(--ea-base-color);
       color: var(--ea-alt-color-1);
       border: var(--ea-button-border);
 
       &:active {
-        background-color: rgba(0, 0, 0, 0.15);
+        --ea-button-background-color: rgba(0,0,0,0.15);
+        --ea-button-border: 0.1em solid var(--ea-base-color-high);
+
+        /* background: var(--ea-button-background-color); */
+        /* --ea-button-background: var(--ea-button-background__active, rgba(0, 0, 0, 0.15)); */
       }
 
       &:hover:not(:active) {
         box-shadow: unset;
-        background-color: rgba(0, 0, 0, 0.05);
+        background: var(--ea-button-background__hover, rgba(0, 0, 0, 0.05));
       }
 
       &[disabled] {

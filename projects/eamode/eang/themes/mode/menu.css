@@ -1,15 +1,10 @@
-
   @define-mixin menu {
-  & ea-menu {
-  
+    & ea-menu {
+      /* --ea-menu-background-active: red; */
+      /* --ea-menu-text-color: blue; */
+
     user-select: none;
     cursor: pointer;
-    display: flex;
-    align-items: left;
-    justify-content: flex-start;
-    flex-direction: column;
-    font-weight: 400;
-    line-height: 25px;
 
     & .node-toggle {
       padding: 0;
@@ -19,9 +14,6 @@
       background: none;
       border: none;
       cursor: pointer;
-      display: flex;
-      justify-content: center;
-      align-items: center;
 
       & span {
         margin: 0
@@ -40,7 +32,7 @@
     & .name {
       margin-left: 5.5px;
       width: 100%;
-      color: white;
+      color: var(--ea-menu-text-color, var(--ea-text-color-light));
       display: flex;
       align-items: center;
     }
@@ -59,29 +51,6 @@
       align-items: center;
       position: relative;
 
-      &.has-children {
-        line-height: 2.5em;
-        & .node-toggle span[chevron-right] {
-          height: 0.7rem;
-          width: 0.8rem;
-          background-position: center;
-        }
-  
-        & .node-toggle span[chevron-down] {
-          height: 0.7rem;
-          width: 0.8rem;
-          background-position: center;
-          margin-left: 0.2rem;
-        }
-  
-        & .node-toggle {
-          &:hover {
-            background: rgba(0, 0, 0, 0.1);
-          }
-        }
-  
-      }
-
       &[hidden] {
         display: none;
       }
@@ -92,24 +61,24 @@
       }
 
       &:hover {
-        background: var(--ea-color-background-2);
+        background: var(--ea-menu-background-hover, var(--ea-background-hover));
         color: var(--ea-color-3);
-  
+
         & .node-toggle span[chevron-down] {
           --ea-button-icon: var(--ea-icon-chevron-down-neg);
         }
-  
+
         & .node-toggle span[chevron-right] {
           --ea-button-icon: var(--ea-icon-chevron-right-neg);
         }
-  
+
         & .node-toggle.object-menu {
           --ea-button-icon: var(--ea-icon-vertical-menu);
-  
+
           display: block;
           background-position: center;
           cursor: pointer;
-  
+
           &:hover {
             transform: scale(1.2);
           }
@@ -118,6 +87,9 @@
         & aside {
           opacity: 1;
         }
+      }
+      &:active {
+        background: var(--ea-base-color);
       }
     }
 
