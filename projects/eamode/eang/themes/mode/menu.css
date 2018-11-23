@@ -35,6 +35,22 @@
         border: none;
         cursor: not-allowed;
       }
+
+      &.close {
+        font-size: 10px;
+        margin-left: 10px;
+
+        & span {
+          transition: all ease .2s;
+        }  
+
+        &:hover {
+
+          & span {
+            transform: scale(1.4);
+          }
+        }
+      }
     }
 
     & .name {
