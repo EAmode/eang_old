@@ -8,6 +8,13 @@ export const SIDE_MENU = {
   isHidden: true,
   children: [
     {
+      name: 'Getting Started',
+      icon: 'ea-layout',
+      data: {
+        link: '/getstarted'
+      }
+    },
+    {
       name: 'Layout',
       icon: 'ea-layout',
       data: {
@@ -43,6 +50,22 @@ export const SIDE_MENU = {
       iconStyle: 'ea-negative',
       data: {
         link: '/menu'
+      }
+    },
+    {
+      name: 'Reactive Event Streaming',
+      icon: 'ea-hamburger-menu',
+      iconStyle: 'ea-negative',
+      data: {
+        link: '/reactive'
+      }
+    },
+    {
+      name: 'CSS Themes',
+      icon: 'ea-hamburger-menu',
+      iconStyle: 'ea-negative',
+      data: {
+        link: '/theming'
       }
     }
   ]
