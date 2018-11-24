@@ -59,8 +59,16 @@
   --ea-base-color: hsl(223, 40%,43%);
   --ea-base-color-high: hsl(223, 40%, 53%);
 
+  --ea-alt-base-color: hsl(0, 0%, 20%);
+  --ea-alt-base-color-high: (0, 0%, 30%);
+
   --ea-text-color-dark: #333;
   --ea-text-color-light: #f6f6f6;
 
-  --ea-background-hover: var(--ea-base-color-high);
+  --ea-background-hover: var(--ea-base-color);
+  /* --ea-background-hover: red; */
+  --ea-background-active: var(--ea-base-color-high);
+  /* --ea-background-active: purple; */
+  --ea-background-active-shadow: inset 1.5px 2px 5px rgba(0,0,0,0.2);
+
 }
