@@ -1,21 +1,17 @@
 @define-mixin button-base {
+  /* --ea-button-background-active: blue;
+  --ea-button-background-hover: green; */
 
-  --ea-button-background-active: red;
-  --ea-button-border-color-hover: #5779cc;
-
-  background: var(--ea-button-background-color, var(--ea-color-background-2));
-  color: var(--ea-button-color, var(--ea-color-3));
-  border: var(--ea-button-border, var(--ea-color-background-2) solid 0.1em);
-
+  background: var(--ea-button-background, var(--ea-base-color));
+  color: var(--ea-button-color, var(--ea-text-color-light));
+  border: var(--ea-button-border, var(--ea-base-color) solid 0.1em);
 }
-
 
 @define-mixin button-mode {
   & button {
     @mixin button-base;
 
-    font-size: var(--ea-font-size, 1em);
-    border: 0.1em inset transparent;
+    font-size: var(--ea-font-size, 1rem);
     height: 2.19em;
     padding: 0 1.5em;
     margin: 0;
@@ -30,16 +26,17 @@
     align-items: center;
     user-select: none;
 
-    &:active {
-      --ea-button-background-color: var(--ea-base-color);
-      /* border: var(--ea-button-border); */
-      box-shadow: var(--ea-button-box-shadow);
-    }
-
     /* this is to set the border-color when the button is :hover and not :active */
     &:hover:not(:active) {
-      /* border: var(--ea-button-border); */
+      --ea-button-border: .1em solid var(--ea-base-color);
       background: var(--ea-button-background-hover, var(--ea-background-hover));
+      box-shadow: var(--ea-box-shadow);
+    }
+
+    &:active {
+      --ea-button-border: .1em solid var(--ea-base-color-high);
+      background: var(--ea-button-background-active, var(--ea-background-active));
+      box-shadow: var(--ea-button-background-active-shadow, var(--ea-background-active-shadow));
     }
 
     &[disabled] {
@@ -50,24 +47,22 @@
     }
 
     &[outline] {
-      --ea-button-background-color: transparent;
+      --ea-button-background: transparent;
       --ea-button-border: 0.1em solid var(--ea-base-color);
       color: var(--ea-alt-color-1);
       border: var(--ea-button-border);
 
-      &:active {
-        --ea-button-background-color: rgba(0,0,0,0.15);
-        --ea-button-border: 0.1em solid var(--ea-base-color-high);
+      &:hover:not(:active) {
+        --ea-button-background-hover: rgba(0, 0, 0, .05);
+        box-shadow: unset;
+      }
 
+      &:active {
+        --ea-button-background-active: rgba(0, 0, 0, 0.15);
+        --ea-button-border: 0.1em solid var(--ea-base-color-high);
         /* background: var(--ea-button-background-color); */
         /* --ea-button-background: var(--ea-button-background__active, rgba(0, 0, 0, 0.15)); */
       }
-
-      &:hover:not(:active) {
-        box-shadow: unset;
-        background: var(--ea-button-background__hover, rgba(0, 0, 0, 0.05));
-      }
-
       &[disabled] {
         border: var(--ea-color-background-6) solid 0.1em;
       }
@@ -78,15 +73,16 @@
       border: 1px solid rgba(0, 0, 0, 0);
       color: var(--ea-color-1);
 
-      &:active {
-        --ea-button-border-color__active: rgba(0,0,0,0.25);
-        box-shadow: unset;
-        background-color: rgba(0, 0, 0, 0.25);
+      &:hover:not(:active) {
+        --ea-button-border-color__hover: rgba(0, 0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.1);
+        box-shadow: none;
       }
 
-      &:hover:not(:active) {
-        --ea-button-border-color__hover: rgba(0,0,0,0);
-        background-color: rgba(0, 0, 0, 0.1);
+      &:active {
+        --ea-button-border-color__active: rgba(0, 0, 0, 0.25);
+        box-shadow: unset;
+        background-color: rgba(0, 0, 0, 0.25);
       }
     }
 

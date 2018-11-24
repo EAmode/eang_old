@@ -2,6 +2,8 @@
     & ea-menu {
       /* --ea-menu-background-active: red; */
       /* --ea-menu-text-color: blue; */
+      /* --ea-menu-background-hover: yellow;
+      --ea-menu-background-active: brown; */
 
     user-select: none;
     cursor: pointer;
@@ -57,12 +59,12 @@
 
       &[active] {
         background: var(--ea-color-background-6);
-        color: var(--ea-color-1);
+        color: var(--ea-text-color-dark);
       }
 
       &:hover {
         background: var(--ea-menu-background-hover, var(--ea-background-hover));
-        color: var(--ea-color-3);
+        color: var(--ea-menu-text-color, var(--ea-text-color-light));
 
         & .node-toggle span[chevron-down] {
           --ea-button-icon: var(--ea-icon-chevron-down-neg);
@@ -89,7 +91,8 @@
         }
       }
       &:active {
-        background: var(--ea-base-color);
+        background: var(--ea-menu-background-active, var(--ea-background-active));
+        box-shadow: var(--ea-menu-background-active-shadow, var(--ea-background-active-shadow));
       }
     }
 
