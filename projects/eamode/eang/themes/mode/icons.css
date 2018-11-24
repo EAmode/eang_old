@@ -1,11 +1,11 @@
 .mode {
+
   & span[icon] {
     display: block;
     background-position: center;
     background-repeat: no-repeat;
     height: 1em;
     width: 1em;
-    margin: 0.3em;
 
     &[alert-circle],
     &.ea-alert-circle {

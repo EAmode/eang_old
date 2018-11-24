@@ -1,0 +1,17 @@
+@define-mixin utilities {
+  [sm]{
+    font-size: 0.8rem
+  }
+  [md]{
+    font-size: 1.25rem
+  }
+  [lg]{
+    font-size: 1.5rem
+  }
+  [xl]{
+    font-size: 2rem
+  }
+  [xxl]{
+    font-size: 2.5rem
+  }
+}
