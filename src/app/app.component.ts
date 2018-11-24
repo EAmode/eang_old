@@ -8,42 +8,64 @@ export const SIDE_MENU = {
   isHidden: true,
   children: [
     {
-      name: 'Layout',
-      icon: 'ea-layout',
+      name: 'Get Started',
+      icon: 'ea-power',
       data: {
-        link: '/layout'
+        link: '/getting-started'
       }
     },
     {
-      name: 'Cards',
-      icon: 'ea-layers',
+      name: 'Feature Highlights',
+      icon: 'ea-loader',
+      data: {
+        link: '/'
+      }
+    },
+    {
+      name: 'Components',
+      icon: 'ea-code',
       iconStyle: 'ea-negative',
-      data: {
-        link: '/card'
-      }
-    },
-    {
-      name: 'Buttons',
-      icon: 'ea-button-icon',
-      data: {
-        link: '/button'
-      }
-    },
-    {
-      name: 'Icons',
-      icon: 'ea-grid',
-      iconStyle: 'ea-negative',
-      data: {
-        link: '/icon'
-      }
-    },
-    {
-      name: 'Menu',
-      icon: 'ea-hamburger-menu',
-      iconStyle: 'ea-negative',
-      data: {
-        link: '/menu'
-      }
+      children: [
+        {
+          name: 'Autocomplete',
+          icon: 'ea-layers',
+          iconStyle: 'ea-negative',
+          data: {
+            link: '/card'
+          }
+        },
+        {
+          name: 'Cards',
+          icon: 'ea-layers',
+          iconStyle: 'ea-negative',
+          data: {
+            link: '/card'
+          }
+        },
+        {
+          name: 'Buttons',
+          icon: 'ea-button-icon',
+          data: {
+            link: '/button'
+          }
+        },
+        {
+          name: 'Icons',
+          icon: 'ea-grid',
+          iconStyle: 'ea-negative',
+          data: {
+            link: '/icon'
+          }
+        },
+        {
+          name: 'Menu',
+          icon: 'ea-hamburger-menu',
+          iconStyle: 'ea-negative',
+          data: {
+            link: '/menu'
+          }
+        }
+      ]
     }
   ]
 }
@@ -55,7 +77,7 @@ export const SIDE_MENU = {
 })
 export class AppComponent implements OnInit {
   public menu = SIDE_MENU
-  activated: EventEmitter<MenuTreeItem> = new EventEmitter<MenuTreeItem>()
+  activated = new EventEmitter<MenuTreeItem>()
 
   constructor(public router: Router, public layout: LayoutService) {}
 
@@ -71,7 +93,11 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.activated.subscribe((item: MenuTreeItem) => {
-      this.router.navigate([item.data.link])
+      if (item.data && item.data.link) {
+        this.router.navigate([item.data.link])
+      } else {
+        item.isOpen = !item.isOpen
+      }
     })
   }
 }

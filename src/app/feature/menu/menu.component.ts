@@ -31,7 +31,7 @@ export class MenuComponent implements OnInit {
       {
         name: 'Library',
         icon: 'ea-align-right',
-        iconStyle: 'ea-aliceblue',
+        iconStyle: 'ea-negative',
         data: {
           link: '/icon'
         },

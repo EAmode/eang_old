@@ -27,20 +27,18 @@ export interface MenuTreeItem {
     [style.padding-left]="depth * 15 + 'px'"
     [attr.hidden]="node.isHidden ? '' : null"
     [attr.active]="node.isActive ? '' : null">
-      <ng-container *ngIf="node.icon">
-        <button [attr.disabled]="node.children?.length < 1 ? '' : null" (click)="onToggle()" class="node-toggle">
-          <span icon class="{{node.icon}} {{node.iconStyle}}"></span>
-        </button>
-      </ng-container>
-      <button *ngIf="!node.icon && node.children?.length > 0" (click)="onToggle()" icon flat>
-          <span icon chevron-down *ngIf="node.isOpen">
-          </span>
-          <span icon chevron-right *ngIf="!node.isOpen">
-          </span>
-      </button>
-      <span (click)="onActivate()" class="name">
-        {{node.name}}
+    <button *ngIf="node.children?.length > 0" (click)="onToggle()" icon flat>
+      <span icon chevron-down negative *ngIf="node.isOpen">
       </span>
+      <span icon chevron-right negative *ngIf="!node.isOpen">
+      </span>
+    </button>
+    <span (click)="onActivate()" class="name">
+      <ng-container *ngIf="node.icon">
+          <span icon class="{{node.icon}} {{node.iconStyle}}"></span>
+      </ng-container>
+      {{node.name}}
+    </span>
     <aside>
       <ng-container *ngIf="controlPanelTemplate"
         [ngTemplateOutlet]="controlPanelTemplate"

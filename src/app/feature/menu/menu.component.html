@@ -15,7 +15,7 @@
         <div class="ea-card-content header" style="flex-direction: column;">
           <ea-menu
           [node]="node">
-          </ea-menu> 
+          </ea-menu>
         </div>
     </div>
 
@@ -36,7 +36,7 @@
         <div class="ea-card-content header" style="flex-direction: column;">
           <ea-menu
           [node]="nodeHorizontal">
-          </ea-menu> 
+          </ea-menu>
         </div>
       </div>
     </div>
@@ -50,7 +50,7 @@
         <div class="ea-card-content header" style="flex-direction: column;">
           <ea-menu
           [node]="node">
-          </ea-menu> 
+          </ea-menu>
         </div>
       </div>
       <div class="ea-card" style="background:#333333;">
@@ -60,7 +60,7 @@
         <div class="ea-card-content header" style="flex-direction: column;">
           <ea-menu
           [node]="nodeHiddenFalse">
-          </ea-menu> 
+          </ea-menu>
         </div>
       </div>
     </div>
@@ -78,11 +78,11 @@
           <ea-menu
           [node]="nodeWithTemplate"
           [controlPanelTemplate]="templateMenu">
-          </ea-menu> 
+          </ea-menu>
+          <ng-template #templateMenu let-data="node.data">
+            <div *ngIf="data">{{data.description}}</div>
+          </ng-template>
         </div>
-        <ng-template #templateMenu let-data="node.data">
-          <div *ngIf="data">{{data.description}}</div>
-        </ng-template> 
       </div>
     </div>
 

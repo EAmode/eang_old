@@ -87,7 +87,7 @@
     }
 
     &[icon] {
-      padding: 0.5em;
+      padding: var(--ea-span-icon-padding, 0.2em);
       height: min-content;
     }
 

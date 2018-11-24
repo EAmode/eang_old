@@ -151,6 +151,10 @@
     &.ea-paperclip {
       background-image: inline('mode/icon/paperclip.svg');
     }
+    &[pallete],
+    &.ea-pallete {
+      background-image: inline('mode/icon/pallete.svg');
+    }
     &[plus-circle],
     &.ea-plus-circle {
       background-image: inline('mode/icon/plus-circle.svg');
@@ -278,6 +282,14 @@
     &[add-file],
     &.ea-add-file {
       background-image: inline('mode/icon/add-file.svg');
+    }
+    &[power],
+    &.ea-power {
+      background-image: inline('mode/icon/power.svg');
+    }
+    &[loader],
+    &.ea-loader {
+      background-image: inline('mode/icon/loader.svg');
     }
     &[negative],
     &.ea-negative {
