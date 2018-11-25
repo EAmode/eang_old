@@ -44,6 +44,14 @@ export const SIDE_MENU = {
       data: {
         link: '/menu'
       }
+    },
+    {
+      name: 'Tabs',
+      icon: 'ea-chevron-right',
+      iconStyle: 'ea-negative',
+      data: {
+        link: '/tabs'
+      }
     }
   ]
 }
