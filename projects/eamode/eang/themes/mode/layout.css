@@ -1,15 +1,6 @@
 @define-mixin layout-base {
   --ea-drawer-header-height: 4rem;
   --ea-drawer-footer-height: 4rem;
-  --ea-drawer-width: var(--ea-drawer-width, 300px);
-  --ea-toolbar-height: var(--ea-toolbar-height, 4rem);
-  --drawer-width: 300px;
-  --ea-footer-height: var(--ea-footer-height, 4.5rem);
-  --ea-toolbar-color: var(--ea-toolbar-color, var(--ea-color-3));
-  --ea-drawer-background: var(
-    --ea-drawer-background,
-    var(--ea-color-background-4)
-  );
   --ea-body-display: var(--ea-body-display, block);
 }
 @define-mixin layout-mode {
@@ -24,20 +15,16 @@
       'toolbar toolbar'
       'drawer main';
 
+
     & ea-main {
       font-size: 1rem;
-      --ea-main-background: var(
-        --ea-main-background,
-        var(--ea-color-background-7)
-      );
-
       grid-area: main;
       overflow: auto;
-      background: var(--ea-main-background);
+      background: var(--ea-main-background, var(--ea-color-background-7));
 
       & ea-footer {
         width: 100%;
-        height: var(--ea-footer-height);
+        height: var(--ea-footer-height, 4.5rem);
         display: flex;
         align-items: center;
         background: var(--ea-color-background-2);
@@ -57,21 +44,18 @@
     }
 
     & ea-toolbar {
-      --ea-toolbar-display: var(--ea-toolbar-display, flex);
       font-size: 1rem;
-      --ea-toolbar-padding: var(--ea-toolbar-padding, 0.5em 1em);
-
-      padding: var(--ea-toolbar-padding);
-      grid-area: toolbar;
-      display: var(--ea-toolbar-display);
+      height: var(--ea-toolbar-height, 4rem);
+      padding: var(--ea-toolbar-padding, 0.5em 1em);
       background: var(--ea-color-background-2);
-      height: var(--ea-toolbar-height);
+      display: var(--ea-toolbar-display, flex);
+      align-items: center;
+      grid-area: toolbar;
       grid-row: 1;
       grid-column: 1 / 4;
       z-index: 2;
       box-sizing: border-box;
-      align-items: center;
-      color: var(--ea-toolbar-color);
+      color: var(--ea-toolbar-color, var(--ea-color-3));
       &[shadow] {
         box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);
       }
@@ -90,12 +74,11 @@
       }
 
       & aside {
-        --ea-toolbar-aside-padding: var(--ea-toolbar-aside-padding, 3rem);
         color: var(--ea-color-3);
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        padding-right: var(--ea-toolbar-aside-padding);
+        padding-right: var(--ea-toolbar-aside-padding, 3rem);
       }
 
       & p,
@@ -118,8 +101,8 @@
       flex-direction: column;
       justify-content: space-between;
       display: flex;
-      width: var(--ea-drawer-width);
-      background: var(--ea-drawer-background);
+      width: var( --ea-drawer-width, 300px);
+      background: var( --ea-drawer-background, var(--ea-color-background-4));
 
       & section {
         flex-grow: 1;
@@ -156,6 +139,9 @@
         }
         &:visited {
           color: var(--ea-color-3);
+        }
+        & span[icon] {
+          margin: 0.3em;
         }
       }
     }

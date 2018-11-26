@@ -7,7 +7,7 @@
   --ea-color-accent-2: #61429a;
 
   --ea-color-background-1: #ffffff;
-  --ea-color-background-2: #425b9a;
+  --ea-color-background-2: hsl(223, 40%, 43%);
   --ea-color-background-3: #52638d;
   --ea-color-background-4: #333333;
   --ea-color-background-5: #666a74;
@@ -24,7 +24,7 @@
   --ea-font-1-family: 'Roboto';
   --ea-font-1-style: normal;
   --ea-font-1-weight: 400;
-  --ea-font-1-size: 16px;
+  --ea-font-size: 16px;
   /*
     12 / 16 = 0.75rem
     14 / 16 = 0.875rem
@@ -50,5 +50,25 @@
   font-style: var(--ea-font-1-style);
   font-weight: var(--ea-font-1-weight);
   /* font-size: var(--ea-font-1-size); */
+
+  --ea-background-color: 66, 91, 154;
+
+  --ea-background-color-1:rgba(var(--ea-background-color), 1);
+  --ea-background-color-light:rgba(var(--ea-background-color), 0.8);
+
+  --ea-base-color: hsl(223, 40%,43%);
+  --ea-base-color-high: hsl(223, 40%, 53%);
+
+  --ea-alt-base-color: hsl(0, 0%, 20%);
+  --ea-alt-base-color-high: (0, 0%, 30%);
+
+  --ea-text-color-dark: #333;
+  --ea-text-color-light: #f6f6f6;
+
+  --ea-background-hover: var(--ea-base-color);
+  /* --ea-background-hover: red; */
+  --ea-background-active: var(--ea-base-color-high);
+  /* --ea-background-active: purple; */
+  --ea-background-active-shadow: inset 1.5px 2px 5px rgba(0,0,0,0.2);
 
 }

@@ -39,6 +39,19 @@
       }
     }
   }
+  & .button-container {
+    width: 100%;
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    margin: 4rem 0 2rem 0;
+    @media only screen and (max-width: 640px) {
+    justify-content: space-around;
+    }
+    & button {
+      margin: 1rem;
+    }
+  }
   ea-layout {
     & ea-toolbar {
       & aside {
@@ -125,7 +138,7 @@
       }
       & eangio-feature-reactive {
         & .screen {
-          & ea-panel[orientation="left"],
+          & ea-panel[orientation='left'],
           ea-panel[orientation='right'] {
             @media only screen and (max-width: 500px) {
               --ea-panel-max-width: 4.1rem;

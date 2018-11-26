@@ -36,8 +36,9 @@ export interface MenuTreeItem {
       </ng-container>
       <button *ngIf="!node.icon && node.children?.length > 0" (click)="onToggle($event)" class="node-toggle">
           <span icon chevron-down *ngIf="node.isOpen" role="icon" style="margin: 0">
+
           </span>
-          <span icon chevron-right *ngIf="!node.isOpen" role="icon" style="margin: 0">
+          <span icon chevron-right *ngIf="!node.isOpen">
           </span>
       </button>
       <span class="name">

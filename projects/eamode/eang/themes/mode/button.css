@@ -1,98 +1,135 @@
 @define-mixin button-base {
+  /* --ea-button-background-active: blue;
+  --ea-button-background-hover: green; */
 
-    --ea-button-color: var(--ea-button-color, var(--ea-color-3)); /* Sets the button font-color */
-    --ea-button-background-color: var(--ea-button-background-color, var(--ea-color-background-2)); /* Sets the button background color */
-    --ea-button-border: var(--ea-button-border, var(--ea-color-background-2));
-    --ea-button-border-outline: 0em; /*Sets the initial em for the border outline*/
-    --ea-button-border-radius: 0em; /*Sets the border radius for the button*/
-    --ea-button-padding: var(--ea-button-padding, 0.7em 1.6em);
-    --ea-button-margin: var(--ea-button-margin, 0);
-
-    font-size: var(--ea-card-font-size);
-    padding: var(--ea-button-padding);
-    background-color: var(--ea-button-background-color);
-    color: var(--ea-button-color);
-    border: var(--ea-button-border) solid 0.1em;
-    margin: var(--ea-button-margin);
+  background: var(--ea-button-background, var(--ea-base-color));
+  color: var(--ea-button-color, var(--ea-text-color-light));
+  border: var(--ea-button-border, var(--ea-base-color) solid 0.1em);
 }
-
 
 @define-mixin button-mode {
   & button {
     @mixin button-base;
-    border-radius: 0.2em;
+
+    font-size: var(--ea-font-size, 1rem);
+    height: 2.19em;
+    padding: 0 1.5em;
+    margin: 0;
+    border-radius: 0.25em;
+    box-sizing: content-box;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    box-sizing: border-box;
     outline: none;
     transition: all 0.25s ease 0s;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+
+    /* this is to set the border-color when the button is :hover and not :active */
+    &:hover:not(:active) {
+      --ea-button-border: .1em solid var(--ea-base-color);
+      background: var(--ea-button-background-hover, var(--ea-background-hover));
+      box-shadow: var(--ea-box-shadow);
+    }
+
+    &:active {
+      --ea-button-border: .1em solid var(--ea-base-color-high);
+      background: var(--ea-button-background-active, var(--ea-background-active));
+      box-shadow: var(--ea-button-background-active-shadow, var(--ea-background-active-shadow));
+    }
+
+    &[disabled] {
+      --ea-button-border: var(--ea-color-background-6) solid 0.1em;
+      opacity: 0.65;
+      cursor: not-allowed;
+      border: var(--ea-button-border);
+    }
+
+    &[outline] {
+      --ea-button-background: transparent;
+      --ea-button-border: 0.1em solid var(--ea-base-color);
+      color: var(--ea-alt-color-1);
+      border: var(--ea-button-border);
+
+      &:hover:not(:active) {
+        --ea-button-background-hover: rgba(0, 0, 0, .05);
+        box-shadow: unset;
+      }
+
+      &:active {
+        --ea-button-background-active: rgba(0, 0, 0, 0.15);
+        --ea-button-border: 0.1em solid var(--ea-base-color-high);
+        /* background: var(--ea-button-background-color); */
+        /* --ea-button-background: var(--ea-button-background__active, rgba(0, 0, 0, 0.15)); */
+      }
+      &[disabled] {
+        border: var(--ea-color-background-6) solid 0.1em;
+      }
+    }
+
+    &[flat] {
+      background-color: transparent;
+      border: 1px solid rgba(0, 0, 0, 0);
+      color: var(--ea-color-1);
+
+      &:hover:not(:active) {
+        --ea-button-border-color__hover: rgba(0, 0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.1);
+        box-shadow: none;
+      }
+
+      &:active {
+        --ea-button-border-color__active: rgba(0, 0, 0, 0.25);
+        box-shadow: unset;
+        background-color: rgba(0, 0, 0, 0.25);
+      }
+    }
 
     &[icon] {
-      border: none !important;
-      background: none;
-      padding: 0;
-      outline: none;
+      padding: 0.5em;
+      height: min-content;
     }
 
-    &[icon]:hover {
-      background-color: rgba(0, 0, 0, 0.1);
-      border: none;
+    &[left] {
+      & > span[icon] {
+        margin-left: 0;
+      }
     }
 
-    &[icon]:active {
-      background-color: rgba(0, 0, 0, 0.2);
+    &[right] {
+      & > span[icon] {
+        margin-right: 0;
+      }
     }
-  }
-  & [small] {
-    font-size: calc(var(--ea-card-font-size) * 0.8);
-  }
-  & [medium] {
-    font-size: calc(var(--ea-card-font-size) * 1.2);
-  }
-  & [large] {
-    font-size: calc(var(--ea-card-font-size) * 1.5);
-  }
 
-  & [outline] {
-    --ea-button-background-color: none;
-    color: var(--ea-alt-color-1);
-  }
+    &[rounded] {
+      border-radius: 1.5rem;
+    }
 
-  &[primary] {
-    color: var(--ea-color-1);
-    background-color: var(--ea-color-accent-1);
-  }
-  &[secondary] {
-    color: var(--ea-color-1);
-    background-color: var(--ea-color-accent-2);
-  }
-  &[success] {
-    color: var(--ea-color-1);
-    background-color: var(--ea-color-success);
-  }
-  &[info] {
-    color: var(--ea-color-1);
-    background-color: var(--ea-color-info);
-  }
-  &[warning] {
-    color: var(--ea-color-1);
-    background-color: var(--ea-color-warning);
-  }
-  &[danger] {
-    color: var(--ea-color-1);
-    background-color: var(--ea-color-danger);
-  }
-  & button[disabled] {
-    opacity: 0.65;
-    cursor: not-allowed;
-    border: var(--ea-color-background-6) solid 0.1em;
-  }
-  & button:hover {
-    border: var(--ea-color-background-6) solid 0.1em;
-  }
-
-  & button:active {
-    background-color: var(--ea-color-background-6);
+    &[primary] {
+      color: var(--ea-color-1);
+      background-color: var(--ea-color-accent-1);
+    }
+    &[secondary] {
+      color: var(--ea-color-1);
+      background-color: var(--ea-color-accent-2);
+    }
+    &[success] {
+      color: var(--ea-color-1);
+      background-color: var(--ea-color-success);
+    }
+    &[info] {
+      color: var(--ea-color-1);
+      background-color: var(--ea-color-info);
+    }
+    &[warning] {
+      color: var(--ea-color-1);
+      background-color: var(--ea-color-warning);
+    }
+    &[danger] {
+      color: var(--ea-color-1);
+      background-color: var(--ea-color-danger);
+    }
   }
 }

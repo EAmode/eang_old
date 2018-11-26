@@ -42,8 +42,10 @@ const routes: Routes = [
   { path: 'icon', component: IconComponent },
   { path: 'variables', component: VariablesComponent },
   { path: 'menu', component: MenuComponent },
+  { path: 'getting-started', component: GetStartedComponent },
   { path: 'tabs', component: TabsComponent }
 ]
+
 @NgModule({
   declarations: [
     AppComponent,
