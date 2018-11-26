@@ -95,8 +95,6 @@ export class AppComponent implements OnInit {
     this.activated.subscribe((item: MenuTreeItem) => {
       if (item.data && item.data.link) {
         this.router.navigate([item.data.link])
-      } else {
-        item.isOpen = !item.isOpen
       }
     })
   }
