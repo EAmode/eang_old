@@ -101,8 +101,9 @@
       flex-direction: column;
       justify-content: space-between;
       display: flex;
-      width: var( --ea-drawer-width, 300px);
+      width: var( --ea-drawer-width, 225px);
       background: var( --ea-drawer-background, var(--ea-color-background-4));
+      -webkit-tap-highlight-color: transparent;
 
       & section {
         flex-grow: 1;
@@ -152,16 +153,16 @@
       grid-template-columns: [ea-drawer-start] var(--ea-drawer-width) [ea-drawer-end ea-main-start] 1fr [ea-main-end];
       height: 100vh;
     }
-    &[nav-overlay] > ea-main {
+    &[nav-overlay]  ea-main {
       grid-row: ea-toolbar-end / ea-main-end;
-      grid-column: ea-drawer-start / ea-main-end;
+      grid-column: 1/5;
       overflow: auto;
     }
-    &[nav-overlay] > ea-toolbar {
+    &[nav-overlay]  ea-toolbar {
       grid-row: ea-toolbar-start;
-      grid-column: ea-drawer-start / ea-main-end;
+      grid-column: 1/5;
     }
-    &[nav-overlay] > ea-drawer {
+    &[nav-overlay]  ea-drawer {
       grid-row: 2 / 4;
       grid-column: 1;
       z-index: 1;
@@ -169,7 +170,7 @@
 
     & [overlay] {
       grid-row: ea-toolbar-end / ea-main-end;
-      grid-column: ea-drawer-start / ea-main-end;
+      grid-column: 1/5;
       background: #000;
       opacity: 0.5;
       z-index: 1;

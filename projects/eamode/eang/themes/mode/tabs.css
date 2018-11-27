@@ -1,13 +1,9 @@
 
   @define-mixin tabs {
   & ea-tab {
-
-    background: var(--ea-color-3);
+    background: var(--ea-tabs-background, tansparent);
     display: none;
-    /* height: 100%; */
-    padding: 0.5em 1em;
-    border: 1px solid #c8c8c8;
-    border-radius: 0.1em 0.1em 0.3em 0.3em;
+    border: var(--ea-tabs-border, none);
 
     &[active] {
       display: block;
@@ -16,9 +12,34 @@
   }
 
   & ea-tabs {
-    & ea-menu {
-      .node {
-        border-radius: 0.3em 0.3em 0 0;
+    width: 100%;
+    -webkit-tap-highlight-color: transparent;
+    & > ea-menu {
+      & .name {
+        color: var(--ea-text-color-dark);
+      }
+      & .node {
+        border-top: .1em solid transparent;
+      }
+      & .node[active]{
+        background: none;
+        border-bottom: .1em solid var(--ea-background-active);
+        &:hover {
+          border-top: .1em solid transparent;
+        }
+      }
+      & .node:hover {
+        background: transparent;
+        border-top: .1em solid var(--ea-background-hover);
+      }
+      & .node:active {
+        --ea-background-active: rgba(0,0,0,.15);
+        background: var(--ea-background-active);
+        box-shadow: none;
+        border-bottom: .1em solid transparent;
+      }
+      & .ea-tree-children.horizontal {
+        border-bottom: .05em solid lightgrey;
       }
     }
   }

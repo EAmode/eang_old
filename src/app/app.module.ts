@@ -42,6 +42,7 @@ const routes: Routes = [
   { path: 'icon', component: IconComponent },
   { path: 'variables', component: VariablesComponent },
   { path: 'getting-started', component: GetStartedComponent },
+  { path: 'menu', component: MenuComponent },
   { path: 'tabs', component: TabsComponent }
 ]
 
