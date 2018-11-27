@@ -31,31 +31,23 @@
       </ea-menu>
     </section>
     <footer>
-      <img
-        style="padding-right: 1rem;"
-        src="https://camo.githubusercontent.com/369cc2fa7d48781a040878c8b6e9bf8ff7ba4a30/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f762f4065616d6f64652f65616e672e737667"
-        alt=""
-      />
-      <img
-        src="https://camo.githubusercontent.com/e66b89ea6f74ba6585d8ed3705e81bfa5d31c405/68747470733a2f2f696d672e736869656c64732e696f2f7472617669732f45416d6f64652f65616e672e737667"
-        alt=""
-      />
+      <img style="padding-right: 1rem;" src="https://camo.githubusercontent.com/369cc2fa7d48781a040878c8b6e9bf8ff7ba4a30/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f762f4065616d6f64652f65616e672e737667"
+        alt="" />
+      <img src="https://camo.githubusercontent.com/e66b89ea6f74ba6585d8ed3705e81bfa5d31c405/68747470733a2f2f696d672e736869656c64732e696f2f7472617669732f45416d6f64652f65616e672e737667"
+        alt="" />
     </footer>
   </ea-drawer>
 
   <ea-main #scrollContainer>
     <ea-body>
-      <router-outlet
-        (activate)="onActivate($event, scrollContainer)"
-      ></router-outlet>
+      <router-outlet (activate)="onActivate($event, scrollContainer)"></router-outlet>
     </ea-body>
     <ea-footer>
-      <p>Powered by</p>
-      <a
-        style="margin-left:0.5rem;"
-        class="ea-mode-logo"
-        href="https://eamode.com"
-      ></a>
+        <a href="">
+          ea-mode
+        </a>
+        <!--<span><p>Powered by</p><a class="footer-text" href="https://eamode.com">eamode</a></span>
+        <span><p>Have questions?</p><a href="mailto:questions@eang.io" class="footer-text">Email us</a> or <a href="https://github.com/eamode/eang/issues" class="footer-text">open an issue</a> in Github</span>-->
     </ea-footer>
   </ea-main>
 </ea-layout>
