@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser'
-import { NgModule } from '@angular/core'
+import { NgModule, Component } from '@angular/core'
 import { ReactiveFormsModule } from '@angular/forms'
 import { RouterModule, Routes } from '@angular/router'
 
@@ -30,6 +30,7 @@ import { VariablesComponent } from './variables/variables.component'
 import { GetStartedComponent } from './feature/get-started/get-started.component'
 import { MenuComponent } from './feature/menu/menu.component'
 import { LandingComponent } from './feature/landing/landing.component'
+import { ComponentsComponent } from './feature/components/components.component'
 
 const routes: Routes = [
   { path: '', component: LandingComponent },
@@ -41,7 +42,8 @@ const routes: Routes = [
   { path: 'icon', component: IconComponent },
   { path: 'variables', component: VariablesComponent },
   { path: 'menu', component: MenuComponent },
-  { path: 'getstarted', component: GetStartedComponent }
+  { path: 'getstarted', component: GetStartedComponent },
+  { path: 'components', component: ComponentsComponent }
 ]
 @NgModule({
   declarations: [
@@ -56,7 +58,8 @@ const routes: Routes = [
     VariablesComponent,
     MenuComponent,
     GetStartedComponent,
-    LandingComponent
+    LandingComponent,
+    ComponentsComponent
   ],
   imports: [
     BrowserModule,

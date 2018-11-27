@@ -26,7 +26,7 @@
       font-size: 1rem;
       --ea-main-background: var(
         --ea-main-background,
-        var(--ea-color-background-7)
+        var(--ea-color-background-1)
       );
 
       grid-area: main;

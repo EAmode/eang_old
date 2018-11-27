@@ -1,37 +1,39 @@
 <div class="ea-card" unset>
   <div class="ea-card-header">
-    <h1>Icons</h1>
+    <h1>Icon</h1>
     <span icon grid style="width:2em; height:2em;"></span>
   </div>
-  <p>Icons use the native <code>span</code> tag to render svg icons. Using the <code>icon</code> attribute and the name
-  of the icon you want, you can render icons.</p>
+  <p>Icons provide a quick visual indicator to help users quickly identify features. Icons are rendered as SVG images.</p>
+
+  <b>Usage</b>
+  <p><code>&lt;span icon type&gt;</code></p>
+  <p><b>Attributes:</b></p>
+  <ul>
+    <li><b>type</b> - the eang icon type (ex: bar-chart, bell, calendar) </li>
+    <li><b>(optional) negative</b> - inverts the color based on the css theme</li>
+  </ul>
+ 
+
+  <h3>Examples</h3>
+
   <div class="ea-card-content example" grid>
     <ea-markdown [doc]="icon"></ea-markdown>
     <div class="ea-card" unset style="width: auto;">
-      <div
-        class="ea-card-content"
-        style="width:auto; justify-content: space-evenly;"
-      >
-        <div style="padding: 1.25rem" class="ea-card"><span icon x></span></div>
-        <div
-          style="padding: 1.25rem; --ea-card-background:var(--ea-color-background-2);"
-          class="ea-card"
-        >
-          <span icon x negative></span>
+      <div class="ea-card-content" style="width:auto; justify-content: space-evenly;">
+        <div style="padding: 1.25rem" class="ea-card"><span icon upload></span></div>
+        <div style="padding: 1.25rem; --ea-card-background:var(--ea-color-background-2);" class="ea-card">
+          <span icon upload negative></span>
         </div>
-        <div style="padding: 1.25rem" class="ea-card"><span icon x></span></div>
       </div>
     </div>
   </div>
 </div>
 
 <div class="ea-card" unset>
-  <div class="ea-card-header"><h2>Icon Set</h2></div>
-  <div
-    grid
-    class="ea-card-content icon-tiles"
-    style="grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));grid-gap: 2em;"
-  >
+  <div class="ea-card-header">
+    <h2>Icon Types</h2>
+  </div>
+  <div grid class="ea-card-content icon-tiles" style="grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));grid-gap: 2em;">
     <div class="ea-card">
       <div class="ea-card-content"><span alert-circle icon></span></div>
       <div class="ea-card-footer">alert-circle</div>
@@ -286,4 +288,3 @@
     </div>
   </div>
 </div>
-
