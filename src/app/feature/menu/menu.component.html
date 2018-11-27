@@ -77,10 +77,14 @@
         <div class="ea-card-content header" style="flex-direction: column;">
           <ea-menu
           [node]="nodeWithTemplate"
+          [nameTemplate]="nameTemplate"
           [controlPanelTemplate]="templateMenu">
           </ea-menu>
           <ng-template #templateMenu let-data="node.data">
             <div *ngIf="data">{{data.description}}</div>
+          </ng-template>
+          <ng-template #nameTemplate let-data="node.data">
+            <h4 *ngIf="data">{{data.header}}</h4>
           </ng-template>
         </div>
       </div>

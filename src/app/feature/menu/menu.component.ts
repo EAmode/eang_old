@@ -71,7 +71,10 @@ export class MenuComponent implements OnInit {
     this.nodeWithTemplate = JSON.parse(JSON.stringify(this.node))
     this.nodeWithTemplate.children[0].data.description =
       'Notification description'
+    this.nodeWithTemplate.children[0].data.header = 'Header 1'
     this.nodeWithTemplate.children[1].data.description = 'Cards description'
+    this.nodeWithTemplate.children[1].data.header = 'Header 2'
+    this.nodeWithTemplate.children[2].data.header = 'Header 3'
   }
 
   ea_menu = `

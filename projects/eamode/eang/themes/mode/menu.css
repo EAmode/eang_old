@@ -16,10 +16,15 @@
         }
       }
       & .name {
+        height: 100%;
         width: 100%;
         color: var(--ea-menu-text-color, var(--ea-text-color-light));
         display: flex;
         align-items: center;
+
+        & span[icon] {
+          margin-right: .5em;
+        }
       }
 
       & aside {

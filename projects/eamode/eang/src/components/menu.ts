@@ -34,10 +34,16 @@ export interface MenuTreeItem {
       </span>
     </button>
     <span (click)="onActivate()" class="name">
-      <ng-container *ngIf="node.icon">
-          <span icon class="{{node.icon}} {{node.iconStyle}}"></span>
+      <ng-container *ngIf="nameTemplate; else defaultName"
+        [ngTemplateOutlet]="nameTemplate"
+        [ngTemplateOutletContext]="{node: node}">
       </ng-container>
-      {{node.name}}
+      <ng-template #defaultName>
+        <ng-container *ngIf="node.icon">
+            <span icon class="{{node.icon}} {{node.iconStyle}}"></span>
+        </ng-container>
+        {{node.name}}
+      </ng-template>
     </span>
     <aside>
       <ng-container *ngIf="controlPanelTemplate"
@@ -53,6 +59,7 @@ export interface MenuTreeItem {
     [depth]="depth + 1"
     [toggleEvents]="toggleEvents"
     [activateEvents]="activateEvents"
+    [nameTemplate]="nameTemplate"
     [controlPanelTemplate]="controlPanelTemplate"></ea-menu>
 </div>`,
   encapsulation: ViewEncapsulation.None
@@ -62,6 +69,8 @@ export class MenuComponent implements OnInit {
   node
   @Input()
   depth = 0
+  @Input()
+  nameTemplate
   @Input()
   controlPanelTemplate
   @Input()
