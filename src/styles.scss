@@ -30,7 +30,7 @@
 #eang-welcome {
   align-items: center;
   align-content: center;
-  // background: url('./assets/images/flickr-14202459710.jpg');
+  background: url('./assets/images/flickr-14202459710.jpg');
   background-size: contain;
   color: white;
   display: flex;
@@ -205,6 +205,7 @@
     }
     & ea-body {
       --ea-body-display: flex;
+      margin:0;
       justify-content: center;
       & eangio-home,
       eangio-card,

@@ -34,7 +34,6 @@ import { LandingComponent } from './feature/landing/landing.component'
 import { ComponentsComponent } from './feature/components/components.component'
 import { TabsComponent } from './feature/tabs/tabs.component'
 
-
 const routes: Routes = [
   { path: '', component: LandingComponent },
   { path: 'reactive', component: ReactiveComponent },
@@ -46,7 +45,8 @@ const routes: Routes = [
   { path: 'variables', component: VariablesComponent },
   { path: 'components', component: ComponentsComponent },
   { path: 'getting-started', component: GetStartedComponent },
-  { path: 'tabs', component: TabsComponent }
+  { path: 'tabs', component: TabsComponent },
+  { path: 'menu', component: MenuComponent }
 ]
 
 @NgModule({
@@ -63,7 +63,7 @@ const routes: Routes = [
     MenuComponent,
     GetStartedComponent,
     LandingComponent,
-    ComponentsComponent
+    ComponentsComponent,
     TabsComponent
   ],
   imports: [
