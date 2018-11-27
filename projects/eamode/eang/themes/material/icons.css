@@ -143,6 +143,7 @@
     &.ea-link-2 {
       background-image: inline('mode/icon/link-2.svg');
     }
+
     &[link],
     &.ea-link {
       background-image: inline('mode/icon/link.svg');

@@ -28,8 +28,26 @@
       font-size: 1rem;
       --ea-main-background: var(
         --ea-main-background,
-        var(--ea-color-background-7)
+        --ea-color-background-1
       );
+      
+      a {
+        color: blue;
+        font-size: 1em;
+        text-decoration: underline;
+      }
+    
+      a:active {
+        color: orange;
+      }
+    
+      a:hover {
+        color: green;
+      }
+    
+      a:visted {
+        color: blue;
+      }
 
       grid-area: main;
       overflow: auto;

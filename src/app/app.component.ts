@@ -9,16 +9,21 @@ export const SIDE_MENU = {
   children: [
     {
       name: 'Getting Started',
-      icon: 'ea-layout',
       data: {
         link: '/getstarted'
       }
     },
     {
-      name: 'Layout',
-      icon: 'ea-layout',
+      name: 'Components',
       data: {
-        link: '/layout'
+        link: '/components'
+      }
+    },
+    {
+      name: 'Buttons',
+      icon: 'ea-button-icon',
+      data: {
+        link: '/button'
       }
     },
     {
@@ -30,18 +35,18 @@ export const SIDE_MENU = {
       }
     },
     {
-      name: 'Buttons',
-      icon: 'ea-button-icon',
-      data: {
-        link: '/button'
-      }
-    },
-    {
       name: 'Icons',
       icon: 'ea-grid',
       iconStyle: 'ea-negative',
       data: {
         link: '/icon'
+      }
+    },
+    {
+      name: 'Layout',
+      icon: 'ea-layout',
+      data: {
+        link: '/layout'
       }
     },
     {
@@ -53,8 +58,7 @@ export const SIDE_MENU = {
       }
     },
     {
-      name: 'Reactive Event Streaming',
-      icon: 'ea-hamburger-menu',
+      name: 'Reactive',
       iconStyle: 'ea-negative',
       data: {
         link: '/reactive'
@@ -62,7 +66,6 @@ export const SIDE_MENU = {
     },
     {
       name: 'CSS Themes',
-      icon: 'ea-hamburger-menu',
       iconStyle: 'ea-negative',
       data: {
         link: '/theming'

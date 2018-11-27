@@ -47,6 +47,13 @@
     text-align: center;
 }
 
+.layout-two-by-one {
+  display: grid;
+  grid-template-columns: 100px 300px;
+  grid-column-gap: 1rem;
+  text-align: center;
+}
+
 .layout-two-by-two {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -132,6 +139,7 @@
 }
 
 .footer-text {
+
     color: white;
     font-size: .8em;
     display: flex;
