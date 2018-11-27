@@ -31,7 +31,7 @@ import { GetStartedComponent } from './feature/get-started/get-started.component
 import { MenuComponent } from './feature/menu/menu.component'
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: 'features', component: HomeComponent },
   { path: 'reactive', component: ReactiveComponent },
   { path: 'theming', component: ThemingComponent },
   { path: 'layout', component: LayoutComponent },

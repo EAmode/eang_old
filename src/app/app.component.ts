@@ -9,21 +9,18 @@ export const SIDE_MENU = {
   children: [
     {
       name: 'Get Started',
-      icon: 'ea-power',
       data: {
         link: '/getting-started'
       }
     },
     {
       name: 'Feature Highlights',
-      icon: 'ea-loader',
       data: {
-        link: '/'
+        link: '/features'
       }
     },
     {
       name: 'Components',
-      icon: 'ea-code',
       iconStyle: 'ea-negative',
       children: [
         {

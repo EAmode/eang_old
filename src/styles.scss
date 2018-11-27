@@ -34,6 +34,18 @@
 
 .mode,
 .material {
+  & ea-menu {
+    & .node {
+      & button {
+        padding: .1rem;
+        margin-right: .2rem;
+      }
+      & span {
+        height: .7rem;
+        width: .7rem;
+      }
+    }
+  }
   & .ea-card {
     & .ea-card-content.example {
       --ea-card-content-grid: minmax(40%, 50%) 1fr;
