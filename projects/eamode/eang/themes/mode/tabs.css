@@ -1,0 +1,46 @@
+
+  @define-mixin tabs {
+  & ea-tab {
+    background: var(--ea-tabs-background, tansparent);
+    display: none;
+    border: var(--ea-tabs-border, none);
+
+    &[active] {
+      display: block;
+      width: calc(100% - 2em);
+    }
+  }
+
+  & ea-tabs {
+    width: 100%;
+    -webkit-tap-highlight-color: transparent;
+    & > ea-menu {
+      & .name {
+        color: var(--ea-text-color-dark);
+      }
+      & .node {
+        border-top: .1em solid transparent;
+      }
+      & .node[active]{
+        background: none;
+        border-bottom: .1em solid var(--ea-background-active);
+        &:hover {
+          border-top: .1em solid transparent;
+        }
+      }
+      & .node:hover {
+        background: transparent;
+        border-top: .1em solid var(--ea-background-hover);
+      }
+      & .node:active {
+        --ea-background-active: rgba(0,0,0,.15);
+        background: var(--ea-background-active);
+        box-shadow: none;
+        border-bottom: .1em solid transparent;
+      }
+      & .ea-tree-children.horizontal {
+        border-bottom: .05em solid lightgrey;
+      }
+    }
+  }
+}

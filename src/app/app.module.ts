@@ -10,7 +10,8 @@ import {
   AutoCompleteModule,
   ThemePickerModule,
   MarkdownModule,
-  MenuModule
+  MenuModule,
+  TabsModule
 } from '@eamode/eang'
 
 import {
@@ -31,6 +32,8 @@ import { GetStartedComponent } from './feature/get-started/get-started.component
 import { MenuComponent } from './feature/menu/menu.component'
 import { LandingComponent } from './feature/landing/landing.component'
 import { ComponentsComponent } from './feature/components/components.component'
+import { TabsComponent } from './feature/tabs/tabs.component'
+
 
 const routes: Routes = [
   { path: '', component: LandingComponent },
@@ -41,10 +44,11 @@ const routes: Routes = [
   { path: 'card', component: CardComponent },
   { path: 'icon', component: IconComponent },
   { path: 'variables', component: VariablesComponent },
-  { path: 'menu', component: MenuComponent },
-  { path: 'getstarted', component: GetStartedComponent },
-  { path: 'components', component: ComponentsComponent }
+  { path: 'components', component: ComponentsComponent },
+  { path: 'getting-started', component: GetStartedComponent },
+  { path: 'tabs', component: TabsComponent }
 ]
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,6 +64,7 @@ const routes: Routes = [
     GetStartedComponent,
     LandingComponent,
     ComponentsComponent
+    TabsComponent
   ],
   imports: [
     BrowserModule,
@@ -73,6 +78,7 @@ const routes: Routes = [
     MdcRippleModule,
     MdcRadioModule,
     MenuModule,
+    TabsModule,
     RouterModule.forRoot(routes, { scrollPositionRestoration: 'top' })
   ],
   providers: [],

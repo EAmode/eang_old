@@ -1,9 +1,5 @@
 @define-mixin table-base {
-  --ea-table-thead-background: var(
-    --ea-table-thead-background,
-    var(--ea-color-background-3)
-  );
-  --ea-table-padding: var(--ea-table-padding, 0.8em 1.5em);
+
 }
 
 @define-mixin table-mode {
@@ -15,7 +11,7 @@
     }
 
     thead {
-      background: var(--ea-table-thead-background);
+      background: var(--ea-table-thead-background,var(--ea-color-background-3));
       & th {
         border-radius: 0;
         color: var(--ea-color-3);
@@ -76,7 +72,7 @@
 
     td,
     th {
-      padding: var(--ea-table-padding);
+      padding: var(--ea-table-padding, 0.8em 1.5em);
       display: table-cell;
       text-align: left;
       vertical-align: middle;

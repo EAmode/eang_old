@@ -3,228 +3,286 @@
     <h1>Card</h1>
     <span icon layers style="width: 2rem; height:2rem;"></span>
   </div>
-  <p>The ea-card has a header, content, and footer labeled as <code>.ea-card-header</code>, <code>.ea-card-content</code>,
-    and <code>.ea-card-footer</code> respectively. </p>
-  <div class="ea-card-content example" grid>
-    <ea-markdown [doc]="card"></ea-markdown>
-    <div class="ea-card">
-      <div class="ea-card-header">
-        <p>ea-card-header</p>
-        <div content>
-          <button icon>
-            <span icon sign-in></span>
-          </button>
+  <div class="ea-card-content">
+    <ea-tabs>
+      <ea-tab name="Overview">
+        <div class="ea-card" unset>
+          <p>
+            The ea-card has a header, content, and footer labeled as
+            <code>.ea-card-header</code>, <code>.ea-card-content</code>, and
+            <code>.ea-card-footer</code> respectively.
+          </p>
+          <div class="ea-card-content example" grid>
+            <ea-markdown [doc]="card"></ea-markdown>
+            <div class="ea-card">
+              <div class="ea-card-header">
+                <p>ea-card-header</p>
+                <div content>
+                  <button icon flat><span icon sign-in></span></button>
+                </div>
+                <button icon flat><span icon x></span></button>
+              </div>
+              <div
+                class="ea-card-content header"
+                style="flex-direction: column;"
+              >
+                <h2>ea-card-content</h2>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Vestibulum volutpat purus ac ultrices maximus. Maecenas
+                  lacinia ipsum id est suscipit, non sollicitudin odio
+                  imperdiet.
+                </p>
+              </div>
+              <div class="ea-card-footer">
+                <button small>back</button> 1/2 <button small>next</button>
+              </div>
+            </div>
+          </div>
         </div>
-        <button icon>
-          <span icon x></span>
-        </button>
-      </div>
-      <div class="ea-card-content header" style="flex-direction: column;">
-        <h2>ea-card-content</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum volutpat purus ac ultrices maximus.
-          Maecenas lacinia ipsum id est suscipit, non sollicitudin odio imperdiet.</p>
-      </div>
-      <div class="ea-card-footer">
-        <button small>back</button>
-        1/2
-        <button small>next</button>
-      </div>
-    </div>
-  </div>
-</div>
+        <ea-markdown [doc]="sizing"></ea-markdown>
+      </ea-tab>
+      <ea-tab name="Examples">
+        <h2>Card Sizing</h2>
+        <p>
+          Cards can be dynamically sized using the eang utility attributes of
+          <code>sm</code>, <code>md</code>, <code>lg</code>, and
+          <code>xl</code>. This will proportionally scale interior and exterior
+          margins, padding, and font-sizes of any <code>ea-card</code>.
+        </p>
 
-<ea-markdown [doc]="sizing"></ea-markdown>
-
-
-<h1>Card Sizing</h1>
-
-<p>Cards can be dynamically sized using the eang utility attributes of <code>sm</code>, <code>md</code>, <code>lg</code>,
-  and <code>xl</code>. This will proportionally scale interior and exterior margins, padding, and font-sizes of any
-  <code>ea-card</code>.</p>
-
-<div class="ea-card" unset>
-  <div class="ea-card-content" flex-center>
-    <div class="ea-card" sm style="width:15em;">
-      <div class="ea-card-header" style="padding:0;">
-        <img style="width: 100%;" src="../../../assets/images/card-bg.jpg"
-          alt="">
-      </div>
-      <div class="ea-card-content" style="flex-direction: column;">
-        <h2>Title</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-      </div>
-      <div class="ea-card-footer">
-        <button>Save</button>
-      </div>
-    </div>
-    <div class="ea-card" style="width:15em;">
-      <div class="ea-card-header" style="padding:0;">
-          <img style="width: 100%;" src="../../../assets/images/card-bg.jpg"
-          alt="">
-      </div>
-      <div class="ea-card-content" style="flex-direction: column;">
-        <h2>Title</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-      </div>
-      <div class="ea-card-footer">
-        <button>Save</button>
-      </div>
-    </div>
-    <div class="ea-card" md style="width:15em;">
-      <div class="ea-card-header" style="padding:0;">
-          <img style="width: 100%;" src="../../../assets/images/card-bg.jpg"
-          alt="">
-      </div>
-      <div class="ea-card-content" style="flex-direction: column;">
-        <h2>Title</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </div>
-      <div class="ea-card-footer">
-        <button>Save</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<h2>.ea-card-header</h2>
-<p>The <code>.ea-card-header</code> is designed to hold the title of the card and can optionally hold a <code>content</code>
-  section, and an <code>action</code> section. It is laid
-  out using flexbox to align the items as displayed below. </p>
-
-<div class="ea-card" unset>
-  <div class="ea-card-content"flex-center >
-    <div class="ea-card" style="width:20em;">
-      <div class="ea-card-header">
-        <p>ea-card-header</p>
-      </div>
-      <div class="ea-card-content header" style="flex-direction: column;">
-        <h2>ea-card-content</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum volutpat purus ac ultrices maximus.
-          Maecenas lacinia ipsum id est suscipit, non sollicitudin odio imperdiet.</p>
-      </div>
-      <div class="ea-card-footer header">
-        <p style="margin:0;">ea-card-footer</p>
-      </div>
-    </div>
-    <div class="ea-card" style="width:20em;">
-      <div class="ea-card-header" style="--ea-card-header-background: var(--ea-color-background-2); --ea-card-header-color: white;">
-        <p>ea-card-header</p>
-        <button icon>
-          <span icon negative x></span>
-        </button>
-      </div>
-      <div class="ea-card-content header" style="flex-direction: column;">
-        <h2>ea-card-content</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum volutpat purus ac ultrices maximus.
-          Maecenas lacinia ipsum id est suscipit, non sollicitudin odio imperdiet.</p>
-      </div>
-      <div class="ea-card-footer header">
-        <p style="margin:0;">ea-card-footer</p>
-      </div>
-    </div>
-    <div class="ea-card" style="width:20em;">
-      <div class="ea-card-header" style="--ea-card-header-background: var(--ea-color-background-2); --ea-card-header-color: white;">
-        <section>
-          <p>ea-card-header</p>
-        </section>
-        <div content>
-          <button icon>
-            <span icon negative download></span>
-          </button>
-          <button icon>
-            <span icon negative add-file></span>
-          </button>
+        <div class="ea-card" unset>
+          <div class="ea-card-content" flex-center>
+            <div class="ea-card" sm style="width:15em;">
+              <div class="ea-card-header" style="padding:0;">
+                <img
+                  style="width: 100%;"
+                  src="../../../assets/images/card-bg.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="ea-card-content" style="flex-direction: column;">
+                <h2>Title</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+              <div class="ea-card-footer"><button>Save</button></div>
+            </div>
+            <div class="ea-card" style="width:15em;">
+              <div class="ea-card-header" style="padding:0;">
+                <img
+                  style="width: 100%;"
+                  src="../../../assets/images/card-bg.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="ea-card-content" style="flex-direction: column;">
+                <h2>Title</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+              <div class="ea-card-footer"><button>Save</button></div>
+            </div>
+            <div class="ea-card" md style="width:15em;">
+              <div class="ea-card-header" style="padding:0;">
+                <img
+                  style="width: 100%;"
+                  src="../../../assets/images/card-bg.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="ea-card-content" style="flex-direction: column;">
+                <h2>Title</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+              <div class="ea-card-footer"><button>Save</button></div>
+            </div>
+          </div>
         </div>
-        <button icon>
-          <span icon negative x></span>
-        </button>
-      </div>
-      <div class="ea-card-content header" style="flex-direction: column;">
-        <h2>ea-card-content</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum volutpat purus ac ultrices maximus.
-          Maecenas lacinia ipsum id est suscipit, non sollicitudin odio imperdiet.</p>
-      </div>
-      <div class="ea-card-footer header">
-        <p style="margin:0;">ea-card-footer</p>
-      </div>
-    </div>
+
+        <h2>.ea-card-header</h2>
+        <p>
+          The <code>.ea-card-header</code> is designed to hold the title of the
+          card and can optionally hold a <code>content</code> section, and an
+          <code>action</code> section. It is laid out using flexbox to align the
+          items as displayed below.
+        </p>
+
+        <div class="ea-card" unset>
+          <div class="ea-card-content" flex-center>
+            <div class="ea-card" style="width:20em;">
+              <div class="ea-card-header"><p>ea-card-header</p></div>
+              <div
+                class="ea-card-content header"
+                style="flex-direction: column;"
+              >
+                <h2>ea-card-content</h2>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Vestibulum volutpat purus ac ultrices maximus. Maecenas
+                  lacinia ipsum id est suscipit, non sollicitudin odio
+                  imperdiet.
+                </p>
+              </div>
+              <div class="ea-card-footer header">
+                <p style="margin:0;">ea-card-footer</p>
+              </div>
+            </div>
+            <div class="ea-card" style="width:20em;">
+              <div
+                class="ea-card-header"
+                style="--ea-card-header-background: var(--ea-color-background-2); --ea-card-header-color: white;"
+              >
+                <p>ea-card-header</p>
+                <button icon flat><span icon negative x></span></button>
+              </div>
+              <div
+                class="ea-card-content header"
+                style="flex-direction: column;"
+              >
+                <h2>ea-card-content</h2>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Vestibulum volutpat purus ac ultrices maximus. Maecenas
+                  lacinia ipsum id est suscipit, non sollicitudin odio
+                  imperdiet.
+                </p>
+              </div>
+              <div class="ea-card-footer header">
+                <p style="margin:0;">ea-card-footer</p>
+              </div>
+            </div>
+            <div class="ea-card" style="width:20em;">
+              <div
+                class="ea-card-header"
+                style="--ea-card-header-background: var(--ea-color-background-2); --ea-card-header-color: white;"
+              >
+                <section><p>ea-card-header</p></section>
+                <div content>
+                  <button icon flat>
+                    <span icon negative download></span>
+                  </button>
+                  <button icon flat>
+                    <span icon negative add-file></span>
+                  </button>
+                </div>
+                <button icon flat><span icon negative x></span></button>
+              </div>
+              <div
+                class="ea-card-content header"
+                style="flex-direction: column;"
+              >
+                <h2>ea-card-content</h2>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Vestibulum volutpat purus ac ultrices maximus. Maecenas
+                  lacinia ipsum id est suscipit, non sollicitudin odio
+                  imperdiet.
+                </p>
+              </div>
+              <div class="ea-card-footer header">
+                <p style="margin:0;">ea-card-footer</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h2>.ea-card-content</h2>
+        <p>
+          The <code>.ea-card-content</code> is meant to hold the content of the
+          card. It is designed to be a column and wraps content that overflows
+          horizontally automatically to accomodate any size content and to
+          create easy responsive designs.
+        </p>
+
+        <div class="ea-card">
+          <div
+            class="ea-card-content"
+            grid
+            style="--ea-card-content-grid: repeat(1 , 1fr);"
+          >
+            <img
+              style="width:100%;"
+              src="../../../assets/images/card-content.svg"
+              alt=""
+            />
+          </div>
+        </div>
+
+        <h2>.ea-card-footer</h2>
+        <p>
+          The card footer is designed to hold <code>action</code> buttons and a
+          <code>message</code>. The layout is designed to hold 1-3 elements
+          without any adjustment.
+        </p>
+
+        <div class="ea-card" unset>
+          <div class="ea-card-content" flex-center>
+            <div class="ea-card" style="width:20em;">
+              <div class="ea-card-header header"><p>ea-card-header</p></div>
+              <div
+                class="ea-card-content header"
+                style="flex-direction: column;"
+              >
+                <h2>ea-card-content</h2>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Vestibulum volutpat purus ac ultrices maximus. Maecenas
+                  lacinia ipsum id est suscipit, non sollicitudin odio
+                  imperdiet.
+                </p>
+              </div>
+              <div class="ea-card-footer"><button small>save</button></div>
+            </div>
+            <div class="ea-card" style="width:20em;">
+              <div class="ea-card-header header"><p>ea-card-header</p></div>
+              <div
+                class="ea-card-content header"
+                style="flex-direction: column;"
+              >
+                <h2>ea-card-content</h2>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Vestibulum volutpat purus ac ultrices maximus. Maecenas
+                  lacinia ipsum id est suscipit, non sollicitudin odio
+                  imperdiet.
+                </p>
+              </div>
+              <div class="ea-card-footer">
+                <button small>back</button> <button small>next</button>
+              </div>
+            </div>
+            <div class="ea-card" style="width:20em;">
+              <div class="ea-card-header header"><p>ea-card-header</p></div>
+              <div
+                class="ea-card-content header"
+                style="flex-direction: column;"
+              >
+                <h2>ea-card-content</h2>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Vestibulum volutpat purus ac ultrices maximus. Maecenas
+                  lacinia ipsum id est suscipit, non sollicitudin odio
+                  imperdiet.
+                </p>
+              </div>
+              <div class="ea-card-footer">
+                <button small>back</button> 1/2 <button small>next</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ea-card" unset>
+          <div class="ea-card-header"><h2>.ea-card[unset]</h2></div>
+          <div class="ea-card-content" style="flex-direction: column;">
+            <p>
+              The <code>[unset]</code> attribute is used to void all of the
+              visual properties of a card, but maintain the layout properties.
+              This allows the <code>ea-card</code> to be used for layout
+              purposes.
+            </p>
+          </div>
+        </div>
+      </ea-tab>
+    </ea-tabs>
   </div>
 </div>
-
-<h2>.ea-card-content</h2>
-<p>The <code>.ea-card-content</code> is meant to hold the content of the card. It is designed to be a column and wraps
-  content that overflows horizontally automatically to accomodate any size content and to create easy responsive
-  designs.
-</p>
-
-<div class="ea-card">
-  <div class="ea-card-content" grid style="--ea-card-content-grid: repeat(1 , 1fr);">
-    <img style="width:100%;" src="../../../assets/images/card-content.svg" alt="">
-  </div>
-</div>
-
-
-<h2>.ea-card-footer</h2>
-<p>The card footer is designed to hold <code>action</code> buttons and a <code>message</code>. The layout is designed
-  to hold 1-3 elements without any adjustment.
-</p>
-
-<div class="ea-card" unset>
-  <div class="ea-card-content" flex-center>
-    <div class="ea-card" style="width:20em;">
-      <div class="ea-card-header header">
-        <p>ea-card-header</p>
-
-      </div>
-      <div class="ea-card-content header" style="flex-direction: column;">
-        <h2>ea-card-content</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum volutpat purus ac ultrices maximus.
-          Maecenas lacinia ipsum id est suscipit, non sollicitudin odio imperdiet.</p>
-      </div>
-      <div class="ea-card-footer">
-        <button small>save</button>
-      </div>
-    </div>
-    <div class="ea-card" style="width:20em;">
-      <div class="ea-card-header header">
-        <p>ea-card-header</p>
-      </div>
-      <div class="ea-card-content header" style="flex-direction: column;">
-        <h2>ea-card-content</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum volutpat purus ac ultrices maximus.
-          Maecenas lacinia ipsum id est suscipit, non sollicitudin odio imperdiet.</p>
-      </div>
-      <div class="ea-card-footer">
-        <button small>back</button>
-        <button small>next</button>
-      </div>
-    </div>
-    <div class="ea-card" style="width:20em;">
-      <div class="ea-card-header header">
-        <p>ea-card-header</p>
-      </div>
-      <div class="ea-card-content header" style="flex-direction: column;">
-        <h2>ea-card-content</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum volutpat purus ac ultrices maximus.
-          Maecenas lacinia ipsum id est suscipit, non sollicitudin odio imperdiet.</p>
-      </div>
-      <div class="ea-card-footer">
-        <button small>back</button>
-        1/2
-        <button small>next</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<div class="ea-card" unset>
-  <div class="ea-card-header">
-    <h2>.ea-card[unset]</h2>
-  </div>
-  <div class="ea-card-content" style="flex-direction: column;">
-    <p>The <code>[unset]</code> attribute is used to void all of the visual properties of a card, but maintain the
-      layout properties. This allows the <code>ea-card</code> to be used for layout purposes.
-    </p>
-  </div>

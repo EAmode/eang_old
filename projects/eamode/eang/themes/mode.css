@@ -2,6 +2,7 @@
 @import 'mode/variables.css';
 @import 'mode/fonts.css';
 @import 'mode/menu.css';
+@import 'mode/tabs.css';
 @import 'mode/autocomplete.css';
 @import 'mode/button.css';
 @import 'mode/card.css';
@@ -12,6 +13,7 @@
 @import 'mode/themepicker.css';
 @import 'mode/icons.css';
 @import 'mode/table.css';
+@import 'mode/utilities.css';
 
 .mode {
   @mixin autocomplete-mode;
@@ -24,5 +26,7 @@
   @mixin themepicker;
   @mixin table-mode;
   @mixin panel-mode;
+  @mixin utilities;
   @mixin menu;
+  @mixin tabs;
 }

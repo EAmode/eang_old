@@ -58,6 +58,7 @@ export const SIDE_MENU = {
       }
     },
     {
+
       name: 'Reactive',
       iconStyle: 'ea-negative',
       data: {
@@ -69,6 +70,13 @@ export const SIDE_MENU = {
       iconStyle: 'ea-negative',
       data: {
         link: '/theming'
+
+      name: 'Tabs',
+      icon: 'ea-chevron-right',
+      iconStyle: 'ea-negative',
+      data: {
+        link: '/tabs'
+
       }
     }
   ]
