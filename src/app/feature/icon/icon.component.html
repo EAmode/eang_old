@@ -2,299 +2,309 @@
   <div class="ea-card-header">
     <h1>Icon</h1>
     <span icon grid style="width:2em; height:2em;"></span>
-  <ea-tabs>
-    <ea-tab name="Overview">
-      <div class="ea-card" unset>
-      <p>
-        Icons use the native <code>span</code> tag to render svg icons. Using
-        the <code>icon</code> attribute and the name of the icon you want, you
-        can render icons.
-      </p>
-      <div class="ea-card-content example" grid>
-        <ea-markdown [doc]="icon"></ea-markdown>
-        <div class="ea-card" unset style="width: auto;">
-          <div
-            class="ea-card-content"
-            style="width:auto; justify-content: space-evenly; --ea-card-width: 2rem;"
-          >
-            <div style="padding: 1.25rem" class="ea-card">
-              <span icon x></span>
-            </div>
-            <div
-              style="padding: 1.25rem; --ea-card-background:var(--ea-color-background-2);"
-              class="ea-card"
-            >
-              <span icon x negative></span>
-            </div>
-            <div style="padding: 1.25rem" class="ea-card">
-              <span icon x></span>
+  </div>
+  <div class="ea-card-content">
+    <ea-tabs>
+      <ea-tab name="Overview">
+        <div class="ea-card" unset>
+          <p>
+            Icons use the native <code>span</code> tag to render svg icons.
+            Using the <code>icon</code> attribute and the name of the icon you
+            want, you can render icons.
+          </p>
+          <div class="ea-card-content example" grid>
+            <ea-markdown [doc]="icon"></ea-markdown>
+            <div class="ea-card" unset style="width: auto;">
+              <div
+                class="ea-card-content"
+                style="width:auto; justify-content: space-evenly; --ea-card-width: 2rem;"
+              >
+                <div style="padding: 1.25rem" class="ea-card">
+                  <span icon x></span>
+                </div>
+                <div
+                  style="padding: 1.25rem; --ea-card-background:var(--ea-color-background-2);"
+                  class="ea-card"
+                >
+                  <span icon x negative></span>
+                </div>
+                <div style="padding: 1.25rem" class="ea-card">
+                  <span icon x></span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-    </ea-tab>
-    <ea-tab name="Examples">
-            <h2>Icon Set</h2>
-            <div
-              grid
-              class="ea-card-content icon-tiles"
-              style="grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));grid-gap: 2em;"
-            >
-              <div class="ea-card">
-                <div class="ea-card-content"><span alert-circle icon></span></div>
-                <div class="ea-card-footer">alert-circle</div>
-              </div>
-              <div class="ea-card">
-                <div class="ea-card-content"><span align-justify icon></span></div>
-                <div class="ea-card-footer">align-justify</div>
-              </div>
-              <div class="ea-card">
-                <div class="ea-card-content"><span alert-triangle icon></span></div>
-                <div class="ea-card-footer">alert-triangle</div>
-              </div>
-              <div class="ea-card">
-                <div class="ea-card-content"><span align-center icon></span></div>
-                <div class="ea-card-footer">align-center</div>
-              </div>
-              <div class="ea-card">
-                <div class="ea-card-content"><span align-left icon></span></div>
-                <div class="ea-card-footer">align-left</div>
-              </div>
-              <div class="ea-card">
-                <div class="ea-card-content"><span align-right icon></span></div>
-                <div class="ea-card-footer">align-right</div>
-              </div>
-              <div class="ea-card">
-                <div class="ea-card-content"><span archive icon></span></div>
-                <div class="ea-card-footer">archive</div>
-              </div>
-              <div class="ea-card">
-                <div class="ea-card-content"><span arrow-down-circle icon></span></div>
-                <div class="ea-card-footer">arrow-down-circle</div>
-              </div>
-              <div class="ea-card">
-                <div class="ea-card-content"><span arrow-down-left icon></span></div>
-                <div class="ea-card-footer">arrow-down-left</div>
-              </div>
-              <div class="ea-card">
-                <div class="ea-card-content"><span arrow-down-right icon></span></div>
-                <div class="ea-card-footer">arrow-down-right</div>
-              </div>
-              <div class="ea-card">
-                <div class="ea-card-content"><span arrow-down icon></span></div>
-                <div class="ea-card-footer">arrow-down</div>
-              </div>
-              <div class="ea-card">
-                <div class="ea-card-content"><span arrow-left-circle icon></span></div>
-                <div class="ea-card-footer">arrow-left-circle</div>
-              </div>
-              <div class="ea-card">
-                <div class="ea-card-content"><span arrow-left icon></span></div>
-                <div class="ea-card-footer">arrow-left</div>
-              </div>
-              <div class="ea-card">
-                <div class="ea-card-content"><span bar-chart icon></span></div>
-                <div class="ea-card-footer">bar-chart</div>
-              </div>
-              <div class="ea-card">
-                <div class="ea-card-content"><span bell-off icon></span></div>
-                <div class="ea-card-footer">bell-off</div>
-              </div>
-              <div class="ea-card">
-                <div class="ea-card-content"><span bell icon></span></div>
-                <div class="ea-card-footer">bell</div>
-              </div>
-              <div class="ea-card">
-                <div class="ea-card-content"><span bluetooth icon></span></div>
-                <div class="ea-card-footer">bluetooth</div>
-              </div>
-              <div class="ea-card">
-                <div class="ea-card-content"><span bookmark icon></span></div>
-                <div class="ea-card-footer">bookmark</div>
-              </div>
-              <div class="ea-card">
-                <div class="ea-card-content"><span calendar icon></span></div>
-                <div class="ea-card-footer">calendar</div>
-              </div>
-              <div class="ea-card">
-                <div class="ea-card-content"><span check-circle icon></span></div>
-                <div class="ea-card-footer">check-circle</div>
-              </div>
-              <div class="ea-card">
-                <div class="ea-card-content"><span check-square icon></span></div>
-                <div class="ea-card-footer">check-square</div>
-              </div>
-              <div class="ea-card">
-                <div class="ea-card-content"><span code icon></span></div>
-                <div class="ea-card-footer">code</div>
-              </div>
-              <div class="ea-card">
-                <div class="ea-card-content"><span crosshair icon></span></div>
-                <div class="ea-card-footer">crosshair</div>
-              </div>
-              <div class="ea-card">
-                <div class="ea-card-content"><span database icon></span></div>
-                <div class="ea-card-footer">database</div>
-              </div>
-              <div class="ea-card">
-                <div class="ea-card-content"><span download-cloud icon></span></div>
-                <div class="ea-card-footer">download-cloud</div>
-              </div>
-              <div class="ea-card">
-                <div class="ea-card-content"><span external-link icon></span></div>
-                <div class="ea-card-footer">external-link</div>
-              </div>
-              <div class="ea-card">
-                <div class="ea-card-content"><span filter icon></span></div>
-                <div class="ea-card-footer">filter</div>
-              </div>
-              <div class="ea-card">
-                <div class="ea-card-content"><span folder-plus icon></span></div>
-                <div class="ea-card-footer">folder-plus</div>
-              </div>
-              <div class="ea-card">
-                <div class="ea-card-content"><span help-circle icon></span></div>
-                <div class="ea-card-footer">help-circle</div>
-              </div>
-              <div class="ea-card">
-                <div class="ea-card-content"><span hamburger-menu icon></span></div>
-                <div class="ea-card-footer">hamburger-menu</div>
-              </div>
-              <div class="ea-card">
-                <div class="ea-card-content"><span inbox icon></span></div>
-                <div class="ea-card-footer">inbox</div>
-              </div>
-              <div class="ea-card">
-                <div class="ea-card-content"><span link icon></span></div>
-                <div class="ea-card-footer">link</div>
-              </div>
-              <div class="ea-card">
-                <div class="ea-card-content"><span link-2 icon></span></div>
-                <div class="ea-card-footer">link-2</div>
-              </div>
-              <div class="ea-card">
-                <div class="ea-card-content"><span x icon></span></div>
-                <div class="ea-card-footer">x</div>
-              </div>
-              <div class="ea-card">
-                <div class="ea-card-content"><span minimized icon></span></div>
-                <div class="ea-card-footer">minimized</div>
-              </div>
-              <div class="ea-card">
-                <div class="ea-card-content"><span close icon></span></div>
-                <div class="ea-card-footer">close</div>
-              </div>
-              <div class="ea-card">
-                <div class="ea-card-content"><span sign-in icon></span></div>
-                <div class="ea-card-footer">sign-in</div>
-              </div>
-              <div class="ea-card">
-                <div class="ea-card-content"><span download icon></span></div>
-                <div class="ea-card-footer">download</div>
-              </div>
-              <div class="ea-card">
-                <div class="ea-card-content"><span chevron-right icon></span></div>
-                <div class="ea-card-footer">chevron-right</div>
-              </div>
-              <div class="ea-card">
-                <div class="ea-card-content"><span menu-close icon></span></div>
-                <div class="ea-card-footer">menu-close</div>
-              </div>
-              <div class="ea-card">
-                <div class="ea-card-content"><span chevron-down icon></span></div>
-                <div class="ea-card-footer">chevron-down</div>
-              </div>
-              <div class="ea-card">
-                <div class="ea-card-content"><span vertical-menu icon></span></div>
-                <div class="ea-card-footer">vertical-menu</div>
-              </div>
-              <div class="ea-card">
-                <div class="ea-card-content"><span chevrons-left icon></span></div>
-                <div class="ea-card-footer">chevrons-left</div>
-              </div>
-              <div class="ea-card">
-                <div class="ea-card-content"><span chevrons-right icon></span></div>
-                <div class="ea-card-footer">chevrons-right</div>
-              </div>
-              <div class="ea-card">
-                <div class="ea-card-content"><span save icon></span></div>
-                <div class="ea-card-footer">save</div>
-              </div>
-              <div class="ea-card">
-                <div class="ea-card-content"><span edit icon></span></div>
-                <div class="ea-card-footer">edit</div>
-              </div>
-              <div class="ea-card">
-                <div class="ea-card-content"><span paperclip icon></span></div>
-                <div class="ea-card-footer">paperclip</div>
-              </div>
-              <div class="ea-card">
-                <div class="ea-card-content"><span plus-circle icon></span></div>
-                <div class="ea-card-footer">plus-circle</div>
-              </div>
-              <div class="ea-card">
-                <div class="ea-card-content"><span printer icon></span></div>
-                <div class="ea-card-footer">printer</div>
-              </div>
-              <div class="ea-card">
-                <div class="ea-card-content"><span refresh-cw icon></span></div>
-                <div class="ea-card-footer">refresh-cw</div>
-              </div>
-              <div class="ea-card">
-                <div class="ea-card-content"><span share icon></span></div>
-                <div class="ea-card-footer">share</div>
-              </div>
-              <div class="ea-card">
-                <div class="ea-card-content"><span toggle-left icon></span></div>
-                <div class="ea-card-footer">toggle-left</div>
-              </div>
-              <div class="ea-card">
-                <div class="ea-card-content"><span toggle-right icon></span></div>
-                <div class="ea-card-footer">toggle-right</div>
-              </div>
-              <div class="ea-card">
-                <div class="ea-card-content"><span trash-2 icon></span></div>
-                <div class="ea-card-footer">trash-2</div>
-              </div>
-              <div class="ea-card">
-                <div class="ea-card-content"><span upload icon></span></div>
-                <div class="ea-card-footer">upload</div>
-              </div>
-              <div class="ea-card">
-                <div class="ea-card-content"><span volume-1 icon></span></div>
-                <div class="ea-card-footer">volume-1</div>
-              </div>
-              <div class="ea-card">
-                <div class="ea-card-content"><span volume-2 icon></span></div>
-                <div class="ea-card-footer">volume-2</div>
-              </div>
-              <div class="ea-card">
-                <div class="ea-card-content"><span volume-x icon></span></div>
-                <div class="ea-card-footer">volume-x</div>
-              </div>
-              <div class="ea-card">
-                <div class="ea-card-content"><span wifi-off icon></span></div>
-                <div class="ea-card-footer">wifi-off</div>
-              </div>
-              <div class="ea-card">
-                <div class="ea-card-content"><span wifi icon></span></div>
-                <div class="ea-card-footer">wifi</div>
-              </div>
-              <div class="ea-card">
-                <div class="ea-card-content"><span zoom-in icon></span></div>
-                <div class="ea-card-footer">zoom-in</div>
-              </div>
-              <div class="ea-card">
-                <div class="ea-card-content"><span zoom-out icon></span></div>
-                <div class="ea-card-footer">zoom-out</div>
-              </div>
-              <div class="ea-card">
-                <div class="ea-card-content"><span add-file icon></span></div>
-                <div class="ea-card-footer">add-file</div>
-              </div>
+      </ea-tab>
+      <ea-tab name="Examples">
+        <h2>Icon Set</h2>
+        <div
+          grid
+          class="ea-card-content icon-tiles"
+          style="grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));grid-gap: 2em;"
+        >
+          <div class="ea-card">
+            <div class="ea-card-content"><span alert-circle icon></span></div>
+            <div class="ea-card-footer">alert-circle</div>
+          </div>
+          <div class="ea-card">
+            <div class="ea-card-content"><span align-justify icon></span></div>
+            <div class="ea-card-footer">align-justify</div>
+          </div>
+          <div class="ea-card">
+            <div class="ea-card-content"><span alert-triangle icon></span></div>
+            <div class="ea-card-footer">alert-triangle</div>
+          </div>
+          <div class="ea-card">
+            <div class="ea-card-content"><span align-center icon></span></div>
+            <div class="ea-card-footer">align-center</div>
+          </div>
+          <div class="ea-card">
+            <div class="ea-card-content"><span align-left icon></span></div>
+            <div class="ea-card-footer">align-left</div>
+          </div>
+          <div class="ea-card">
+            <div class="ea-card-content"><span align-right icon></span></div>
+            <div class="ea-card-footer">align-right</div>
+          </div>
+          <div class="ea-card">
+            <div class="ea-card-content"><span archive icon></span></div>
+            <div class="ea-card-footer">archive</div>
+          </div>
+          <div class="ea-card">
+            <div class="ea-card-content">
+              <span arrow-down-circle icon></span>
             </div>
-           </ea-tab>
-  </ea-tabs>
+            <div class="ea-card-footer">arrow-down-circle</div>
+          </div>
+          <div class="ea-card">
+            <div class="ea-card-content">
+              <span arrow-down-left icon></span>
+            </div>
+            <div class="ea-card-footer">arrow-down-left</div>
+          </div>
+          <div class="ea-card">
+            <div class="ea-card-content">
+              <span arrow-down-right icon></span>
+            </div>
+            <div class="ea-card-footer">arrow-down-right</div>
+          </div>
+          <div class="ea-card">
+            <div class="ea-card-content"><span arrow-down icon></span></div>
+            <div class="ea-card-footer">arrow-down</div>
+          </div>
+          <div class="ea-card">
+            <div class="ea-card-content">
+              <span arrow-left-circle icon></span>
+            </div>
+            <div class="ea-card-footer">arrow-left-circle</div>
+          </div>
+          <div class="ea-card">
+            <div class="ea-card-content"><span arrow-left icon></span></div>
+            <div class="ea-card-footer">arrow-left</div>
+          </div>
+          <div class="ea-card">
+            <div class="ea-card-content"><span bar-chart icon></span></div>
+            <div class="ea-card-footer">bar-chart</div>
+          </div>
+          <div class="ea-card">
+            <div class="ea-card-content"><span bell-off icon></span></div>
+            <div class="ea-card-footer">bell-off</div>
+          </div>
+          <div class="ea-card">
+            <div class="ea-card-content"><span bell icon></span></div>
+            <div class="ea-card-footer">bell</div>
+          </div>
+          <div class="ea-card">
+            <div class="ea-card-content"><span bluetooth icon></span></div>
+            <div class="ea-card-footer">bluetooth</div>
+          </div>
+          <div class="ea-card">
+            <div class="ea-card-content"><span bookmark icon></span></div>
+            <div class="ea-card-footer">bookmark</div>
+          </div>
+          <div class="ea-card">
+            <div class="ea-card-content"><span calendar icon></span></div>
+            <div class="ea-card-footer">calendar</div>
+          </div>
+          <div class="ea-card">
+            <div class="ea-card-content"><span check-circle icon></span></div>
+            <div class="ea-card-footer">check-circle</div>
+          </div>
+          <div class="ea-card">
+            <div class="ea-card-content"><span check-square icon></span></div>
+            <div class="ea-card-footer">check-square</div>
+          </div>
+          <div class="ea-card">
+            <div class="ea-card-content"><span code icon></span></div>
+            <div class="ea-card-footer">code</div>
+          </div>
+          <div class="ea-card">
+            <div class="ea-card-content"><span crosshair icon></span></div>
+            <div class="ea-card-footer">crosshair</div>
+          </div>
+          <div class="ea-card">
+            <div class="ea-card-content"><span database icon></span></div>
+            <div class="ea-card-footer">database</div>
+          </div>
+          <div class="ea-card">
+            <div class="ea-card-content"><span download-cloud icon></span></div>
+            <div class="ea-card-footer">download-cloud</div>
+          </div>
+          <div class="ea-card">
+            <div class="ea-card-content"><span external-link icon></span></div>
+            <div class="ea-card-footer">external-link</div>
+          </div>
+          <div class="ea-card">
+            <div class="ea-card-content"><span filter icon></span></div>
+            <div class="ea-card-footer">filter</div>
+          </div>
+          <div class="ea-card">
+            <div class="ea-card-content"><span folder-plus icon></span></div>
+            <div class="ea-card-footer">folder-plus</div>
+          </div>
+          <div class="ea-card">
+            <div class="ea-card-content"><span help-circle icon></span></div>
+            <div class="ea-card-footer">help-circle</div>
+          </div>
+          <div class="ea-card">
+            <div class="ea-card-content"><span hamburger-menu icon></span></div>
+            <div class="ea-card-footer">hamburger-menu</div>
+          </div>
+          <div class="ea-card">
+            <div class="ea-card-content"><span inbox icon></span></div>
+            <div class="ea-card-footer">inbox</div>
+          </div>
+          <div class="ea-card">
+            <div class="ea-card-content"><span link icon></span></div>
+            <div class="ea-card-footer">link</div>
+          </div>
+          <div class="ea-card">
+            <div class="ea-card-content"><span link-2 icon></span></div>
+            <div class="ea-card-footer">link-2</div>
+          </div>
+          <div class="ea-card">
+            <div class="ea-card-content"><span x icon></span></div>
+            <div class="ea-card-footer">x</div>
+          </div>
+          <div class="ea-card">
+            <div class="ea-card-content"><span minimized icon></span></div>
+            <div class="ea-card-footer">minimized</div>
+          </div>
+          <div class="ea-card">
+            <div class="ea-card-content"><span close icon></span></div>
+            <div class="ea-card-footer">close</div>
+          </div>
+          <div class="ea-card">
+            <div class="ea-card-content"><span sign-in icon></span></div>
+            <div class="ea-card-footer">sign-in</div>
+          </div>
+          <div class="ea-card">
+            <div class="ea-card-content"><span download icon></span></div>
+            <div class="ea-card-footer">download</div>
+          </div>
+          <div class="ea-card">
+            <div class="ea-card-content"><span chevron-right icon></span></div>
+            <div class="ea-card-footer">chevron-right</div>
+          </div>
+          <div class="ea-card">
+            <div class="ea-card-content"><span menu-close icon></span></div>
+            <div class="ea-card-footer">menu-close</div>
+          </div>
+          <div class="ea-card">
+            <div class="ea-card-content"><span chevron-down icon></span></div>
+            <div class="ea-card-footer">chevron-down</div>
+          </div>
+          <div class="ea-card">
+            <div class="ea-card-content"><span vertical-menu icon></span></div>
+            <div class="ea-card-footer">vertical-menu</div>
+          </div>
+          <div class="ea-card">
+            <div class="ea-card-content"><span chevrons-left icon></span></div>
+            <div class="ea-card-footer">chevrons-left</div>
+          </div>
+          <div class="ea-card">
+            <div class="ea-card-content"><span chevrons-right icon></span></div>
+            <div class="ea-card-footer">chevrons-right</div>
+          </div>
+          <div class="ea-card">
+            <div class="ea-card-content"><span save icon></span></div>
+            <div class="ea-card-footer">save</div>
+          </div>
+          <div class="ea-card">
+            <div class="ea-card-content"><span edit icon></span></div>
+            <div class="ea-card-footer">edit</div>
+          </div>
+          <div class="ea-card">
+            <div class="ea-card-content"><span paperclip icon></span></div>
+            <div class="ea-card-footer">paperclip</div>
+          </div>
+          <div class="ea-card">
+            <div class="ea-card-content"><span plus-circle icon></span></div>
+            <div class="ea-card-footer">plus-circle</div>
+          </div>
+          <div class="ea-card">
+            <div class="ea-card-content"><span printer icon></span></div>
+            <div class="ea-card-footer">printer</div>
+          </div>
+          <div class="ea-card">
+            <div class="ea-card-content"><span refresh-cw icon></span></div>
+            <div class="ea-card-footer">refresh-cw</div>
+          </div>
+          <div class="ea-card">
+            <div class="ea-card-content"><span share icon></span></div>
+            <div class="ea-card-footer">share</div>
+          </div>
+          <div class="ea-card">
+            <div class="ea-card-content"><span toggle-left icon></span></div>
+            <div class="ea-card-footer">toggle-left</div>
+          </div>
+          <div class="ea-card">
+            <div class="ea-card-content"><span toggle-right icon></span></div>
+            <div class="ea-card-footer">toggle-right</div>
+          </div>
+          <div class="ea-card">
+            <div class="ea-card-content"><span trash-2 icon></span></div>
+            <div class="ea-card-footer">trash-2</div>
+          </div>
+          <div class="ea-card">
+            <div class="ea-card-content"><span upload icon></span></div>
+            <div class="ea-card-footer">upload</div>
+          </div>
+          <div class="ea-card">
+            <div class="ea-card-content"><span volume-1 icon></span></div>
+            <div class="ea-card-footer">volume-1</div>
+          </div>
+          <div class="ea-card">
+            <div class="ea-card-content"><span volume-2 icon></span></div>
+            <div class="ea-card-footer">volume-2</div>
+          </div>
+          <div class="ea-card">
+            <div class="ea-card-content"><span volume-x icon></span></div>
+            <div class="ea-card-footer">volume-x</div>
+          </div>
+          <div class="ea-card">
+            <div class="ea-card-content"><span wifi-off icon></span></div>
+            <div class="ea-card-footer">wifi-off</div>
+          </div>
+          <div class="ea-card">
+            <div class="ea-card-content"><span wifi icon></span></div>
+            <div class="ea-card-footer">wifi</div>
+          </div>
+          <div class="ea-card">
+            <div class="ea-card-content"><span zoom-in icon></span></div>
+            <div class="ea-card-footer">zoom-in</div>
+          </div>
+          <div class="ea-card">
+            <div class="ea-card-content"><span zoom-out icon></span></div>
+            <div class="ea-card-footer">zoom-out</div>
+          </div>
+          <div class="ea-card">
+            <div class="ea-card-content"><span add-file icon></span></div>
+            <div class="ea-card-footer">add-file</div>
+          </div>
+        </div>
+      </ea-tab>
+    </ea-tabs>
+  </div>
 </div>
-

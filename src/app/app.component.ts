@@ -8,76 +8,72 @@ export const SIDE_MENU = {
   isHidden: true,
   children: [
     {
-      name: 'Getting Started',
+      name: 'Get Started',
       data: {
-        link: '/getstarted'
+        link: '/getting-started'
+      }
+    },
+    {
+      name: 'Feature Highlights',
+      data: {
+        link: '/features'
       }
     },
     {
       name: 'Components',
+      iconStyle: 'ea-negative',
       data: {
         link: '/components'
-      }
-    },
-    {
-      name: 'Buttons',
-      icon: 'ea-button-icon',
-      data: {
-        link: '/button'
-      }
-    },
-    {
-      name: 'Cards',
-      icon: 'ea-layers',
-      iconStyle: 'ea-negative',
-      data: {
-        link: '/card'
-      }
-    },
-    {
-      name: 'Icons',
-      icon: 'ea-grid',
-      iconStyle: 'ea-negative',
-      data: {
-        link: '/icon'
-      }
-    },
-    {
-      name: 'Layout',
-      icon: 'ea-layout',
-      data: {
-        link: '/layout'
-      }
-    },
-    {
-      name: 'Menu',
-      icon: 'ea-hamburger-menu',
-      iconStyle: 'ea-negative',
-      data: {
-        link: '/menu'
-      }
-    },
-    {
-
-      name: 'Reactive',
-      iconStyle: 'ea-negative',
-      data: {
-        link: '/reactive'
-      }
-    },
-    {
-      name: 'CSS Themes',
-      iconStyle: 'ea-negative',
-      data: {
-        link: '/theming'
-
-      name: 'Tabs',
-      icon: 'ea-chevron-right',
-      iconStyle: 'ea-negative',
-      data: {
-        link: '/tabs'
-
-      }
+      },
+      children: [
+        {
+          name: 'Layout',
+          icon: 'ea-layers',
+          iconStyle: 'ea-negative',
+          data: {
+            link: '/layout'
+          }
+        },
+        {
+          name: 'Cards',
+          icon: 'ea-layers',
+          iconStyle: 'ea-negative',
+          data: {
+            link: '/card'
+          }
+        },
+        {
+          name: 'Buttons',
+          icon: 'ea-button-icon',
+          data: {
+            link: '/button'
+          }
+        },
+        {
+          name: 'Icons',
+          icon: 'ea-grid',
+          iconStyle: 'ea-negative',
+          data: {
+            link: '/icon'
+          }
+        },
+        {
+          name: 'Menu',
+          icon: 'ea-hamburger-menu',
+          iconStyle: 'ea-negative',
+          data: {
+            link: '/menu'
+          }
+        },
+        {
+          name: 'Tabs',
+          icon: 'ea-hamburger-menu',
+          iconStyle: 'ea-negative',
+          data: {
+            link: '/tabs'
+          }
+        }
+      ]
     }
   ]
 }
@@ -105,7 +101,9 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.activated.subscribe((item: MenuTreeItem) => {
-      this.router.navigate([item.data.link])
+      if (item.data && item.data.link) {
+        this.router.navigate([item.data.link])
+      }
     })
   }
 }

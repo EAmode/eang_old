@@ -10,9 +10,8 @@
 
     & .node-toggle {
       padding: 0;
-      min-width: 1.4rem;
-      width: 1.4em;
-      height: 1.2rem;
+      width: 1em;
+      height: .8rem;
       background: none;
       border: none;
       cursor: pointer;
@@ -36,7 +35,7 @@
 
         & span {
           transition: all ease .2s;
-        }  
+        }
 
         &:hover {
 

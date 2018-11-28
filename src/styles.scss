@@ -99,7 +99,7 @@
   align-items: center;
   grid-gap: 4rem;
   justify-items: center;
-  padding: 4rem 12vw;
+  padding: 4rem;
   & .ea-card {
     width: 35rem;
   }
@@ -207,7 +207,14 @@
       --ea-body-display: flex;
       margin:0;
       justify-content: center;
+      & eangio-landing {
+        width: 100%;
+      }
+      & eangio-components {
+        width: 90%;
+      }
       & eangio-home,
+      eangio-get-started,
       eangio-card,
       eangio-button,
       eangio-icon,
@@ -221,11 +228,6 @@
         }
       }
       & eangio-home {
-        width: 75%;
-        @media only screen and (max-width: 500px) {
-          width: 95%;
-        }
-
         & .why-eang {
           display: flex;
           flex-direction: column;

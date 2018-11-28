@@ -46,7 +46,8 @@ const routes: Routes = [
   { path: 'components', component: ComponentsComponent },
   { path: 'getting-started', component: GetStartedComponent },
   { path: 'tabs', component: TabsComponent },
-  { path: 'menu', component: MenuComponent }
+  { path: 'menu', component: MenuComponent },
+  { path: 'features', component: HomeComponent }
 ]
 
 @NgModule({
