@@ -247,6 +247,10 @@
     &.ea-chevron-right {
       background-image: inline('mode/icon/right-chevron.svg');
     }
+    &[chevron-left],
+    &.ea-chevron-left {
+      background-image: inline('mode/icon/left-chevron.svg');
+    }
     &[menu-close],
     &.ea-menu-close {
       background-image: inline('mode/icon/menu-close.svg');

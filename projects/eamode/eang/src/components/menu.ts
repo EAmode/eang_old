@@ -3,7 +3,8 @@ import {
   Input,
   EventEmitter,
   OnInit,
-  ViewEncapsulation
+  ViewEncapsulation,
+  AfterContentInit
 } from '@angular/core'
 
 export interface MenuTreeItem {
@@ -16,6 +17,7 @@ export interface MenuTreeItem {
   isHidden?: boolean
   isActive?: boolean
   isOpen?: boolean
+  toggleRight?: boolean
   parent?: MenuTreeItem
   children?: MenuTreeItem[]
   data?: any
@@ -27,34 +29,49 @@ export interface MenuTreeItem {
     [class.has-children]="node.children?.length > 0"
     [style.padding-left]="depth * 15 + 'px'"
     [attr.hidden]="node.isHidden ? '' : null"
-    [attr.active]="node.isActive ? '' : null">
-    <button *ngIf="node.children?.length > 0" (click)="onToggle()" icon flat>
-      <span icon chevron-down negative *ngIf="node.isOpen">
-      </span>
-      <span icon chevron-right negative *ngIf="!node.isOpen">
-      </span>
-    </button>
-    <span (click)="onActivate()" class="name">
-      <ng-container *ngIf="nameTemplate; else defaultName"
-        [ngTemplateOutlet]="nameTemplate"
+    [attr.active]="node.isActive ? '' : null"
+    [attr.toggle]="node.toggleRight ? '' : null">
+    <ng-container *ngIf="modTemplate; else defaultTemplate"
+      [ngTemplateOutlet]="modTemplate"
+      [ngTemplateOutletContext]="{node: node}">
+    </ng-container>
+
+    <ng-template #defaultTemplate>
+      <button *ngIf="node.children?.length > 0" (click)="onToggle()" icon flat>
+          <span icon chevron-down negative *ngIf="node.isOpen">
+          </span>
+          <span icon chevron-left negative *ngIf="!node.isOpen" [attr.toggleLhide]="!node.toggleRight? '' : null">
+          </span>
+          <span icon chevron-right negative *ngIf="!node.isOpen" [attr.toggleRhide]="node.toggleRight? '' : null">
+        </span>
+      </button>
+    </ng-template>
+
+    <span (click)="onActivate()" class="name" [attr.toggle]="node.toggleRight ? '' : null" >
+      <ng-container *ngIf="contentTemplate; else defTemplate"
+        [ngTemplateOutlet]="contentTemplate"
         [ngTemplateOutletContext]="{node: node}">
       </ng-container>
-      <ng-template #defaultName>
+
+      <ng-template #defTemplate>
         <ng-container *ngIf="node.icon">
             <span icon class="{{node.icon}} {{node.iconStyle}}"></span>
         </ng-container>
         {{node.name}}
       </ng-template>
     </span>
+
     <aside>
       <ng-container *ngIf="controlPanelTemplate"
         [ngTemplateOutlet]="controlPanelTemplate"
         [ngTemplateOutletContext]="{node: node}">
       </ng-container>
+
       <button *ngIf="node.closeable" icon flat class="close" (click)="onClose()">
         <span icon x negative></span>
       </button>
     </aside>
+
 </div>
 <div *ngIf="node.children?.length > 0 && (node.isOpen || node.isHidden)" class="ea-tree-children" [class.horizontal]="!!node.horizontal">
   <ea-menu
@@ -64,18 +81,21 @@ export interface MenuTreeItem {
     [closeEvents]="closeEvents"
     [toggleEvents]="toggleEvents"
     [activateEvents]="activateEvents"
-    [nameTemplate]="nameTemplate"
+    [contentTemplate]="contentTemplate"
+    [modTemplate]="modTemplate"
     [controlPanelTemplate]="controlPanelTemplate"></ea-menu>
 </div>`,
   encapsulation: ViewEncapsulation.None
 })
-export class MenuComponent implements OnInit {
+export class MenuComponent implements OnInit, AfterContentInit {
   @Input()
   node
   @Input()
   depth = 0
   @Input()
-  nameTemplate
+  contentTemplate
+  @Input()
+  modTemplate
   @Input()
   controlPanelTemplate
   @Input()
@@ -88,6 +108,14 @@ export class MenuComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  ngAfterContentInit() {
+    if (this.node.toggleRight && this.node.children) {
+      this.node.children.forEach(everychild => {
+        everychild.toggleRight = true
+      })
+    }
+  }
 
   onClose() {
     this.node.isOpen = false

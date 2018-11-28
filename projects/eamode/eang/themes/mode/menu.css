@@ -9,6 +9,17 @@
       align-items: center;
       position: relative;
 
+      button {
+        span{
+          &[toggleRhide]{
+            display: none;
+          }
+          &[toggleLhide]{
+            display: none;
+          }
+        }
+      }
+
       & .node-toggle {
         &[disabled] {
           border: none;
@@ -22,6 +33,14 @@
         display: flex;
         align-items: center;
         padding-right: 15px;
+
+        &[toggle] {
+          flex-direction: row-reverse;
+          & span[icon] {
+            margin-right: .5em;
+            margin-left: .5em;
+          }
+        }
 
         & span[icon] {
           margin-right: .5em;
@@ -47,6 +66,10 @@
             }
           }
         }
+      }
+
+      &[toggle] {
+        flex-direction: row-reverse;
       }
 
       &[hidden] {

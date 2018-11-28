@@ -65,8 +65,25 @@
       </div>
     </div>
 
+  
+    <p>Set attribute <em>toggleRight: true/false</em> in node to move toggle button on the right side.</p>
+    <p>Default position of button is on the left side.</p>
+    <div class="ea-card-content example" grid>
+      <ea-markdown [doc]="ea_menu_toggleRight"></ea-markdown>
+      <div class="ea-card" style="background:#333333;">
+        <div class="ea-card-header">
+          <p>Menu with toggle button on the right side.</p>
+        </div>
+        <div class="ea-card-content header" style="flex-direction: column;">
+          <ea-menu
+          [node]="nodeWithRightToggle">
+          </ea-menu>
+        </div>
+      </div>
+    </div>
+
     <h1>Add your own template</h1>
-    <p>Use [controlPanelTemplate] attribute to show your own template.</p>
+    <p>Use [controlPanelTemplate] attribute to show your own template on the side.</p>
     <p>For example, description inside data attribute will be shown after you move mouse over the sub menus.</p>
     <div class="ea-card-content example" grid>
       <ea-markdown [doc]="ea_menu_template"></ea-markdown>
@@ -74,21 +91,57 @@
         <div class="ea-card-header">
           <p>Move mouse over the sub-menus to see the description.</p>
         </div>
-        <div class="ea-card-content header" style="flex-direction: column;">
-          <ea-menu
+      <div class="ea-card-content header" style="flex-direction: column;">
+        <ea-menu
           [node]="nodeWithTemplate"
-          [nameTemplate]="nameTemplate"
-          [controlPanelTemplate]="templateMenu">
-          </ea-menu>
-          <ng-template #templateMenu let-data="node.data">
-            <div *ngIf="data">{{data.description}}</div>
-          </ng-template>
-          <ng-template #nameTemplate let-data="node.data">
-            <h4 *ngIf="data">{{data.header}}</h4>
-          </ng-template>
-        </div>
+          [controlPanelTemplate]="controlPanelTemplate">
+        </ea-menu>
+        <ng-template #controlPanelTemplate let-data="node.data">
+          <div *ngIf="data">{{data.description}}</div>
+        </ng-template>
+      </div>
       </div>
     </div>
+
+    <p>Use [contentTemplate] attribute to change content inside.</p>
+    <p>The header of node will be displayed from the data attribute instead of the name attribute.</p>
+    <div class="ea-card-content example" grid>
+      <ea-markdown [doc]="ea_menu_nametemplate"></ea-markdown>
+        <div class="ea-card" style="background:#333333;">
+          <div class="ea-card-header">
+            <p>Expand menu to see the content.</p>
+        </div>
+        <div class="ea-card-content header" style="flex-direction: column;">
+          <ea-menu
+            [node]="nodeWithNameTemplate"
+            [contentTemplate]="contentTemplate">
+          </ea-menu>
+            <ng-template #contentTemplate let-data="node.data">
+              <small *ngIf="data">{{data.header}}</small>
+            </ng-template>
+        </div>
+        </div>
+    </div>
+
+    <p>Use [modPanelTemplate] attribute to change content in the left side.</p>
+    <p>Change your menu icon to the image as in the example.</p>
+    <div class="ea-card-content example" grid>
+          <ea-markdown [doc]="ea_menu_modtemplate"></ea-markdown>
+          <div class="ea-card" style="background:#333333;">
+            <div class="ea-card-header">
+              <p>Expand menu to see the content.</p>
+            </div>
+            <div class="ea-card-content header" style="flex-direction: column;">
+              <ea-menu
+                [node]="nodeWithMod"
+                [modTemplate]="modTemplate">
+              </ea-menu>
+                <ng-template #modTemplate let-data="node">
+                  <img src="https://www.iconsdb.com/icons/preview/white/circle-xxl.png" style="width: .5em; height: .5em">
+                </ng-template>
+            </div>
+        </div>
+    </div> 
 
     <p>Use these attributes in node.</p>
     <div>
@@ -131,6 +184,11 @@
         <td>isHidden (optional) </td>
         <td>boolean</td>
         <td>Place this attribute as "true" to hide parent node for children.</td>
+        </tr>
+        <tr>
+        <td>toggleRight (optional) </td>
+        <td>boolean</td>
+        <td>Place this attribute as "true" to show the toggle button on the right side.</td>
         </tr>
         <tr>
         <td>children (optional) </td>
