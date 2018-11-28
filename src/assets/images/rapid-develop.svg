@@ -1,5 +1,5 @@
 
-<svg width="100%" height="100%" viewBox="0 0 901 491" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="100%" height="100%" viewBox="0 0 1120 698" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
     <desc>Created with Sketch.</desc>
     <defs>
@@ -13,53 +13,53 @@
             <stop stop-color="#808080" stop-opacity="0.12" offset="54%"></stop>
             <stop stop-color="#808080" stop-opacity="0.1" offset="100%"></stop>
         </linearGradient>
-        <rect id="path-3" x="201.07" y="86.48" width="499" height="139"></rect>
+        <rect id="path-3" x="190" y="144" width="721" height="201"></rect>
     </defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="undraw_safe_bnk7-(1)" transform="translate(1.000000, 1.000000)">
-            <rect id="Rectangle-path" fill="#F5F5F5" fill-rule="nonzero" transform="translate(650.995790, 94.856301) rotate(-81.360000) translate(-650.995790, -94.856301) " x="641.05579" y="-140.348699" width="19.88" height="470.41"></rect>
-            <rect id="Rectangle-path" stroke="#000000" stroke-width="5" fill="url(#linearGradient-1)" fill-rule="nonzero" transform="translate(626.054386, 264.473038) rotate(-81.360000) translate(-626.054386, -264.473038) " x="438.054386" y="19.3280377" width="376" height="490.29"></rect>
-            <rect id="Rectangle-path" fill="#F5F5F5" fill-rule="nonzero" transform="translate(623.736535, 274.168955) rotate(-81.360000) translate(-623.736535, -274.168955) " x="452.301535" y="38.9639547" width="342.87" height="470.41"></rect>
-            <circle id="Oval" fill="#FF5252" fill-rule="nonzero" transform="translate(429.815365, 61.246461) rotate(-81.360000) translate(-429.815365, -61.246461) " cx="429.815365" cy="61.2464607" r="4.86"></circle>
-            <circle id="Oval" fill="#FFFF00" fill-rule="nonzero" transform="translate(443.027035, 63.248325) rotate(-81.360000) translate(-443.027035, -63.248325) " cx="443.027035" cy="63.2483246" r="4.86"></circle>
-            <circle id="Oval" fill="#69F0AE" fill-rule="nonzero" transform="translate(456.238705, 65.260189) rotate(-81.360000) translate(-456.238705, -65.260189) " cx="456.238705" cy="65.2601885" r="4.86"></circle>
-            <rect id="Rectangle-path" stroke="#000000" stroke-width="4" fill-rule="nonzero" transform="translate(631.845680, 196.239671) rotate(8.640000) translate(-631.845680, -196.239671) " x="425.21068" y="138.679671" width="413.27" height="115.12"></rect>
-            <rect id="Rectangle-path" fill="url(#linearGradient-2)" fill-rule="nonzero" transform="translate(489.485350, 297.743465) rotate(-81.360000) translate(-489.485350, -297.743465) " x="477.47535" y="283.663465" width="24.02" height="28.16"></rect>
-            <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" transform="translate(489.983780, 297.399928) rotate(8.640000) translate(-489.983780, -297.399928) " x="476.73378" y="287.459928" width="26.5" height="19.88"></rect>
-            <rect id="Rectangle-path" fill="#FF5252" fill-rule="nonzero" transform="translate(484.868697, 330.971315) rotate(8.640000) translate(-484.868697, -330.971315) " x="471.618697" y="321.031315" width="26.5" height="19.88"></rect>
-            <rect id="Rectangle-path" fill="#FF9800" fill-rule="nonzero" transform="translate(479.773500, 364.544203) rotate(8.640000) translate(-479.773500, -364.544203) " x="466.5235" y="354.604203" width="26.5" height="19.88"></rect>
-            <rect id="Rectangle-path" fill="#4A4A4A" fill-rule="nonzero" opacity="0.4" transform="translate(652.098250, 322.029185) rotate(8.640000) translate(-652.098250, -322.029185) " x="545.26325" y="316.234185" width="213.67" height="11.59"></rect>
-            <rect id="Rectangle-path" fill="#4A4A4A" fill-rule="nonzero" opacity="0.4" transform="translate(646.993053, 355.602074) rotate(8.640000) translate(-646.993053, -355.602074) " x="540.158053" y="349.807074" width="213.67" height="11.59"></rect>
-            <rect id="Rectangle-path" fill="#4A4A4A" fill-rule="nonzero" opacity="0.4" transform="translate(641.897856, 389.174963) rotate(8.640000) translate(-641.897856, -389.174963) " x="535.062856" y="383.379963" width="213.67" height="11.59"></rect>
-            <rect id="Rectangle-path" stroke="#000000" stroke-width="2" fill-rule="nonzero" transform="translate(258.409305, 74.030114) rotate(-12.600000) translate(-258.409305, -74.030114) " x="7.98930546" y="64.2501136" width="500.84" height="19.56"></rect>
-            <rect id="Rectangle-path" stroke="#000000" stroke-width="3" fill-rule="nonzero" transform="translate(296.065987, 238.474351) rotate(-12.600000) translate(-296.065987, -238.474351) " x="35.0659868" y="53.4743507" width="522" height="370"></rect>
-            <rect id="Rectangle-path" stroke="#000000" stroke-width="2" fill-rule="nonzero" transform="translate(297.340116, 248.222738) rotate(-12.600000) translate(-297.340116, -248.222738) " x="46.9201162" y="79.522738" width="500.84" height="337.4"></rect>
-            <ellipse id="Oval" stroke="#000000" stroke-width="2" fill-rule="nonzero" transform="translate(25.952418, 125.988326) rotate(-12.600000) translate(-25.952418, -125.988326) " cx="25.9524178" cy="125.988326" rx="5.17" ry="4.78"></ellipse>
-            <ellipse id="Oval" stroke="#000000" stroke-width="2" fill-rule="nonzero" transform="translate(39.841658, 122.892975) rotate(-12.600000) translate(-39.841658, -122.892975) " cx="39.8416576" cy="122.892975" rx="5.17" ry="4.78"></ellipse>
-            <ellipse id="Oval" stroke="#000000" stroke-width="2" fill-rule="nonzero" transform="translate(53.721138, 119.789805) rotate(-12.600000) translate(-53.721138, -119.789805) " cx="53.7211382" cy="119.789805" rx="5.17" ry="4.78"></ellipse>
-            <rect id="Rectangle-path" stroke="#000000" stroke-width="5" fill-rule="nonzero" transform="translate(276.669874, 173.921143) rotate(-12.600000) translate(-276.669874, -173.921143) " x="56.6698739" y="117.281143" width="440" height="113.28"></rect>
-            <rect id="Rectangle-path" fill="#000000" fill-rule="nonzero" transform="translate(175.044000, 320.958400) rotate(-12.652557) translate(-175.044000, -320.958400) " x="160.872052" y="311.135462" width="28.343896" height="19.6458755"></rect>
-            <rect id="Rectangle-path" fill="#000000" fill-rule="nonzero" transform="translate(180.072896, 352.092870) rotate(-12.600000) translate(-180.072896, -352.092870) " x="165.962896" y="342.31287" width="28.22" height="19.56"></rect>
-            <rect id="Rectangle-path" fill="#FF9800" fill-rule="nonzero" transform="translate(189.810800, 386.416400) rotate(-12.652557) translate(-189.810800, -386.416400) " x="175.638852" y="376.593462" width="28.343896" height="19.6458755"></rect>
-            <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.4" transform="translate(343.158645, 281.394544) rotate(-12.600000) translate(-343.158645, -281.394544) " x="229.413645" y="275.689544" width="227.49" height="11.41"></rect>
-            <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.4" transform="translate(350.446729, 314.008925) rotate(-12.600000) translate(-350.446729, -314.008925) " x="236.701729" y="308.303925" width="227.49" height="11.41"></rect>
-            <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.4" transform="translate(357.734813, 346.613307) rotate(-12.600000) translate(-357.734813, -346.613307) " x="243.989813" y="340.908307" width="227.49" height="11.41"></rect>
-            <rect id="Rectangle-path" stroke="#000000" stroke-width="4" fill="#F5F5F5" fill-rule="nonzero" x="171.07" y="19.48" width="568" height="24"></rect>
-            <rect id="Rectangle-path" stroke="#000000" stroke-width="3" fill-rule="nonzero" x="160.07" y="11.48" width="592" height="454"></rect>
-            <rect id="Rectangle-path" stroke="#000000" stroke-width="4" fill="#FFFFFF" fill-rule="nonzero" x="171.07" y="43.48" width="568" height="414"></rect>
-            <circle id="Oval" stroke="#000000" stroke-width="3" fill-rule="nonzero" cx="184.94" cy="31.48" r="5.87"></circle>
-            <circle id="Oval" stroke="#000000" stroke-width="3" fill-rule="nonzero" cx="201.07" cy="31.48" r="5.87"></circle>
-            <circle id="Oval" stroke="#000000" stroke-width="3" fill-rule="nonzero" cx="217.2" cy="31.48" r="5.87"></circle>
+        <g id="Group-50" transform="translate(2.000000, 2.000000)">
+            <rect id="Rectangle-path" fill="#F5F5F5" fill-rule="nonzero" transform="translate(759.500000, 126.000000) rotate(-81.360000) translate(-759.500000, -126.000000) " x="745" y="-214" width="29" height="680"></rect>
+            <rect id="Rectangle-path" stroke="#000000" stroke-width="5" fill="url(#linearGradient-1)" fill-rule="nonzero" transform="translate(723.500000, 371.000000) rotate(-81.360000) translate(-723.500000, -371.000000) " x="452" y="17" width="543" height="708"></rect>
+            <rect id="Rectangle-path" fill="#F5F5F5" fill-rule="nonzero" transform="translate(719.500000, 385.000000) rotate(-81.360000) translate(-719.500000, -385.000000) " x="472" y="45" width="495" height="680"></rect>
+            <circle id="Oval" fill="#FF5252" fill-rule="nonzero" transform="translate(520.000000, 107.000000) rotate(-81.360000) translate(-520.000000, -107.000000) " cx="520" cy="107" r="7"></circle>
+            <circle id="Oval" fill="#FFFF00" fill-rule="nonzero" transform="translate(539.000000, 110.000000) rotate(-81.360000) translate(-539.000000, -110.000000) " cx="539" cy="110" r="7"></circle>
+            <circle id="Oval" fill="#69F0AE" fill-rule="nonzero" transform="translate(558.000000, 113.000000) rotate(-81.360000) translate(-558.000000, -113.000000) " cx="558" cy="113" r="7"></circle>
+            <rect id="Rectangle-path" stroke="#000000" stroke-width="4" fill-rule="nonzero" transform="translate(731.500000, 272.000000) rotate(8.640000) translate(-731.500000, -272.000000) " x="433" y="189" width="597" height="166"></rect>
+            <rect id="Rectangle-path" fill="url(#linearGradient-2)" fill-rule="nonzero" transform="translate(606.500000, 449.500000) rotate(-81.360000) translate(-606.500000, -449.500000) " x="589" y="429" width="35" height="41"></rect>
+            <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" transform="translate(607.000000, 448.500000) rotate(8.640000) translate(-607.000000, -448.500000) " x="588" y="434" width="38" height="29"></rect>
+            <rect id="Rectangle-path" fill="#FF5252" fill-rule="nonzero" transform="translate(599.000000, 497.500000) rotate(8.640000) translate(-599.000000, -497.500000) " x="580" y="483" width="38" height="29"></rect>
+            <rect id="Rectangle-path" fill="#FF9800" fill-rule="nonzero" transform="translate(592.000000, 545.500000) rotate(8.640000) translate(-592.000000, -545.500000) " x="573" y="531" width="38" height="29"></rect>
+            <rect id="Rectangle-path" fill="#4A4A4A" fill-rule="nonzero" opacity="0.4" transform="translate(841.500000, 434.500000) rotate(8.640000) translate(-841.500000, -434.500000) " x="687" y="426" width="309" height="17"></rect>
+            <rect id="Rectangle-path" fill="#4A4A4A" fill-rule="nonzero" opacity="0.4" transform="translate(833.500000, 482.500000) rotate(8.640000) translate(-833.500000, -482.500000) " x="679" y="474" width="309" height="17"></rect>
+            <rect id="Rectangle-path" fill="#4A4A4A" fill-rule="nonzero" opacity="0.4" transform="translate(826.500000, 531.500000) rotate(8.640000) translate(-826.500000, -531.500000) " x="672" y="523" width="309" height="17"></rect>
+            <rect id="Rectangle-path" stroke="#000000" stroke-width="2" fill-rule="nonzero" transform="translate(373.000000, 106.000000) rotate(-12.600000) translate(-373.000000, -106.000000) " x="11" y="92" width="724" height="28"></rect>
+            <rect id="Rectangle-path" stroke="#000000" stroke-width="3" fill-rule="nonzero" transform="translate(427.000000, 343.500000) rotate(-12.600000) translate(-427.000000, -343.500000) " x="50" y="76" width="754" height="535"></rect>
+            <rect id="Rectangle-path" stroke="#000000" stroke-width="2" fill="#F5F5F5" fill-rule="nonzero" transform="translate(429.000000, 357.500000) rotate(-12.600000) translate(-429.000000, -357.500000) " x="67" y="114" width="724" height="487"></rect>
+            <ellipse id="Oval" stroke="#000000" stroke-width="2" fill-rule="nonzero" transform="translate(36.500000, 181.000000) rotate(-12.600000) translate(-36.500000, -181.000000) " cx="36.5" cy="181" rx="7.5" ry="7"></ellipse>
+            <ellipse id="Oval" stroke="#000000" stroke-width="2" fill-rule="nonzero" transform="translate(56.500000, 177.000000) rotate(-12.600000) translate(-56.500000, -177.000000) " cx="56.5" cy="177" rx="7.5" ry="7"></ellipse>
+            <ellipse id="Oval" stroke="#000000" stroke-width="2" fill-rule="nonzero" transform="translate(76.500000, 172.000000) rotate(-12.600000) translate(-76.500000, -172.000000) " cx="76.5" cy="172" rx="7.5" ry="7"></ellipse>
+            <rect id="Rectangle-path" stroke="#000000" stroke-width="5" fill-rule="nonzero" transform="translate(399.000000, 250.000000) rotate(-12.600000) translate(-399.000000, -250.000000) " x="81" y="168" width="636" height="164"></rect>
+            <rect id="Rectangle-path" fill="#000000" fill-rule="nonzero" transform="translate(181.500000, 492.000000) rotate(-12.652557) translate(-181.500000, -492.000000) " x="161" y="478" width="41" height="28"></rect>
+            <rect id="Rectangle-path" fill="#000000" fill-rule="nonzero" transform="translate(189.500000, 538.000000) rotate(-12.600000) translate(-189.500000, -538.000000) " x="169" y="524" width="41" height="28"></rect>
+            <rect id="Rectangle-path" fill="#FF9800" fill-rule="nonzero" transform="translate(173.500000, 577.000000) rotate(-12.652557) translate(-173.500000, -577.000000) " x="153" y="563" width="41" height="28"></rect>
+            <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.4" transform="translate(394.500000, 425.000000) rotate(-12.600000) translate(-394.500000, -425.000000) " x="230" y="417" width="329" height="16"></rect>
+            <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.4" transform="translate(405.500000, 472.000000) rotate(-12.600000) translate(-405.500000, -472.000000) " x="241" y="464" width="329" height="16"></rect>
+            <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.4" transform="translate(416.500000, 520.000000) rotate(-12.600000) translate(-416.500000, -520.000000) " x="252" y="512" width="329" height="16"></rect>
+            <rect id="Rectangle-path" stroke="#000000" stroke-width="4" fill="#F5F5F5" fill-rule="nonzero" x="146" y="47" width="821" height="35"></rect>
+            <rect id="Rectangle-path" stroke="#000000" stroke-width="3" fill-rule="nonzero" x="130" y="36" width="855" height="656"></rect>
+            <rect id="Rectangle-path" stroke="#000000" stroke-width="4" fill="#FFFFFF" fill-rule="nonzero" x="146" y="82" width="821" height="598"></rect>
+            <circle id="Oval" stroke="#000000" stroke-width="3" fill-rule="nonzero" cx="166.5" cy="64.5" r="8.5"></circle>
+            <circle id="Oval" stroke="#000000" stroke-width="3" fill-rule="nonzero" cx="189.5" cy="64.5" r="8.5"></circle>
+            <circle id="Oval" stroke="#000000" stroke-width="3" fill-rule="nonzero" cx="212.5" cy="64.5" r="8.5"></circle>
             <mask id="mask-4" fill="white">
                 <use xlink:href="#path-3"></use>
             </mask>
             <use id="Mask" stroke="#000000" stroke-width="4" fill="#425B9A" fill-rule="nonzero" xlink:href="#path-3"></use>
-            <rect id="Rectangle-path" stroke="#000000" stroke-width="4" fill-rule="nonzero" x="283.57" y="290.48" width="32" height="24"></rect>
-            <rect id="Rectangle-path" stroke="#000000" stroke-width="4" fill-rule="nonzero" x="283.57" y="331.48" width="32" height="24"></rect>
-            <rect id="Rectangle-path" stroke="#000000" stroke-width="4" fill-rule="nonzero" x="283.57" y="372.48" width="32" height="24"></rect>
-            <rect id="Rectangle-path" stroke="#000000" stroke-width="4" opacity="0.4" fill-rule="nonzero" x="368.57" y="295.48" width="258" height="14"></rect>
-            <rect id="Rectangle-path" stroke="#000000" stroke-width="4" opacity="0.4" fill-rule="nonzero" x="368.57" y="336.48" width="258" height="14"></rect>
-            <rect id="Rectangle-path" stroke="#000000" stroke-width="4" opacity="0.4" fill-rule="nonzero" x="368.57" y="377.48" width="258" height="14"></rect>
+            <rect id="Rectangle-path" stroke="#000000" stroke-width="4" fill-rule="nonzero" x="309" y="439" width="46" height="35"></rect>
+            <rect id="Rectangle-path" stroke="#000000" stroke-width="4" fill-rule="nonzero" x="309" y="498" width="46" height="35"></rect>
+            <rect id="Rectangle-path" stroke="#000000" stroke-width="4" fill-rule="nonzero" x="309" y="557" width="46" height="35"></rect>
+            <rect id="Rectangle-path" stroke="#000000" stroke-width="4" opacity="0.4" fill-rule="nonzero" x="432" y="446" width="373" height="20"></rect>
+            <rect id="Rectangle-path" stroke="#000000" stroke-width="4" opacity="0.4" fill-rule="nonzero" x="432" y="505" width="373" height="20"></rect>
+            <rect id="Rectangle-path" stroke="#000000" stroke-width="4" opacity="0.4" fill-rule="nonzero" x="432" y="564" width="373" height="20"></rect>
         </g>
     </g>
 </svg>

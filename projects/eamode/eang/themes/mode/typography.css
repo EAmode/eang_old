@@ -36,7 +36,11 @@
     color: var(--ea-color-3);
   }
   & a {
-    font-size: 1.8em;
-    text-decoration: none;
+    font-size: 1rem;
+    color: var(--ea-alt-base-color);
+    text-decoration: underline;
+    &:hover {
+      color: var(--ea-background-hover);
+    }
   }
 }

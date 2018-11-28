@@ -1,0 +1,68 @@
+
+<svg width="100%" height="100%" viewBox="0 0 855 681" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <rect id="path-1" x="426" y="42" width="414" height="621"></rect>
+        <linearGradient x1="50%" y1="100%" x2="50%" y2="0%" id="linearGradient-3">
+            <stop stop-color="#FFFFFF" stop-opacity="0.12" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0.09" offset="55%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0.02" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="63400%" y1="32800%" x2="63400%" y2="31200%" id="linearGradient-4">
+            <stop stop-color="#FFFFFF" stop-opacity="0.12" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0.09" offset="55%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0.02" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="63400%" y1="35300%" x2="63400%" y2="33700%" id="linearGradient-5">
+            <stop stop-color="#FFFFFF" stop-opacity="0.12" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0.09" offset="55%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0.02" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="63400%" y1="37800%" x2="63400%" y2="36200%" id="linearGradient-6">
+            <stop stop-color="#FFFFFF" stop-opacity="0.12" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0.09" offset="55%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0.02" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="63400%" y1="40300%" x2="63400%" y2="38700%" id="linearGradient-7">
+            <stop stop-color="#FFFFFF" stop-opacity="0.12" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0.09" offset="55%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0.02" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="63400%" y1="42800%" x2="63400%" y2="41200%" id="linearGradient-8">
+            <stop stop-color="#FFFFFF" stop-opacity="0.12" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0.09" offset="55%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0.02" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="undraw_contrast_vb82" transform="translate(3.000000, 3.000000)">
+            <polygon id="Shape" stroke="#979797" stroke-width="6" fill-rule="nonzero" points="0 0 0 34.06 0 675 849 675 849 34.06 849 0"></polygon>
+            <rect id="Rectangle-path" stroke="#060606" stroke-width="4" fill="#FFFFFF" fill-rule="nonzero" x="12" y="42" width="828" height="621"></rect>
+            <rect id="Rectangle-path" stroke="#242424" stroke-width="4" fill-rule="nonzero" x="12" y="9" width="828" height="33"></rect>
+            <circle id="Oval" stroke="#000000" stroke-width="4" fill-rule="nonzero" cx="36" cy="25" r="8"></circle>
+            <circle id="Oval" stroke="#000000" stroke-width="4" fill-rule="nonzero" cx="58" cy="25" r="8"></circle>
+            <circle id="Oval" stroke="#000000" stroke-width="4" fill-rule="nonzero" cx="80" cy="25" r="8"></circle>
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Mask" fill="#425B9A" fill-rule="nonzero" xlink:href="#path-1"></use>
+            <rect id="Rectangle-path" fill="url(#linearGradient-3)" fill-rule="nonzero" x="514" y="256" width="227" height="25"></rect>
+            <rect id="Rectangle-path" stroke="#000000" stroke-width="5" fill-rule="nonzero" x="98" y="259" width="220" height="18"></rect>
+            <rect id="Rectangle-path" fill="url(#linearGradient-4)" fill-rule="nonzero" x="483" y="312" width="302" height="16"></rect>
+            <rect id="Rectangle-path" fill="url(#linearGradient-5)" fill-rule="nonzero" x="483" y="337" width="302" height="16"></rect>
+            <rect id="Rectangle-path" fill="url(#linearGradient-6)" fill-rule="nonzero" x="483" y="362" width="302" height="16"></rect>
+            <rect id="Rectangle-path" fill="url(#linearGradient-7)" fill-rule="nonzero" x="483" y="387" width="302" height="16"></rect>
+            <rect id="Rectangle-path" fill="url(#linearGradient-8)" fill-rule="nonzero" x="483" y="412" width="302" height="16"></rect>
+            <rect id="Rectangle-path" stroke="#000000" stroke-width="5" fill-rule="nonzero" x="66" y="314" width="297" height="11"></rect>
+            <rect id="Rectangle-path" stroke="#000000" stroke-width="5" fill-rule="nonzero" x="66" y="339" width="297" height="11"></rect>
+            <rect id="Rectangle-path" stroke="#000000" stroke-width="5" fill-rule="nonzero" x="66" y="364" width="297" height="11"></rect>
+            <rect id="Rectangle-path" stroke="#000000" stroke-width="5" fill-rule="nonzero" x="66" y="389" width="297" height="11"></rect>
+            <rect id="Rectangle-path" stroke="#000000" stroke-width="5" fill-rule="nonzero" x="66" y="414" width="297" height="11"></rect>
+            <rect id="Rectangle-path" fill="#FFFFFF" fill-rule="nonzero" x="517" y="259" width="220" height="18"></rect>
+            <rect id="Rectangle-path" fill="#FFFFFF" fill-rule="nonzero" x="485" y="314" width="297" height="11"></rect>
+            <rect id="Rectangle-path" fill="#FFFFFF" fill-rule="nonzero" x="485" y="339" width="297" height="11"></rect>
+            <rect id="Rectangle-path" fill="#FFFFFF" fill-rule="nonzero" x="485" y="364" width="297" height="11"></rect>
+            <rect id="Rectangle-path" fill="#FFFFFF" fill-rule="nonzero" x="485" y="389" width="297" height="11"></rect>
+            <rect id="Rectangle-path" fill="#FFFFFF" fill-rule="nonzero" x="485" y="414" width="297" height="11"></rect>
+        </g>
+    </g>
+</svg>
