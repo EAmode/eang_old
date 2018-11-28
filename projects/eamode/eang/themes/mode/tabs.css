@@ -1,0 +1,25 @@
+
+  @define-mixin tabs {
+  & ea-tab {
+
+    background: var(--ea-color-3);
+    display: none;
+    /* height: 100%; */
+    padding: 0.5em 1em;
+    border: 1px solid #c8c8c8;
+    border-radius: 0.1em 0.1em 0.3em 0.3em;
+
+    &[active] {
+      display: block;
+      width: calc(100% - 2em);
+    }
+  }
+
+  & ea-tabs {
+    & ea-menu {
+      .node {
+        border-radius: 0.3em 0.3em 0 0;
+      }
+    }
+  }
+}

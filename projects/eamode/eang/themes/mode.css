@@ -2,6 +2,7 @@
 @import 'mode/variables.css';
 @import 'mode/fonts.css';
 @import 'mode/menu.css';
+@import 'mode/tabs.css';
 @import 'mode/autocomplete.css';
 @import 'mode/button.css';
 @import 'mode/card.css';
@@ -27,4 +28,5 @@
   @mixin panel-mode;
   @mixin utilities;
   @mixin menu;
+  @mixin tabs;
 }
