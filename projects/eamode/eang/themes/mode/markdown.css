@@ -40,6 +40,7 @@
       margin: 0.5em 0;
       overflow: auto;
       background: var(--ea-color-background-4);
+      border-radius: 0.15em;
     }
     /* Inline code */
     & :not(pre) > code[class*='language-'] {

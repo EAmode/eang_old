@@ -7,7 +7,6 @@
 
     &[active] {
       display: block;
-      width: calc(100% - 2em);
     }
   }
 

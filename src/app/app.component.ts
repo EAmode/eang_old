@@ -28,8 +28,7 @@ export const SIDE_MENU = {
       children: [
         {
           name: 'Layout',
-          icon: 'ea-layers',
-          iconStyle: 'ea-negative',
+          icon: 'ea-layout',
           data: {
             link: '/layout'
           }
@@ -67,8 +66,7 @@ export const SIDE_MENU = {
         },
         {
           name: 'Tabs',
-          icon: 'ea-hamburger-menu',
-          iconStyle: 'ea-negative',
+          icon: 'ea-tabs-icon',
           data: {
             link: '/tabs'
           }
@@ -94,6 +92,11 @@ export class AppComponent implements OnInit {
       this.layout.drawerState$.next('closed')
     }
   }
+  closeDrawer() {
+    this.layout.drawerState$.next('closed')
+  }
+
+  drawerState$ = this.layout.drawerState$.next('closed')
 
   onActivate(e, scrollContainer) {
     document.getElementsByTagName('ea-main')[0].scrollTop = 0

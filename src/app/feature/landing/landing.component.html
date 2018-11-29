@@ -1,16 +1,23 @@
 <section id="eang-welcome">
   <img src="../../../assets/images/eang-logo.svg" height="50" alt="" />
   <h2>Progressive Web App Framework</h2>
-  <p style="text-align: center; width: 45%; margin: 0 0 1rem 0; font-size: 1.2rem">
+  <p>
     Eang is an open-source framework that helps designers and developers create
     modern web applications that scale
   </p>
-  <a routerLink="/getting-started"> <button> Explore the System</button></a>
+  <a routerLink="/getting-started">
+    <button (click)="shouldOpenDrawer()">Explore the System</button></a
+  >
 </section>
 
 <section id="getting-started">
-  <a href="">
-    <img src="../../../assets/images/get-started.svg" height="100%" style="width: 7rem;height: 5rem;" alt="" />
+  <a (click)="shouldOpenDrawer()" routerLink="/getting-started">
+    <img
+      src="../../../assets/images/get-started.svg"
+      height="100%"
+      style="width: 7rem;height: 5rem;"
+      alt=""
+    />
     <h2>Getting Started</h2>
     <p>
       Onboarding for designers and developers who are using the eang framework
@@ -18,82 +25,94 @@
     </p>
   </a>
 
-  <div>
-    <a href="">
-      <img src="../../../assets/images/rapid-develop.svg" height="100%" style="width: 7rem;height: 5rem;" alt="" />
-      <h2>Components</h2>
-      <p>
-        A library of components including code, usage instructions, and style
-        guidelines
-      </p>
-    </a>
-  </div>
+  <a (click)="shouldOpenDrawer()" routerLink="/components">
+    <img
+      src="../../../assets/images/rapid-develop.svg"
+      height="100%"
+      style="width: 7rem;height: 5rem;"
+      alt=""
+    />
+    <h2>Components</h2>
+    <p>
+      A library of components including code, usage instructions, and style
+      guidelines
+    </p>
+  </a>
 
-  <div>
-    <a href="">
-      <img src="../../../assets/images/reactive-icon.svg" height="100%" style="width: 7rem;height: 5rem;" alt="" />
-      <h2>Reactive Streams</h2>
-      <p>
-        Eang's event-driven architecture helps you build applications that are
-        responsive, and fast.
-      </p>
-    </a>
-  </div>
+  <a (click)="shouldOpenDrawer()" routerLink="/features">
+    <img
+      src="../../../assets/images/reactive-icon.svg"
+      height="100%"
+      style="width: 7rem;height: 5rem;"
+      alt=""
+    />
+    <h2>Reactive Streams</h2>
+    <p>
+      Eang's event-driven architecture helps you build applications that are
+      responsive, and fast.
+    </p>
+  </a>
 
-  <div>
-    <a href="">
-      <img src="../../../assets/images/themes-icon.svg" height="100%" style="width: 7rem;height: 5rem;" alt="" />
-      <h2>CSS Themes</h2>
-      <p>Use Eang's built-in style themes or build your own custom theme.</p>
-    </a>
-  </div>
+  <a (click)="shouldOpenDrawer()" routerLink="/features">
+    <img
+      src="../../../assets/images/themes-icon.svg"
+      height="100%"
+      style="width: 7rem;height: 5rem;"
+      alt=""
+    />
+    <h2>CSS Themes</h2>
+    <p>
+      Use Eang's built-in style themes or build your own custom theme using next
+      generation css.
+    </p>
+  </a>
 </section>
 
 <section id="eang-resources">
-
-    <div class="ea-card">
-      <div class="ea-card-content">
-        <img
-          src="../../../assets/images/figma.png"
-          height="96"
-          stlye="
+  <div class="ea-card">
+    <div class="ea-card-content">
+      <img
+        src="../../../assets/images/figma.png"
+        height="96"
+        stlye="
           width: 5rem;
           height: 5rem;
           margin: .5rem;"
-        />
+      />
 
-        <b>Eang Design Kit</b>
-        <p style="margin-top: 0;">
-          A
-          <a
-            href="https://www.figma.com/file/XP3W5soxstdrfuka28eIycy8/eang-designs?node-id=0%3A1"
-            >Figma file</a
-          >
-          containing core visual styles, components, and patterns for UX
-          designers
-        </p>
-      </div>
+      <b>Eang Design Kit</b>
+      <p style="margin-top: 0;">
+        A
+        <a
+          target="_blank"
+          href="https://www.figma.com/file/XP3W5soxstdrfuka28eIycy8/eang-designs?node-id=0%3A1"
+          >Figma file</a
+        >
+        containing core visual styles, components, and patterns for UX designers
+      </p>
     </div>
+  </div>
 
-    <div class="ea-card">
-      <div class="ea-card-content">
-        <img
-          src="../../../assets/images/github.png"
-          height="96"
-          style="
+  <div class="ea-card">
+    <div class="ea-card-content">
+      <img
+        src="../../../assets/images/github.png"
+        height="96"
+        style="
           width: 4rem;
           height: 4rem;
           margin: 1rem;"
-        />
-        <b>Eang Web Components Source Code</b>
-        <p style="margin-top: 0;">
-          A
-          <a href="https://github.com/eamode/eang">Github code repository</a>
-          containing source code for developers contributors
-        </p>
-      </div>
+      />
+      <b>Eang Source Code</b>
+      <p style="margin-top: 0;">
+        A
+        <a target="_blank" href="https://github.com/eamode/eang"
+          >Github repository</a
+        >
+        containing source code for developers contributors
+      </p>
     </div>
-
+  </div>
 </section>
 
 <section id="open-standards">
@@ -101,23 +120,23 @@
   <h3>Eang is built on the following open source technology</h3>
   <div class="layout-three-by-one">
     <div>
-      <a href="https://angular.io"
+      <a target="_blank" href="https://angular.io"
         ><img height="45" src="/assets/images/angular.svg"
       /></a>
       <b>Angular</b>
       <p>
-        <a href="https://angular.io">Angular</a> offers
-        declarative templates with databinding
+        <a target="_blank" href="https://angular.io">Angular</a> offers
+        declarative templates with databinding. Powered by Google.
       </p>
     </div>
     <div>
-      <a href="http://reactivex.io/"
+      <a target="_blank" href="http://reactivex.io/"
         ><img height="45" src="/assets/images/Rx_Logo-512-512.png"
       /></a>
       <b>ReactiveX</b>
       <p>
-        <a href="http://reactivex.io/">ReactiveX</a> provides an
-        asynchronous programming interface for observable streams
+        <a href="http://reactivex.io/">ReactiveX</a> provides an asynchronous
+        programming interface for observable streams.
       </p>
     </div>
     <div>
@@ -126,15 +145,15 @@
       /></a>
       <b>PostCSS</b>
       <p>
-        <a href="https://postcss.org/">PostCSS</a> provides
-        tranforms for CSS Styles
+        <a href="https://postcss.org/">PostCSS</a> provides transformations for CSS
+        to future-proof your code.
       </p>
     </div>
   </div>
 </section>
 
-
-<!-- <section class="go-pro">
+<!--
+  <section class="go-pro">
     <div class="pro">
       <div class="pro-text">
         <h2>Get Support with Eang Pro</h2>
@@ -146,7 +165,8 @@
       </div>
       <img src="../../../assets/images/eang-pro.svg" alt="">
     </div>
-  </section> -->
+  </section>
+-->
 
 <!--
   <section class="go-pro">

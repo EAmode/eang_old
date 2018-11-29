@@ -1,89 +1,91 @@
 <div class="ea-card" unset>
-  <div class="ea-card-header">
+  <div class="ea-card-header material-header">
     <h1>Tabs</h1>
     <span icon chevron-right style="width: 2rem; height:2rem;"></span>
   </div>
-  <ea-tabs>
-    <ea-tab name="Overview">
-      <div class="ea-card" unset>
-        <p>Tabs allow users to display content in separate areas.</p>
-        <p>
-          Each of tab can contain any type of data. It could be just a text,
-          list of your 'to-do', image.
-        </p>
+  <div class="ea-card-content">
+    <ea-tabs>
+      <ea-tab name="Overview">
+        <div class="ea-card" unset>
+          <p>Tabs allow users to display content in separate areas.</p>
+          <p>
+            Each of tab can contain any type of data. It could be just a text,
+            list of your 'to-do', image.
+          </p>
+          <div class="ea-card">
+            <div class="ea-card-header">
+              <p>Tabs view. Click on each tab to see what it contains.</p>
+            </div>
+            <div class="ea-card-content header" style="flex-direction: column;">
+              <ea-tabs>
+                <ea-tab name="Paragraph"> <p>Just paragraph</p> </ea-tab>
+                <ea-tab name="List">
+                  <ul>
+                    <li>There is some list</li>
+                    <li>With few items</li>
+                    <li>There is some list</li>
+                    <li>With few items</li>
+                    <li>There is some list</li>
+                    <li>With few items</li>
+                    <li>There is some list</li>
+                    <li>With few items</li>
+                    <li>There is some list</li>
+                    <li>With few items</li>
+                    <li>There is some list</li>
+                    <li>With few items</li>
+                    <li>There is some list</li>
+                    <li>With few items</li>
+                    <li>There is some list</li>
+                    <li>With few items</li>
+                  </ul>
+                </ea-tab>
+                <ea-tab name="Image">
+                  <p>
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Angular_full_color_logo.svg"
+                      style="width: 160px; height: 160px;"
+                    />
+                    Angular is a TypeScript-based open-source front-end web
+                    application platform led by the Angular Team at Google and by
+                    a community of individuals and corporations.
+                  </p>
+                </ea-tab>
+              </ea-tabs>
+            </div>
+          </div>
+          <ea-markdown [doc]="tabs_example"></ea-markdown>
+          <p>
+            You should remember to add attribute 'name' which required. Name will
+            be shown in tab title.
+          </p>
+        </div>
+      </ea-tab>
+      <ea-tab name="Examples">
+        <h2>Closeable</h2>
+        <p>Try to add property closeable to show button to close your tab.</p>
         <div class="ea-card">
           <div class="ea-card-header">
-            <p>Tabs view. Click on each tab to see what it contains.</p>
+            <p>You are allowed to close tab only with closeable property.</p>
           </div>
           <div class="ea-card-content header" style="flex-direction: column;">
             <ea-tabs>
-              <ea-tab name="Paragraph"> <p>Just paragraph</p> </ea-tab>
+              <ea-tab name="Paragraph#1" [closeable]="true">
+                <p>Just paragraph #1</p>
+              </ea-tab>
+              <ea-tab name="Paragraph#2" [closeable]="true">
+                <p>Just paragraph #2</p>
+              </ea-tab>
               <ea-tab name="List">
                 <ul>
                   <li>There is some list</li>
                   <li>With few items</li>
-                  <li>There is some list</li>
-                  <li>With few items</li>
-                  <li>There is some list</li>
-                  <li>With few items</li>
-                  <li>There is some list</li>
-                  <li>With few items</li>
-                  <li>There is some list</li>
-                  <li>With few items</li>
-                  <li>There is some list</li>
-                  <li>With few items</li>
-                  <li>There is some list</li>
-                  <li>With few items</li>
-                  <li>There is some list</li>
-                  <li>With few items</li>
                 </ul>
-              </ea-tab>
-              <ea-tab name="Image">
-                <p>
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Angular_full_color_logo.svg"
-                    style="width: 160px; height: 160px;"
-                  />
-                  Angular is a TypeScript-based open-source front-end web
-                  application platform led by the Angular Team at Google and by
-                  a community of individuals and corporations.
-                </p>
               </ea-tab>
             </ea-tabs>
           </div>
         </div>
-        <ea-markdown [doc]="tabs_example"></ea-markdown>
-        <p>
-          You should remember to add attribute 'name' which required. Name will
-          be shown in tab title.
-        </p>
-      </div>
-    </ea-tab>
-    <ea-tab name="Examples">
-      <h2>Closeable</h2>
-      <p>Try to add property closeable to show button to close your tab.</p>
-      <div class="ea-card">
-        <div class="ea-card-header">
-          <p>You are allowed to close tab only with closeable property.</p>
-        </div>
-        <div class="ea-card-content header" style="flex-direction: column;">
-          <ea-tabs>
-            <ea-tab name="Paragraph#1" [closeable]="true">
-              <p>Just paragraph #1</p>
-            </ea-tab>
-            <ea-tab name="Paragraph#2" [closeable]="true">
-              <p>Just paragraph #2</p>
-            </ea-tab>
-            <ea-tab name="List">
-              <ul>
-                <li>There is some list</li>
-                <li>With few items</li>
-              </ul>
-            </ea-tab>
-          </ea-tabs>
-        </div>
-      </div>
-      <div grid><ea-markdown [doc]="tab_close"></ea-markdown></div>
-    </ea-tab>
-  </ea-tabs>
+        <div grid><ea-markdown [doc]="tab_close"></ea-markdown></div>
+      </ea-tab>
+    </ea-tabs>
+  </div>
 </div>
