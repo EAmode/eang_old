@@ -6,13 +6,13 @@
 @import 'material/variables.css';
 @import 'material/menu.css';
 @import 'material/markdown.css';
+@import 'material/icons.css';
 
 @import 'mode/tabs.css';
 @import 'mode/fonts.css';
 @import 'mode/panel.css';
 @import 'mode/themepicker.css';
 @import 'mode/card.css';
-@import 'mode/icons.css';
 @import 'mode/table.css';
 @import 'mode/button.css';
 
@@ -28,4 +28,5 @@
   @mixin themepicker;
   @mixin table-mode;
   @mixin tabs;
+  @mixin icon-material;
 }

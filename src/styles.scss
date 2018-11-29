@@ -30,34 +30,6 @@
   }
 }
 
-#eang-welcome {
-  align-items: center;
-  align-content: center;
-  background: url('./assets/images/flickr-14202459710.jpg');
-  background-size: contain;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  padding: 4rem 0rem;
-  text-align: center;
-  @media only screen and (max-width: 640px) {
-    background-size: cover;
-  }
-  & a {
-    text-decoration: none;
-  }
-  & p {
-    text-align: center;
-    width: 45%;
-    margin: 0 0 1rem 0;
-    font-size: 1.2rem;
-    @media only screen and (max-width: 640px) {
-      width: 95%;
-    }
-  }
-}
-
 .layout-one-by-three {
   display: grid;
   grid-template-columns: 1fr;
@@ -124,61 +96,56 @@
 }
 
 .mode {
+  & .eang-logo {
+    background: url('./assets/images/eang-logo.svg');
+    width: 5rem;
+    background-repeat: no-repeat;
+
+  }
   & .menu-example {
     flex-direction: column;
     background: #333;
   }
-  & eangio-home,
-  eangio-get-started,
-  eangio-card,
-  eangio-button,
-  eangio-icon,
-  eangio-menu,
-  eangio-tabs,
-  eangio-layout,
-  eangio-variables {
-    width: 90%;
-    @media only screen and (max-width: 500px) {
-      width: 95%;
-    }
-  }
-}
-
-.material {
-  & .menu-example {
+  #eang-welcome {
+    align-items: center;
+    align-content: center;
+    background: url('./assets/images/flickr-14202459710.jpg');
+    background-size: contain;
+    color: white;
+    display: flex;
     flex-direction: column;
-    background: rgba(0, 0, 0, 0.03);
-  }
-  & .ea-card[unset] {
-    margin-top: 0;
-    & > .ea-card-content {
-      padding-top: 7rem;
-      @media only screen and (max-width: 600px) {
-        padding: 0;
+    justify-content: space-evenly;
+    padding: 4rem 0rem;
+    text-align: center;
+    @media only screen and (max-width: 640px) {
+      background-size: cover;
+    }
+    &.ea-card {
+      margin: 0;
+      & .ea-card-header {
+        border-bottom: none;
+      }
+      & .ea-card-content {
+        flex-direction: column;
+        align-items: center;
+        & p {
+          width: 65%;
+          @media only screen and (max-width: 500px) {
+            width: 90%;
+          }
+        }
       }
     }
-  }
-  & .ea-card[unset] > .ea-card-header.material-header {
-    position: fixed;
-    top: var(--ea-toolbar-height);
-    left: 0;
-    margin: 0;
-    box-sizing: border-box;
-    width: 100%;
-    background: #14487b;
-    z-index: 1;
-    @media only screen and (max-width: 600px) {
-      position: initial;
-      margin-bottom: 1rem;
+    & a {
+      text-decoration: none;
     }
-    & h1 {
-      color: white;
-      font-weight: 300;
-      font-size: 2rem;
-      padding-left: 3rem;
-      @media only screen and (max-width: 600px) {
-        padding: 0 0 .2rem 1.5rem;
-        color: white;
+    & p {
+      text-align: center;
+      width: 45%;
+      margin: 0 0 1rem 0;
+      font-size: 1.2rem;
+      @media only screen and (max-width: 640px) {
+        width: 95%;
       }
     }
   }
@@ -191,13 +158,166 @@
   eangio-tabs,
   eangio-layout,
   eangio-variables,
-  eangio-tabs {
+  eangio-components {
+    width: 90%;
+    @media only screen and (max-width: 500px) {
+      width: 95%;
+    }
+  }
+}
+
+.material {
+  & span[chevron-right][negative], span[chevron-down][negative] {
+    filter: invert(0%);
+  }
+  .node-toggle[disabled] span[icon]{
+    display: none;
+  }
+  & .eang-logo {
+    background: url('./assets/images/eang-logo-dark.svg');
+    width: 5rem;
+    background-repeat: no-repeat;
+    @media only screen and (max-width: 500px) {
+      margin-bottom: 1rem;
+    }
+  }
+  & .menu-example {
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.03);
+  }
+  #eang-welcome {
+    &.ea-card[unset] {
+      flex-direction: column;
+      align-items: center;
+      margin-top: 7rem;
+      @media only screen and (max-width: 500px) {
+       margin-top: 4rem;
+      }
+      & .ea-card-header {
+        & h2 {
+          padding-left: 14rem;
+          color: white;
+          font-weight: 400;
+          @media only screen and (max-width: 500px) {
+          padding-left: 0;
+          text-align: center;
+          }
+        }
+      }
+      & > .ea-card-content {
+        padding-top: 0.5rem;
+        flex-direction: column;
+        align-items: center;
+        @media only screen and (max-width: 600px) {
+          padding: 0;
+          flex-direction: column;
+          align-items: center;
+        }
+        & p {
+          width: 65%;
+          @media only screen and (max-width: 500px) {
+            width: 90%;
+          }
+        }
+        text-align: center;
+      }
+    }
+    &.ea-card[unset] > .ea-card-header.material-header {
+      position: fixed;
+      top: var(--ea-toolbar-height);
+      left: 0;
+      margin: 0;
+      box-sizing: border-box;
+      width: 100%;
+      background: #14487b;
+      z-index: 1;
+      @media only screen and (max-width: 600px) {
+        position: initial;
+        margin-bottom: 1rem;
+      }
+      & h1 {
+        color: white;
+        font-weight: 300;
+        font-size: 2rem;
+        padding-left: 3rem;
+        @media only screen and (max-width: 600px) {
+          padding: 0 0 0.2rem 1.5rem;
+          color: white;
+        }
+      }
+    }
+    & a {
+      text-decoration: none;
+    }
+    & p {
+      width: 45%;
+      margin: 0 0 1rem 0;
+      font-size: 1.2rem;
+      @media only screen and (max-width: 640px) {
+        width: 95%;
+      }
+    }
+  }
+
+  & eangio-home,
+  eangio-get-started,
+  eangio-card,
+  eangio-button,
+  eangio-icon,
+  eangio-menu,
+  eangio-tabs,
+  eangio-layout,
+  eangio-variables,
+  eangio-tabs,
+  eangio-components {
     width: 95%;
     @media only screen and (max-width: 500px) {
       width: 100%;
       & .ea-card[unset] {
         & .ea-card-content {
           margin: 0 1rem;
+        }
+      }
+    }
+    & .ea-card[unset] {
+      margin-top: 0;
+      & > .ea-card-content {
+        padding-top: 7rem;
+        @media only screen and (max-width: 600px) {
+          padding: 0;
+        }
+      }
+      & ea-tabs {
+        & .ea-card-content {
+          padding-top: 0rem;
+          @media only screen and (max-width: 600px) {
+            padding: 0;
+          }
+        }
+      }
+    }
+
+    & .ea-card[unset] > .ea-card-header.material-header {
+      position: fixed;
+      top: var(--ea-toolbar-height);
+      left: 0;
+      margin: 0;
+      box-sizing: border-box;
+      width: 100%;
+      background: #14487b;
+      z-index: 1;
+      @media only screen and (max-width: 600px) {
+        position: initial;
+        margin-bottom: 1rem;
+      }
+      & h1 {
+        color: white;
+        font-weight: 300;
+        font-size: 2rem;
+        padding-left: 3rem;
+        @media only screen and (max-width: 600px) {
+          padding: 0 0 0.2rem 1.5rem;
+          color: white;
         }
       }
     }
@@ -346,7 +466,6 @@
         }
       }
       & eangio-components {
-        width: 90%;
         & p {
           font-size: 0.9rem;
         }

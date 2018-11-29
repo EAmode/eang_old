@@ -1,14 +1,18 @@
-<section id="eang-welcome">
-  <img src="../../../assets/images/eang-logo.svg" height="50" alt="" />
-  <h2>Progressive Web App Framework</h2>
-  <p>
-    Eang is an open-source framework that helps designers and developers create
-    modern web applications that scale
-  </p>
-  <a routerLink="/getting-started">
-    <button (click)="shouldOpenDrawer()">Explore the System</button></a
-  >
-</section>
+<div class="ea-card" id="eang-welcome" unset>
+  <div class="eang-logo" style="height:50px;"></div>
+  <div class="ea-card-header material-header"><h2>Progressive Web App Framework</h2></div>
+  <div class="ea-card-content">
+    <p>
+      Eang is an open-source framework that helps designers and developers
+      create modern web applications that scale
+    </p>
+    <a routerLink="/getting-started">
+      <button (click)="shouldOpenDrawer()">Explore the System</button></a
+    >
+  </div>
+</div>
+
+<!-- <section ></section> -->
 
 <section id="getting-started">
   <a (click)="shouldOpenDrawer()" routerLink="/getting-started">
@@ -145,8 +149,8 @@
       /></a>
       <b>PostCSS</b>
       <p>
-        <a href="https://postcss.org/">PostCSS</a> provides transformations for CSS
-        to future-proof your code.
+        <a href="https://postcss.org/">PostCSS</a> provides transformations for
+        CSS to future-proof your code.
       </p>
     </div>
   </div>

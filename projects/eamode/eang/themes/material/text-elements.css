@@ -30,7 +30,11 @@
     color: white;
   }
   & a {
-    font-size: 1.8rem;
-    text-decoration: none;
+    font-size: 1.25rem;
+    color: var(--ea-alt-base-color);
+    text-decoration: underline;
+    &:hover {
+      color: var(--ea-background-hover);
+    }
   }
 }
