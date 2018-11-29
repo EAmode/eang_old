@@ -9,17 +9,6 @@
       align-items: center;
       position: relative;
 
-      button {
-        span{
-          &[toggleRhide]{
-            display: none;
-          }
-          &[toggleLhide]{
-            display: none;
-          }
-        }
-      }
-
       & .node-toggle {
         &[disabled] {
           border: none;

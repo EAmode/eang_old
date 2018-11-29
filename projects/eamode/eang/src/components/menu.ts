@@ -40,10 +40,10 @@ export interface MenuTreeItem {
       <button *ngIf="node.children?.length > 0" (click)="onToggle()" icon flat>
           <span icon chevron-down negative *ngIf="node.isOpen">
           </span>
-          <span icon chevron-left negative *ngIf="!node.isOpen" [attr.toggleLhide]="!node.toggleRight? '' : null">
+          <span icon chevron-left negative *ngIf="!node.isOpen && node.toggleRight">
           </span>
-          <span icon chevron-right negative *ngIf="!node.isOpen" [attr.toggleRhide]="node.toggleRight? '' : null">
-        </span>
+          <span icon chevron-right negative *ngIf="!node.isOpen && !node.toggleRight">
+          </span>
       </button>
     </ng-template>
 

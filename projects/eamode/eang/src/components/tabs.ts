@@ -3,7 +3,9 @@ import {
   AfterContentInit,
   ContentChildren,
   QueryList,
-  EventEmitter
+  EventEmitter,
+  TemplateRef,
+  ContentChild
 } from '@angular/core'
 import { MenuTreeItem } from './menu'
 import { TabComponent } from './tab'
@@ -11,7 +13,8 @@ import { TabComponent } from './tab'
 @Component({
   selector: 'ea-tabs',
   template: `
-  <ea-menu [node]="menu" [activateEvents]="activated" [closeEvents]="closed">
+  <ea-menu [node]="menu" [activateEvents]="activated" [closeEvents]="closed"
+  [contentTemplate]="headerTemplate">
   </ea-menu>
   <ng-content select="ea-tab"></ng-content>
   `,
@@ -20,6 +23,8 @@ import { TabComponent } from './tab'
 export class TabsComponent implements AfterContentInit {
   @ContentChildren(TabComponent)
   tabs: QueryList<TabComponent>
+  @ContentChild('headerTemplate')
+  headerTemplate: TemplateRef<{}>
 
   menu: MenuTreeItem = {
     name: 'Main',

@@ -171,6 +171,10 @@
     &.ea-share {
       background-image: inline('mode/icon/share.svg');
     }
+    &[tab],
+    &.ea-tab {
+      background-image: inline('mode/icon/tab.svg');
+    }
     &[toggle-left],
     &.ea-toggle-left {
       background-image: inline('mode/icon/toggle-left.svg');
@@ -250,6 +254,10 @@
     &[chevron-left],
     &.ea-chevron-left {
       background-image: inline('mode/icon/left-chevron.svg');
+    }
+    &[chevron-up],
+    &.ea-chevron-up {
+      background-image: inline('mode/icon/up-chevron.svg');
     }
     &[menu-close],
     &.ea-menu-close {

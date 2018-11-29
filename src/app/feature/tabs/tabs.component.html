@@ -1,7 +1,7 @@
 <div class="ea-card" unset>
   <div class="ea-card-header">
     <h1>Tabs</h1>
-    <span icon align-left style="width: 2rem; height:2rem;"></span>
+    <span icon tab style="width: 2rem; height:2rem;"></span>
   </div>
     <p>Tabs allow users to display content in separate areas.</p>
     <p>Each of tab can contain any type of data. It could be just a text, list of your 'to-do', image.</p>
@@ -74,3 +74,25 @@
     </div>
 </div>
 
+<h1>Add your own template</h1>
+<p>Use <em>#headerTemplate></em> inside <em>&lt;ng-template&gt;</em> to input your own template in the header.</p>
+<div grid>
+  <ea-markdown [doc]="tab_custom"></ea-markdown>
+</div>
+<p>For example, input checkboxes in the tab headers and use them to do some defined by yourself function.</p>
+<div class="ea-card" style="background:#333333;">
+    <div class="ea-card-content header" style="flex-direction: column;">
+      <ea-tabs>
+        <ng-template #headerTemplate>
+          <input type="checkbox">
+          <p>Check it!</p>
+        </ng-template>
+       <ea-tab name="Info 1">   
+        <p>Information #1</p> 
+       </ea-tab>
+       <ea-tab name="Info 2">
+          <p>Information #2</p>
+      </ea-tab>
+     </ea-tabs>
+    </div>
+</div>
