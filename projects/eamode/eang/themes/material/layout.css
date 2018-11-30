@@ -104,7 +104,7 @@
       background: var(--ea-drawer-background, var(--ea-color-background-4));
       -webkit-tap-highlight-color: transparent;
       @media only screen and (min-width: 600px) {
-        margin: 7rem 2rem 0 2rem;
+        margin: 3rem 2rem 0 2rem;
         background: none;
       }
       & section {

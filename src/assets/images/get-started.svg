@@ -1,216 +1,116 @@
-
-<svg width="100%" height="100%" viewBox="0 0 855 681" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Group-45" transform="translate(3.000000, 3.000000)">
-            <g id="Group-42">
-                <g id="undraw_contrast_vb82" fill-rule="nonzero">
-                    <polygon id="Shape" stroke="#979797" stroke-width="6" points="0 0 0 34.06 0 675 849 675 849 34.06 849 0"></polygon>
-                    <rect id="Rectangle-path" stroke="#060606" stroke-width="4" fill="#FFFFFF" x="12" y="42" width="828" height="621"></rect>
-                    <rect id="Rectangle-path" stroke="#242424" stroke-width="4" x="12" y="9" width="828" height="33"></rect>
-                    <circle id="Oval" stroke="#000000" stroke-width="4" cx="36" cy="25" r="8"></circle>
-                    <circle id="Oval" stroke="#000000" stroke-width="4" cx="58" cy="25" r="8"></circle>
-                    <circle id="Oval" stroke="#000000" stroke-width="4" cx="80" cy="25" r="8"></circle>
-                </g>
-                <g id="Group-40" transform="translate(84.000000, 119.000000)">
-                    <rect id="Rectangle-13" fill="#333333" x="7" y="238" width="674" height="199"></rect>
-                    <rect id="Rectangle-path" fill="#DDE1EC" fill-rule="nonzero" x="308.9" y="350.81" width="70.45" height="9.75"></rect>
-                    <rect id="Rectangle-path" fill="#DDE1EC" fill-rule="nonzero" x="430.28" y="320.13" width="70.45" height="9.75"></rect>
-                    <rect id="Rectangle-path" fill="#DDE1EC" fill-rule="nonzero" x="83.12" y="290.12" width="209.17" height="9.75"></rect>
-                    <rect id="Rectangle-path" fill="#DDE1EC" fill-rule="nonzero" x="83.12" y="320.46" width="209.17" height="9.75"></rect>
-                    <rect id="Rectangle-path" fill="#DDE1EC" fill-rule="nonzero" x="83.12" y="350.81" width="209.17" height="9.75"></rect>
-                    <rect id="Rectangle-path" fill="#DDE1EC" fill-rule="nonzero" x="83.12" y="381.16" width="209.17" height="9.75"></rect>
-                    <path d="M98,4 L98,19 L84,19 C88.3866667,13.8501229 93.0533333,8.85012285 98,4 Z" id="Shape" fill="#425B9A" fill-rule="nonzero" opacity="0.2"></path>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="105" y="0" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="131" y="0" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="157" y="0" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="184" y="0" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="210" y="0" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" x="236" y="0" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="262" y="0" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="288" y="0" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="314" y="0" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" x="341" y="0" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="367" y="0" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="393" y="0" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="419" y="0" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="445" y="0" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="471" y="0" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="498" y="0" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" x="524" y="0" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" x="550" y="0" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="576" y="0" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="602" y="0" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" x="628" y="0" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" x="655" y="0" width="19" height="19"></rect>
-                    <path d="M72,34 L72,43 L66,43 C67.9070905,39.9355372 69.9070905,36.9355372 72,34 Z" id="Shape" fill="#425B9A" fill-rule="nonzero"></path>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="79" y="24" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" x="105" y="24" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="131" y="24" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.7" x="157" y="24" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="184" y="24" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.4" x="210" y="24" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" x="236" y="24" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.4" x="262" y="24" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="288" y="24" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.4" x="314" y="24" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" x="341" y="24" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.4" x="367" y="24" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.4" x="393" y="24" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="419" y="24" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.4" x="445" y="24" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.4" x="471" y="24" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="498" y="24" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="524" y="24" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.4" x="550" y="24" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="576" y="24" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" x="602" y="24" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" x="628" y="24" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" x="655" y="24" width="19" height="19"></rect>
-                    <path d="M19,54 L19,67 L0,67 L0,60.6494672 C6.14776071,57.9543895 12.5002287,55.7312038 19,54 Z" id="Shape" fill="#425B9A" fill-rule="nonzero" opacity="0.2"></path>
-                    <polygon id="Shape" fill="#425B9A" fill-rule="nonzero" opacity="0.2" points="46 50 46 68 27 68 27 52.6706231"></polygon>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" x="53" y="48" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.7" x="79" y="48" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" x="105" y="48" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.7" x="131" y="48" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.7" x="157" y="48" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="184" y="48" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.4" x="210" y="48" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.4" x="236" y="48" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" x="262" y="48" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="288" y="48" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.4" x="314" y="48" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" x="341" y="48" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="367" y="48" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.4" x="393" y="48" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="419" y="48" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" x="445" y="48" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="471" y="48" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.7" x="498" y="48" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.7" x="524" y="48" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.4" x="550" y="48" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="576" y="48" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" x="602" y="48" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" x="628" y="48" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" x="655" y="48" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="0" y="73" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="27" y="73" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="53" y="73" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="79" y="73" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" x="105" y="73" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.7" x="131" y="73" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.7" x="157" y="73" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="184" y="73" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="210" y="73" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.4" x="236" y="73" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.4" x="262" y="73" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" x="288" y="73" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="314" y="73" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.4" x="341" y="73" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.4" x="367" y="73" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.4" x="393" y="73" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.4" x="419" y="73" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="445" y="73" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="471" y="73" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="498" y="73" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="524" y="73" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.7" x="550" y="73" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.7" x="576" y="73" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.4" x="602" y="73" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="628" y="73" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" x="655" y="73" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="0" y="97" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="27" y="97" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.4" x="53" y="97" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="79" y="97" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="105" y="97" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.7" x="131" y="97" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.7" x="157" y="97" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="184" y="97" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="210" y="97" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.4" x="236" y="97" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" x="262" y="97" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="288" y="97" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" x="314" y="97" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" x="341" y="97" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" x="367" y="97" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="393" y="97" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" x="419" y="97" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="445" y="97" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="471" y="97" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="498" y="97" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="524" y="97" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="550" y="97" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.7" x="576" y="97" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="602" y="97" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="628" y="97" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" x="655" y="97" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="0" y="121" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="27" y="121" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="53" y="121" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.4" x="79" y="121" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="105" y="121" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="131" y="121" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.7" x="157" y="121" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="184" y="121" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="210" y="121" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="236" y="121" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" x="262" y="121" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="288" y="121" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" x="314" y="121" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" x="341" y="121" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="367" y="121" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="393" y="121" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="419" y="121" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="445" y="121" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="471" y="121" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="498" y="121" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="524" y="121" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="550" y="121" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="576" y="121" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="602" y="121" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.4" x="628" y="121" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" x="655" y="121" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.7" x="0" y="145" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.7" x="27" y="145" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.7" x="53" y="145" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.7" x="79" y="145" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.7" x="105" y="145" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="131" y="145" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="157" y="145" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="184" y="145" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="210" y="145" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="236" y="145" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="262" y="145" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" x="288" y="145" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="314" y="145" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="341" y="145" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="367" y="145" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" x="393" y="145" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="419" y="145" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="445" y="145" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="471" y="145" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="498" y="145" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="524" y="145" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="550" y="145" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="576" y="145" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="602" y="145" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.2" x="628" y="145" width="19" height="19"></rect>
-                    <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" x="655" y="145" width="19" height="19"></rect>
-                    <path d="M523.999034,146.922822 L523.999034,150 L519.486973,149.574274 L511,141 C511,141 524.129485,143.860581 523.999034,146.922822 Z" id="Shape" stroke="#4C4981" fill="#425B9A" fill-rule="nonzero" opacity="0.1"></path>
-                </g>
-            </g>
-            <text id="&lt;-&gt;" font-family="CartographMonoCF-Regular, Cartograph Mono CF" font-size="37" font-weight="normal" fill="#FFFFFF">
-                <tspan x="139" y="422">&lt; 							 &gt;</tspan>
-            </text>
-            <text id="&lt;-/&gt;" font-family="CartographMonoCF-Regular, Cartograph Mono CF" font-size="37" font-weight="normal" fill="#FFFFFF">
-                <tspan x="140" y="452">&lt; 							 				      /&gt;</tspan>
-            </text>
-            <text id="&lt;-&gt;" font-family="CartographMonoCF-Regular, Cartograph Mono CF" font-size="37" font-weight="normal" fill="#FFFFFF">
-                <tspan x="139" y="512">&lt; 							 &gt;</tspan>
-            </text>
-        </g>
+<svg viewBox="0 0 855 681" xmlns="http://www.w3.org/2000/svg">
+  <g fill="none" fill-rule="evenodd">
+    <g fill-rule="nonzero" transform="translate(3 3)">
+      <path stroke="#979797" stroke-width="6" d="M0 0v675h849V0z"/>
+      <path stroke="#060606" stroke-width="4" fill="#FFF" d="M12 42h828v621H12z"/>
+      <path stroke="#242424" stroke-width="4" d="M12 9h828v33H12z"/>
+      <circle stroke="#000" stroke-width="4" cx="36" cy="25" r="8"/>
+      <circle stroke="#000" stroke-width="4" cx="58" cy="25" r="8"/>
+      <circle stroke="#000" stroke-width="4" cx="80" cy="25" r="8"/>
     </g>
+    <path fill="#333" d="M94 360h674v199H94z"/>
+    <path fill="#DDE1EC" fill-rule="nonzero" d="M395.9 472.81h70.45v9.75H395.9zM517.28 442.13h70.45v9.75h-70.45zM170.12 412.12h209.17v9.75H170.12zM170.12 442.46h209.17v9.75H170.12zM170.12 472.81h209.17v9.75H170.12zM170.12 503.16h209.17v9.75H170.12z"/>
+    <path d="M185 126v15h-14a228.693 228.693 0 0 1 14-15zM192 122h19v19h-19zM218 122h19v19h-19zM244 122h19v19h-19zM271 122h19v19h-19zM297 122h19v19h-19z" fill="#425B9A" fill-rule="nonzero" opacity=".2"/>
+    <path fill="#425B9A" fill-rule="nonzero" d="M323 122h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" opacity=".2" d="M349 122h19v19h-19zM375 122h19v19h-19zM401 122h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" d="M428 122h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" opacity=".2" d="M454 122h19v19h-19zM480 122h19v19h-19zM506 122h19v19h-19zM532 122h19v19h-19zM558 122h19v19h-19zM585 122h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" d="M611 122h19v19h-19zM637 122h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" opacity=".2" d="M663 122h19v19h-19zM689 122h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" d="M715 122h19v19h-19zM742 122h19v19h-19zM159 156v9h-6a172.513 172.513 0 0 1 6-9z"/>
+    <path fill="#425B9A" fill-rule="nonzero" opacity=".2" d="M166 146h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" d="M192 146h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" opacity=".2" d="M218 146h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" opacity=".7" d="M244 146h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" opacity=".2" d="M271 146h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" opacity=".4" d="M297 146h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" d="M323 146h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" opacity=".4" d="M349 146h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" opacity=".2" d="M375 146h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" opacity=".4" d="M401 146h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" d="M428 146h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" opacity=".4" d="M454 146h19v19h-19zM480 146h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" opacity=".2" d="M506 146h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" opacity=".4" d="M532 146h19v19h-19zM558 146h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" opacity=".2" d="M585 146h19v19h-19zM611 146h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" opacity=".4" d="M637 146h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" opacity=".2" d="M663 146h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" d="M689 146h19v19h-19zM715 146h19v19h-19zM742 146h19v19h-19z"/>
+    <path d="M106 176v13H87v-6.35a131.835 131.835 0 0 1 19-6.65zM133 172v18h-19v-15.329z" fill="#425B9A" fill-rule="nonzero" opacity=".2"/>
+    <path fill="#425B9A" fill-rule="nonzero" d="M140 170h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" opacity=".7" d="M166 170h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" d="M192 170h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" opacity=".7" d="M218 170h19v19h-19zM244 170h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" opacity=".2" d="M271 170h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" opacity=".4" d="M297 170h19v19h-19zM323 170h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" d="M349 170h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" opacity=".2" d="M375 170h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" opacity=".4" d="M401 170h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" d="M428 170h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" opacity=".2" d="M454 170h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" opacity=".4" d="M480 170h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" opacity=".2" d="M506 170h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" d="M532 170h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" opacity=".2" d="M558 170h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" opacity=".7" d="M585 170h19v19h-19zM611 170h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" opacity=".4" d="M637 170h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" opacity=".2" d="M663 170h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" d="M689 170h19v19h-19zM715 170h19v19h-19zM742 170h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" opacity=".2" d="M87 195h19v19H87zM114 195h19v19h-19zM140 195h19v19h-19zM166 195h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" d="M192 195h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" opacity=".7" d="M218 195h19v19h-19zM244 195h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" opacity=".2" d="M271 195h19v19h-19zM297 195h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" opacity=".4" d="M323 195h19v19h-19zM349 195h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" d="M375 195h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" opacity=".2" d="M401 195h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" opacity=".4" d="M428 195h19v19h-19zM454 195h19v19h-19zM480 195h19v19h-19zM506 195h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" opacity=".2" d="M532 195h19v19h-19zM558 195h19v19h-19zM585 195h19v19h-19zM611 195h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" opacity=".7" d="M637 195h19v19h-19zM663 195h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" opacity=".4" d="M689 195h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" opacity=".2" d="M715 195h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" d="M742 195h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" opacity=".2" d="M87 219h19v19H87zM114 219h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" opacity=".4" d="M140 219h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" opacity=".2" d="M166 219h19v19h-19zM192 219h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" opacity=".7" d="M218 219h19v19h-19zM244 219h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" opacity=".2" d="M271 219h19v19h-19zM297 219h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" opacity=".4" d="M323 219h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" d="M349 219h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" opacity=".2" d="M375 219h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" d="M401 219h19v19h-19zM428 219h19v19h-19zM454 219h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" opacity=".2" d="M480 219h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" d="M506 219h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" opacity=".2" d="M532 219h19v19h-19zM558 219h19v19h-19zM585 219h19v19h-19zM611 219h19v19h-19zM637 219h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" opacity=".7" d="M663 219h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" opacity=".2" d="M689 219h19v19h-19zM715 219h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" d="M742 219h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" opacity=".2" d="M87 243h19v19H87zM114 243h19v19h-19zM140 243h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" opacity=".4" d="M166 243h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" opacity=".2" d="M192 243h19v19h-19zM218 243h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" opacity=".7" d="M244 243h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" opacity=".2" d="M271 243h19v19h-19zM297 243h19v19h-19zM323 243h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" d="M349 243h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" opacity=".2" d="M375 243h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" d="M401 243h19v19h-19zM428 243h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" opacity=".2" d="M454 243h19v19h-19zM480 243h19v19h-19zM506 243h19v19h-19zM532 243h19v19h-19zM558 243h19v19h-19zM585 243h19v19h-19zM611 243h19v19h-19zM637 243h19v19h-19zM663 243h19v19h-19zM689 243h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" opacity=".4" d="M715 243h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" d="M742 243h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" opacity=".7" d="M87 267h19v19H87zM114 267h19v19h-19zM140 267h19v19h-19zM166 267h19v19h-19zM192 267h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" opacity=".2" d="M218 267h19v19h-19zM244 267h19v19h-19zM271 267h19v19h-19zM297 267h19v19h-19zM323 267h19v19h-19zM349 267h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" d="M375 267h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" opacity=".2" d="M401 267h19v19h-19zM428 267h19v19h-19zM454 267h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" d="M480 267h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" opacity=".2" d="M506 267h19v19h-19zM532 267h19v19h-19zM558 267h19v19h-19zM585 267h19v19h-19zM611 267h19v19h-19zM637 267h19v19h-19zM663 267h19v19h-19zM689 267h19v19h-19zM715 267h19v19h-19z"/>
+    <path fill="#425B9A" fill-rule="nonzero" d="M742 267h19v19h-19z"/>
+    <path d="M610.999 268.923V272l-4.512-.426L598 263s13.13 2.86 12.999 5.923z" stroke="#4C4981" fill="#425B9A" fill-rule="nonzero" opacity=".1"/>
+    <text font-family="CartographMonoCF-Regular, Cartograph Mono CF" font-size="37" fill="#FFF" transform="translate(3 3)">
+      <tspan x="139" y="422">&lt; &gt;</tspan>
+    </text>
+    <text font-family="CartographMonoCF-Regular, Cartograph Mono CF" font-size="37" fill="#FFF" transform="translate(3 3)">
+      <tspan x="140" y="452">&lt; /&gt;</tspan>
+    </text>
+    <text font-family="CartographMonoCF-Regular, Cartograph Mono CF" font-size="37" fill="#FFF" transform="translate(3 3)">
+      <tspan x="139" y="512">&lt; &gt;</tspan>
+    </text>
+  </g>
 </svg>

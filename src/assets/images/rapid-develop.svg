@@ -1,65 +1,48 @@
-
-<svg width="100%" height="100%" viewBox="0 0 1120 698" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
-    <desc>Created with Sketch.</desc>
-    <defs>
-        <linearGradient x1="0%" y1="50.0010198%" x2="100%" y2="50.0010198%" id="linearGradient-1">
-            <stop stop-color="#808080" stop-opacity="0.25" offset="0%"></stop>
-            <stop stop-color="#808080" stop-opacity="0.12" offset="54%"></stop>
-            <stop stop-color="#808080" stop-opacity="0.1" offset="100%"></stop>
-        </linearGradient>
-        <linearGradient x1="66092%" y1="51819%" x2="66092%" y2="49417%" id="linearGradient-2">
-            <stop stop-color="#808080" stop-opacity="0.25" offset="0%"></stop>
-            <stop stop-color="#808080" stop-opacity="0.12" offset="54%"></stop>
-            <stop stop-color="#808080" stop-opacity="0.1" offset="100%"></stop>
-        </linearGradient>
-        <rect id="path-3" x="190" y="144" width="721" height="201"></rect>
-    </defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Group-50" transform="translate(2.000000, 2.000000)">
-            <rect id="Rectangle-path" fill="#F5F5F5" fill-rule="nonzero" transform="translate(759.500000, 126.000000) rotate(-81.360000) translate(-759.500000, -126.000000) " x="745" y="-214" width="29" height="680"></rect>
-            <rect id="Rectangle-path" stroke="#000000" stroke-width="5" fill="url(#linearGradient-1)" fill-rule="nonzero" transform="translate(723.500000, 371.000000) rotate(-81.360000) translate(-723.500000, -371.000000) " x="452" y="17" width="543" height="708"></rect>
-            <rect id="Rectangle-path" fill="#F5F5F5" fill-rule="nonzero" transform="translate(719.500000, 385.000000) rotate(-81.360000) translate(-719.500000, -385.000000) " x="472" y="45" width="495" height="680"></rect>
-            <circle id="Oval" fill="#FF5252" fill-rule="nonzero" transform="translate(520.000000, 107.000000) rotate(-81.360000) translate(-520.000000, -107.000000) " cx="520" cy="107" r="7"></circle>
-            <circle id="Oval" fill="#FFFF00" fill-rule="nonzero" transform="translate(539.000000, 110.000000) rotate(-81.360000) translate(-539.000000, -110.000000) " cx="539" cy="110" r="7"></circle>
-            <circle id="Oval" fill="#69F0AE" fill-rule="nonzero" transform="translate(558.000000, 113.000000) rotate(-81.360000) translate(-558.000000, -113.000000) " cx="558" cy="113" r="7"></circle>
-            <rect id="Rectangle-path" stroke="#000000" stroke-width="4" fill-rule="nonzero" transform="translate(731.500000, 272.000000) rotate(8.640000) translate(-731.500000, -272.000000) " x="433" y="189" width="597" height="166"></rect>
-            <rect id="Rectangle-path" fill="url(#linearGradient-2)" fill-rule="nonzero" transform="translate(606.500000, 449.500000) rotate(-81.360000) translate(-606.500000, -449.500000) " x="589" y="429" width="35" height="41"></rect>
-            <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" transform="translate(607.000000, 448.500000) rotate(8.640000) translate(-607.000000, -448.500000) " x="588" y="434" width="38" height="29"></rect>
-            <rect id="Rectangle-path" fill="#FF5252" fill-rule="nonzero" transform="translate(599.000000, 497.500000) rotate(8.640000) translate(-599.000000, -497.500000) " x="580" y="483" width="38" height="29"></rect>
-            <rect id="Rectangle-path" fill="#FF9800" fill-rule="nonzero" transform="translate(592.000000, 545.500000) rotate(8.640000) translate(-592.000000, -545.500000) " x="573" y="531" width="38" height="29"></rect>
-            <rect id="Rectangle-path" fill="#4A4A4A" fill-rule="nonzero" opacity="0.4" transform="translate(841.500000, 434.500000) rotate(8.640000) translate(-841.500000, -434.500000) " x="687" y="426" width="309" height="17"></rect>
-            <rect id="Rectangle-path" fill="#4A4A4A" fill-rule="nonzero" opacity="0.4" transform="translate(833.500000, 482.500000) rotate(8.640000) translate(-833.500000, -482.500000) " x="679" y="474" width="309" height="17"></rect>
-            <rect id="Rectangle-path" fill="#4A4A4A" fill-rule="nonzero" opacity="0.4" transform="translate(826.500000, 531.500000) rotate(8.640000) translate(-826.500000, -531.500000) " x="672" y="523" width="309" height="17"></rect>
-            <rect id="Rectangle-path" stroke="#000000" stroke-width="2" fill-rule="nonzero" transform="translate(373.000000, 106.000000) rotate(-12.600000) translate(-373.000000, -106.000000) " x="11" y="92" width="724" height="28"></rect>
-            <rect id="Rectangle-path" stroke="#000000" stroke-width="3" fill-rule="nonzero" transform="translate(427.000000, 343.500000) rotate(-12.600000) translate(-427.000000, -343.500000) " x="50" y="76" width="754" height="535"></rect>
-            <rect id="Rectangle-path" stroke="#000000" stroke-width="2" fill="#F5F5F5" fill-rule="nonzero" transform="translate(429.000000, 357.500000) rotate(-12.600000) translate(-429.000000, -357.500000) " x="67" y="114" width="724" height="487"></rect>
-            <ellipse id="Oval" stroke="#000000" stroke-width="2" fill-rule="nonzero" transform="translate(36.500000, 181.000000) rotate(-12.600000) translate(-36.500000, -181.000000) " cx="36.5" cy="181" rx="7.5" ry="7"></ellipse>
-            <ellipse id="Oval" stroke="#000000" stroke-width="2" fill-rule="nonzero" transform="translate(56.500000, 177.000000) rotate(-12.600000) translate(-56.500000, -177.000000) " cx="56.5" cy="177" rx="7.5" ry="7"></ellipse>
-            <ellipse id="Oval" stroke="#000000" stroke-width="2" fill-rule="nonzero" transform="translate(76.500000, 172.000000) rotate(-12.600000) translate(-76.500000, -172.000000) " cx="76.5" cy="172" rx="7.5" ry="7"></ellipse>
-            <rect id="Rectangle-path" stroke="#000000" stroke-width="5" fill-rule="nonzero" transform="translate(399.000000, 250.000000) rotate(-12.600000) translate(-399.000000, -250.000000) " x="81" y="168" width="636" height="164"></rect>
-            <rect id="Rectangle-path" fill="#000000" fill-rule="nonzero" transform="translate(181.500000, 492.000000) rotate(-12.652557) translate(-181.500000, -492.000000) " x="161" y="478" width="41" height="28"></rect>
-            <rect id="Rectangle-path" fill="#000000" fill-rule="nonzero" transform="translate(189.500000, 538.000000) rotate(-12.600000) translate(-189.500000, -538.000000) " x="169" y="524" width="41" height="28"></rect>
-            <rect id="Rectangle-path" fill="#FF9800" fill-rule="nonzero" transform="translate(173.500000, 577.000000) rotate(-12.652557) translate(-173.500000, -577.000000) " x="153" y="563" width="41" height="28"></rect>
-            <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.4" transform="translate(394.500000, 425.000000) rotate(-12.600000) translate(-394.500000, -425.000000) " x="230" y="417" width="329" height="16"></rect>
-            <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.4" transform="translate(405.500000, 472.000000) rotate(-12.600000) translate(-405.500000, -472.000000) " x="241" y="464" width="329" height="16"></rect>
-            <rect id="Rectangle-path" fill="#425B9A" fill-rule="nonzero" opacity="0.4" transform="translate(416.500000, 520.000000) rotate(-12.600000) translate(-416.500000, -520.000000) " x="252" y="512" width="329" height="16"></rect>
-            <rect id="Rectangle-path" stroke="#000000" stroke-width="4" fill="#F5F5F5" fill-rule="nonzero" x="146" y="47" width="821" height="35"></rect>
-            <rect id="Rectangle-path" stroke="#000000" stroke-width="3" fill-rule="nonzero" x="130" y="36" width="855" height="656"></rect>
-            <rect id="Rectangle-path" stroke="#000000" stroke-width="4" fill="#FFFFFF" fill-rule="nonzero" x="146" y="82" width="821" height="598"></rect>
-            <circle id="Oval" stroke="#000000" stroke-width="3" fill-rule="nonzero" cx="166.5" cy="64.5" r="8.5"></circle>
-            <circle id="Oval" stroke="#000000" stroke-width="3" fill-rule="nonzero" cx="189.5" cy="64.5" r="8.5"></circle>
-            <circle id="Oval" stroke="#000000" stroke-width="3" fill-rule="nonzero" cx="212.5" cy="64.5" r="8.5"></circle>
-            <mask id="mask-4" fill="white">
-                <use xlink:href="#path-3"></use>
-            </mask>
-            <use id="Mask" stroke="#000000" stroke-width="4" fill="#425B9A" fill-rule="nonzero" xlink:href="#path-3"></use>
-            <rect id="Rectangle-path" stroke="#000000" stroke-width="4" fill-rule="nonzero" x="309" y="439" width="46" height="35"></rect>
-            <rect id="Rectangle-path" stroke="#000000" stroke-width="4" fill-rule="nonzero" x="309" y="498" width="46" height="35"></rect>
-            <rect id="Rectangle-path" stroke="#000000" stroke-width="4" fill-rule="nonzero" x="309" y="557" width="46" height="35"></rect>
-            <rect id="Rectangle-path" stroke="#000000" stroke-width="4" opacity="0.4" fill-rule="nonzero" x="432" y="446" width="373" height="20"></rect>
-            <rect id="Rectangle-path" stroke="#000000" stroke-width="4" opacity="0.4" fill-rule="nonzero" x="432" y="505" width="373" height="20"></rect>
-            <rect id="Rectangle-path" stroke="#000000" stroke-width="4" opacity="0.4" fill-rule="nonzero" x="432" y="564" width="373" height="20"></rect>
-        </g>
-    </g>
+<svg viewBox="0 0 1120 698" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <linearGradient x1="0%" y1="50.0010198%" y2="50.0010198%" id="a">
+      <stop stop-color="gray" stop-opacity=".25" offset="0%"/>
+      <stop stop-color="gray" stop-opacity=".12" offset="54%"/>
+      <stop stop-color="gray" stop-opacity=".1" offset="100%"/>
+    </linearGradient>
+    <linearGradient x1="66092%" y1="51819%" x2="66092%" y2="49417%" id="b">
+      <stop stop-color="gray" stop-opacity=".25" offset="0%"/>
+      <stop stop-color="gray" stop-opacity=".12" offset="54%"/>
+      <stop stop-color="gray" stop-opacity=".1" offset="100%"/>
+    </linearGradient>
+    <path id="c" d="M190 144h721v201H190z"/>
+  </defs>
+  <g transform="translate(2 2)" fill="none" fill-rule="evenodd">
+    <path fill="#F5F5F5" fill-rule="nonzero" d="M421.18013575 89.25875l4.35654208-28.6709006L1097.81986425 162.74125l-4.35654208 28.6709006z"/>
+    <path stroke="#000" stroke-width="5" fill="url(#a)" fill-rule="nonzero" transform="rotate(-81.36 723.5 371)" d="M452 17h543v708H452z"/>
+    <path fill="#F5F5F5" fill-rule="nonzero" d="M346.17757348 578.61460652L420.5392401 89.23199288l672.28318642 102.1534006-74.36166662 489.38261364z"/>
+    <circle fill="#FF5252" fill-rule="nonzero" transform="rotate(-81.36 520 107)" cx="520" cy="107" r="7"/>
+    <circle fill="#FF0" fill-rule="nonzero" transform="rotate(-81.36 539 110)" cx="539" cy="110" r="7"/>
+    <circle fill="#69F0AE" fill-rule="nonzero" transform="rotate(-81.36 558 113)" cx="558" cy="113" r="7"/>
+    <path stroke="#000" stroke-width="4" d="M448.8561781 145.09956683l590.2250916 89.6846767-24.9374478 164.11618964-590.2250916-89.6846767z"/>
+    <path fill="url(#b)" fill-rule="nonzero" transform="rotate(-81.36 606.5 449.5)" d="M589 429h35v41h-35z"/>
+    <path fill="#425B9A" fill-rule="nonzero" d="M590.3938879 431.3102635l37.5687663 5.7085724-4.3565421 28.6709006-37.5687663-5.7085724z"/>
+    <path fill="#FF5252" fill-rule="nonzero" d="M582.3938879 480.3102635l37.5687663 5.7085724-4.3565421 28.6709006-37.5687663-5.7085724z"/>
+    <path fill="#FF9800" fill-rule="nonzero" d="M575.3938879 528.3102635l37.5687663 5.7085724-4.3565421 28.6709006-37.5687663-5.7085724z"/>
+    <path fill="#4A4A4A" fill-rule="nonzero" opacity=".4" d="M690.03022295 402.88660665l305.49338912 46.41970704-2.55383502 16.80707966-305.49338912-46.41970704zM682.03022295 450.88660665l305.49338912 46.41970704-2.55383502 16.80707966-305.49338912-46.41970704zM675.03022295 499.88660665l305.49338912 46.41970704-2.55383502 16.80707966-305.49338912-46.41970704z"/>
+    <path stroke="#000" stroke-width="2" d="M16.6641268 171.30501872L723.22786244 13.36931195l6.10801076 27.32566933L22.77213756 198.63068805z"/>
+    <path stroke="#000" stroke-width="3" d="M.72606368 164.68226819L736.56730218.20226417l116.70663414 522.11546764-735.8412385 164.48000402z"/>
+    <path stroke="#000" stroke-width="2" fill="#F5F5F5" fill-rule="nonzero" d="M22.6002529 198.83212185L729.16398854 40.89641508 835.3997471 516.16787815 128.83601146 674.10358492z"/>
+    <ellipse stroke="#000" stroke-width="2" transform="rotate(-12.6 36.5 181)" cx="36.5" cy="181" rx="7.5" ry="7"/>
+    <ellipse stroke="#000" stroke-width="2" transform="rotate(-12.6 56.5 177)" cx="56.5" cy="177" rx="7.5" ry="7"/>
+    <ellipse stroke="#000" stroke-width="2" transform="rotate(-12.6 76.5 172)" cx="76.5" cy="172" rx="7.5" ry="7"/>
+    <path stroke="#000" stroke-width="5" d="M70.7707239 239.34437629l620.6830606-138.73910153 35.7754916 160.05034895-620.6830606 138.73910153z"/>
+    <path fill="#000" fill-rule="nonzero" d="M158.43127996 482.83025869l40.00436626-8.98057238 6.13307382 27.320055-40.00436626 8.98057238zM166.439701 528.80910178l40.01258724-8.9438729 6.10801076 27.32566934-40.01258724 8.9438729z"/>
+    <path fill="#FF9800" fill-rule="nonzero" d="M150.43127996 567.83025869l40.00436626-8.98057238 6.13307382 27.320055-40.00436626 8.98057238z"/>
+    <path fill="#425B9A" fill-rule="nonzero" opacity=".4" d="M232.21654673 453.07722911l321.07661468-71.76912642 3.49029186 15.6146682-321.07661468 71.76912642zM243.21654673 500.07722911l321.07661468-71.76912642 3.49029186 15.6146682-321.07661468 71.76912642zM254.21654673 548.07722911l321.07661468-71.76912642 3.49029186 15.6146682-321.07661468 71.76912642z"/>
+    <path stroke="#000" stroke-width="4" fill="#F5F5F5" fill-rule="nonzero" d="M146 47h821v35H146z"/>
+    <path stroke="#000" stroke-width="3" d="M130 36h855v656H130z"/>
+    <path stroke="#000" stroke-width="4" fill="#FFF" fill-rule="nonzero" d="M146 82h821v598H146z"/>
+    <circle stroke="#000" stroke-width="3" cx="166.5" cy="64.5" r="8.5"/>
+    <circle stroke="#000" stroke-width="3" cx="189.5" cy="64.5" r="8.5"/>
+    <circle stroke="#000" stroke-width="3" cx="212.5" cy="64.5" r="8.5"/>
+    <use stroke="#000" stroke-width="4" fill="#425B9A" fill-rule="nonzero" xlink:href="#c"/>
+    <path stroke="#000" stroke-width="4" d="M309 439h46v35h-46zM309 498h46v35h-46zM309 557h46v35h-46z"/>
+    <path stroke="#000" stroke-width="4" opacity=".4" d="M432 446h373v20H432zM432 505h373v20H432zM432 564h373v20H432z"/>
+  </g>
 </svg>
