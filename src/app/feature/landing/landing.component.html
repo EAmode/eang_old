@@ -70,10 +70,15 @@
   </a>
 </section>
 
-<div class="ea-card" style="background: var(--ea-base-color);">
-  <div class="ea-card-content" grid style="--ea-card-content-grid: repeat(auto-fit, minmax(25rem, 1fr));">
-    <div class="ea-card">
-        <img
+<div
+  class="ea-card"
+  id="resources"
+  style="background: var(--ea-base-color); border: none;"
+>
+  <div
+    class="ea-card-content" grid>
+    <div class="ea-card" grid>
+      <img
         src="../../../assets/images/figma.png"
         height="96"
         stlye="
@@ -93,8 +98,8 @@
         containing core visual styles, components, and patterns for UX designers
       </p>
     </div>
-    <div class="ea-card">
-        <img
+    <div class="ea-card" grid>
+      <img
         src="../../../assets/images/github.png"
         height="96"
         style="
@@ -114,45 +119,44 @@
   </div>
 </div>
 
-<div class="ea-card" unset>
-  <div class="ea-card-header" style="justify-content: center; flex-direction: column; ">
-      <h2>Open Web Standards</h2>
-      <h3>Eang is built on the following open source technology</h3>
+<div class="ea-card" id="open-standards" unset>
+  <div class="ea-card-header">
+    <h2>Open Web Standards</h2>
+    <h3 style="text-align: center;">Eang is built on the following open source technology</h3>
   </div>
-  <div class="ea-card-content" grid style="--ea-card-content-grid: repeat(auto-fit, minmax(19.5rem, 25rem));">
-      <div>
-          <a target="_blank" href="https://angular.io"
-            ><img height="45" src="/assets/images/angular.svg"
-          /></a>
-          <b>Angular</b>
-          <p>
-            <a target="_blank" href="https://angular.io">Angular</a> offers
-            declarative templates with databinding. Powered by Google.
-          </p>
-        </div>
-        <div>
-          <a target="_blank" href="http://reactivex.io/"
-            ><img height="45" src="/assets/images/Rx_Logo-512-512.png"
-          /></a>
-          <b>ReactiveX</b>
-          <p>
-            <a href="http://reactivex.io/">ReactiveX</a> provides an asynchronous
-            programming interface for observable streams.
-          </p>
-        </div>
-        <div>
-          <a href="https://postcss.org/"
-            ><img height="45" src="/assets/images/postcss.svg"
-          /></a>
-          <b>PostCSS</b>
-          <p>
-            <a href="https://postcss.org/">PostCSS</a> provides transformations for
-            CSS to future-proof your code.
-          </p>
-        </div>
+  <div class="ea-card-content" grid>
+    <div>
+      <a target="_blank" href="https://angular.io"
+        ><img height="45" src="/assets/images/angular.svg"
+      /></a>
+      <b>Angular</b>
+      <p>
+        <a target="_blank" href="https://angular.io">Angular</a> offers
+        declarative templates with databinding. Powered by Google.
+      </p>
+    </div>
+    <div>
+      <a target="_blank" href="http://reactivex.io/"
+        ><img height="45" src="/assets/images/Rx_Logo-512-512.png"
+      /></a>
+      <b>ReactiveX</b>
+      <p>
+        <a href="http://reactivex.io/">ReactiveX</a> provides an asynchronous
+        programming interface for observable streams.
+      </p>
+    </div>
+    <div>
+      <a href="https://postcss.org/"
+        ><img height="45" src="/assets/images/postcss.svg"
+      /></a>
+      <b>PostCSS</b>
+      <p>
+        <a href="https://postcss.org/">PostCSS</a> provides transformations for
+        CSS to future-proof your code.
+      </p>
+    </div>
   </div>
 </div>
-
 
 <!--
   <section class="go-pro">
