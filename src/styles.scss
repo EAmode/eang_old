@@ -109,7 +109,8 @@
   #eang-welcome {
     align-items: center;
     align-content: center;
-    background: url('./assets/images/flickr-14202459710.jpg');
+    background-color: var(--ea-base-color);
+    background-image: url('./assets/images/flickr-14202459710.jpg');
     background-size: contain;
     color: white;
     display: flex;
@@ -188,14 +189,16 @@
   #eang-welcome {
     &.ea-card[unset] {
       flex-direction: column;
-      align-items: center;
+      align-items: flex-start;
       margin-top: 7rem;
+      margin-left: 13rem;
+      width: 50%;
       @media only screen and (max-width: 500px) {
        margin-top: 4rem;
       }
       & .ea-card-header {
         & h2 {
-          padding-left: 14rem;
+          padding-left: 13rem;
           color: white;
           font-weight: 400;
           @media only screen and (max-width: 500px) {
@@ -207,7 +210,8 @@
       & > .ea-card-content {
         padding-top: 0.5rem;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
+        text-align: left;
         @media only screen and (max-width: 600px) {
           padding: 0;
           flex-direction: column;
@@ -219,7 +223,6 @@
             width: 90%;
           }
         }
-        text-align: center;
       }
     }
     &.ea-card[unset] > .ea-card-header.material-header {
@@ -228,7 +231,7 @@
       left: 0;
       margin: 0;
       box-sizing: border-box;
-      width: 100%;
+      width: 99.1%;
       background: #14487b;
       z-index: 1;
       @media only screen and (max-width: 600px) {
@@ -303,8 +306,9 @@
       left: 0;
       margin: 0;
       box-sizing: border-box;
-      width: 100%;
+      width: 99.1%;
       background: #14487b;
+      padding-right: 1rem;
       z-index: 1;
       @media only screen and (max-width: 600px) {
         position: initial;
