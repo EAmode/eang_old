@@ -100,7 +100,6 @@
     background: url('./assets/images/eang-logo.svg');
     width: 5rem;
     background-repeat: no-repeat;
-
   }
   & .menu-example {
     flex-direction: column;
@@ -150,21 +149,6 @@
       }
     }
   }
-  & eangio-home,
-  eangio-get-started,
-  eangio-card,
-  eangio-button,
-  eangio-icon,
-  eangio-menu,
-  eangio-tabs,
-  eangio-layout,
-  eangio-variables,
-  eangio-components {
-    width: 90%;
-    @media only screen and (max-width: 500px) {
-      width: 95%;
-    }
-  }
 }
 
 .material {
@@ -172,10 +156,11 @@
     background: #fafafa;
   }
 
-  & span[chevron-right][negative], span[chevron-down][negative] {
+  & span[chevron-right][negative],
+  span[chevron-down][negative] {
     filter: invert(0%);
   }
-  .node-toggle[disabled] span[icon]{
+  .node-toggle[disabled] span[icon] {
     display: none;
   }
   & .eang-logo {
@@ -198,7 +183,7 @@
       margin-left: 13rem;
       width: 50%;
       @media only screen and (max-width: 500px) {
-       margin-top: 4rem;
+        margin-top: 4rem;
       }
       & > .ea-card-content {
         padding-top: 0.5rem;
@@ -227,28 +212,6 @@
       font-size: 1.2rem;
       @media only screen and (max-width: 640px) {
         width: 95%;
-      }
-    }
-  }
-
-  & eangio-home,
-  eangio-get-started,
-  eangio-card,
-  eangio-button,
-  eangio-icon,
-  eangio-menu,
-  eangio-tabs,
-  eangio-layout,
-  eangio-variables,
-  eangio-tabs,
-  eangio-components {
-    width: 95%;
-    @media only screen and (max-width: 500px) {
-      width: 100%;
-      & .ea-card[unset] {
-        & .ea-card-content {
-          margin: 0 1rem;
-        }
       }
     }
   }
@@ -351,6 +314,7 @@
   & ea-layout {
     & ea-toolbar {
       & aside {
+        --ea-toolbar-aside-padding: 2rem;
         @media only screen and (max-width: 500px) {
           --ea-toolbar-aside-padding: 0rem;
         }
@@ -367,34 +331,33 @@
       }
     }
     & ea-body {
-      position: relative;
       --ea-body-display: flex;
-      margin: 0;
       justify-content: center;
-      & eangio-landing {
-        width: 100%;
-        & .go-pro {
-          display: flex;
-          justify-content: center;
-          & .pro {
-            background: var(--ea-color-background-3);
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            padding: 4rem 0;
-            width: 100%;
-            color: white;
-            & .pro-text {
-              width: 40%;
-              & p {
-                font-size: 1.1rem;
-              }
-            }
-            & img {
-              width: 14rem;
+      margin: 0;
+
+      & eangio-home,
+      eangio-get-started,
+      eangio-card,
+      eangio-button,
+      eangio-icon,
+      eangio-menu,
+      eangio-tabs,
+      eangio-layout,
+      eangio-variables,
+      eangio-tabs,
+      eangio-components {
+        width: 90%;
+        @media only screen and (max-width: 500px) {
+          width: 95%;
+          & .ea-card[unset] {
+            & .ea-card-content {
+              margin: 0 1rem;
             }
           }
         }
+      }
+      & eangio-landing {
+        width: 100%;
       }
       & eangio-components {
         & p {
