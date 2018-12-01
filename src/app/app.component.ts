@@ -8,50 +8,70 @@ export const SIDE_MENU = {
   isHidden: true,
   children: [
     {
-      name: 'Layout',
-      icon: 'ea-layout',
+      name: 'Get Started',
       data: {
-        link: '/layout'
+        link: '/getting-started'
       }
     },
     {
-      name: 'Cards',
-      icon: 'ea-layers',
+      name: 'Feature Highlights',
+      data: {
+        link: '/features'
+      }
+    },
+    {
+      name: 'Components',
       iconStyle: 'ea-negative',
       data: {
-        link: '/card'
-      }
-    },
-    {
-      name: 'Buttons',
-      icon: 'ea-button-icon',
-      data: {
-        link: '/button'
-      }
-    },
-    {
-      name: 'Icons',
-      icon: 'ea-grid',
-      iconStyle: 'ea-negative',
-      data: {
-        link: '/icon'
-      }
-    },
-    {
-      name: 'Menu',
-      icon: 'ea-hamburger-menu',
-      iconStyle: 'ea-negative',
-      data: {
-        link: '/menu'
-      }
-    },
-    {
-      name: 'Tabs',
-      icon: 'ea-chevron-right',
-      iconStyle: 'ea-negative',
-      data: {
-        link: '/tabs'
-      }
+        link: '/components'
+      },
+      children: [
+        {
+          name: 'Layout',
+          icon: 'ea-layout',
+          data: {
+            link: '/layout'
+          }
+        },
+        {
+          name: 'Cards',
+          icon: 'ea-layers',
+          iconStyle: 'ea-negative',
+          data: {
+            link: '/card'
+          }
+        },
+        {
+          name: 'Buttons',
+          icon: 'ea-button-icon',
+          data: {
+            link: '/button'
+          }
+        },
+        {
+          name: 'Icons',
+          icon: 'ea-grid',
+          iconStyle: 'ea-negative',
+          data: {
+            link: '/icon'
+          }
+        },
+        {
+          name: 'Menu',
+          icon: 'ea-hamburger-menu',
+          iconStyle: 'ea-negative',
+          data: {
+            link: '/menu'
+          }
+        },
+        {
+          name: 'Tabs',
+          icon: 'ea-tabs-icon',
+          data: {
+            link: '/tabs'
+          }
+        }
+      ]
     }
   ]
 }
@@ -72,6 +92,10 @@ export class AppComponent implements OnInit {
       this.layout.drawerState$.next('closed')
     }
   }
+  closeDrawer() {
+    this.layout.drawerState$.next('closed')
+  }
+
 
   onActivate(e, scrollContainer) {
     document.getElementsByTagName('ea-main')[0].scrollTop = 0
@@ -79,7 +103,9 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.activated.subscribe((item: MenuTreeItem) => {
-      this.router.navigate([item.data.link])
+      if (item.data && item.data.link) {
+        this.router.navigate([item.data.link])
+      }
     })
   }
 }

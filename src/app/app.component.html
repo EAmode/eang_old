@@ -1,8 +1,8 @@
 <ea-layout>
   <ea-toolbar flex shadow>
     <header>
-      <a routerLink="/">
-        <span style="margin-left:0.5rem;" class="logo"></span>
+      <a (click)="closeDrawer()" routerLink="/">
+        <span class="logo"></span>
       </a>
     </header>
     <aside>
@@ -27,8 +27,7 @@
 
   <ea-drawer>
     <section class="ea-menu">
-      <ea-menu [node]="menu" [activateEvents]="activated">
-      </ea-menu>
+      <ea-menu [node]="menu" [activateEvents]="activated"> </ea-menu>
     </section>
     <footer>
       <img
@@ -50,12 +49,14 @@
       ></router-outlet>
     </ea-body>
     <ea-footer>
-      <p>Powered by</p>
-      <a
-        style="margin-left:0.5rem;"
-        class="ea-mode-logo"
-        href="https://eamode.com"
-      ></a>
+      <span>
+        <p>Powered by</p>
+        <a style=" height: 3rem;
+          display: flex;
+          align-items: center;" href="https://eamode.com"> <img src="../assets/images/eamode-logo.svg" style="height: 4rem; width: 5rem;" alt=""> </a>
+      </span>
+
+      <span><p>Want to contribute?</p><a href="https://github.com/eamode/eang/issues" class="footer-text">Open an issue</a> <p>in Github</p></span>
     </ea-footer>
   </ea-main>
 </ea-layout>

@@ -1,4 +1,4 @@
-.material {
+@define-mixin markdown-material {
   & ea-markdown {
     width: auto;
     & .toolbar-item a {
@@ -12,7 +12,7 @@
 
     & code[class*='language-'],
     & pre[class*='language-'] {
-      color: #ccc;
+      color: #461515;
       background: none;
       font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
       text-align: left;

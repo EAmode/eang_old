@@ -1,14 +1,32 @@
-@import 'material/autocomplete.css';
-@import 'material/variables.css';
-@import 'material/card.css';
-@import 'material/button.css';
-@import 'material/markdown.css';
-@import 'material/menu.css';
-@import 'material/fonts.css';
-@import 'material/panel.css';
-@import 'material/text-elements.css';
-@import 'material/themepicker.css';
-@import 'material/layout.css';
-@import 'material/icons.css';
-@import 'material/table.css';
 @import '_base.css';
+
+@import 'material/autocomplete.css';
+@import 'material/text-elements.css';
+@import 'material/layout.css';
+@import 'material/variables.css';
+@import 'material/menu.css';
+@import 'material/markdown.css';
+@import 'material/icons.css';
+
+@import 'mode/tabs.css';
+@import 'mode/fonts.css';
+@import 'mode/panel.css';
+@import 'mode/themepicker.css';
+@import 'mode/card.css';
+@import 'mode/table.css';
+@import 'mode/button.css';
+
+.material {
+  @mixin autocomplete-material;
+  @mixin layout-material;
+  @mixin menu-material;
+  @mixin markdown-material;
+  @mixin button-mode;
+  @mixin card-mode;
+  @mixin panel-mode;
+  @mixin typography;
+  @mixin themepicker;
+  @mixin table-mode;
+  @mixin tabs;
+  @mixin icon-material;
+}

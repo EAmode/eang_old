@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser'
-import { NgModule } from '@angular/core'
+import { NgModule, Component } from '@angular/core'
 import { ReactiveFormsModule } from '@angular/forms'
 import { RouterModule, Routes } from '@angular/router'
 
@@ -30,10 +30,12 @@ import { IconComponent } from './feature/icon/icon.component'
 import { VariablesComponent } from './variables/variables.component'
 import { GetStartedComponent } from './feature/get-started/get-started.component'
 import { MenuComponent } from './feature/menu/menu.component'
+import { LandingComponent } from './feature/landing/landing.component'
+import { ComponentsComponent } from './feature/components/components.component'
 import { TabsComponent } from './feature/tabs/tabs.component'
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: LandingComponent },
   { path: 'reactive', component: ReactiveComponent },
   { path: 'theming', component: ThemingComponent },
   { path: 'layout', component: LayoutComponent },
@@ -41,8 +43,11 @@ const routes: Routes = [
   { path: 'card', component: CardComponent },
   { path: 'icon', component: IconComponent },
   { path: 'variables', component: VariablesComponent },
+  { path: 'components', component: ComponentsComponent },
   { path: 'getting-started', component: GetStartedComponent },
-  { path: 'tabs', component: TabsComponent }
+  { path: 'tabs', component: TabsComponent },
+  { path: 'menu', component: MenuComponent },
+  { path: 'features', component: HomeComponent }
 ]
 
 @NgModule({
@@ -58,6 +63,8 @@ const routes: Routes = [
     VariablesComponent,
     MenuComponent,
     GetStartedComponent,
+    LandingComponent,
+    ComponentsComponent,
     TabsComponent
   ],
   imports: [
