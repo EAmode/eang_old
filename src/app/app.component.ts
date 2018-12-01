@@ -96,7 +96,6 @@ export class AppComponent implements OnInit {
     this.layout.drawerState$.next('closed')
   }
 
-  drawerState$ = this.layout.drawerState$.next('closed')
 
   onActivate(e, scrollContainer) {
     document.getElementsByTagName('ea-main')[0].scrollTop = 0
