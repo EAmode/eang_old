@@ -96,12 +96,13 @@ export class AppComponent implements OnInit {
     this.layout.drawerState$.next('closed')
   }
 
-
   onActivate(e, scrollContainer) {
     document.getElementsByTagName('ea-main')[0].scrollTop = 0
   }
 
   ngOnInit() {
+    this.layout.drawerState$.next('closed')
+
     this.activated.subscribe((item: MenuTreeItem) => {
       if (item.data && item.data.link) {
         this.router.navigate([item.data.link])
