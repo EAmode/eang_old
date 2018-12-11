@@ -1,10 +1,9 @@
-
   @define-mixin tabs {
   & ea-tab {
+
     background: var(--ea-tabs-background, tansparent);
     display: none;
     border: var(--ea-tabs-border, none);
-
     &[active] {
       display: block;
     }
@@ -15,16 +14,19 @@
     -webkit-tap-highlight-color: transparent;
     & > ea-menu {
       & .name {
-        color: var(--ea-text-color-dark);
+        color: var(--ea-tabs-menu-color, var(--ea-text-color-dark));
       }
       & .node {
         border-top: .1em solid transparent;
       }
       & .node[active]{
-        background: none;
-        border-bottom: .1em solid var(--ea-background-active);
+        background: var(--ea-tabs-background-color-active, none);
+        border-bottom: var(--ea-tabs-border-bottom-active, .1em solid var(--ea-base-color));
         &:hover {
           border-top: .1em solid transparent;
+        }
+        & .name {
+          font-weight: var(--ea-tabs-font-weight-active, inherit);
         }
       }
       & .node:hover {
@@ -38,7 +40,8 @@
         border-bottom: .1em solid transparent;
       }
       & .ea-tree-children.horizontal {
-        border-bottom: .05em solid lightgrey;
+        border-bottom: var(--ea-tabs-border-bottom, .05em solid lightgrey);
+        background: var(--ea-tabs-background-color, transparent);
       }
     }
   }

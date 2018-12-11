@@ -33,13 +33,13 @@
       padding: 1em;
       margin: 0.5em 0;
       overflow: auto;
-      background: var(--ea-color-background-4);
+      background: var(--ea-markdown-background, var(--ea-alt-base-color));
     }
     & pre {
       padding: 1em;
       margin: 0.5em 0;
       overflow: auto;
-      background: var(--ea-color-background-4);
+      background: var(--ea-markdown-background, var(--ea-alt-base-color));
       border-radius: 0.15em;
     }
     /* Inline code */

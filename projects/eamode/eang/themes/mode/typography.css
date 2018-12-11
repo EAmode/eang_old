@@ -1,4 +1,14 @@
 @define-mixin typography {
+
+  /* --ea-h1-color:
+  --ea-h1-font-size:
+  --ea-h1-font-weight:
+  --ea-h2-color:
+  --ea-h2-font-size:
+  --ea-h2-font-weight:
+  --ea-h3-color:
+  --ea-h3-font-size: */
+
   & h1 {
 
     font-size: var(--ea-h1-font-size, 2.875em);
@@ -6,6 +16,11 @@
     font-weight: lighter;
     margin-bottom: 0.6em;
   }
+  & h1::selection {
+    background: var(--ea-h1-background-selection, var(--ea-base-color));
+    color: var(--ea-h1-color-selection, var(--ea-text-color-light));
+  }
+
   & h2 {
 
     font-family: var(--ea-font-1);
@@ -30,17 +45,31 @@
     line-height: 1.33em;
     font-weight: 400;
     margin: 1em 0;
+    user-select: auto;
   }
   & p::selection {
-    background: var(--ea-color-background-3);
-    color: var(--ea-color-3);
+    background: var(--ea-p-background-selection, var(--ea-base-color));
+    color: var(--ea-p-color-selection, var(--ea-text-color-light));
   }
+/*
+  --ea-link-color:
+  --ea-link-color-visited:
+  --ea-link-color-hover:
+  --ea-link-color-active: */
   & a {
     font-size: 1rem;
-    color: var(--ea-alt-base-color);
     text-decoration: underline;
-    &:hover {
-      color: var(--ea-background-hover);
-    }
   }
+
+  & code {
+    background: var(--ea-code-background, var(--ea-alt-base-color));
+    color: var(--ea-code-color, #ccc);
+    padding: 0.2rem;
+    border-radius: 0.3rem;
+    margin-right: 0.1rem;
+  }
+  & code::selection {
+    background: var(--ea-code-background-selection, var(--ea-base-color));
+    color: var(--ea-code-color-selection, var(--ea-text-color-light));
+   }
 }

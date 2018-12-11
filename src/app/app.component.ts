@@ -72,6 +72,27 @@ export const SIDE_MENU = {
           }
         }
       ]
+    },
+    {
+      name: 'Styles',
+      iconStyle: 'ea-negative',
+      children: [
+        {
+          name: 'Variables',
+          icon: 'ea-layout',
+          data: {
+            link: '/variables'
+          }
+        },
+        {
+          name: 'Utilities',
+          icon: 'ea-layers',
+          iconStyle: 'ea-negative',
+          data: {
+            link: '/utilities'
+          }
+        }
+      ]
     }
   ]
 }
@@ -95,7 +116,6 @@ export class AppComponent implements OnInit {
   closeDrawer() {
     this.layout.drawerState$.next('closed')
   }
-
 
   onActivate(e, scrollContainer) {
     document.getElementsByTagName('ea-main')[0].scrollTop = 0

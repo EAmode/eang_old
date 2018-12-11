@@ -20,18 +20,18 @@
       font-size: 1rem;
       grid-area: main;
       overflow: auto;
-      background: var(--ea-main-background, var(--ea-color-background-7));
+      background: var(--ea-main-background, #f6f6f6);
 
       & ea-footer {
-        width: 100%;
         height: var(--ea-footer-height, 4.5rem);
+        background: var(--ea-footer-background, var(--ea-base-color));
+        width: 100%;
         display: flex;
         align-items: center;
-        background: var(--ea-color-background-2);
         padding: 1rem;
         box-sizing: border-box;
         & p {
-          color: var(--ea-color-3);
+          color: var(--ea-footer-text-color, var(--ea-text-color-light));
         }
       }
     }
@@ -47,7 +47,7 @@
       font-size: 1rem;
       height: var(--ea-toolbar-height, 4rem);
       padding: var(--ea-toolbar-padding, 0.5em 1em);
-      background: var(--ea-color-background-2);
+      background: var(--ea-base-color);
       display: var(--ea-toolbar-display, flex);
       align-items: center;
       grid-area: toolbar;
@@ -55,7 +55,7 @@
       grid-column: 1 / 4;
       z-index: 2;
       box-sizing: border-box;
-      color: var(--ea-toolbar-color, var(--ea-color-3));
+      color: var(--ea-toolbar-color, var(--ea-text-color-light));
       &[shadow] {
         box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);
       }
@@ -66,7 +66,7 @@
         --ea-toolbar-display: grid;
       }
       & header {
-        color: var(--ea-color-3);
+        color: var(--ea-text-color-light);
         display: flex;
         justify-content: flex-start;
         align-items: center;
@@ -74,7 +74,7 @@
       }
 
       & aside {
-        color: var(--ea-color-3);
+        color: var(--ea-text-color-light);
         display: flex;
         justify-content: flex-end;
         align-items: center;
@@ -102,7 +102,7 @@
       justify-content: space-between;
       display: flex;
       width: var( --ea-drawer-width, 225px);
-      background: var( --ea-drawer-background, var(--ea-color-background-4));
+      background: var( --ea-drawer-background, var(--ea-alt-base-color));
       -webkit-tap-highlight-color: transparent;
 
       & section {

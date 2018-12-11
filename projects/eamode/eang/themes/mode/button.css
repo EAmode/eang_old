@@ -5,6 +5,11 @@
   background: var(--ea-button-background, var(--ea-base-color));
   color: var(--ea-button-color, var(--ea-text-color-light));
   border: var(--ea-button-border, var(--ea-base-color) solid 0.1em);
+  padding: var(--ea-button-padding, 0 1.5em);
+  height: var(--ea-button-height, 2.19em);
+  cursor: var(--ea-button-cursor, pointer);
+  outline:var(--ea-button-outline, none);
+  margin: var(--ea-button-margin, 0);
 }
 
 @define-mixin button-mode {
@@ -12,13 +17,8 @@
     @mixin button-base;
 
     font-size: var(--ea-font-size, 1rem);
-    height: 2.19em;
-    padding: 0 1.5em;
-    margin: 0;
     border-radius: 0.25em;
     box-sizing: content-box;
-    cursor: pointer;
-    outline: none;
     transition: all 0.25s ease 0s;
     font-weight: 600;
     display: flex;
@@ -29,13 +29,13 @@
     /* this is to set the border-color when the button is :hover and not :active */
     &:hover:not(:active) {
       --ea-button-border: .1em solid var(--ea-base-color);
-      background: var(--ea-button-background-hover, var(--ea-background-hover));
-      box-shadow: var(--ea-box-shadow);
+      background: var(--ea-button-background-color-hover, var(--ea-background-color-hover));
+      box-shadow: var(--ea-button-box-shadow-hover, var(--ea-box-shadow));
     }
 
     &:active {
       --ea-button-border: .1em solid var(--ea-base-color-high);
-      background: var(--ea-button-background-active, var(--ea-background-active));
+      background: var(--ea-button-background-active, var(--ea-background-color-active));
       box-shadow: var(--ea-button-background-active-shadow, var(--ea-background-active-shadow));
     }
 
@@ -71,7 +71,7 @@
     &[flat] {
       background-color: transparent;
       border: 1px solid rgba(0, 0, 0, 0);
-      color: var(--ea-color-1);
+      color: var(--ea-text-color-dark);
 
       &:hover:not(:active) {
         --ea-button-border-color__hover: rgba(0, 0, 0, 0);
@@ -83,6 +83,17 @@
         --ea-button-border-color__active: rgba(0, 0, 0, 0.25);
         box-shadow: unset;
         background-color: rgba(0, 0, 0, 0.25);
+      }
+      &[light] {
+        color: var(--ea-text-color-light);
+
+        &:hover:not(:active) {
+          background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        &:active {
+          background-color: rgba(255, 255, 255, 0.25);
+        }
       }
     }
 

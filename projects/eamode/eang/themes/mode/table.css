@@ -1,20 +1,17 @@
 @define-mixin table-base {
-
 }
 
 @define-mixin table-mode {
   table {
-    @mixin table-base
-    th,
-    td {
-      border: none;
+    @mixin table-base th, td {
+      border-bottom: 1px solid #ddd;
     }
 
     thead {
-      background: var(--ea-table-thead-background,var(--ea-color-background-3));
+      background: var(--ea-table-thead-background, var(--ea-base-color));
       & th {
         border-radius: 0;
-        color: var(--ea-color-3);
+        color: var(--ea-text-color-light);
       }
     }
 
@@ -76,7 +73,11 @@
       display: table-cell;
       text-align: left;
       vertical-align: middle;
-      border-radius: 2px;
+      /* border-radius: 2px; */
+      border-bottom: 1px solid #ddd;
+    }
+    & tr:last-child {
+      border-bottom: none;
     }
   }
 }

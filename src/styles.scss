@@ -45,8 +45,6 @@
   & a {
     height: fit-content;
     font-size: unset;
-    display: grid;
-    grid-template-areas: 'icon header' 'icon para';
     max-width: 35rem;
     align-items: center;
     color: #333;
@@ -58,17 +56,14 @@
       color: var(--ea-base-color);
     }
     & img {
-      grid-area: icon;
       height: 100%;
       width: 10rem;
       margin-right: 1rem;
     }
     & h2 {
-      grid-area: header;
       margin: 0;
     }
     & p {
-      grid-area: para;
       margin-top: 0.2rem;
     }
   }
@@ -313,7 +308,8 @@
       eangio-layout,
       eangio-variables,
       eangio-tabs,
-      eangio-components {
+      eangio-components,
+      eangio-utilities {
         width: 90%;
         @media only screen and (max-width: 500px) {
           width: 95%;
