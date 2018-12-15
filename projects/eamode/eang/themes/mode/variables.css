@@ -53,8 +53,8 @@
   --ea-alt-base-color-high: (0, 0%, 30%);
 
 
-  --ea-text-color-dark: #333;
-  --ea-text-color-light: #f6f6f6;
+  --ea-text-color-dark: hsl(0, 0%, 20%);
+  --ea-text-color-light: hsl(0, 0%, 96%);
 
   --ea-background-color-hover: var(--ea-base-color);
 
