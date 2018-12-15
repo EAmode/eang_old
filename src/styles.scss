@@ -28,7 +28,13 @@
   & .ea-terminal {
     background-image: inline('mode/icon/terminal.svg');
   }
+  & [color],
+  & .ea-color {
+    background-image: url('assets/images/colors.svg');
+  }
 }
+
+/* Landing Page */
 
 #getting-started {
   display: grid;
@@ -79,6 +85,72 @@
     flex-direction: column;
     background: #333;
   }
+
+  & #variables {
+    & .example {
+      margin: 5rem 0;
+      justify-content: space-evenly;
+    }
+    & .example-color {
+      width: 6rem;
+      height: 4rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      & small {
+        text-align: center;
+        color: var(--ea-text-color-light);
+      }
+      &.base-color {
+        background: var(--ea-base-color);
+      }
+      &.base-color-high {
+        background: var(--ea-base-color-high);
+      }
+      &.alt-base-color {
+        background: var(--ea-alt-base-color);
+      }
+      &.ea-hover {
+        & small {
+          color: var(--ea-text-color-dark);
+        }
+        &:hover {
+          background: var(--ea-background-color-hover);
+          & small {
+            color: var(--ea-text-color-light);
+          }
+        }
+      }
+      &.ea-active {
+        & small {
+          color: var(--ea-text-color-dark);
+        }
+        &[active='true'] {
+          background: var(--ea-background-color-active);
+          & small {
+            color: var(--ea-text-color-light);
+          }
+        }
+      }
+    }
+    & #text-colors {
+      & .base-color .text-hover-color,
+      .base-color-high .text-active-color {
+        color: var(--ea-text-color-dark);
+      }
+      & .base-color:hover {
+        & small {
+          color: var(--ea-text-color-light);
+        }
+      }
+      & .text-active-color {
+        &[textIsActive='true'] {
+          color: var(--ea-text-color-light);
+        }
+      }
+    }
+  }
   #eang-welcome {
     align-items: center;
     align-content: center;
@@ -125,6 +197,8 @@
   }
 }
 
+/* Material Design Specific Styles */
+
 .material {
   & ea-layout {
     background: #fafafa;
@@ -134,6 +208,7 @@
   span[chevron-down][negative] {
     filter: invert(0%);
   }
+
   .node-toggle[disabled] span[icon] {
     display: none;
   }
@@ -202,6 +277,9 @@
       --ea-card-content-grid: repeat(auto-fit, minmax(19.5rem, 25rem));
       justify-content: center;
       padding: 4rem 0;
+      @media only screen and (max-width: 500px) {
+        margin: 0px 6vw;
+      }
       & div {
         display: flex;
         flex-direction: column;
@@ -216,6 +294,7 @@
       justify-items: center;
       @media only screen and (max-width: 600px) {
         padding: 0;
+        justify-content: center;
       }
     }
     & .ea-card-content .ea-card {
@@ -225,15 +304,21 @@
       max-width: 32rem;
       padding: 1rem;
       @media only screen and (max-width: 600px) {
-        grid-template-areas: 'icon icon' 'header header' 'para para';
+        // grid-template-areas: 'icon icon' 'header header' 'para para';
         max-width: 18rem;
         grid-gap: 1rem;
       }
       & img {
         grid-area: icon;
+        @media only screen and (max-width: 600px) {
+          // display: none;
+        }
       }
       & b {
         grid-area: header;
+        @media only screen and (max-width: 600px) {
+          // display: none;
+        }
       }
       & p {
         grid-area: para;
@@ -340,29 +425,6 @@
       eangio-feature-reactive,
       eangio-feature-theming {
         width: 100%;
-      }
-      & eangio-home {
-        & .why-eang {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          padding: 4rem 0rem;
-          & .three-column {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-column-gap: 5rem;
-            text-align: center;
-            width: 75%;
-            padding: 4rem 0rem;
-            img {
-              width: 10rem;
-              margin: 0 0 1rem 0;
-            }
-            p {
-              font-size: 1.2rem;
-            }
-          }
-        }
       }
       & eangio-feature-reactive {
         & .screen {

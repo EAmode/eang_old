@@ -20,6 +20,20 @@ export const SIDE_MENU = {
       }
     },
     {
+      name: 'Styles',
+      iconStyle: 'ea-negative',
+      children: [
+        {
+          name: 'Colors',
+          icon: 'ea-color',
+          iconStyle: 'ea-negative',
+          data: {
+            link: '/variables'
+          }
+        }
+      ]
+    },
+    {
       name: 'Components',
       iconStyle: 'ea-negative',
       data: {
@@ -69,27 +83,6 @@ export const SIDE_MENU = {
           icon: 'ea-tabs-icon',
           data: {
             link: '/tabs'
-          }
-        }
-      ]
-    },
-    {
-      name: 'Styles',
-      iconStyle: 'ea-negative',
-      children: [
-        {
-          name: 'Variables',
-          icon: 'ea-layout',
-          data: {
-            link: '/variables'
-          }
-        },
-        {
-          name: 'Utilities',
-          icon: 'ea-layers',
-          iconStyle: 'ea-negative',
-          data: {
-            link: '/utilities'
           }
         }
       ]

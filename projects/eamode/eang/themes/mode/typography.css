@@ -29,17 +29,38 @@
     font-weight: lighter;
     margin-bottom: 0.4em;
   }
+  & h2::selection {
+    background: var(--ea-h1-background-selection, var(--ea-base-color));
+    color: var(--ea-h1-color-selection, var(--ea-text-color-light));
+  }
+
   & h3 {
     font-size: 1.5em;
     font-weight: 400;
     margin: 0.2rem 0 0.1rem 0;
   }
+
+  & h3::selection {
+    background: var(--ea-h1-background-selection, var(--ea-base-color));
+    color: var(--ea-h1-color-selection, var(--ea-text-color-light));
+  }
+
   & h4 {
     font-size: 1.2em;
   }
+  & h4::selection {
+    background: var(--ea-h1-background-selection, var(--ea-base-color));
+    color: var(--ea-h1-color-selection, var(--ea-text-color-light));
+  }
+
   & h5 {
     font-size: 1.1em;
   }
+  & h5::selection {
+    background: var(--ea-h1-background-selection, var(--ea-base-color));
+    color: var(--ea-h1-color-selection, var(--ea-text-color-light));
+  }
+
   & p {
     font-size: 1em;
     line-height: 1.33em;
@@ -61,6 +82,11 @@
     text-decoration: underline;
   }
 
+  & a::selection {
+    background: var(--ea-h1-background-selection, var(--ea-base-color));
+    color: var(--ea-h1-color-selection, var(--ea-text-color-light));
+  }
+  
   & code {
     background: var(--ea-code-background, var(--ea-alt-base-color));
     color: var(--ea-code-color, #ccc);
