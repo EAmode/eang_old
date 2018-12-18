@@ -3,20 +3,23 @@
 
 @define-mixin table-mode {
   table {
+    --ea-table-thead-th-color:#9E9E9E;
+
     @mixin table-base th, td {
       border-bottom: 1px solid #ddd;
     }
 
+
     thead {
-      background: var(--ea-table-thead-background, var(--ea-base-color));
+      background: var(--ea-table-thead-background, transparent);
       & th {
         border-radius: 0;
-        color: var(--ea-text-color-light);
+        color: var(--ea-table-thead-th-color,  var(--ea-base-text-color));
       }
     }
 
     tbody {
-      background: var(--ea-color-3);
+      background: var(--ea-main-background);
 
       &[striped] > tr:nth-child(odd) {
         background-color: rgba(242, 242, 242, 0.5);
@@ -69,7 +72,7 @@
 
     td,
     th {
-      padding: var(--ea-table-padding, 0.8em 1.5em);
+      padding: var(--ea-table-padding, 1.8em 1.5em);
       display: table-cell;
       text-align: left;
       vertical-align: middle;

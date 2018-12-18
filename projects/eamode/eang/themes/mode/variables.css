@@ -1,36 +1,22 @@
 .mode {
-  /* --ea-color-1: #202225;
-  --ea-color-2: #1f242c;
-  --ea-color-3: #fff; */
+  /* Base Colors */
+  --ea-base-color: hsl(223, 40%,43%);
+  --ea-base-color-high: hsl(223, 40%, 53%);
 
-  --ea-color-accent-1: #6a9c45;
-  --ea-color-accent-2: #61429a;
+  /* Alternative Base Colors */
+  --ea-alt-base-color: hsl(0, 0%, 20%);
+  --ea-alt-base-color-high: (0, 0%, 30%);
 
-  /* --ea-color-background-1: #ffffff;
-  --ea-color-background-2: hsl(223, 40%, 43%);
-  --ea-color-background-3: #52638d;
-  --ea-color-background-4: #333333;
-  --ea-color-background-5: #666a74;
-  --ea-color-background-6: #A9B4D1;
-  --ea-color-background-7: #f6f6f6; */
+  /* Text Colors */
+  --ea-text-color-dark: hsl(0, 0%, 20%);
+  --ea-text-color-light: hsl(0, 0%, 96%);
+  --ea-base-text-color: var(--ea-text-color-dark);
 
-  --ea-color-success: #5bb95b;
-  --ea-color-info: #5ac1de;
-  --ea-color-warning: #f1ae4e;
-  --ea-color-danger: #d9534f;
-  --ea-color-error: #d9534f;
-  --ea-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.09);
+  /* Hover, Active */
+  --ea-background-color-hover: var(--ea-base-color);
+  --ea-background-color-active: var(--ea-base-color-high);
 
-
-  --panel-border-radius: 0.25rem;
-
-  --min-font-size: 1rem;
-  --max-font-size: 3rem;
-
-  --ea-padding: 4rem;
-  --ea-scale-factor: 0.5;
-  --ea-toolbar-height: 4rem;
-
+  /* Fonts & Typography */
   --ea-font-1-family: 'Roboto';
   --ea-font-1-style: normal;
   --ea-font-1-weight: 400;
@@ -41,46 +27,21 @@
   font-weight: var(--ea-font-1-weight);
   /* font-size: var(--ea-font-1-size); */
 
-  /* --ea-background-color: 66, 91, 154;
+  /* Utilities */
+  --ea-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.09);
+  --ea-padding: 4rem;
+  --ea-scale-factor: 0.5;
 
-  --ea-background-color-1:rgba(var(--ea-background-color), 1);
-  --ea-background-color-light:rgba(var(--ea-background-color), 0.8); */
+  /* Component Specific Overrides */
+  --ea-main-background: var(--ea-text-color-light);
 
-  --ea-base-color: hsl(223, 40%,43%);
-  --ea-base-color-high: hsl(223, 40%, 53%);
+  --ea-drawer-background: var(--ea-alt-base-color);
+  --ea-drawer-menu-color: var(--ea-text-color-light);
 
-  --ea-alt-base-color: hsl(0, 0%, 20%);
-  --ea-alt-base-color-high: (0, 0%, 30%);
+  --ea-markdown-background: var(--ea-alt-base-color);
 
+  --ea-menu-text-color: var(--ea-base-text-color);
 
-  --ea-text-color-dark: hsl(0, 0%, 20%);
-  --ea-text-color-light: hsl(0, 0%, 96%);
-
-  --ea-background-color-hover: var(--ea-base-color);
-
-  --ea-background-color-active: var(--ea-base-color-high);
-
-  /* --ea-box-shadow: inset 1.5px 2px 5px rgba(0,0,0,0.2); */
-
-  /* --ea-background-color:
-  --ea-background-color-active:
-  --ea-background-color-disabled:
-  --ea-background-color-focus:
-  --ea-background-color-hover:
-  --ea-background-color-selected:
-
-  --ea-border-color:
-  --ea-border-color-active:
-  --ea-border-color-focus:
-  --ea-border-color-hover:
-
-  --ea-input-background:
-  --ea-input-background-color-disabled:
-  --ea-input-color-placeholder:
-
-  --ea-color:
-  --ea-text-color-light:
-  --ea-text-color-dark: */
-
+  --ea-toolbar-height: 4rem;
 
 }

@@ -1,7 +1,6 @@
 @define-mixin menu {
   & ea-menu {
     /* --ea-menu-background-active: red; */
-    /* --ea-menu-text-color: blue; */
     /* --ea-menu-background-hover: yellow;
       --ea-menu-background-active: brown; */
 
@@ -78,7 +77,7 @@
     & .name {
       margin-left: 5.5px;
       width: 100%;
-      color: var(--ea-menu-text-color, var(--ea-text-color-light));
+      color: var(--ea-menu-text-color, var(--ea-base-text-color));
       display: flex;
       align-items: center;
     }

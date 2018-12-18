@@ -15,6 +15,7 @@
     font-family: var(--ea-h1-font-family, var(--ea-font-1));
     font-weight: lighter;
     margin-bottom: 0.6em;
+    color: var(--ea-base-text-color);
   }
   & h1::selection {
     background: var(--ea-h1-background-selection, var(--ea-base-color));
@@ -28,6 +29,7 @@
     /* min-size, max-size */
     font-weight: lighter;
     margin-bottom: 0.4em;
+    color: var(--ea-base-text-color);
   }
   & h2::selection {
     background: var(--ea-h1-background-selection, var(--ea-base-color));
@@ -38,6 +40,7 @@
     font-size: 1.5em;
     font-weight: 400;
     margin: 0.2rem 0 0.1rem 0;
+    color: var(--ea-base-text-color);
   }
 
   & h3::selection {
@@ -47,6 +50,7 @@
 
   & h4 {
     font-size: 1.2em;
+    color: var(--ea-base-text-color);
   }
   & h4::selection {
     background: var(--ea-h1-background-selection, var(--ea-base-color));
@@ -55,6 +59,7 @@
 
   & h5 {
     font-size: 1.1em;
+    color: var(--ea-base-text-color);
   }
   & h5::selection {
     background: var(--ea-h1-background-selection, var(--ea-base-color));
@@ -67,6 +72,7 @@
     font-weight: 400;
     margin: 1em 0;
     user-select: auto;
+    color: var(--ea-base-text-color);
   }
   & p::selection {
     background: var(--ea-p-background-selection, var(--ea-base-color));
@@ -86,10 +92,10 @@
     background: var(--ea-h1-background-selection, var(--ea-base-color));
     color: var(--ea-h1-color-selection, var(--ea-text-color-light));
   }
-  
+
   & code {
-    background: var(--ea-code-background, var(--ea-alt-base-color));
-    color: var(--ea-code-color, #ccc);
+    background: var(--ea-code-background, transparent);
+    color: var(--ea-code-color, #607D8B);
     padding: 0.2rem;
     border-radius: 0.3rem;
     margin-right: 0.1rem;

@@ -54,6 +54,7 @@
 
       &:hover:not(:active) {
         --ea-button-background-hover: rgba(0, 0, 0, .05);
+        background: var(--ea-button-background-hover);
         box-shadow: unset;
       }
 

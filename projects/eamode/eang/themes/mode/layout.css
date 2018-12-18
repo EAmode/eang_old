@@ -104,7 +104,13 @@
       width: var( --ea-drawer-width, 225px);
       background: var( --ea-drawer-background, var(--ea-alt-base-color));
       -webkit-tap-highlight-color: transparent;
-
+      & ea-menu {
+        & .node {
+          & .name {
+            color: var(--ea-drawer-menu-color, var(--ea-base-text-color));
+          }
+        }
+      }
       & section {
         flex-grow: 1;
       }
@@ -125,7 +131,7 @@
 
       & a {
         font-size: 1rem;
-        color: var(--ea-color-3);
+        color: var(--ea-drawer-color, var(--ea-text-color-light));
         text-decoration: none;
         display: flex;
         padding-left: 1rem;
