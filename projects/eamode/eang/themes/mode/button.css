@@ -29,7 +29,7 @@
     /* this is to set the border-color when the button is :hover and not :active */
     &:hover:not(:active) {
       --ea-button-border: .1em solid var(--ea-base-color);
-      background: var(--ea-button-background-color-hover, var(--ea-background-color-hover));
+      background: var(--ea-button-background-hover, var(--ea-background-color-hover));
       box-shadow: var(--ea-button-box-shadow-hover, var(--ea-box-shadow));
     }
 
