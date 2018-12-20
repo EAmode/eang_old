@@ -20,11 +20,21 @@
   display: flex;
   flex-direction: column;
   height: fit-content;
-  border-radius: var(--ea-card-border-radius, 8px);
 }
 @define-mixin card-mode {
   & .ea-card {
     @mixin card-base;
+    &:not([unset]) {
+      border-radius: var(--ea-card-border-radius, 8px);
+      & p,
+      h1,
+      h2,
+      h3,
+      h4,
+      a {
+        color: var(--ea-card-color);
+      }
+    }
     &[unset] {
       border: none;
       background: none;
@@ -86,14 +96,6 @@
       &[border] {
         border-top-left-radius: var(--ea-card-border-radius, 8px);
         border-top-right-radius: var(--ea-card-border-radius, 8px);
-      }
-      & p,
-      h1,
-      h2,
-      h3,
-      h4,
-      a {
-        color: var(--ea-card-color);
       }
     }
     & .ea-card-content {

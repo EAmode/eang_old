@@ -109,6 +109,17 @@ export class MenuComponent implements OnInit {
   </ng-template>
   `
 
+  ea_menu_attrs = `
+  |  Attributes   | Type  | Description |
+  |---|---|----|
+  |  id (optional)   |  Better to use string or number types  | Add identificator for your current node. |
+  |  name   |  string   | Node name will be displayed on the site view. |
+  | horizontal (optional) | boolean | Value used to change menu orientation. |
+  | isHidden (optional) | boolean | Place this attribute as "true" to hide parent node for children. |
+  | children (optional) | array[] | Define array of children in that attribute. |
+  | data (optional) | any | Place inside of this attribute any data. |
+  `
+
   node_example = `
   *component.ts*
   ~~~ts

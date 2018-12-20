@@ -234,6 +234,12 @@
       width: 50%;
       @media only screen and (max-width: 500px) {
         margin-top: 4rem;
+        margin-left: 0;
+        align-items: center;
+        width: 100%;
+        & .ea-card-header{
+          text-align: center;
+        }
       }
       & > .ea-card-content {
         padding-top: 0.5rem;
@@ -305,20 +311,23 @@
       max-width: 32rem;
       padding: 1rem;
       @media only screen and (max-width: 600px) {
-        // grid-template-areas: 'icon icon' 'header header' 'para para';
+        grid-template-areas:
+        'icon'
+        'header'
+        'para';
         max-width: 18rem;
         grid-gap: 1rem;
       }
       & img {
         grid-area: icon;
         @media only screen and (max-width: 600px) {
-          // display: none;
+          display: none;
         }
       }
       & b {
         grid-area: header;
         @media only screen and (max-width: 600px) {
-          // display: none;
+          display: none;
         }
       }
       & p {

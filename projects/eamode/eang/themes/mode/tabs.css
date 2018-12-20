@@ -42,6 +42,7 @@
       & .ea-tree-children.horizontal {
         border-bottom: var(--ea-tabs-border-bottom, .05em solid lightgrey);
         background: var(--ea-tabs-background-color, transparent);
+        overflow-x: auto;
       }
     }
   }
