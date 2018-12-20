@@ -104,10 +104,11 @@
       width: var( --ea-drawer-width, 225px);
       background: var( --ea-drawer-background, var(--ea-alt-base-color));
       -webkit-tap-highlight-color: transparent;
+      color: var(--ea-drawer-color, var(--ea-base-text-color));
       & ea-menu {
         & .node {
           & .name {
-            color: var(--ea-drawer-menu-color, var(--ea-base-text-color));
+            color: var(--ea-drawer-menu-color, inherit);
           }
         }
       }
@@ -131,7 +132,7 @@
 
       & a {
         font-size: 1rem;
-        color: var(--ea-drawer-color, var(--ea-text-color-light));
+        color: var(--ea-drawer-link-color, inherit);
         text-decoration: none;
         display: flex;
         padding-left: 1rem;

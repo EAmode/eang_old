@@ -14,7 +14,7 @@
     -webkit-tap-highlight-color: transparent;
     & > ea-menu {
       & .name {
-        color: var(--ea-tabs-menu-color, var(--ea-text-color-dark));
+        color: var(--ea-tabs-menu-color, var(--ea-base-text-color));
       }
       & .node {
         border-top: .1em solid transparent;

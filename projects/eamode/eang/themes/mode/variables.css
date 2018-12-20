@@ -36,7 +36,8 @@
   --ea-main-background: var(--ea-text-color-light);
 
   --ea-drawer-background: var(--ea-alt-base-color);
-  --ea-drawer-menu-color: var(--ea-text-color-light);
+  --ea-drawer-color: var(--ea-text-color-light);
+  
 
   --ea-markdown-background: var(--ea-alt-base-color);
 

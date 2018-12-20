@@ -18,13 +18,13 @@
       }
 
       &[active] {
-        background: var(--ea-background-color-active);
-        color: var(--ea-text-color-dark);
+        background: var(--ea-menu-background-active, var(--ea-background-color-active));
+        color: var(--ea-menu-color-active, var(--ea-text-color-light));
       }
 
       &:hover {
         background: var(--ea-menu-background-hover, var(--ea-background-color-hover));
-        color: var(--ea-menu-text-color, var(--ea-text-color-light));
+        color: var(--ea-menu-color-hover, var(--ea-text-color-light));
 
         & aside {
           opacity: 1;
@@ -34,6 +34,7 @@
       &:active {
         background: var(--ea-menu-background-active, var(--ea-background-color-active));
         box-shadow: var(--ea-menu-background-active-shadow, var(--ea-background-active-shadow));
+        color: var(--ea-menu-color-active, var(--ea-text-color-light));
       }
     }
 

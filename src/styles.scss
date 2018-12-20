@@ -384,6 +384,21 @@
       justify-content: center;
       margin: 0;
 
+      & eangio-menu {
+        & ea-menu {
+          --ea-menu-text-color: white;
+        }
+      }
+
+      & .icon-tiles {
+        & .ea-card-content {
+          justify-content: center;
+        }
+        & .ea-card-footer {
+          text-align: center;
+        }
+      }
+
       & eangio-home,
       eangio-get-started,
       eangio-card,
