@@ -1,16 +1,6 @@
 @define-mixin typography {
 
-  /* --ea-h1-color:
-  --ea-h1-font-size:
-  --ea-h1-font-weight:
-  --ea-h2-color:
-  --ea-h2-font-size:
-  --ea-h2-font-weight:
-  --ea-h3-color:
-  --ea-h3-font-size: */
-
   & h1 {
-
     font-size: var(--ea-h1-font-size, 2.875em);
     font-family: var(--ea-h1-font-family, var(--ea-font-1));
     font-weight: lighter;
@@ -78,11 +68,7 @@
     background: var(--ea-p-background-selection, var(--ea-base-color));
     color: var(--ea-p-color-selection, var(--ea-text-color-light));
   }
-/*
-  --ea-link-color:
-  --ea-link-color-visited:
-  --ea-link-color-hover:
-  --ea-link-color-active: */
+
   & a {
     font-size: 1rem;
     text-decoration: underline;

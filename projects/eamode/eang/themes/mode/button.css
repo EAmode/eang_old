@@ -1,7 +1,7 @@
 @define-mixin button-base {
   background: var(--ea-button-background, var(--ea-base-color));
   color: var(--ea-button-color, var(--ea-text-color-light));
-  border: var(--ea-button-border, var(--ea-base-color) solid 0.1em);
+  border: var(--ea-button-border, var(--ea-button-border-color, var(--ea-base-color)) solid 0.1em);
   padding: var(--ea-button-padding, 0 1.5em);
   height: var(--ea-button-height, 2.19em);
   cursor: var(--ea-button-cursor, pointer);
@@ -45,7 +45,6 @@
 
     &[outline] {
       --ea-button-background: transparent;
-      --ea-button-border: 0.1em solid var(--ea-base-color);
       color: var(--ea-base-text-color);
       border: var(--ea-button-border);
 
