@@ -1,11 +1,14 @@
 .mode {
   /* Base Colors */
-  --ea-base-color: hsl(223, 40%,43%);
-  --ea-base-color-high: hsl(223, 40%, 53%);
+  --ea-color-1: hsl(223, 40%, 43%);
+  --ea-color-1-high: hsl(223, 40%, 53%);
 
   /* Alternative Base Colors */
-  --ea-alt-base-color: hsl(0, 0%, 20%);
-  --ea-alt-base-color-high: (0, 0%, 30%);
+  --ea-color-2: hsl(0, 0%, 20%);
+  --ea-color-2-high: (0, 0%, 30%);
+
+  --ea-color-3: hsl(0, 0%, 96%);
+  --ea-color-3-low: hsl(0, 0%, 86%);
 
   /* Text Colors */
   --ea-text-color-dark: hsl(0, 0%, 20%);
@@ -13,8 +16,8 @@
   --ea-base-text-color: var(--ea-text-color-dark);
 
   /* Hover, Active */
-  --ea-background-color-hover: var(--ea-base-color);
-  --ea-background-color-active: var(--ea-base-color-high);
+  --ea-background-color-hover: var(--ea-color-1);
+  --ea-background-color-active: var(--ea-color-1-high);
 
   /* Fonts & Typography */
   --ea-font-1-family: 'Roboto';
@@ -33,16 +36,17 @@
   --ea-scale-factor: 0.5;
 
   /* Component Specific Overrides */
-  --ea-main-background: var(--ea-text-color-light);
+  --ea-main-background: var(--ea-color-3);
 
-  --ea-drawer-background: var(--ea-alt-base-color);
-  --ea-drawer-color: var(--ea-text-color-light);
-  
-
-  --ea-markdown-background: var(--ea-alt-base-color);
-
-  --ea-menu-text-color: var(--ea-base-text-color);
+  --ea-markdown-background: var(--ea-color-2);
 
   --ea-toolbar-height: 4rem;
-
+  --ea-toolbar-background: linear-gradient(
+    to bottom right,
+    var(--ea-color-1),
+    var(--ea-color-1-high),
+    var(--ea-color-1-high),
+    var(--ea-color-1)
+  );
+  
 }

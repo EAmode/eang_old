@@ -2,7 +2,6 @@
   & ea-menu {
     user-select: none;
     cursor: pointer;
-
     & .node {
       display: flex;
       line-height: 2.5em;
@@ -74,7 +73,7 @@
     & .name {
       margin-left: 5.5px;
       width: 100%;
-      color: var(--ea-menu-text-color, var(--ea-base-text-color));
+      color: var( --ea-color, var(--ea-menu-color, var(--ea-base-text-color)));
       display: flex;
       align-items: center;
     }

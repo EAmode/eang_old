@@ -16,11 +16,11 @@ export class VariablesComponent implements OnInit {
   variables = `
   |  Title   |  Custom Property  | Description | hsl( ) |
   |---|---|---|---|
-  |  Base Color       | \` --ea-base-color \` | Main theme color for components | hsl(223, 40%,43%) |
-  |  Base Color High   |  \` --ea-base-color-high \` | 10% increase from --ea-base-color in lightness for states|hsl(223, 40%, 53%)|
-  |  Alt Base Color   |  \` --ea-alt-base-color \` | Secondary color for components |hsl(0, 0%, 20%)|
-  |  Background Color Hover |  \` --ea-background-color-hover \` |Background color for all hover state components|\`var(--ea-base-color)\`|
-|Background Color Active|\` --ea-background-color-active \`|Background color for all active state components|\`var(--ea-base-color-high)\`|
+  |  Base Color       | \` --ea-color-1 \` | Main theme color for components | hsl(223, 40%,43%) |
+  |  Base Color High   |  \` --ea-color-1-high \` | 10% increase from --ea-color-1 in lightness for states|hsl(223, 40%, 53%)|
+  |  Alt Base Color   |  \` --ea-color-2 \` | Secondary color for components |hsl(0, 0%, 20%)|
+  |  Background Color Hover |  \` --ea-background-color-hover \` |Background color for all hover state components|\`var(--ea-color-1)\`|
+|Background Color Active|\` --ea-background-color-active \`|Background color for all active state components|\`var(--ea-color-1-high)\`|
   `
 
   text_variables = `

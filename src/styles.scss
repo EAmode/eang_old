@@ -59,7 +59,7 @@
       grid-template-areas: 'icon icon' 'header header' 'para para';
     }
     &:hover > h2 {
-      color: var(--ea-base-color);
+      color: var(--ea-color-1);
     }
     & img {
       height: 100%;
@@ -82,8 +82,8 @@
     background-repeat: no-repeat;
   }
   & .menu-example {
+    --ea-card-content-background: var(--ea-color-2);
     flex-direction: column;
-    background: var(--ea-alt-base-color);
   }
 
   & #variables {
@@ -103,13 +103,13 @@
         color: var(--ea-text-color-light);
       }
       &.base-color {
-        background: var(--ea-base-color);
+        background: var(--ea-color-1);
       }
       &.base-color-high {
-        background: var(--ea-base-color-high);
+        background: var(--ea-color-1-high);
       }
       &.alt-base-color {
-        background: var(--ea-alt-base-color);
+        background: var(--ea-color-2);
       }
       &.ea-hover {
         & small {
@@ -155,7 +155,7 @@
     --ea-base-text-color: white;
     align-items: center;
     align-content: center;
-    background-color: var(--ea-base-color);
+    background-color: var(--ea-color-1);
     background-image: url('./assets/images/flickr-14202459710.jpg');
     background-size: contain;
     color: white;
@@ -394,8 +394,9 @@
       margin: 0;
 
       & eangio-menu {
+        --ea-tab-color: var(--ea-base-text-color);
         & ea-menu {
-          --ea-menu-text-color: white;
+          --ea-menu-color: white;
         }
       }
 
@@ -526,12 +527,6 @@
         cursor: pointer;
         @media only screen and (max-width: 500px) {
           flex-direction: column;
-        }
-        & a,
-        p,
-        span {
-          --ea-background-hover: #e7e7ff;
-          color: var(--ea-text-color-light);
         }
         & a {
           margin: 0 0.3rem;

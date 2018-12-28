@@ -1,7 +1,7 @@
 @define-mixin button-base {
-  background: var(--ea-button-background, var(--ea-base-color));
+  background: var(--ea-button-background, var(--ea-color-1));
   color: var(--ea-button-color, var(--ea-text-color-light));
-  border: var(--ea-button-border, var(--ea-button-border-color, var(--ea-base-color)) solid 0.1em);
+  border: var(--ea-button-border, var(--ea-button-border-color, var(--ea-color-1)) solid 0.1em);
   padding: var(--ea-button-padding, 0 1.5em);
   height: var(--ea-button-height, 2.19em);
   cursor: var(--ea-button-cursor, pointer);
@@ -25,13 +25,13 @@
 
     /* this is to set the border-color when the button is :hover and not :active */
     &:hover:not(:active) {
-      --ea-button-border: .1em solid var(--ea-base-color);
+      border: var(--ea-button-border-hover, var(--ea-button-border-color-hover, var(--ea-color-1-high)) solid 0.1em);
       background: var(--ea-button-background-hover, var(--ea-background-color-hover));
       box-shadow: var(--ea-button-box-shadow-hover, var(--ea-box-shadow));
     }
 
     &:active {
-      --ea-button-border: .1em solid var(--ea-base-color-high);
+      border: var(--ea-button-border-active, var(--ea-button-border-color-active, var(--ea-color-1)) solid 0.1em);
       background: var(--ea-button-background-active, var(--ea-background-color-active));
       box-shadow: var(--ea-button-background-active-shadow, var(--ea-background-active-shadow));
     }
@@ -46,7 +46,7 @@
     &[outline] {
       --ea-button-background: transparent;
       color: var(--ea-base-text-color);
-      border: var(--ea-button-border);
+      border: var(--ea-button-border-outline, solid 0.1em var(--ea-button-border-color, var(--ea-color-1)));
 
       &:hover:not(:active) {
         --ea-button-background-hover: rgba(0, 0, 0, .05);
@@ -56,7 +56,7 @@
 
       &:active {
         --ea-button-background-active: rgba(0, 0, 0, 0.15);
-        --ea-button-border: 0.1em solid var(--ea-base-color-high);
+        --ea-button-border: 0.1em solid var(--ea-color-1-high);
       }
       &[disabled] {
         border: var(--ea-color-background-6) solid 0.1em;
@@ -65,17 +65,19 @@
 
     &[flat] {
       background-color: transparent;
-      border: 1px solid rgba(0, 0, 0, 0);
+      border: var(--ea-button-border-flat, var(--ea-button-border-color-flat, rgba(0,0,0,0)) solid 0.1em);
       color: var(--ea-button-color, var(--ea-base-text-color));
 
       &:hover:not(:active) {
         background-color: rgba(0, 0, 0, 0.1);
         box-shadow: none;
+        border: var(--ea-button-border-hover-flat, var(--ea-button-border-color-hover-flat, rgba(0,0,0,0)) solid 0.1em);
       }
 
       &:active {
         box-shadow: unset;
         background-color: rgba(0, 0, 0, 0.25);
+        border: var(--ea-button-border-active-flat, var(--ea-button-border-color-active-flat, rgba(0,0,0,0)) solid 0.1em);
       }
       &[light] {
         color: var(--ea-button-color, var(--ea-base-text-color));

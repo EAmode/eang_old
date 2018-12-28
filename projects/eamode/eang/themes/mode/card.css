@@ -1,31 +1,22 @@
 @define-mixin card-base {
   font-size: var(--ea-font-size, 1rem);
   box-shadow: var(--ea-card-shadow, var(--ea-box-shadow));
-  background: var(--ea-card-background, #fff);
-  border: var(--ea-card-border, 1px solid var(--ea-color-background-7));
-  color: var(--ea-card-color, var(--ea-text-color-dark));
+  background: var(--ea-background, var(--ea-card-background, #fff));
+  border: var(--ea-card-border, 1px solid var(--ea-color-3));
+  color: var(--ea-color, var(--ea-card-color, var(--ea-base-text-color)));
   width: var(--ea-card-width, 100%);
-
-  /*
-
-  Should we be defining things like this at such a high level?
-  If not, then we don't really need to be setting up global variables
-  here like this
-
-  */
-
-  /* max-width: var(--ea-card-max-width, inital);
-  max-height: var(--ea-card-max-height, initial); */
   margin: var(--ea-card-margin, 1.5em 0);
   display: flex;
   flex-direction: column;
   height: fit-content;
 }
+
 @define-mixin card-mode {
   & .ea-card {
     @mixin card-base;
     &:not([unset]) {
-      border-radius: var(--ea-card-border-radius, 8px);
+      --ea-card-border-radius: 8px;
+      border-radius: var(--ea-card-border-radius);
       & p,
       h1,
       h2,
@@ -35,19 +26,28 @@
         color: var(--ea-card-color);
       }
     }
+
     &[unset] {
       border: none;
-      background: none;
+      background: var(--ea-background, var(--ea-card-background-unset, transparent));
+      color: var(--ea-base-text-color);
       box-shadow: none;
+      display: flex;
+      flex-direction: column;
+
       & > .ea-card-header {
-        background: none;
+        background: var(--ea-background, var(--ea-card-header-background-unset, var(--ea-card-background-unset, transparent)));
         padding: 0;
+        color: currentColor;
       }
       & > .ea-card-content {
         padding: 0;
+        background: var(--ea-background, var(--ea-card-content-background-unset, var(--ea-card-background-unset, transparent)));
+
       }
       & > .ea-card-footer {
         padding: 0;
+        background: var(--ea-background, var(--ea-card-footer-background-unset, var(--ea-card-background-unset, transparent)));
       }
     }
 
@@ -72,13 +72,22 @@
     }
 
     & .ea-card-header {
-      border-bottom: 1px solid var(--ea-color-background-7);
-      background: var(--ea-card-header-background, var(--ea-card-background));
-      color: var(--ea-card-header-color, var(--ea-card-color));
+      border: var(--ea-card-header-border, .1em var(--ea-card-header-border-color, var(--ea-color-3)));
+      border-style: none none solid none;
+      background: var(--ea-background, var(--ea-card-header-background, transparent));
+      color: var(--ea-color, var(--ea-card-header-color, var(--ea-card-color)));
       padding: 0 1em;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      & p,
+      h1,
+      h2,
+      h3,
+      h4,
+      a {
+        color: inherit;
+      }
 
       & [content] {
         flex-grow: 1;
@@ -102,6 +111,8 @@
       display: flex;
       flex-wrap: wrap;
       padding: 1em;
+      background: var(--ea-background, var(--ea-card-content-background, transparent));
+      color: var(--ea-color, var(--ea-card-content-color, var(--ea-card-color)));
 
       &[flex-center] {
         align-items: center;
@@ -122,8 +133,9 @@
       }
     }
     & .ea-card-footer {
-      background: var(--ea-card-footer-background, var(--ea-card-background));
-      border-top: 1px solid var(--ea-color-background-7);
+      background: var(--ea-background, var(--ea-card-footer-background, transparent));
+      border: var(--ea-card-footer-border, 1px var(--ea-color-3));
+      border-style: solid none none none;
       padding: 1em 1em;
       display: flex;
       justify-content: space-between;
