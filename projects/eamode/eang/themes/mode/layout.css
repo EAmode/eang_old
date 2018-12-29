@@ -15,23 +15,38 @@
       'toolbar toolbar'
       'drawer main';
 
-
     & ea-main {
       font-size: 1rem;
       grid-area: main;
       overflow: auto;
-      background: var(--ea-main-background, var(--ea-color-background-7));
+      background: var(
+        --ea-background,
+        var(--ea-main-background, var(--ea-color-3))
+      );
 
       & ea-footer {
-        width: 100%;
         height: var(--ea-footer-height, 4.5rem);
+        background: var(
+          --ea-background,
+          var(--ea-footer-background, var(--ea-color-1))
+        );
+        width: 100%;
         display: flex;
         align-items: center;
-        background: var(--ea-color-background-2);
         padding: 1rem;
         box-sizing: border-box;
-        & p {
-          color: var(--ea-color-3);
+        color: var( --ea-color, var(--ea-footer-color, var(--ea-text-color-light)));
+        & p,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        a,
+        b,
+        small {
+          color: var(--ea-color, inherit);
         }
       }
     }
@@ -47,7 +62,10 @@
       font-size: 1rem;
       height: var(--ea-toolbar-height, 4rem);
       padding: var(--ea-toolbar-padding, 0.5em 1em);
-      background: var(--ea-color-background-2);
+      background: var(
+        --ea-background,
+        var(--ea-toolbar-background, var(--ea-color-1))
+      );
       display: var(--ea-toolbar-display, flex);
       align-items: center;
       grid-area: toolbar;
@@ -55,7 +73,10 @@
       grid-column: 1 / 4;
       z-index: 2;
       box-sizing: border-box;
-      color: var(--ea-toolbar-color, var(--ea-color-3));
+      color: var(
+        --ea-color,
+        var(--ea-toolbar-color, var(--ea-text-color-light))
+      );
       &[shadow] {
         box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);
       }
@@ -66,7 +87,7 @@
         --ea-toolbar-display: grid;
       }
       & header {
-        color: var(--ea-color-3);
+        color: var(--ea-toolbar-color, inherit);
         display: flex;
         justify-content: flex-start;
         align-items: center;
@@ -74,7 +95,7 @@
       }
 
       & aside {
-        color: var(--ea-color-3);
+        color: var(--ea-toolbar-color, inherit);
         display: flex;
         justify-content: flex-end;
         align-items: center;
@@ -86,10 +107,11 @@
       h2,
       h3 {
         margin: 0;
+        color: var(--ea-toolbar-color, inherit);
       }
 
       & a {
-        color: var(--ea-color-3);
+        color: var(--ea-toolbar-color, inherit);
         text-decoration: none;
         font-size: 1rem;
         margin: 0.5em;
@@ -101,16 +123,24 @@
       flex-direction: column;
       justify-content: space-between;
       display: flex;
-      width: var( --ea-drawer-width, 225px);
-      background: var( --ea-drawer-background, var(--ea-color-background-4));
+      width: var(--ea-drawer-width, 225px);
+      background: var(
+        --ea-background,
+        var(--ea-drawer-background, var(--ea-color-2))
+      );
       -webkit-tap-highlight-color: transparent;
-
+      color: var(--ea-color, var(--ea-drawer-color, var(--ea-base-text-color)));
+      --ea-menu-color: #fff;
       & section {
         flex-grow: 1;
       }
 
       & footer {
         padding: 1rem;
+        background: var(
+          --ea-background,
+          var(--ea-drawer-footer-background, var(--ea-drawer-background))
+        );
       }
 
       &[resize] {
@@ -125,7 +155,7 @@
 
       & a {
         font-size: 1rem;
-        color: var(--ea-color-3);
+        color: var(--ea-drawer-link-color, inherit);
         text-decoration: none;
         display: flex;
         padding-left: 1rem;
@@ -133,13 +163,13 @@
         align-items: center;
         &:hover {
           text-decoration: none;
-          background-color: var(--ea-color-background-3);
+          background-color: var(--ea-background-color-hover);
         }
         &.active {
-          background-color: var(--ea-color-background-3);
+          background-color: var(--ea-background-color-active);
         }
         &:visited {
-          color: var(--ea-color-3);
+          color: var(--ea-background-color-hover);
         }
         & span[icon] {
           margin: 0.3em;
@@ -153,21 +183,20 @@
       grid-template-columns: [ea-drawer-start] var(--ea-drawer-width) [ea-drawer-end ea-main-start] 1fr [ea-main-end];
       height: 100vh;
     }
-    &[nav-overlay]  ea-main {
+    &[nav-overlay] ea-main {
       grid-row: ea-toolbar-end / ea-main-end;
       grid-column: 1/5;
       overflow: auto;
     }
-    &[nav-overlay]  ea-toolbar {
+    &[nav-overlay] ea-toolbar {
       grid-row: ea-toolbar-start;
       grid-column: 1/5;
     }
-    &[nav-overlay]  ea-drawer {
+    &[nav-overlay] ea-drawer {
       grid-row: 2 / 4;
       grid-column: 1;
       z-index: 1;
     }
-
     & [overlay] {
       grid-row: ea-toolbar-end / ea-main-end;
       grid-column: 1/5;

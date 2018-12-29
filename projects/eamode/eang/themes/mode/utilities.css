@@ -1,17 +1,32 @@
 @define-mixin utilities {
   [sm]{
-    font-size: 0.8rem
+    font-size: 0.8rem;
   }
   [md]{
-    font-size: 1.25rem
+    font-size: 1.25rem;
   }
   [lg]{
-    font-size: 1.5rem
+    font-size: 1.5rem;
   }
   [xl]{
-    font-size: 2rem
+    font-size: 2rem;
   }
   [xxl]{
-    font-size: 2.5rem
+    font-size: 2.5rem;
+  }
+  [avatar]{
+    display: grid;
+    grid-template-areas:
+    'img header'
+    'img text';
+    & img {
+      grid-area: img;
+    }
+    & h1, h2, h3, h4, h5, h6, b, strong {
+      grid-area: header;
+    }
+    & p {
+      grid-area: text;
+    }
   }
 }

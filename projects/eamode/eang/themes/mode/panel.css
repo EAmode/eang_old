@@ -1,6 +1,6 @@
 @define-mixin panel-base {
   color: var(--ea-panel-color, --ea-color-1);
-  background: var(--ea-panel-background, --ea-color-background-2);
+  background: var(--ea-panel-background-color, white);
   height: var(--ea-panel-height, initial);
   width: var(--ea-panel-width, initial);
   --ea-panel-min-size-ratio: 0.5;
@@ -51,6 +51,7 @@
 
   & ea-panel[state='closed'] {
     width: 0;
+    display: none !important;
   }
 
   & ea-panel[flex-centered] {

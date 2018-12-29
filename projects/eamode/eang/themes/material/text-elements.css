@@ -31,7 +31,7 @@
   }
   & a {
     font-size: 1.25rem;
-    color: var(--ea-alt-base-color);
+    color: var(--ea-color-2);
     text-decoration: underline;
     &:hover {
       color: var(--ea-background-hover);

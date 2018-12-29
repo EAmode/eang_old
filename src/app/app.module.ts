@@ -33,6 +33,7 @@ import { MenuComponent } from './feature/menu/menu.component'
 import { LandingComponent } from './feature/landing/landing.component'
 import { ComponentsComponent } from './feature/components/components.component'
 import { TabsComponent } from './feature/tabs/tabs.component'
+import { UtilitiesComponent } from './utilities/utilities.component'
 
 const routes: Routes = [
   { path: '', component: LandingComponent },
@@ -47,7 +48,9 @@ const routes: Routes = [
   { path: 'getting-started', component: GetStartedComponent },
   { path: 'tabs', component: TabsComponent },
   { path: 'menu', component: MenuComponent },
-  { path: 'features', component: HomeComponent }
+  { path: 'variables', component: VariablesComponent },
+  { path: 'features', component: HomeComponent },
+  { path: 'utilities', component: UtilitiesComponent }
 ]
 
 @NgModule({
@@ -65,7 +68,8 @@ const routes: Routes = [
     GetStartedComponent,
     LandingComponent,
     ComponentsComponent,
-    TabsComponent
+    TabsComponent,
+    UtilitiesComponent
   ],
   imports: [
     BrowserModule,

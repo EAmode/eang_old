@@ -20,6 +20,20 @@ export const SIDE_MENU = {
       }
     },
     {
+      name: 'Styles',
+      iconStyle: 'ea-negative',
+      children: [
+        {
+          name: 'Colors',
+          icon: 'ea-color',
+          iconStyle: 'ea-negative',
+          data: {
+            link: '/variables'
+          }
+        }
+      ]
+    },
+    {
       name: 'Components',
       iconStyle: 'ea-negative',
       data: {
@@ -95,7 +109,6 @@ export class AppComponent implements OnInit {
   closeDrawer() {
     this.layout.drawerState$.next('closed')
   }
-
 
   onActivate(e, scrollContainer) {
     document.getElementsByTagName('ea-main')[0].scrollTop = 0
