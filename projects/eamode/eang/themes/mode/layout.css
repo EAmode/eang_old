@@ -119,6 +119,7 @@
     }
 
     & ea-drawer {
+      --ea-menu-color: #fff;
       grid-area: drawer;
       flex-direction: column;
       justify-content: space-between;
@@ -129,8 +130,7 @@
         var(--ea-drawer-background, var(--ea-color-2))
       );
       -webkit-tap-highlight-color: transparent;
-      color: var(--ea-color, var(--ea-drawer-color, var(--ea-base-text-color)));
-      --ea-menu-color: #fff;
+      color: var(--ea-color, var(--ea-drawer-color, var(--ea-text-color)));
       & section {
         flex-grow: 1;
       }
@@ -143,7 +143,7 @@
         );
       }
 
-      &[resize] {
+      &[resizable] {
         resize: horizontal;
         overflow: auto;
       }

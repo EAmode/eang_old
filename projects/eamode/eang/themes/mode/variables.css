@@ -1,23 +1,23 @@
 .mode {
   /* Base Colors */
   --ea-color-1: hsl(223, 40%, 43%);
-  --ea-color-1-high: hsl(223, 40%, 53%);
+  --ea-color-1-light: hsl(223, 40%, 53%);
 
   /* Alternative Base Colors */
   --ea-color-2: hsl(0, 0%, 20%);
   --ea-color-2-high: (0, 0%, 30%);
 
   --ea-color-3: hsl(0, 0%, 96%);
-  --ea-color-3-low: hsl(0, 0%, 86%);
+  --ea-color-3-dark: hsl(0, 0%, 86%);
 
   /* Text Colors */
+  --ea-text-color: var(--ea-text-color-dark);
   --ea-text-color-dark: hsl(0, 0%, 20%);
   --ea-text-color-light: hsl(0, 0%, 96%);
-  --ea-base-text-color: var(--ea-text-color-dark);
 
   /* Hover, Active */
   --ea-background-color-hover: var(--ea-color-1);
-  --ea-background-color-active: var(--ea-color-1-high);
+  --ea-background-color-active: var(--ea-color-1-light);
 
   /* Fonts & Typography */
   --ea-font-1-family: 'Roboto';
@@ -44,9 +44,9 @@
   --ea-toolbar-background: linear-gradient(
     to bottom right,
     var(--ea-color-1),
-    var(--ea-color-1-high),
-    var(--ea-color-1-high),
+    var(--ea-color-1-light),
+    var(--ea-color-1-light),
     var(--ea-color-1)
   );
-  
+
 }

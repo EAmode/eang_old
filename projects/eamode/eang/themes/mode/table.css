@@ -25,8 +25,8 @@
    & td {
       padding: var(--ea-table-padding, 1.8em 1.5em);
       text-align: left;
-      border-bottom: 1px solid var(--ea-color-3-low);
-      color:var(--ea-table-td-color, var(--ea-base-text-color));
+      border-bottom: 1px solid var(--ea-color-3-dark);
+      color:var(--ea-table-td-color, var(--ea-text-color));
     }
 
    & th {
@@ -39,7 +39,7 @@
       background: var(--ea-table-thead-background, transparent);
       & th {
         border-radius: 0;
-        color: var(--ea-table-thead-th-color,  var(--ea-base-text-color));
+        color: var(--ea-table-thead-th-color,  var(--ea-text-color));
       }
     }
 

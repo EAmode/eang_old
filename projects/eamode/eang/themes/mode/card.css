@@ -3,7 +3,7 @@
   box-shadow: var(--ea-card-shadow, var(--ea-box-shadow));
   background: var(--ea-background, var(--ea-card-background, #fff));
   border: var(--ea-card-border, 1px solid var(--ea-color-3));
-  color: var(--ea-color, var(--ea-card-color, var(--ea-base-text-color)));
+  color: var(--ea-color, var(--ea-card-color, var(--ea-text-color)));
   width: var(--ea-card-width, 100%);
   margin: var(--ea-card-margin, 1.5em 0);
   display: flex;
@@ -15,7 +15,7 @@
   & .ea-card {
     @mixin card-base;
     &:not([unset]) {
-      --ea-card-border-radius: 8px;
+      --ea-card-border-radius: .5em;
       border-radius: var(--ea-card-border-radius);
       & p,
       h1,
@@ -30,7 +30,7 @@
     &[unset] {
       border: none;
       background: var(--ea-background, var(--ea-card-background-unset, transparent));
-      color: var(--ea-base-text-color);
+      color: var(--ea-text-color);
       box-shadow: none;
       display: flex;
       flex-direction: column;

@@ -53,7 +53,7 @@
     font-size: unset;
     max-width: 35rem;
     align-items: center;
-    color: var(--ea-base-text-color);
+    color: var(--ea-text-color);
     text-decoration: none;
     @media only screen and (max-width: 1300px) {
       grid-template-areas: 'icon icon' 'header header' 'para para';
@@ -106,7 +106,7 @@
         background: var(--ea-color-1);
       }
       &.base-color-high {
-        background: var(--ea-color-1-high);
+        background: var(--ea-color-1-light);
       }
       &.alt-base-color {
         background: var(--ea-color-2);
@@ -152,7 +152,7 @@
     }
   }
   #eang-welcome {
-    --ea-base-text-color: white;
+    --ea-text-color: white;
     align-items: center;
     align-content: center;
     background-color: var(--ea-color-1);
@@ -394,7 +394,7 @@
       margin: 0;
 
       & eangio-menu {
-        --ea-tab-color: var(--ea-base-text-color);
+        --ea-tab-color: var(--ea-text-color);
         & ea-menu {
           --ea-menu-color: white;
         }
