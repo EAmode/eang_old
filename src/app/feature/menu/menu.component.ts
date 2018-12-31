@@ -160,30 +160,6 @@ export class MenuComponent implements OnInit {
   </ng-template>
   `
 
-  ea_menu_nametemplate = `
-  *component.html*
-  ~~~html
-  <ea-menu
-    [node]="nodeWithNameTemplate"
-    [contentTemplate]="contentTemplate">
-  </ea-menu>
-  <ng-template #contentTemplate let-data="node.data">
-    <div *ngIf="data">{{data.header}}</div>
-  </ng-template>
-  `
-  ea_menu_modtemplate = `
-  *component.html*
-  ~~~html
-  <ea-menu
-    [node]="nodeWithMod"
-    [modTemplate]="modTemplate">
-  </ea-menu>
-  <ng-template #modTemplate let-data="node">
-    <img src="..."
-    style="width: .5em; height: .5em">
-  </ng-template>
-  `
-
   node_example = `
   *component.ts*
   ~~~ts
@@ -203,29 +179,6 @@ export class MenuComponent implements OnInit {
       name: 'Wi-Fi',
       icon: 'wifi',
       iconStyle: 'aqua'
-    }
-    ]
-  }
-  `
-
-  ea_menu_toggleRight = `
-  *component.ts*
-  ~~~ts
-  nodeExample = {
-    name: 'Main menu',
-    icon: 'ea-hamburger-menu',
-    isHidden: false,
-    toggleRight: true,
-    children: [
-    {
-      name: 'Archive',
-      icon: 'ea-archive ',
-      iconStyle: 'ea-negative'
-    },
-    {
-      name: 'Wi-Fi',
-      icon: 'ea-wifi',
-      iconStyle: 'ea-negative'
     }
     ]
   }
