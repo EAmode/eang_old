@@ -55,6 +55,7 @@
         color: var(--ea-color, var(--ea-tab-color-active, var(--ea-text-color)));
       }
       & .ea-tree-children.horizontal {
+        display:flex;
         border-bottom: var(--ea-tabs-border-bottom,  solid );
         border-color: var(--ea-tabs-border-color, var(--ea-color-3-dark));
         border-width:var(--ea-tabs-border-width, 0.05em);
