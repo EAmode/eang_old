@@ -28,6 +28,11 @@
   & .ea-terminal {
     background-image: inline('mode/icon/terminal.svg');
   }
+  & [component],
+  & .ea-component {
+    background: url('./assets/images/components.svg');
+  }
+  --ea-drawer-width: 250px;
   & [color],
   & .ea-color {
     background-image: url('assets/images/colors.svg');

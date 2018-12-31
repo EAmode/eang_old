@@ -97,7 +97,7 @@ export const SIDE_MENU = {
 })
 export class AppComponent implements OnInit {
   public menu = SIDE_MENU
-  activated: EventEmitter<MenuTreeItem> = new EventEmitter<MenuTreeItem>()
+  activated = new EventEmitter<MenuTreeItem>()
 
   constructor(public router: Router, public layout: LayoutService) {}
 

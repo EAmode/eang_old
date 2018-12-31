@@ -151,6 +151,10 @@
     &.ea-paperclip {
       background-image: inline('mode/icon/paperclip.svg');
     }
+    &[pallete],
+    &.ea-pallete {
+      background-image: inline('mode/icon/pallete.svg');
+    }
     &[plus-circle],
     &.ea-plus-circle {
       background-image: inline('mode/icon/plus-circle.svg');
@@ -166,6 +170,10 @@
     &[share],
     &.ea-share {
       background-image: inline('mode/icon/share.svg');
+    }
+    &[tab],
+    &.ea-tab {
+      background-image: inline('mode/icon/tab.svg');
     }
     &[toggle-left],
     &.ea-toggle-left {
@@ -243,6 +251,14 @@
     &.ea-chevron-right {
       background-image: inline('mode/icon/right-chevron.svg');
     }
+    &[chevron-left],
+    &.ea-chevron-left {
+      background-image: inline('mode/icon/left-chevron.svg');
+    }
+    &[chevron-up],
+    &.ea-chevron-up {
+      background-image: inline('mode/icon/up-chevron.svg');
+    }
     &[menu-close],
     &.ea-menu-close {
       background-image: inline('mode/icon/menu-close.svg');
@@ -278,6 +294,14 @@
     &[add-file],
     &.ea-add-file {
       background-image: inline('mode/icon/add-file.svg');
+    }
+    &[power],
+    &.ea-power {
+      background-image: inline('mode/icon/power.svg');
+    }
+    &[loader],
+    &.ea-loader {
+      background-image: inline('mode/icon/loader.svg');
     }
     &[negative],
     &.ea-negative {

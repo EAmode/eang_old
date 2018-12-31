@@ -11,7 +11,11 @@
       &[hidden] {
         display: none;
       }
-
+      
+       &[toggle] {
+         flex-direction: row-reverse;
+      }
+      
       &[active] {
         background: var(--ea-menu-background-color-active, var(--ea-background-color-active));
         color: var(--ea-menu-color-active, var(--ea-text-color-light));
@@ -76,6 +80,13 @@
       color: var( --ea-color, var(--ea-menu-color, var(--ea-text-color)));
       display: flex;
       align-items: center;
+      
+       &[toggle] {
+           flex-direction: row-reverse;
+           & span[icon] {
+             margin-right: .5em;
+             margin-left: .5em;
+           }
     }
 
     & aside {
@@ -84,6 +95,22 @@
       position: absolute;
       top: 0;
       right: 8px;
+       & .close {
+           font-size: 10px;
+           margin-right: .6rem;
+ 
+            & span {
+             transition: all ease .2s;
+           }  
+ 
+            &:hover {
+             background: none;
+ 
+              & span {
+               transform: scale(1.4);
+             }
+           }
+         }
     }
 
     & .ea-tree-children {

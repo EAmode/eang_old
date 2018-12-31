@@ -29,7 +29,7 @@ export class CardComponent implements OnInit {
         <span icon download></span>
       </button>
       <button icon>
-        <span icon sign-in</span>
+        <span icon sign-in></span>
       </button>
     </div>
     <button icon>
