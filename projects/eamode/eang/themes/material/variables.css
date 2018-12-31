@@ -30,4 +30,25 @@
   --ea-padding: 4rem;
   --ea-toolbar-height: 4rem;
 
+
+  --ea-background-color: 66, 91, 154;
+
+  --ea-background-color-1:rgba(var(--ea-background-color), 1);
+  --ea-background-color-light:rgba(var(--ea-background-color), 0.8);
+
+  --ea-color-1: hsl(210, 75%,21%);
+  --ea-color-1-light: hsl(210, 75%,31%);
+
+  --ea-color-2: hsl(0, 0%, 20%);
+  --ea-color-2-high: (0, 0%, 30%);
+
+  --ea-text-color-dark: #333;
+  --ea-text-color-light: #f6f6f6;
+
+  --ea-background-hover: var(--ea-color-1);
+  /* --ea-background-hover: red; */
+  --ea-background-active: var(--ea-color-1-light);
+  /* --ea-background-active: purple; */
+  --ea-background-active-shadow: inset 1.5px 2px 5px rgba(0,0,0,0.2);
+
 }

@@ -20,16 +20,31 @@ export const SIDE_MENU = {
       }
     },
     {
-      name: 'Components',
+      name: 'Styles',
       iconStyle: 'ea-negative',
-      toggleRight: true,
       children: [
         {
-          name: 'Autocomplete',
-          icon: 'ea-layers',
+          name: 'Colors',
+          icon: 'ea-color',
           iconStyle: 'ea-negative',
           data: {
-            link: '/card'
+            link: '/variables'
+          }
+        }
+      ]
+    },
+    {
+      name: 'Components',
+      iconStyle: 'ea-negative',
+      data: {
+        link: '/components'
+      },
+      children: [
+        {
+          name: 'Layout',
+          icon: 'ea-layout',
+          data: {
+            link: '/layout'
           }
         },
         {
@@ -65,8 +80,7 @@ export const SIDE_MENU = {
         },
         {
           name: 'Tabs',
-          icon: 'ea-align-left',
-          iconStyle: 'ea-negative',
+          icon: 'ea-tabs-icon',
           data: {
             link: '/tabs'
           }
@@ -91,6 +105,9 @@ export class AppComponent implements OnInit {
     if (this.layout.isDrawerOverlay) {
       this.layout.drawerState$.next('closed')
     }
+  }
+  closeDrawer() {
+    this.layout.drawerState$.next('closed')
   }
 
   onActivate(e, scrollContainer) {

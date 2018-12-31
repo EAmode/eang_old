@@ -11,7 +11,6 @@ export class TabsComponent implements OnInit {
   ngOnInit() {}
 
   tabs_example = `
-  *component.html*
   ~~~html
   <ea-tabs>
     <ea-tab name="Paragraph">
@@ -32,7 +31,6 @@ export class TabsComponent implements OnInit {
   `
 
   tab_close = `
-  *component.html*
   ~~~html
   <ea-tabs>
     <ng-template #headerTemplate>

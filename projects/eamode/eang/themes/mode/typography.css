@@ -1,42 +1,63 @@
 @define-mixin typography {
-  & h1 {
 
+  & h1 {
     font-size: var(--ea-h1-font-size, 2.875em);
     font-family: var(--ea-h1-font-family, var(--ea-font-1));
     font-weight: lighter;
     margin-bottom: 0.6em;
+    color: var(--ea-color, var(--ea-h1-color, var(--ea-text-color)));
   }
-  & h2 {
 
+  & h2 {
     font-family: var(--ea-font-1);
     font-size: var(--ea-h2-font-size, 2.125rem);
     /* min-size, max-size */
     font-weight: lighter;
     margin-bottom: 0.4em;
+    color: var(--ea-color, var(--ea-h2-color, var(--ea-text-color)));
   }
+
   & h3 {
     font-size: 1.5em;
     font-weight: 400;
     margin: 0.2rem 0 0.1rem 0;
+    color: var(--ea-color, var(--ea-h3-color, var(--ea-text-color)));
   }
+
   & h4 {
     font-size: 1.2em;
+    color: var(--ea-color, var(--ea-h4-color, var(--ea-text-color)));
   }
+
   & h5 {
     font-size: 1.1em;
+    color: var(--ea-color, var(--ea-h5-color, var(--ea-text-color)));
   }
+
   & p {
     font-size: 1em;
     line-height: 1.33em;
     font-weight: 400;
     margin: 1em 0;
+    user-select: auto;
+    color: var(--ea-color, var(--ea-p-color, var(--ea-text-color)));
   }
-  & p::selection {
-    background: var(--ea-color-background-3);
-    color: var(--ea-color-3);
-  }
+
   & a {
-    font-size: 1.8em;
-    text-decoration: none;
+    font-size: 1rem;
+    text-decoration: underline;
+    color: var(--ea-color, var(--ea-a-color, var(--ea-text-color)));
   }
+
+  & code {
+    background: var(--ea-code-background, transparent);
+    color: var(--ea-color, var(--ea-code-color, #607D8B));
+    padding: 0.2rem;
+    border-radius: 0.3rem;
+    margin-right: 0.1rem;
+  }
+  & *::selection {
+    background: var(--ea-background, var(--ea-background-selection, var(--ea-color-1)));
+    color: var(--ea-color, var(--ea-color-selection, var(--ea-text-color-light)));
+   }
 }

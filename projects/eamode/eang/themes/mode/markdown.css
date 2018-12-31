@@ -1,14 +1,6 @@
 @define-mixin markdown-mode {
   & ea-markdown {
     width: auto;
-    & .toolbar-item a {
-      font-size: 22px;
-      background: var(--ea-color-background-2);
-      color: white;
-      padding: 0 1rem;
-      border-radius: 4px;
-      cursor: pointer;
-    }
 
     & code[class*='language-'],
     & pre[class*='language-'] {
@@ -33,13 +25,14 @@
       padding: 1em;
       margin: 0.5em 0;
       overflow: auto;
-      background: var(--ea-color-background-4);
+      background: var(--ea-background, var(--ea-markdown-background, var(--ea-color-2)));
     }
     & pre {
       padding: 1em;
       margin: 0.5em 0;
       overflow: auto;
-      background: var(--ea-color-background-4);
+      background: var(--ea-background, var(--ea-markdown-background, var(--ea-color-2)));
+      border-radius: 0.15em;
     }
     /* Inline code */
     & :not(pre) > code[class*='language-'] {

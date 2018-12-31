@@ -1,75 +1,105 @@
 <div class="ea-card" unset>
-    <div class="ea-card-header">
-      <h1>Menu</h1>
-      <span icon hamburger-menu style="width: 2rem; height:2rem;"></span>
-    </div>
-    <p>If you are looking for the easier way of adding menu for your site - use <em>ea-menu</em>.</p>
-    <p>To add menu use next piece of code. Where "node" is a structure describe in "Menu Structure/Example Node" paragraph.</p>
-    <div class="ea-card-content example" grid>
-      <ea-markdown [doc]="ea_menu"></ea-markdown>
-    </div>
-    <div class="ea-card" style="background:#333333;">
-        <div class="ea-card-header">
-          <p>Result menu view. Try to click each sub-menu.</p>
+  <div class="ea-card-header">
+    <h1>Menu</h1>
+    <span icon hamburger-menu style="width: 2rem; height:2rem;"></span>
+  </div>
+  <div class="ea-card-content">
+    <ea-tabs>
+      <ea-tab name="Overview">
+        <div class="ea-card" unset>
+        <p>
+          If you are looking for the easier way of adding menu for your site - use
+          <em>ea-menu</em>.
+        </p>
+        <p>
+          To add menu use next piece of code. Where "node" is a structure describe
+          in "Menu Structure/Example Node" paragraph.
+        </p>
+        <div class="ea-card-content example" grid>
+          <ea-markdown [doc]="ea_menu"></ea-markdown>
         </div>
-        <div class="ea-card-content header" style="flex-direction: column;">
-          <ea-menu
-          [node]="node">
-          </ea-menu>
+        <div class="ea-card">
+          <div class="ea-card-header">
+            <p>Result menu view. Try to click each sub-menu.</p>
+          </div>
+          <div class="ea-card-content header menu-example" >
+            <ea-menu [node]="node"> </ea-menu>
+          </div>
         </div>
-    </div>
-
-    <h1>Menu Structure/Example Node</h1>
-    <p>This is the example of menu structure. Paste it in your <em>component.ts</em> </p>
-    <div grid>
-        <ea-markdown [doc]="node_example"></ea-markdown>
+        <h2>Menu Structure/Example Node</h2>
+        <p>
+          This is the example of menu structure. Paste it in your
+          <em>component.ts</em>
+        </p>
       </div>
-    <h1>Customize your menu</h1>
-    <p>You can add attribute <em>horizontal: true/false</em> in your parent node to switch menu orientation.</p>
-    <p>Default orientation is vertical.</p>
-    <div class="ea-card-content example" grid>
-      <ea-markdown [doc]="ea_menu_horizontal"></ea-markdown>
-      <div class="ea-card" style="background:#333333;">
-        <div class="ea-card-header">
-          <p>ea-menu</p>
+        <div><ea-markdown [doc]="node_example"></ea-markdown></div>
+        <p>Use these attributes in node.</p>
+        <div style="overflow-x: auto;">
+          <ea-markdown [doc]="ea_menu_attrs"></ea-markdown>
         </div>
-        <div class="ea-card-content header" style="flex-direction: column;">
-          <ea-menu
-          [node]="nodeHorizontal">
-          </ea-menu>
+      </ea-tab>
+      <ea-tab name="Examples">
+        <h2>Customize your menu</h2>
+        <p>
+          You can add attribute <em>horizontal: true/false</em> in your parent
+          node to switch menu orientation.
+        </p>
+        <p>Default orientation is vertical.</p>
+        <div class="ea-card-content example" grid>
+          <ea-markdown [doc]="ea_menu_horizontal"></ea-markdown>
+          <div class="ea-card">
+            <div class="ea-card-header"><p>ea-menu</p></div>
+            <div class="ea-card-content header menu-example" style=" padding: 0;">
+              <ea-menu [node]="nodeHorizontal"> </ea-menu>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
 
-    <p>Below two menus are displayed. The first menu with attribute <em>isHidden: true</em> in the parent node and the second - <em>isHidden: false</em>.</p>
-    <div class="ea-card-content example" grid>
-      <div class="ea-card" style="background:#333333;">
-        <div class="ea-card-header">
-          <p>IsHidden: true</p>
+        <p>
+          Below two menus are displayed. The first menu with attribute
+          <em>isHidden: true</em> in the parent node and the second -
+          <em>isHidden: false</em>.
+        </p>
+        <div class="ea-card-content example" grid>
+          <div class="ea-card">
+            <div class="ea-card-header"><p>IsHidden: true</p></div>
+            <div class="ea-card-content menu-example">
+              <ea-menu [node]="node"> </ea-menu>
+            </div>
+          </div>
+          <div class="ea-card">
+            <div class="ea-card-header"><p>IsHidden: false</p></div>
+            <div class="ea-card-content menu-example" >
+              <ea-menu [node]="nodeHiddenFalse"> </ea-menu>
+            </div>
+          </div>
         </div>
-        <div class="ea-card-content header" style="flex-direction: column;">
-          <ea-menu
-          [node]="node">
-          </ea-menu>
-        </div>
-      </div>
-      <div class="ea-card" style="background:#333333;">
-        <div class="ea-card-header">
-          <p>IsHidden: false</p>
-        </div>
-        <div class="ea-card-content header" style="flex-direction: column;">
-          <ea-menu
-          [node]="nodeHiddenFalse">
-          </ea-menu>
-        </div>
-      </div>
-    </div>
 
-
-
-    <p>Use these attributes in node.</p>
-    <div>
-      <h3>Attributes</h3>
-     
-    </div>
+        <h2>Add your own template</h2>
+        <p>Use [controlPanelTemplate] attribute to show your own template.</p>
+        <p>
+          For example, description inside data attribute will be shown after you
+          move mouse over the sub menus.
+        </p>
+        <div class="ea-card-content example" grid>
+          <ea-markdown [doc]="ea_menu_template"></ea-markdown>
+          <div class="ea-card">
+            <div class="ea-card-header">
+              <p>Move mouse over the sub-menus to see the description.</p>
+            </div>
+            <div class="ea-card-content menu-example">
+              <ea-menu
+                [node]="nodeWithTemplate"
+                [controlPanelTemplate]="templateMenu"
+              >
+              </ea-menu>
+            </div>
+            <ng-template #templateMenu let-data="node.data">
+              <div *ngIf="data">{{ data.description }}</div>
+            </ng-template>
+          </div>
+        </div>
+      </ea-tab>
+    </ea-tabs>
+  </div>
 </div>

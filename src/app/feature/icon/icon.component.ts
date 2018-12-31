@@ -14,7 +14,6 @@ export class IconComponent implements OnInit {
   ~~~html
   <span icon x></span>
   <span icon x negative></span>
-  <span icon x aqua></span>
   ~~~
   `
 
