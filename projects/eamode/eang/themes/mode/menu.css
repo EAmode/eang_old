@@ -16,14 +16,49 @@
         }
       }
       & .name {
+        height: 100%;
         width: 100%;
         color: var(--ea-menu-text-color, var(--ea-text-color-light));
         display: flex;
         align-items: center;
+        padding-right: 15px;
+
+        &[toggle] {
+          flex-direction: row-reverse;
+          & span[icon] {
+            margin-right: .5em;
+            margin-left: .5em;
+          }
+        }
+
+        & span[icon] {
+          margin-right: .5em;
+        }
       }
 
       & aside {
         opacity: 0;
+
+        & .close {
+          font-size: 10px;
+          margin-right: .6rem;
+  
+          & span {
+            transition: all ease .2s;
+          }  
+  
+          &:hover {
+            background: none;
+  
+            & span {
+              transform: scale(1.4);
+            }
+          }
+        }
+      }
+
+      &[toggle] {
+        flex-direction: row-reverse;
       }
 
       &[hidden] {

@@ -22,6 +22,7 @@ export const SIDE_MENU = {
     {
       name: 'Components',
       iconStyle: 'ea-negative',
+      toggleRight: true,
       children: [
         {
           name: 'Autocomplete',
@@ -60,6 +61,14 @@ export const SIDE_MENU = {
           iconStyle: 'ea-negative',
           data: {
             link: '/menu'
+          }
+        },
+        {
+          name: 'Tabs',
+          icon: 'ea-align-left',
+          iconStyle: 'ea-negative',
+          data: {
+            link: '/tabs'
           }
         }
       ]

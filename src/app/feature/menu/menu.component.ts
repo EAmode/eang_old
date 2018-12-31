@@ -23,6 +23,7 @@ export class MenuComponent implements OnInit {
       {
         name: 'Cards',
         icon: 'ea-layers',
+        toggleRightPosition: true,
         iconStyle: 'ea-AntiqueWhite',
         data: {
           link: '/card'
@@ -58,6 +59,44 @@ export class MenuComponent implements OnInit {
   nodeHorizontal
   nodeHiddenFalse
   nodeWithTemplate
+  nodeWithNameTemplate
+  nodeWithRightToggle = {
+    name: 'Main menu',
+    icon: 'ea-hamburger-menu',
+    iconStyle: 'ea-negative',
+    isHidden: false,
+    toggleRight: true,
+    children: [
+      {
+        name: 'Archive',
+        icon: 'ea-archive ',
+        iconStyle: 'ea-negative'
+      },
+      {
+        name: 'Wi-Fi',
+        icon: 'ea-wifi',
+        iconStyle: 'ea-negative'
+      }
+    ]
+  }
+
+  nodeWithMod = {
+    name: 'Main menu',
+    icon: 'hamburger-menu',
+    isHidden: false,
+    children: [
+      {
+        name: 'Archive',
+        icon: 'archive ',
+        iconStyle: 'aqua'
+      },
+      {
+        name: 'Wi-Fi',
+        icon: 'wifi',
+        iconStyle: 'aqua'
+      }
+    ]
+  }
 
   constructor() {}
 
@@ -69,9 +108,21 @@ export class MenuComponent implements OnInit {
     this.nodeHiddenFalse.isHidden = false
 
     this.nodeWithTemplate = JSON.parse(JSON.stringify(this.node))
+    this.nodeWithNameTemplate = JSON.parse(JSON.stringify(this.node))
+
     this.nodeWithTemplate.children[0].data.description =
       'Notification description'
+    this.nodeWithNameTemplate.children[0].data.header =
+      'The name of the first paragraph'
     this.nodeWithTemplate.children[1].data.description = 'Cards description'
+    this.nodeWithNameTemplate.children[1].data.header =
+      'The name of the second paragraph'
+    this.nodeWithNameTemplate.children[2].data.header =
+      'The name of the first container'
+    this.nodeWithNameTemplate.children[2].children[0].data.header =
+      'The first content text'
+    this.nodeWithNameTemplate.children[2].children[1].data.header =
+      'The second content text'
   }
 
   ea_menu = `
@@ -109,6 +160,30 @@ export class MenuComponent implements OnInit {
   </ng-template>
   `
 
+  ea_menu_nametemplate = `
+  *component.html*
+  ~~~html
+  <ea-menu
+    [node]="nodeWithNameTemplate"
+    [contentTemplate]="contentTemplate">
+  </ea-menu>
+  <ng-template #contentTemplate let-data="node.data">
+    <div *ngIf="data">{{data.header}}</div>
+  </ng-template>
+  `
+  ea_menu_modtemplate = `
+  *component.html*
+  ~~~html
+  <ea-menu
+    [node]="nodeWithMod"
+    [modTemplate]="modTemplate">
+  </ea-menu>
+  <ng-template #modTemplate let-data="node">
+    <img src="..."
+    style="width: .5em; height: .5em">
+  </ng-template>
+  `
+
   node_example = `
   *component.ts*
   ~~~ts
@@ -122,18 +197,35 @@ export class MenuComponent implements OnInit {
     {
       name: 'Archive',
       icon: 'archive ',
-      iconStyle: 'aqua',
-      data: {
-        link: '/download'
-      }
+      iconStyle: 'aqua'
     },
     {
       name: 'Wi-Fi',
       icon: 'wifi',
-      iconStyle: 'aqua',
-      data: {
-        link: '/wifi'
-      }
+      iconStyle: 'aqua'
+    }
+    ]
+  }
+  `
+
+  ea_menu_toggleRight = `
+  *component.ts*
+  ~~~ts
+  nodeExample = {
+    name: 'Main menu',
+    icon: 'ea-hamburger-menu',
+    isHidden: false,
+    toggleRight: true,
+    children: [
+    {
+      name: 'Archive',
+      icon: 'ea-archive ',
+      iconStyle: 'ea-negative'
+    },
+    {
+      name: 'Wi-Fi',
+      icon: 'ea-wifi',
+      iconStyle: 'ea-negative'
     }
     ]
   }

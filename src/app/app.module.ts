@@ -10,7 +10,8 @@ import {
   AutoCompleteModule,
   ThemePickerModule,
   MarkdownModule,
-  MenuModule
+  MenuModule,
+  TabsModule
 } from '@eamode/eang'
 
 import {
@@ -29,6 +30,7 @@ import { IconComponent } from './feature/icon/icon.component'
 import { VariablesComponent } from './variables/variables.component'
 import { GetStartedComponent } from './feature/get-started/get-started.component'
 import { MenuComponent } from './feature/menu/menu.component'
+import { TabsComponent } from './feature/tabs/tabs.component'
 
 const routes: Routes = [
   { path: 'features', component: HomeComponent },
@@ -40,7 +42,8 @@ const routes: Routes = [
   { path: 'icon', component: IconComponent },
   { path: 'variables', component: VariablesComponent },
   { path: 'getting-started', component: GetStartedComponent },
-  { path: 'menu', component: MenuComponent }
+  { path: 'menu', component: MenuComponent },
+  { path: 'tabs', component: TabsComponent }
 ]
 
 @NgModule({
@@ -55,7 +58,8 @@ const routes: Routes = [
     IconComponent,
     VariablesComponent,
     MenuComponent,
-    GetStartedComponent
+    GetStartedComponent,
+    TabsComponent
   ],
   imports: [
     BrowserModule,
@@ -69,6 +73,7 @@ const routes: Routes = [
     MdcRippleModule,
     MdcRadioModule,
     MenuModule,
+    TabsModule,
     RouterModule.forRoot(routes, { scrollPositionRestoration: 'top' })
   ],
   providers: [],
