@@ -19,6 +19,7 @@ export interface MenuTreeItem {
   isOpen?: boolean
   toggleRight?: boolean
   parent?: MenuTreeItem
+  dropdown?: boolean
   children?: MenuTreeItem[]
   data?: any
 }
@@ -27,29 +28,41 @@ export interface MenuTreeItem {
   template: `
   <div class="node"
     [class.has-children]="node.children?.length > 0"
-    [style.padding-left]="depth * 15 + 'px'"
+    [style.padding-left]="node.children?.length > 0 ? depth * 0 + 'px': 0"
     [attr.hidden]="node.isHidden ? '' : null"
     [attr.active]="node.isActive ? '' : null"
-    [attr.toggle]="node.toggleRight ? '' : null">
-    <ng-container *ngIf="modTemplate; else defaultTemplate"
-      [ngTemplateOutlet]="modTemplate"
-      [ngTemplateOutletContext]="{node: node}">
-    </ng-container>
+    [attr.toggle]="node.toggleRight ? '' : null"
+    [class.dropdownNode]="node.dropdown">
 
-    <ng-template #defaultTemplate>
-      <button *ngIf="node.children?.length > 0" (click)="onToggle()" icon flat>
-          <span icon chevron-down negative *ngIf="node.isOpen">
-          </span>
-          <span icon chevron-left negative *ngIf="!node.isOpen && node.toggleRight">
-          </span>
-          <span icon chevron-right negative *ngIf="!node.isOpen && !node.toggleRight">
-          </span>
-      </button>
-    </ng-template>
+    <div
+    *ngIf="node.children?.length > 0" (click)="onToggle()"
+    [style.min-width]="depth * 15 + 'px'"
+    [style.padding-left]="0 + 'px'"
+    class="toggleArea"
+    [class.dropdownToggle]="node.dropdown"
+    >
+      <ng-container *ngIf="toggleAreaTemplate; else defaultTemplate"
+        [ngTemplateOutlet]="toggleAreaTemplate"
+        [ngTemplateOutletContext]="{node: node}">
+      </ng-container>
+      <ng-template #defaultTemplate>
+            <span icon chevron-down negative *ngIf="node.isOpen">
+            </span>
+            <span icon chevron-left negative *ngIf="!node.isOpen && node.toggleRight">
+            </span>
+            <span icon chevron-right negative *ngIf="!node.isOpen && !node.toggleRight">
+            </span>
+      </ng-template>
+    </div>
 
-    <span (click)="onActivate()" class="name" [attr.toggle]="node.toggleRight ? '' : null" >
-      <ng-container *ngIf="contentTemplate; else defTemplate"
-        [ngTemplateOutlet]="contentTemplate"
+    <div
+    (click)="onActivate()"
+    class="name"
+    [attr.toggle]="node.toggleRight ? '' : null"
+    [style.padding-left]="!node.children ? depth * 15 + 'px' : 0"
+    >
+      <ng-container *ngIf="nameAreaTemplate; else defTemplate"
+        [ngTemplateOutlet]="nameAreaTemplate"
         [ngTemplateOutletContext]="{node: node}">
       </ng-container>
 
@@ -59,11 +72,11 @@ export interface MenuTreeItem {
         </ng-container>
         {{node.name}}
       </ng-template>
-    </span>
+    </div>
 
     <aside>
-      <ng-container *ngIf="controlPanelTemplate"
-        [ngTemplateOutlet]="controlPanelTemplate"
+      <ng-container *ngIf="optionAreaTemplate"
+        [ngTemplateOutlet]="optionAreaTemplate"
         [ngTemplateOutletContext]="{node: node}">
       </ng-container>
 
@@ -73,7 +86,10 @@ export interface MenuTreeItem {
     </aside>
 
 </div>
-<div *ngIf="node.children?.length > 0 && (node.isOpen || node.isHidden)" class="ea-tree-children" [class.horizontal]="!!node.horizontal">
+<div *ngIf="node.children?.length > 0 && (node.isOpen || node.isHidden)"
+class="ea-tree-children"
+[class.horizontal]="node.horizontal"
+[class.dropdown]="node.dropdown">
   <ea-menu
     *ngFor="let child of node.children trackBy: track.bind(node)"
     [node]="child"
@@ -81,9 +97,10 @@ export interface MenuTreeItem {
     [closeEvents]="closeEvents"
     [toggleEvents]="toggleEvents"
     [activateEvents]="activateEvents"
-    [contentTemplate]="contentTemplate"
-    [modTemplate]="modTemplate"
-    [controlPanelTemplate]="controlPanelTemplate"></ea-menu>
+    [nameAreaTemplate]="nameAreaTemplate"
+    [toggleAreaTemplate]="toggleAreaTemplate"
+    [optionAreaTemplate]="optionAreaTemplate"
+    ></ea-menu>
 </div>`,
   encapsulation: ViewEncapsulation.None
 })
@@ -93,11 +110,11 @@ export class MenuComponent implements OnInit, AfterContentInit {
   @Input()
   depth = 0
   @Input()
-  contentTemplate
+  nameAreaTemplate
   @Input()
-  modTemplate
+  toggleAreaTemplate
   @Input()
-  controlPanelTemplate
+  optionAreaTemplate
   @Input()
   closeEvents: EventEmitter<MenuTreeItem>
   @Input()

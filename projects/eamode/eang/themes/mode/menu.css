@@ -1,12 +1,19 @@
 @define-mixin menu {
   & ea-menu {
+    --ea-menu-height: 2.5;
     user-select: none;
     cursor: pointer;
+    position: relative;
     & .node {
       display: flex;
-      line-height: 2.5em;
+      line-height: var(--ea-menu-height);
       align-items: center;
       position: relative;
+
+      & span[icon] {
+        height: 0.7rem;
+        width: 0.7rem;
+      }
 
       &[hidden] {
         display: none;
@@ -30,10 +37,6 @@
           var(--ea-background-color-hover)
         );
         color: var(--ea-menu-color-hover, var(--ea-text-color-light));
-
-        & aside {
-          opacity: 1;
-        }
       }
 
       &:active {
@@ -46,6 +49,26 @@
           var(--ea-background-active-shadow)
         );
         color: var(--ea-menu-color-active, var(--ea-text-color-light));
+      }
+
+      &.dropdownNode{
+        &:hover {
+          background: transparent;
+        }
+      }
+
+      & .toggleArea {
+        display: flex;
+        height:  2.5em;
+        align-items: center;
+        justify-content: flex-end;
+        &.dropdownToggle {
+          min-width: 100% !important;
+          justify-content: center;
+          &:hover {
+            background: transparent;
+          }
+        }
       }
     }
 
@@ -124,13 +147,31 @@
           }
         }
       }
-
-      & .ea-tree-children {
-        &.horizontal {
-          display: flex;
-          flex-direction: row;
-          align-items: flex-start;
-          justify-content: flex-start;
+    }
+    & .ea-tree-children {
+      &.horizontal {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+      }
+      &.dropdown {
+        --ea-color: var(--ea-color-2);
+        position: absolute;
+        z-index: 1;
+        background: var(
+          --ea-background,
+          var(--ea-menu-background-dropdown, white)
+        );
+        min-width: 8rem;
+        box-shadow: var(--ea-box-shadow);
+        & .node {
+          & .name {
+            padding-left: 0 !important;
+            margin-left: 0;
+            display: flex;
+            justify-content: space-between;
+          }
         }
       }
     }
