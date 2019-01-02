@@ -163,30 +163,3 @@
     </ea-tabs>
   </div>
 </div>
-
-<section class="modal">
-  <div *ngIf="this.modal === true" (click)="this.modal = false" class="modal-bg" style="height: 100vh; width: 100vw; background: rgba(0,0,0,.1); display: flex; justify-content: center; align-items:center;">
-  </div>
-  <div style="    height: 100%;
-  display: flex;
-  align-items: center;
-  position: absolute;
-  top: 0;">
-    <div *ngIf="this.modal === true" class="modal-bg" class="ea-card">
-      <div class="ea-card-header">
-        <h3>Modal Header</h3>
-        <button (click)="toggleModal()" icon flat>
-          <span icon x></span>
-        </button>
-      </div>
-      <div class="ea-card-content">
-        <h1> The Modal Card</h1>
-      </div>
-      <div class="ea-card-footer">
-        <button flat (click)="toggleModal()">Close</button>
-        <button flat (click)="toggleModal()">Save</button>
-
-      </div>
-    </div>
-  </div>
-</section>

@@ -279,25 +279,6 @@
   }
 }
 
-section.modal {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.modal {
-}
-.modal-bg {
-  position: absolute;
-  min-height: 100vh;
-  width: 100vw;
-  background: rgba(0,0,0,.1);
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
-
 .mode,
 .material {
   & #open-standards {

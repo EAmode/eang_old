@@ -63,7 +63,7 @@
         align-items: center;
         justify-content: flex-end;
         &.dropdownToggle {
-          min-width: 100% !important;
+          min-width: 100%;
           justify-content: center;
           &:hover {
             background: transparent;

@@ -124,13 +124,6 @@ export class MenuComponent implements OnInit {
     ]
   }
 
-  displayMessage() {
-    this.dropdown = !this.dropdown
-    const x = document.getElementById('myLI').parentElement
-    console.log(x)
-    x.style.display = 'none'
-  }
-
   nodeDropdownsolo: MenuTreeItem = {
     name: '',
     dropdown: true,
@@ -214,11 +207,6 @@ export class MenuComponent implements OnInit {
     this.nodeDropdown.isActive = false
     this.nodeDropdownsolo.isOpen = false
     this.nodeDropdownsolo.isActive = false
-  }
-
-  toggleModal() {
-    this.closeNode()
-    this.modal = !this.modal
   }
 
   ea_menu = `

@@ -28,7 +28,6 @@ export interface MenuTreeItem {
   template: `
   <div class="node"
     [class.has-children]="node.children?.length > 0"
-    [style.padding-left]="node.children?.length > 0 ? depth * 0 + 'px': 0"
     [attr.hidden]="node.isHidden ? '' : null"
     [attr.active]="node.isActive ? '' : null"
     [attr.toggle]="node.toggleRight ? '' : null"
@@ -36,8 +35,7 @@ export interface MenuTreeItem {
 
     <div
     *ngIf="node.children?.length > 0" (click)="onToggle()"
-    [style.min-width]="depth * 15 + 'px'"
-    [style.padding-left]="0 + 'px'"
+    [style.min-width]="!node.dropdown ? depth * 15 + 'px': null"
     class="toggleArea"
     [class.dropdownToggle]="node.dropdown"
     >
