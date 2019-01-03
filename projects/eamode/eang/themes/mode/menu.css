@@ -1,12 +1,19 @@
 @define-mixin menu {
   & ea-menu {
+    --ea-menu-height: 2.5em;
     user-select: none;
     cursor: pointer;
-    & .node {
+    position: relative;
+    & [node] {
       display: flex;
-      line-height: 2.5em;
+      line-height: var(--ea-menu-height);
       align-items: center;
       position: relative;
+
+      & span[icon] {
+        height: 0.7em;
+        width: 0.7em;
+      }
 
       &[hidden] {
         display: none;
@@ -26,111 +33,120 @@
 
       &:hover {
         background: var(
-          --ea-menu-background-hover,
-          var(--ea-background-color-hover)
+          --ea-background,
+          var(--ea-menu-background-hover, var(--ea-background-color-hover))
         );
-        color: var(--ea-menu-color-hover, var(--ea-text-color-light));
-
-        & aside {
-          opacity: 1;
-        }
+        color: var(
+          --ea-color,
+          var(--ea-menu-color-hover, var(--ea-text-color-light))
+        );
       }
 
       &:active {
-        background: var(
+        background: var(--ea-background, var(
           --ea-menu-background-color-active,
           var(--ea-background-color-active)
-        );
+        ));
         box-shadow: var(
           --ea-menu-background-active-shadow,
           var(--ea-background-active-shadow)
         );
         color: var(--ea-menu-color-active, var(--ea-text-color-light));
       }
-    }
 
-    & .node-toggle {
-      padding: 0;
-      width: 1.2rem;
-      height: 1.1rem;
-      background: none;
-      border: none;
-      cursor: pointer;
-
-      & span {
-        margin: 0;
+      & [toggle-area] {
+        display: flex;
+        height: var(--ea-menu-height);
+        align-items: center;
+        justify-content: flex-end;
       }
 
-      &:hover {
-        border: none;
-      }
+      & [name-area] {
+        width: 100%;
+        color: var(--ea-color, var(--ea-menu-color, var(--ea-text-color)));
+        display: flex;
+        align-items: center;
 
-      &[disabled] {
-        border: none;
-        cursor: not-allowed;
-      }
-
-      &.close {
-        font-size: 10px;
-        margin-left: 10px;
-
-        & span {
-          transition: all ease 0.2s;
-        }
-
-        &:hover {
-          & span {
-            transform: scale(1.4);
-          }
-        }
-      }
-    }
-
-    & .name {
-      margin-left: 5.5px;
-      width: 100%;
-      color: var(--ea-color, var(--ea-menu-color, var(--ea-text-color)));
-      display: flex;
-      align-items: center;
-
-      &[toggle] {
-        flex-direction: row-reverse;
         & span[icon] {
-          margin-right: 0.5em;
-          margin-left: 0.5em;
+          margin-right: 0.3em;
         }
-      }
 
-      & aside {
-        font-size: 0.8em;
-        opacity: 0;
-        position: absolute;
-        top: 0;
-        right: 8px;
-        & .close {
-          font-size: 10px;
-          margin-right: 0.6rem;
-
-          & span {
-            transition: all ease 0.2s;
+        &[toggle] {
+          flex-direction: row-reverse;
+          & span[icon] {
+            margin-right: 0.5em;
+            margin-left: 0.5em;
           }
+        }
 
-          &:hover {
-            background: none;
+        & aside {
+          font-size: 0.8em;
+          opacity: 0;
+          position: absolute;
+          top: 0;
+          right: 8px;
+          & .close {
+            font-size: 10px;
+            margin-right: 0.6em;
 
             & span {
-              transform: scale(1.4);
+              transition: all ease 0.2s;
+            }
+
+            &:hover {
+              background: none;
+
+              & span {
+                transform: scale(1.4);
+              }
             }
           }
         }
       }
-
-      & .ea-tree-children {
-        &.horizontal {
-          display: flex;
-          flex-direction: row;
-          align-items: flex-start;
-          justify-content: flex-start;
+      &[dropdown] {
+        &:hover {
+          --ea-background: transparent;
+        }
+        &:active {
+          --ea-background: transparent;
+        }
+        & [toggle-area] {
+          min-width: 100%;
+          justify-content: center;
+          &:hover {
+            --ea-background: transparent;
+          }
+        }
+      }
+    }
+    & [ea-tree-children] {
+      &[horizontal] {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+      }
+      &[dropdown] {
+        --ea-color: var(--ea-color-2);
+        position: absolute;
+        z-index: 1;
+        background: var(
+          --ea-background,
+          var(--ea-menu-background-dropdown, white)
+        );
+        min-width: 8em;
+        box-shadow: var(--ea-box-shadow);
+        & [node] {
+          &:hover {
+            --ea-background: var(--ea-color-1-light);
+            --ea-color: var(--ea-color-3);
+          }
+          & [name-area] {
+            padding-left: 0 !important;
+            margin-left: 0;
+            display: flex;
+            justify-content: space-between;
+          }
         }
       }
     }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core'
+import { MenuTreeItem } from '@eamode/eang/public_api'
 
 @Component({
   selector: 'eangio-menu',
@@ -38,11 +39,59 @@ export class MenuComponent implements OnInit {
         },
         children: [
           {
-            name: 'Book',
+            name: 'Book-lvl-1',
             icon: 'ea-bookmark',
             data: {
               link: '/special'
-            }
+            },
+            children: [
+              {
+                name: 'Book-lvl-2',
+                icon: 'ea-bookmark',
+                data: {
+                  link: '/special'
+                }
+              },
+              {
+                name: 'Book-lvl-2-1',
+                icon: 'ea-bookmark',
+                data: {
+                  link: '/special2'
+                },
+                children: [
+                  {
+                    name: 'Book-lvl-3',
+                    icon: 'ea-bookmark',
+                    data: {
+                      link: '/special'
+                    }
+                  },
+                  {
+                    name: 'Book-lvl-3-1',
+                    icon: 'ea-bookmark',
+                    data: {
+                      link: '/special2'
+                    },
+                    children: [
+                      {
+                        name: 'Book-lvl-4',
+                        icon: 'ea-bookmark',
+                        data: {
+                          link: '/special'
+                        }
+                      },
+                      {
+                        name: 'Book-lvl-4-1',
+                        icon: 'ea-bookmark',
+                        data: {
+                          link: '/special2'
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
           },
           {
             name: 'Book2',
@@ -56,10 +105,38 @@ export class MenuComponent implements OnInit {
     ]
   }
 
+  modal = false
+  dropdown
   nodeHorizontal
   nodeHiddenFalse
   nodeWithTemplate
   nodeWithNameTemplate
+  nodeDropdown: MenuTreeItem = {
+    name: '',
+    dropdown: true,
+    children: [
+      {
+        name: 'Add object'
+      },
+      {
+        name: 'Add Model'
+      }
+    ]
+  }
+
+  nodeDropdownsolo: MenuTreeItem = {
+    name: '',
+    dropdown: true,
+    children: [
+      {
+        name: 'Add'
+      },
+      {
+        name: 'Delete'
+      }
+    ]
+  }
+
   nodeWithRightToggle = {
     name: 'Main menu',
     icon: 'ea-hamburger-menu',
@@ -125,6 +202,13 @@ export class MenuComponent implements OnInit {
       'The second content text'
   }
 
+  closeNode() {
+    this.nodeDropdown.isOpen = false
+    this.nodeDropdown.isActive = false
+    this.nodeDropdownsolo.isOpen = false
+    this.nodeDropdownsolo.isActive = false
+  }
+
   ea_menu = `
   *component.html*
   ~~~html
@@ -152,11 +236,26 @@ export class MenuComponent implements OnInit {
   *component.html*
   ~~~html
   <ea-menu
-    [node]="nodeWithTemplate"
-    [controlPanelTemplate]="templateMenu">
+    [node]="node"
+    [optionAreaTemplate]="optionArea"
+    [nameAreaTemplate]="nameArea"
+    [toggleAreaTemplate]="toggleArea"
+  >
   </ea-menu>
-  <ng-template #templateMenu let-data="node.data">
-    <div *ngIf="data">{{data.description}}</div>
+
+  <ng-template #optionArea let-node="node">
+    <button flat icon *ngIf="node.isActive">
+      <span icon vertical-menu negative></span>
+    </button>
+  </ng-template>
+  <ng-template #nameArea let-node="node">
+    <div>{{node.name}}</div>
+  </ng-template>
+  <ng-template #toggleArea let-node="node">
+    <span *ngIf="node.isOpen" icon chevron-down negative>
+    </span>
+    <span *ngIf="!node.isOpen" icon chevron-right negative>
+    </span>
   </ng-template>
   `
 

@@ -12,17 +12,17 @@
     width: 100%;
     -webkit-tap-highlight-color: transparent;
     & > ea-menu {
-      & .name {
+      & [name-area] {
         color: var(--ea-color, var(--ea-tab-color, var(--ea-text-color)));
       }
-      & .node {
+      & [node] {
         background: var(--ea-background, var(--ea-tab-background, transparent));
         border-top: 0.1em solid transparent;
         border-color: var(--ea-tab-border-color, transparent);
         border-width:var(--ea-tab-border-width, 0.1em);
         border-style: var(--ea-tab-border-style, solid none none none);
       }
-      & .node[active] {
+      & [node][active] {
         background: var(--ea-background, var(--ea-tab-background-active, transparent));
         border-color: var(--ea-tab-border-color-active, var(--ea-color-1));
         border-width:var(--ea-tab-border-width-active, 0.1em);
@@ -35,18 +35,18 @@
           border-width:var(--ea-tab-border-width-active-hover, 0.1em);
           border-style: var(--ea-tab-border-style-active-hover, none none solid none);
         }
-        & .name {
+        & [name-area] {
           font-weight: var(--ea-tab-font-weight-active, inherit);
         }
       }
-      & .node:hover {
+      & [node]:hover {
         background: var(--ea-background, var(--ea-tab-background-hover, transparent));
         border-color: var(--ea-tab-border-color-hover, var(--ea-background-color-hover));
         border-width:var(--ea-tab-border-width-hover, 0.1em);
         border-style: var(--ea-tab-border-style-hover, solid none none none);
         color: var(--ea-color, var(--ea-tab-color-hover, var(--ea-text-color)));
       }
-      & .node:active {
+      & [node]:active {
         background: var( --ea-background, var(--ea-tab-background-active, rgba(0, 0, 0, 0.15)));
         box-shadow: none;
         border-color: var(--ea-tab-border-color-active, var(--ea-color-1));
@@ -54,7 +54,7 @@
         border-style: var(--ea-tab-border-style-active, none none solid none);
         color: var(--ea-color, var(--ea-tab-color-active, var(--ea-text-color)));
       }
-      & .ea-tree-children.horizontal {
+      & [ea-tree-children][horizontal] {
         display:flex;
         border-bottom: var(--ea-tabs-border-bottom,  solid );
         border-color: var(--ea-tabs-border-color, var(--ea-color-3-dark));

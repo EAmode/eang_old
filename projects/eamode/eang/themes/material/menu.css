@@ -30,8 +30,8 @@
     }
 
     &.close {
-      font-size: 10px;
-      margin-left: 10px;
+      font-size: .6em;
+      margin-left: .6em;
 
       & span {
         transition: all ease .2s;

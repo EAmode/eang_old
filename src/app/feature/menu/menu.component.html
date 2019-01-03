@@ -55,6 +55,34 @@
           </div>
         </div>
 
+        <p>Default orientation is vertical.</p>
+        <div class="ea-card-content example" grid>
+          <ea-markdown [doc]="ea_menu_horizontal"></ea-markdown>
+          <div class="ea-card">
+            <div class="ea-card-header"><p>ea-menu</p>
+              <ea-menu [node]="nodeDropdownsolo"
+              [toggleAreaTemplate]="dropdownToggle"
+              [nameAreaTemplate]="dropdownToggleName"
+              > </ea-menu>
+              <ng-template #dropdownToggle let-node="node">
+                <button
+                icon
+                flat>
+                  <span icon vertical-menu>
+                  </span>
+                </button>
+            </ng-template>
+            <ng-template #dropdownToggleName let-node="node">
+               <div style="padding-left: 15px; width: 100%;" (click)="closeNode()">{{node.name}}</div>
+            </ng-template>
+            </div>
+            <div class="ea-card-content header menu-example" style=" padding: 0;">
+              testing
+            </div>
+          </div>
+        </div>
+
+
         <p>
           Below two menus are displayed. The first menu with attribute
           <em>isHidden: true</em> in the parent node and the second -
@@ -89,14 +117,42 @@
             </div>
             <div class="ea-card-content menu-example">
               <ea-menu
-                [node]="nodeWithTemplate"
-                [controlPanelTemplate]="templateMenu"
+                [node]="node"
+                [optionAreaTemplate]="optionArea"
+                [nameAreaTemplate]="nameArea"
+                [toggleAreaTemplate]="toggleArea"
               >
               </ea-menu>
+              <ng-template #optionArea let-node="node">
+                <div>
+                  <ea-menu *ngIf="node.isActive"
+                  [node]="nodeDropdown"
+                  [toggleAreaTemplate]="dropdownToggle"
+                  [nameAreaTemplate]="dropdownToggleName"
+                  > </ea-menu>
+                  <ng-template #dropdownToggle>
+                    <button
+                    icon
+                    flat
+                    >
+                      <span  icon vertical-menu negative>
+                      </span>
+                    </button>
+                  </ng-template>
+                </div>
+              </ng-template>
+
+              <ng-template #nameArea let-node="node">
+                <div style="width: 100%;"(click)="closeNode()">{{node.name}}</div>
+              </ng-template>
+              <ng-template #toggleArea let-node="node">
+                  <span *ngIf="node.isOpen" icon chevron-down negative>
+                  </span>
+                  <span *ngIf="!node.isOpen" icon chevron-right negative>
+                  </span>
+              </ng-template>
+
             </div>
-            <ng-template #templateMenu let-data="node.data">
-              <div *ngIf="data">{{ data.description }}</div>
-            </ng-template>
           </div>
         </div>
       </ea-tab>
