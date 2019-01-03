@@ -39,7 +39,7 @@ export interface MenuTreeItem {
     toggle-area
     (click)="onToggle()"
     [attr.dropdownToggle]="node.dropdown"
-    [style.min-width]="node.dropdown ? null : depth * 15 + 'px'"
+    [style.min-width]="node.dropdown ? null : depth * 0.95 + 'em'"
     >
       <ng-container *ngIf="toggleAreaTemplate; else defaultToggleArea"
         [ngTemplateOutlet]="toggleAreaTemplate"
@@ -59,7 +59,7 @@ export interface MenuTreeItem {
     (click)="onActivate()"
     name-area
     [attr.toggle]="node.toggleRight ? '' : null"
-    [style.padding-left]="node.hasChildren ? '5.5px' :  depth * 15 + 'px'"
+    [style.padding-left]="node.hasChildren ? '0.34375em' :  depth * 0.95 + 'em'"
     >
       <ng-container *ngIf="nameAreaTemplate; else defaultNameArea"
         [ngTemplateOutlet]="nameAreaTemplate"

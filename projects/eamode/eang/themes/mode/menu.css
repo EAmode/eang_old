@@ -56,7 +56,7 @@
 
       & [toggle-area] {
         display: flex;
-        height: 2.5em;
+        height: var(--ea-menu-height);
         align-items: center;
         justify-content: flex-end;
       }
