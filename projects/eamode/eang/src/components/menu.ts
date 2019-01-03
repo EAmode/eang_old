@@ -18,6 +18,7 @@ export interface MenuTreeItem {
   isActive?: boolean
   isOpen?: boolean
   toggleRight?: boolean
+  hasChildren?: boolean
   parent?: MenuTreeItem
   dropdown?: boolean
   children?: MenuTreeItem[]
@@ -26,24 +27,25 @@ export interface MenuTreeItem {
 @Component({
   selector: 'ea-menu',
   template: `
-  <div class="node"
-    [class.has-children]="node.children?.length > 0"
+  <div node
+    [attr.has-children]="node.hasChildren"
     [attr.hidden]="node.isHidden ? '' : null"
     [attr.active]="node.isActive ? '' : null"
     [attr.toggle]="node.toggleRight ? '' : null"
-    [class.dropdownNode]="node.dropdown">
+    [attr.dropdown]="node.dropdown">
 
     <div
-    *ngIf="node.children?.length > 0" (click)="onToggle()"
-    [style.min-width]="!node.dropdown ? depth * 15 + 'px': null"
-    class="toggleArea"
-    [class.dropdownToggle]="node.dropdown"
+    *ngIf="node.hasChildren"
+    toggle-area
+    (click)="onToggle()"
+    [attr.dropdownToggle]="node.dropdown"
+    [style.min-width]="node.dropdown ? null : depth * 15 + 'px'"
     >
-      <ng-container *ngIf="toggleAreaTemplate; else defaultTemplate"
+      <ng-container *ngIf="toggleAreaTemplate; else defaultToggleArea"
         [ngTemplateOutlet]="toggleAreaTemplate"
         [ngTemplateOutletContext]="{node: node}">
       </ng-container>
-      <ng-template #defaultTemplate>
+      <ng-template #defaultToggleArea>
             <span icon chevron-down negative *ngIf="node.isOpen">
             </span>
             <span icon chevron-left negative *ngIf="!node.isOpen && node.toggleRight">
@@ -55,16 +57,16 @@ export interface MenuTreeItem {
 
     <div
     (click)="onActivate()"
-    class="name"
+    name-area
     [attr.toggle]="node.toggleRight ? '' : null"
-    [style.padding-left]="!node.children ? depth * 15 + 'px' : 0"
+    [style.padding-left]="node.hasChildren ? '5.5px' :  depth * 15 + 'px'"
     >
-      <ng-container *ngIf="nameAreaTemplate; else defTemplate"
+      <ng-container *ngIf="nameAreaTemplate; else defaultNameArea"
         [ngTemplateOutlet]="nameAreaTemplate"
         [ngTemplateOutletContext]="{node: node}">
       </ng-container>
 
-      <ng-template #defTemplate>
+      <ng-template #defaultNameArea>
         <ng-container *ngIf="node.icon">
             <span icon class="{{node.icon}} {{node.iconStyle}}"></span>
         </ng-container>
@@ -84,10 +86,10 @@ export interface MenuTreeItem {
     </aside>
 
 </div>
-<div *ngIf="node.children?.length > 0 && (node.isOpen || node.isHidden)"
-class="ea-tree-children"
-[class.horizontal]="node.horizontal"
-[class.dropdown]="node.dropdown">
+<div *ngIf="node.hasChildren && (node.isOpen || node.isHidden)"
+ea-tree-children
+[attr.horizontal]="node.horizontal"
+[attr.dropdown]="node.dropdown">
   <ea-menu
     *ngFor="let child of node.children trackBy: track.bind(node)"
     [node]="child"
@@ -129,6 +131,11 @@ export class MenuComponent implements OnInit, AfterContentInit {
       this.node.children.forEach(everychild => {
         everychild.toggleRight = true
       })
+    }
+    if (this.node.children != null) {
+      this.node.hasChildren = true
+    } else {
+      this.node.hasChildren = false
     }
   }
 

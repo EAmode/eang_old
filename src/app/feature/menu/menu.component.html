@@ -73,7 +73,7 @@
                 </button>
             </ng-template>
             <ng-template #dropdownToggleName let-node="node">
-               <div style="padding-left: 15px;" (click)="closeNode()">{{node.name}}</div>
+               <div style="padding-left: 15px; width: 100%;" (click)="closeNode()">{{node.name}}</div>
             </ng-template>
             </div>
             <div class="ea-card-content header menu-example" style=" padding: 0;">
@@ -130,7 +130,7 @@
                   [toggleAreaTemplate]="dropdownToggle"
                   [nameAreaTemplate]="dropdownToggleName"
                   > </ea-menu>
-                  <ng-template #dropdownToggle let-node="node">
+                  <ng-template #dropdownToggle>
                     <button
                     icon
                     flat
@@ -139,15 +139,11 @@
                       </span>
                     </button>
                   </ng-template>
-
-                  <ng-template #dropdownToggleName let-node="node">
-                    <div (click)="closeNode()">{{node.name}}</div>
-                  </ng-template>
                 </div>
               </ng-template>
 
               <ng-template #nameArea let-node="node">
-                <div>{{node.name}}</div>
+                <div style="width: 100%;"(click)="closeNode()">{{node.name}}</div>
               </ng-template>
               <ng-template #toggleArea let-node="node">
                   <span *ngIf="node.isOpen" icon chevron-down negative>

@@ -56,7 +56,6 @@
       margin: var(--ea-main-margin);
       display: var(--ea-body-display);
       min-height: 100%;
-      overflow: hidden;
     }
 
     & ea-toolbar {

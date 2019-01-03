@@ -14,7 +14,8 @@ import { TabComponent } from './tab'
   selector: 'ea-tabs',
   template: `
   <ea-menu [node]="menu" [activateEvents]="activated" [closeEvents]="closed"
-  [nameAreaTemplate]="headerTemplate">
+  [nameAreaTemplate]="headerTemplate"
+  [optionAreaTemplate]="optionTemplate">
   </ea-menu>
   <ng-content select="ea-tab"></ng-content>
   `,
@@ -25,6 +26,8 @@ export class TabsComponent implements AfterContentInit {
   tabs: QueryList<TabComponent>
   @ContentChild('headerTemplate')
   headerTemplate: TemplateRef<{}>
+  @ContentChild('optionTemplate')
+  optionTemplate: TemplateRef<{}>
 
   menu: MenuTreeItem = {
     name: 'Main',

@@ -40,6 +40,7 @@
 }
 
 
+
 /* Landing Page */
 
 #getting-started {
@@ -395,6 +396,7 @@
       }
     }
     & ea-body {
+      overflow: hidden;
       --ea-body-display: flex;
       justify-content: center;
       margin: 0;
