@@ -1,6 +1,6 @@
 @define-mixin menu {
   & ea-menu {
-    --ea-menu-height: 2.5;
+    --ea-menu-height: 2.5em;
     user-select: none;
     cursor: pointer;
     position: relative;

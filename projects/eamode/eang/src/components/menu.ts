@@ -132,7 +132,8 @@ export class MenuComponent implements OnInit, AfterContentInit {
         everychild.toggleRight = true
       })
     }
-    if (this.node.children != null) {
+
+    if (this.node.children && this.node.children.length > 0) {
       this.node.hasChildren = true
     } else {
       this.node.hasChildren = false
