@@ -27,9 +27,11 @@
       display: flex;
       justify-content: center;
       align-items: center;
-    }
-    & .ea-themepicker-list-item:hover {
-      background-color: #f1f1f1;
+      &:hover,
+      &[selected]{
+      color: var(--ea-color-3);
+      background-color: var(--ea-color-1);
+      }
     }
   }
 }

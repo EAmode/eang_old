@@ -9,15 +9,17 @@ import {
 
 @Component({
   selector: 'ea-themepicker',
-  template: `<button icon flat (click)="toggleThemes()" (focus)="focus.emit($event)">
-  <span icon pallete style="height:1.5rem; width: 1.5rem;"></span>
+  // tslint:disable-next-line:max-line-length
+  template: `<button class="icon-button" style="--ea-button-padding: 0;" (click)="toggleThemes()" (focus)="focus.emit($event)" (keydown)="keyDown($event)">
   </button>
   <div *ngIf="showThemes" class="ea-themepicker-dropdown">
-    <ul class="ea-themepicker-dropdown-list">
-      <li *ngFor="let theme of themes" (click)="selectTheme(theme)" class="ea-themepicker-list-item">{{theme}}</li>
+    <ul  class="ea-themepicker-dropdown-list" >
+      <li *ngFor="let theme of themes; let i = index"
+      (click)="selectThemeClick(theme)"
+      class="ea-themepicker-list-item"
+      [attr.selected]="theme === selectedTheme ? '' : null">{{theme}}</li>
     </ul>
-  </div>
-  `
+  </div>`
 })
 export class ThemePickerComponent implements OnInit {
   @Input()
@@ -26,17 +28,26 @@ export class ThemePickerComponent implements OnInit {
   select
 
   @Output()
-  readonly focus = new EventEmitter<FocusEvent>()
+  selectedTheme
   @Output()
-  readonly blur = new EventEmitter<FocusEvent>()
+  readonly click = new EventEmitter<MouseEvent>()
 
   themeMatch = []
   showThemes = false
+  listIndex = 0
 
   ngOnInit() {
     this.themes.forEach(element => {
       this.themeMatch.push(element)
     })
+    this.selectedTheme = this.themes[this.listIndex]
+  }
+
+  selectThemeClick(theme) {
+    this.selectTheme(theme)
+    this.selectedTheme = theme
+    this.listIndex = this.themes.indexOf(theme)
+    this.toggleThemes()
   }
 
   selectTheme(theme) {
@@ -49,10 +60,27 @@ export class ThemePickerComponent implements OnInit {
       })
       element.classList.add(theme)
     })
-    this.showThemes = false
   }
 
   toggleThemes() {
     this.showThemes = !this.showThemes
+  }
+
+  keyDown(event: KeyboardEvent) {
+    if (
+      event.key === 'ArrowDown' &&
+      this.listIndex < this.themes.length - 1 &&
+      this.showThemes
+    ) {
+      this.listIndex++
+    } else if (
+      event.key === 'ArrowUp' &&
+      this.listIndex > 0 &&
+      this.showThemes
+    ) {
+      this.listIndex--
+    }
+    this.selectedTheme = this.themes[this.listIndex]
+    this.selectTheme(this.themes[this.listIndex])
   }
 }

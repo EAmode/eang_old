@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core'
-import { MenuTreeItem } from '@eamode/eang/public_api'
+// import { MenuTreeItem } from '@eamode/eang/public_api'
 
 @Component({
   selector: 'eangio-menu',
@@ -111,7 +111,7 @@ export class MenuComponent implements OnInit {
   nodeHiddenFalse
   nodeWithTemplate
   nodeWithNameTemplate
-  nodeDropdown: MenuTreeItem = {
+  nodeDropdown: any = {
     name: '',
     dropdown: true,
     children: [
@@ -124,7 +124,7 @@ export class MenuComponent implements OnInit {
     ]
   }
 
-  nodeDropdownsolo: MenuTreeItem = {
+  nodeDropdownsolo: any = {
     name: '',
     dropdown: true,
     children: [
