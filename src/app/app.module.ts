@@ -36,7 +36,6 @@ import { TabsComponent } from './feature/tabs/tabs.component'
 import { UtilitiesComponent } from './utilities/utilities.component'
 
 const routes: Routes = [
-  
   { path: '', component: LandingComponent },
   { path: 'reactive', component: ReactiveComponent },
   { path: 'theming', component: ThemingComponent },

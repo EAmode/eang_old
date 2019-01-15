@@ -27,100 +27,118 @@ export interface MenuTreeItem {
 @Component({
   selector: 'ea-menu',
   template: `
-  <div node
-    [attr.has-children]="node.hasChildren"
-    [attr.hidden]="node.isHidden ? '' : null"
-    [attr.active]="node.isActive ? '' : null"
-    [attr.toggle]="node.toggleRight ? '' : null"
-    [attr.dropdown]="node.dropdown">
-
     <div
-    *ngIf="node.hasChildren"
-    toggle-area
-    (click)="onToggle()"
-    [attr.dropdownToggle]="node.dropdown"
-    [style.min-width]="node.dropdown ? null : depth * 0.95 + 'em'"
+      node
+      [attr.has-children]="node.hasChildren"
+      [attr.hidden]="node.isHidden ? '' : null"
+      [attr.active]="node.isActive ? '' : null"
+      [attr.toggle]="node.toggleRight ? '' : null"
+      [attr.dropdown]="node.dropdown"
     >
-      <ng-container *ngIf="toggleAreaTemplate; else defaultToggleArea"
-        [ngTemplateOutlet]="toggleAreaTemplate"
-        [ngTemplateOutletContext]="{node: node}">
-      </ng-container>
-      <ng-template #defaultToggleArea>
-            <span icon chevron-down negative *ngIf="node.isOpen">
-            </span>
-            <span icon chevron-left negative *ngIf="!node.isOpen && node.toggleRight">
-            </span>
-            <span icon chevron-right negative *ngIf="!node.isOpen && !node.toggleRight">
-            </span>
-      </ng-template>
-    </div>
-
-    <div
-    (click)="onActivate()"
-    name-area
-    [attr.toggle]="node.toggleRight ? '' : null"
-    [style.padding-left]="node.hasChildren ? '0.34375em' :  depth * 0.95 + 'em'"
-    >
-      <ng-container *ngIf="nameAreaTemplate; else defaultNameArea"
-        [ngTemplateOutlet]="nameAreaTemplate"
-        [ngTemplateOutletContext]="{node: node}">
-      </ng-container>
-
-      <ng-template #defaultNameArea>
-        <ng-container *ngIf="node.icon">
-            <span icon class="{{node.icon}} {{node.iconStyle}}"></span>
+      <div
+        *ngIf="node.hasChildren"
+        toggle-area
+        (click)="onToggle()"
+        [attr.dropdownToggle]="node.dropdown"
+        [style.min-width]="node.dropdown ? null : depth * 0.95 + 'em'"
+      >
+        <ng-container
+          *ngIf="toggleAreaTemplate; else defaultToggleArea"
+          [ngTemplateOutlet]="toggleAreaTemplate"
+          [ngTemplateOutletContext]="{ node: node }"
+        >
         </ng-container>
-        {{node.name}}
-      </ng-template>
+        <ng-template #defaultToggleArea>
+          <span icon chevron-down negative *ngIf="node.isOpen"> </span>
+          <span
+            icon
+            chevron-left
+            negative
+            *ngIf="!node.isOpen && node.toggleRight"
+          >
+          </span>
+          <span
+            icon
+            chevron-right
+            negative
+            *ngIf="!node.isOpen && !node.toggleRight"
+          >
+          </span>
+        </ng-template>
+      </div>
+
+      <div
+        (click)="onActivate()"
+        name-area
+        [attr.toggle]="node.toggleRight ? '' : null"
+        [style.padding-left]="
+          node.hasChildren ? '0.34375em' : depth * 0.95 + 'em'
+        "
+      >
+        <ng-container
+          *ngIf="nameAreaTemplate; else defaultNameArea"
+          [ngTemplateOutlet]="nameAreaTemplate"
+          [ngTemplateOutletContext]="{ node: node }"
+        >
+        </ng-container>
+
+        <ng-template #defaultNameArea>
+          <ng-container *ngIf="node.icon">
+            <span icon class="{{ node.icon }} {{ node.iconStyle }}"></span>
+          </ng-container>
+          {{ node.name }}
+        </ng-template>
+      </div>
+
+      <aside>
+        <ng-container
+          *ngIf="optionAreaTemplate"
+          [ngTemplateOutlet]="optionAreaTemplate"
+          [ngTemplateOutletContext]="{ node: node }"
+        >
+        </ng-container>
+
+        <button
+          *ngIf="node.closeable"
+          icon
+          flat
+          class="close"
+          (click)="onClose()"
+        >
+          <span icon x negative></span>
+        </button>
+      </aside>
     </div>
-
-    <aside>
-      <ng-container *ngIf="optionAreaTemplate"
-        [ngTemplateOutlet]="optionAreaTemplate"
-        [ngTemplateOutletContext]="{node: node}">
-      </ng-container>
-
-      <button *ngIf="node.closeable" icon flat class="close" (click)="onClose()">
-        <span icon x negative></span>
-      </button>
-    </aside>
-
-</div>
-<div *ngIf="node.hasChildren && (node.isOpen || node.isHidden)"
-ea-tree-children
-[attr.horizontal]="node.horizontal"
-[attr.dropdown]="node.dropdown">
-  <ea-menu
-    *ngFor="let child of node.children trackBy: track.bind(node)"
-    [node]="child"
-    [depth]="depth + 1"
-    [closeEvents]="closeEvents"
-    [toggleEvents]="toggleEvents"
-    [activateEvents]="activateEvents"
-    [nameAreaTemplate]="nameAreaTemplate"
-    [toggleAreaTemplate]="toggleAreaTemplate"
-    [optionAreaTemplate]="optionAreaTemplate"
-    ></ea-menu>
-</div>`,
+    <div
+      *ngIf="node.hasChildren && (node.isOpen || node.isHidden)"
+      ea-tree-children
+      [attr.horizontal]="node.horizontal"
+      [attr.dropdown]="node.dropdown"
+    >
+      <ea-menu
+        *ngFor="let child of node.children; trackBy: track.bind(node)"
+        [node]="child"
+        [depth]="depth + 1"
+        [closeEvents]="closeEvents"
+        [toggleEvents]="toggleEvents"
+        [activateEvents]="activateEvents"
+        [nameAreaTemplate]="nameAreaTemplate"
+        [toggleAreaTemplate]="toggleAreaTemplate"
+        [optionAreaTemplate]="optionAreaTemplate"
+      ></ea-menu>
+    </div>
+  `,
   encapsulation: ViewEncapsulation.None
 })
 export class MenuComponent implements OnInit, AfterContentInit {
-  @Input()
-  node
-  @Input()
-  depth = 0
-  @Input()
-  nameAreaTemplate
-  @Input()
-  toggleAreaTemplate
-  @Input()
-  optionAreaTemplate
-  @Input()
-  closeEvents: EventEmitter<MenuTreeItem>
-  @Input()
-  toggleEvents: EventEmitter<MenuTreeItem>
-  @Input()
-  activateEvents: EventEmitter<MenuTreeItem>
+  @Input() node
+  @Input() depth = 0
+  @Input() nameAreaTemplate
+  @Input() toggleAreaTemplate
+  @Input() optionAreaTemplate
+  @Input() closeEvents: EventEmitter<MenuTreeItem>
+  @Input() toggleEvents: EventEmitter<MenuTreeItem>
+  @Input() activateEvents: EventEmitter<MenuTreeItem>
 
   constructor() {}
 
