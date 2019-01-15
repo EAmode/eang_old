@@ -14,8 +14,11 @@
 @import 'mode/icons.css';
 @import 'mode/table.css';
 @import 'mode/utilities.css';
+@import 'mode/input.css';
+
 
 .mode {
+  @mixin input-base;
   @mixin autocomplete-mode;
   @mixin button-mode;
   @mixin card-mode;

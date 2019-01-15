@@ -4,10 +4,10 @@
 @import 'material/text-elements.css';
 @import 'material/layout.css';
 @import 'material/variables.css';
-@import 'material/menu.css';
 @import 'material/markdown.css';
 @import 'material/icons.css';
 
+@import 'mode/menu.css';
 @import 'mode/tabs.css';
 @import 'mode/fonts.css';
 @import 'mode/panel.css';
@@ -19,7 +19,7 @@
 .material {
   @mixin autocomplete-material;
   @mixin layout-material;
-  @mixin menu-material;
+  @mixin menu;
   @mixin markdown-material;
   @mixin button-mode;
   @mixin card-mode;
