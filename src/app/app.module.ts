@@ -34,6 +34,7 @@ import { LandingComponent } from './feature/landing/landing.component'
 import { ComponentsComponent } from './feature/components/components.component'
 import { TabsComponent } from './feature/tabs/tabs.component'
 import { UtilitiesComponent } from './utilities/utilities.component'
+import { MarkdownComponent } from './feature/markdown/markdown.component'
 
 const routes: Routes = [
   { path: '', component: LandingComponent },
@@ -50,7 +51,8 @@ const routes: Routes = [
   { path: 'menu', component: MenuComponent },
   { path: 'variables', component: VariablesComponent },
   { path: 'features', component: HomeComponent },
-  { path: 'utilities', component: UtilitiesComponent }
+  { path: 'utilities', component: UtilitiesComponent },
+  { path: 'markdown', component: MarkdownComponent }
 ]
 
 @NgModule({
@@ -69,7 +71,8 @@ const routes: Routes = [
     LandingComponent,
     ComponentsComponent,
     TabsComponent,
-    UtilitiesComponent
+    UtilitiesComponent,
+    MarkdownComponent
   ],
   imports: [
     BrowserModule,

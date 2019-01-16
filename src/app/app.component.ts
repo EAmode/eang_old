@@ -84,6 +84,13 @@ export const SIDE_MENU = {
           data: {
             link: '/tabs'
           }
+        },
+        {
+          name: 'Markdown',
+          icon: 'ea-tabs-icon',
+          data: {
+            link: '/markdown'
+          }
         }
       ]
     }

@@ -1,12 +1,4 @@
-import {
-  Component,
-  Input,
-  OnInit,
-  AfterContentInit,
-  ElementRef,
-  ViewChild
-} from '@angular/core'
-import { of, Observable, combineLatest } from 'rxjs'
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core'
 import * as MarkdownIt from 'markdown-it'
 import Prism from 'prismjs'
 // import 'prismjs/plugins/toolbar/prism-toolbar';
@@ -18,40 +10,14 @@ import 'prismjs/components/prism-markup'
 import 'prismjs/components/prism-typescript'
 import 'prismjs/components/prism-sass'
 import 'prismjs/components/prism-scss'
-import * as _ from 'lodash'
-import { map } from 'rxjs/operators'
-
-@Component({
-  selector: 'ea-md',
-  template: `
-    <ng-content></ng-content>
-  `
-})
-export class MdComponent implements OnInit, AfterContentInit {
-  constructor(public elementRef: ElementRef) {}
-
-  ngOnInit() {
-    console.log(this.elementRef.nativeElement)
-  }
-  ngAfterContentInit() {}
-}
 
 @Component({
   selector: 'ea-markdown',
   template: `
-    <span
-      class="ea-markdown-content"
-      [innerHTML]="compiledMarkdown | async"
-      #content
-    >
-      <ng-content></ng-content>
-    </span>
+    <span class="ea-markdown-content" [innerHTML]="compiledMarkdown"></span>
   `
 })
-export class MarkdownComponent implements OnInit, AfterContentInit {
-  @ViewChild('content')
-  content: ElementRef
-
+export class MarkdownComponent implements OnChanges {
   markdownIt = new MarkdownIt({
     html: true, // Enable HTML tags in source
     xhtmlOut: false, // Use '/' to close single tags (<br />).
@@ -87,31 +53,14 @@ export class MarkdownComponent implements OnInit, AfterContentInit {
     }
   })
 
-  @Input() doc: Observable<string>
-  @Input() ctx = of(null)
-  compiledMarkdown: Observable<string>
+  @Input() doc: string
+  compiledMarkdown = ''
 
-  hasInnermarkdown = false
+  constructor() {}
 
-  constructor(public elementRef: ElementRef) {}
-
-  ngOnInit(): void {
-    if (this.content && this.content.nativeElement.innerHTML) {
-      this.hasInnermarkdown = true
-      console.log('inner text', this.content.nativeElement.innerHTML)
-      this.doc = of(this.content.nativeElement.innerHTML)
-      this.content.nativeElement.innerText = null
-    } else if (typeof this.doc === 'string') {
-      this.doc = of(this.doc)
-    }
-
-    this.compiledMarkdown = combineLatest(this.doc, this.ctx).pipe(
-      map(([doc, ctx]) => {
-        const compiled = _.template(doc)
-        return this.markdownIt.render(compiled(ctx))
-      })
+  ngOnChanges(changes: SimpleChanges) {
+    this.compiledMarkdown = this.markdownIt.render(
+      String(changes.doc.currentValue)
     )
   }
-
-  ngAfterContentInit() {}
 }
