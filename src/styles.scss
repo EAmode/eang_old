@@ -50,8 +50,6 @@
   }
 }
 
-
-
 /* Landing Page */
 
 #getting-started {
@@ -195,7 +193,7 @@
         margin-left: 0;
         align-items: center;
         width: 100%;
-        & .ea-card-header{
+        & .ea-card-header {
           text-align: center;
         }
       }
@@ -356,8 +354,6 @@
 
 /* Material Design Specific Styles */
 
-
-
 .mode,
 .material {
   & #open-standards {
@@ -397,9 +393,9 @@
       padding: 1rem;
       @media only screen and (max-width: 600px) {
         grid-template-areas:
-        'icon'
-        'header'
-        'para';
+          'icon'
+          'header'
+          'para';
         max-width: 18rem;
         grid-gap: 1rem;
       }
@@ -516,7 +512,7 @@
             }
           }
         }
-        & .ea-card[unset]{
+        & .ea-card[unset] {
           margin: 0;
           & .ea-card-content {
             justify-content: center;
