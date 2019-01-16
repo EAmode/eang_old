@@ -1,37 +1,41 @@
 <div class="ea-card" unset>
-  <div class="ea-card-header">
+  <div
+    class="ea-card-header"
+    role="banner"
+    style="padding: 2em;border-bottom: 0;color:white; --ea-background: var(--ea-color-1);"
+  >
     <h1>Menu</h1>
-    <span icon hamburger-menu style="width: 2rem; height:2rem;"></span>
+    <span icon negative hamburger-menu style="width: 2rem; height:2rem;"></span>
   </div>
   <div class="ea-card-content">
     <ea-tabs>
       <ea-tab name="Overview">
         <div class="ea-card" unset>
-        <p>
-          If you are looking for the easier way of adding menu for your site - use
-          <em>ea-menu</em>.
-        </p>
-        <p>
-          To add menu use next piece of code. Where "node" is a structure describe
-          in "Menu Structure/Example Node" paragraph.
-        </p>
-        <div class="ea-card-content example" grid>
-          <ea-markdown [doc]="ea_menu"></ea-markdown>
-        </div>
-        <div class="ea-card">
-          <div class="ea-card-header">
-            <p>Result menu view. Try to click each sub-menu.</p>
+          <p>
+            If you are looking for the easier way of adding menu for your site -
+            use <em>ea-menu</em>.
+          </p>
+          <p>
+            To add menu use next piece of code. Where "node" is a structure
+            describe in "Menu Structure/Example Node" paragraph.
+          </p>
+          <div class="ea-card-content example" grid>
+            <ea-markdown [doc]="ea_menu"></ea-markdown>
           </div>
-          <div class="ea-card-content header menu-example" >
-            <ea-menu [node]="node"> </ea-menu>
+          <div class="ea-card">
+            <div class="ea-card-header">
+              <p>Result menu view. Try to click each sub-menu.</p>
+            </div>
+            <div class="ea-card-content header menu-example">
+              <ea-menu [node]="node"> </ea-menu>
+            </div>
           </div>
+          <h2>Menu Structure/Example Node</h2>
+          <p>
+            This is the example of menu structure. Paste it in your
+            <em>component.ts</em>
+          </p>
         </div>
-        <h2>Menu Structure/Example Node</h2>
-        <p>
-          This is the example of menu structure. Paste it in your
-          <em>component.ts</em>
-        </p>
-      </div>
         <div><ea-markdown [doc]="node_example"></ea-markdown></div>
         <p>Use these attributes in node.</p>
         <div style="overflow-x: auto;">
@@ -49,7 +53,10 @@
           <ea-markdown [doc]="ea_menu_horizontal"></ea-markdown>
           <div class="ea-card">
             <div class="ea-card-header"><p>ea-menu</p></div>
-            <div class="ea-card-content header menu-example" style=" padding: 0;">
+            <div
+              class="ea-card-content header menu-example"
+              style=" padding: 0;"
+            >
               <ea-menu [node]="nodeHorizontal"> </ea-menu>
             </div>
           </div>
@@ -59,29 +66,15 @@
         <div class="ea-card-content example" grid>
           <ea-markdown [doc]="ea_menu_horizontal"></ea-markdown>
           <div class="ea-card">
-            <div class="ea-card-header"><p>ea-menu</p>
-              <ea-menu [node]="nodeDropdownsolo"
-              [toggleAreaTemplate]="dropdownToggle"
-              [nameAreaTemplate]="dropdownToggleName"
-              > </ea-menu>
-              <ng-template #dropdownToggle let-node="node">
-                <button
-                icon
-                flat>
-                  <span icon vertical-menu>
-                  </span>
-                </button>
-            </ng-template>
-            <ng-template #dropdownToggleName let-node="node">
-               <div style="padding-left: 15px; width: 100%;" (click)="closeNode()">{{node.name}}</div>
-            </ng-template>
-            </div>
-            <div class="ea-card-content header menu-example" style=" padding: 0;">
+            <div class="ea-card-header"><p>ea-menu</p></div>
+            <div
+              class="ea-card-content header menu-example"
+              style=" padding: 0;"
+            >
               testing
             </div>
           </div>
         </div>
-
 
         <p>
           Below two menus are displayed. The first menu with attribute
@@ -97,7 +90,7 @@
           </div>
           <div class="ea-card">
             <div class="ea-card-header"><p>IsHidden: false</p></div>
-            <div class="ea-card-content menu-example" >
+            <div class="ea-card-content menu-example">
               <ea-menu [node]="nodeHiddenFalse"> </ea-menu>
             </div>
           </div>
@@ -119,39 +112,19 @@
               <ea-menu
                 [node]="node"
                 [optionAreaTemplate]="optionArea"
-                [nameAreaTemplate]="nameArea"
                 [toggleAreaTemplate]="toggleArea"
               >
               </ea-menu>
               <ng-template #optionArea let-node="node">
                 <div>
-                  <ea-menu *ngIf="node.isActive"
-                  [node]="nodeDropdown"
-                  [toggleAreaTemplate]="dropdownToggle"
-                  [nameAreaTemplate]="dropdownToggleName"
-                  > </ea-menu>
-                  <ng-template #dropdownToggle>
-                    <button
-                    icon
-                    flat
-                    >
-                      <span  icon vertical-menu negative>
-                      </span>
-                    </button>
-                  </ng-template>
                 </div>
               </ng-template>
 
-              <ng-template #nameArea let-node="node">
-                <div style="width: 100%;"(click)="closeNode()">{{node.name}}</div>
-              </ng-template>
-              <ng-template #toggleArea let-node="node">
-                  <span *ngIf="node.isOpen" icon chevron-down negative>
-                  </span>
-                  <span *ngIf="!node.isOpen" icon chevron-right negative>
-                  </span>
-              </ng-template>
 
+              <ng-template #toggleArea let-node="node">
+                <span *ngIf="node.isOpen" icon chevron-down negative> </span>
+                <span *ngIf="!node.isOpen" icon chevron-right negative> </span>
+              </ng-template>
             </div>
           </div>
         </div>

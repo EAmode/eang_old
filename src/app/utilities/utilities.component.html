@@ -1,16 +1,116 @@
 <div class="ea-card" unset>
-  <div class="ea-card-header"><h1>Utilities</h1></div>
+  <div
+    class="ea-card-header"
+    role="banner"
+    style="padding: 2em;border-bottom: 0;color:white; --ea-background: var(--ea-color-1);"
+  >
+    <h1>Utilities</h1>
+  </div>
   <div class="ea-card-content">
     <ea-tabs>
       <ea-tab name="Overview">
-        <h2>Sizing</h2>
-        <div class="ea-card-content example" grid>
-          <!-- <ea-markdown [doc]="variables_1"></ea-markdown> -->
+        <p><b>ARIA Roles</b> role allows you to make links look like buttons</p>
+        <div class="ea-card" unset>
+          <h3><code> role="listitem" </code></h3>
+          <p>Button role allows you to make links look like buttons</p>
+          <div class="ea-card-content example" grid>
+            <div>
+              <ea-tabs>
+                <ea-tab name="HTML">
+                  <ea-markdown [doc]="variables_1"></ea-markdown>
+                </ea-tab>
+                <ea-tab name="CSS">
+                  <ea-markdown [doc]="variables_2"></ea-markdown>
+                </ea-tab>
+              </ea-tabs>
+            </div>
+            <div>
+              <label for="secondlist"> Longer List</label>
+              <div role="list" id="secondlist">
+                <div role="listitem">testing</div>
+                <div role="listitem">testing</div>
+                <div role="listitem">Testing</div>
+                <div role="listitem">testing</div>
+                <div role="listitem">testing</div>
+                <div role="listitem">Testing</div>
+                <div role="listitem">testing</div>
+                <div role="listitem">testing</div>
+                <div role="listitem">Testing</div>
+              </div>
+            </div>
+          </div>
         </div>
-        <h2>Shadows</h2>
+        <h3><code> role="button" </code></h3>
+        <p>Button role allows you to make links look like buttons</p>
+        <div class="ea-card-content example" grid>
+          <span style="display: flex; justify-content: space-between;">
+            <a href="" role="button">testing</a>
+            <a href="" role="button" outline>testing</a>
+            <a href="" role="button" flat>Testing</a>
+          </span>
+          <ea-markdown [doc]="variables_1"></ea-markdown>
+        </div>
 
-        <h2>Functional Layouts</h2>
+        <h3><code> role="banner" </code></h3>
+        <p>Button role allows you to make links look like buttons</p>
+        <div role="banner"><h1>Testing</h1></div>
+      </ea-tab>
+      <ea-tab name="Examples">
+        <div class="ea-card" unset>
+          <h3><code> role="listitem" </code></h3>
+          <p>A Styled List</p>
+          <div class="ea-card-content example" grid>
+            <div>
+              <ea-tabs>
+                <ea-tab name="HTML">
+                  <ea-markdown [doc]="variables_1"></ea-markdown>
+                </ea-tab>
+                <ea-tab name="CSS">
+                  <ea-markdown [doc]="variables_2"></ea-markdown>
+                </ea-tab>
+              </ea-tabs>
+            </div>
+            <div>
+              <label for="secondlist"> Longer List</label>
+              <div
+                role="list"
+                id="secondlist"
+                style="
+                  --ea-list-max-height: 15em;
+                  --ea-listitem-background-hover: var(--ea-color-1);
+                  --ea-listitem-background-active: var(--ea-color-1-light);
+                  --ea-listitem-color-hover: var(--ea-color-3);
+                  --ea-listitem-color-active: var(--ea-color-3);
+                  --ea-listitem-height: 2.5em;
+                "
+              >
+                <div role="listitem">testing</div>
+                <div role="listitem">testing</div>
+                <div role="listitem">Testing</div>
+                <div role="listitem">testing</div>
+                <div role="listitem">testing</div>
+                <div role="listitem">Testing</div>
+                <div role="listitem">testing</div>
+                <div role="listitem">testing</div>
+                <div role="listitem">Testing</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h3><code> role="button" </code></h3>
+        <p>A Styled List</p>
+        <div class="ea-card-content example" grid>
+          <span style="display: flex; justify-content: space-between;">
+            <a href="" role="button">testing</a>
+            <a href="" role="button" outline>testing</a>
+            <a href="" role="button" flat>Testing</a>
+          </span>
+          <ea-markdown [doc]="variables_1"></ea-markdown>
+        </div>
 
+        <h3><code> role="banner" </code></h3>
+        <p>A Styled List</p>
+        <div role="banner"><h1>Testing</h1></div>
       </ea-tab>
     </ea-tabs>
   </div>

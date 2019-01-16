@@ -507,7 +507,7 @@
       eangio-tabs,
       eangio-components,
       eangio-utilities {
-        width: 90%;
+        width: 100%;
         @media only screen and (max-width: 500px) {
           width: 95%;
           & .ea-card[unset] {
@@ -516,6 +516,15 @@
             }
           }
         }
+        & .ea-card[unset]{
+          margin: 0;
+          & .ea-card-content {
+            justify-content: center;
+          }
+        }
+      }
+      & ea-tabs {
+        width: 90%;
       }
       & eangio-landing {
         width: 100%;
@@ -536,7 +545,7 @@
 
       eangio-feature-reactive,
       eangio-feature-theming {
-        width: 100%;
+        width: 90%;
       }
       & eangio-feature-reactive {
         & .screen {
@@ -598,6 +607,12 @@
       & ea-markdown {
         @media only screen and (max-width: 500px) {
           overflow-x: overlay;
+        }
+      }
+      & eangio-utilities {
+        & .example {
+          margin-top: 3em;
+          margin-bottom: 3em;
         }
       }
     }

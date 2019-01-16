@@ -176,13 +176,6 @@ export class MenuComponent implements OnInit {
       'The second content text'
   }
 
-  closeNode() {
-    this.nodeDropdown.isOpen = false
-    this.nodeDropdown.isActive = false
-    this.nodeDropdownsolo.isOpen = false
-    this.nodeDropdownsolo.isActive = false
-  }
-
   ea_menu = `
   *component.html*
   ~~~html

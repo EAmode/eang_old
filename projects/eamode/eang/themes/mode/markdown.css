@@ -1,7 +1,9 @@
 @define-mixin markdown-mode {
   & ea-markdown {
     width: auto;
-
+    & p {
+      font-size: 1.2em;
+    }
     & code[class*='language-'],
     & pre[class*='language-'] {
       color: #ccc;
@@ -25,13 +27,19 @@
       padding: 1em;
       margin: 0.5em 0;
       overflow: auto;
-      background: var(--ea-background, var(--ea-markdown-background, var(--ea-color-2)));
+      background: var(
+        --ea-background,
+        var(--ea-markdown-background, var(--ea-color-2))
+      );
     }
     & pre {
       padding: 1em;
       margin: 0.5em 0;
       overflow: auto;
-      background: var(--ea-background, var(--ea-markdown-background, var(--ea-color-2)));
+      background: var(
+        --ea-background,
+        var(--ea-markdown-background, var(--ea-color-2))
+      );
       border-radius: 0.15em;
     }
     /* Inline code */

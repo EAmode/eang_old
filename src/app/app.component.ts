@@ -36,6 +36,14 @@ export class AppComponent implements OnInit {
             data: {
               link: '/variables'
             }
+          },
+          {
+            name: 'Utilities',
+            icon: 'ea-refresh-cw',
+            iconStyle: 'ea-negative',
+            data: {
+              link: '/utilities'
+            }
           }
         ]
       },

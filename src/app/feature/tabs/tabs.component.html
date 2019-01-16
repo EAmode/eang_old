@@ -1,7 +1,11 @@
 <div class="ea-card" unset>
-  <div class="ea-card-header">
+  <div
+    class="ea-card-header"
+    role="banner"
+    style="padding: 2em;border-bottom: 0;color:white; --ea-background: var(--ea-color-1);"
+  >
     <h1>Tabs</h1>
-    <span icon tab style="width: 2rem; height:2rem;"></span>
+    <span icon negative tab style="width: 2rem; height:2rem;"></span>
   </div>
   <div class="ea-card-content">
     <ea-tabs>
@@ -46,8 +50,8 @@
                       style="width: 160px; height: 160px;"
                     />
                     Angular is a TypeScript-based open-source front-end web
-                    application platform led by the Angular Team at Google and by
-                    a community of individuals and corporations.
+                    application platform led by the Angular Team at Google and
+                    by a community of individuals and corporations.
                   </p>
                 </ea-tab>
               </ea-tabs>
@@ -55,8 +59,8 @@
           </div>
           <ea-markdown [doc]="tabs_example"></ea-markdown>
           <p>
-            You should remember to add attribute 'name' which required. Name will
-            be shown in tab title.
+            You should remember to add attribute 'name' which required. Name
+            will be shown in tab title.
           </p>
         </div>
       </ea-tab>
