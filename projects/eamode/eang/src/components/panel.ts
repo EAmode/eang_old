@@ -11,7 +11,9 @@ import { of, combineLatest, Subscription, Observable } from 'rxjs'
 
 @Component({
   selector: 'ea-panel',
-  template: `<ng-content></ng-content>`
+  template: `
+    <ng-content></ng-content>
+  `
 })
 export class PanelComponent implements OnInit, OnDestroy {
   @HostBinding('attr.state')

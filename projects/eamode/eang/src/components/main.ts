@@ -14,8 +14,8 @@ import { Observable } from 'rxjs'
   selector: 'ea-main',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-  <ng-content select="ea-body"></ng-content>
-  <ng-content select="ea-footer"></ng-content>
+    <ng-content select="ea-body"></ng-content>
+    <ng-content select="ea-footer"></ng-content>
   `,
   styles: []
 })

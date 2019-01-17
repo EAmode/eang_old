@@ -26,30 +26,40 @@ import { debounceTime, distinctUntilChanged, map, delay } from 'rxjs/operators'
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-  <input #inputField type="text"
-    (input)="input.emit($event)"
-    (keyup)="keyup.emit($event)"
-    (keydown)="keydown.emit($event)"
-    (focus)="focus.emit($event)"
-    (blur)="blur.emit($event)"
-    (click)="click.emit($event)"
-    [placeholder]="placeholder"
-    autocomplete="off"
-    autocorrect="off"
-    autocapitalize="off"
-    aria-autocomplete="list">
-  <ng-template #defaultTemplate let-item>{{item}}</ng-template>
-  <ng-container *ngIf="suggestionOptions | async as currentSuggestions">
-    <ul *ngIf="showPanel && currentSuggestions.length > 0">
-      <li *ngFor="let item of currentSuggestions; index as i"
-        (click)="select(item,i)"
-        [attr.data-index]="i"
-        [attr.selected]="item === selectedItem ? '' : null"
-        [attr.selection-focus]="i === selectionFocusIndex ? '' : null">
-        <ng-container *ngTemplateOutlet="resultsTemplate || defaultTemplate; context: { $implicit: item }"></ng-container>
-      </li>
-    </ul>
-  </ng-container>
+    <input
+      #inputField
+      type="text"
+      (input)="input.emit($event)"
+      (keyup)="keyup.emit($event)"
+      (keydown)="keydown.emit($event)"
+      (focus)="focus.emit($event)"
+      (blur)="blur.emit($event)"
+      (click)="click.emit($event)"
+      [placeholder]="placeholder"
+      autocomplete="off"
+      autocorrect="off"
+      autocapitalize="off"
+      aria-autocomplete="list"
+    />
+    <ng-template #defaultTemplate let-item>{{ item }}</ng-template>
+    <ng-container *ngIf="(suggestionOptions | async) as currentSuggestions">
+      <ul *ngIf="showPanel && currentSuggestions.length > 0">
+        <li
+          *ngFor="let item of currentSuggestions; index as i"
+          (click)="select(item, i)"
+          [attr.data-index]="i"
+          [attr.selected]="item === selectedItem ? '' : null"
+          [attr.selection-focus]="i === selectionFocusIndex ? '' : null"
+        >
+          <ng-container
+            *ngTemplateOutlet="
+              resultsTemplate || defaultTemplate;
+              context: { $implicit: item }
+            "
+          ></ng-container>
+        </li>
+      </ul>
+    </ng-container>
   `
 })
 export class AutocompleteComponent

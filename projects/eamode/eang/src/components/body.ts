@@ -14,7 +14,7 @@ import { Observable } from 'rxjs'
   selector: 'ea-body',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-  <ng-content></ng-content>
+    <ng-content></ng-content>
   `,
   styles: []
 })

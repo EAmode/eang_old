@@ -13,11 +13,15 @@ import { TabComponent } from './tab'
 @Component({
   selector: 'ea-tabs',
   template: `
-  <ea-menu [node]="menu" [activateEvents]="activated" [closeEvents]="closed"
-  [nameAreaTemplate]="headerTemplate"
-  [optionAreaTemplate]="optionTemplate">
-  </ea-menu>
-  <ng-content select="ea-tab"></ng-content>
+    <ea-menu
+      [node]="menu"
+      [activateEvents]="activated"
+      [closeEvents]="closed"
+      [nameAreaTemplate]="headerTemplate"
+      [optionAreaTemplate]="optionTemplate"
+    >
+    </ea-menu>
+    <ng-content select="ea-tab"></ng-content>
   `,
   styles: []
 })

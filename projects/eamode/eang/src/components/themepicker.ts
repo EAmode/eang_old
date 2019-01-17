@@ -9,14 +9,21 @@ import {
 
 @Component({
   selector: 'ea-themepicker',
-  template: `<button icon flat (click)="toggleThemes()" (focus)="focus.emit($event)">
-  <span icon pallete style="height:1.5rem; width: 1.5rem;"></span>
-  </button>
-  <div *ngIf="showThemes" class="ea-themepicker-dropdown">
-    <ul class="ea-themepicker-dropdown-list">
-      <li *ngFor="let theme of themes" (click)="selectTheme(theme)" class="ea-themepicker-list-item">{{theme}}</li>
-    </ul>
-  </div>
+  template: `
+    <button icon flat (click)="toggleThemes()" (focus)="focus.emit($event)">
+      <span icon pallete style="height:1.5rem; width: 1.5rem;"></span>
+    </button>
+    <div *ngIf="showThemes" class="ea-themepicker-dropdown">
+      <ul class="ea-themepicker-dropdown-list">
+        <li
+          *ngFor="let theme of themes"
+          (click)="selectTheme(theme)"
+          class="ea-themepicker-list-item"
+        >
+          {{ theme }}
+        </li>
+      </ul>
+    </div>
   `
 })
 export class ThemePickerComponent implements OnInit {

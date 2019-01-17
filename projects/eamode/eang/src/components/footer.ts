@@ -14,7 +14,7 @@ import { Observable } from 'rxjs'
   selector: 'ea-footer',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-  <ng-content></ng-content>
+    <ng-content></ng-content>
   `,
   styles: []
 })

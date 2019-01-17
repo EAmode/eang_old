@@ -3,7 +3,7 @@ import { Component, Input, HostBinding } from '@angular/core'
 @Component({
   selector: 'ea-tab',
   template: `
-  <ng-content></ng-content>
+    <ng-content></ng-content>
   `,
   styles: []
 })

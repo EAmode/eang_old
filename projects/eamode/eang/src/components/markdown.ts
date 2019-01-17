@@ -21,7 +21,12 @@ import 'prismjs/components/prism-scss'
 import * as _ from 'lodash'
 import { map } from 'rxjs/operators'
 
-@Component({ selector: 'ea-md', template: `<ng-content></ng-content>` })
+@Component({
+  selector: 'ea-md',
+  template: `
+    <ng-content></ng-content>
+  `
+})
 export class MdComponent implements OnInit, AfterContentInit {
   constructor(public elementRef: ElementRef) {}
 
@@ -34,7 +39,11 @@ export class MdComponent implements OnInit, AfterContentInit {
 @Component({
   selector: 'ea-markdown',
   template: `
-    <span class="ea-markdown-content" [innerHTML]="compiledMarkdown | async" #content>
+    <span
+      class="ea-markdown-content"
+      [innerHTML]="compiledMarkdown | async"
+      #content
+    >
       <ng-content></ng-content>
     </span>
   `
