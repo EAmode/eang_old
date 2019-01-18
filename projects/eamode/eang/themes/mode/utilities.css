@@ -116,21 +116,22 @@
     }
   }
   [role='banner'] {
-    height: var(--ea-height, var(--ea-banner-height, 10em));
-    background: var(--ea-color-1-light);
+    height: var(--ea-height, var(--ea-banner-height, 6em));
+    background: var(--ea-background, var(--ea-banner-background,var(--ea-color-1)));
+    box-shadow: var(--ea-box-shadow);
+    padding: 3em;
+    margin-bottom: 2em;
     display: flex;
     align-items: center;
-    padding-left: 3em;
-    box-shadow: var(--ea-box-shadow);
-    margin-bottom: 2em;
+    justify-content: space-between;
     & h1 {
-      font-weight: 800;
-      color: white;
+      font-weight: var(--ea-font-weight, var(--ea-banner-font-weight ,800));
+      color: var(--ea-color, var(--ea-banner-color,var(--ea-text-color-light)));
       display: flex;
       align-items: center;
     }
   }
-  
+
   label {
     font-weight: 700;
     text-transform: uppercase;

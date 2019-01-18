@@ -237,6 +237,7 @@
   }
   & .menu-example {
     --ea-card-content-background: var(--ea-color-2);
+    --ea-menu-color: var(--ea-color-3);
     flex-direction: column;
   }
 
@@ -477,9 +478,6 @@
 
       & eangio-menu {
         --ea-tab-color: var(--ea-text-color);
-        & ea-menu {
-          --ea-menu-color: white;
-        }
       }
 
       & .icon-tiles {

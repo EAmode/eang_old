@@ -1,26 +1,46 @@
 <div class="ea-card" unset>
-  <div
-    class="ea-card-header"
-    role="banner"
-    style="padding: 2em;border-bottom: 0;color:white; --ea-background: var(--ea-color-1);"
-  >
-    <h1>Utilities</h1>
-  </div>
+  <div role="banner"><h1>Utilities</h1></div>
   <div class="ea-card-content">
     <ea-tabs>
       <ea-tab name="Overview">
         <p><b>ARIA Roles</b> role allows you to make links look like buttons</p>
+        <h3><code> role="button" </code></h3>
+        <p>
+          The Button role allows you to achieve consistency with anchor tags by
+          making them look like buttons. This borrows from the
+          <a routerLink="/button">button component</a> and inherits all the
+          additional attributes and features.
+        </p>
+        <div class="ea-card-content example" grid>
+          <span style="display: flex; justify-content: space-between;">
+            <a href="" role="button">testing</a>
+            <a href="" role="button" outline>testing</a>
+            <a href="" role="button" flat>Testing</a>
+          </span>
+          <ea-tabs>
+            <ea-tab name="HTML">
+              <ea-markdown [doc]="role_button"></ea-markdown>
+            </ea-tab>
+            <ea-tab name="SCSS">
+              <ea-markdown [doc]="role_button_css"></ea-markdown>
+            </ea-tab>
+          </ea-tabs>
+        </div>
+
         <div class="ea-card" unset>
           <h3><code> role="listitem" </code></h3>
-          <p>Button role allows you to make links look like buttons</p>
+          <p>
+            The List and Listitem role allow you to make a set of two elements
+            into a scrollable list with mouse interactions accounted for.
+          </p>
           <div class="ea-card-content example" grid>
             <div>
               <ea-tabs>
                 <ea-tab name="HTML">
-                  <ea-markdown [doc]="variables_1"></ea-markdown>
+                  <ea-markdown [doc]="role_list"></ea-markdown>
                 </ea-tab>
-                <ea-tab name="CSS">
-                  <ea-markdown [doc]="variables_2"></ea-markdown>
+                <ea-tab name="SCSS">
+                  <ea-markdown [doc]="role_list_css"></ea-markdown>
                 </ea-tab>
               </ea-tabs>
             </div>
@@ -40,20 +60,22 @@
             </div>
           </div>
         </div>
-        <h3><code> role="button" </code></h3>
-        <p>Button role allows you to make links look like buttons</p>
-        <div class="ea-card-content example" grid>
-          <span style="display: flex; justify-content: space-between;">
-            <a href="" role="button">testing</a>
-            <a href="" role="button" outline>testing</a>
-            <a href="" role="button" flat>Testing</a>
-          </span>
-          <ea-markdown [doc]="variables_1"></ea-markdown>
-        </div>
+        <ea-markdown [doc]="role_banner_listitem"></ea-markdown>
 
         <h3><code> role="banner" </code></h3>
-        <p>Button role allows you to make links look like buttons</p>
-        <div role="banner"><h1>Testing</h1></div>
+        <p>
+          The Banner role allows you to quickly create a banner with center
+          aligned text.
+        </p>
+        <div role="banner"><h1>Banner</h1></div>
+        <ea-tabs>
+          <ea-tab name="HTML">
+            <ea-markdown [doc]="role_banner"></ea-markdown>
+          </ea-tab>
+          <ea-tab name="SCSS">
+            <ea-markdown [doc]="role_banner_css"></ea-markdown>
+          </ea-tab>
+        </ea-tabs>
       </ea-tab>
       <ea-tab name="Examples">
         <div class="ea-card" unset>
@@ -63,10 +85,10 @@
             <div>
               <ea-tabs>
                 <ea-tab name="HTML">
-                  <ea-markdown [doc]="variables_1"></ea-markdown>
+                  <ea-markdown [doc]="role_list"></ea-markdown>
                 </ea-tab>
                 <ea-tab name="CSS">
-                  <ea-markdown [doc]="variables_2"></ea-markdown>
+                  <ea-markdown [doc]="role_list_css"></ea-markdown>
                 </ea-tab>
               </ea-tabs>
             </div>
@@ -101,11 +123,20 @@
         <p>A Styled List</p>
         <div class="ea-card-content example" grid>
           <span style="display: flex; justify-content: space-between;">
-            <a href="" role="button" rounded icon><span icon negative edit></span></a>
+            <a href="" role="button" rounded icon
+              ><span icon negative edit></span
+            ></a>
             <a href="" role="button" outline>testing</a>
             <a href="" role="button" flat>Testing</a>
           </span>
-          <ea-markdown [doc]="variables_1"></ea-markdown>
+          <ea-tabs>
+            <ea-tab name="HTML">
+              <ea-markdown [doc]="role_button"></ea-markdown>
+            </ea-tab>
+            <ea-tab name="CSS">
+              <ea-markdown [doc]="role_button_css"></ea-markdown>
+            </ea-tab>
+          </ea-tabs>
         </div>
 
         <h3><code> role="banner" </code></h3>

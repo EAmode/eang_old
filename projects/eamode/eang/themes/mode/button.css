@@ -22,6 +22,14 @@
   & button,
   [role='button'] {
     @mixin button-base;
+    border-radius: 0.25em;
+    box-sizing: content-box;
+    transition: all 0.25s ease 0s;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
 
     /* this is to set the border-color when the button is :hover and not :active */
     &:hover:not(:active) {

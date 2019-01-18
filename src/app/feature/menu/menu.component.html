@@ -1,9 +1,5 @@
 <div class="ea-card" unset>
-  <div
-    class="ea-card-header"
-    role="banner"
-    style="padding: 2em;border-bottom: 0;color:white; --ea-background: var(--ea-color-1);"
-  >
+  <div role="banner">
     <h1>Menu</h1>
     <span icon negative hamburger-menu style="width: 2rem; height:2rem;"></span>
   </div>
@@ -116,10 +112,8 @@
               >
               </ea-menu>
               <ng-template #optionArea let-node="node">
-                <div>
-                </div>
+                <div></div>
               </ng-template>
-
 
               <ng-template #toggleArea let-node="node">
                 <span *ngIf="node.isOpen" icon chevron-down negative> </span>

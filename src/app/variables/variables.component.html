@@ -1,50 +1,79 @@
 <div class="ea-card" unset id="variables">
-  <div  class="ea-card-header"
-  role="banner"
-  style="padding: 2em;border-bottom: 0;color:white; --ea-background: var(--ea-color-1);"><h1>Variables</h1></div>
+  <div role="banner"><h1>Variables</h1></div>
   <div class="ea-card-content">
     <ea-tabs>
       <ea-tab name="Overview">
         <div class="ea-card" unset>
-        <p>Eang has a central file of variables that take care of a majority of themeing.</p>
-        <h2>Theme Colors</h2>
-        <div class="ea-card-content example">
-          <div class="example-color base-color">
-           <small>Base Color</small>
-          </div>
-          <div class="example-color base-color-high">
-            <small>Base Color <br> High</small>
-          </div>
-          <div class="example-color alt-base-color">
-            <small>Alt Base <br> Color</small>
-          </div>
-          <div class="example-color ea-hover">
-            <small style="text-align:center;">Background Color Hover</small>
-          </div>
-          <div (click)="this.isActive = !this.isActive;" [attr.active]="isActive === true" class="example-color ea-active">
-            <small style="text-align:center;">Background Color Active <br> (click)</small>
-          </div>
-        </div>
-        <ea-markdown [doc]="variables"></ea-markdown>
-
-        <h2 style="margin-top: 2rem;">Text Colors</h2>
-        <div class="ea-card-content example" id="text-colors">
-            <div class="example-color">
-                <small style="text-align:center; color: var(--ea-text-color-dark);">Text Color <br> Dark</small>
+          <p>
+            Eang has a central file of variables that take care of a majority of
+            themeing.
+          </p>
+          <h2>Theme Colors</h2>
+          <div class="ea-card-content example">
+            <div class="example-color base-color">
+              <small>Base Color</small>
             </div>
-           <div class="example-color base-color">
-              <small style="text-align:center;">Text Color <br> Light</small>
+            <div class="example-color base-color-high">
+              <small
+                >Base Color <br />
+                High</small
+              >
+            </div>
+            <div class="example-color alt-base-color">
+              <small
+                >Alt Base <br />
+                Color</small
+              >
+            </div>
+            <div class="example-color ea-hover">
+              <small style="text-align:center;">Background Color Hover</small>
+            </div>
+            <div
+              (click)="this.isActive = !this.isActive"
+              [attr.active]="isActive === true"
+              class="example-color ea-active"
+            >
+              <small style="text-align:center;"
+                >Background Color Active <br />
+                (click)</small
+              >
+            </div>
+          </div>
+          <ea-markdown [doc]="variables"></ea-markdown>
+
+          <h2 style="margin-top: 2rem;">Text Colors</h2>
+          <div class="ea-card-content example" id="text-colors">
+            <div class="example-color">
+              <small
+                style="text-align:center; color: var(--ea-text-color-dark);"
+                >Text Color <br />
+                Dark</small
+              >
+            </div>
+            <div class="example-color base-color">
+              <small style="text-align:center;"
+                >Text Color <br />
+                Light</small
+              >
             </div>
             <div class="example-color base-color">
               <small class="text-hover-color">Text Hover Color</small>
             </div>
-            <div (click)="this.textIsActive = !this.textIsActive;" class="example-color base-color-high">
-              <small [attr.textIsActive]="textIsActive === true" class="text-active-color">Text Active Color <br> (click)</small>
+            <div
+              (click)="this.textIsActive = !this.textIsActive"
+              class="example-color base-color-high"
+            >
+              <small
+                [attr.textIsActive]="textIsActive === true"
+                class="text-active-color"
+                >Text Active Color <br />
+                (click)</small
+              >
             </div>
           </div>
-        <!-- <ea-markdown [doc]="variables_code"></ea-markdown> -->
-        <ea-markdown [doc]="text_variables"></ea-markdown>
-      </div>
+          <!-- <ea-markdown [doc]="variables_code"></ea-markdown> -->
+          <ea-markdown [doc]="text_variables"></ea-markdown>
+        </div>
       </ea-tab>
     </ea-tabs>
   </div>
