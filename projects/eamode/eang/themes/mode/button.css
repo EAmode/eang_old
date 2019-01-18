@@ -34,29 +34,6 @@
     /* this is to set the border-color when the button is :hover and not :active */
     &:hover:not(:active) {
       border-color: var(
-        --ea-button-border-color-active,
-        var(--ea-button-border-color, var(--ea-color-1))
-      );
-      border-style: var(
-        --ea-button-border-style-active,
-        var(--ea-button-border-style, solid)
-      );
-      border-width: var(
-        --ea-button-border-width-active,
-        var(--ea-button-border-width, 0.1em)
-      );
-      background: var(
-        --ea-background,
-        var(--ea-button-background-active, var(--ea-background-color-active))
-      );
-      box-shadow: var(
-        --ea-button-background-active-shadow,
-        var(--ea-active-shadow)
-      );
-    }
-
-    &:active {
-      border-color: var(
         --ea-button-border-color-hover,
         var(--ea-button-border-color, var(--ea-color-1-light))
       );
@@ -71,6 +48,29 @@
       background: var(
         --ea-background,
         var(--ea-button-background-hover, var(--ea-background-color-hover))
+      );
+      box-shadow: var(
+        --ea-button-background-hover-shadow,
+        var(--ea-active-shadow)
+      );
+    }
+
+    &:active {
+      border-color: var(
+        --ea-button-border-color-active,
+        var(--ea-button-border-color, var(--ea-color-1))
+      );
+      border-style: var(
+        --ea-button-border-style-active,
+        var(--ea-button-border-style, solid)
+      );
+      border-width: var(
+        --ea-button-border-width-active,
+        var(--ea-button-border-width, 0.1em)
+      );
+      background: var(
+        --ea-background,
+        var(--ea-button-background-active, var(--ea-background-color-active))
       );
       box-shadow: var(--ea-button-box-shadow-hover, var(--ea-box-shadow));
     }
