@@ -75,24 +75,24 @@ export class UtilitiesComponent implements OnInit {
       `
 
   role_banner_listitem = `
-  |  Attributes   | Type  | Description |
+  |  CSS Variables   | Type  | Description |
   |---|---|----|
-  |  --ea-listitem-background-hover  |  Better to use string or number types  | Add identificator for your current node. |
-  |  --ea-listitem-background-active   |  string   | Node name will be displayed on the site view. |
-  | --ea-listitem-color-hover | boolean | Value used to change menu orientation. |
-  | --ea-listitem-color-active | boolean | Place this attribute as "true" to hide parent node for children. |
-  | --ea-listitem-height | array[] | Define array of children in that attribute. |
-  | data (optional) | any | Place inside of this attribute any data. |
+  |  \`--ea-list-max-height\`  |  Sets the max height for the list before it overflows | 8em |
+  |  \`--ea-listitem-background-hover\`  |  Sets the background for a  \`:hover\` event | rgba(0,0,0,0.05) |
+  |  \`--ea-listitem-background-active\`   |  Sets the background for an \`:active\` event   | rgba(0,0,0,0.1) |
+  | \`--ea-listitem-color-hover \`| Sets the color of the font for a \`:hover\` event | \`--ea-text-color\` |
+  | \`--ea-listitem-color-active\` | Sets the color of the font for an \`:active\` event | \`--ea-text-color\` |
+  | \`--ea-listitem-height\` | Sets the height of an individual list-item | 2.5em |
   `
 
   role_banner_table = `
-  |  Attributes   | Description  | Default |
+  |  CSS Variables   | Description  | Default |
   |---|---|----|
-  |  --ea-banner-height  |  Sets the height of the banner  | 6em |
-  |  --ea-banner-font-weight   |  Sets the weight of the banner font   | Node name will be displayed on the site view. |
-  | --ea-banner-font-size | boolean | Value used to change menu orientation. |
-  | --ea-banner-background | boolean | Place this attribute as "true" to hide parent node for children. |
-  | --ea-banner-color | array[] | Define array of children in that attribute. |
+  |  \`--ea-banner-height\`  |  Sets the height of the banner  | 6em |
+  |  \`--ea-banner-font-weight\`   |  Sets the weight of the banner font   | 700 |
+  | \`--ea-banner-font-size\` | Sets the font size of the main Banner text | 3em |
+  | \`--ea-banner-background\` | Sets the background of the banner | var(--ea-color-1) |
+  | \`--ea-banner-color\` | Sets the color of the banner font | var(--ea-color-3) |
   `
 
   constructor() {}
