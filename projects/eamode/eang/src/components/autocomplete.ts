@@ -64,51 +64,32 @@ import { debounceTime, distinctUntilChanged, map, delay } from 'rxjs/operators'
 })
 export class AutocompleteComponent
   implements OnInit, OnDestroy, ControlValueAccessor {
-  @Input()
-  suggestions: Observable<any>
-  @Input()
-  placeholder
-  @Input()
-  selectFirst = false
-  @Input()
-  maxItems = Math.max // should rather limit suggestion in first place
+  @Input() suggestions: Observable<any>
+  @Input() placeholder
+  @Input() selectFirst = false
+  @Input() maxItems = Math.max // should rather limit suggestion in first place
   @Input('disabled')
   set disabled(isDisabled) {
     this.setDisabledState(isDisabled)
   }
-  @Input()
-  inputFieldDebounceTime = 400
-  @Input()
-  mapSelectItem = (item: any) => item.toString()
+  @Input() inputFieldDebounceTime = 400
+  @Input() mapSelectItem = (item: any) => item.toString()
 
-  @Output()
-  readonly searchTerm = new EventEmitter<string>()
-  @Output()
-  readonly suggestionOptions = new EventEmitter<string>()
-  @Output()
-  readonly itemSelected = new EventEmitter()
-  @Output()
-  readonly input = new EventEmitter<any>()
-  @Output()
-  readonly click = new EventEmitter<MouseEvent>()
-  @Output()
-  readonly keyup = new EventEmitter<KeyboardEvent>()
-  @Output()
-  readonly keydown = new EventEmitter<KeyboardEvent>()
-  @Output()
-  readonly focus = new EventEmitter<FocusEvent>()
-  @Output()
-  readonly blur = new EventEmitter<FocusEvent>()
+  @Output() readonly searchTerm = new EventEmitter<string>()
+  @Output() readonly suggestionOptions = new EventEmitter<string>()
+  @Output() readonly itemSelected = new EventEmitter()
+  @Output() readonly input = new EventEmitter<any>()
+  @Output() readonly click = new EventEmitter<MouseEvent>()
+  @Output() readonly keyup = new EventEmitter<KeyboardEvent>()
+  @Output() readonly keydown = new EventEmitter<KeyboardEvent>()
+  @Output() readonly focus = new EventEmitter<FocusEvent>()
+  @Output() readonly blur = new EventEmitter<FocusEvent>()
 
-  @Output()
-  selectedItem
+  @Output() selectedItem
 
-  @ViewChild('inputField')
-  inputField
-  @ViewChild('suggestionPanel')
-  suggestionPanel
-  @ContentChild(TemplateRef)
-  resultsTemplate: TemplateRef<any>
+  @ViewChild('inputField') inputField
+  @ViewChild('suggestionPanel') suggestionPanel
+  @ContentChild(TemplateRef) resultsTemplate: TemplateRef<any>
 
   currentSuggestions: any[]
   showPanel = true

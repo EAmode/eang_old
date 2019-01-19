@@ -24,11 +24,9 @@ import { Observable } from 'rxjs'
   styles: []
 })
 export class Layout implements OnInit {
-  @HostBinding('attr.nav-overlay')
-  stateAttr
+  @HostBinding('attr.nav-overlay') stateAttr
 
-  @Input()
-  drawerState$: Observable<string>
+  @Input() drawerState$: Observable<string>
 
   constructor(public layout: LayoutService) {}
 

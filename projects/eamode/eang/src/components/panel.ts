@@ -16,14 +16,10 @@ import { of, combineLatest, Subscription, Observable } from 'rxjs'
   `
 })
 export class PanelComponent implements OnInit, OnDestroy {
-  @HostBinding('attr.state')
-  stateAttr
-  @Input()
-  state: Observable<string> = of('maximized')
-  @HostBinding('attr.orientation')
-  orientationAttr
-  @Input()
-  orientation = of('top')
+  @HostBinding('attr.state') stateAttr
+  @Input() state: Observable<string> = of('maximized')
+  @HostBinding('attr.orientation') orientationAttr
+  @Input() orientation = of('top')
   hostElement
   private _sub: Subscription
 
