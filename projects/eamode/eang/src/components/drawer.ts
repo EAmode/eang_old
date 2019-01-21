@@ -23,11 +23,9 @@ import { LayoutService } from '../services/layout.service'
   styles: []
 })
 export class Drawer implements OnInit, OnDestroy {
-  @HostBinding('attr.state')
-  stateAttr
+  @HostBinding('attr.state') stateAttr
 
-  @Input()
-  drawerState$: Subject<string>
+  @Input() drawerState$: Subject<string>
 
   constructor(public layout: LayoutService) {}
 

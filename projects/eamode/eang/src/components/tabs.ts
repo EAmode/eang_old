@@ -26,12 +26,9 @@ import { TabComponent } from './tab'
   styles: []
 })
 export class TabsComponent implements AfterContentInit {
-  @ContentChildren(TabComponent)
-  tabs: QueryList<TabComponent>
-  @ContentChild('headerTemplate')
-  headerTemplate: TemplateRef<{}>
-  @ContentChild('optionTemplate')
-  optionTemplate: TemplateRef<{}>
+  @ContentChildren(TabComponent) tabs: QueryList<TabComponent>
+  @ContentChild('headerTemplate') headerTemplate: TemplateRef<{}>
+  @ContentChild('optionTemplate') optionTemplate: TemplateRef<{}>
 
   menu: MenuTreeItem = {
     name: 'Main',

@@ -72,6 +72,7 @@ export interface MenuTreeItem {
         name-area
         [attr.toggle]="node.toggleRight ? '' : null"
         [style.padding-left]="node.hasChildren ? 0 : depth * 0.95 + 'em'"
+
       >
         <ng-container
           *ngIf="nameAreaTemplate; else defaultNameArea"
@@ -129,22 +130,14 @@ export interface MenuTreeItem {
   encapsulation: ViewEncapsulation.None
 })
 export class MenuComponent implements OnInit, AfterContentInit {
-  @Input()
-  node
-  @Input()
-  depth = 0
-  @Input()
-  nameAreaTemplate
-  @Input()
-  toggleAreaTemplate
-  @Input()
-  optionAreaTemplate
-  @Input()
-  closeEvents: EventEmitter<MenuTreeItem>
-  @Input()
-  toggleEvents: EventEmitter<MenuTreeItem>
-  @Input()
-  activateEvents: EventEmitter<MenuTreeItem>
+  @Input() node
+  @Input() depth = 0
+  @Input() nameAreaTemplate
+  @Input() toggleAreaTemplate
+  @Input() optionAreaTemplate
+  @Input() closeEvents: EventEmitter<MenuTreeItem>
+  @Input() toggleEvents: EventEmitter<MenuTreeItem>
+  @Input() activateEvents: EventEmitter<MenuTreeItem>
 
   constructor() {}
 
