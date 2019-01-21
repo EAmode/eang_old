@@ -116,6 +116,7 @@
     }
   }
   [role='banner'] {
+    font-size: var(--ea-font-size, var(--ea-banner-font-size ,1em));
     height: var(--ea-height, var(--ea-banner-height, 6em));
     background: var(--ea-background, var(--ea-banner-background,var(--ea-color-1)));
     box-shadow: var(--ea-box-shadow);
@@ -124,12 +125,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    & h1 {
       font-weight: var(--ea-font-weight, var(--ea-banner-font-weight ,800));
       color: var(--ea-color, var(--ea-banner-color,var(--ea-text-color-light)));
-      display: flex;
-      align-items: center;
-    }
+
+
   }
 
   label {

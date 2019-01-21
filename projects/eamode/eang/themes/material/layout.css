@@ -36,8 +36,8 @@
     }
 
     & ea-body {
-      --ea-main-margin: var(--ea-main-padding, 0.5em 1em);
-      margin: var(--ea-main-margin);
+      /* --ea-main-margin: var(--ea-main-padding, 0.5em 1em); */
+      /* margin: var(--ea-main-margin); */
       display: var(--ea-body-display);
       min-height: 100%;
     }

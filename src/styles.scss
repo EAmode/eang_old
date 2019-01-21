@@ -1,6 +1,7 @@
 @import '../dist/eamode/eang/css/all.css';
 @import '~@angular-mdc/theme/material';
 
+
 /* ICONS FOR DIFFERENT THEMES */
 .fluentdark,
 .mode,
@@ -39,8 +40,14 @@
   }
 }
 
-.material ea-menu [node] [name-area] span[icon] {
-  display: none;
+.material ea-drawer {
+  --ea-background: #d3d3d3;
+}
+.material ea-menu {
+  --ea-color: black;
+  & [node] [name-area] span[icon] {
+    display: none;
+  }
 }
 
 .material ea-footer {
@@ -230,6 +237,9 @@
 }
 
 .mode {
+  & [role='banner'] h1{
+    color: var(--ea-color-3);
+  }
   & .eang-logo {
     background: url('./assets/images/eang-logo.svg');
     width: 5rem;

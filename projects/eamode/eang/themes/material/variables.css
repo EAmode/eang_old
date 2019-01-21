@@ -25,6 +25,11 @@
   --ea-padding: 4rem;
   --ea-toolbar-height: 4rem;
 
+ /* Fonts & Typography */
+ --ea-font-1-family: 'Roboto';
+ --ea-font-1-style: normal;
+ --ea-font-1-weight: 400;
+ --ea-font-size: 16px;
 
   --ea-background-color: 66, 91, 154;
 
@@ -34,9 +39,10 @@
   --ea-color-1: hsl(210, 75%,21%);
   --ea-color-1-light: hsl(210, 75%,31%);
 
-  --ea-color-2: hsl(0, 0%, 20%);
-  --ea-color-2-high: (0, 0%, 30%);
+  --ea-color-2: hsl(0, 0%, 98%);
+  --ea-color-2-high: hsl(0, 0%, 100%);
 
+  --ea-text-color: var(--ea-text-color-dark);
   --ea-text-color-dark: #333;
   --ea-text-color-light: #f6f6f6;
 

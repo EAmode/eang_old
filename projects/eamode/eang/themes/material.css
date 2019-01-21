@@ -6,15 +6,16 @@
 @import 'material/variables.css';
 @import 'material/markdown.css';
 @import 'material/icons.css';
+@import 'material/card.css';
 
 @import 'mode/menu.css';
 @import 'mode/tabs.css';
 @import 'mode/fonts.css';
 @import 'mode/panel.css';
 @import 'mode/themepicker.css';
-@import 'mode/card.css';
 @import 'mode/table.css';
 @import 'mode/button.css';
+@import 'mode/utilities.css';
 
 .material {
   @mixin autocomplete-material;
@@ -22,11 +23,12 @@
   @mixin menu;
   @mixin markdown-material;
   @mixin button-mode;
-  @mixin card-mode;
+  @mixin card-material;
   @mixin panel-mode;
   @mixin typography;
   @mixin themepicker;
   @mixin table-mode;
   @mixin tabs;
+  @mixin utilities;
   @mixin icon-material;
 }
