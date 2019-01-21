@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core'
-import { MenuTreeItem } from '@eamode/eang/public_api'
 
 @Component({
   selector: 'eangio-menu',
@@ -106,36 +105,11 @@ export class MenuComponent implements OnInit {
   }
 
   modal = false
-  dropdown
+
   nodeHorizontal
   nodeHiddenFalse
   nodeWithTemplate
   nodeWithNameTemplate
-  nodeDropdown: MenuTreeItem = {
-    name: '',
-    dropdown: true,
-    children: [
-      {
-        name: 'Add object'
-      },
-      {
-        name: 'Add Model'
-      }
-    ]
-  }
-
-  nodeDropdownsolo: MenuTreeItem = {
-    name: '',
-    dropdown: true,
-    children: [
-      {
-        name: 'Add'
-      },
-      {
-        name: 'Delete'
-      }
-    ]
-  }
 
   nodeWithRightToggle = {
     name: 'Main menu',
@@ -200,13 +174,6 @@ export class MenuComponent implements OnInit {
       'The first content text'
     this.nodeWithNameTemplate.children[2].children[1].data.header =
       'The second content text'
-  }
-
-  closeNode() {
-    this.nodeDropdown.isOpen = false
-    this.nodeDropdown.isActive = false
-    this.nodeDropdownsolo.isOpen = false
-    this.nodeDropdownsolo.isActive = false
   }
 
   ea_menu = `

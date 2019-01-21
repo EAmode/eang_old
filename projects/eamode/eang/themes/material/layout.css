@@ -36,8 +36,8 @@
     }
 
     & ea-body {
-      --ea-main-margin: var(--ea-main-padding, 0.5em 1em);
-      margin: var(--ea-main-margin);
+      /* --ea-main-margin: var(--ea-main-padding, 0.5em 1em); */
+      /* margin: var(--ea-main-margin); */
       display: var(--ea-body-display);
       min-height: 100%;
     }
@@ -104,15 +104,11 @@
       background: var(--ea-drawer-background, var(--ea-color-background-4));
       -webkit-tap-highlight-color: transparent;
       @media only screen and (min-width: 600px) {
-        margin: 3rem 2rem 0 2rem;
-        background: none;
+        background: rgba(0, 0, 0, 0.03);
       }
       & section {
         flex-grow: 1;
         @media only screen and (min-width: 600px) {
-          background: rgba(0, 0, 0, 0.03);
-          border-radius: 0.2rem;
-          margin-bottom: 4rem;
           padding-top: 1rem;
         }
       }

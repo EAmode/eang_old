@@ -3,7 +3,13 @@ import { Router } from '@angular/router'
 import { LayoutService } from 'projects/eamode/eang/src/services/layout.service'
 import { MenuTreeItem } from '@eamode/eang'
 
-export const SIDE_MENU = {
+@Component({
+  selector: 'eangio-root',
+  templateUrl: './app.component.html',
+  styles: []
+})
+export class AppComponent implements OnInit {
+  menu = {
   name: 'Main menu',
   isHidden: true,
   children: [
@@ -29,7 +35,14 @@ export const SIDE_MENU = {
           iconStyle: 'ea-negative',
           data: {
             link: '/variables'
-          }
+          },
+          {
+            name: 'Utilities',
+            icon: 'ea-refresh-cw',
+            iconStyle: 'ea-negative',
+            data: {
+              link: '/utilities'
+            }
         }
       ]
     },
@@ -96,14 +109,6 @@ export const SIDE_MENU = {
     }
   ]
 }
-
-@Component({
-  selector: 'eangio-root',
-  templateUrl: './app.component.html',
-  styles: []
-})
-export class AppComponent implements OnInit {
-  public menu = SIDE_MENU
   activated = new EventEmitter<MenuTreeItem>()
 
   constructor(public router: Router, public layout: LayoutService) {}

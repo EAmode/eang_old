@@ -1,6 +1,7 @@
 @import '../dist/eamode/eang/css/all.css';
 @import '~@angular-mdc/theme/material';
 
+
 /* ICONS FOR DIFFERENT THEMES */
 .fluentdark,
 .mode,
@@ -39,7 +40,22 @@
   }
 }
 
+.material ea-drawer {
+  --ea-background: #d3d3d3;
+}
+.material ea-menu {
+  --ea-color: black;
+  & [node] [name-area] span[icon] {
+    display: none;
+  }
+}
 
+.material ea-footer {
+  color: white;
+  & a {
+    color: inherit;
+  }
+}
 
 /* Landing Page */
 
@@ -82,7 +98,148 @@
   }
 }
 
+.material {
+  & ea-layout {
+    background: #fafafa;
+  }
+  & #variables {
+    & .example {
+      margin: 5rem 0;
+      justify-content: space-evenly;
+    }
+    & .example-color {
+      width: 6rem;
+      height: 4rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      & small {
+        text-align: center;
+        color: var(--ea-text-color-light);
+      }
+      &.base-color {
+        background: var(--ea-color-1);
+      }
+      &.base-color-high {
+        background: var(--ea-color-1-light);
+      }
+      &.alt-base-color {
+        background: var(--ea-color-2);
+      }
+      &.ea-hover {
+        & small {
+          color: var(--ea-text-color-dark);
+        }
+        &:hover {
+          background: var(--ea-background-color-hover);
+          & small {
+            color: var(--ea-text-color-light);
+          }
+        }
+      }
+      &.ea-active {
+        & small {
+          color: var(--ea-text-color-dark);
+        }
+        &[active='true'] {
+          background: var(--ea-background-color-active);
+          & small {
+            color: var(--ea-text-color-light);
+          }
+        }
+      }
+    }
+    & #text-colors {
+      & .base-color .text-hover-color,
+      .base-color-high .text-active-color {
+        color: var(--ea-text-color-dark);
+      }
+      & .base-color:hover {
+        & small {
+          color: var(--ea-text-color-light);
+        }
+      }
+      & .text-active-color {
+        &[textIsActive='true'] {
+          color: var(--ea-text-color-light);
+        }
+      }
+    }
+  }
+
+  & span[chevron-right][negative],
+  span[chevron-down][negative] {
+    filter: invert(0%);
+  }
+
+  .node-toggle[disabled] span[icon] {
+    display: none;
+  }
+  & .eang-logo {
+    background: url('./assets/images/eang-logo-dark.svg');
+    width: 5rem;
+    background-repeat: no-repeat;
+    @media only screen and (max-width: 500px) {
+      margin-bottom: 1rem;
+    }
+  }
+  & .menu-example {
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.03);
+  }
+  #eang-welcome {
+    &.ea-card[unset] {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-top: 7rem;
+      margin-left: 13rem;
+      width: 50%;
+      @media only screen and (max-width: 500px) {
+        margin-top: 4rem;
+        margin-left: 0;
+        align-items: center;
+        width: 100%;
+        & .ea-card-header {
+          text-align: center;
+        }
+      }
+      & > .ea-card-content {
+        padding-top: 0.5rem;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        @media only screen and (max-width: 600px) {
+          padding: 0;
+          flex-direction: column;
+          align-items: center;
+        }
+        & p {
+          width: 65%;
+          @media only screen and (max-width: 500px) {
+            width: 90%;
+          }
+        }
+      }
+    }
+    & a {
+      text-decoration: none;
+    }
+    & p {
+      width: 45%;
+      margin: 0 0 1rem 0;
+      font-size: 1.2rem;
+      @media only screen and (max-width: 640px) {
+        width: 95%;
+      }
+    }
+  }
+}
+
 .mode {
+  & [role='banner'] h1{
+    color: var(--ea-color-3);
+  }
   & .eang-logo {
     background: url('./assets/images/eang-logo.svg');
     width: 5rem;
@@ -90,6 +247,7 @@
   }
   & .menu-example {
     --ea-card-content-background: var(--ea-color-2);
+    --ea-menu-color: var(--ea-color-3);
     flex-direction: column;
   }
 
@@ -207,79 +365,6 @@
 
 /* Material Design Specific Styles */
 
-.material {
-  & ea-layout {
-    background: #fafafa;
-  }
-
-  & span[chevron-right][negative],
-  span[chevron-down][negative] {
-    filter: invert(0%);
-  }
-
-  .node-toggle[disabled] span[icon] {
-    display: none;
-  }
-  & .eang-logo {
-    background: url('./assets/images/eang-logo-dark.svg');
-    width: 5rem;
-    background-repeat: no-repeat;
-    @media only screen and (max-width: 500px) {
-      margin-bottom: 1rem;
-    }
-  }
-  & .menu-example {
-    flex-direction: column;
-    background: rgba(0, 0, 0, 0.03);
-  }
-  #eang-welcome {
-    &.ea-card[unset] {
-      flex-direction: column;
-      align-items: flex-start;
-      margin-top: 7rem;
-      margin-left: 13rem;
-      width: 50%;
-      @media only screen and (max-width: 500px) {
-        margin-top: 4rem;
-        margin-left: 0;
-        align-items: center;
-        width: 100%;
-        & .ea-card-header{
-          text-align: center;
-        }
-      }
-      & > .ea-card-content {
-        padding-top: 0.5rem;
-        flex-direction: column;
-        align-items: flex-start;
-        text-align: left;
-        @media only screen and (max-width: 600px) {
-          padding: 0;
-          flex-direction: column;
-          align-items: center;
-        }
-        & p {
-          width: 65%;
-          @media only screen and (max-width: 500px) {
-            width: 90%;
-          }
-        }
-      }
-    }
-    & a {
-      text-decoration: none;
-    }
-    & p {
-      width: 45%;
-      margin: 0 0 1rem 0;
-      font-size: 1.2rem;
-      @media only screen and (max-width: 640px) {
-        width: 95%;
-      }
-    }
-  }
-}
-
 .mode,
 .material {
   & #open-standards {
@@ -319,9 +404,9 @@
       padding: 1rem;
       @media only screen and (max-width: 600px) {
         grid-template-areas:
-        'icon'
-        'header'
-        'para';
+          'icon'
+          'header'
+          'para';
         max-width: 18rem;
         grid-gap: 1rem;
       }
@@ -403,9 +488,6 @@
 
       & eangio-menu {
         --ea-tab-color: var(--ea-text-color);
-        & ea-menu {
-          --ea-menu-color: white;
-        }
       }
 
       & .icon-tiles {
@@ -429,7 +511,7 @@
       eangio-tabs,
       eangio-components,
       eangio-utilities {
-        width: 90%;
+        width: 100%;
         @media only screen and (max-width: 500px) {
           width: 95%;
           & .ea-card[unset] {
@@ -438,6 +520,15 @@
             }
           }
         }
+        & .ea-card[unset] {
+          margin: 0;
+          & .ea-card-content {
+            justify-content: center;
+          }
+        }
+      }
+      & ea-tabs {
+        width: 90%;
       }
       & eangio-landing {
         width: 100%;
@@ -458,7 +549,7 @@
 
       eangio-feature-reactive,
       eangio-feature-theming {
-        width: 100%;
+        width: 90%;
       }
       & eangio-feature-reactive {
         & .screen {
@@ -520,6 +611,12 @@
       & ea-markdown {
         @media only screen and (max-width: 500px) {
           overflow-x: overlay;
+        }
+      }
+      & eangio-utilities {
+        & .example {
+          margin-top: 3em;
+          margin-bottom: 3em;
         }
       }
     }

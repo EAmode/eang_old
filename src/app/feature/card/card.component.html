@@ -1,7 +1,7 @@
 <div class="ea-card" unset>
-  <div class="ea-card-header">
+  <div role="banner">
     <h1>Card</h1>
-    <span icon layers style="width: 2rem; height:2rem;"></span>
+    <span icon negative layers style="width: 2rem; height:2rem;"></span>
   </div>
   <div class="ea-card-content">
     <ea-tabs>
@@ -107,7 +107,7 @@
         </p>
 
         <div class="ea-card" unset>
-          <div class="ea-card-content card-example" >
+          <div class="ea-card-content card-example">
             <div class="ea-card" style="width:20em;">
               <div class="ea-card-header"><p>ea-card-header</p></div>
               <div
@@ -127,7 +127,11 @@
               </div>
             </div>
             <div class="ea-card" style="width:20em;">
-              <div class="ea-card-header" style="--ea-card-header-background: var(--ea-color-1); --ea-card-header-color: white;" border>
+              <div
+                class="ea-card-header"
+                style="--ea-card-header-background: var(--ea-color-1); --ea-card-header-color: white;"
+                border
+              >
                 <p>ea-card-header</p>
                 <button icon flat><span icon negative x></span></button>
               </div>
@@ -151,7 +155,8 @@
               <div
                 class="ea-card-header"
                 style="--ea-card-header-background: var(--ea-color-1); --ea-card-header-color: white;"
-              border>
+                border
+              >
                 <section><p>ea-card-header</p></section>
                 <div content>
                   <button icon flat>
