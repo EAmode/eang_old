@@ -1,7 +1,6 @@
 
 @define-mixin card-material {
   & .ea-card {
-    @mixin card-base;
     &:not([unset]) {
       --ea-card-border-radius: .5em;
       border-radius: var(--ea-card-border-radius);

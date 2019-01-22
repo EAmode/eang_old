@@ -10,31 +10,32 @@ import { MenuTreeItem } from '@eamode/eang'
 })
 export class AppComponent implements OnInit {
   menu = {
-  name: 'Main menu',
-  isHidden: true,
-  children: [
-    {
-      name: 'Get Started',
-      data: {
-        link: '/getting-started'
-      }
-    },
-    {
-      name: 'Feature Highlights',
-      data: {
-        link: '/features'
-      }
-    },
-    {
-      name: 'Styles',
-      iconStyle: 'ea-negative',
-      children: [
-        {
-          name: 'Colors',
-          icon: 'ea-color',
-          iconStyle: 'ea-negative',
-          data: {
-            link: '/variables'
+    name: 'Main menu',
+    isHidden: true,
+    children: [
+      {
+        name: 'Get Started',
+        data: {
+          link: '/getting-started'
+        }
+      },
+      {
+        name: 'Feature Highlights',
+        data: {
+          link: '/features'
+        }
+      },
+      {
+        name: 'Styles',
+        iconStyle: 'ea-negative',
+        children: [
+          {
+            name: 'Colors',
+            icon: 'ea-color',
+            iconStyle: 'ea-negative',
+            data: {
+              link: '/variables'
+            }
           },
           {
             name: 'Utilities',
@@ -43,72 +44,72 @@ export class AppComponent implements OnInit {
             data: {
               link: '/utilities'
             }
-        }
-      ]
-    },
-    {
-      name: 'Components',
-      iconStyle: 'ea-negative',
-      data: {
-        link: '/components'
+          }
+        ]
       },
-      children: [
-        {
-          name: 'Layout',
-          icon: 'ea-layout',
-          data: {
-            link: '/layout'
-          }
+      {
+        name: 'Components',
+        iconStyle: 'ea-negative',
+        data: {
+          link: '/components'
         },
-        {
-          name: 'Cards',
-          icon: 'ea-layers',
-          iconStyle: 'ea-negative',
-          data: {
-            link: '/card'
+        children: [
+          {
+            name: 'Layout',
+            icon: 'ea-layout',
+            data: {
+              link: '/layout'
+            }
+          },
+          {
+            name: 'Cards',
+            icon: 'ea-layers',
+            iconStyle: 'ea-negative',
+            data: {
+              link: '/card'
+            }
+          },
+          {
+            name: 'Buttons',
+            icon: 'ea-button-icon',
+            data: {
+              link: '/button'
+            }
+          },
+          {
+            name: 'Icons',
+            icon: 'ea-grid',
+            iconStyle: 'ea-negative',
+            data: {
+              link: '/icon'
+            }
+          },
+          {
+            name: 'Menu',
+            icon: 'ea-hamburger-menu',
+            iconStyle: 'ea-negative',
+            data: {
+              link: '/menu'
+            }
+          },
+          {
+            name: 'Tabs',
+            icon: 'ea-tabs-icon',
+            data: {
+              link: '/tabs'
+            }
+          },
+          {
+            name: 'Markdown',
+            icon: 'ea-tabs-icon',
+            data: {
+              link: '/markdown'
+            }
           }
-        },
-        {
-          name: 'Buttons',
-          icon: 'ea-button-icon',
-          data: {
-            link: '/button'
-          }
-        },
-        {
-          name: 'Icons',
-          icon: 'ea-grid',
-          iconStyle: 'ea-negative',
-          data: {
-            link: '/icon'
-          }
-        },
-        {
-          name: 'Menu',
-          icon: 'ea-hamburger-menu',
-          iconStyle: 'ea-negative',
-          data: {
-            link: '/menu'
-          }
-        },
-        {
-          name: 'Tabs',
-          icon: 'ea-tabs-icon',
-          data: {
-            link: '/tabs'
-          }
-        },
-        {
-          name: 'Markdown',
-          icon: 'ea-tabs-icon',
-          data: {
-            link: '/markdown'
-          }
-        }
-      ]
-    }
-  ]
-}
+        ]
+      }
+    ]
+  }
   activated = new EventEmitter<MenuTreeItem>()
 
   constructor(public router: Router, public layout: LayoutService) {}
