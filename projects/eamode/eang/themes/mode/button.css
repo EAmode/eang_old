@@ -13,12 +13,15 @@
   cursor: var(--ea-button-cursor, pointer);
   outline: var(--ea-button-outline, none);
   margin: var(--ea-button-margin, 0);
+  display: flex;
+  align-items: center;
+  text-decoration: none;
 }
 
 @define-mixin button-mode {
-  & button {
+  & button,
+  [role='button'] {
     @mixin button-base;
-
     border-radius: 0.25em;
     box-sizing: content-box;
     transition: all 0.25s ease 0s;
@@ -46,7 +49,10 @@
         --ea-background,
         var(--ea-button-background-hover, var(--ea-background-color-hover))
       );
-      box-shadow: var(--ea-button-box-shadow-hover, var(--ea-box-shadow));
+      box-shadow: var(
+        --ea-button-background-hover-shadow,
+        var(--ea-active-shadow)
+      );
     }
 
     &:active {
@@ -66,10 +72,7 @@
         --ea-background,
         var(--ea-button-background-active, var(--ea-background-color-active))
       );
-      box-shadow: var(
-        --ea-button-background-active-shadow,
-        var(--ea-background-active-shadow)
-      );
+      box-shadow: var(--ea-button-box-shadow-hover, var(--ea-box-shadow));
     }
 
     &[disabled] {
@@ -88,9 +91,18 @@
         --ea-color,
         var(--ea-button-color-outline, var(--ea-text-color))
       );
-      border-color: var(--ea-button-border-color-outline, var(--ea-button-border-color, var(--ea-color-1)));
-      border-style: var(--ea-button-border-style-outline, var(--ea-button-border-style, solid));
-      border-width: var(--ea-button-border-width-outline, var(--ea-button-border-width, 0.1em));
+      border-color: var(
+        --ea-button-border-color-outline,
+        var(--ea-button-border-color, var(--ea-color-1))
+      );
+      border-style: var(
+        --ea-button-border-style-outline,
+        var(--ea-button-border-style, solid)
+      );
+      border-width: var(
+        --ea-button-border-width-outline,
+        var(--ea-button-border-width, 0.1em)
+      );
 
       &:hover:not(:active) {
         background: var(
@@ -139,7 +151,10 @@
       color: var(--ea-color, var(--ea-button-color-flat, var(--ea-text-color)));
 
       &:hover:not(:active) {
-        background-color: var(--ea-background, var(--ea-button-background-hover-flat, rgba(0, 0, 0, 0.1)));
+        background-color: var(
+          --ea-background,
+          var(--ea-button-background-hover-flat, rgba(0, 0, 0, 0.1))
+        );
         box-shadow: none;
         border-color: var(
           --ea-button-border-color,
@@ -159,17 +174,17 @@
         box-shadow: unset;
         background-color: rgba(0, 0, 0, 0.25);
         border-color: var(
-        --ea-button-border-color,
-        var(--ea-button-border-color-active-flat, rgba(0, 0, 0, 0))
-      );
-      border-width: var(
-        --ea-button-border-width,
-        var(--ea-button-border-width-active-flat, 0.1em)
-      );
-      border-style: var(
-        --ea-button-border-style,
-        var(--ea-button-border-style-active-flat, solid)
-      );
+          --ea-button-border-color,
+          var(--ea-button-border-color-active-flat, rgba(0, 0, 0, 0))
+        );
+        border-width: var(
+          --ea-button-border-width,
+          var(--ea-button-border-width-active-flat, 0.1em)
+        );
+        border-style: var(
+          --ea-button-border-style,
+          var(--ea-button-border-style-active-flat, solid)
+        );
       }
       &[light] {
         color: var(--ea-button-color, var(--ea-text-color-dark));

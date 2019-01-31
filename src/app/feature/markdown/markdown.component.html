@@ -1,0 +1,38 @@
+<div class="ea-card" unset>
+  <div class="ea-card-header">
+    <h1>Markdown</h1>
+    <span icon hamburger-menu style="width: 2rem; height:2rem;"></span>
+  </div>
+  <div class="ea-card-content">
+    <ea-tabs>
+      <ea-tab name="Overview">
+        <div class="ea-card" unset>
+          <p>
+            Rendering a Markdown string to HTML. Input can be a string or an
+            observable.
+          </p>
+          <div class="ea-card-content example" grid>
+            <ea-markdown [doc]="ea_menu"></ea-markdown>
+          </div>
+          <div class="ea-card">
+            <div class="ea-card-header"><p>Result markdown view.</p></div>
+            <div class="ea-card-content">
+              <ea-markdown doc="# This is a heading"> </ea-markdown>
+            </div>
+          </div>
+        </div>
+      </ea-tab>
+      <ea-tab name="Examples">
+        <h2>Using an observable and context</h2>
+        <div class="ea-card-content example" grid>
+          <ea-markdown [doc]="observableAndContext"></ea-markdown>
+          <div class="ea-card">
+            <div class="ea-card-content">
+              <ea-markdown [doc]="observableAndContext$ | async"> </ea-markdown>
+            </div>
+          </div>
+        </div>
+      </ea-tab>
+    </ea-tabs>
+  </div>
+</div>

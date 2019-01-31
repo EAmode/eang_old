@@ -14,6 +14,7 @@
     & > ea-menu {
       & [name-area] {
         color: var(--ea-color, var(--ea-tab-color, var(--ea-text-color)));
+        padding-right: 0.95em;
       }
       & [node] {
         background: var(--ea-background, var(--ea-tab-background, transparent));
