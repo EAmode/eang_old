@@ -36,45 +36,50 @@ export class TabsComponent implements AfterContentInit {
     isHidden: true,
     children: []
   }
+  activeTab
   activated = new EventEmitter<MenuTreeItem>()
   closed = new EventEmitter<MenuTreeItem>()
 
   constructor() {}
 
-  activateTab(activeTab: TabComponent) {
-    this.tabs.forEach(tab => (tab.activeAttr = null))
-    activeTab.activeAttr = ''
+  activateTab(tab: TabComponent) {
+    if (this.activeTab) {
+      this.activeTab.active = undefined
+    }
+    tab.active = ''
+    this.activeTab = tab
+    // this.tabs.forEach(tab => (tab.activeAttr = null))
+    // activeTab.activeAttr = ''
   }
 
   closeTab(closedTab: TabComponent) {
-    closedTab.closedAttr = ''
-    if (closedTab.activeAttr === '') {
-      const openedTabs = this.tabs.filter(tab => tab.closedAttr !== '')
-      if (openedTabs.length > 0) {
-        const openedMenus = this.menu.children.filter(child => !child.isHidden)
-        openedMenus[0].isActive = true
-        this.activateTab(openedTabs[0])
-      } else {
-        closedTab.activeAttr = null
+    closedTab.closed = ''
+
+    if (this.activeTab === closedTab) {
+      closedTab = undefined
+      if (this.tabs && this.tabs.length > 0) {
+        this.activateTab = this.tabs[0]
+        this.activeTab.active = ''
       }
     }
+    // if (closedTab.activeAttr === '') {
+    //   const openedTabs = this.tabs.filter(tab => tab.closedAttr !== '')
+    //   if (openedTabs.length > 0) {
+    //     const openedMenus = this.menu.children.filter(child => !child.isHidden)
+    //     openedMenus[0].isActive = true
+    //     this.activateTab(openedTabs[0])
+    //   } else {
+    //     closedTab.activeAttr = null
+    //   }
+    // }
   }
 
   ngAfterContentInit() {
-    this.tabs.changes.subscribe(changes => {
-      // this.menu.children.push(changes.first)
-      const children = this.tabs.map(t => {
-        return { name: t.name, closeable: t.closeable }
-      })
-      this.menu.children = children
+    this.tabs.changes.subscribe(_ => {
+      this.resetState(this.tabs)
     })
-    if (this.tabs.length > 0) {
-      this.tabs.forEach(tab => {
-        this.menu.children.push({ name: tab.name, closeable: tab.closeable })
-      })
-
-      this.menu.children[0].isActive = true
-      this.activateTab(this.tabs.first)
+    if (this.tabs) {
+      this.resetState(this.tabs)
     }
 
     this.activated.subscribe((activatedItem: MenuTreeItem) => {
@@ -86,5 +91,25 @@ export class TabsComponent implements AfterContentInit {
       const closedTab = this.tabs.find(tab => tab.name === closedItem.name)
       this.closeTab(closedTab)
     })
+  }
+
+  private resetState(tabs) {
+    let hasActive = false
+    this.menu.children = tabs.map(t => {
+      const isActive = this.activeTab === t
+      if (isActive) {
+        hasActive = true
+      }
+      return {
+        name: t.name,
+        closeable: t.closeable,
+        isActive
+      }
+    })
+
+    if (!hasActive) {
+      this.activateTab(this.tabs.first)
+      this.menu.children[0].isActive = true
+    }
   }
 }
