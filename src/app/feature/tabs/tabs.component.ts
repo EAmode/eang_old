@@ -6,9 +6,23 @@ import { Component, OnInit } from '@angular/core'
   styles: []
 })
 export class TabsComponent implements OnInit {
+  editing = true
+
   constructor() {}
 
   ngOnInit() {}
+
+  toggleTab() {
+    this.editing = !this.editing
+  }
+
+  addTab() {
+    const newTab = {
+      name: 'other New Tab',
+      content: 'new content other',
+      visible: true
+    }
+  }
 
   tabs_example = `
   ~~~html

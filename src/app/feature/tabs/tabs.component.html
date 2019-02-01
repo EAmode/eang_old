@@ -65,15 +65,16 @@
         <p>Try to add property closeable to show button to close your tab.</p>
         <div class="ea-card">
           <div class="ea-card-header">
-            <p>You are allowed to close tab only with closeable property.</p>
+            <button (click)="toggleTab()">Toggle</button>
+            <button (click)="addTab()">Add Tab</button>
           </div>
           <div class="ea-card-content header" style="flex-direction: column;">
             <ea-tabs>
               <ea-tab name="Paragraph#1" [closeable]="true">
                 <p>Just paragraph #1</p>
               </ea-tab>
-              <ea-tab name="Paragraph#2" [closeable]="true">
-                <p>Just paragraph #2</p>
+              <ea-tab *ngIf="editing" name="Toggle Tab">
+                <p>Toggle on/off</p>
               </ea-tab>
               <ea-tab name="List">
                 <ul>
