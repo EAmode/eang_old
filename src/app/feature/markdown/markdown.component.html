@@ -8,8 +8,8 @@
       <ea-tab name="Overview">
         <div class="ea-card" unset>
           <p>
-            <code>ea-markdown</code> allows you to render a Markdown from a string to HTML - input can be a string or an
-            observable.
+            <code>ea-markdown</code> allows you to render a Markdown from a
+            string to HTML - input can be a string or an observable.
           </p>
           <div class="ea-card-content example" grid>
             <ea-markdown [doc]="ea_menu"></ea-markdown>
@@ -37,53 +37,38 @@
           <div class="ea-card-header">
             <h2>ea-markdown</h2>
             <span>
-              <button flat icon *ngIf="!editing" (click)="editing = !editing">
+              <button flat icon *ngIf="!editing" (click)="editing = !editing; changesTab.visible = !changesTab.visible">
                 <span icon edit></span>
               </button>
               <button *ngIf="editing" (click)="editing = !editing; toggleTab()">
                 Save
               </button>
+              <button *ngIf="editing" (click)="addTab()">Add Tabs</button>
             </span>
           </div>
-
-          <!-- <ea-tab name="current">
+          <ea-tabs *ngIf="editing">
+            <ea-tab name="current">
               <div class="ea-card-content">
+
                 <ea-markdown [doc]="test"></ea-markdown>
               </div>
             </ea-tab>
-            <ea-tab name="My Changes">
-              <div style="display: flex;">
-                <textarea
-                  name=""
-                  value="{{ test }}"
-                  id="editor"
-                  cols="30"
-                  rows="10"
-                ></textarea>
-                <ea-markdown [doc]="test"></ea-markdown>
-              </div>
-            </ea-tab> -->
-
-          <ea-markdown *ngIf="editing" [doc]="test"></ea-markdown>
-          <textarea
-            *ngIf="editing"
-            name=""
-            value="{{ test }}"
-            id="editor"
-            cols="30"
-            rows="10"
-          ></textarea>
-
-          <!-- <ea-tab *ngIf="changesTab.visible" name="My Changes">
+            <ea-tab *ngIf="changesTab.visible" name="My Changes">
               Here is a bunch of content about this thing here
             </ea-tab>
             <ea-tab *ngFor="let other of otherTabs" name="{{ other.name }}">
               {{ other.content }}
-            </ea-tab> -->
+            </ea-tab>
+          </ea-tabs>
+          <ea-tabs *ngIf="!editing">
+              <ea-tab name="current">
+                <div class="ea-card-content">
+                  <h2>Testing this thing out</h2>
 
-          <div class="ea-card-content">
-            <ea-markdown *ngIf="!editing" [doc]="test"></ea-markdown>
-          </div>
+                  <ea-markdown [doc]="test"></ea-markdown>
+                </div>
+              </ea-tab>
+            </ea-tabs>
         </div>
       </ea-tab>
     </ea-tabs>
