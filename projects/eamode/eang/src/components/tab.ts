@@ -8,8 +8,8 @@ import { Component, Input, HostBinding } from '@angular/core'
   styles: []
 })
 export class TabComponent {
-  @HostBinding('attr.active') activeAttr
-  @HostBinding('attr.closed') closedAttr
+  @HostBinding('attr.active') active
+  @HostBinding('attr.closed') closed
 
   @Input() name: string
   @Input() closeable = false
