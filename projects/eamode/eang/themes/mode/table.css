@@ -1,50 +1,40 @@
-
-
 @define-mixin table-mode {
   ea-markdown {
     overflow-x: auto;
   }
   table {
-    --ea-table-thead-th-color:#9E9E9E;
+    --ea-table-thead-th-color: var(--ea-color-2);
     width: auto;
     display: table;
     border-collapse: collapse;
     border-spacing: 0;
     margin: 2em 0;
 
-    & tr {
-      &:hover {
-        background-color: rgba(0,0,0,.015);
-        cursor: pointer;
-      }
-      &:nth-child(1):hover{
-        background-color: transparent;
-      }
-    }
-
-   & td {
+    & td {
       padding: var(--ea-table-padding, 1.8em 1.5em);
       text-align: left;
       border-bottom: 1px solid var(--ea-color-3-dark);
-      color:var(--ea-table-td-color, var(--ea-text-color));
+      color: var(--ea-table-td-color, var(--ea-text-color));
     }
 
-   & th {
+    & th {
       text-align: left;
       padding: var(--ea-table-th-padding, 1em 1.5em);
     }
-
 
     thead {
       background: var(--ea-table-thead-background, transparent);
       & th {
         border-radius: 0;
-        color: var(--ea-table-thead-th-color,  var(--ea-text-color));
+        color: var(--ea-table-thead-th-color, var(--ea-text-color));
+      }
+      &:hover {
+        background: none;
       }
     }
 
     tbody {
-      background: var(--ea-main-background);
+      background: transparent;
 
       &[striped] > tr:nth-child(odd) {
         background-color: rgba(242, 242, 242, 0.5);
@@ -52,8 +42,13 @@
       & tr[clean] {
         border: none;
       }
+      & tr {
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.015);
+          cursor: pointer;
+        }
+      }
     }
-
 
     table.striped tr {
       border-bottom: none;
@@ -76,7 +71,7 @@
     table.centered tbody tr td {
       text-align: center;
     } */
-/*
+    /*
     tr {
       border-bottom: 1px solid rgba(0, 0, 0, 0.12);
       &[center] > td {

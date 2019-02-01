@@ -61,6 +61,9 @@ export class TabsComponent implements AfterContentInit {
   }
 
   ngAfterContentInit() {
+    this.tabs.changes.subscribe(changes =>
+      this.menu.children.push(changes.first)
+    )
     if (this.tabs.length > 0) {
       this.tabs.forEach(tab => {
         this.menu.children.push({ name: tab.name, closeable: tab.closeable })

@@ -38,6 +38,14 @@ export class AppComponent implements OnInit {
             }
           },
           {
+            name: 'Icons',
+            icon: 'ea-grid',
+            iconStyle: 'ea-negative',
+            data: {
+              link: '/icon'
+            }
+          },
+          {
             name: 'Utilities',
             icon: 'ea-refresh-cw',
             iconStyle: 'ea-negative',
@@ -54,11 +62,19 @@ export class AppComponent implements OnInit {
           link: '/components'
         },
         children: [
+          // {
+          //   name: 'Autocomplete',
+          //   icon: 'ea-check-circle',
+          //   iconStyle: 'ea-negative',
+          //   data: {
+          //     link: '/markdown'
+          //   }
+          // },
           {
-            name: 'Layout',
-            icon: 'ea-layout',
+            name: 'Buttons',
+            icon: 'ea-button-icon',
             data: {
-              link: '/layout'
+              link: '/button'
             }
           },
           {
@@ -70,18 +86,11 @@ export class AppComponent implements OnInit {
             }
           },
           {
-            name: 'Buttons',
-            icon: 'ea-button-icon',
-            data: {
-              link: '/button'
-            }
-          },
-          {
-            name: 'Icons',
-            icon: 'ea-grid',
+            name: 'Markdown',
+            icon: 'ea-edit',
             iconStyle: 'ea-negative',
             data: {
-              link: '/icon'
+              link: '/markdown'
             }
           },
           {
@@ -93,17 +102,17 @@ export class AppComponent implements OnInit {
             }
           },
           {
+            name: 'Layout',
+            icon: 'ea-layout',
+            data: {
+              link: '/layout'
+            }
+          },
+          {
             name: 'Tabs',
             icon: 'ea-tabs-icon',
             data: {
               link: '/tabs'
-            }
-          },
-          {
-            name: 'Markdown',
-            icon: 'ea-tabs-icon',
-            data: {
-              link: '/markdown'
             }
           }
         ]

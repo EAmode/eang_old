@@ -1,5 +1,7 @@
 <div class="ea-card" unset>
-  <div role="banner"><h1>Utilities</h1></div>
+  <div role="banner">
+    <div><h1>Utilities</h1></div>
+  </div>
   <div class="ea-card-content">
     <ea-tabs>
       <ea-tab name="Overview">
@@ -7,8 +9,8 @@
           <b>ARIA Roles</b> (Accessible Rich Internet Applications), defines a
           way to make Web content and Web applications more accessible. We used
           it, along with its origonal intention, as a basis for commonly reused
-          styles. The goal is to allow the developer to use ARIA roles instead of
-          potentially redundant classes. 
+          styles. The goal is to allow the developer to use ARIA roles instead
+          of potentially redundant classes.
         </p>
         <h3><code> role="button" </code></h3>
         <p>
@@ -74,6 +76,22 @@
           </ea-tab>
         </ea-tabs>
         <ea-markdown [doc]="role_banner_table"></ea-markdown>
+
+        <h3><code> role="text" </code></h3>
+        <p>The text role is typically for <code>input</code></p>
+        <div style="display: flex; justify-content: space-evenly;">
+          <input type="text" /> <input readonly type="text" />
+          <input type="text" />
+        </div>
+        <ea-tabs>
+          <ea-tab name="HTML">
+            <ea-markdown [doc]="role_banner"></ea-markdown>
+          </ea-tab>
+        </ea-tabs>
+        <section two-col>
+          <div><h1>Section 1</h1></div>
+          <div><h1>Section 2</h1></div>
+        </section>
       </ea-tab>
     </ea-tabs>
   </div>
