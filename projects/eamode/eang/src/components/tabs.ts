@@ -16,8 +16,7 @@ import { Subject } from 'rxjs'
   selector: 'ea-tab',
   template: `
     <ng-content></ng-content>
-  `,
-  styles: []
+  `
 })
 export class TabComponent {
   @HostBinding('attr.active') active
@@ -25,16 +24,13 @@ export class TabComponent {
 
   @Input() name: string
   @Input() closeable = false
-
-  constructor() {}
 }
 
 @Component({
   selector: 'ea-tabpanel',
   template: `
     <ng-content select="ea-tab"></ng-content>
-  `,
-  styles: []
+  `
 })
 export class TabPanelComponent implements AfterContentInit {
   @HostBinding('attr.role') role = 'tabpanel'
@@ -67,8 +63,7 @@ export class TabPanelComponent implements AfterContentInit {
       [optionAreaTemplate]="optionTemplate"
     >
     </ea-menu>
-  `,
-  styles: []
+  `
 })
 export class TabListComponent implements AfterContentInit {
   @HostBinding('attr.role') role = 'tablist'
