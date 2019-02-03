@@ -13,29 +13,29 @@ import { MenuTreeItem } from './menu'
 import { Subject } from 'rxjs'
 
 @Component({
-  selector: 'ea-tab',
+  selector: 'ea-tabpanel',
   template: `
     <ng-content></ng-content>
   `
 })
-export class TabComponent {
-  @HostBinding('attr.active') active
-  @HostBinding('attr.closed') closed
+export class TabpanelComponent {
+  @HostBinding('attr.role') role = 'tabpanel'
+  @HostBinding('attr.active') active: string
+  @HostBinding('attr.closed') closed: string
 
   @Input() name: string
   @Input() closeable = false
 }
 
 @Component({
-  selector: 'ea-tabpanel',
+  selector: 'ea-tabpanel-group',
   template: `
     <ng-content select="ea-tab"></ng-content>
   `
 })
-export class TabPanelComponent implements AfterContentInit {
-  @HostBinding('attr.role') role = 'tabpanel'
-  @ContentChildren(TabComponent) tabQueryList: QueryList<TabComponent>
-  _tabs = new Subject<TabComponent[]>()
+export class TabpanelGroupComponent implements AfterContentInit {
+  @ContentChildren(TabpanelComponent) tabQueryList: QueryList<TabpanelComponent>
+  _tabs = new Subject<TabpanelComponent[]>()
   get tabs() {
     return this._tabs.asObservable()
   }
@@ -70,14 +70,14 @@ export class TabListComponent implements AfterContentInit {
   @ContentChild('headerTemplate') headerTemplate: TemplateRef<{}>
   @ContentChild('optionTemplate') optionTemplate: TemplateRef<{}>
 
-  @Input() tabpanel: TabPanelComponent
+  @Input() tabpanel: TabpanelGroupComponent
   menuItems: MenuTreeItem[]
 
-  activeTab: TabComponent
+  activeTab: TabpanelComponent
   activated = new EventEmitter<MenuTreeItem>()
   closed = new EventEmitter<MenuTreeItem>()
 
-  private _tabs: TabComponent[]
+  private _tabs: TabpanelComponent[]
 
   ngAfterContentInit() {
     this.tabpanel.tabs.subscribe(t => {
@@ -99,7 +99,7 @@ export class TabListComponent implements AfterContentInit {
     })
   }
 
-  private activateTab(tab: TabComponent) {
+  private activateTab(tab: TabpanelComponent) {
     if (this.activeTab) {
       this.activeTab.active = undefined
       const activeMenuItem = this.menuItems.find(
@@ -111,7 +111,7 @@ export class TabListComponent implements AfterContentInit {
     this.activeTab = tab
   }
 
-  private resetState(tabs: TabComponent[]) {
+  private resetState(tabs: TabpanelComponent[]) {
     let hasActive = false
     this._tabs = tabs
     this.menuItems = tabs.map(t => {

@@ -5,8 +5,8 @@
     <span icon button-icon style="width: 1.5em; height:1.5em;"></span>
   </div>
   <div class="ea-card-content">
-    <ea-panel>
-      <ea-tab name="Overview">
+    <ea-tabpanel-group>
+      <ea-tabpanel name="Overview">
         <div class="ea-card" unset>
           <p>
             Buttons allow users to take actions, and make choices, with a single
@@ -33,8 +33,8 @@
           </div>
         </div>
         <ea-markdown [doc]="props"></ea-markdown>
-      </ea-tab>
-      <ea-tab name="Examples">
+      </ea-tabpanel>
+      <ea-tabpanel name="Examples">
         <h2>Icon Buttons</h2>
         <p>
           Eang makes it easy to add icons into your buttons with a preset lay
@@ -89,7 +89,7 @@
 
           <div class="ea-card-footer"></div>
         </section>
-      </ea-tab>
-    </ea-panel>
+      </ea-tabpanel>
+    </ea-tabpanel-group>
   </div>
 </div>

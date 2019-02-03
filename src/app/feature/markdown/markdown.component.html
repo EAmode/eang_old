@@ -4,8 +4,8 @@
     <span icon edit negative style="width: 1.5rem; height:1.5rem;"></span>
   </div>
   <div class="ea-card-content">
-    <ea-panel>
-      <ea-tab name="Overview">
+    <ea-tabpanel-group>
+      <ea-tabpanel name="Overview">
         <div class="ea-card" unset>
           <p>
             <code>ea-markdown</code> allows you to render a Markdown from a
@@ -21,8 +21,8 @@
             </div>
           </div>
         </div>
-      </ea-tab>
-      <ea-tab name="Examples">
+      </ea-tabpanel>
+      <ea-tabpanel name="Examples">
         <h2>Using an observable and context</h2>
         <div class="ea-card-content example" grid>
           <ea-markdown [doc]="observableAndContext"></ea-markdown>
@@ -46,31 +46,31 @@
               <button *ngIf="editing" (click)="addTab()">Add Tabs</button>
             </span>
           </div>
-          <ea-panel *ngIf="editing">
-            <ea-tab name="current">
+          <ea-tabpanel-group *ngIf="editing">
+            <ea-tabpanel name="current">
               <div class="ea-card-content">
 
                 <ea-markdown [doc]="test"></ea-markdown>
               </div>
-            </ea-tab>
-            <ea-tab *ngIf="changesTab.visible" name="My Changes">
+            </ea-tabpanel>
+            <ea-tabpanel *ngIf="changesTab.visible" name="My Changes">
               Here is a bunch of content about this thing here
-            </ea-tab>
-            <ea-tab *ngFor="let other of otherTabs" name="{{ other.name }}">
+            </ea-tabpanel>
+            <ea-tabpanel *ngFor="let other of otherTabs" name="{{ other.name }}">
               {{ other.content }}
-            </ea-tab>
-          </ea-panel>
-          <ea-panel *ngIf="!editing">
-              <ea-tab name="current">
+            </ea-tabpanel>
+          </ea-tabpanel-group>
+          <ea-tabpanel-group *ngIf="!editing">
+              <ea-tabpanel name="current">
                 <div class="ea-card-content">
                   <h2>Testing this thing out</h2>
 
                   <ea-markdown [doc]="test"></ea-markdown>
                 </div>
-              </ea-tab>
-            </ea-panel>
+              </ea-tabpanel>
+            </ea-tabpanel-group>
         </div>
-      </ea-tab>
-    </ea-panel>
+      </ea-tabpanel>
+    </ea-tabpanel-group>
   </div>
 </div>

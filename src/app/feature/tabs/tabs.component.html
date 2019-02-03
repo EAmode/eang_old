@@ -5,8 +5,8 @@
   </div>
   <div class="ea-card-content">
     <ea-tablist [tabpanel]="myTabPanel"></ea-tablist>
-    <ea-tabpanel #myTabPanel>
-      <ea-tab name="Overview">
+    <ea-tabpanel-group #myTabPanel>
+      <ea-tabpanel name="Overview">
         <div class="ea-card" unset>
           <p>Tabs allow users to display content in separate areas.</p>
           <p>
@@ -18,9 +18,9 @@
               <p>Tabs view. Click on each tab to see what it contains.</p>
             </div>
             <div class="ea-card-content header" style="flex-direction: column;">
-              <ea-panel>
-                <ea-tab name="Paragraph"> <p>Just paragraph</p> </ea-tab>
-                <ea-tab name="List">
+              <ea-tabpanel-group>
+                <ea-tabpanel name="Paragraph"> <p>Just paragraph</p> </ea-tabpanel>
+                <ea-tabpanel name="List">
                   <ul>
                     <li>There is some list</li>
                     <li>With few items</li>
@@ -39,8 +39,8 @@
                     <li>There is some list</li>
                     <li>With few items</li>
                   </ul>
-                </ea-tab>
-                <ea-tab name="Image">
+                </ea-tabpanel>
+                <ea-tabpanel name="Image">
                   <p>
                     <img
                       src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Angular_full_color_logo.svg"
@@ -50,8 +50,8 @@
                     application platform led by the Angular Team at Google and
                     by a community of individuals and corporations.
                   </p>
-                </ea-tab>
-              </ea-panel>
+                </ea-tabpanel>
+              </ea-tabpanel-group>
             </div>
           </div>
           <ea-markdown [doc]="tabs_example"></ea-markdown>
@@ -60,8 +60,8 @@
             will be shown in tab title.
           </p>
         </div>
-      </ea-tab>
-      <ea-tab name="Examples">
+      </ea-tabpanel>
+      <ea-tabpanel name="Examples">
         <h2>Closeable</h2>
         <p>Try to add property closeable to show button to close your tab.</p>
         <div class="ea-card">
@@ -70,24 +70,24 @@
             <button (click)="addTab()">Add Tab</button>
           </div>
           <div class="ea-card-content header" style="flex-direction: column;">
-            <ea-panel>
-              <ea-tab name="Paragraph#1" [closeable]="true">
+            <ea-tabpanel-group>
+              <ea-tabpanel name="Paragraph#1" [closeable]="true">
                 <p>Just paragraph #1</p>
-              </ea-tab>
-              <ea-tab *ngIf="editing" name="Toggle Tab">
+              </ea-tabpanel>
+              <ea-tabpanel *ngIf="editing" name="Toggle Tab">
                 <p>Toggle on/off</p>
-              </ea-tab>
-              <ea-tab name="List">
+              </ea-tabpanel>
+              <ea-tabpanel name="List">
                 <ul>
                   <li>There is some list</li>
                   <li>With few items</li>
                 </ul>
-              </ea-tab>
-            </ea-panel>
+              </ea-tabpanel>
+            </ea-tabpanel-group>
           </div>
         </div>
         <div grid><ea-markdown [doc]="tab_close"></ea-markdown></div>
-      </ea-tab>
-    </ea-tabpanel>
+      </ea-tabpanel>
+    </ea-tabpanel-group>
   </div>
 </div>

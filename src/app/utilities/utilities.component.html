@@ -3,8 +3,8 @@
     <div><h1>Utilities</h1></div>
   </div>
   <div class="ea-card-content">
-    <ea-panel>
-      <ea-tab name="Overview">
+    <ea-tabpanel-group>
+      <ea-tabpanel name="Overview">
         <p>
           <b>ARIA Roles</b> (Accessible Rich Internet Applications), defines a
           way to make Web content and Web applications more accessible. We used
@@ -25,11 +25,11 @@
             <a href="" role="button" outline>testing</a>
             <a href="" role="button" flat>Testing</a>
           </span>
-          <ea-panel>
-            <ea-tab name="HTML">
+          <ea-tabpanel-group>
+            <ea-tabpanel name="HTML">
               <ea-markdown [doc]="role_button"></ea-markdown>
-            </ea-tab>
-          </ea-panel>
+            </ea-tabpanel>
+          </ea-tabpanel-group>
         </div>
 
         <div class="ea-card" unset>
@@ -40,11 +40,11 @@
           </p>
           <div class="ea-card-content example" grid>
             <div>
-              <ea-panel>
-                <ea-tab name="HTML">
+              <ea-tabpanel-group>
+                <ea-tabpanel name="HTML">
                   <ea-markdown [doc]="role_list"></ea-markdown>
-                </ea-tab>
-              </ea-panel>
+                </ea-tabpanel>
+              </ea-tabpanel-group>
             </div>
             <div>
               <label for="secondlist"> Longer List</label>
@@ -70,11 +70,11 @@
           aligned text.
         </p>
         <div role="banner"><h1>Banner</h1></div>
-        <ea-panel>
-          <ea-tab name="HTML">
+        <ea-tabpanel-group>
+          <ea-tabpanel name="HTML">
             <ea-markdown [doc]="role_banner"></ea-markdown>
-          </ea-tab>
-        </ea-panel>
+          </ea-tabpanel>
+        </ea-tabpanel-group>
         <ea-markdown [doc]="role_banner_table"></ea-markdown>
 
         <h3><code> role="text" </code></h3>
@@ -83,16 +83,16 @@
           <input type="text" /> <input readonly type="text" />
           <input type="text" />
         </div>
-        <ea-panel>
-          <ea-tab name="HTML">
+        <ea-tabpanel-group>
+          <ea-tabpanel name="HTML">
             <ea-markdown [doc]="role_banner"></ea-markdown>
-          </ea-tab>
-        </ea-panel>
+          </ea-tabpanel>
+        </ea-tabpanel-group>
         <section two-col>
           <div><h1>Section 1</h1></div>
           <div><h1>Section 2</h1></div>
         </section>
-      </ea-tab>
-    </ea-panel>
+      </ea-tabpanel>
+    </ea-tabpanel-group>
   </div>
 </div>

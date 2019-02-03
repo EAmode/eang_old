@@ -4,8 +4,8 @@
     <span icon negative hamburger-menu style="width: 2rem; height:2rem;"></span>
   </div>
   <div class="ea-card-content">
-    <ea-panel>
-      <ea-tab name="Overview">
+    <ea-tabpanel-group>
+      <ea-tabpanel name="Overview">
         <div class="ea-card" unset>
           <p>
             If you are looking for the easier way of adding menu for your site -
@@ -37,8 +37,8 @@
         <div style="overflow-x: auto;">
           <ea-markdown [doc]="ea_menu_attrs"></ea-markdown>
         </div>
-      </ea-tab>
-      <ea-tab name="Examples">
+      </ea-tabpanel>
+      <ea-tabpanel name="Examples">
         <h2>Customize your menu</h2>
         <p>
           You can add attribute <em>horizontal: true/false</em> in your parent
@@ -107,7 +107,7 @@
             </div>
           </div>
         </div>
-      </ea-tab>
-    </ea-panel>
+      </ea-tabpanel>
+    </ea-tabpanel-group>
   </div>
 </div>

@@ -4,8 +4,8 @@
     <span icon negative layers style="width: 2rem; height:2rem;"></span>
   </div>
   <div class="ea-card-content">
-    <ea-panel>
-      <ea-tab name="Overview">
+    <ea-tabpanel-group>
+      <ea-tabpanel name="Overview">
         <div class="ea-card" unset>
           <p>
             The ea-card has a header, content, and footer labeled as
@@ -41,8 +41,8 @@
           </div>
         </div>
         <ea-markdown [doc]="sizing"></ea-markdown>
-      </ea-tab>
-      <ea-tab name="Examples">
+      </ea-tabpanel>
+      <ea-tabpanel name="Examples">
         <h2>Card Sizing</h2>
         <p>
           Cards can be dynamically sized using the eang utility attributes of
@@ -284,7 +284,7 @@
             </p>
           </div>
         </div>
-      </ea-tab>
-    </ea-panel>
+      </ea-tabpanel>
+    </ea-tabpanel-group>
   </div>
 </div>
