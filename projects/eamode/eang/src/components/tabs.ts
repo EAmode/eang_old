@@ -75,7 +75,7 @@ export class TabListComponent implements AfterContentInit {
   @ContentChild('headerTemplate') headerTemplate: TemplateRef<{}>
   @ContentChild('optionTemplate') optionTemplate: TemplateRef<{}>
 
-  @Input() tabs: Observable<TabComponent[]>
+  @Input() tabpanel: TabPanelComponent
   menuItems: MenuTreeItem[]
   private _tabs: TabComponent[]
 
@@ -85,16 +85,8 @@ export class TabListComponent implements AfterContentInit {
 
   constructor() {}
 
-  activateTab(tab: TabComponent) {
-    if (this.activeTab) {
-      this.activeTab.active = undefined
-    }
-    tab.active = ''
-    this.activeTab = tab
-  }
-
   ngAfterContentInit() {
-    this.tabs.subscribe(t => {
+    this.tabpanel.tabs.subscribe(t => {
       this.resetState(t)
     })
 
@@ -111,6 +103,14 @@ export class TabListComponent implements AfterContentInit {
         this.activateTab(this._tabs[0])
       }
     })
+  }
+
+  private activateTab(tab: TabComponent) {
+    if (this.activeTab) {
+      this.activeTab.active = undefined
+    }
+    tab.active = ''
+    this.activeTab = tab
   }
 
   private resetState(tabs: TabComponent[]) {
