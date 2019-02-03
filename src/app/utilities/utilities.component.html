@@ -3,7 +3,7 @@
     <div><h1>Utilities</h1></div>
   </div>
   <div class="ea-card-content">
-    <ea-tabs>
+    <ea-panel>
       <ea-tab name="Overview">
         <p>
           <b>ARIA Roles</b> (Accessible Rich Internet Applications), defines a
@@ -25,11 +25,11 @@
             <a href="" role="button" outline>testing</a>
             <a href="" role="button" flat>Testing</a>
           </span>
-          <ea-tabs>
+          <ea-panel>
             <ea-tab name="HTML">
               <ea-markdown [doc]="role_button"></ea-markdown>
             </ea-tab>
-          </ea-tabs>
+          </ea-panel>
         </div>
 
         <div class="ea-card" unset>
@@ -40,11 +40,11 @@
           </p>
           <div class="ea-card-content example" grid>
             <div>
-              <ea-tabs>
+              <ea-panel>
                 <ea-tab name="HTML">
                   <ea-markdown [doc]="role_list"></ea-markdown>
                 </ea-tab>
-              </ea-tabs>
+              </ea-panel>
             </div>
             <div>
               <label for="secondlist"> Longer List</label>
@@ -70,11 +70,11 @@
           aligned text.
         </p>
         <div role="banner"><h1>Banner</h1></div>
-        <ea-tabs>
+        <ea-panel>
           <ea-tab name="HTML">
             <ea-markdown [doc]="role_banner"></ea-markdown>
           </ea-tab>
-        </ea-tabs>
+        </ea-panel>
         <ea-markdown [doc]="role_banner_table"></ea-markdown>
 
         <h3><code> role="text" </code></h3>
@@ -83,16 +83,16 @@
           <input type="text" /> <input readonly type="text" />
           <input type="text" />
         </div>
-        <ea-tabs>
+        <ea-panel>
           <ea-tab name="HTML">
             <ea-markdown [doc]="role_banner"></ea-markdown>
           </ea-tab>
-        </ea-tabs>
+        </ea-panel>
         <section two-col>
           <div><h1>Section 1</h1></div>
           <div><h1>Section 2</h1></div>
         </section>
       </ea-tab>
-    </ea-tabs>
+    </ea-panel>
   </div>
 </div>

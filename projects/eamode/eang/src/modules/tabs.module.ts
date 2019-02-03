@@ -1,16 +1,18 @@
 import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
 
-import { TabsComponent } from '../components/tabs'
-import { TabComponent } from '../components/tab'
+import {
+  TabListComponent,
+  TabComponent,
+  TabPanelComponent
+} from '../components/tabs'
 import { MenuModule } from './menu.module'
 
 export * from '../components/tabs'
-export * from '../components/tab'
 
 @NgModule({
-  declarations: [TabsComponent, TabComponent],
-  exports: [TabsComponent, TabComponent],
+  declarations: [TabListComponent, TabComponent, TabPanelComponent],
+  exports: [TabListComponent, TabComponent, TabPanelComponent],
   imports: [CommonModule, MenuModule]
 })
 export class TabsModule {}

@@ -4,7 +4,8 @@
     <span icon negative tab style="width: 2rem; height:2rem;"></span>
   </div>
   <div class="ea-card-content">
-    <ea-tabs>
+    <ea-tablist [tabs]="tabpanel.tabs"></ea-tablist>
+    <ea-tabpanel #tabpanel>
       <ea-tab name="Overview">
         <div class="ea-card" unset>
           <p>Tabs allow users to display content in separate areas.</p>
@@ -17,7 +18,7 @@
               <p>Tabs view. Click on each tab to see what it contains.</p>
             </div>
             <div class="ea-card-content header" style="flex-direction: column;">
-              <ea-tabs>
+              <ea-panel>
                 <ea-tab name="Paragraph"> <p>Just paragraph</p> </ea-tab>
                 <ea-tab name="List">
                   <ul>
@@ -50,7 +51,7 @@
                     by a community of individuals and corporations.
                   </p>
                 </ea-tab>
-              </ea-tabs>
+              </ea-panel>
             </div>
           </div>
           <ea-markdown [doc]="tabs_example"></ea-markdown>
@@ -69,7 +70,7 @@
             <button (click)="addTab()">Add Tab</button>
           </div>
           <div class="ea-card-content header" style="flex-direction: column;">
-            <ea-tabs>
+            <ea-panel>
               <ea-tab name="Paragraph#1" [closeable]="true">
                 <p>Just paragraph #1</p>
               </ea-tab>
@@ -82,11 +83,11 @@
                   <li>With few items</li>
                 </ul>
               </ea-tab>
-            </ea-tabs>
+            </ea-panel>
           </div>
         </div>
         <div grid><ea-markdown [doc]="tab_close"></ea-markdown></div>
       </ea-tab>
-    </ea-tabs>
+    </ea-tabpanel>
   </div>
 </div>

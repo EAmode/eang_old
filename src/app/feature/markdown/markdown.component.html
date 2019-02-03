@@ -4,7 +4,7 @@
     <span icon edit negative style="width: 1.5rem; height:1.5rem;"></span>
   </div>
   <div class="ea-card-content">
-    <ea-tabs>
+    <ea-panel>
       <ea-tab name="Overview">
         <div class="ea-card" unset>
           <p>
@@ -46,7 +46,7 @@
               <button *ngIf="editing" (click)="addTab()">Add Tabs</button>
             </span>
           </div>
-          <ea-tabs *ngIf="editing">
+          <ea-panel *ngIf="editing">
             <ea-tab name="current">
               <div class="ea-card-content">
 
@@ -59,8 +59,8 @@
             <ea-tab *ngFor="let other of otherTabs" name="{{ other.name }}">
               {{ other.content }}
             </ea-tab>
-          </ea-tabs>
-          <ea-tabs *ngIf="!editing">
+          </ea-panel>
+          <ea-panel *ngIf="!editing">
               <ea-tab name="current">
                 <div class="ea-card-content">
                   <h2>Testing this thing out</h2>
@@ -68,9 +68,9 @@
                   <ea-markdown [doc]="test"></ea-markdown>
                 </div>
               </ea-tab>
-            </ea-tabs>
+            </ea-panel>
         </div>
       </ea-tab>
-    </ea-tabs>
+    </ea-panel>
   </div>
 </div>
