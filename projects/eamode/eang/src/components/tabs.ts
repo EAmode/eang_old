@@ -30,7 +30,7 @@ export class TabpanelComponent {
 @Component({
   selector: 'ea-tabpanel-group',
   template: `
-    <ng-content select="ea-tab"></ng-content>
+    <ng-content select="ea-tabpanel"></ng-content>
   `
 })
 export class TabpanelGroupComponent implements AfterContentInit {
