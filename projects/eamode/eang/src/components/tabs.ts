@@ -39,7 +39,6 @@ export class TabPanelComponent implements AfterContentInit {
   get tabs() {
     return this._tabs.asObservable()
   }
-  constructor() {}
 
   ngAfterContentInit() {
     this._tabs.next(this.tabQueryList.toArray())
@@ -73,13 +72,12 @@ export class TabListComponent implements AfterContentInit {
 
   @Input() tabpanel: TabPanelComponent
   menuItems: MenuTreeItem[]
-  private _tabs: TabComponent[]
 
-  activeTab
+  activeTab: TabComponent
   activated = new EventEmitter<MenuTreeItem>()
   closed = new EventEmitter<MenuTreeItem>()
 
-  constructor() {}
+  private _tabs: TabComponent[]
 
   ngAfterContentInit() {
     this.tabpanel.tabs.subscribe(t => {
