@@ -10,7 +10,7 @@ import {
   Input
 } from '@angular/core'
 import { MenuTreeItem } from './menu'
-import { Observable, Subject } from 'rxjs'
+import { Subject } from 'rxjs'
 
 @Component({
   selector: 'ea-tab',
@@ -37,6 +37,7 @@ export class TabComponent {
   styles: []
 })
 export class TabPanelComponent implements AfterContentInit {
+  @HostBinding('attr.role') role = 'tabpanel'
   @ContentChildren(TabComponent) tabQueryList: QueryList<TabComponent>
   _tabs = new Subject<TabComponent[]>()
   get tabs() {
@@ -108,6 +109,10 @@ export class TabListComponent implements AfterContentInit {
   private activateTab(tab: TabComponent) {
     if (this.activeTab) {
       this.activeTab.active = undefined
+      const activeMenuItem = this.menuItems.find(
+        m => m.name === this.activeTab.name
+      )
+      activeMenuItem.isActive = false
     }
     tab.active = ''
     this.activeTab = tab
