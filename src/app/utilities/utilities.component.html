@@ -2,10 +2,11 @@
   <div role="banner">
     <div><h1>Utilities</h1></div>
   </div>
-  <div class="ea-card-content">
-    <ea-tabpanel-group>
+  <div class="ea-card-content" id="container">
+    <ea-tablist [tabpanel]="mainPanel" horizontal></ea-tablist>
+    <ea-tabpanel-group #mainPanel>
       <ea-tabpanel name="Overview">
-        <p>
+        <!-- <p>
           <b>ARIA Roles</b> (Accessible Rich Internet Applications), defines a
           way to make Web content and Web applications more accessible. We used
           it, along with its origonal intention, as a basis for commonly reused
@@ -18,51 +19,17 @@
           making them look like buttons. This borrows from the
           <a routerLink="/button">button component</a> and inherits all the
           additional attributes and features.
-        </p>
-        <div class="ea-card-content example" grid>
+        </p> -->
+        <!-- <div class="ea-card-content example" grid>
           <span style="display: flex; justify-content: space-between;">
             <a href="" role="button">testing</a>
             <a href="" role="button" outline>testing</a>
             <a href="" role="button" flat>Testing</a>
           </span>
-          <ea-tabpanel-group>
-            <ea-tabpanel name="HTML">
-              <ea-markdown [doc]="role_button"></ea-markdown>
-            </ea-tabpanel>
-          </ea-tabpanel-group>
-        </div>
+          <ea-markdown [doc]="role_button"></ea-markdown>
+        </div> -->
 
-        <div class="ea-card" unset>
-          <h3><code> role="listitem" </code></h3>
-          <p>
-            The List and Listitem role allow you to make a set of two elements
-            into a scrollable list with mouse interactions accounted for.
-          </p>
-          <div class="ea-card-content example" grid>
-            <div>
-              <ea-tabpanel-group>
-                <ea-tabpanel name="HTML">
-                  <ea-markdown [doc]="role_list"></ea-markdown>
-                </ea-tabpanel>
-              </ea-tabpanel-group>
-            </div>
-            <div>
-              <label for="secondlist"> Longer List</label>
-              <div role="list" id="secondlist">
-                <div role="listitem">testing</div>
-                <div role="listitem">testing</div>
-                <div role="listitem">Testing</div>
-                <div role="listitem">testing</div>
-                <div role="listitem">testing</div>
-                <div role="listitem">Testing</div>
-                <div role="listitem">testing</div>
-                <div role="listitem">testing</div>
-                <div role="listitem">Testing</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <ea-markdown [doc]="role_banner_listitem"></ea-markdown>
+
 
         <h3><code> role="banner" </code></h3>
         <p>
@@ -70,28 +37,22 @@
           aligned text.
         </p>
         <div role="banner"><h1>Banner</h1></div>
-        <ea-tabpanel-group>
-          <ea-tabpanel name="HTML">
-            <ea-markdown [doc]="role_banner"></ea-markdown>
-          </ea-tabpanel>
-        </ea-tabpanel-group>
+
+        <ea-markdown [doc]="role_banner"></ea-markdown>
+
         <ea-markdown [doc]="role_banner_table"></ea-markdown>
 
-        <h3><code> role="text" </code></h3>
+        <!-- <h3><code> role="text" </code></h3>
         <p>The text role is typically for <code>input</code></p>
         <div style="display: flex; justify-content: space-evenly;">
           <input type="text" /> <input readonly type="text" />
           <input type="text" />
         </div>
-        <ea-tabpanel-group>
-          <ea-tabpanel name="HTML">
-            <ea-markdown [doc]="role_banner"></ea-markdown>
-          </ea-tabpanel>
-        </ea-tabpanel-group>
-        <section two-col>
+        <ea-markdown [doc]="role_banner"></ea-markdown> -->
+        <!-- <section two-col>
           <div><h1>Section 1</h1></div>
           <div><h1>Section 2</h1></div>
-        </section>
+        </section> -->
       </ea-tabpanel>
     </ea-tabpanel-group>
   </div>

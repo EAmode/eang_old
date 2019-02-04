@@ -3,8 +3,9 @@
     <h1>Markdown</h1>
     <span icon edit negative style="width: 1.5rem; height:1.5rem;"></span>
   </div>
-  <div class="ea-card-content">
-    <ea-tabpanel-group>
+  <div class="ea-card-content" id="container">
+    <ea-tablist [tabpanel]="mainPanel" horizontal></ea-tablist>
+    <ea-tabpanel-group #mainPanel>
       <ea-tabpanel name="Overview">
         <div class="ea-card" unset>
           <p>
@@ -37,7 +38,14 @@
           <div class="ea-card-header">
             <h2>ea-markdown</h2>
             <span>
-              <button flat icon *ngIf="!editing" (click)="editing = !editing; changesTab.visible = !changesTab.visible">
+              <button
+                flat
+                icon
+                *ngIf="!editing"
+                (click)="
+                  editing = !editing; changesTab.visible = !changesTab.visible
+                "
+              >
                 <span icon edit></span>
               </button>
               <button *ngIf="editing" (click)="editing = !editing; toggleTab()">
@@ -49,26 +57,28 @@
           <ea-tabpanel-group *ngIf="editing">
             <ea-tabpanel name="current">
               <div class="ea-card-content">
-
                 <ea-markdown [doc]="test"></ea-markdown>
               </div>
             </ea-tabpanel>
             <ea-tabpanel *ngIf="changesTab.visible" name="My Changes">
               Here is a bunch of content about this thing here
             </ea-tabpanel>
-            <ea-tabpanel *ngFor="let other of otherTabs" name="{{ other.name }}">
+            <ea-tabpanel
+              *ngFor="let other of otherTabs"
+              name="{{ other.name }}"
+            >
               {{ other.content }}
             </ea-tabpanel>
           </ea-tabpanel-group>
           <ea-tabpanel-group *ngIf="!editing">
-              <ea-tabpanel name="current">
-                <div class="ea-card-content">
-                  <h2>Testing this thing out</h2>
+            <ea-tabpanel name="current">
+              <div class="ea-card-content">
+                <h2>Testing this thing out</h2>
 
-                  <ea-markdown [doc]="test"></ea-markdown>
-                </div>
-              </ea-tabpanel>
-            </ea-tabpanel-group>
+                <ea-markdown [doc]="test"></ea-markdown>
+              </div>
+            </ea-tabpanel>
+          </ea-tabpanel-group>
         </div>
       </ea-tabpanel>
     </ea-tabpanel-group>

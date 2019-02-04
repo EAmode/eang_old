@@ -211,15 +211,25 @@
       margin: 5rem 0;
       justify-content: space-evenly;
     }
+    & .theme-color {
+      width: 12em;
+      height: 13em;
+      & .ea-card-footer {
+        justify-content: center;
+      }
+    }
     & .example-color {
-         border-radius: 0.25em;
       box-shadow: var(--ea-box-shadow);
-      width: 6rem;
       height: 4rem;
       display: flex;
       justify-content: center;
       align-items: center;
       cursor: pointer;
+      flex-grow: 1;
+      width: 100%;
+      box-sizing: border-box;
+      border-top-right-radius: .25em;
+      border-top-left-radius: .25em;
       & small {
         text-align: center;
         color: var(--ea-text-color-light);
@@ -451,6 +461,10 @@
           }
         }
       }
+      #container {
+        flex-direction: column;
+        padding: 0 4vw;
+      }
       & ea-tabs {
         width: 90%;
       }
@@ -569,6 +583,27 @@
   margin-top: 1rem;
 }
 
+#banner-contents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#tabMobileExample {
+  height: 5em;
+  background: white;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+ea-tabpanel-group#mobileTab {
+  display: flex;
+  background: var(--ea-color-3-dark);
+  & ea-tabpanel {
+    width: 100%;
+    padding: 1em;
+  }
+}
 .ea-mode-logo {
   background: url('assets/images/eamode-logo.svg');
   height: 4rem;
