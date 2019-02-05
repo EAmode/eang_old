@@ -35,6 +35,8 @@ import { ComponentsComponent } from './feature/components/components.component'
 import { TabsComponent } from './feature/tabs/tabs.component'
 import { UtilitiesComponent } from './utilities/utilities.component'
 import { MarkdownComponent } from './feature/markdown/markdown.component'
+import { ListComponent } from './components/list/list.component'
+import { BannerComponent } from './components/banner/banner.component'
 
 const routes: Routes = [
   { path: '', component: LandingComponent },
@@ -43,6 +45,7 @@ const routes: Routes = [
   { path: 'layout', component: LayoutComponent },
   { path: 'button', component: ButtonComponent },
   { path: 'card', component: CardComponent },
+  { path: 'list', component: ListComponent },
   { path: 'icon', component: IconComponent },
   { path: 'variables', component: VariablesComponent },
   { path: 'components', component: ComponentsComponent },
@@ -72,7 +75,9 @@ const routes: Routes = [
     ComponentsComponent,
     TabsComponent,
     UtilitiesComponent,
-    MarkdownComponent
+    MarkdownComponent,
+    ListComponent,
+    BannerComponent
   ],
   imports: [
     BrowserModule,

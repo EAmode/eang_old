@@ -38,14 +38,6 @@ export class AppComponent implements OnInit {
             }
           },
           {
-            name: 'Icons',
-            icon: 'ea-grid',
-            iconStyle: 'ea-negative',
-            data: {
-              link: '/icon'
-            }
-          },
-          {
             name: 'Utilities',
             icon: 'ea-refresh-cw',
             iconStyle: 'ea-negative',
@@ -86,6 +78,14 @@ export class AppComponent implements OnInit {
             }
           },
           {
+            name: 'Icons',
+            icon: 'ea-grid',
+            iconStyle: 'ea-negative',
+            data: {
+              link: '/icon'
+            }
+          },
+          {
             name: 'Markdown',
             icon: 'ea-edit',
             iconStyle: 'ea-negative',
@@ -106,6 +106,14 @@ export class AppComponent implements OnInit {
             icon: 'ea-layout',
             data: {
               link: '/layout'
+            }
+          },
+          {
+            name: 'List',
+            icon: 'ea-align-left',
+            iconStyle: 'ea-negative',
+            data: {
+              link: '/list'
             }
           },
           {

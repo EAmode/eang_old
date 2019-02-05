@@ -1,0 +1,24 @@
+<div class="ea-card" unset>
+    <div role="banner">
+      <div><h1>Banner</h1></div>
+    </div>
+    <div class="ea-card-content" id="container">
+      <ea-tablist [tabpanelGroup]="mainPanel" horizontal></ea-tablist>
+      <ea-tabpanel-group #mainPanel>
+        <ea-tabpanel name="Overview">
+
+          <h3><code> role="banner" </code></h3>
+          <p>
+            The Banner role allows you to quickly create a banner with center
+            aligned text.
+          </p>
+          <div role="banner"><h1>Banner</h1></div>
+
+          <ea-markdown [doc]="role_banner"></ea-markdown>
+
+          <ea-markdown [doc]="role_banner_table"></ea-markdown>
+
+        </ea-tabpanel>
+      </ea-tabpanel-group>
+    </div>
+  </div>

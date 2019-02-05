@@ -12,6 +12,15 @@ export class TabsComponent implements OnInit {
 
   ngOnInit() {}
 
+  tabs_markdown = `
+  ~~~html
+  <div> <div>
+  <div> <div>
+  <div> <div>
+  <div> <div>
+  ~~~
+  `
+
   toggleTab() {
     this.editing = !this.editing
   }
