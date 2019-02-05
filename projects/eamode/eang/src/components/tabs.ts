@@ -100,6 +100,9 @@ export class TabListComponent implements AfterContentInit {
   }
 
   private activateTab(tab: TabpanelComponent) {
+    if (this.activeTab === tab) {
+      return
+    }
     if (this.activeTab) {
       this.activeTab.active = undefined
       const activeMenuItem = this.menuItems.find(
