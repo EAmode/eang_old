@@ -8,11 +8,20 @@
     <ea-tabpanel-group #myTabPanel>
       <ea-tabpanel name="Overview">
         <div class="ea-card" unset>
-          <p>Tabs allow users to display content in separate areas.</p>
-          <p>
-            Each of tab can contain any type of data. It could be just a text,
-            list of your 'to-do', image.
-          </p>
+          <p>Tabs are a set of layered sections of content, known as <em>tabpanels</em>, that display one <em>tabpanel</em> of
+            content at a time. Each tab panel has an associated tab element, that when activated,
+            displays the <em>tabpanel</em>. Unlike other angular tab implementations, eang does not require
+            tabs and tabpanels to be coupled. <code class="language-html">&lt;ea-tablist&gt;</code> and the associated
+            <code class="language-html">&lt;ea-tabgroup&gt;</code> can be placed anywhere on the page.</p>
+            <h1>Components</h1>
+
+                <h2><code class="language-html">&lt;ea-tablist&gt;</code></h2>
+                <p>Contains the tabs that can be activated to display different content in the tabgroup.</p>
+                <h2><code class="language-html">&lt;ea-tabgroup&gt;</code></h2>
+                <p>Collection of tabpanels.</p>
+                <h2><code class="language-html">&lt;ea-tabpanel&gt;</code></h2>
+                <p>Tabpanel is defined within the tabgroup.</p>
+
           <div class="ea-card">
             <div class="ea-card-header">
               <p>Tabs view. Click on each tab to see what it contains.</p>
