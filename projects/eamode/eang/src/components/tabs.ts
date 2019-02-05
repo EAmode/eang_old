@@ -7,10 +7,11 @@ import {
   TemplateRef,
   ContentChild,
   HostBinding,
-  Input
+  Input,
+  OnDestroy
 } from '@angular/core'
 import { MenuTreeItem } from './menu'
-import { Subject } from 'rxjs'
+import { Subject, Subscription } from 'rxjs'
 
 @Component({
   selector: 'ea-tabpanel',
@@ -19,12 +20,17 @@ import { Subject } from 'rxjs'
   `
 })
 export class TabpanelComponent {
-  @HostBinding('attr.role') role = 'tabpanel'
-  @HostBinding('attr.active') active: string
-  @HostBinding('attr.closed') closed: string
+  @HostBinding('attr.role')
+  role = 'tabpanel'
+  @HostBinding('attr.active')
+  active: string
+  @HostBinding('attr.closed')
+  closed: string
 
-  @Input() name: string
-  @Input() closeable = false
+  @Input()
+  name: string
+  @Input()
+  closeable = false
 }
 
 @Component({
@@ -34,7 +40,8 @@ export class TabpanelComponent {
   `
 })
 export class TabpanelGroupComponent implements AfterContentInit {
-  @ContentChildren(TabpanelComponent) tabQueryList: QueryList<TabpanelComponent>
+  @ContentChildren(TabpanelComponent)
+  tabQueryList: QueryList<TabpanelComponent>
   _tabs = new Subject<TabpanelComponent[]>()
   get tabs() {
     return this._tabs.asObservable()
@@ -64,13 +71,17 @@ export class TabpanelGroupComponent implements AfterContentInit {
     </ea-menu>
   `
 })
-export class TabListComponent implements AfterContentInit {
-  @HostBinding('attr.role') role = 'tablist'
+export class TabListComponent implements AfterContentInit, OnDestroy {
+  @HostBinding('attr.role')
+  role = 'tablist'
 
-  @ContentChild('headerTemplate') headerTemplate: TemplateRef<{}>
-  @ContentChild('optionTemplate') optionTemplate: TemplateRef<{}>
+  @ContentChild('headerTemplate')
+  headerTemplate: TemplateRef<{}>
+  @ContentChild('optionTemplate')
+  optionTemplate: TemplateRef<{}>
 
-  @Input() tabpanel: TabpanelGroupComponent
+  @Input()
+  tabpanelGroup: TabpanelGroupComponent
   menuItems: MenuTreeItem[]
 
   activeTab: TabpanelComponent
@@ -78,10 +89,28 @@ export class TabListComponent implements AfterContentInit {
   closed = new EventEmitter<MenuTreeItem>()
 
   private _tabs: TabpanelComponent[]
+  private _tabsSub: Subscription
 
   ngAfterContentInit() {
-    this.tabpanel.tabs.subscribe(t => {
-      this.resetState(t)
+    this._tabsSub = this.tabpanelGroup.tabs.subscribe(tabs => {
+      let hasActive = false
+      this._tabs = tabs
+      this.menuItems = tabs.map(t => {
+        const isActive = this.activeTab === t
+        if (isActive) {
+          hasActive = true
+        }
+        return {
+          name: t.name,
+          closeable: t.closeable,
+          isActive
+        }
+      })
+
+      if (!hasActive && this._tabs.length > 0) {
+        this.activateTab(this._tabs[0])
+        this.menuItems[0].isActive = true
+      }
     })
 
     this.activated.subscribe((activatedItem: MenuTreeItem) => {
@@ -99,6 +128,12 @@ export class TabListComponent implements AfterContentInit {
     })
   }
 
+  ngOnDestroy() {
+    if (this._tabsSub) {
+      this._tabsSub.unsubscribe()
+    }
+  }
+
   private activateTab(tab: TabpanelComponent) {
     if (this.activeTab) {
       this.activeTab.active = undefined
@@ -109,26 +144,5 @@ export class TabListComponent implements AfterContentInit {
     }
     tab.active = ''
     this.activeTab = tab
-  }
-
-  private resetState(tabs: TabpanelComponent[]) {
-    let hasActive = false
-    this._tabs = tabs
-    this.menuItems = tabs.map(t => {
-      const isActive = this.activeTab === t
-      if (isActive) {
-        hasActive = true
-      }
-      return {
-        name: t.name,
-        closeable: t.closeable,
-        isActive
-      }
-    })
-
-    if (!hasActive && this._tabs.length > 0) {
-      this.activateTab(this._tabs[0])
-      this.menuItems[0].isActive = true
-    }
   }
 }

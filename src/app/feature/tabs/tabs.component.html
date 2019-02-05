@@ -4,7 +4,7 @@
     <span icon negative tab style="width: 2rem; height:2rem;"></span>
   </div>
   <div class="ea-card-content" style="flex-direction: column; padding: 0 4vw;">
-    <ea-tablist [tabpanel]="myTabPanel" horizontal></ea-tablist>
+    <ea-tablist [tabpanelGroup]="myTabPanel" horizontal></ea-tablist>
     <ea-tabpanel-group #myTabPanel>
       <ea-tabpanel name="Overview">
         <div class="ea-card" unset>
@@ -81,7 +81,7 @@
             <button (click)="addTab()">Add Tab</button>
           </div>
           <div class="ea-card-content header" style="flex-direction: column;">
-            <ea-tablist [tabpanel]="exampleTabs" horizontal></ea-tablist>
+            <ea-tablist [tabpanelGroup]="exampleTabs" horizontal></ea-tablist>
 
             <ea-tabpanel-group #exampleTabs>
               <ea-tabpanel name="Paragraph#1" [closeable]="true">
@@ -110,7 +110,7 @@
           <div class="ea-card-content example" grid style="justify-items: center;">
             <div style="width: 400px; height: 20em; background: white; box-shadow: var(--ea-box-shadow);">
               <div id="tabMobileExample">
-                <ea-tablist [tabpanel]="mobileTabs" horizontal></ea-tablist>
+                <ea-tablist [tabpanelGroup]="mobileTabs" horizontal></ea-tablist>
               </div>
               <div>
                 <div>
