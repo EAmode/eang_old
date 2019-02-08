@@ -1,24 +1,59 @@
 <div class="ea-card" unset>
-    <div role="banner">
-      <div><h1>Banner</h1></div>
-    </div>
-    <div class="ea-card-content" id="container">
-      <ea-tablist [tabpanelGroup]="mainPanel" horizontal></ea-tablist>
-      <ea-tabpanel-group #mainPanel>
-        <ea-tabpanel name="Overview">
-
-          <h3><code> role="banner" </code></h3>
-          <p>
-            The Banner role allows you to quickly create a banner with center
-            aligned text.
-          </p>
-          <div role="banner"><h1>Banner</h1></div>
-
-          <ea-markdown [doc]="role_banner"></ea-markdown>
-
-          <ea-markdown [doc]="role_banner_table"></ea-markdown>
-
-        </ea-tabpanel>
-      </ea-tabpanel-group>
-    </div>
+  <div role="banner">
+    <div><h1>Banner</h1></div>
   </div>
+  <div class="ea-card-content" id="container">
+    <ea-tablist [tabpanelGroup]="mainPanel" horizontal></ea-tablist>
+    <ea-tabpanel-group #mainPanel>
+      <ea-tabpanel name="Overview">
+        <!-- <p>
+          <b>ARIA Roles</b> (Accessible Rich Internet Applications), defines a
+          way to make Web content and Web applications more accessible. We used
+          it, along with its origonal intention, as a basis for commonly reused
+          styles. The goal is to allow the developer to use ARIA roles instead
+          of potentially redundant classes.
+        </p>
+        <h3><code> role="button" </code></h3>
+        <p>
+          The Button role allows you to achieve consistency with anchor tags by
+          making them look like buttons. This borrows from the
+          <a routerLink="/button">button component</a> and inherits all the
+          additional attributes and features.
+        </p> -->
+        <!-- <div class="ea-card-content example" grid>
+          <span style="display: flex; justify-content: space-between;">
+            <a href="" role="button">testing</a>
+            <a href="" role="button" outline>testing</a>
+            <a href="" role="button" flat>Testing</a>
+          </span>
+          <ea-markdown [doc]="role_button"></ea-markdown>
+        </div> -->
+
+
+
+        <h3><code> role="banner" </code></h3>
+        <p>
+          The Banner role allows you to quickly create a banner with center
+          aligned text.
+        </p>
+        <div role="banner"><h1>Banner</h1></div>
+
+        <ea-markdown [doc]="role_banner"></ea-markdown>
+
+        <ea-markdown [doc]="role_banner_table"></ea-markdown>
+
+        <!-- <h3><code> role="text" </code></h3>
+        <p>The text role is typically for <code>input</code></p>
+        <div style="display: flex; justify-content: space-evenly;">
+          <input type="text" /> <input readonly type="text" />
+          <input type="text" />
+        </div>
+        <ea-markdown [doc]="role_banner"></ea-markdown> -->
+        <!-- <section two-col>
+          <div><h1>Section 1</h1></div>
+          <div><h1>Section 2</h1></div>
+        </section> -->
+      </ea-tabpanel>
+    </ea-tabpanel-group>
+  </div>
+</div>
