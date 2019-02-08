@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core'
+import { Subject } from 'rxjs'
+import { EangElement } from '@eamode/eang'
 
 @Component({
   selector: 'eangio-tabs',
@@ -7,10 +9,14 @@ import { Component, OnInit } from '@angular/core'
 })
 export class TabsComponent implements OnInit {
   editing = true
-
+  tabActivate$$ = new Subject<EangElement>()
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.tabActivate$$.subscribe(x => {
+      console.log(x)
+    })
+  }
 
   tabs_markdown = `
   ~~~html

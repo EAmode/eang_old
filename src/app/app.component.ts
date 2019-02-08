@@ -1,7 +1,7 @@
 import { Component, OnInit, EventEmitter } from '@angular/core'
 import { Router } from '@angular/router'
 import { LayoutService } from 'projects/eamode/eang/src/services/layout.service'
-import { MenuTreeItem } from '@eamode/eang'
+import { EangElement } from '@eamode/eang'
 
 @Component({
   selector: 'eangio-root',
@@ -134,7 +134,7 @@ export class AppComponent implements OnInit {
       }
     ]
   }
-  activated = new EventEmitter<MenuTreeItem>()
+  activated = new EventEmitter<EangElement>()
 
   constructor(public router: Router, public layout: LayoutService) {}
 
@@ -152,7 +152,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.activated.subscribe((item: MenuTreeItem) => {
+    this.activated.subscribe((item: EangElement) => {
       if (item.data && item.data.link) {
         this.router.navigate([item.data.link])
       }
