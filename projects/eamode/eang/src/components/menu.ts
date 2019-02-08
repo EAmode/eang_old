@@ -6,8 +6,8 @@ import {
   ViewEncapsulation,
   AfterContentInit
 } from '@angular/core'
-import { EangElement } from '@eamode/eang'
 import { Subject } from 'rxjs'
+import { EangElement } from '../core'
 
 @Component({
   selector: 'ea-menu',

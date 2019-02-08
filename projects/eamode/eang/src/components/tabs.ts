@@ -11,7 +11,7 @@ import {
   OnDestroy
 } from '@angular/core'
 import { Subject, Subscription, Observable } from 'rxjs'
-import { EangElement } from '@eamode/eang'
+import { EangElement } from '../core'
 
 @Component({
   selector: 'ea-tabpanel',
