@@ -7,6 +7,7 @@ import {
   AfterContentInit
 } from '@angular/core'
 import { EangElement } from '@eamode/eang'
+import { Subject } from 'rxjs'
 
 @Component({
   selector: 'ea-menu',
@@ -103,7 +104,7 @@ import { EangElement } from '@eamode/eang'
         [depth]="depth + 1"
         [closeEvents]="closeEvents"
         [toggleEvents]="toggleEvents"
-        [activateEvents]="activateEvents"
+        [activate$$]="activate$$"
         [nameAreaTemplate]="nameAreaTemplate"
         [toggleAreaTemplate]="toggleAreaTemplate"
         [optionAreaTemplate]="optionAreaTemplate"
@@ -120,7 +121,7 @@ export class MenuComponent implements OnInit, AfterContentInit {
   @Input() optionAreaTemplate
   @Input() closeEvents: EventEmitter<EangElement>
   @Input() toggleEvents: EventEmitter<EangElement>
-  @Input() activateEvents: EventEmitter<EangElement>
+  @Input() activate$$: Subject<EangElement>
 
   constructor() {}
 
@@ -176,8 +177,8 @@ export class MenuComponent implements OnInit, AfterContentInit {
     this.deactivateChildren(root)
     this.node.isActive = true
 
-    if (this.activateEvents) {
-      this.activateEvents.emit(this.node)
+    if (this.activate$$) {
+      this.activate$$.next(this.node)
     }
   }
 

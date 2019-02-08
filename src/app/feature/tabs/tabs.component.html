@@ -29,10 +29,11 @@
       <div class="ea-card">
         <div class="ea-card-header">
           <button (click)="toggleTab()">Toggle</button>
+          <button (click)="tabActivate$$.next({name: 'Paragraph#1' })">Activate first Tab</button>
           <button (click)="addTab()">Add Tab</button>
         </div>
         <div class="ea-card-content header" style="flex-direction: column;">
-          <ea-tablist [tabpanelGroup]="exampleTabs" horizontal></ea-tablist>
+          <ea-tablist [tabpanelGroup]="exampleTabs" [activate$$]="tabActivate$$"></ea-tablist>
           <ea-tabpanel-group #exampleTabs>
             <ea-tabpanel name="Paragraph#1" [closeable]="true">
               <p>Just paragraph #1</p>
@@ -54,9 +55,11 @@
     <h2>Closeable</h2>
     <p>Try to add property closeable to show button to close your tab.</p>
 
-    <div grid><ea-markdown [doc]="tab_close"></ea-markdown></div>
+    <div grid>
+      <ea-markdown [doc]="tab_close"></ea-markdown>
+    </div>
 
-    <div class="ea-card" unset>
+    <!-- <div class="ea-card" unset>
       <h2>Tabs Example</h2>
 
       <div class="ea-card-content example" grid style="justify-items: center;">
@@ -117,6 +120,6 @@
         </div>
         <ea-markdown style="width: 100%;" [doc]="tabs_markdown"></ea-markdown>
       </div>
-    </div>
+    </div> -->
   </div>
 </div>

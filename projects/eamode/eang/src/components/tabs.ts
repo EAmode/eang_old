@@ -61,7 +61,7 @@ export class TabpanelGroupComponent implements AfterContentInit {
       role="tab"
       [attr.aria-label]="m.name"
       [node]="m"
-      [activateEvents]="activate$"
+      [activate$$]="activate$$"
       [closeEvents]="closed"
       [nameAreaTemplate]="headerTemplate"
       [optionAreaTemplate]="optionTemplate"
@@ -76,7 +76,7 @@ export class TabListComponent implements AfterContentInit, OnDestroy {
   @ContentChild('optionTemplate') optionTemplate: TemplateRef<{}>
 
   @Input() tabpanelGroup: TabpanelGroupComponent
-  @Input() activate$ = new Subject<EangElement>()
+  @Input() activate$$ = new Subject<EangElement>()
   @Input() activated$: Observable<EangElement>
   menuItems: EangElement[]
 
@@ -89,7 +89,7 @@ export class TabListComponent implements AfterContentInit, OnDestroy {
 
   ngAfterContentInit() {
     if (!this.activated$) {
-      this.activated$ = this.activate$.asObservable()
+      this.activated$ = this.activate$$.asObservable()
     }
 
     this.activated$.subscribe((activatedItem: EangElement) => {
@@ -143,7 +143,14 @@ export class TabListComponent implements AfterContentInit, OnDestroy {
       const activeMenuItem = this.menuItems.find(
         m => m.name === this.activeTab.name
       )
-      activeMenuItem.isActive = false
+      if (activeMenuItem) {
+        activeMenuItem.isActive = false
+      }
+
+      const newActiveMenuItem = this.menuItems.find(m => m.name === tab.name)
+      if (newActiveMenuItem) {
+        newActiveMenuItem.isActive = true
+      }
     }
     tab.active = ''
     this.activeTab = tab
