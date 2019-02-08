@@ -80,8 +80,8 @@ export class TabListComponent implements AfterContentInit, OnDestroy {
   @ContentChild('optionTemplate')
   optionTemplate: TemplateRef<{}>
 
-  @Input()
-  tabpanelGroup: TabpanelGroupComponent
+  @Input() tabpanelGroup: TabpanelGroupComponent
+  @Input() activateEvents: Subject<string>
   menuItems: MenuTreeItem[]
 
   activeTab: TabpanelComponent
@@ -92,6 +92,10 @@ export class TabListComponent implements AfterContentInit, OnDestroy {
   private _tabsSub: Subscription
 
   ngAfterContentInit() {
+    if (!this.activateEvents) {
+      this.activateEvents = new Subject<string>()
+    }
+
     this._tabsSub = this.tabpanelGroup.tabs.subscribe(tabs => {
       let hasActive = false
       this._tabs = tabs
@@ -135,6 +139,9 @@ export class TabListComponent implements AfterContentInit, OnDestroy {
   }
 
   private activateTab(tab: TabpanelComponent) {
+    if (this.activeTab === tab) {
+      return
+    }
     if (this.activeTab) {
       this.activeTab.active = undefined
       const activeMenuItem = this.menuItems.find(
