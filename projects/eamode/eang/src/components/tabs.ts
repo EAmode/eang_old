@@ -50,7 +50,7 @@ export class TabpanelGroupComponent implements AfterContentInit {
   ngAfterContentInit() {
     this._tabs.next(this.tabQueryList.toArray())
     this.tabQueryList.changes.subscribe(t => {
-      this._tabs.next(t)
+      this._tabs.next(t.toArray())
     })
   }
 }
