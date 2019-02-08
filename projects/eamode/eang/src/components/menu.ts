@@ -6,24 +6,8 @@ import {
   ViewEncapsulation,
   AfterContentInit
 } from '@angular/core'
+import { EangElement } from '@eamode/eang'
 
-export interface MenuTreeItem {
-  id?: any
-  name: string
-  icon?: string
-  iconStyle?: string
-  horizontal?: boolean
-  closeable?: boolean
-  isHidden?: boolean
-  isActive?: boolean
-  isOpen?: boolean
-  toggleRight?: boolean
-  hasChildren?: boolean
-  parent?: MenuTreeItem
-  dropdown?: boolean
-  children?: MenuTreeItem[]
-  data?: any
-}
 @Component({
   selector: 'ea-menu',
   template: `
@@ -72,7 +56,6 @@ export interface MenuTreeItem {
         name-area
         [attr.toggle]="node.toggleRight ? '' : null"
         [style.padding-left]="node.hasChildren ? 0 : depth * 0.95 + 'em'"
-
       >
         <ng-container
           *ngIf="nameAreaTemplate; else defaultNameArea"
@@ -135,9 +118,9 @@ export class MenuComponent implements OnInit, AfterContentInit {
   @Input() nameAreaTemplate
   @Input() toggleAreaTemplate
   @Input() optionAreaTemplate
-  @Input() closeEvents: EventEmitter<MenuTreeItem>
-  @Input() toggleEvents: EventEmitter<MenuTreeItem>
-  @Input() activateEvents: EventEmitter<MenuTreeItem>
+  @Input() closeEvents: EventEmitter<EangElement>
+  @Input() toggleEvents: EventEmitter<EangElement>
+  @Input() activateEvents: EventEmitter<EangElement>
 
   constructor() {}
 
@@ -174,11 +157,11 @@ export class MenuComponent implements OnInit, AfterContentInit {
     }
   }
 
-  getTreeRoot(item: MenuTreeItem) {
+  getTreeRoot(item: EangElement) {
     return item.parent ? this.getTreeRoot(item.parent) : item
   }
 
-  deactivateChildren(item: MenuTreeItem) {
+  deactivateChildren(item: EangElement) {
     item.isActive = false
     if (item.children) {
       item.children.forEach(child => {
