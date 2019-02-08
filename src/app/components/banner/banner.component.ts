@@ -8,11 +8,16 @@ import { Component, OnInit } from '@angular/core'
 export class BannerComponent implements OnInit {
   role_banner = `
   ~~~html
-  <div role="banner">
-    <h1>Banner</h1>
-  </div>
+  <ea-panel center>
+    <h1>ea-panel</h1>
+  </ea-panel>
   ~~~
     `
+
+  panel = {
+    state: 'flex-center',
+    orientation: 'top'
+  }
 
   role_banner_css = `
   ~~~css

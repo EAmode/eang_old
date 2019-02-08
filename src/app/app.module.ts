@@ -38,6 +38,7 @@ import { MarkdownComponent } from './feature/markdown/markdown.component'
 import { ListComponent } from './components/list/list.component'
 import { BannerComponent } from './components/banner/banner.component'
 import { EaPanelComponent } from './features/ea-panel/ea-panel.component'
+import { PanelComponent } from './components/panel/panel.component'
 
 const routes: Routes = [
   { path: '', component: LandingComponent },
@@ -80,7 +81,8 @@ const routes: Routes = [
     MarkdownComponent,
     ListComponent,
     BannerComponent,
-    EaPanelComponent
+    EaPanelComponent,
+    PanelComponent
   ],
   imports: [
     BrowserModule,

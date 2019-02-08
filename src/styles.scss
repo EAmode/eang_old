@@ -191,7 +191,14 @@
   }
 }
 
+eangio-banner {
+  --ea-grid-col-max-width: calc((var(--ea-max-width) - 2.5em) / 2);
+  --ea-grid-col-min-width: 10.5rem;
+}
+
 .mode {
+  --ea-padding-value: 6em 0;
+  --ea-max-width: 980px;
   & [role='banner'] h1 {
     color: var(--ea-color-3);
   }

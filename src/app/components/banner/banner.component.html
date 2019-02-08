@@ -1,6 +1,6 @@
 <div class="ea-card" unset>
   <div role="banner">
-    <div><h1>Banner</h1></div>
+    <div><h1>&lt;ea-panel&gt;</h1></div>
   </div>
   <div class="ea-card-content" id="container">
     <ea-tablist [tabpanelGroup]="mainPanel" horizontal></ea-tablist>
@@ -29,18 +29,52 @@
           <ea-markdown [doc]="role_button"></ea-markdown>
         </div> -->
 
-
-
-        <h3><code> role="banner" </code></h3>
+        <h3><code>&lt;ea-panel&gt; </code></h3>
         <p>
           The Banner role allows you to quickly create a banner with center
           aligned text.
         </p>
-        <div role="banner"><h1>Banner</h1></div>
+        <section center p>
+          <section multi-col max-width>
+            <div center>
+              <h1>Here is some Text</h1>
+              <h2>Here is a long piece of text about that</h2>
+              <button>Learn More</button>
+            </div>
+            <div center>Testing</div>
+          </section>
+        </section>
+
+        <section multi-col p>
+          <div center>Testing</div>
+          <div center>Testing</div>
+        </section>
+
+        <section center p>
+          <div center>
+            <h1>Here is a value prop</h1>
+            <h2>Here is another thing</h2>
+          </div>
+          <div>
+            <div multi-col>
+              <div class="ea-card">Value Prop</div>
+              <div class="ea-card">Value Prop</div>
+              <div class="ea-card">Value Prop</div>
+            </div>
+          </div>
+        </section>
 
         <ea-markdown [doc]="role_banner"></ea-markdown>
 
         <ea-markdown [doc]="role_banner_table"></ea-markdown>
+
+        <ea-panel center>
+          <ea-panel style="--ea-panel-width: 10em;">
+            <h1>&lt;ea-panel&gt;</h1>
+          </ea-panel>
+        </ea-panel>
+
+        <ea-markdown [doc]="role_banner"></ea-markdown>
 
         <!-- <h3><code> role="text" </code></h3>
         <p>The text role is typically for <code>input</code></p>
