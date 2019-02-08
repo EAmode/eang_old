@@ -37,6 +37,7 @@ import { UtilitiesComponent } from './utilities/utilities.component'
 import { MarkdownComponent } from './feature/markdown/markdown.component'
 import { ListComponent } from './components/list/list.component'
 import { BannerComponent } from './components/banner/banner.component'
+import { EaPanelComponent } from './features/ea-panel/ea-panel.component'
 
 const routes: Routes = [
   { path: '', component: LandingComponent },
@@ -44,6 +45,7 @@ const routes: Routes = [
   { path: 'theming', component: ThemingComponent },
   { path: 'layout', component: LayoutComponent },
   { path: 'button', component: ButtonComponent },
+  { path: 'banner', component: BannerComponent },
   { path: 'card', component: CardComponent },
   { path: 'list', component: ListComponent },
   { path: 'icon', component: IconComponent },
@@ -77,7 +79,8 @@ const routes: Routes = [
     UtilitiesComponent,
     MarkdownComponent,
     ListComponent,
-    BannerComponent
+    BannerComponent,
+    EaPanelComponent
   ],
   imports: [
     BrowserModule,

@@ -70,6 +70,13 @@ export class AppComponent implements OnInit {
             }
           },
           {
+            name: 'Banner',
+            icon: 'ea-button-icon',
+            data: {
+              link: '/banner'
+            }
+          },
+          {
             name: 'Cards',
             icon: 'ea-layers',
             iconStyle: 'ea-negative',

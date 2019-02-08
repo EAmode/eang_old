@@ -444,7 +444,9 @@
       eangio-tabs,
       eangio-components,
       eangio-utilities,
-      eangio-markdown {
+      eangio-markdown,
+      eangio-banner,
+      eangio-list {
         width: 100%;
         @media only screen and (max-width: 500px) {
           width: 95%;
