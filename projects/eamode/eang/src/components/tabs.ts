@@ -19,13 +19,25 @@ import { EangElement } from '../core'
     <ng-content></ng-content>
   `
 })
-export class TabpanelComponent {
+export class TabpanelComponent implements EangElement {
   @HostBinding('attr.role') role = 'tabpanel'
-  @HostBinding('attr.active') active: string
   @HostBinding('attr.closed') closed: string
+  @HostBinding('attr.active') active: string
 
+  @Input() @HostBinding('attr.id') id: string
   @Input() name: string
-  @Input() closeable = false
+
+  private _isActive = false
+  @Input() set isActive(isActive: boolean) {
+    this._isActive = isActive
+    this.active = isActive ? '' : undefined
+  }
+  get isActive() {
+    return this._isActive
+  }
+
+  @Input()
+  closeable = false
 }
 
 @Component({
@@ -57,10 +69,10 @@ export class TabpanelGroupComponent implements AfterContentInit {
   selector: 'ea-tablist',
   template: `
     <ea-menu
-      *ngFor="let m of menuItems"
+      *ngFor="let t of tabs"
       role="tab"
-      [attr.aria-label]="m.name"
-      [node]="m"
+      [attr.aria-label]="t.name"
+      [node]="t"
       [activate$$]="activate$$"
       [closeEvents]="closed"
       [nameAreaTemplate]="headerTemplate"
@@ -80,11 +92,10 @@ export class TabListComponent implements AfterContentInit, OnDestroy {
   @Input() activated$: Observable<EangElement>
   menuItems: EangElement[]
 
-  activeTab: TabpanelComponent
-  // activated = new EventEmitter<MenuTreeItem>()
+  activeTab: EangElement
   closed = new EventEmitter<EangElement>()
+  tabs = [] as EangElement[]
 
-  private _tabs: TabpanelComponent[]
   private _tabsSub: Subscription
 
   ngAfterContentInit() {
@@ -92,38 +103,32 @@ export class TabListComponent implements AfterContentInit, OnDestroy {
       this.activated$ = this.activate$$.asObservable()
     }
 
-    this.activated$.subscribe((activatedItem: EangElement) => {
-      const activeTab = this._tabs.find(tab => tab.name === activatedItem.name)
-      this.activateTab(activeTab)
-    })
-
-    this._tabsSub = this.tabpanelGroup.tabs.subscribe(tabs => {
-      let hasActive = false
-      this._tabs = tabs
-      this.menuItems = tabs.map(t => {
-        const isActive = this.activeTab === t
-        if (isActive) {
-          hasActive = true
+    this.activated$.subscribe(activatedTab => {
+      if (this.activeTab === activatedTab) {
+        return
+      }
+      const tab = this.tabs.find(x => x.name === activatedTab.name)
+      if (tab) {
+        tab.isActive = true
+        if (this.activeTab) {
+          this.activeTab.isActive = false
         }
-        return {
-          name: t.name,
-          closeable: t.closeable,
-          isActive
-        }
-      })
-
-      if (!hasActive && this._tabs.length > 0) {
-        this.activateTab(this._tabs[0])
-        this.menuItems[0].isActive = true
+        this.activeTab = tab
+      } else {
+        throw new Error(
+          `Tab ${activatedTab.id || activatedTab.name} does not exist!`
+        )
       }
     })
 
-    this.closed.subscribe((closedItem: EangElement) => {
-      const closedTab = this._tabs.find(tab => tab.name === closedItem.name)
-      closedTab.closed = ''
-
-      if (this.activeTab === closedTab && this._tabs.length > 0) {
-        this.activateTab(this._tabs[0])
+    this._tabsSub = this.tabpanelGroup.tabs.subscribe(tabpanels => {
+      this.tabs = tabpanels
+      const hasActiveTab = this.activeTab
+        ? tabpanels.find(x => x.name === this.activeTab.name)
+        : undefined
+      if ((!this.activeTab || !hasActiveTab) && this.tabs.length > 0) {
+        this.activeTab = this.tabs[0]
+        this.activeTab.isActive = true
       }
     })
   }
@@ -132,27 +137,5 @@ export class TabListComponent implements AfterContentInit, OnDestroy {
     if (this._tabsSub) {
       this._tabsSub.unsubscribe()
     }
-  }
-
-  private activateTab(tab: TabpanelComponent) {
-    if (this.activeTab === tab) {
-      return
-    }
-    if (this.activeTab) {
-      this.activeTab.active = undefined
-      const activeMenuItem = this.menuItems.find(
-        m => m.name === this.activeTab.name
-      )
-      if (activeMenuItem) {
-        activeMenuItem.isActive = false
-      }
-
-      const newActiveMenuItem = this.menuItems.find(m => m.name === tab.name)
-      if (newActiveMenuItem) {
-        newActiveMenuItem.isActive = true
-      }
-    }
-    tab.active = ''
-    this.activeTab = tab
   }
 }

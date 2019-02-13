@@ -29,13 +29,13 @@
       <div class="ea-card">
         <div class="ea-card-header">
           <button (click)="toggleTab()">Toggle</button>
-          <button (click)="tabActivate$$.next({name: 'Paragraph#1' })">Activate first Tab</button>
+          <button (click)="tabActivate$$.next({name: 'Paragraph#1'})">Activate first Tab</button>
           <button (click)="addTab()">Add Tab</button>
         </div>
         <div class="ea-card-content header" style="flex-direction: column;">
           <ea-tablist [tabpanelGroup]="exampleTabs" [activate$$]="tabActivate$$"></ea-tablist>
           <ea-tabpanel-group #exampleTabs>
-            <ea-tabpanel name="Paragraph#1" [closeable]="true">
+            <ea-tabpanel id="tab-1" name="Paragraph#1" [closeable]="true">
               <p>Just paragraph #1</p>
             </ea-tabpanel>
             <ea-tabpanel *ngIf="editing" name="Toggle Tab">
@@ -46,6 +46,9 @@
                 <li>There is some list</li>
                 <li>With few items</li>
               </ul>
+            </ea-tabpanel>
+            <ea-tabpanel *ngFor="let t of addedTabs" [name]="t.name">
+              <p>This is an added Tab!</p>
             </ea-tabpanel>
           </ea-tabpanel-group>
         </div>
@@ -58,68 +61,6 @@
     <div grid>
       <ea-markdown [doc]="tab_close"></ea-markdown>
     </div>
-
-    <!-- <div class="ea-card" unset>
-      <h2>Tabs Example</h2>
-
-      <div class="ea-card-content example" grid style="justify-items: center;">
-        <div
-          style="width: 400px; height: 20em; background: white; box-shadow: var(--ea-box-shadow);"
-        >
-          <div id="tabMobileExample">
-            <ea-tablist [tabpanelGroup]="mobileTabs" horizontal></ea-tablist>
-          </div>
-          <div>
-            <div>
-              <ea-tabpanel-group #mobileTabs id="mobileTab">
-                <ea-tabpanel name="Mobile Tab 1">
-                  <div class="ea-card">
-                    <div class="ea-card-header"><h2>Tab 1 Card</h2></div>
-                    <div class="ea-card-content"><h2>Card content</h2></div>
-                    <div class="ea-card-footer"><button>Save</button></div>
-                  </div>
-                </ea-tabpanel>
-                <ea-tabpanel name="Mobile Tab 2">
-                  <div class="ea-card">
-                    <div class="ea-card-header"><h2>Tab 2 Card</h2></div>
-                    <div class="ea-card-content"><h2>Card content</h2></div>
-                    <div class="ea-card-footer"><button>Save</button></div>
-                  </div>
-                </ea-tabpanel>
-                <ea-tabpanel name="Mobile Tab 3">
-                  <div class="ea-card">
-                    <div class="ea-card-header"><h2>Tab 2 Card</h2></div>
-                    <div class="ea-card-content"><h2>Card content</h2></div>
-                    <div class="ea-card-footer"><button>Save</button></div>
-                  </div>
-                </ea-tabpanel>
-                <ea-tabpanel name="Mobile Tab 4">
-                  <div class="ea-card">
-                    <div class="ea-card-header"><h2>Tab 2 Card</h2></div>
-                    <div class="ea-card-content"><h2>Card content</h2></div>
-                    <div class="ea-card-footer"><button>Save</button></div>
-                  </div>
-                </ea-tabpanel>
-                <ea-tabpanel name="Mobile Tab 5">
-                  <div class="ea-card">
-                    <div class="ea-card-header"><h2>Tab 2 Card</h2></div>
-                    <div class="ea-card-content"><h2>Card content</h2></div>
-                    <div class="ea-card-footer"><button>Save</button></div>
-                  </div>
-                </ea-tabpanel>
-                <ea-tabpanel name="Mobile Tab 6">
-                  <div class="ea-card">
-                    <div class="ea-card-header"><h2>Tab 2 Card</h2></div>
-                    <div class="ea-card-content"><h2>Card content</h2></div>
-                    <div class="ea-card-footer"><button>Save</button></div>
-                  </div>
-                </ea-tabpanel>
-              </ea-tabpanel-group>
-            </div>
-          </div>
-        </div>
-        <ea-markdown style="width: 100%;" [doc]="tabs_markdown"></ea-markdown>
-      </div>
-    </div> -->
+    
   </div>
 </div>

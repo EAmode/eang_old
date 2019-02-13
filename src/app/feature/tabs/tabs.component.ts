@@ -8,6 +8,7 @@ import { EangElement } from '@eamode/eang'
   styles: []
 })
 export class TabsComponent implements OnInit {
+  addedTabs = []
   editing = true
   tabActivate$$ = new Subject<EangElement>()
   constructor() {}
@@ -18,25 +19,15 @@ export class TabsComponent implements OnInit {
     })
   }
 
-  tabs_markdown = `
-  ~~~html
-  <div> <div>
-  <div> <div>
-  <div> <div>
-  <div> <div>
-  ~~~
-  `
-
   toggleTab() {
     this.editing = !this.editing
   }
 
   addTab() {
-    const newTab = {
-      name: 'other New Tab',
-      content: 'new content other',
-      visible: true
-    }
+    this.addedTabs.push({
+      id: `newTab ${this.addedTabs.length}`,
+      name: `Added Tab # ${this.addedTabs.length + 1}`
+    })
   }
 
   tabs_example = `
