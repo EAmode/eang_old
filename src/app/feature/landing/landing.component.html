@@ -1,90 +1,104 @@
-<div role="banner" start style="--ea-banner-height: 18em;">
-  <div>
-    <div class="eang-logo" style="height:50px;"></div>
-    <h2>Progressive Web App Framework</h2>
-    <p style="max-width: 20em;">
-      Eang is an open-source framework that helps designers and developers
-      create modern web applications that scale
-    </p>
-    <a routerLink="/getting-started">
-      <button (click)="shouldOpenDrawer()">Get Started</button></a
-    >
-  </div>
-</div>
+<style>
+  .hero {
+    background-color: var(--ea-color-1);
+    background-image: url('../../assets/images/flickr-14202459710.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .hero h2, .hero p {
+    color: white;
+    text-align: center;
+  }
+  .v-prop {
+    --ea-grid-col-min-width: 15em;
+  }
+  footer {
+    --ea-grid-col-min-width: 8.9em;
+  }
+</style>
 
-<section id="getting-started">
-  <a (click)="shouldOpenDrawer()" routerLink="/getting-started">
-    <img
-      src="../../../assets/images/get-started.svg"
-      height="100%"
-      style="width: 7rem;height: 5rem;"
-      alt=""
-    />
-    <h2>Getting Started</h2>
-    <p>
-      Onboarding for designers and developers who are using the eang framework
-      for the first time
-    </p>
-  </a>
-
-  <a (click)="shouldOpenDrawer()" routerLink="/components">
-    <img
-      src="../../../assets/images/rapid-develop.svg"
-      height="100%"
-      style="width: 7rem;height: 5rem;"
-      alt=""
-    />
-    <h2>Components</h2>
-    <p>
-      A library of components including code, usage instructions, and style
-      guidelines
-    </p>
-  </a>
-
-  <a (click)="shouldOpenDrawer()" routerLink="/features">
-    <img
-      src="../../../assets/images/reactive-icon.svg"
-      height="100%"
-      style="width: 7rem;height: 5rem;"
-      alt=""
-    />
-    <h2>Reactive Streams</h2>
-    <p>
-      Eang's event-driven architecture helps you build applications that are
-      responsive, and fast.
-    </p>
-  </a>
-
-  <a (click)="shouldOpenDrawer()" routerLink="/features">
-    <img
-      src="../../../assets/images/themes-icon.svg"
-      height="100%"
-      style="width: 7rem;height: 5rem;"
-      alt=""
-    />
-    <h2>CSS Themes</h2>
-    <p>
-      Use Eang's built-in style themes or build your own custom theme using next
-      generation css.
-    </p>
-  </a>
+<section center p class="hero">
+  <div class="eang-logo" style="height:50px;"></div>
+  <h2>Progressive Web App Framework</h2>
+  <p style="max-width: 20em;">
+    Eang is an open-source framework that helps designers and developers create
+    modern web applications that scale
+  </p>
+  <a routerLink="/getting-started">
+    <button (click)="shouldOpenDrawer()">Get Started</button></a
+  >
 </section>
 
-<div
-  class="ea-card"
-  unset
-  id="resources"
-  style="background: var(--ea-color-1); border: none;"
->
-  <div class="ea-card-content" grid>
+<section center p>
+  <div max-width multi-col>
+    <a (click)="shouldOpenDrawer()" routerLink="/getting-started">
+      <img
+        src="../../../assets/images/get-started.svg"
+        height="100%"
+        style="width: 7rem;height: 5rem;"
+        alt=""
+      />
+      <h2>Getting Started</h2>
+      <p>
+        Onboarding for designers and developers who are using the eang framework
+        for the first time
+      </p>
+    </a>
+
+    <a (click)="shouldOpenDrawer()" routerLink="/components">
+      <img
+        src="../../../assets/images/rapid-develop.svg"
+        height="100%"
+        style="width: 7rem;height: 5rem;"
+        alt=""
+      />
+      <h2>Components</h2>
+      <p>
+        A library of components including code, usage instructions, and style
+        guidelines
+      </p>
+    </a>
+
+    <a (click)="shouldOpenDrawer()" routerLink="/features">
+      <img
+        src="../../../assets/images/reactive-icon.svg"
+        height="100%"
+        style="width: 7rem;height: 5rem;"
+        alt=""
+      />
+      <h2>Reactive Streams</h2>
+      <p>
+        Eang's event-driven architecture helps you build applications that are
+        responsive, and fast.
+      </p>
+    </a>
+
+    <a (click)="shouldOpenDrawer()" routerLink="/features">
+      <img
+        src="../../../assets/images/themes-icon.svg"
+        height="100%"
+        style="width: 7rem;height: 5rem;"
+        alt=""
+      />
+      <h2>CSS Themes</h2>
+      <p>
+        Use Eang's built-in style themes or build your own custom theme using
+        next generation css.
+      </p>
+    </a>
+  </div>
+</section>
+
+<section p center style="background: var(--ea-color-1-light);">
+  <div max-width multi-col>
     <div class="ea-card" grid>
       <img
         src="../../../assets/images/figma.png"
         height="96"
         stlye="
-          width: 5rem;
-          height: 5rem;
-          margin: .5rem;"
+                width: 5rem;
+                height: 5rem;
+                margin: .5rem;"
       />
 
       <b>Eang Design Kit</b>
@@ -103,9 +117,9 @@
         src="../../../assets/images/github.png"
         height="96"
         style="
-          width: 4rem;
-          height: 4rem;
-          margin: 1rem;"
+                width: 4rem;
+                height: 4rem;
+                margin: 1rem;"
       />
       <b>Eang Source Code</b>
       <p style="margin-top: 0;">
@@ -117,53 +131,52 @@
       </p>
     </div>
   </div>
-</div>
+</section>
 
-<div class="ea-card" id="open-standards" unset>
-  <div class="ea-card-header">
-    <h2>Open Web Standards</h2>
-    <h3 style="text-align: center;">
-      Eang is built on the following open source technology
-    </h3>
+<section center p class="v-prop">
+  <div center>
+    <h1>Open Web Standards</h1>
+    <h2>Eang is built on the following open source technology</h2>
   </div>
-  <div class="ea-card-content" grid>
-    <div>
-      <a target="_blank" href="https://angular.io"
-        ><img height="45" src="/assets/images/angular.svg"
-      /></a>
-      <b>Angular</b>
-      <p>
-        <a target="_blank" href="https://angular.io">Angular</a> offers
-        declarative templates with databinding. Powered by Google.
-      </p>
-    </div>
-    <div>
-      <a target="_blank" href="http://reactivex.io/"
-        ><img height="45" src="/assets/images/Rx_Logo-512-512.png"
-      /></a>
-      <b>ReactiveX</b>
-      <p>
-        <a href="http://reactivex.io/">ReactiveX</a> provides an asynchronous
-        programming interface for observable streams.
-      </p>
-    </div>
-    <div>
-      <a href="https://postcss.org/"
-        ><img height="45" src="/assets/images/postcss.svg"
-      /></a>
-      <b>PostCSS</b>
-      <p>
-        <a href="https://postcss.org/">PostCSS</a> provides transformations for
-        CSS to future-proof your code.
-      </p>
+  <div max-width>
+    <div multi-col>
+      <div>
+        <a target="_blank" href="https://angular.io"
+          ><img height="45" src="/assets/images/angular.svg"
+        /></a>
+        <b>Angular</b>
+        <p>
+          <a target="_blank" href="https://angular.io">Angular</a> offers
+          declarative templates with databinding. Powered by Google.
+        </p>
+      </div>
+      <div>
+        <a target="_blank" href="http://reactivex.io/"
+          ><img height="45" src="/assets/images/Rx_Logo-512-512.png"
+        /></a>
+        <b>ReactiveX</b>
+        <p>
+          <a href="http://reactivex.io/">ReactiveX</a> provides an asynchronous
+          programming interface for observable streams.
+        </p>
+      </div>
+      <div>
+        <a href="https://postcss.org/"
+          ><img height="45" src="/assets/images/postcss.svg"
+        /></a>
+        <b>PostCSS</b>
+        <p>
+          <a href="https://postcss.org/">PostCSS</a> provides transformations
+          for CSS to future-proof your code.
+        </p>
+      </div>
     </div>
   </div>
-</div>
+</section>
 
-<!--
-  <section class="go-pro">
-    <div class="pro">
-      <div class="pro-text">
+<!-- <section center p style="background: var(--ea-color-2);">
+    <div multi-col max-width>
+      <div center>
         <h2>Get Support with Eang Pro</h2>
         <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
           tempor incididunt ut labore et dolore magna aliqua.
@@ -173,5 +186,4 @@
       </div>
       <img src="../../../assets/images/eang-pro.svg" alt="">
     </div>
-  </section>
--->
+  </section> -->

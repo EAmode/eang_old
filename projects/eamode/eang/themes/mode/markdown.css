@@ -1,6 +1,7 @@
 @define-mixin markdown-mode {
   & ea-markdown {
     width: auto;
+    display: block;
     & p {
       font-size: 1.2em;
     }
@@ -25,7 +26,7 @@
     }
     & pre[class*='language-'] {
       padding: 1em;
-      margin: 0.5em 0;
+      margin: 0;
       overflow: auto;
       background: var(
         --ea-background,

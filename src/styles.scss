@@ -1,10 +1,48 @@
 @import '../dist/eamode/eang/css/all.css';
 @import '~@angular-mdc/theme/material';
 
+.mode {
+  * > [aria-labelledby]{
+    position: relative;
+  }
+
+  --ea-tooltip-color: var(--ea-color-3);
+  --ea-tooltip-font-size: 1em;
+  --ea-tooltip-background: rgba(0, 0, 0, 0.5);
+  --ea-tooltip-string: attr(tooltip-text);
+
+  & [aria-labelledby]:hover > [role='tooltip'],
+    [aria-labelledby]:focus > [role='tooltip']{
+    &::after {
+      position: absolute;
+      bottom: var(--ea-tooltip-bottom, auto);
+      top: var(--ea-tooltip-top, auto);
+      left: var(--ea-tooltip-left, auto);
+      right: var(--ea-tooltip-right, auto);
+      content: var(--ea-tooltip-string);
+      color: var(--ea-tooltip-color);
+      font-size: var(--ea-tooltip-font-size);
+      background: var(--ea-tooltip-background);
+      display: flex;
+      padding: 0.5em 1em;
+      border-radius: 0.25em;
+      white-space: nowrap;
+      min-width: 2em;
+    }
+  }
+}
 /* ICONS FOR DIFFERENT THEMES */
 .fluentdark,
 .mode,
 .material {
+
+
+  * > [tooltip-b] {
+    position: relative;
+  }
+
+
+
   & [activity] & .ea-activity {
     background: url('./assets/images/activity.svg');
   }
@@ -57,45 +95,6 @@
 }
 
 /* Landing Page */
-
-#getting-started {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 5rem;
-  margin: 0 12vw;
-  padding: 8rem 0rem;
-  justify-items: center;
-  @media only screen and (max-width: 1040px) {
-    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
-    margin: 0px 6vw;
-    grid-gap: 2.5rem;
-  }
-  & a {
-    height: fit-content;
-    font-size: unset;
-    max-width: 35rem;
-    align-items: center;
-    color: var(--ea-text-color);
-    text-decoration: none;
-    @media only screen and (max-width: 1300px) {
-      grid-template-areas: 'icon icon' 'header header' 'para para';
-    }
-    &:hover > h2 {
-      color: var(--ea-color-1);
-    }
-    & img {
-      height: 100%;
-      width: 10rem;
-      margin-right: 1rem;
-    }
-    & h2 {
-      margin: 0;
-    }
-    & p {
-      margin-top: 0.2rem;
-    }
-  }
-}
 
 .material {
   & ea-layout {
@@ -192,8 +191,8 @@
 }
 
 eangio-banner {
-  --ea-grid-col-max-width: calc((var(--ea-max-width) - 1.5em) / 2);
-  --ea-grid-col-min-width: 10.5rem;
+  // --ea-grid-col-max-width: calc((var(--ea-max-width) - (var(--ea-grid-gap) * (1 - var(--ea-column-numbers)))) / var(--ea-column-numbers));
+  // --ea-grid-col-min-width: 10.5rem;
 }
 
 .mode {
@@ -235,8 +234,8 @@ eangio-banner {
       flex-grow: 1;
       width: 100%;
       box-sizing: border-box;
-      border-top-right-radius: .25em;
-      border-top-left-radius: .25em;
+      border-top-right-radius: 0.25em;
+      border-top-left-radius: 0.25em;
       & small {
         text-align: center;
         color: var(--ea-text-color-light);
@@ -296,66 +295,6 @@ eangio-banner {
 
 .mode,
 .material {
-  & #open-standards {
-    & .ea-card-header {
-      justify-content: center;
-      flex-direction: column;
-    }
-    & .ea-card-content {
-      --ea-card-content-grid: repeat(auto-fit, minmax(19.5rem, 25rem));
-      justify-content: center;
-      padding: 4rem 0;
-      @media only screen and (max-width: 500px) {
-        margin: 0px 6vw;
-      }
-      & div {
-        display: flex;
-        flex-direction: column;
-      }
-    }
-  }
-  & #resources {
-    & .ea-card-content {
-      --ea-card-content-grid: repeat(auto-fit, minmax(25rem, 1fr));
-      grid-gap: 5rem;
-      padding: 4rem 10vw;
-      justify-items: center;
-      @media only screen and (max-width: 600px) {
-        padding: 0;
-        justify-content: center;
-      }
-    }
-    & .ea-card-content .ea-card {
-      display: grid;
-      grid-template-areas: 'icon header' 'icon para';
-      align-items: center;
-      max-width: 32rem;
-      padding: 1rem;
-      @media only screen and (max-width: 600px) {
-        grid-template-areas:
-          'icon'
-          'header'
-          'para';
-        max-width: 18rem;
-        grid-gap: 1rem;
-      }
-      & img {
-        grid-area: icon;
-        @media only screen and (max-width: 600px) {
-          display: none;
-        }
-      }
-      & b {
-        grid-area: header;
-        @media only screen and (max-width: 600px) {
-          display: none;
-        }
-      }
-      & p {
-        grid-area: para;
-      }
-    }
-  }
   & .card-example {
     align-items: center;
     justify-content: space-between;
@@ -453,7 +392,8 @@ eangio-banner {
       eangio-utilities,
       eangio-markdown,
       eangio-banner,
-      eangio-list {
+      eangio-list,
+      eangio-tooltip {
         width: 100%;
         @media only screen and (max-width: 500px) {
           width: 95%;
