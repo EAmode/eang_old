@@ -69,13 +69,13 @@ export class AppComponent implements OnInit {
               link: '/button'
             }
           },
-          {
-            name: 'Banner',
-            icon: 'ea-button-icon',
-            data: {
-              link: '/banner'
-            }
-          },
+          // {
+          //   name: 'Banner',
+          //   icon: 'ea-button-icon',
+          //   data: {
+          //     link: '/banner'
+          //   }
+          // },
           {
             name: 'Cards',
             icon: 'ea-layers',
@@ -128,6 +128,14 @@ export class AppComponent implements OnInit {
             icon: 'ea-tabs-icon',
             data: {
               link: '/tabs'
+            }
+          },
+          {
+            name: 'Tooltip',
+            icon: 'ea-help-circle',
+            iconStyle: 'ea-negative',
+            data: {
+              link: '/tooltip'
             }
           }
         ]

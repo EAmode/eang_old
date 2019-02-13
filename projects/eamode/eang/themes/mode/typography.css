@@ -51,10 +51,11 @@
 
   & code {
     background: var(--ea-code-background, transparent);
-    color: var(--ea-color, var(--ea-code-color, #607D8B));
+    color: var(--ea-color, var(--ea-code-color, var(--ea-color-1)));
     padding: 0.2rem;
     border-radius: 0.3rem;
     margin-right: 0.1rem;
+    font-family: 'Source Code Pro', monospace;
   }
   & *::selection {
     background: var(--ea-background, var(--ea-background-selection, var(--ea-color-1)));

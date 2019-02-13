@@ -10,6 +10,17 @@
   --ea-color-3: hsl(0, 0%, 96%);
   --ea-color-3-dark: hsl(0, 0%, 86%);
 
+  /* Accent Base Colors */
+  --ea-color-accent-1: #6a9c45;
+  --ea-color-accent-2: #0078d4;
+
+  /* Semantic Colors */
+  --ea-color-success: #5bb95b;
+  --ea-color-info: #5ac1de;
+  --ea-color-warning: #f1ae4e;
+  --ea-color-danger: #d9534f;
+  --ea-color-error: #d9534f;
+
   /* Text Colors */
   --ea-text-color: var(--ea-text-color-dark);
   --ea-text-color-dark: hsl(0, 0%, 20%);
