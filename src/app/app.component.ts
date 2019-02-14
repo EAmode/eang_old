@@ -1,7 +1,7 @@
 import { Component, OnInit, EventEmitter } from '@angular/core'
 import { Router } from '@angular/router'
 import { LayoutService } from 'projects/eamode/eang/src/services/layout.service'
-import { MenuTreeItem } from '@eamode/eang'
+import { EangElement } from '@eamode/eang'
 
 @Component({
   selector: 'eangio-root',
@@ -54,11 +54,26 @@ export class AppComponent implements OnInit {
           link: '/components'
         },
         children: [
+          // {
+          //   name: 'Autocomplete',
+          //   icon: 'ea-check-circle',
+          //   iconStyle: 'ea-negative',
+          //   data: {
+          //     link: '/markdown'
+          //   }
+          // },
           {
-            name: 'Layout',
-            icon: 'ea-layout',
+            name: 'Buttons',
+            icon: 'ea-button-icon',
             data: {
-              link: '/layout'
+              link: '/button'
+            }
+          },
+          {
+            name: 'Banner',
+            icon: 'ea-button-icon',
+            data: {
+              link: '/banner'
             }
           },
           {
@@ -70,18 +85,19 @@ export class AppComponent implements OnInit {
             }
           },
           {
-            name: 'Buttons',
-            icon: 'ea-button-icon',
-            data: {
-              link: '/button'
-            }
-          },
-          {
             name: 'Icons',
             icon: 'ea-grid',
             iconStyle: 'ea-negative',
             data: {
               link: '/icon'
+            }
+          },
+          {
+            name: 'Markdown',
+            icon: 'ea-edit',
+            iconStyle: 'ea-negative',
+            data: {
+              link: '/markdown'
             }
           },
           {
@@ -93,24 +109,32 @@ export class AppComponent implements OnInit {
             }
           },
           {
+            name: 'Layout',
+            icon: 'ea-layout',
+            data: {
+              link: '/layout'
+            }
+          },
+          {
+            name: 'List',
+            icon: 'ea-align-left',
+            iconStyle: 'ea-negative',
+            data: {
+              link: '/list'
+            }
+          },
+          {
             name: 'Tabs',
             icon: 'ea-tabs-icon',
             data: {
               link: '/tabs'
-            }
-          },
-          {
-            name: 'Markdown',
-            icon: 'ea-tabs-icon',
-            data: {
-              link: '/markdown'
             }
           }
         ]
       }
     ]
   }
-  activated = new EventEmitter<MenuTreeItem>()
+  activated = new EventEmitter<EangElement>()
 
   constructor(public router: Router, public layout: LayoutService) {}
 
@@ -128,7 +152,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.activated.subscribe((item: MenuTreeItem) => {
+    this.activated.subscribe((item: EangElement) => {
       if (item.data && item.data.link) {
         this.router.navigate([item.data.link])
       }

@@ -1,3 +1,4 @@
+export * from './core'
 export * from './modules/autocomplete.module'
 export * from './modules/layout.module'
 export * from './modules/markdown.module'

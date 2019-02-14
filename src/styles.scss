@@ -1,7 +1,6 @@
 @import '../dist/eamode/eang/css/all.css';
 @import '~@angular-mdc/theme/material';
 
-
 /* ICONS FOR DIFFERENT THEMES */
 .fluentdark,
 .mode,
@@ -108,6 +107,8 @@
       justify-content: space-evenly;
     }
     & .example-color {
+      border-radius: 0.25em;
+      box-shadow: var(--ea-box-shadow);
       width: 6rem;
       height: 4rem;
       display: flex;
@@ -188,56 +189,17 @@
     flex-direction: column;
     background: rgba(0, 0, 0, 0.03);
   }
-  #eang-welcome {
-    &.ea-card[unset] {
-      flex-direction: column;
-      align-items: flex-start;
-      margin-top: 7rem;
-      margin-left: 13rem;
-      width: 50%;
-      @media only screen and (max-width: 500px) {
-        margin-top: 4rem;
-        margin-left: 0;
-        align-items: center;
-        width: 100%;
-        & .ea-card-header {
-          text-align: center;
-        }
-      }
-      & > .ea-card-content {
-        padding-top: 0.5rem;
-        flex-direction: column;
-        align-items: flex-start;
-        text-align: left;
-        @media only screen and (max-width: 600px) {
-          padding: 0;
-          flex-direction: column;
-          align-items: center;
-        }
-        & p {
-          width: 65%;
-          @media only screen and (max-width: 500px) {
-            width: 90%;
-          }
-        }
-      }
-    }
-    & a {
-      text-decoration: none;
-    }
-    & p {
-      width: 45%;
-      margin: 0 0 1rem 0;
-      font-size: 1.2rem;
-      @media only screen and (max-width: 640px) {
-        width: 95%;
-      }
-    }
-  }
+}
+
+eangio-banner {
+  --ea-grid-col-max-width: calc((var(--ea-max-width) - 1.5em) / 2);
+  --ea-grid-col-min-width: 10.5rem;
 }
 
 .mode {
-  & [role='banner'] h1{
+  --ea-padding-value: 6em 0;
+  --ea-max-width: 980px;
+  & [role='banner'] h1 {
     color: var(--ea-color-3);
   }
   & .eang-logo {
@@ -256,13 +218,25 @@
       margin: 5rem 0;
       justify-content: space-evenly;
     }
+    & .theme-color {
+      width: 12em;
+      height: 13em;
+      & .ea-card-footer {
+        justify-content: center;
+      }
+    }
     & .example-color {
-      width: 6rem;
+      box-shadow: var(--ea-box-shadow);
       height: 4rem;
       display: flex;
       justify-content: center;
       align-items: center;
       cursor: pointer;
+      flex-grow: 1;
+      width: 100%;
+      box-sizing: border-box;
+      border-top-right-radius: .25em;
+      border-top-left-radius: .25em;
       & small {
         text-align: center;
         color: var(--ea-text-color-light);
@@ -313,51 +287,6 @@
         &[textIsActive='true'] {
           color: var(--ea-text-color-light);
         }
-      }
-    }
-  }
-  #eang-welcome {
-    --ea-text-color: white;
-    align-items: center;
-    align-content: center;
-    background-color: var(--ea-color-1);
-    background-image: url('./assets/images/flickr-14202459710.jpg');
-    background-size: contain;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    padding: 4rem 0rem;
-    text-align: center;
-    @media only screen and (max-width: 640px) {
-      background-size: cover;
-    }
-    &.ea-card {
-      margin: 0;
-      & .ea-card-header {
-        border-bottom: none;
-      }
-      & .ea-card-content {
-        flex-direction: column;
-        align-items: center;
-        & p {
-          width: 65%;
-          @media only screen and (max-width: 500px) {
-            width: 90%;
-          }
-        }
-      }
-    }
-    & a {
-      text-decoration: none;
-    }
-    & p {
-      text-align: center;
-      width: 45%;
-      margin: 0 0 1rem 0;
-      font-size: 1.2rem;
-      @media only screen and (max-width: 640px) {
-        width: 95%;
       }
     }
   }
@@ -490,6 +419,17 @@
         --ea-tab-color: var(--ea-text-color);
       }
 
+      & eangio-markdown {
+        width: 100%;
+        & .example {
+          & .ea-card {
+            & .ea-card-content {
+              justify-content: flex-start;
+            }
+          }
+        }
+      }
+
       & .icon-tiles {
         & .ea-card-content {
           justify-content: center;
@@ -510,7 +450,10 @@
       eangio-variables,
       eangio-tabs,
       eangio-components,
-      eangio-utilities {
+      eangio-utilities,
+      eangio-markdown,
+      eangio-banner,
+      eangio-list {
         width: 100%;
         @media only screen and (max-width: 500px) {
           width: 95%;
@@ -526,6 +469,10 @@
             justify-content: center;
           }
         }
+      }
+      #container {
+        flex-direction: column;
+        padding: 0 4vw;
       }
       & ea-tabs {
         width: 90%;
@@ -645,6 +592,27 @@
   margin-top: 1rem;
 }
 
+#banner-contents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#tabMobileExample {
+  height: 5em;
+  background: white;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+ea-tabpanel-group#mobileTab {
+  display: flex;
+  background: var(--ea-color-3-dark);
+  & ea-tabpanel {
+    width: 100%;
+    padding: 1em;
+  }
+}
 .ea-mode-logo {
   background: url('assets/images/eamode-logo.svg');
   height: 4rem;

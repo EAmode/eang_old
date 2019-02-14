@@ -3,89 +3,64 @@
     <h1>Tabs</h1>
     <span icon negative tab style="width: 2rem; height:2rem;"></span>
   </div>
-  <div class="ea-card-content">
-    <ea-tabs>
-      <ea-tab name="Overview">
-        <div class="ea-card" unset>
-          <p>Tabs allow users to display content in separate areas.</p>
-          <p>
-            Each of tab can contain any type of data. It could be just a text,
-            list of your 'to-do', image.
-          </p>
-          <div class="ea-card">
-            <div class="ea-card-header">
-              <p>Tabs view. Click on each tab to see what it contains.</p>
-            </div>
-            <div class="ea-card-content header" style="flex-direction: column;">
-              <ea-tabs>
-                <ea-tab name="Paragraph"> <p>Just paragraph</p> </ea-tab>
-                <ea-tab name="List">
-                  <ul>
-                    <li>There is some list</li>
-                    <li>With few items</li>
-                    <li>There is some list</li>
-                    <li>With few items</li>
-                    <li>There is some list</li>
-                    <li>With few items</li>
-                    <li>There is some list</li>
-                    <li>With few items</li>
-                    <li>There is some list</li>
-                    <li>With few items</li>
-                    <li>There is some list</li>
-                    <li>With few items</li>
-                    <li>There is some list</li>
-                    <li>With few items</li>
-                    <li>There is some list</li>
-                    <li>With few items</li>
-                  </ul>
-                </ea-tab>
-                <ea-tab name="Image">
-                  <p>
-                    <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Angular_full_color_logo.svg"
-                      style="width: 160px; height: 160px;"
-                    />
-                    Angular is a TypeScript-based open-source front-end web
-                    application platform led by the Angular Team at Google and
-                    by a community of individuals and corporations.
-                  </p>
-                </ea-tab>
-              </ea-tabs>
-            </div>
-          </div>
-          <ea-markdown [doc]="tabs_example"></ea-markdown>
-          <p>
-            You should remember to add attribute 'name' which required. Name
-            will be shown in tab title.
-          </p>
+  <div class="ea-card-content" style="flex-direction: column; padding: 0 4vw;">
+    <div class="ea-card" unset>
+      <p>
+        Tabs are a set of layered sections of content, known as
+        <em>tabpanels</em>, that display one <em>tabpanel</em> of content at a
+        time. Each tab panel has an associated tab element, that when activated,
+        displays the <em>tabpanel</em>. Unlike other angular tab
+        implementations, eang does not require tabs and tabpanels to be coupled.
+        <code class="language-html">&lt;ea-tablist&gt;</code> and the associated
+        <code class="language-html">&lt;ea-tabgroup&gt;</code> can be placed
+        anywhere on the page.
+      </p>
+      <h1>Components</h1>
+
+      <h2><code class="language-html">&lt;ea-tablist&gt;</code></h2>
+      <p>
+        Contains the tabs that can be activated to display different content in
+        the tabgroup.
+      </p>
+      <h2><code class="language-html">&lt;ea-tabgroup&gt;</code></h2>
+      <p>Collection of tabpanels.</p>
+      <h2><code class="language-html">&lt;ea-tabpanel&gt;</code></h2>
+      <p>Tabpanel is defined within the tabgroup. The <em>name</em> attribute is mandatory.</p>
+      <div class="ea-card">
+        <div class="ea-card-header">
+          <button (click)="toggleTab()">Toggle</button>
+          <button (click)="tabActivate$$.next({name: 'Paragraph#1'})">Activate first Tab</button>
+          <button (click)="addTab()">Add Tab</button>
         </div>
-      </ea-tab>
-      <ea-tab name="Examples">
-        <h2>Closeable</h2>
-        <p>Try to add property closeable to show button to close your tab.</p>
-        <div class="ea-card">
-          <div class="ea-card-header">
-            <p>You are allowed to close tab only with closeable property.</p>
-          </div>
-          <div class="ea-card-content header" style="flex-direction: column;">
-            <ea-tabs>
-              <ea-tab name="Paragraph#1" [closeable]="true">
-                <p>Just paragraph #1</p>
-              </ea-tab>
-              <ea-tab name="Paragraph#2" [closeable]="true">
-                <p>Just paragraph #2</p>
-              </ea-tab>
-              <ea-tab name="List">
-                <ul>
-                  <li>There is some list</li>
-                  <li>With few items</li>
-                </ul>
-              </ea-tab>
-            </ea-tabs>
-          </div>
+        <div class="ea-card-content header" style="flex-direction: column;">
+          <ea-tablist [tabpanelGroup]="exampleTabs" [activate$$]="tabActivate$$"></ea-tablist>
+          <ea-tabpanel-group #exampleTabs>
+            <ea-tabpanel id="tab-1" name="Paragraph#1" [closeable]="true">
+              <p>Just paragraph #1</p>
+            </ea-tabpanel>
+            <ea-tabpanel *ngIf="editing" name="Toggle Tab">
+              <p>Toggle on/off</p>
+            </ea-tabpanel>
+            <ea-tabpanel name="List">
+              <ul>
+                <li>There is some list</li>
+                <li>With few items</li>
+              </ul>
+            </ea-tabpanel>
+            <ea-tabpanel *ngFor="let t of addedTabs" [name]="t.name">
+              <p>This is an added Tab!</p>
+            </ea-tabpanel>
+          </ea-tabpanel-group>
         </div>
-        <div grid><ea-markdown [doc]="tab_close"></ea-markdown></div>
-      </ea-tab>
-    </ea-tabs>
+      </div>
+      <ea-markdown [doc]="tabs_example"></ea-markdown>
+    </div>
+    <h2>Closeable</h2>
+    <p>Try to add property closeable to show button to close your tab.</p>
+
+    <div grid>
+      <ea-markdown [doc]="tab_close"></ea-markdown>
+    </div>
+    
   </div>
 </div>

@@ -3,9 +3,10 @@
     <h1>Icon</h1>
     <span icon grid negative style="width:2em; height:2em;"></span>
   </div>
-  <div class="ea-card-content">
-    <ea-tabs>
-      <ea-tab name="Overview">
+  <div class="ea-card-content" id="container">
+    <ea-tablist [tabpanelGroup]="mainPanel" horizontal></ea-tablist>
+    <ea-tabpanel-group #mainPanel>
+      <ea-tabpanel name="Overview">
         <div class="ea-card" unset>
           <p>
             Icons use the native <code>span</code> tag to render svg icons.
@@ -308,7 +309,7 @@
             <div class="ea-card-footer">add-file</div>
           </div>
         </div>
-      </ea-tab>
-    </ea-tabs>
+      </ea-tabpanel>
+    </ea-tabpanel-group>
   </div>
 </div>
