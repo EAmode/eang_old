@@ -3,7 +3,7 @@
   & h1 {
     font-size: var(--ea-h1-font-size, 2.875em);
     font-family: var(--ea-h1-font-family, var(--ea-font-1));
-    font-weight: lighter;
+    font-weight: 700;
     margin-bottom: 0.6em;
     color: var(--ea-color, var(--ea-h1-color, var(--ea-text-color)));
   }
@@ -12,14 +12,14 @@
     font-family: var(--ea-font-1);
     font-size: var(--ea-h2-font-size, 2.125rem);
     /* min-size, max-size */
-    font-weight: lighter;
+    font-weight: 700;
     margin-bottom: 0.4em;
     color: var(--ea-color, var(--ea-h2-color, var(--ea-text-color)));
   }
 
   & h3 {
     font-size: 1.5em;
-    font-weight: 400;
+    font-weight: 600;
     margin: 0.2rem 0 0.1rem 0;
     color: var(--ea-color, var(--ea-h3-color, var(--ea-text-color)));
   }

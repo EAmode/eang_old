@@ -30,7 +30,7 @@ export class AppComponent implements OnInit {
         iconStyle: 'ea-negative',
         children: [
           {
-            name: 'Colors',
+            name: 'Variables',
             icon: 'ea-color',
             iconStyle: 'ea-negative',
             data: {
@@ -129,15 +129,15 @@ export class AppComponent implements OnInit {
             data: {
               link: '/tabs'
             }
-          },
-          {
-            name: 'Tooltip',
-            icon: 'ea-help-circle',
-            iconStyle: 'ea-negative',
-            data: {
-              link: '/tooltip'
-            }
           }
+          // {
+          //   name: 'Tooltip',
+          //   icon: 'ea-help-circle',
+          //   iconStyle: 'ea-negative',
+          //   data: {
+          //     link: '/tooltip'
+          //   }
+          // }
         ]
       }
     ]
