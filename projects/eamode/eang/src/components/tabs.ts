@@ -10,7 +10,7 @@ import {
   Input,
   OnDestroy
 } from '@angular/core'
-import { Subject, Subscription, Observable } from 'rxjs'
+import { Subject, Subscription, Observable, combineLatest } from 'rxjs'
 import { EangElement } from '../core'
 
 @Component({
@@ -102,24 +102,25 @@ export class TabListComponent implements AfterContentInit, OnDestroy {
     if (!this.activated$) {
       this.activated$ = this.activate$$.asObservable()
     }
-
-    this.activated$.subscribe(activatedTab => {
-      if (this.activeTab === activatedTab) {
-        return
-      }
-      const tab = this.tabs.find(x => x.name === activatedTab.name)
-      if (tab) {
-        tab.isActive = true
-        if (this.activeTab) {
-          this.activeTab.isActive = false
+    combineLatest(this.activated$, this.tabpanelGroup.tabs).subscribe(
+      ([activatedTab, tabsInGroup]) => {
+        if (this.activeTab === activatedTab) {
+          return
         }
-        this.activeTab = tab
-      } else {
-        throw new Error(
-          `Tab ${activatedTab.id || activatedTab.name} does not exist!`
-        )
+        const tab = tabsInGroup.find(x => x.name === activatedTab.name)
+        if (tab) {
+          tab.isActive = true
+          if (this.activeTab) {
+            this.activeTab.isActive = false
+          }
+          this.activeTab = tab
+        } else {
+          throw new Error(
+            `Tab ${activatedTab.id || activatedTab.name} does not exist!`
+          )
+        }
       }
-    })
+    )
 
     this._tabsSub = this.tabpanelGroup.tabs.subscribe(tabpanels => {
       this.tabs = tabpanels
