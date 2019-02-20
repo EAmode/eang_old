@@ -1,11 +1,7 @@
 
   <div role="banner"><h1>Components</h1></div>
-  <div style="display: flex; justify-content: center;">
-    <div
-      grid
-      class="ea-card-content icon-tiles"
-      style="width: 90%; grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));grid-gap: 2em;"
-    >
+  <div class="content-container">
+    <div multi-col style="--ea-grid-col-min-width: 16em;">
       <a routerLink="/button">
         <div class="ea-card">
           <div class="ea-card-header">
@@ -116,6 +112,48 @@
               style=" margin: 0.8rem 0 0.8rem 0; font-size: 1.7rem; font-weight:500;"
             >
               Menu
+            </h2>
+            <img
+              style="width:4rem;"
+              src="../../../assets/images/menu.svg"
+              alt=""
+            />
+          </div>
+          <div class="ea-card-content">
+            <p style="margin: 0;">
+              Organize your content and navigate between routes.
+            </p>
+          </div>
+        </div>
+      </a>
+      <a routerLink="/markdown">
+        <div class="ea-card">
+          <div class="ea-card-header">
+            <h2
+              style=" margin: 0.8rem 0 0.8rem 0; font-size: 1.7rem; font-weight:500;"
+            >
+              Markdown
+            </h2>
+            <img
+              style="width:4rem;"
+              src="../../../assets/images/menu.svg"
+              alt=""
+            />
+          </div>
+          <div class="ea-card-content">
+            <p style="margin: 0;">
+              Organize your content and navigate between routes.
+            </p>
+          </div>
+        </div>
+      </a>
+      <a routerLink="/list">
+        <div class="ea-card">
+          <div class="ea-card-header">
+            <h2
+              style=" margin: 0.8rem 0 0.8rem 0; font-size: 1.7rem; font-weight:500;"
+            >
+              List
             </h2>
             <img
               style="width:4rem;"
