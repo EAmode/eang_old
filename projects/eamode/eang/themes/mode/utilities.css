@@ -150,11 +150,20 @@
     display: grid;
     grid-template-columns: repeat(
       auto-fit,
-      minmax(var(--ea-grid-col-min-width, 22em), var(--ea-grid-col-max-width, 1fr))
+      minmax(
+        var(--ea-grid-col-min-width, 22em),
+        var(--ea-grid-col-max-width, 1fr)
+      )
     );
     grid-gap: var(--ea-grid-gap, 1.5em);
     &[center] {
       align-items: center;
+      justify-items: center;
+    }
+    &[v-center] {
+      align-items: center;
+    }
+    &[h-center] {
       justify-items: center;
     }
   }
@@ -166,6 +175,11 @@
     &[row] {
       flex-direction: row;
     }
+  }
+  & [flex-space-evenly] {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
   }
   & [p] {
     padding: var(--ea-padding-value, 1em);

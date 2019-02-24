@@ -144,6 +144,15 @@
       white-space: nowrap;
     }
   }
+  & #icon-examples {
+    & .ea-card {
+      width: fit-content;
+      padding: 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
 }
 
 // .mode {
