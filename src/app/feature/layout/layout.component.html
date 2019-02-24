@@ -55,49 +55,47 @@
   </div>
   <ea-markdown [doc]="ea_toolbar_attrs"></ea-markdown>
 
-  <div class="ea-card" unset>
-    <div class="ea-card-header"><h2>&lt;ea-drawer&gt;</h2></div>
-    <p>
-      (optional) panel that expands/collapses from one side of the screen. The
-      ea-drawer is designed to have a ,<code class="language-html"
-        >&lt;header&gt;</code
-      >, <code class="language-html">&lt;section&gt;</code>, and
-      <code class="language-html">&lt;footer&gt;</code>. A
-      <code class="language-html">&lt;header&gt;</code> element will always sit
-      at the top of the drawer. The
-      <code class="language-html">&lt;section&gt;</code> is stretched to be the
-      space between the header and the footer aligned at the top. The
-      <code class="language-html">&lt;footer&gt;</code> is aligned at the bottom
-      always. For simplicity sake we accomplish this we flexbox which makes it
-      ideal to only have 3 elements, header, section, and footer to maintain
-      this layout easily.
-    </p>
+  <h2>&lt;ea-drawer&gt;</h2>
+  <p>
+    (optional) panel that expands/collapses from one side of the screen. The
+    ea-drawer is designed to have a ,<code class="language-html"
+      >&lt;header&gt;</code
+    >, <code class="language-html">&lt;section&gt;</code>, and
+    <code class="language-html">&lt;footer&gt;</code>. A
+    <code class="language-html">&lt;header&gt;</code> element will always sit at
+    the top of the drawer. The
+    <code class="language-html">&lt;section&gt;</code> is stretched to be the
+    space between the header and the footer aligned at the top. The
+    <code class="language-html">&lt;footer&gt;</code> is aligned at the bottom
+    always. For simplicity sake we accomplish this we flexbox which makes it
+    ideal to only have 3 elements, header, section, and footer to maintain this
+    layout easily.
+  </p>
 
-    <p>
-      The drawer uses different an event stream to inform the application what
-      state it is in. The first two states we've introduced are maximized and
-      closed. We plan to introduce new states to make it so that you can adjust
-      the size of your drawer to different states we think have utility.
-    </p>
+  <p>
+    The drawer uses different an event stream to inform the application what
+    state it is in. The first two states we've introduced are maximized and
+    closed. We plan to introduce new states to make it so that you can adjust
+    the size of your drawer to different states we think have utility.
+  </p>
 
-    <div multi-col>
-      <ea-markdown [doc]="ea_layout_drawer"></ea-markdown>
-      <div class="ea-card">
-        <div class="ea-card-header"><h3>&lt;ea-drawer&gt;</h3></div>
-        <div
-          class="ea-card-content"
-          grid
-          style="grid-template-columns: 1fr; justify-items: center;"
-        >
-          <img
-            style="width: 10rem;"
-            src="../../../assets/images/drawer.svg"
-            alt=""
-          />
-        </div>
+  <div multi-col>
+    <ea-markdown [doc]="ea_layout_drawer"></ea-markdown>
+    <div class="ea-card">
+      <div class="ea-card-header"><h3>&lt;ea-drawer&gt;</h3></div>
+      <div
+        class="ea-card-content"
+        grid
+        style="grid-template-columns: 1fr; justify-items: center;"
+      >
+        <img
+          style="width: 10rem;"
+          src="../../../assets/images/drawer.svg"
+          alt=""
+        />
       </div>
     </div>
-
-    <ea-markdown [doc]="ea_drawer_attrs"></ea-markdown>
   </div>
+
+  <ea-markdown [doc]="ea_drawer_attrs"></ea-markdown>
 </div>

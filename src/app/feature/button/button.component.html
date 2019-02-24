@@ -4,22 +4,26 @@
   <span icon button-icon style="width: 1.5em; height:1.5em;"></span>
 </div>
 <div class="content-container">
-  <div>
-    <p>
-      Buttons allow users to take actions, and make choices, with a single tap.
-      Eang has 4 core types of buttons.
-    </p>
+  <p>
+    Buttons allow users to take actions, and make choices, with a single tap.
+    Eang has 4 core types of buttons.
+  </p>
 
-    <h3>Button Types</h3>
+  <h3>Button Types</h3>
 
-    <div multi-col>
-      <button>Button</button> <button rounded>Rounded</button>
-      <button outline>Outline</button>
-      <button outline rounded>Outline Rounded</button> <button flat>Flat</button>
-      <button flat rounded>Flat Rounded</button>
-    </div>
-    <ea-markdown style="margin-bottom:2em;" [doc]="button"></ea-markdown>
+  <div
+    multi-col
+    p
+    style="justify-items: center;
+    --ea-grid-col-min-width: 8em;"
+  >
+    <button>Button</button> <button rounded>Rounded</button>
+    <button outline>Outline</button>
+    <button outline rounded>Outline Rounded</button> <button flat>Flat</button>
+    <button flat rounded>Flat Rounded</button>
   </div>
+  <ea-markdown style="margin-bottom:2em;" [doc]="button"></ea-markdown>
+
   <ea-markdown [doc]="props"></ea-markdown>
   <h2>Icon Buttons</h2>
   <p>
@@ -28,51 +32,45 @@
     <code>[icon]</code> attribute can be added to a button to take care of some
     basic icon work.
   </p>
-  <div class="ea-card-content" grid>
-    <!--
-              <button hover style="--ea-button-margin:0rem 1em" small>Small</button>
-            -->
 
-    <div class="button-container">
-      <button><span icon negative sign-in></span></button>
-      <button rounded><span icon negative filter></span></button>
-      <button rounded>Button <span icon negative filter></span></button>
-      <button icon outline><span icon trash-2></span></button>
-      <button icon outline rounded><span icon trash-2></span></button>
-      <button outline rounded><span icon trash-2></span> Delete</button>
-      <button icon flat><span icon filter></span></button>
-      <button flat rounded><span icon filter></span></button>
-      <button flat rounded>Filter <span icon filter></span></button>
-    </div>
-    <ea-markdown [doc]="button_icon"></ea-markdown>
+  <div
+    multi-col
+    p
+    style="justify-items: center;
+    --ea-grid-col-min-width: 8em;"
+  >
+    <button><span icon negative sign-in></span></button>
+    <button rounded><span icon negative filter></span></button>
+    <button rounded>Button <span icon negative filter></span></button>
+    <button icon outline><span icon trash-2></span></button>
+    <button icon outline rounded><span icon trash-2></span></button>
+    <button outline rounded><span icon trash-2></span> Delete</button>
+    <button icon flat><span icon filter></span></button>
+    <button flat rounded><span icon filter></span></button>
+    <button flat rounded>Filter <span icon filter></span></button>
   </div>
-  <section class="ea-card" unset>
-    <div class="ea-card-header"><h3>Re-Sizable Buttons</h3></div>
-    <p>
-      These variables can all be adjusted to customize aspects of your button that
-      you want to scale with. We've added a few attributes to allow you to easily
-      scale up and down to preset measurements.
-    </p>
+  <ea-markdown [doc]="button_icon"></ea-markdown>
 
-    <div class="ea-card-content" grid>
-      <!--
-                <button hover style="--ea-button-margin:0rem 1em" small>Small</button>
-              -->
+  <h3>Re-Sizable Buttons</h3>
+  <p>
+    These variables can all be adjusted to customize aspects of your button that
+    you want to scale with. We've added a few attributes to allow you to easily
+    scale up and down to preset measurements.
+  </p>
 
-      <div class="button-container">
-        <div class="ea-card-content" flex-end>
-          <button sm rounded style="margin:1rem;">
-            <span icon filter negative></span> [sm]
-          </button>
-          <button md outline rounded style="margin:1rem;">[md]</button>
-          <button lg rounded style="margin:1rem;">[lg]</button>
-          <button xl flat style="margin:1rem;">[xl]</button>
-          <button xxl style="margin:1rem;">[xxl]</button>
-        </div>
-      </div>
-      <ea-markdown [doc]="button_sizing"></ea-markdown>
-    </div>
-
-    <div class="ea-card-footer"></div>
-  </section>
+  <div
+    multi-col
+    p
+    style="justify-items: center;
+      --ea-grid-col-min-width: 8em;"
+  >
+    <button sm rounded style="margin:1rem;">
+      <span icon filter negative></span> [sm]
+    </button>
+    <button md outline rounded style="margin:1rem;">[md]</button>
+    <button lg rounded style="margin:1rem;">[lg]</button>
+    <button xl flat style="margin:1rem;">[xl]</button>
+    <button xxl style="margin:1rem;">[xxl]</button>
+  </div>
+  <ea-markdown [doc]="button_sizing"></ea-markdown>
 </div>

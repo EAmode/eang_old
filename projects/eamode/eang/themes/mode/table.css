@@ -11,7 +11,8 @@
     margin: 2em 0;
 
     & td {
-      padding: var(--ea-table-padding, 1.8em 1.5em);
+      padding: var(--ea-table-padding, 1.25em 1.5em);
+      font-size: 1.2em;
       text-align: left;
       border-bottom: 1px solid var(--ea-color-3-dark);
       color: var(--ea-table-td-color, var(--ea-text-color));
@@ -19,12 +20,13 @@
 
     & th {
       text-align: left;
-      padding: var(--ea-table-th-padding, 1em 1.5em);
+      padding: var(--ea-table-th-padding, 0.5em 1em);
     }
 
     thead {
       background: var(--ea-table-thead-background, transparent);
       & th {
+        font-size: 1.5em;
         border-radius: 0;
         color: var(--ea-table-thead-th-color, var(--ea-text-color));
       }

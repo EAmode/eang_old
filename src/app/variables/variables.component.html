@@ -1,62 +1,60 @@
-
-  <div role="banner"><h1>Variables</h1></div>
-  <div class="content-container">
-    <div class="ea-card" unset>
-      <h1>Colors</h1>
-      <p>
-        Eang has a central file of variables that take care of a majority of
-        themeing.
-      </p>
-      <div p>
-        <span class="color-title-container">
-          <h3>Colors</h3>
-          <hr />
-        </span>
+<div role="banner"><h1>Variables</h1></div>
+<div class="content-container">
+  <h2>Custom Properties</h2>
+  <p>
+    Eang has a central file of variables that take care of a majority of
+    themeing.
+  </p>
+  <div p>
+    <span class="color-title-container">
+      <h3>Colors</h3>
+      <hr />
+    </span>
+    <div
+      multi-col
+      style="--ea-grid-col-min-width: 12em; justify-items: center;"
+    >
+      <div class="theme-color">
+        <div class="example-color base-color" aria-labelledby="1">
+          <span id="1" role="tooltip" aria-label="Click to change!"></span>
+        </div>
+        <div class="ea-card-footer">
+          <p>Base Color</p>
+          <p>--ea-color-1</p>
+          <p>HEX: #142151</p>
+          <p>HSL: (12,12,12)</p>
+        </div>
+      </div>
+      <div class="theme-color">
+        <div class="example-color base-color-high"></div>
+        <div class="ea-card-footer"><small>Base Color High</small></div>
+      </div>
+      <div class="theme-color">
+        <div class="example-color alt-base-color"></div>
+        <div class="ea-card-footer"><small>Alt Base Color</small></div>
+      </div>
+      <div class="theme-color">
         <div
-          multi-col
-          style="--ea-grid-col-min-width: 12em; justify-items: center;"
-        >
-          <div class="theme-color">
-            <div class="example-color base-color" aria-labelledby="1">
-              <span id="1" role="tooltip" aria-label="Click to change!"></span>
-            </div>
-            <div class="ea-card-footer">
-              <p>Base Color</p>
-              <p>--ea-color-1</p>
-              <p>HEX: #142151</p>
-              <p>HSL: (12,12,12)</p>
-            </div>
-          </div>
-          <div class="theme-color">
-            <div class="example-color base-color-high"></div>
-            <div class="ea-card-footer"><small>Base Color High</small></div>
-          </div>
-          <div class="theme-color">
-            <div class="example-color alt-base-color"></div>
-            <div class="ea-card-footer"><small>Alt Base Color</small></div>
-          </div>
-          <div class="theme-color">
-            <div
-              class="example-color"
-              style="background: var(--ea-color-accent-1);"
-            ></div>
-            <div class="ea-card-footer"><small>Color Accent</small></div>
-          </div>
-          <div class="theme-color">
-            <div
-              class="example-color"
-              style="background: var(--ea-color-accent-2);"
-            ></div>
-            <div class="ea-card-footer"><small>Base Color High</small></div>
-          </div>
+          class="example-color"
+          style="background: var(--ea-color-accent-1);"
+        ></div>
+        <div class="ea-card-footer"><small>Color Accent</small></div>
+      </div>
+      <div class="theme-color">
+        <div
+          class="example-color"
+          style="background: var(--ea-color-accent-2);"
+        ></div>
+        <div class="ea-card-footer"><small>Base Color High</small></div>
+      </div>
 
-          <!-- <div class="ea-card theme-color">
+      <!-- <div class="ea-card theme-color">
                 <div class="example-color ea-hover"></div>
                 <div class="ea-card-footer">
                   <small>Background Color Hover</small>
                 </div>
               </div> -->
-          <!-- <div class="ea-card theme-color">
+      <!-- <div class="ea-card theme-color">
                 <div
                   (click)="this.isActive = !this.isActive"
                   [attr.active]="isActive === true"
@@ -66,11 +64,48 @@
                   <small>Background Color Active</small>
                 </div>
               </div> -->
-        </div>
-      </div>
+    </div>
+  </div>
 
+  <span class="color-title-container">
+    <h3>Semantic Colors</h3>
+    <hr />
+  </span>
+  <div multi-col style="--ea-grid-col-min-width: 12em; justify-items: center;">
+    <div class="theme-color">
+      <div
+        class="example-color"
+        style="background: var(--ea-color-success);"
+      ></div>
+      <div class="ea-card-footer"><small>Alt Base Color</small></div>
+    </div>
+    <div class="theme-color">
+      <div
+        class="example-color"
+        style="background: var(--ea-color-info);"
+      ></div>
+      <div class="ea-card-footer"><small>Alt Base Color</small></div>
+    </div>
+    <div class="theme-color">
+      <div
+        class="example-color"
+        style="background: var(--ea-color-warning);"
+      ></div>
+      <div class="ea-card-footer"><small>Alt Base Color</small></div>
+    </div>
+    <div class="theme-color">
+      <div
+        class="example-color"
+        style="background: var(--ea-color-danger);"
+      ></div>
+      <div class="ea-card-footer"><small>Alt Base Color</small></div>
+    </div>
+  </div>
+
+  <div p multi-col>
+    <span>
       <span class="color-title-container">
-        <h3>Semantic Colors</h3>
+        <h3>Text Colors</h3>
         <hr />
       </span>
       <div
@@ -78,61 +113,21 @@
         style="--ea-grid-col-min-width: 12em; justify-items: center;"
       >
         <div class="theme-color">
-          <div
-            class="example-color"
-            style="background: var(--ea-color-success);"
-          ></div>
-          <div class="ea-card-footer"><small>Alt Base Color</small></div>
+          <div class="example-color base-color"></div>
+          <div class="ea-card-footer"><small>Base Color</small></div>
         </div>
         <div class="theme-color">
-          <div
-            class="example-color"
-            style="background: var(--ea-color-info);"
-          ></div>
+          <div class="example-color alt-base-color"></div>
           <div class="ea-card-footer"><small>Alt Base Color</small></div>
         </div>
-        <div class="theme-color">
-          <div
-            class="example-color"
-            style="background: var(--ea-color-warning);"
-          ></div>
-          <div class="ea-card-footer"><small>Alt Base Color</small></div>
-        </div>
-        <div class="theme-color">
-          <div
-            class="example-color"
-            style="background: var(--ea-color-danger);"
-          ></div>
-          <div class="ea-card-footer"><small>Alt Base Color</small></div>
-        </div>
-      </div>
 
-      <div p multi-col>
-        <span>
-          <span class="color-title-container">
-            <h3>Text Colors</h3>
-            <hr />
-          </span>
-          <div
-            multi-col
-            style="--ea-grid-col-min-width: 12em; justify-items: center;"
-          >
-            <div class="theme-color">
-              <div class="example-color base-color"></div>
-              <div class="ea-card-footer"><small>Base Color</small></div>
-            </div>
-            <div class="theme-color">
-              <div class="example-color alt-base-color"></div>
-              <div class="ea-card-footer"><small>Alt Base Color</small></div>
-            </div>
-
-            <!-- <div class="ea-card theme-color">
+        <!-- <div class="ea-card theme-color">
                   <div class="example-color ea-hover"></div>
                   <div class="ea-card-footer">
                     <small>Background Color Hover</small>
                   </div>
                 </div> -->
-            <!-- <div class="ea-card theme-color">
+        <!-- <div class="ea-card theme-color">
                   <div
                     (click)="this.isActive = !this.isActive"
                     [attr.active]="isActive === true"
@@ -142,33 +137,33 @@
                     <small>Background Color Active</small>
                   </div>
                 </div> -->
-          </div>
-        </span>
-        <span>
-          <span class="color-title-container">
-            <h3>Background Colors</h3>
-            <hr />
-          </span>
-          <div
-            multi-col
-            style="--ea-grid-col-min-width: 12em; justify-items: center;"
-          >
-            <div class="theme-color">
-              <div class="example-color base-color"></div>
-              <div class="ea-card-footer"><small>Base Color</small></div>
-            </div>
-            <div class="theme-color">
-              <div class="example-color alt-base-color"></div>
-              <div class="ea-card-footer"><small>Alt Base Color</small></div>
-            </div>
+      </div>
+    </span>
+    <span>
+      <span class="color-title-container">
+        <h3>Background Colors</h3>
+        <hr />
+      </span>
+      <div
+        multi-col
+        style="--ea-grid-col-min-width: 12em; justify-items: center;"
+      >
+        <div class="theme-color">
+          <div class="example-color base-color"></div>
+          <div class="ea-card-footer"><small>Base Color</small></div>
+        </div>
+        <div class="theme-color">
+          <div class="example-color alt-base-color"></div>
+          <div class="ea-card-footer"><small>Alt Base Color</small></div>
+        </div>
 
-            <!-- <div class="ea-card theme-color">
+        <!-- <div class="ea-card theme-color">
                   <div class="example-color ea-hover"></div>
                   <div class="ea-card-footer">
                     <small>Background Color Hover</small>
                   </div>
                 </div> -->
-            <!-- <div class="ea-card theme-color">
+        <!-- <div class="ea-card theme-color">
                   <div
                     (click)="this.isActive = !this.isActive"
                     [attr.active]="isActive === true"
@@ -178,111 +173,103 @@
                     <small>Background Color Active</small>
                   </div>
                 </div> -->
-          </div>
-        </span>
       </div>
+    </span>
+  </div>
 
-      <h1 style="margin-top: 2rem;">Typography</h1>
+  <h1 style="margin-top: 2rem;">Typography</h1>
 
-      <h2 style="font-weight: bold;">
-        The quick brown fox jumps over the lazy dog
-      </h2>
-      <h2 style="font-weight: 500;">
-        The quick brown fox jumps over the lazy dog
-      </h2>
-      <h2 style="font-weight: 200;">
-        The quick brown fox jumps over the lazy dog
-      </h2>
+  <h1>The quick brown fox jumps over the lazy dog</h1>
+  <h2>The quick brown fox jumps over the lazy dog</h2>
+  <h3>The quick brown fox jumps over the lazy dog</h3>
+  <h4>The quick brown fox jumps over the lazy dog</h4>
+  <h5>The quick brown fox jumps over the lazy dog</h5>
+  <h6>The quick brown fox jumps over the lazy dog</h6>
 
-      <div class="ea-card-content example" id="text-colors">
-        <div class="example-color">
-          <small style="text-align:center; color: var(--ea-text-color-dark);"
-            >Text Color <br />
-            Dark</small
-          >
-        </div>
-        <div class="example-color base-color">
-          <small style="text-align:center;"
-            >Text Color <br />
-            Light</small
-          >
-        </div>
-        <div class="example-color base-color">
-          <small class="text-hover-color">Text Hover Color</small>
-        </div>
-        <div
-          (click)="this.textIsActive = !this.textIsActive"
-          class="example-color base-color-high"
-        >
-          <small
-            [attr.textIsActive]="textIsActive === true"
-            class="text-active-color"
-            >Text Active Color <br />
-            (click)</small
-          >
-        </div>
-      </div>
-      <h1 style="margin-top: 2rem;">Component Styles</h1>
-      <div>
-        <span class="color-title-container">
-          <h3>Buttons</h3>
-          <hr />
-        </span>
-        <div multi-col>
-          <span>
-            <button>Button</button> <button outline>Button Outline</button>
-          </span>
-          <span>
-            <code
-              >background: var(--ea-background, var(--ea-button-background
-              ,var(--ea-color-1)
-              <div
-                style="
+  <div class="ea-card-content example" id="text-colors">
+    <div class="example-color">
+      <small style="text-align:center; color: var(--ea-text-color-dark);"
+        >Text Color <br />
+        Dark</small
+      >
+    </div>
+    <div class="example-color base-color">
+      <small style="text-align:center;"
+        >Text Color <br />
+        Light</small
+      >
+    </div>
+    <div class="example-color base-color">
+      <small class="text-hover-color">Text Hover Color</small>
+    </div>
+    <div
+      (click)="this.textIsActive = !this.textIsActive"
+      class="example-color base-color-high"
+    >
+      <small
+        [attr.textIsActive]="textIsActive === true"
+        class="text-active-color"
+        >Text Active Color <br />
+        (click)</small
+      >
+    </div>
+  </div>
+  <h1 style="margin-top: 2rem;">Component Styles</h1>
+  <div>
+    <span class="color-title-container">
+      <h3>Buttons</h3>
+      <hr />
+    </span>
+    <div multi-col>
+      <span>
+        <button>Button</button> <button outline>Button Outline</button>
+      </span>
+      <span>
+        <code
+          >background: var(--ea-background, var(--ea-button-background
+          ,var(--ea-color-1)
+          <div
+            style="
                 width: 1em;
                 height:1em;
                 background: var(--ea-color-1);
                 border-radius: 50%;
                 --ea-tooltip-bottom: -2.5em;
                 --ea-tooltip-left: 0em"
-                aria-labelledby="1"
-              >
-                <span
-                  id="1"
-                  role="tooltip"
-                  aria-label="Click to change!"
-                ></span>
-              </div>
-              ));</code
-            >
-            <code
-              >border-style: var(--ea-background, var(--ea-button-background
-              ,var(--ea-color-1)));</code
-            >
-            <code
-              >border-color: var(--ea-background, var(--ea-button-background
-              ,var(--ea-color-1)));</code
-            >
-          </span>
-        </div>
-      </div>
-      <div>
-        <div>
-          <span class="color-title-container">
-            <h3>Cards</h3>
-            <hr />
-          </span>
-        </div>
-      </div>
-      <div multi-col>
-        <div><h2>Markdown</h2></div>
-        <div><h2>Menu</h2></div>
-      </div>
-      <div multi-col>
-        <div><h2>List</h2></div>
-        <div><h2>Tabs</h2></div>
-      </div>
-      <div multi-col>
-        <div><h2>Tooltip</h2></div>
-      </div>
+            aria-labelledby="1"
+          >
+            <span id="1" role="tooltip" aria-label="Click to change!"></span>
+          </div>
+          ));</code
+        >
+        <code
+          >border-style: var(--ea-background, var(--ea-button-background
+          ,var(--ea-color-1)));</code
+        >
+        <code
+          >border-color: var(--ea-background, var(--ea-button-background
+          ,var(--ea-color-1)));</code
+        >
+      </span>
     </div>
   </div>
+  <div>
+    <div>
+      <span class="color-title-container">
+        <h3>Cards</h3>
+        <hr />
+      </span>
+    </div>
+  </div>
+  <div multi-col>
+    <div><h2>Markdown</h2></div>
+    <div><h2>Menu</h2></div>
+  </div>
+  <div multi-col>
+    <div><h2>List</h2></div>
+    <div><h2>Tabs</h2></div>
+  </div>
+  <div multi-col>
+    <div><h2>Tooltip</h2></div>
+  </div>
+</div>

@@ -1,26 +1,27 @@
 @define-mixin typography {
 
   & h1 {
-    font-size: var(--ea-h1-font-size, 2.875em);
+    font-size: var(--ea-h1-font-size, 3em);
     font-family: var(--ea-h1-font-family, var(--ea-font-1));
     font-weight: 700;
-    margin-bottom: 0.6em;
+    margin-bottom: 0.5em;
+    line-height: 1.2em;
     color: var(--ea-color, var(--ea-h1-color, var(--ea-text-color)));
   }
 
   & h2 {
     font-family: var(--ea-font-1);
-    font-size: var(--ea-h2-font-size, 2.125rem);
+    font-size: var(--ea-h2-font-size, 2em);
     /* min-size, max-size */
     font-weight: 700;
-    margin-bottom: 0.4em;
+    margin-bottom: .5em;
     color: var(--ea-color, var(--ea-h2-color, var(--ea-text-color)));
   }
 
   & h3 {
     font-size: 1.5em;
     font-weight: 600;
-    margin: 0.2rem 0 0.1rem 0;
+    margin: 0.5rem 0 0.5rem;
     color: var(--ea-color, var(--ea-h3-color, var(--ea-text-color)));
   }
 
@@ -36,7 +37,7 @@
 
   & p {
     font-size: 1.2em;
-    line-height: 1.33em;
+    line-height: 1.5em;
     font-weight: 400;
     margin: 1em 0;
     user-select: auto;
@@ -45,8 +46,11 @@
 
   & a {
     font-size: 1rem;
-    text-decoration: underline;
+    text-decoration: none;
     color: var(--ea-color, var(--ea-a-color, var(--ea-text-color)));
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   & code {
@@ -60,5 +64,9 @@
   & *::selection {
     background: var(--ea-background, var(--ea-background-selection, var(--ea-color-1)));
     color: var(--ea-color, var(--ea-color-selection, var(--ea-text-color-light)));
+   }
+
+   & h3 + p {
+     margin: .25em 0;
    }
 }

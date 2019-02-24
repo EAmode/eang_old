@@ -92,14 +92,14 @@ export class AppComponent implements OnInit {
               link: '/icon'
             }
           },
-          {
-            name: 'Markdown',
-            icon: 'ea-edit',
-            iconStyle: 'ea-negative',
-            data: {
-              link: '/markdown'
-            }
-          },
+          // {
+          //   name: 'Markdown',
+          //   icon: 'ea-edit',
+          //   iconStyle: 'ea-negative',
+          //   data: {
+          //     link: '/markdown'
+          //   }
+          // },
           {
             name: 'Menu',
             icon: 'ea-hamburger-menu',

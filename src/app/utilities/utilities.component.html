@@ -4,13 +4,13 @@
   </div>
   <div class="content-container">
     <div p>
-      <h3><code>[center]</code></h3>
+      <h3><code>[flex-center]</code></h3>
       <section multi-col>
         <div
-          center
+          flex-center
           style="background: white; box-shadow: inset var(--ea-box-shadow);"
         >
-          <code>&lt;div [center]&gt;</code>
+          <code>&lt;div [flex-center]&gt;</code>
         </div>
         <div><ea-markdown [doc]="center"></ea-markdown></div>
       </section>
@@ -26,6 +26,24 @@
             <code>&lt;div [center]&gt;</code>
           </div>
           <div center style="border: .1em dotted var(--ea-color-1);">
+            <code>&lt;div [center]&gt;</code>
+          </div>
+        </div>
+        <div><ea-markdown [doc]="multi_col"></ea-markdown></div>
+      </section>
+    </div>
+    <div p>
+      <h3><code>[multi-col] [center]</code></h3>
+      <section multi-col>
+        <div
+          multi-col
+          center
+          style="--ea-grid-col-min-width: 18em; background: white;"
+        >
+          <div style="border: .1em dotted var(--ea-color-1);">
+            <code>&lt;div [center]&gt;</code>
+          </div>
+          <div style="border: .1em dotted var(--ea-color-1);">
             <code>&lt;div [center]&gt;</code>
           </div>
         </div>

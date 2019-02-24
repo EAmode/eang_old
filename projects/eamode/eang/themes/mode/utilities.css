@@ -1,18 +1,18 @@
 @define-mixin utilities {
   [sm] {
-    font-size: 0.8rem;
+    --ea-font-size: 0.8rem;
   }
   [md] {
-    font-size: 1.25rem;
+    --ea-font-size: 1.25rem;
   }
   [lg] {
-    font-size: 1.5rem;
+    --ea-font-size: 1.5rem;
   }
   [xl] {
-    font-size: 2rem;
+    --ea-font-size: 2rem;
   }
   [xxl] {
-    font-size: 2.5rem;
+    --ea-font-size: 2.5rem;
   }
   [avatar] {
     display: grid;
@@ -153,8 +153,12 @@
       minmax(var(--ea-grid-col-min-width, 22em), var(--ea-grid-col-max-width, 1fr))
     );
     grid-gap: var(--ea-grid-gap, 1.5em);
+    &[center] {
+      align-items: center;
+      justify-items: center;
+    }
   }
-  & [center] {
+  & [flex-center] {
     display: flex;
     justify-content: center;
     align-items: center;
