@@ -8,7 +8,9 @@ import {
   ContentChild,
   HostBinding,
   Input,
-  OnDestroy
+  OnDestroy,
+  Renderer2,
+  ElementRef
 } from '@angular/core'
 import { Subject, Subscription, Observable, combineLatest } from 'rxjs'
 import { EangElement } from '../core'
@@ -27,10 +29,17 @@ export class TabpanelComponent implements EangElement {
   @Input() @HostBinding('attr.id') id: string
   @Input() name: string
 
+  constructor(private renderer: Renderer2, private el: ElementRef) {}
+
   private _isActive = false
   @Input() set isActive(isActive: boolean) {
     this._isActive = isActive
     this.active = isActive ? '' : undefined
+    if (this.active !== undefined) {
+      this.renderer.setAttribute(this.el.nativeElement, 'active', this.active)
+    } else {
+      this.renderer.removeAttribute(this.el.nativeElement, 'active')
+    }
   }
   get isActive() {
     return this._isActive
