@@ -1,28 +1,29 @@
 <div class="ea-card" unset>
-  <div class="ea-card-header">
+  <div role="banner">
     <h1>Markdown</h1>
-    <span icon hamburger-menu style="width: 2rem; height:2rem;"></span>
+    <span icon edit negative style="width: 1.5rem; height:1.5rem;"></span>
   </div>
-  <div class="ea-card-content">
-    <ea-tabs>
-      <ea-tab name="Overview">
+  <div class="ea-card-content" id="container">
+    <ea-tablist [tabpanelGroup]="mainPanel" horizontal></ea-tablist>
+    <ea-tabpanel-group #mainPanel>
+      <ea-tabpanel name="Overview">
         <div class="ea-card" unset>
           <p>
-            Rendering a Markdown string to HTML. Input can be a string or an
-            observable.
+            <code>ea-markdown</code> allows you to render a Markdown from a
+            string to HTML - input can be a string or an observable.
           </p>
           <div class="ea-card-content example" grid>
             <ea-markdown [doc]="ea_menu"></ea-markdown>
-          </div>
-          <div class="ea-card">
-            <div class="ea-card-header"><p>Result markdown view.</p></div>
-            <div class="ea-card-content">
-              <ea-markdown doc="# This is a heading"> </ea-markdown>
+            <div class="ea-card">
+              <div class="ea-card-header"><p>Result markdown view.</p></div>
+              <div class="ea-card-content" style="justify-content: flex-start;">
+                <ea-markdown doc="# This is a heading"> </ea-markdown>
+              </div>
             </div>
           </div>
         </div>
-      </ea-tab>
-      <ea-tab name="Examples">
+      </ea-tabpanel>
+      <ea-tabpanel name="Examples">
         <h2>Using an observable and context</h2>
         <div class="ea-card-content example" grid>
           <ea-markdown [doc]="observableAndContext"></ea-markdown>
@@ -32,7 +33,54 @@
             </div>
           </div>
         </div>
-      </ea-tab>
-    </ea-tabs>
+
+        <div class="ea-card">
+          <div class="ea-card-header">
+            <h2>ea-markdown</h2>
+            <span>
+              <button
+                flat
+                icon
+                *ngIf="!editing"
+                (click)="
+                  editing = !editing; changesTab.visible = !changesTab.visible
+                "
+              >
+                <span icon edit></span>
+              </button>
+              <button *ngIf="editing" (click)="editing = !editing; toggleTab()">
+                Save
+              </button>
+              <button *ngIf="editing" (click)="addTab()">Add Tabs</button>
+            </span>
+          </div>
+          <ea-tabpanel-group *ngIf="editing">
+            <ea-tabpanel name="current">
+              <div class="ea-card-content">
+                <ea-markdown [doc]="test"></ea-markdown>
+              </div>
+            </ea-tabpanel>
+            <ea-tabpanel *ngIf="changesTab.visible" name="My Changes">
+              Here is a bunch of content about this thing here
+            </ea-tabpanel>
+            <ea-tabpanel
+              *ngFor="let other of otherTabs"
+              name="{{ other.name }}"
+            >
+              {{ other.content }}
+            </ea-tabpanel>
+          </ea-tabpanel-group>
+          <ea-tabpanel-group *ngIf="!editing">
+            <ea-tabpanel name="current">
+              <div class="ea-card-content">
+                <h2>Testing this thing out</h2>
+
+                <ea-markdown [doc]="test"></ea-markdown>
+              </div>
+            </ea-tabpanel>
+          </ea-tabpanel-group>
+        </div>
+      </ea-tabpanel>
+    </ea-tabpanel-group>
   </div>
 </div>

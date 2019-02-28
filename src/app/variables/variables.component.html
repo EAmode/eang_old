@@ -1,8 +1,9 @@
 <div class="ea-card" unset id="variables">
   <div role="banner"><h1>Variables</h1></div>
-  <div class="ea-card-content">
-    <ea-tabs>
-      <ea-tab name="Overview">
+  <div class="ea-card-content" id="container">
+    <ea-tablist [tabpanelGroup]="mainPanel"></ea-tablist>
+    <ea-tabpanel-group #mainPanel>
+      <ea-tabpanel name="Overview">
         <div class="ea-card" unset>
           <p>
             Eang has a central file of variables that take care of a majority of
@@ -10,38 +11,45 @@
           </p>
           <h2>Theme Colors</h2>
           <div class="ea-card-content example">
-            <div class="example-color base-color">
-              <small>Base Color</small>
+            <div class="ea-card theme-color">
+              <div class="ea-card-content example-color base-color"></div>
+              <div class="ea-card-footer"><small>Base Color</small></div>
             </div>
-            <div class="example-color base-color-high">
-              <small
-                >Base Color <br />
-                High</small
-              >
+            <div class="ea-card theme-color">
+              <div class="ea-card-content example-color base-color-high"></div>
+              <div class="ea-card-footer"><small>Base Color High</small></div>
             </div>
-            <div class="example-color alt-base-color">
-              <small
-                >Alt Base <br />
-                Color</small
-              >
+            <div class="ea-card theme-color">
+              <div class="ea-card-content example-color alt-base-color"></div>
+              <div class="ea-card-footer"><small>Alt Base Color</small></div>
             </div>
-            <div class="example-color ea-hover">
-              <small style="text-align:center;">Background Color Hover</small>
+
+            <div class="ea-card theme-color">
+              <div class="ea-card-content example-color ea-hover"></div>
+              <div class="ea-card-footer">
+                <small>Background Color Hover</small>
+              </div>
             </div>
-            <div
-              (click)="this.isActive = !this.isActive"
-              [attr.active]="isActive === true"
-              class="example-color ea-active"
-            >
-              <small style="text-align:center;"
-                >Background Color Active <br />
-                (click)</small
-              >
+
+            <div class="ea-card theme-color">
+              <div
+                (click)="this.isActive = !this.isActive"
+                [attr.active]="isActive === true"
+                class="ea-card-content example-color ea-active"
+              ></div>
+              <div class="ea-card-footer">
+                <small>Background Color Active</small>
+              </div>
             </div>
           </div>
           <ea-markdown [doc]="variables"></ea-markdown>
 
           <h2 style="margin-top: 2rem;">Text Colors</h2>
+
+          <h2>AaBbCcDdEeFfGgHh <br>
+              IiJjKkLlMmNnOoPp <br>
+              QqRrSsTtUuVvWwXx <br>
+              YyZz</h2>
           <div class="ea-card-content example" id="text-colors">
             <div class="example-color">
               <small
@@ -74,7 +82,7 @@
           <!-- <ea-markdown [doc]="variables_code"></ea-markdown> -->
           <ea-markdown [doc]="text_variables"></ea-markdown>
         </div>
-      </ea-tab>
-    </ea-tabs>
+      </ea-tabpanel>
+    </ea-tabpanel-group>
   </div>
 </div>

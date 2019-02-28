@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core'
+import { Subject } from 'rxjs'
+import { EangElement } from '@eamode/eang'
 
 @Component({
   selector: 'eangio-tabs',
@@ -6,9 +8,27 @@ import { Component, OnInit } from '@angular/core'
   styles: []
 })
 export class TabsComponent implements OnInit {
+  addedTabs = []
+  editing = true
+  activate = new Subject<EangElement>()
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.activate.subscribe(x => {
+      console.log(x)
+    })
+  }
+
+  toggleTab() {
+    this.editing = !this.editing
+  }
+
+  addTab() {
+    this.addedTabs.push({
+      id: `newTab ${this.addedTabs.length}`,
+      name: `Added Tab # ${this.addedTabs.length + 1}`
+    })
+  }
 
   tabs_example = `
   ~~~html

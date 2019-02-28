@@ -6,24 +6,9 @@ import {
   ViewEncapsulation,
   AfterContentInit
 } from '@angular/core'
+import { Subject } from 'rxjs'
+import { EangElement } from '../core'
 
-export interface MenuTreeItem {
-  id?: any
-  name: string
-  icon?: string
-  iconStyle?: string
-  horizontal?: boolean
-  closeable?: boolean
-  isHidden?: boolean
-  isActive?: boolean
-  isOpen?: boolean
-  toggleRight?: boolean
-  hasChildren?: boolean
-  parent?: MenuTreeItem
-  dropdown?: boolean
-  children?: MenuTreeItem[]
-  data?: any
-}
 @Component({
   selector: 'ea-menu',
   template: `
@@ -72,7 +57,6 @@ export interface MenuTreeItem {
         name-area
         [attr.toggle]="node.toggleRight ? '' : null"
         [style.padding-left]="node.hasChildren ? 0 : depth * 0.95 + 'em'"
-
       >
         <ng-container
           *ngIf="nameAreaTemplate; else defaultNameArea"
@@ -120,7 +104,7 @@ export interface MenuTreeItem {
         [depth]="depth + 1"
         [closeEvents]="closeEvents"
         [toggleEvents]="toggleEvents"
-        [activateEvents]="activateEvents"
+        [activateSubject]="activateSubject"
         [nameAreaTemplate]="nameAreaTemplate"
         [toggleAreaTemplate]="toggleAreaTemplate"
         [optionAreaTemplate]="optionAreaTemplate"
@@ -135,9 +119,9 @@ export class MenuComponent implements OnInit, AfterContentInit {
   @Input() nameAreaTemplate
   @Input() toggleAreaTemplate
   @Input() optionAreaTemplate
-  @Input() closeEvents: EventEmitter<MenuTreeItem>
-  @Input() toggleEvents: EventEmitter<MenuTreeItem>
-  @Input() activateEvents: EventEmitter<MenuTreeItem>
+  @Input() closeEvents: EventEmitter<EangElement>
+  @Input() toggleEvents: EventEmitter<EangElement>
+  @Input() activateSubject: Subject<EangElement>
 
   constructor() {}
 
@@ -150,11 +134,8 @@ export class MenuComponent implements OnInit, AfterContentInit {
       })
     }
 
-    if (this.node.children && this.node.children.length > 0) {
-      this.node.hasChildren = true
-    } else {
-      this.node.hasChildren = false
-    }
+    this.node.hasChildren =
+      this.node.children && this.node.children.length > 0 ? true : false
   }
 
   onClose() {
@@ -174,11 +155,11 @@ export class MenuComponent implements OnInit, AfterContentInit {
     }
   }
 
-  getTreeRoot(item: MenuTreeItem) {
+  getTreeRoot(item: EangElement) {
     return item.parent ? this.getTreeRoot(item.parent) : item
   }
 
-  deactivateChildren(item: MenuTreeItem) {
+  deactivateChildren(item: EangElement) {
     item.isActive = false
     if (item.children) {
       item.children.forEach(child => {
@@ -193,8 +174,8 @@ export class MenuComponent implements OnInit, AfterContentInit {
     this.deactivateChildren(root)
     this.node.isActive = true
 
-    if (this.activateEvents) {
-      this.activateEvents.emit(this.node)
+    if (this.activateSubject) {
+      this.activateSubject.next(this.node)
     }
   }
 

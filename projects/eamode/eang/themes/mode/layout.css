@@ -35,7 +35,10 @@
         align-items: center;
         padding: 1rem;
         box-sizing: border-box;
-        color: var( --ea-color, var(--ea-footer-color, var(--ea-text-color-light)));
+        color: var(
+          --ea-color,
+          var(--ea-footer-color, var(--ea-text-color-light))
+        );
         & p,
         h1,
         h2,
@@ -131,6 +134,8 @@
       );
       -webkit-tap-highlight-color: transparent;
       color: var(--ea-color, var(--ea-drawer-color, var(--ea-text-color)));
+      overflow: auto;
+
       & section {
         flex-grow: 1;
       }
@@ -151,29 +156,6 @@
       &[state='closed'] {
         width: 0;
         display: none;
-      }
-
-      & a {
-        font-size: 1rem;
-        color: var(--ea-drawer-link-color, inherit);
-        text-decoration: none;
-        display: flex;
-        padding-left: 1rem;
-        line-height: 2.5em;
-        align-items: center;
-        &:hover {
-          text-decoration: none;
-          background-color: var(--ea-background-color-hover);
-        }
-        &.active {
-          background-color: var(--ea-background-color-active);
-        }
-        &:visited {
-          color: var(--ea-background-color-hover);
-        }
-        & span[icon] {
-          margin: 0.3em;
-        }
       }
     }
 
