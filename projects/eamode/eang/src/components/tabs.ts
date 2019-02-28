@@ -8,9 +8,11 @@ import {
   ContentChild,
   HostBinding,
   Input,
-  OnDestroy
+  OnDestroy,
+  Renderer2,
+  ElementRef
 } from '@angular/core'
-import { Subject, Subscription, Observable } from 'rxjs'
+import { Subject, Subscription, Observable, combineLatest } from 'rxjs'
 import { EangElement } from '../core'
 
 @Component({
@@ -26,18 +28,23 @@ export class TabpanelComponent implements EangElement {
 
   @Input() @HostBinding('attr.id') id: string
   @Input() name: string
+  @Input() closeable = false
+
+  constructor(private renderer: Renderer2, private el: ElementRef) {}
 
   private _isActive = false
   @Input() set isActive(isActive: boolean) {
     this._isActive = isActive
     this.active = isActive ? '' : undefined
+    if (this.active !== undefined) {
+      this.renderer.setAttribute(this.el.nativeElement, 'active', this.active)
+    } else {
+      this.renderer.removeAttribute(this.el.nativeElement, 'active')
+    }
   }
   get isActive() {
     return this._isActive
   }
-
-  @Input()
-  closeable = false
 }
 
 @Component({
@@ -54,8 +61,7 @@ export class TabpanelGroupComponent implements AfterContentInit {
     return this._tabs.asObservable()
   }
 
-  @Input()
-  activated$: Observable<string>
+  @Input() activate$: Observable<string>
 
   ngAfterContentInit() {
     this._tabs.next(this.tabQueryList.toArray())
@@ -73,7 +79,7 @@ export class TabpanelGroupComponent implements AfterContentInit {
       role="tab"
       [attr.aria-label]="t.name"
       [node]="t"
-      [activate$$]="activate$$"
+      [activateSubject]="activateSubject"
       [closeEvents]="closed"
       [nameAreaTemplate]="headerTemplate"
       [optionAreaTemplate]="optionTemplate"
@@ -88,7 +94,7 @@ export class TabListComponent implements AfterContentInit, OnDestroy {
   @ContentChild('optionTemplate') optionTemplate: TemplateRef<{}>
 
   @Input() tabpanelGroup: TabpanelGroupComponent
-  @Input() activate$$ = new Subject<EangElement>()
+  @Input() activateSubject = new Subject<EangElement>()
   @Input() activated$: Observable<EangElement>
   menuItems: EangElement[]
 
@@ -100,26 +106,27 @@ export class TabListComponent implements AfterContentInit, OnDestroy {
 
   ngAfterContentInit() {
     if (!this.activated$) {
-      this.activated$ = this.activate$$.asObservable()
+      this.activated$ = this.activateSubject.asObservable()
     }
-
-    this.activated$.subscribe(activatedTab => {
-      if (this.activeTab === activatedTab) {
-        return
-      }
-      const tab = this.tabs.find(x => x.name === activatedTab.name)
-      if (tab) {
-        tab.isActive = true
-        if (this.activeTab) {
-          this.activeTab.isActive = false
+    combineLatest(this.activated$, this.tabpanelGroup.tabs).subscribe(
+      ([activatedTab, tabsInGroup]) => {
+        if (this.activeTab === activatedTab) {
+          return
         }
-        this.activeTab = tab
-      } else {
-        throw new Error(
-          `Tab ${activatedTab.id || activatedTab.name} does not exist!`
-        )
+        const tab = tabsInGroup.find(x => x.name === activatedTab.name)
+        if (tab) {
+          tab.isActive = true
+          if (this.activeTab) {
+            this.activeTab.isActive = false
+          }
+          this.activeTab = tab
+        } else {
+          throw new Error(
+            `Tab ${activatedTab.id || activatedTab.name} does not exist!`
+          )
+        }
       }
-    })
+    )
 
     this._tabsSub = this.tabpanelGroup.tabs.subscribe(tabpanels => {
       this.tabs = tabpanels

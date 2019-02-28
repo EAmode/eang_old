@@ -10,11 +10,11 @@ import { EangElement } from '@eamode/eang'
 export class TabsComponent implements OnInit {
   addedTabs = []
   editing = true
-  tabActivate$$ = new Subject<EangElement>()
+  activate = new Subject<EangElement>()
   constructor() {}
 
   ngOnInit() {
-    this.tabActivate$$.subscribe(x => {
+    this.activate.subscribe(x => {
       console.log(x)
     })
   }
