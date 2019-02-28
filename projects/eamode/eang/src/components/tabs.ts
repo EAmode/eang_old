@@ -28,6 +28,7 @@ export class TabpanelComponent implements EangElement {
 
   @Input() @HostBinding('attr.id') id: string
   @Input() name: string
+  @Input() closeable = false
 
   constructor(private renderer: Renderer2, private el: ElementRef) {}
 
@@ -44,9 +45,6 @@ export class TabpanelComponent implements EangElement {
   get isActive() {
     return this._isActive
   }
-
-  @Input()
-  closeable = false
 }
 
 @Component({
@@ -63,8 +61,7 @@ export class TabpanelGroupComponent implements AfterContentInit {
     return this._tabs.asObservable()
   }
 
-  @Input()
-  activated$: Observable<string>
+  @Input() activate$: Observable<string>
 
   ngAfterContentInit() {
     this._tabs.next(this.tabQueryList.toArray())
@@ -82,7 +79,7 @@ export class TabpanelGroupComponent implements AfterContentInit {
       role="tab"
       [attr.aria-label]="t.name"
       [node]="t"
-      [activate$$]="activate$$"
+      [activateSubject]="activateSubject"
       [closeEvents]="closed"
       [nameAreaTemplate]="headerTemplate"
       [optionAreaTemplate]="optionTemplate"
@@ -97,7 +94,7 @@ export class TabListComponent implements AfterContentInit, OnDestroy {
   @ContentChild('optionTemplate') optionTemplate: TemplateRef<{}>
 
   @Input() tabpanelGroup: TabpanelGroupComponent
-  @Input() activate$$ = new Subject<EangElement>()
+  @Input() activateSubject = new Subject<EangElement>()
   @Input() activated$: Observable<EangElement>
   menuItems: EangElement[]
 
@@ -109,7 +106,7 @@ export class TabListComponent implements AfterContentInit, OnDestroy {
 
   ngAfterContentInit() {
     if (!this.activated$) {
-      this.activated$ = this.activate$$.asObservable()
+      this.activated$ = this.activateSubject.asObservable()
     }
     combineLatest(this.activated$, this.tabpanelGroup.tabs).subscribe(
       ([activatedTab, tabsInGroup]) => {
