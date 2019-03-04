@@ -1,6 +1,7 @@
 export interface EangElement {
   id?: any
   name: string
+  readonly?: boolean
   icon?: string
   iconStyle?: string
   horizontal?: boolean

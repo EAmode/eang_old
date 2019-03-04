@@ -104,7 +104,7 @@ import { EangElement } from '../core'
         [depth]="depth + 1"
         [closeEvents]="closeEvents"
         [toggleEvents]="toggleEvents"
-        [activate$$]="activate$$"
+        [activateSubject]="activateSubject"
         [nameAreaTemplate]="nameAreaTemplate"
         [toggleAreaTemplate]="toggleAreaTemplate"
         [optionAreaTemplate]="optionAreaTemplate"
@@ -121,7 +121,7 @@ export class MenuComponent implements OnInit, AfterContentInit {
   @Input() optionAreaTemplate
   @Input() closeEvents: EventEmitter<EangElement>
   @Input() toggleEvents: EventEmitter<EangElement>
-  @Input() activate$$: Subject<EangElement>
+  @Input() activateSubject: Subject<EangElement>
 
   constructor() {}
 
@@ -134,11 +134,8 @@ export class MenuComponent implements OnInit, AfterContentInit {
       })
     }
 
-    if (this.node.children && this.node.children.length > 0) {
-      this.node.hasChildren = true
-    } else {
-      this.node.hasChildren = false
-    }
+    this.node.hasChildren =
+      this.node.children && this.node.children.length > 0 ? true : false
   }
 
   onClose() {
@@ -177,8 +174,8 @@ export class MenuComponent implements OnInit, AfterContentInit {
     this.deactivateChildren(root)
     this.node.isActive = true
 
-    if (this.activate$$) {
-      this.activate$$.next(this.node)
+    if (this.activateSubject) {
+      this.activateSubject.next(this.node)
     }
   }
 
