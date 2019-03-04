@@ -1,21 +1,24 @@
-<div role="banner"><h1>Variables</h1></div>
+<div role="banner" m-0-0-2-0><h1>Variables</h1></div>
 <div class="content-container">
   <h2>Custom Properties</h2>
   <p>
     Eang has a central file of variables that take care of a majority of
     themeing.
   </p>
-  <div p>
-    <span class="color-title-container">
-      <h3>Colors</h3>
-      <hr />
-    </span>
+  <div>
+    <span class="color-title-container"> <h2>Colors</h2> </span>
     <div
       multi-col
-      style="--ea-grid-col-min-width: 12em; justify-items: center;"
+      center
+      style="--ea-grid-col-min-width: 12em;"
+      class="example"
     >
       <div class="theme-color">
-        <div class="example-color base-color" aria-labelledby="1">
+        <div
+          class="example-color"
+          style="background: var(--ea-color-1);"
+          aria-labelledby="1"
+        >
           <span id="1" role="tooltip" aria-label="Click to change!"></span>
         </div>
         <div class="ea-card-footer">
@@ -26,26 +29,46 @@
         </div>
       </div>
       <div class="theme-color">
-        <div class="example-color base-color-high"></div>
-        <div class="ea-card-footer"><small>Base Color High</small></div>
+        <div class="example-color" style="background: var(--ea-color-2);"></div>
+        <div class="ea-card-footer">
+          <p>Base Color</p>
+          <p>--ea-color-1</p>
+          <p>HEX: #142151</p>
+          <p>HSL: (12,12,12)</p>
+        </div>
       </div>
       <div class="theme-color">
-        <div class="example-color alt-base-color"></div>
-        <div class="ea-card-footer"><small>Alt Base Color</small></div>
+        <div class="example-color" style="background: var(--ea-color-3);"></div>
+        <div class="ea-card-footer">
+          <p>Base Color</p>
+          <p>--ea-color-1</p>
+          <p>HEX: #142151</p>
+          <p>HSL: (12,12,12)</p>
+        </div>
       </div>
       <div class="theme-color">
         <div
           class="example-color"
           style="background: var(--ea-color-accent-1);"
         ></div>
-        <div class="ea-card-footer"><small>Color Accent</small></div>
+        <div class="ea-card-footer">
+          <p>Base Color</p>
+          <p>--ea-color-1</p>
+          <p>HEX: #142151</p>
+          <p>HSL: (12,12,12)</p>
+        </div>
       </div>
       <div class="theme-color">
         <div
           class="example-color"
           style="background: var(--ea-color-accent-2);"
         ></div>
-        <div class="ea-card-footer"><small>Base Color High</small></div>
+        <div class="ea-card-footer">
+          <p>Base Color</p>
+          <p>--ea-color-1</p>
+          <p>HEX: #142151</p>
+          <p>HSL: (12,12,12)</p>
+        </div>
       </div>
 
       <!-- <div class="ea-card theme-color">
@@ -68,37 +91,61 @@
   </div>
 
   <span class="color-title-container">
-    <h3>Semantic Colors</h3>
+    <h2>Semantic Colors</h2>
     <hr />
   </span>
-  <div multi-col style="--ea-grid-col-min-width: 12em; justify-items: center;">
+  <div
+    multi-col
+    class="example"
+    style="--ea-grid-col-min-width: 12em; justify-items: center;"
+  >
     <div class="theme-color">
       <div
         class="example-color"
         style="background: var(--ea-color-success);"
       ></div>
-      <div class="ea-card-footer"><small>Alt Base Color</small></div>
+      <div class="ea-card-footer">
+        <p>Base Color</p>
+        <p>--ea-color-1</p>
+        <p>HEX: #142151</p>
+        <p>HSL: (12,12,12)</p>
+      </div>
     </div>
     <div class="theme-color">
       <div
         class="example-color"
         style="background: var(--ea-color-info);"
       ></div>
-      <div class="ea-card-footer"><small>Alt Base Color</small></div>
+      <div class="ea-card-footer">
+        <p>Base Color</p>
+        <p>--ea-color-1</p>
+        <p>HEX: #142151</p>
+        <p>HSL: (12,12,12)</p>
+      </div>
     </div>
     <div class="theme-color">
       <div
         class="example-color"
         style="background: var(--ea-color-warning);"
       ></div>
-      <div class="ea-card-footer"><small>Alt Base Color</small></div>
+      <div class="ea-card-footer">
+        <p>Base Color</p>
+        <p>--ea-color-1</p>
+        <p>HEX: #142151</p>
+        <p>HSL: (12,12,12)</p>
+      </div>
     </div>
     <div class="theme-color">
       <div
         class="example-color"
         style="background: var(--ea-color-danger);"
       ></div>
-      <div class="ea-card-footer"><small>Alt Base Color</small></div>
+      <div class="ea-card-footer">
+        <p>Base Color</p>
+        <p>--ea-color-1</p>
+        <p>HEX: #142151</p>
+        <p>HSL: (12,12,12)</p>
+      </div>
     </div>
   </div>
 
@@ -178,15 +225,16 @@
   </div>
 
   <h1 style="margin-top: 2rem;">Typography</h1>
+  <div class="example-sm">
+    <h1>The quick brown fox jumps over the lazy dog</h1>
+    <h2>The quick brown fox jumps over the lazy dog</h2>
+    <h3>The quick brown fox jumps over the lazy dog</h3>
+    <h4>The quick brown fox jumps over the lazy dog</h4>
+    <h5>The quick brown fox jumps over the lazy dog</h5>
+    <h6>The quick brown fox jumps over the lazy dog</h6>
+  </div>
 
-  <h1>The quick brown fox jumps over the lazy dog</h1>
-  <h2>The quick brown fox jumps over the lazy dog</h2>
-  <h3>The quick brown fox jumps over the lazy dog</h3>
-  <h4>The quick brown fox jumps over the lazy dog</h4>
-  <h5>The quick brown fox jumps over the lazy dog</h5>
-  <h6>The quick brown fox jumps over the lazy dog</h6>
-
-  <div class="ea-card-content example" id="text-colors">
+  <!-- <div class="ea-card-content example" id="text-colors">
     <div class="example-color">
       <small style="text-align:center; color: var(--ea-text-color-dark);"
         >Text Color <br />
@@ -213,8 +261,8 @@
         (click)</small
       >
     </div>
-  </div>
-  <h1 style="margin-top: 2rem;">Component Styles</h1>
+  </div> -->
+  <!-- <h1 style="margin-top: 2rem;">Component Styles</h1>
   <div>
     <span class="color-title-container">
       <h3>Buttons</h3>
@@ -271,5 +319,5 @@
   </div>
   <div multi-col>
     <div><h2>Tooltip</h2></div>
-  </div>
+  </div> -->
 </div>

@@ -1,6 +1,12 @@
 @import '../dist/eamode/eang/css/all.css';
 // @import '~@angular-mdc/theme/material';
 
+:root {
+  font-size: 16px;
+  @media only screen and (min-width: 1800px) {
+    font-size: 24px;
+  }
+}
 /* ICONS FOR DIFFERENT THEMES */
 .fluentdark,
 .mode,
@@ -36,7 +42,7 @@
   & .ea-color {
     background-image: url('assets/images/colors.svg');
   }
-  --ea-drawer-width: 250px;
+  --ea-drawer-width: 13em;
   & ea-layout ea-body {
     --ea-body-display: flex;
     margin: 0;
@@ -49,7 +55,7 @@
     }
   }
   & .content-container {
-    margin: 0 3.5vw 4em;
+    margin: 2.8em 4.2vw;
   }
   & .logo {
     background: url('assets/images/eang-logo.svg');
@@ -151,6 +157,63 @@
       display: flex;
       align-items: center;
       justify-content: center;
+    }
+  }
+  & .example {
+    margin: 2.8em 0;
+  }
+  & .example-sm {
+    margin: 1.4em 0;
+  }
+  & .ea-markdown-content > p {
+    margin-bottom: 0.5em;
+  }
+  & .ea-card-header > h1,
+  .ea-card-header > h2,
+  .ea-card-header > h3,
+  .ea-card-header > h4,
+  .ea-card-header > h5,
+  .ea-card-header > p {
+    margin: 0.7em 0;
+  }
+  & .theme-color {
+    & p {
+      margin: 0;
+      font-size: 1em;
+      font-weight: 400;
+      text-align: center;
+    }
+    & .ea-card-footer {
+      margin-top: 0.7em;
+    }
+    & .example-color {
+      height: 6em;
+      width: 6em;
+      border-radius: 50%;
+    }
+  }
+  & .menu-example {
+    --ea-background: var(--ea-color-2);
+    --ea-color: white;
+    & ea-menu {
+      width: 100%;
+    }
+  }
+  ul {
+    padding-left: 2.8em;
+    & li {
+      font-size: 1.1em;
+      line-height: 1.3em;
+    }
+  }
+  & ea-footer {
+    @media only screen and (max-width: 600px) {
+      --ea-footer-height: auto;
+     flex-direction: column;
+     span {
+       display: flex;
+       flex-direction: column;
+     }
     }
   }
 }

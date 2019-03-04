@@ -1,4 +1,4 @@
-<div role="banner">
+<div role="banner" m-0-0-2-0>
   <h1>Menu</h1>
   <span icon negative hamburger-menu style="width: 2rem; height:2rem;"></span>
 </div>
@@ -12,7 +12,7 @@
     To add menu use next piece of code. Where "node" is a structure describe in
     "Menu Structure/Example Node" paragraph.
   </p>
-  <div multi-col v-center>
+  <div multi-col v-center class="example">
     <ea-markdown [doc]="ea_menu"></ea-markdown>
     <div class="ea-card">
       <div class="ea-card-header">
@@ -29,11 +29,10 @@
     <em>component.ts</em>
   </p>
 
-  <div><ea-markdown [doc]="node_example"></ea-markdown></div>
+  <div><ea-markdown class="example" [doc]="node_example"></ea-markdown></div>
   <p>Use these attributes in node.</p>
-  <div style="overflow-x: auto;">
-    <ea-markdown [doc]="ea_menu_attrs"></ea-markdown>
-  </div>
+
+  <ea-markdown class="example" [doc]="ea_menu_attrs"></ea-markdown>
 
   <h2>Customize your menu</h2>
   <p>
@@ -41,7 +40,7 @@
     switch menu orientation.
   </p>
   <p>Default orientation is vertical.</p>
-  <div multi-col v-center>
+  <div multi-col v-center class="example">
     <ea-markdown [doc]="ea_menu_horizontal"></ea-markdown>
     <div class="ea-card">
       <div class="ea-card-header"><p>ea-menu</p></div>
@@ -55,7 +54,7 @@
     <em>isHidden: true</em> in the parent node and the second -
     <em>isHidden: false</em>.
   </p>
-  <div multi-col v-center>
+  <div multi-col v-center class="example">
     <div class="ea-card">
       <div class="ea-card-header"><p>IsHidden: true</p></div>
       <div class="ea-card-content menu-example">
@@ -76,7 +75,7 @@
     For example, description inside data attribute will be shown after you move
     mouse over the sub menus.
   </p>
-  <div multi-col v-center>
+  <div multi-col v-center class="example">
     <ea-markdown [doc]="ea_menu_template"></ea-markdown>
     <div class="ea-card">
       <div class="ea-card-header">

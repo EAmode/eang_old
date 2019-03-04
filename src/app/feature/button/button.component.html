@@ -1,7 +1,7 @@
-<div role="banner">
+<div role="banner" m-0-0-2-0>
   <h1>Button</h1>
 
-  <span icon button-icon style="width: 1.5em; height:1.5em;"></span>
+  <span icon button-icon></span>
 </div>
 <div class="content-container">
   <p>
@@ -9,14 +9,7 @@
     Eang has 4 core types of buttons.
   </p>
 
-  <h3>Button Types</h3>
-
-  <div
-    multi-col
-    p
-    style="justify-items: center;
-    --ea-grid-col-min-width: 8em;"
-  >
+  <div multi-col center class="example" style="--ea-grid-col-min-width: 8em;">
     <button>Button</button> <button rounded>Rounded</button>
     <button outline>Outline</button>
     <button outline rounded>Outline Rounded</button> <button flat>Flat</button>
@@ -24,7 +17,7 @@
   </div>
   <ea-markdown style="margin-bottom:2em;" [doc]="button"></ea-markdown>
 
-  <ea-markdown [doc]="props"></ea-markdown>
+  <ea-markdown class="example" [doc]="props"></ea-markdown>
   <h2>Icon Buttons</h2>
   <p>
     Eang makes it easy to add icons into your buttons with a preset lay out that
@@ -35,8 +28,9 @@
 
   <div
     multi-col
-    p
-    style="justify-items: center;
+    class="example"
+    center
+    style="
     --ea-grid-col-min-width: 8em;"
   >
     <button><span icon negative sign-in></span></button>
@@ -49,7 +43,7 @@
     <button flat rounded><span icon filter></span></button>
     <button flat rounded>Filter <span icon filter></span></button>
   </div>
-  <ea-markdown [doc]="button_icon"></ea-markdown>
+  <ea-markdown class="example" [doc]="button_icon"></ea-markdown>
 
   <h3>Re-Sizable Buttons</h3>
   <p>
@@ -60,9 +54,9 @@
 
   <div
     multi-col
-    p
-    style="justify-items: center;
-      --ea-grid-col-min-width: 8em;"
+    class="example"
+    center
+    style="--ea-grid-col-min-width: 8em;"
   >
     <button sm rounded style="margin:1rem;">
       <span icon filter negative></span> [sm]
@@ -72,5 +66,5 @@
     <button xl flat style="margin:1rem;">[xl]</button>
     <button xxl style="margin:1rem;">[xxl]</button>
   </div>
-  <ea-markdown [doc]="button_sizing"></ea-markdown>
+  <ea-markdown class="example" [doc]="button_sizing"></ea-markdown>
 </div>

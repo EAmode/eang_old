@@ -1,8 +1,9 @@
-<div role="banner">
+<div role="banner" m-0-0-2-0>
   <h1>Layout</h1>
-  <span icon layout style="width: 2em; height: 2em;"></span>
+  <span icon layout></span>
 </div>
 <div class="content-container">
+  <h2>&lt;ea-layout&gt;</h2>
   <p>
     Responsive layout grid that automatically adapts to screen size and
     orientation ensuring an optimal experience across smartphones, tablets, and
@@ -17,7 +18,7 @@
     <li><code class="language-html">&lt;ea-drawer&gt;</code></li>
     <li><code class="language-html">&lt;ea-footer&gt;</code></li>
   </ul>
-  <div multi-col>
+  <div multi-col class="example">
     <ea-markdown [doc]="ea_layout_attrs"></ea-markdown>
     <div class="ea-card">
       <div class="ea-card-header"><h3>Layout Module</h3></div>
@@ -30,9 +31,9 @@
       </div>
     </div>
   </div>
-
+  <h2>CSS Grid</h2>
   <p>We use CSS grid to define the layout of the different components.</p>
-  <ea-markdown [doc]="ea_layout_grid"></ea-markdown>
+  <ea-markdown class="example" [doc]="ea_layout_grid"></ea-markdown>
 
   <h2>&lt;ea-toolbar&gt;</h2>
   <p>
@@ -43,7 +44,7 @@
     application.
   </p>
 
-  <div class="ea-card">
+  <div class="ea-card example">
     <div class="ea-card-header"><h3>&lt;ea-toolbar&gt;</h3></div>
     <div class="ea-card-content" grid>
       <img
@@ -53,7 +54,8 @@
       />
     </div>
   </div>
-  <ea-markdown [doc]="ea_toolbar_attrs"></ea-markdown>
+  <p>You can adjust certain aspects of the toolbar using attributes to chagne the style.</p>
+  <ea-markdown class="example" [doc]="ea_toolbar_attrs"></ea-markdown>
 
   <h2>&lt;ea-drawer&gt;</h2>
   <p>
@@ -79,7 +81,7 @@
     the size of your drawer to different states we think have utility.
   </p>
 
-  <div multi-col>
+  <div multi-col class="example">
     <ea-markdown [doc]="ea_layout_drawer"></ea-markdown>
     <div class="ea-card">
       <div class="ea-card-header"><h3>&lt;ea-drawer&gt;</h3></div>

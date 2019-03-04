@@ -3,6 +3,7 @@
   <span icon negative tab style="width: 2rem; height:2rem;"></span>
 </div>
 <div class="content-container">
+  <h2>Tab Components</h2>
   <p>
     Tabs are a set of layered sections of content, known as <em>tabpanels</em>,
     that display one <em>tabpanel</em> of content at a time. Each tab panel has
@@ -13,7 +14,6 @@
     <code class="language-html">&lt;ea-tabgroup&gt;</code> can be placed
     anywhere on the page.
   </p>
-  <h2>Components</h2>
 
   <h3>&lt;ea-tablist&gt;</h3>
   <p>
@@ -27,16 +27,17 @@
     Tabpanel is defined within the tabgroup. The <em>name</em> attribute is
     mandatory.
   </p>
-  <div multi-col v-center>
-    <div class="ea-card">
-      <div class="ea-card-header">
-        <button (click)="toggleTab()">Toggle</button>
-        <button (click)="tabActivate$$.next({ name: 'Paragraph#1' })">
-          Activate first Tab
-        </button>
-        <button (click)="addTab()">Add Tab</button>
-      </div>
-      <div class="ea-card-content header" style="flex-direction: column;">
+  <div class="ea-card example">
+    <div class="ea-card-header">
+      <h2>Tab Example</h2>
+      <button (click)="toggleTab()">Toggle</button>
+      <button (click)="tabActivate$$.next({ name: 'Paragraph#1' })">
+        Activate first Tab
+      </button>
+      <button (click)="addTab()">Add Tab</button>
+    </div>
+    <div multi-col v-center>
+      <span>
         <ea-tablist
           [tabpanelGroup]="exampleTabs"
           [activate$$]="tabActivate$$"
@@ -58,9 +59,12 @@
             <p>This is an added Tab!</p>
           </ea-tabpanel>
         </ea-tabpanel-group>
-      </div>
+      </span>
+      <ea-markdown [doc]="tabs_example"></ea-markdown>
     </div>
-    <ea-markdown [doc]="tabs_example"></ea-markdown>
+    <div class="ea-card-footer">
+
+    </div>
   </div>
 
   <h2>Closeable</h2>

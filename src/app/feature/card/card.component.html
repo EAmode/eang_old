@@ -1,6 +1,6 @@
-<div role="banner">
+<div role="banner" m-0-0-2-0>
   <h1>Card</h1>
-  <span icon negative layers style="width: 2rem; height:2rem;"></span>
+  <span icon negative layers></span>
 </div>
 <div class="content-container">
   <p>
@@ -8,7 +8,7 @@
     <code>.ea-card-header</code>, <code>.ea-card-content</code>, and
     <code>.ea-card-footer</code> respectively.
   </p>
-  <div multi-col v-center>
+  <div multi-col v-center class="example">
     <ea-markdown [doc]="card"></ea-markdown>
     <div class="ea-card">
       <div class="ea-card-header">
@@ -32,7 +32,7 @@
     </div>
   </div>
 
-  <ea-markdown [doc]="sizing"></ea-markdown>
+  <ea-markdown class="example" [doc]="sizing"></ea-markdown>
 
   <h2>Card Sizing</h2>
   <p>
@@ -42,7 +42,7 @@
     font-sizes of any <code>ea-card</code>.
   </p>
 
-  <div multi-col>
+  <div multi-col class="example">
     <div class="ea-card" sm style="width:15em;">
       <div class="ea-card-header" style="padding:0;">
         <img
@@ -95,7 +95,7 @@
     as displayed below.
   </p>
 
-  <div multi-col>
+  <div multi-col class="example">
     <div class="ea-card" style="width:20em;">
       <div class="ea-card-header"><p>ea-card-header</p></div>
       <div class="ea-card-content header" style="flex-direction: column;">
@@ -166,7 +166,7 @@
     designs.
   </p>
 
-  <div class="ea-card">
+  <div class="ea-card example">
     <div
       class="ea-card-content"
       grid
@@ -187,7 +187,7 @@
     any adjustment.
   </p>
 
-  <div multi-col>
+  <div multi-col class="example">
     <div class="ea-card" style="width:20em;">
       <div class="ea-card-header header"><p>ea-card-header</p></div>
       <div class="ea-card-content header" style="flex-direction: column;">

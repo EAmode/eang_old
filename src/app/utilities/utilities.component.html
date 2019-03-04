@@ -1,27 +1,33 @@
-<div role="banner">
+<div role="banner" m-0-0-2-0>
   <div><h1>Utilities</h1></div>
 </div>
 <div class="content-container">
   <h2>Sizing</h2>
+
   <p>
     The following attributes are available to allow you to re-size a given
-    component. Components in eang are largely based off <code>em</code> unit values which
-    means that their values are proportional to the the parent font. These
-    attributes adjust the parent font of the element to adjust all values in the
-    component acoordingly.
+    component. Components in eang are largely based off <code>em</code> unit
+    values which means that their values are proportional to the the parent
+    font. These attributes adjust the parent font of the element to adjust all
+    values in the component acoordingly.
   </p>
-  <div>
-    <ul>
-      <li><code>[sm]</code></li>
-      <li><code>[md]</code></li>
-      <li><code>[lg]</code></li>
-      <li><code>[xl]</code></li>
-    </ul>
-  </div>
+
+  <ul class="example-sm" style="padding-left: 1.4em;">
+    <li><code>[sm]</code></li>
+    <li><code>[md]</code></li>
+    <li><code>[lg]</code></li>
+    <li><code>[xl]</code></li>
+  </ul>
+
   <h2>Flex Box</h2>
-  <p>Flexbox is a powerful tool for 2-D layouts. We capture different common use-cases for flex box in the attributes below. The goal is to reduce the redundancy of common flexbox layouts, e.g. vertical and horizontal centering, and spaceing children elements out evenly.</p>
-  <div p>
-    <h3><code>[flex-center]</code></h3>
+  <p>
+    Flexbox is a powerful tool for 2-D layouts. We capture different common
+    use-cases for flex box in the attributes below. The goal is to reduce the
+    redundancy of common flexbox layouts, e.g. vertical and horizontal
+    centering, and spaceing children elements out evenly.
+  </p>
+  <div class="example">
+    <h3>[flex-center]</h3>
     <section multi-col>
       <div
         flex-center
@@ -32,8 +38,8 @@
       <div><ea-markdown [doc]="center"></ea-markdown></div>
     </section>
   </div>
-  <div p>
-    <h3><code>[flex-space-evenly]</code></h3>
+  <div class="example">
+    <h3>[flex-space-evenly]</h3>
     <section multi-col>
       <div
         flex-center
@@ -45,9 +51,13 @@
     </section>
   </div>
   <h2>CSS Grid</h2>
-  <p>CSS Grid is another powerful layout tool. We use common, and advanced grid patterns to simplify some of the capabilities of Grid, e.g. responsive multi-column layouts. </p>
-  <div>
-    <h3><code>[multi-col]</code></h3>
+  <p>
+    CSS Grid is another powerful layout tool. We use common, and advanced grid
+    patterns to simplify some of the capabilities of Grid, e.g. responsive
+    multi-column layouts.
+  </p>
+  <div class="example">
+    <h3>[ multi-col ]</h3>
     <section multi-col>
       <div multi-col style="--ea-grid-col-min-width: 18em; background: white;">
         <div center style="border: .1em dotted var(--ea-color-1);">
@@ -60,8 +70,8 @@
       <div><ea-markdown [doc]="multi_col"></ea-markdown></div>
     </section>
   </div>
-  <div>
-    <h3><code>[multi-col] [center]</code></h3>
+  <div class="example">
+    <h3>[multi-col] [center]</h3>
     <section multi-col>
       <div
         multi-col
@@ -79,7 +89,12 @@
     </section>
   </div>
   <h2>Margins &amp; Padding</h2>
-  <p>Eang offers configurable margin and padding settings as well as attributes to implement them in your markup. Global CSS Custom Properties set these values which allow developers to set these values at the theme level and the abillity to override them for more specific component scopes if desired. </p>
+  <p>
+    Eang offers configurable margin and padding settings as well as attributes
+    to implement them in your markup. Global CSS Custom Properties set these
+    values which allow developers to set these values at the theme level and the
+    abillity to override them for more specific component scopes if desired.
+  </p>
   <!-- <p>
           <b>ARIA Roles</b> (Accessible Rich Internet Applications), defines a
           way to make Web content and Web applications more accessible. We used
