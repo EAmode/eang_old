@@ -1,0 +1,55 @@
+
+<svg width="100%" height="100%" viewBox="0 0 202 211" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-3.6%" y="-2.5%" width="107.2%" height="106.9%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.81029443   0 0 0 0 0.81029443   0 0 0 0 0.81029443  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <rect id="path-2" x="0" y="0" width="194" height="203" rx="8"></rect>
+        <rect id="path-4" x="-12" y="-7" width="76" height="212"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="eang-redesign" transform="translate(-766.000000, -2214.000000)">
+            <g id="Group-9" transform="translate(770.000000, 2216.000000)">
+                <g id="Group-6" filter="url(#filter-1)">
+                    <mask id="mask-3" fill="white">
+                        <use xlink:href="#path-2"></use>
+                    </mask>
+                    <use id="Mask" fill="#FFFFFF" xlink:href="#path-2"></use>
+                    <g id="Rectangle-4" mask="url(#mask-3)">
+                        <use fill="#FAFAFA" fill-rule="evenodd" xlink:href="#path-4"></use>
+                        <rect stroke="#979797" stroke-width="1" x="-11.5" y="-6.5" width="75" height="211"></rect>
+                    </g>
+                    <g mask="url(#mask-3)">
+                        <g transform="translate(9.000000, 39.000000)">
+                            <rect id="Rectangle-3" fill="#425B9A" fill-rule="evenodd" x="70" y="15" width="58" height="48"></rect>
+                            <rect id="Rectangle-3" fill="#4D6AB3" fill-rule="evenodd" x="136" y="15" width="58" height="48"></rect>
+                            <text id="Colors" fill="none" font-family="AdelleSans-Regular, Adelle Sans" font-size="8" font-weight="normal">
+                                <tspan x="0" y="23" fill="#333333">Colors</tspan>
+                            </text>
+                            <text id="Typography" fill="none" font-family="AdelleSans-Regular, Adelle Sans" font-size="8" font-weight="normal">
+                                <tspan x="0" y="37" fill="#333333">Typography</tspan>
+                            </text>
+                            <text id="Typography" fill="none" font-family="AdelleSans-Regular, Adelle Sans" font-size="8" font-weight="normal">
+                                <tspan x="0" y="53" fill="#333333">Typography</tspan>
+                            </text>
+                            <text id="Overview" fill="none" font-family="AdelleSans-SemiBold, Adelle Sans" font-size="8" font-weight="500">
+                                <tspan x="0" y="9" fill="#333333">Overview</tspan>
+                            </text>
+                        </g>
+                    </g>
+                </g>
+                <text id="Style-Guide" font-family="AdelleSans-Bold, Adelle Sans" font-size="8" font-weight="bold" fill="#333333">
+                    <tspan x="7" y="22">Style Guide</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

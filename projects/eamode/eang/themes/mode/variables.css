@@ -57,12 +57,6 @@
   --ea-markdown-background: var(--ea-color-2);
 
   --ea-toolbar-height: 4rem;
-  --ea-toolbar-background: linear-gradient(
-    to bottom right,
-    var(--ea-color-1),
-    var(--ea-color-1-light),
-    var(--ea-color-1-light),
-    var(--ea-color-1)
-  );
+  --ea-toolbar-background: var(--ea-color-1-light);
 
 }

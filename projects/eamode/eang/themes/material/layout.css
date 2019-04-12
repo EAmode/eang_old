@@ -103,12 +103,12 @@
       width: var(--ea-drawer-width, 225px);
       background: var(--ea-drawer-background, var(--ea-color-background-4));
       -webkit-tap-highlight-color: transparent;
-      @media only screen and (min-width: 600px) {
+      @media only screen and (min-width: 625px) {
         background: rgba(0, 0, 0, 0.03);
       }
       & section {
         flex-grow: 1;
-        @media only screen and (min-width: 600px) {
+        @media only screen and (min-width: 625px) {
           padding-top: 1rem;
         }
       }

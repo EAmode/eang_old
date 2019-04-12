@@ -161,6 +161,8 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.layout.drawerState$.next('closed')
+
     this.activate.subscribe(item => {
       if (item.data && item.data.link) {
         this.router.navigate([item.data.link])
