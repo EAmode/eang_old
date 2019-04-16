@@ -3,12 +3,24 @@
   --ea-color-1: hsl(223, 40%, 43%);
   --ea-color-1-light: hsl(223, 40%, 53%);
 
+
   /* Alternative Base Colors */
   --ea-color-2: hsl(0, 0%, 20%);
   --ea-color-2-high: (0, 0%, 30%);
 
   --ea-color-3: hsl(0, 0%, 96%);
   --ea-color-3-dark: hsl(0, 0%, 86%);
+
+  /* Accent Colors */
+  --ea-color-accent-1: #6a9c45;
+  --ea-color-accent-2: #0078d4;
+
+  /* Semantic Colors */
+  --ea-color-success: #5bb95b;
+  --ea-color-info: #5ac1de;
+  --ea-color-warning: #f1ae4e;
+  --ea-color-danger: #d9534f;
+  --ea-color-error: #d9534f;
 
   /* Text Colors */
   --ea-text-color: var(--ea-text-color-dark);
@@ -23,7 +35,11 @@
   --ea-font-1-family: 'Roboto';
   --ea-font-1-style: normal;
   --ea-font-1-weight: 400;
-  --ea-font-size: 16px;
+  --ea-font-size: 16;
+  --ea-scalar-factor: 24;
+  --ea-margin: var(--ea-scalar-factor);
+  --ea-spacer: 1;
+
 
   font-family: var(--ea-font-1-family);
   font-style: var(--ea-font-1-style);
@@ -41,12 +57,6 @@
   --ea-markdown-background: var(--ea-color-2);
 
   --ea-toolbar-height: 4rem;
-  --ea-toolbar-background: linear-gradient(
-    to bottom right,
-    var(--ea-color-1),
-    var(--ea-color-1-light),
-    var(--ea-color-1-light),
-    var(--ea-color-1)
-  );
+  --ea-toolbar-background: var(--ea-color-1-light);
 
 }

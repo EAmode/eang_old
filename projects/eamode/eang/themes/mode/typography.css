@@ -1,63 +1,111 @@
 @define-mixin typography {
+  body,
+  div,
+  dl,
+  dt,
+  dd,
+  ul,
+  ol,
+  li,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  pre,
+  form,
+  fieldset,
+  input,
+  textarea,
+  p,
+  blockquote,
+  th,
+  td {
+    margin: 0;
+    padding: 0;
+  }
 
   & h1 {
-    font-size: var(--ea-h1-font-size, 2.875em);
+    --ea-h1-font-size: 2em;
+    /* --ea-px: 32; */
+    /* --ea-h1-font-size: calc( (var(--ea-px) / var(--ea-font-size)) * 1em); */
+    /* margin-bottom: calc( var(--ea-scalar-factor) / var(--ea-px) * 1em); */
+    font-size: var(--ea-h1-font-size);
     font-family: var(--ea-h1-font-family, var(--ea-font-1));
-    font-weight: lighter;
-    margin-bottom: 0.6em;
+    margin-bottom: calc(var(--ea-spacer) * 0.5em);
+    line-height: calc(var(--ea-spacer) * 1.2em);
     color: var(--ea-color, var(--ea-h1-color, var(--ea-text-color)));
   }
 
   & h2 {
-    font-family: var(--ea-font-1);
-    font-size: var(--ea-h2-font-size, 2.125rem);
-    /* min-size, max-size */
-    font-weight: lighter;
-    margin-bottom: 0.4em;
+
+    /* --ea-px: 24; */
+    /* --ea-h1-font-size: calc( (var(--ea-px) / var(--ea-font-size)) * 1em); */
+    font-size: var(--ea-h3-font-size, 1.5em);
+    font-family: var(--ea-h1-font-family, var(--ea-font-1));
+    margin-bottom: calc(var(--ea-spacer) * 0.5em);
+    line-height: calc(var(--ea-spacer) * 1.2em);
     color: var(--ea-color, var(--ea-h2-color, var(--ea-text-color)));
   }
 
   & h3 {
-    font-size: 1.5em;
-    font-weight: 400;
-    margin: 0.2rem 0 0.1rem 0;
+    font-size: var(--ea-h3-font-size, 1.2em);
+    font-family: var(--ea-h1-font-family, var(--ea-font-1));
+    margin-bottom: calc(var(--ea-spacer) * 0.5em);
+    line-height: calc(var(--ea-spacer) * 1.2em);
     color: var(--ea-color, var(--ea-h3-color, var(--ea-text-color)));
   }
 
   & h4 {
-    font-size: 1.2em;
+    font-size: 1.125em;
+    margin-bottom: calc(var(--ea-spacer) * 0.5em);
+    line-height: calc(var(--ea-spacer) * 1.2em);
     color: var(--ea-color, var(--ea-h4-color, var(--ea-text-color)));
   }
 
-  & h5 {
-    font-size: 1.1em;
+  & h5,
+  h6 {
+    font-size: 1em; /* 16px --> 16 ÷ 16 = 1 */
+    margin-bottom: calc(var(--ea-spacer) * 0.5em);
+    line-height: calc(var(--ea-spacer) * 1.2em);
     color: var(--ea-color, var(--ea-h5-color, var(--ea-text-color)));
   }
 
   & p {
     font-size: 1.2em;
-    line-height: 1.33em;
+    line-height: 1.4em;
     font-weight: 400;
-    margin: 1em 0;
+    margin: 0 0 1.25em;
     user-select: auto;
     color: var(--ea-color, var(--ea-p-color, var(--ea-text-color)));
   }
 
   & a {
     font-size: 1rem;
-    text-decoration: underline;
+    text-decoration: none;
     color: var(--ea-color, var(--ea-a-color, var(--ea-text-color)));
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   & code {
     background: var(--ea-code-background, transparent);
-    color: var(--ea-color, var(--ea-code-color, #607D8B));
+    color: var(--ea-color, var(--ea-code-color, var(--ea-color-1)));
     padding: 0.2rem;
     border-radius: 0.3rem;
     margin-right: 0.1rem;
+    font-family: 'Source Code Pro', monospace;
   }
   & *::selection {
-    background: var(--ea-background, var(--ea-background-selection, var(--ea-color-1)));
-    color: var(--ea-color, var(--ea-color-selection, var(--ea-text-color-light)));
-   }
+    background: var(
+      --ea-background,
+      var(--ea-background-selection, var(--ea-color-1))
+    );
+    color: var(
+      --ea-color,
+      var(--ea-color-selection, var(--ea-text-color-light))
+    );
+  }
 }

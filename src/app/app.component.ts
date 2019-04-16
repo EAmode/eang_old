@@ -31,7 +31,7 @@ export class AppComponent implements OnInit {
         iconStyle: 'ea-negative',
         children: [
           {
-            name: 'Colors',
+            name: 'Variables',
             icon: 'ea-color',
             iconStyle: 'ea-negative',
             data: {
@@ -70,13 +70,13 @@ export class AppComponent implements OnInit {
               link: '/button'
             }
           },
-          {
-            name: 'Banner',
-            icon: 'ea-button-icon',
-            data: {
-              link: '/banner'
-            }
-          },
+          // {
+          //   name: 'Banner',
+          //   icon: 'ea-button-icon',
+          //   data: {
+          //     link: '/banner'
+          //   }
+          // },
           {
             name: 'Cards',
             icon: 'ea-layers',
@@ -93,14 +93,14 @@ export class AppComponent implements OnInit {
               link: '/icon'
             }
           },
-          {
-            name: 'Markdown',
-            icon: 'ea-edit',
-            iconStyle: 'ea-negative',
-            data: {
-              link: '/markdown'
-            }
-          },
+          // {
+          //   name: 'Markdown',
+          //   icon: 'ea-edit',
+          //   iconStyle: 'ea-negative',
+          //   data: {
+          //     link: '/markdown'
+          //   }
+          // },
           {
             name: 'Menu',
             icon: 'ea-hamburger-menu',
@@ -131,6 +131,14 @@ export class AppComponent implements OnInit {
               link: '/tabs'
             }
           }
+          // {
+          //   name: 'Tooltip',
+          //   icon: 'ea-help-circle',
+          //   iconStyle: 'ea-negative',
+          //   data: {
+          //     link: '/tooltip'
+          //   }
+          // }
         ]
       }
     ]
@@ -153,6 +161,8 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.layout.drawerState$.next('closed')
+
     this.activate.subscribe(item => {
       if (item.data && item.data.link) {
         this.router.navigate([item.data.link])

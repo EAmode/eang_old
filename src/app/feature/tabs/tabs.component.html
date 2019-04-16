@@ -1,66 +1,68 @@
-<div class="ea-card" unset>
-  <div role="banner">
-    <h1>Tabs</h1>
-    <span icon negative tab style="width: 2rem; height:2rem;"></span>
-  </div>
-  <div class="ea-card-content" style="flex-direction: column; padding: 0 4vw;">
-    <div class="ea-card" unset>
-      <p>
-        Tabs are a set of layered sections of content, known as
-        <em>tabpanels</em>, that display one <em>tabpanel</em> of content at a
-        time. Each tab panel has an associated tab element, that when activated,
-        displays the <em>tabpanel</em>. Unlike other angular tab
-        implementations, eang does not require tabs and tabpanels to be coupled.
-        <code class="language-html">&lt;ea-tablist&gt;</code> and the associated
-        <code class="language-html">&lt;ea-tabgroup&gt;</code> can be placed
-        anywhere on the page.
-      </p>
-      <h1>Components</h1>
+<div role="banner">
+  <h1>Tabs</h1>
+  <span icon negative tab style="width: 2rem; height:2rem;"></span>
+</div>
+<div class="content-container">
+  <p>
+    Tabs are a set of layered sections of content, known as <em>tabpanels</em>,
+    that display one <em>tabpanel</em> of content at a time. Each tab panel has
+    an associated tab element, that when activated, displays the
+    <em>tabpanel</em>. Unlike other angular tab implementations, eang does not
+    require tabs and tabpanels to be coupled.
+    <code class="language-html">&lt;ea-tablist&gt;</code> and the associated
+    <code class="language-html">&lt;ea-tabgroup&gt;</code> can be placed
+    anywhere on the page.
+  </p>
+  <h1>Components</h1>
 
-      <h2><code class="language-html">&lt;ea-tablist&gt;</code></h2>
-      <p>
-        Contains the tabs that can be activated to display different content in
-        the tabgroup.
-      </p>
-      <h2><code class="language-html">&lt;ea-tabgroup&gt;</code></h2>
-      <p>Collection of tabpanels.</p>
-      <h2><code class="language-html">&lt;ea-tabpanel&gt;</code></h2>
-      <p>Tabpanel is defined within the tabgroup. The <em>name</em> attribute is mandatory.</p>
-      <div class="ea-card">
-        <div class="ea-card-header">
-          <button (click)="toggleTab()">Toggle</button>
-          <button (click)="activate.next({name: 'Paragraph#1'})">Activate first Tab</button>
-          <button (click)="addTab()">Add Tab</button>
-        </div>
-        <div class="ea-card-content header" style="flex-direction: column;">
-          <ea-tablist [tabpanelGroup]="exampleTabs" [activateSubject]="activate"></ea-tablist>
-          <ea-tabpanel-group #exampleTabs>
-            <ea-tabpanel id="tab-1" name="Paragraph#1" [closeable]="true">
-              <p>Just paragraph #1</p>
-            </ea-tabpanel>
-            <ea-tabpanel *ngIf="editing" name="Toggle Tab">
-              <p>Toggle on/off</p>
-            </ea-tabpanel>
-            <ea-tabpanel name="List">
-              <ul>
-                <li>There is some list</li>
-                <li>With few items</li>
-              </ul>
-            </ea-tabpanel>
-            <ea-tabpanel *ngFor="let t of addedTabs" [name]="t.name">
-              <p>This is an added Tab!</p>
-            </ea-tabpanel>
-          </ea-tabpanel-group>
-        </div>
-      </div>
-      <ea-markdown [doc]="tabs_example"></ea-markdown>
+  <h2 style="margin:0">&lt;ea-tablist&gt;</h2>
+  <p>
+    Contains the tabs that can be activated to display different content in the
+    tabgroup.
+  </p>
+  <h2 style="margin:0">&lt;ea-tabgroup&gt;</h2>
+  <p>Collection of tabpanels.</p>
+  <h2 style="margin:0">&lt;ea-tabpanel&gt;</h2>
+  <p>
+    Tabpanel is defined within the tabgroup. The <em>name</em> attribute is
+    mandatory.
+  </p>
+  <div class="ea-card">
+    <div class="ea-card-header">
+      <button (click)="toggleTab()">Toggle</button>
+      <button (click)="activate.next({ name: 'Paragraph#1' })">
+        Activate first Tab
+      </button>
+      <button (click)="addTab()">Add Tab</button>
     </div>
-    <h2>Closeable</h2>
-    <p>Try to add property closeable to show button to close your tab.</p>
-
-    <div grid>
-      <ea-markdown [doc]="tab_close"></ea-markdown>
+    <div class="ea-card-content header" style="flex-direction: column;">
+      <ea-tablist
+        [tabpanelGroup]="exampleTabs"
+        [activateSubject]="activate"
+      ></ea-tablist>
+      <ea-tabpanel-group #exampleTabs>
+        <ea-tabpanel id="tab-1" name="Paragraph#1">
+          <p>Just paragraph #1</p>
+        </ea-tabpanel>
+        <ea-tabpanel *ngIf="editing" name="Toggle Tab">
+          <p>Toggle on/off</p>
+        </ea-tabpanel>
+        <ea-tabpanel name="List">
+          <ul>
+            <li>There is some list</li>
+            <li>With few items</li>
+          </ul>
+        </ea-tabpanel>
+        <ea-tabpanel *ngFor="let t of addedTabs" [name]="t.name">
+          <p>This is an added Tab!</p>
+        </ea-tabpanel>
+      </ea-tabpanel-group>
     </div>
-
   </div>
+  <ea-markdown [doc]="tabs_example"></ea-markdown>
+
+  <!-- <h2>Closeable</h2>
+  <p>Try to add property closeable to show button to close your tab.</p>
+
+  <div grid><ea-markdown [doc]="tab_close"></ea-markdown></div> -->
 </div>

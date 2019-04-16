@@ -15,6 +15,7 @@
 @import 'mode/table.css';
 @import 'mode/utilities.css';
 @import 'mode/input.css';
+@import 'mode/tooltip.css';
 
 
 .mode {
@@ -32,4 +33,5 @@
   @mixin utilities;
   @mixin menu;
   @mixin tabs;
+  @mixin tooltip;
 }

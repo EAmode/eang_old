@@ -1,18 +1,103 @@
 @define-mixin utilities {
+  & [m-1] {
+    margin: calc(
+      (((var(--ea-scalar-factor) * 0.5) / var(--ea-font-size)) * 1em)
+    );
+  }
+
+  & [m-0] {
+    margin: 0;
+  }
+
+  & [m-1-1-1-0] {
+    margin: calc((((var(--ea-scalar-factor) * 1) / var(--ea-font-size)) * 1em))
+      calc((((var(--ea-scalar-factor) * 1) / var(--ea-font-size)) * 1em))
+      calc((((var(--ea-scalar-factor) * 1) / var(--ea-font-size)) * 1em)) 0;
+  }
+
+
+  /* Margin Top */
+  & [m-1-0-0-0] {
+    margin: calc((((var(--ea-scalar-factor) * 1) / var(--ea-font-size)) * 1em))
+      0 0 0;
+  }
+
+  & [m-2-0-0-0] {
+    margin: calc((((var(--ea-scalar-factor) * 2) / var(--ea-font-size)) * 1em))
+      0 0 0;
+  }
+
+  & [m-3-0-0-0] {
+    margin: calc((((var(--ea-scalar-factor) * 3) / var(--ea-font-size)) * 1em))
+      0 0 0;
+  }
+
+  & [m-4-0-0-0] {
+    margin: calc((((var(--ea-scalar-factor) * 4) / var(--ea-font-size)) * 1em))
+      0 0 0;
+  }
+
+  & [m-0-0-1-0] {
+    margin: 0 0
+      calc((((var(--ea-scalar-factor) * 1) / var(--ea-font-size)) * 1em)) 0;
+  }
+  & [m-0-0-2-0] {
+    margin: 0 0
+      calc((((var(--ea-scalar-factor) * 2) / var(--ea-font-size)) * 1em)) 0;
+  }
+  & [m-0-0-3-0] {
+    margin: 0 0
+      calc((((var(--ea-scalar-factor) * 3) / var(--ea-font-size)) * 1em)) 0;
+  }
+  & [m-0-0-4-0] {
+    margin: 0 0
+      calc((((var(--ea-scalar-factor) * 4) / var(--ea-font-size)) * 1em)) 0;
+  }
+
+  & [m-0-1] {
+    margin: 0
+      calc((((var(--ea-scalar-factor) * 1) / var(--ea-font-size)) * 1em));
+  }
+
+  & [m-2] {
+    margin: calc((((var(--ea-scalar-factor) * 2) / var(--ea-font-size)) * 1em));
+  }
+
+  /* Padding Utilities */
+  & [p-1-0-0-0] {
+    padding: calc((((var(--ea-scalar-factor) * 1) / var(--ea-font-size)) * 1em))
+      0 0 0;
+  }
+
+  & [p-2-0-0-0] {
+    padding: calc((((var(--ea-scalar-factor) * 2) / var(--ea-font-size)) * 1em))
+      0 0 0;
+  }
+
+  & [p-4-0] {
+    padding: calc((((var(--ea-scalar-factor) * 4) / var(--ea-font-size)) * 1em))
+      0 ;
+  }
+
+  & [p-3-0] {
+    padding: calc((((var(--ea-scalar-factor) * 3) / var(--ea-font-size)) * 1em))
+      0 ;
+  }
+
   [sm] {
-    font-size: 0.8rem;
+    --ea-font-size: 0.8rem;
   }
   [md] {
-    font-size: 1.25rem;
+    --ea-font-size: 1.25rem;
   }
   [lg] {
-    font-size: 1.5rem;
+    --ea-font-size: 1.5rem;
   }
   [xl] {
-    font-size: 2rem;
+    --ea-font-size: 2rem;
   }
   [xxl] {
-    font-size: 2.5rem;
+    --ea-font-size: 2.5rem;
   }
   [avatar] {
     display: grid;
@@ -114,35 +199,23 @@
     }
   }
   [role='banner'] {
-    font-size: var(--ea-font-size, var(--ea-banner-font-size, 1em));
-    height: var(--ea-height, var(--ea-banner-height, 6em));
+    /* height: var(--ea-height, var(--ea-banner-height, 6em)); */
     background: var(
       --ea-background,
       var(--ea-banner-background, var(--ea-color-1))
     );
     box-shadow: var(--ea-box-shadow);
     display: var(--ea-banner-display, flex);
-    padding: 3em;
-    margin-bottom: 2em;
+    padding: 2.1em 4.2vw;
+    margin-bottom: calc(var(--ea-spacer) * 1.5em) ;
     align-items: center;
     justify-content: space-between;
     font-weight: var(--ea-font-weight, var(--ea-banner-font-weight, 800));
     color: var(--ea-color, var(--ea-banner-color, var(--ea-text-color-light)));
-    &[start] {
-      justify-content: flex-start;
-      align-items: center;
-    }
-    &[center] {
-      justify-content: center;
-      align-items: center;
-    }
-    &[end] {
-      justify-content: flex-end;
-      align-items: center;
-    }
-    &[two-col] {
-      --ea-banner-hero-display: grid;
-      grid-template-columns: 1fr, 1fr;
+    & h1,
+    h2,
+    h3 {
+      margin: 0;
     }
   }
 
@@ -150,11 +223,24 @@
     display: grid;
     grid-template-columns: repeat(
       auto-fit,
-      minmax(var(--ea-grid-col-min-width, 22em), var(--ea-grid-col-max-width, 1fr))
+      minmax(
+        var(--ea-grid-col-min-width, 22em),
+        var(--ea-grid-col-max-width, 1fr)
+      )
     );
     grid-gap: var(--ea-grid-gap, 1.5em);
+    &[center] {
+      align-items: center;
+      justify-items: center;
+    }
+    &[v-center] {
+      align-items: center;
+    }
+    &[h-center] {
+      justify-items: center;
+    }
   }
-  & [center] {
+  & [flex-center] {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -162,6 +248,11 @@
     &[row] {
       flex-direction: row;
     }
+  }
+  & [flex-space-evenly] {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
   }
   & [p] {
     padding: var(--ea-padding-value, 1em);

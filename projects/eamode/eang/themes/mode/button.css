@@ -1,5 +1,5 @@
 @define-mixin button-base {
-  font-size: var(--ea-font-size, 1rem);
+  font-size: var(--ea-font-size, 1em);
   background: var(
     --ea-background,
     var(--ea-button-background, var(--ea-color-1))

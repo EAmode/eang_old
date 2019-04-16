@@ -41,8 +41,6 @@ export class ButtonComponent implements OnInit {
   `
 
   props = `
-
-  ### Attributes
   |  Attribute  | Description |
   |---|---|
   | outline  | Removes the background and has only an outline around the button |

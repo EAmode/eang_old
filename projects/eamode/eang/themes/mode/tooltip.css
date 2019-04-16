@@ -1,0 +1,30 @@
+@define-mixin tooltip {
+  * > [aria-labelledby] {
+    position: relative;
+  }
+
+  --ea-tooltip-color: var(--ea-color-3);
+  --ea-tooltip-font-size: 1em;
+  --ea-tooltip-background: rgba(0, 0, 0, 0.5);
+  --ea-tooltip-string: attr(aria-label);
+
+  & [aria-labelledby]:hover > [role='tooltip'],
+  [aria-labelledby]:focus > [role='tooltip'] {
+    &::after {
+      position: absolute;
+      bottom: var(--ea-tooltip-bottom, auto);
+      top: var(--ea-tooltip-top, auto);
+      left: var(--ea-tooltip-left, auto);
+      right: var(--ea-tooltip-right, auto);
+      content: var(--ea-tooltip-string);
+      color: var(--ea-tooltip-color);
+      font-size: var(--ea-tooltip-font-size);
+      background: var(--ea-tooltip-background);
+      display: flex;
+      padding: 0.5em 1em;
+      border-radius: 0.25em;
+      white-space: nowrap;
+      min-width: 2em;
+    }
+  }
+}

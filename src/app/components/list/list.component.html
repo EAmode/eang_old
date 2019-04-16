@@ -1,38 +1,30 @@
-<div class="ea-card" unset>
-  <div role="banner">
-    <h1>List</h1>
-    <span icon negative layers style="width: 2rem; height:2rem;"></span>
+<div role="banner" m-0-0-2-0>
+  <h1>List</h1>
+  <span icon negative layers></span>
+</div>
+<div class="content-container">
+  <h2>ARIA Lists</h2>
+  <p>
+    The List and Listitem role allow you to make a set of two elements into a
+    scrollable list with mouse interactions accounted for.
+  </p>
+  <div multi-col v-center class="example">
+    <ea-markdown [doc]="role_list"></ea-markdown>
+    <div>
+      <label for="secondlist"> Longer List</label>
+      <div role="list" id="secondlist">
+        <div role="listitem">testing</div>
+        <div role="listitem">testing</div>
+        <div role="listitem">Testing</div>
+        <div role="listitem">testing</div>
+        <div role="listitem">testing</div>
+        <div role="listitem">Testing</div>
+        <div role="listitem">testing</div>
+        <div role="listitem">testing</div>
+        <div role="listitem">Testing</div>
+      </div>
+    </div>
   </div>
-  <div class="ea-card-content" id="container">
-    <ea-tablist [tabpanelGroup]="mainPanel" horizontal></ea-tablist>
-    <ea-tabpanel-group #mainPanel>
-      <ea-tabpanel name="Overview">
-        <div class="ea-card" unset>
-          <h3><code> role="listitem" </code></h3>
-          <p>
-            The List and Listitem role allow you to make a set of two elements
-            into a scrollable list with mouse interactions accounted for.
-          </p>
-          <div class="ea-card-content example" grid>
-            <div><ea-markdown [doc]="role_list"></ea-markdown></div>
-            <div>
-              <label for="secondlist"> Longer List</label>
-              <div role="list" id="secondlist">
-                <div role="listitem">testing</div>
-                <div role="listitem">testing</div>
-                <div role="listitem">Testing</div>
-                <div role="listitem">testing</div>
-                <div role="listitem">testing</div>
-                <div role="listitem">Testing</div>
-                <div role="listitem">testing</div>
-                <div role="listitem">testing</div>
-                <div role="listitem">Testing</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <ea-markdown [doc]="role_banner_listitem"></ea-markdown>
-      </ea-tabpanel>
-    </ea-tabpanel-group>
-  </div>
+
+  <ea-markdown [doc]="role_banner_listitem"></ea-markdown>
 </div>

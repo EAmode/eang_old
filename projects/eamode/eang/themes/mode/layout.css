@@ -124,10 +124,10 @@
     & ea-drawer {
       --ea-menu-color: #fff;
       grid-area: drawer;
+      display: flex;
       flex-direction: column;
       justify-content: space-between;
-      display: flex;
-      width: var(--ea-drawer-width, 225px);
+      width: var(--ea-drawer-width, 15em);
       background: var(
         --ea-background,
         var(--ea-drawer-background, var(--ea-color-2))
@@ -136,12 +136,7 @@
       color: var(--ea-color, var(--ea-drawer-color, var(--ea-text-color)));
       overflow: auto;
 
-      & section {
-        flex-grow: 1;
-      }
-
       & footer {
-        padding: 1rem;
         background: var(
           --ea-background,
           var(--ea-drawer-footer-background, var(--ea-drawer-background))
