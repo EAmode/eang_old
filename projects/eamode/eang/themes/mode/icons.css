@@ -303,6 +303,30 @@
     &.ea-loader {
       background-image: inline('mode/icon/loader.svg');
     }
+    &[message-square],
+    &.message-square {
+      background-image: inline('mode/icon/message-square.svg');
+    }
+    &[clock],
+    &.clock {
+      background-image: inline('mode/icon/clock.svg');
+    }
+    &[users],
+    &.users {
+      background-image: inline('mode/icon/users.svg');
+    }
+    &[patient],
+    &.patient {
+      background-image: inline('mode/icon/patient.svg');
+    }
+    &[award],
+    &.award {
+      background-image: inline('mode/icon/patient.svg');
+    }
+    &[gift],
+    &.gift {
+      background-image: inline('mode/icon/patient.svg');
+    }
     &[negative],
     &.ea-negative {
       filter: invert(100%);
