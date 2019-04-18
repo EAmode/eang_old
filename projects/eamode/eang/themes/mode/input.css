@@ -4,12 +4,12 @@
     border-radius: 0.3em;
     outline: none;
     border: 0.2em solid var(--ea-color-2);
-    background-image: inline('mode/icon/edit.svg');
+    background-image: var(--ea-input-icon);
     background-position: 98%;
     background-repeat: no-repeat;
     background-color: white;
     background-size: 1em;
-    width: 12rem;
+    width: var(--ea-input-width, auto);
     padding: 0 0.5em;
     &:focus {
       border: 0.2em solid var(--ea-color-1);
