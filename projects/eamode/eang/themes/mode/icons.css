@@ -321,11 +321,11 @@
     }
     &[award],
     &.award {
-      background-image: inline('mode/icon/patient.svg');
+      background-image: inline('mode/icon/award.svg');
     }
     &[gift],
     &.gift {
-      background-image: inline('mode/icon/patient.svg');
+      background-image: inline('mode/icon/gift.svg');
     }
     &[negative],
     &.ea-negative {
