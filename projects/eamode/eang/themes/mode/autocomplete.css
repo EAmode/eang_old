@@ -42,6 +42,7 @@
       bottom: var(--ea-autocomplete-ul-bottom);
       left: var(--ea-autocomplete-ul-left);
       right: var(--ea-autocomplete-ul-right);
+      width: var(--ea-autocomplete-ul-width);
     }
     & li {
       color: var(--ea-color-1);
