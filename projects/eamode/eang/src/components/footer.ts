@@ -25,9 +25,5 @@ export class Footer {
   @Output() readonly searchTerm = new EventEmitter<string>()
   @Output() selectedItem
 
-  @ViewChild('inputField') inputField
-  @ViewChild('suggestionPanel') suggestionPanel
-  @ContentChild(TemplateRef) resultsTemplate: TemplateRef<any>
-
   constructor() {}
 }

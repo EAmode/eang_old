@@ -12,7 +12,7 @@ import { AutocompleteComponent } from '@eamode/eang'
   styleUrls: ['./theming.component.css']
 })
 export class ThemingComponent implements OnInit {
-  @ViewChild('from')
+  @ViewChild('from', { static: true })
   from: AutocompleteComponent
   maxResults = 10
   airportResult1$

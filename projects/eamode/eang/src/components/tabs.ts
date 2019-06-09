@@ -90,8 +90,10 @@ export class TabpanelGroupComponent implements AfterContentInit {
 export class TabListComponent implements AfterContentInit, OnDestroy {
   @HostBinding('attr.role') role = 'tablist'
 
-  @ContentChild('headerTemplate') headerTemplate: TemplateRef<{}>
-  @ContentChild('optionTemplate') optionTemplate: TemplateRef<{}>
+  @ContentChild('headerTemplate', { static: true })
+  headerTemplate: TemplateRef<{}>
+  @ContentChild('optionTemplate', { static: true })
+  optionTemplate: TemplateRef<{}>
 
   @Input() tabpanelGroup: TabpanelGroupComponent
   @Input() activateSubject = new Subject<EangElement>()

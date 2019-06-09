@@ -42,7 +42,7 @@ import { debounceTime, distinctUntilChanged, map, delay } from 'rxjs/operators'
       aria-autocomplete="list"
     />
     <ng-template #defaultTemplate let-item>{{ item }}</ng-template>
-    <ng-container *ngIf="(suggestionOptions | async) as currentSuggestions">
+    <ng-container *ngIf="suggestionOptions | async as currentSuggestions">
       <ul *ngIf="showPanel && currentSuggestions.length > 0">
         <li
           *ngFor="let item of currentSuggestions; index as i"
@@ -87,9 +87,11 @@ export class AutocompleteComponent
 
   @Output() selectedItem
 
-  @ViewChild('inputField') inputField
-  @ViewChild('suggestionPanel') suggestionPanel
-  @ContentChild(TemplateRef) resultsTemplate: TemplateRef<any>
+  @ViewChild('inputField', { static: true }) inputField
+  @ViewChild('suggestionPanel', { static: false }) suggestionPanel
+  @ContentChild(TemplateRef, { static: false }) resultsTemplate: TemplateRef<
+    any
+  >
 
   currentSuggestions: any[]
   showPanel = true
