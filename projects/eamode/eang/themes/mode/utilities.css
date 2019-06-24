@@ -261,8 +261,4 @@
     width: 100%;
     max-width: var(--ea-max-width, 1080px);
   }
-  label {
-    font-weight: 700;
-    text-transform: uppercase;
-  }
 }
