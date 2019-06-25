@@ -43,10 +43,13 @@
       }
 
       &:active {
-        background: var(--ea-background, var(
-          --ea-menu-background-color-active,
-          var(--ea-background-color-active)
-        ));
+        background: var(
+          --ea-background,
+          var(
+            --ea-menu-background-color-active,
+            var(--ea-background-color-active)
+          )
+        );
         box-shadow: var(
           --ea-menu-background-active-shadow,
           var(--ea-background-active-shadow)
@@ -152,6 +155,45 @@
           left: -6.5em;
           top: 2em;
         }
+      }
+    }
+  }
+
+  & .ea-menu {
+    ul {
+      display: flex;
+      flex-direction: column;
+      padding: .6em 0 0 0;
+      
+    }
+
+    li {
+      font-size: var(--ea-font-size, 1em);
+      
+      & :hover {
+        background: var(
+          --ea-menu-background-color-hover,
+          var(--ea-background-color-hover)
+        );
+        color: var(--ea-menu-color-hover, var(--ea-text-color-light));
+      }
+
+      & [active],
+      .active {
+        background: var(
+          --ea-menu-background-color-active,
+          var(--ea-background-color-active)
+        );
+        color: var(--ea-menu-color-active, var(--ea-text-color-light));
+      }
+
+      a {
+        padding: 0 .2em 0 .6em;
+        display: block;
+        line-height: var(--ea-menu-height, 2.5em);
+        font-size: var(--ea-font-size, 1em);
+        text-decoration: none;
+        color: var(--ea-color, var(--ea-a-color, var(--ea-text-color-light)));
       }
     }
   }
