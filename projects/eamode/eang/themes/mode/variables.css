@@ -59,4 +59,23 @@
   --ea-toolbar-height: 4rem;
   --ea-toolbar-background: var(--ea-color-1-light);
 
+  /* Table */
+  --ea-table-thead-th-color: rgba(0, 0, 0, 1);
+  --ea-table-thead-th-bgcolor: rgba(255, 255, 255, 1);
+  --ea-table-thead-th-border-color:   rgba(0, 0, 0, 0.5);
+  --ea-table-thead-th-text-align: center;
+
+  --ea-table-tbody-text-align: center;
+
+  --ea-table-border-bottom-width: 0.2em;
+  --ea-table-border-color: rgba(83, 245, 8, 0.5);
+
+  --ea-table-padding-top-bottom: 10px;
+  --ea-table-padding-right-left: 10px;
+
+  --ea-table-tr-striped-hover-bcolor: rgba(0, 0, 0, 1);
+  --ea-table-tr-striped-bgcolor: rgba(255, 0, 0, 0.2);
+
+  --ea-table-tr-hover-cursor: pointer;
+  --ea-table-tr-hover-bgcolor: rgba(83, 245, 8, 0.5);
 }
