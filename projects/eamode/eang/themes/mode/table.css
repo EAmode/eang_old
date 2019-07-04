@@ -1,8 +1,8 @@
-@define-mixin table-mode {
+@define-mixin table-mode-old {
   ea-markdown {
     overflow-x: auto;
   }
-  table {
+  .ea-table-old {
     --ea-table-thead-th-color: var(--ea-color-2);
     width: auto;
     display: table;
