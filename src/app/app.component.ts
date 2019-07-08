@@ -130,6 +130,13 @@ export class AppComponent implements OnInit {
             data: {
               link: '/tabs'
             }
+          },
+          {
+            name: 'Table',
+            icon: 'ea-tabs-icon',
+            data: {
+              link: '/table'
+            }
           }
           // {
           //   name: 'Tooltip',
