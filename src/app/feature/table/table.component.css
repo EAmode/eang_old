@@ -1,0 +1,15 @@
+
+  .markdown-table-wrapper {
+    flex-direction: row;
+    justify-content: space-around;
+    display: flex;
+  }
+
+  .markdown-table-wrapper > div {
+    flex-basis: 48%;
+    margin: auto;
+  }
+
+  .table-styling-header {
+    margin: 1em;
+  }

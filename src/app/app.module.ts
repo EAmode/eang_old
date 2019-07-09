@@ -38,7 +38,7 @@ import { MarkdownComponent } from './feature/markdown/markdown.component'
 import { ListComponent } from './components/list/list.component'
 import { BannerComponent } from './components/banner/banner.component'
 import { TooltipComponent } from './components/tooltip/tooltip.component'
-import { TableCSSComponent } from './feature/table-css/table-css.component'
+import { TableComponent } from './feature/table/table.component'
 
 const routes: Routes = [
   { path: '', component: LandingComponent },
@@ -54,7 +54,7 @@ const routes: Routes = [
   { path: 'variables', component: VariablesComponent },
   { path: 'components', component: ComponentsComponent },
   { path: 'getting-started', component: GetStartedComponent },
-  { path: 'table', component: TableCSSComponent },
+  { path: 'table', component: TableComponent },
   { path: 'tabs', component: TabsComponent },
   { path: 'menu', component: MenuComponent },
   { path: 'variables', component: VariablesComponent },
@@ -84,7 +84,7 @@ const routes: Routes = [
     ListComponent,
     BannerComponent,
     TooltipComponent,
-    TableCSSComponent
+    TableComponent
   ],
   imports: [
     BrowserModule,

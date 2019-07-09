@@ -5,16 +5,17 @@ class TableItem {
 }
 
 @Component({
-  selector: 'eangio-table-css',
-  templateUrl: './table-css.component.html',
-  styleUrls: ['./table-css.component.css']
+  selector: 'eangio-table',
+  templateUrl: './table.component.html',
+  styleUrls: ['./table.component.css']
 })
-export class TableCSSComponent implements OnInit {
+export class TableComponent implements OnInit {
   tableData = [
     new TableItem('C++', '5 years'),
     new TableItem('Pascal', '10 years'),
     new TableItem('Assembler', '15 years')
   ]
+
   constructor() {}
 
   simpleTable = `
@@ -108,17 +109,17 @@ export class TableCSSComponent implements OnInit {
         </tr>
       </thead>
       <tbody striped table-hover>
-        <tr>
-          <td>one</td>
-          <td>one</td>
-        </tr>
-        <tr>
-        <td>two</td>
-        <td>two</td>
+      <tr>
+          <td>C++</td>
+          <td>5 years</td>
       </tr>
       <tr>
-      <td>three</td>
-      <td>three</td>
+          <td>Pascal</td>
+          <td>10 Years</td>
+      </tr>
+      <tr>
+        <td>Assembler</td>
+        <td>15 years</td>
       </tr>
       </tbody>
     </table>

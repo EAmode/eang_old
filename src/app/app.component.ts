@@ -133,7 +133,8 @@ export class AppComponent implements OnInit {
           },
           {
             name: 'Table',
-            icon: 'ea-tabs-icon',
+            icon: 'ea-tab',
+            iconStyle: 'ea-negative',
             data: {
               link: '/table'
             }

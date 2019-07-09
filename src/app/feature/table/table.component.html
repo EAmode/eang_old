@@ -4,10 +4,10 @@
 </div>
 <div class="content-container">
   <p>
-    Add the ea-table class to tab &lt;table&gt;. The class will add padding,
+    To improve the view of your table just add <code>.ea-table</code> class to  <code class="language-html">&lt;table&gt;</code> tag and it will add padding,
     border and emphasized table header. You can changed almost all table
     settings (see css variables at the bottom of the article). For table header: color, text-alignement, border color etc. For
-    table row: color, text-alignement, border color etc. There are 4 tables with different default settings.
+    table row: color, text-alignement, border color etc. Four tables with different default settings are shown below.
   </p>
   <h1>Components</h1>
   <div class="prettifier">
@@ -18,13 +18,12 @@
     <div class="ea-card">
       <div class="ea-card-header"></div>
       <div
-        class="ea-card-content header"
-        style="flex-direction: row;  justify-content: space-between;"
+        class="ea-card-content header markdown-table-wrapper"
       >
         <div>
           <ea-markdown [doc]="simpleTable"></ea-markdown>
         </div>
-        <div style="width: 73%">
+        <div>
           <table class="ea-table">
             <thead>
               <tr>
@@ -52,13 +51,12 @@
     <div class="ea-card">
       <div class="ea-card-header"></div>
       <div
-        class="ea-card-content header"
-        style="flex-direction: row;  justify-content: space-between;"
+        class="ea-card-content header markdown-table-wrapper"
       >
         <div>
           <ea-markdown [doc]="stripedTable"></ea-markdown>
         </div>
-        <div style="width: 73%">
+        <div>
           <table class="ea-table">
             <thead>
               <tr>
@@ -86,13 +84,12 @@
     <div class="ea-card">
       <div class="ea-card-header"></div>
       <div
-        class="ea-card-content header"
-        style="flex-direction: row;  justify-content: space-between;"
+        class="ea-card-content header markdown-table-wrapper"
       >
         <div>
           <ea-markdown [doc]="hoverTable"></ea-markdown>
         </div>
-        <div style="width: 73%">
+        <div>
           <table class="ea-table">
             <thead>
               <tr>
@@ -120,13 +117,12 @@
     <div class="ea-card">
       <div class="ea-card-header"></div>
       <div
-        class="ea-card-content header"
-        style="flex-direction: row;  justify-content: space-between;"
+        class="ea-card-content header markdown-table-wrapper"
       >
         <div>
           <ea-markdown [doc]="stripedNHoveredTable"></ea-markdown>
         </div>
-        <div style="width: 73%">
+        <div>
           <table class="ea-table">
             <thead>
               <tr>
@@ -144,83 +140,7 @@
         </div>
       </div>
     </div>
+    <h2 class="table-styling-header">Styling</h2>
     <ea-markdown [doc]="table_css_variables"></ea-markdown>
   </div>
-  <!-- 
-<div class="grid-container">
-  <div class="grid-item">
-    <div>Simple Table</div>
-    <ea-markdown [doc]="simpleTable"></ea-markdown>
-  </div>
-  <div class="grid-item">
-    <table class="ea-table">
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Experience</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let i of tableData">
-          <td>{{ i }}</td>
-          <td>{{ i }}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <div class="grid-item">
-    <div>Striped</div>
-    <ea-markdown [doc]="stripedTable"></ea-markdown>
-  </div>
-  <div class="grid-item">
-    <table class="ea-table">
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Experience</th>
-        </tr>
-      </thead>
-      <tbody striped>
-        <tr *ngFor="let i of tableData">
-          <td>{{ i }}</td>
-          <td>{{ i }}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="grid-item">On Haver Table</div>
-  <table class="ea-table">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Experience</th>
-      </tr>
-    </thead>
-    <tbody table-hover>
-      <tr *ngFor="let i of tableData">
-        <td>{{ i }}</td>
-        <td>{{ i }}</td>
-      </tr>
-    </tbody>
-  </table>
-  <div class="grid-item">Striped and On Hover Table</div>
-  <div class="grid-item">
-    <table class="ea-table">
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Experience</th>
-        </tr>
-      </thead>
-      <tbody striped table-hover>
-        <tr *ngFor="let i of tableData">
-          <td>{{ i }}</td>
-          <td>{{ i }}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
- -->
 </div>
