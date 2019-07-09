@@ -62,5 +62,12 @@ export class MarkdownComponent implements OnChanges {
     this.compiledMarkdown = this.markdownIt.render(
       String(changes.doc.currentValue)
     )
+
+    if (this.compiledMarkdown.search('<table>') === 0) {
+      this.compiledMarkdown = this.compiledMarkdown.replace(
+        '<table>',
+        '<table class="ea-table">'
+      )
+    }
   }
 }
