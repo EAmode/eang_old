@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 
 class TableItem {
-  constructor(private technology: string, private experience: string) {}
+  constructor(public technology: string, public experience: string) {}
 }
 
 @Component({
@@ -18,36 +18,33 @@ export class TableComponent implements OnInit {
 
   constructor() {}
 
-  simpleTable = `
+  selectableTable = `
   ~~~html
   <table class="ea-table">
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Experience</th>
-        </tr>
-      </thead>
-      <tbody>
-      <tr>
-        <td>C++</td>
-        <td>5 years</td>
-      </tr>
-      <tr>
-        <td>Pascal</td>
-        <td>10 Years</td>
-      </tr>
-      <tr>
-        <td>Assembler</td>
-        <td>15 years</td>
-      </tr>
-      </tbody>
-    </table>
+  <caption>
+    Program languages experience
+  </caption>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Experience</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr eangioSelectableTable
+    *ngFor="let i of tableData">
+      <td>{{ i.technology }}</td>
+      <td>{{ i.experience }}</td>
+    </tr>
+  </tbody>
+</table>
   ~~~
   `
 
   stripedTable = `
   ~~~html
   <table class="ea-table">
+  <caption>Program languages experience</caption>
       <thead>
         <tr>
           <th>Type</th>
@@ -75,6 +72,7 @@ export class TableComponent implements OnInit {
   hoverTable = `
   ~~~html
   <table class="ea-table">
+  <caption>Program languages experience</caption>
       <thead>
         <tr>
           <th>Type</th>
@@ -102,6 +100,7 @@ export class TableComponent implements OnInit {
   stripedNHoveredTable = `
   ~~~html
   <table class="ea-table">
+  <caption>Program languages experience</caption>
       <thead>
         <tr>
           <th>Type</th>
@@ -126,8 +125,36 @@ export class TableComponent implements OnInit {
   ~~~
   `
 
+  textDirectionTable = `
+  ~~~html
+  <table class="ea-table">
+  <caption>Program languages experience</caption>
+  <thead>
+    <tr>
+      <th text-direction="right">Type</th>
+      <th text-direction="left">Experience</th>
+    </tr>
+  </thead>
+  <tbody striped table-hover>
+    <tr>
+      <td text-direction="right">C++</td>
+      <td text-direction="left">5 years</td>
+    </tr>
+    <tr>
+      <td text-direction="right">Pascal</td>
+      <td text-direction="left">10 Years</td>
+    </tr>
+    <tr>
+      <td text-direction="right">Assembler</td>
+      <td text-direction="left">15 years</td>
+    </tr>
+  </tbody>
+</table>
+  ~~~
+  `
+
   table_css_variables = `
-  |  CSS Variables   | Type  | Description |
+  |  CSS Variables   | Type  | Default |
   |---|---|----|
   |  \`--ea-table-thead-th-color\`  |  Sets the table header text color | rgba(0, 0, 0, 1) |
   |  \`--ea-table-thead-th-bgcolor\`  |  Sets the background color for the table header | rgba(255, 255, 255, 1) |
@@ -144,6 +171,8 @@ export class TableComponent implements OnInit {
   |---|---|----|
   | \`--ea-table-tr-hover-cursor\` | Sets the hover cursor | pointer|
   | \`--ea-table-tr-hover-bgcolor\` | Sets the hover background color | rgba(83, 245, 8, 0.5)|
+  |---|---|----|
+  | \`--ea-table-row-selected-bgcolor\` | Sets the selected background color | rgba(179, 194, 230, 1)|
   `
 
   ngOnInit() {}
