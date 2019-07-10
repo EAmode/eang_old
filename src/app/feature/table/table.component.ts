@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit, ViewChild, Renderer2 } from '@angular/core'
 
 class TableItem {
   constructor(public technology: string, public experience: string) {}
@@ -16,7 +16,15 @@ export class TableComponent implements OnInit {
     new TableItem('Assembler', '15 years')
   ]
 
-  constructor() {}
+  constructor(public renderer2: Renderer2) {}
+
+  onRowSelect(row: HTMLElement) {
+    if (custom.getAttribute('active')) {
+      this.renderer2.removeAttribute(custom, 'active')
+    } else {
+      this.renderer2.setAttribute(custom, 'active', 'true')
+    }
+  }
 
   selectableTable = `
   ~~~html

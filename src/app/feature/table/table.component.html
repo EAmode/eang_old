@@ -40,7 +40,7 @@
                 </tr>
               </thead>
               <tbody striped table-hover>
-                <tr *ngFor="let i of tableData">
+                <tr *ngFor="let i of tableData" #row (click)="onRowSelect(row)">
                   <td>{{ i.technology }}</td>
                   <td>{{ i.experience }}</td>
                 </tr>
