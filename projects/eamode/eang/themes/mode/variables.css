@@ -72,10 +72,13 @@
 
   --ea-table-padding-top-bottom: 10px;
   --ea-table-padding-right-left: 10px;
+  --ea-table-caption-padding: .3em;
 
   --ea-table-tr-striped-hover-bcolor: rgba(0, 0, 0, 1);
-  --ea-table-tr-striped-bgcolor: rgba(255, 0, 0, 0.2);
+  --ea-table-tr-striped-bgcolor: rgba(233, 236, 239, 1);
 
   --ea-table-tr-hover-cursor: pointer;
-  --ea-table-tr-hover-bgcolor: rgba(83, 245, 8, 0.5);
+  --ea-table-tr-hover-bgcolor: rgba(206, 221, 226, 1);
+
+  --ea-table-row-selected-bgcolor: rgba(179, 194, 230, 1);
 }
