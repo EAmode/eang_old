@@ -19,10 +19,10 @@ export class TableComponent implements OnInit {
   constructor(public renderer2: Renderer2) {}
 
   onRowSelect(row: HTMLElement) {
-    if (custom.getAttribute('active')) {
-      this.renderer2.removeAttribute(custom, 'active')
+    if (row.getAttribute('active')) {
+      this.renderer2.removeAttribute(row, 'active')
     } else {
-      this.renderer2.setAttribute(custom, 'active', 'true')
+      this.renderer2.setAttribute(row, 'active', 'true')
     }
   }
 
