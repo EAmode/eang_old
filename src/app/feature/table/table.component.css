@@ -10,6 +10,10 @@
     margin: auto;
   }
 
+  .markdown-table-wrapper > div[nested="true"] {
+    margin: auto;
+  }
+
   .table-styling-header {
     margin: 1em;
   }

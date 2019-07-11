@@ -14,9 +14,9 @@
     }
 
     & caption {
-      font-weight: bold;
-      font-size: larger;
+      font-size: .9em;
       padding: var(--ea-table-caption-padding);
+      caption-side: bottom;
     }
 
     & td,

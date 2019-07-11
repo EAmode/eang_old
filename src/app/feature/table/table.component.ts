@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, Renderer2 } from '@angular/core'
+import { Component, OnInit, Renderer2 } from '@angular/core'
 
 class TableItem {
   constructor(public technology: string, public experience: string) {}
@@ -39,13 +39,29 @@ export class TableComponent implements OnInit {
     </tr>
   </thead>
   <tbody>
-    <tr eangioSelectableTable
-    *ngFor="let i of tableData">
+  <tr *ngFor="let i of tableData"
+  #row (click)="onRowSelect(row)">
       <td>{{ i.technology }}</td>
       <td>{{ i.experience }}</td>
     </tr>
   </tbody>
 </table>
+  ~~~
+  `
+
+  tableOnRowSelect = `
+  ~~~ts
+  import { Renderer2 } from '@angular/core'
+  ...
+  constructor(public renderer2: Renderer2) {}
+  ...
+  onRowSelect(row: HTMLElement) {
+    if (row.getAttribute('active')) {
+      this.renderer2.removeAttribute(row, 'active')
+    } else {
+      this.renderer2.setAttribute(row, 'active', 'true')
+    }
+  }
   ~~~
   `
 
