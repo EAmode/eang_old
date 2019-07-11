@@ -39,7 +39,6 @@ import { ListComponent } from './components/list/list.component'
 import { BannerComponent } from './components/banner/banner.component'
 import { TooltipComponent } from './components/tooltip/tooltip.component'
 import { TableComponent } from './feature/table/table.component'
-import { SelectableTableDirective } from './directives/selectable-table.directive'
 
 const routes: Routes = [
   { path: '', component: LandingComponent },
@@ -85,8 +84,7 @@ const routes: Routes = [
     ListComponent,
     BannerComponent,
     TooltipComponent,
-    TableComponent,
-    SelectableTableDirective
+    TableComponent
   ],
   imports: [
     BrowserModule,
