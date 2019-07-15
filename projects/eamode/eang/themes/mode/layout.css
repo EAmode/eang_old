@@ -89,12 +89,18 @@
       &[grid] {
         --ea-toolbar-display: grid;
       }
+
+      & button {
+        order: 1;
+      }
+
       & header {
         color: var(--ea-toolbar-color, inherit);
         display: flex;
         justify-content: flex-start;
         align-items: center;
         flex-grow: 1;
+        order: 2;
       }
 
       & aside {
@@ -103,6 +109,7 @@
         justify-content: flex-end;
         align-items: center;
         padding-right: var(--ea-toolbar-aside-padding, 3rem);
+        order: 3;
       }
 
       & p,
