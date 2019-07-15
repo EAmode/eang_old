@@ -62,7 +62,7 @@ export class ButtonComponent implements OnInit {
   icons = `
   *app-component.html*
   ~~~html
-  <button style="--ea-button-margin: 1em; --ea-button-padding: 1em 1em;" large>
+  <button class="ea-button" style="--ea-button-margin: 1em; --ea-button-padding: 1em 1em;" large>
     <span role="icon" style="--ea-button-icon: var(--ea-icon-sign-in); --ea-icon-margin: 0 0.5em 0 0;" icon></span>
     {{Button}}
   </button>

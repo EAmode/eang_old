@@ -82,6 +82,7 @@ import { EangElement } from '../core'
         </ng-container>
 
         <button
+          class="ea-button"
           *ngIf="node.closeable"
           icon
           flat
