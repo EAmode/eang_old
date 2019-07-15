@@ -6,18 +6,31 @@
 <div class="content-container">
   <p>
     Buttons allow users to take actions, and make choices, with a single tap.
-    Eang has 4 core types of buttons.
+    Eang has 4 core types of buttons. Add <code>ea-button</code> class in <code>&lt;button&gt;</code> tag to apply styles.
   </p>
 
   <div multi-col center class="example" style="--ea-grid-col-min-width: 8em;">
-    <button>Button</button> <button rounded>Rounded</button>
-    <button outline>Outline</button>
-    <button outline rounded>Outline Rounded</button> <button flat>Flat</button>
-    <button flat rounded>Flat Rounded</button>
+    <button class="ea-button">Button</button>
+    <button class="ea-button" rounded>Rounded</button>
+    <button class="ea-button" outline>Outline</button>
+    <button class="ea-button" outline rounded>Outline Rounded</button>
+    <button class="ea-button" flat>Flat</button>
+    <button class="ea-button" flat rounded>Flat Rounded</button>
   </div>
   <ea-markdown style="margin-bottom:2em;" [doc]="button"></ea-markdown>
 
   <ea-markdown class="example" [doc]="props"></ea-markdown>
+
+  <p>You can do the same with the <code>&lt;div&gt;</code>, <code>&lt;span&gt;</code>, <code>&lt;a&gt;</code> tags, but need also to add <code>role="ea-button"</code>.</p>
+  
+  <div multi-col center class="example" style="--ea-grid-col-min-width: 4em;">
+    <div class="ea-button" role="ea-button">Div</div>
+    <span class="ea-button" role="ea-button" rounded>Rounded</span>
+    <a class="ea-button" role="ea-button" outline>Outline</a>
+    <label class="ea-button" role="ea-button" flat rounded>Flat Rounded</label>
+  </div>
+  <ea-markdown style="margin-bottom:2em;" [doc]="tags"></ea-markdown>
+
   <h2>Icon Buttons</h2>
   <p>
     Eang makes it easy to add icons into your buttons with a preset lay out that
@@ -33,15 +46,15 @@
     style="
     --ea-grid-col-min-width: 8em;"
   >
-    <button><span icon negative sign-in></span></button>
-    <button rounded><span icon negative filter></span></button>
-    <button rounded>Button <span icon negative filter></span></button>
-    <button icon outline><span icon trash-2></span></button>
-    <button icon outline rounded><span icon trash-2></span></button>
-    <button outline rounded><span icon trash-2></span> Delete</button>
-    <button icon flat><span icon filter></span></button>
-    <button flat rounded><span icon filter></span></button>
-    <button flat rounded>Filter <span icon filter></span></button>
+    <button class="ea-button"><span icon negative sign-in></span></button>
+    <button class="ea-button" rounded><span icon negative filter></span></button>
+    <button class="ea-button" rounded>Button <span icon negative filter></span></button>
+    <button class="ea-button" icon outline><span icon trash-2></span></button>
+    <button class="ea-button" icon outline rounded><span icon trash-2></span></button>
+    <button class="ea-button" outline rounded><span icon trash-2></span> Delete</button>
+    <button class="ea-button" icon flat><span icon filter></span></button>
+    <button class="ea-button" flat rounded><span icon filter></span></button>
+    <button class="ea-button" flat rounded>Filter <span icon filter></span></button>
   </div>
   <ea-markdown class="example" [doc]="button_icon"></ea-markdown>
 
@@ -58,13 +71,13 @@
     center
     style="--ea-grid-col-min-width: 8em;"
   >
-    <button sm rounded style="margin:1rem;">
+    <button class="ea-button" sm rounded style="margin:1rem;">
       <span icon filter negative></span> [sm]
     </button>
-    <button md outline rounded style="margin:1rem;">[md]</button>
-    <button lg rounded style="margin:1rem;">[lg]</button>
-    <button xl flat style="margin:1rem;">[xl]</button>
-    <button xxl style="margin:1rem;">[xxl]</button>
+    <button class="ea-button" md outline rounded style="margin:1rem;">[md]</button>
+    <button class="ea-button" lg rounded style="margin:1rem;">[lg]</button>
+    <button class="ea-button" xl flat style="margin:1rem;">[xl]</button>
+    <button class="ea-button" xxl style="margin:1rem;">[xxl]</button>
   </div>
   <ea-markdown class="example" [doc]="button_sizing"></ea-markdown>
 </div>
