@@ -1,60 +1,65 @@
-@define-mixin table-mode {
-  .ea-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
-    text-align: var(--ea-table-tbody-text-align, center);
+@define-mixin table-default {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  text-align: var(--ea-table-tbody-text-align, center);
 
-    & [text-direction='left'] {
-      text-align: start;
+  & [text-direction='left'] {
+    text-align: start;
+  }
+
+  & [text-direction='right'] {
+    text-align: end;
+  }
+
+  & caption {
+    font-size: .9em;
+    padding: var(--ea-table-caption-padding);
+    caption-side: bottom;
+  }
+
+  & td,
+  th {
+    border-bottom: var(--ea-table-border-bottom-width, var(--ea-default-border-bottom-width)) solid var(--ea-table-border-color, transparent);
+    padding: var(--ea-table-padding-top-bottom, var(--ea-default-padding)) var(--ea-table-padding-right-left, var(--ea-default-padding));
+  }
+
+
+  & thead {
+    & th {
+      color: var(--ea-table-thead-th-color, var(--ea-color-2));
+      background-color: var(--ea-table-thead-background, var(--ea-color-light));
+      border-color: var(--ea-table-thead-border-color, var(--ea-color-2));
+      text-align: var(--ea-table-thead-text-align, center);
     }
+  }
 
-    & [text-direction='right'] {
-      text-align: end;
+  & [striped] {
+    & tr:nth-of-type(odd) {
+      background-color: var(--ea-table-tr-striped-background, var(--ea-text-color-light)
+      );
     }
-
-    & caption {
-      font-size: .9em;
-      padding: var(--ea-table-caption-padding);
-      caption-side: bottom;
-    }
-
-    & td,
-    th {
-      border-bottom: var(--ea-table-border-bottom-width, var(--ea-default-border-bottom-width)) solid var(--ea-table-border-color, transparent);
-      padding: var(--ea-table-padding-top-bottom, var(--ea-default-padding)) var(--ea-table-padding-right-left, var(--ea-default-padding));
-    }
-
-
-    & thead {
-      & th {
-        color: var(--ea-table-thead-th-color, var(--ea-color-2));
-        background-color: var(--ea-table-thead-background, var(--ea-color-light));
-        border-color: var(--ea-table-thead-border-color, var(--ea-color-2));
-        text-align: var(--ea-table-thead-text-align, center);
-      }
-    }
-
-    & [striped] {
-      & tr:nth-of-type(odd) {
-        background-color: var(--ea-table-tr-striped-background, var(--ea-text-color-light)
-        );
-      }
-    }
+  }
 
 /* Do not move [table hover] before [striped] */
-    & [table-hover] {
-      & tr {
-        &:hover {
-          background-color: var(--ea-table-tr-hover-background, var(--ea-background-color-hover)) !important;
-          cursor: var(--ea-table-tr-hover-cursor, pointer);
-        }
+  & [table-hover] {
+    & tr {
+      &:hover {
+        background-color: var(--ea-table-tr-hover-background, var(--ea-background-color-hover)) !important;
+        cursor: var(--ea-table-tr-hover-cursor, pointer);
       }
     }
-    
-    & [selected = 'true'] {
-      background-color: var(--ea-table-row-selected-background) !important;
-    }
+  }
+  
+  & [selected = 'true'] {
+    background-color: var(--ea-table-row-selected-background) !important;
+  }
 
+}
+
+@define-mixin table-mode {
+
+  .ea-table {
+    @mixin table-default;
   }
 }

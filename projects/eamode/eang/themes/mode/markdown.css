@@ -114,5 +114,8 @@
     & .token.inserted {
       color: green;
     }
-  }
+    & table {
+      @mixin table-default;
+     }
+   }
 }
