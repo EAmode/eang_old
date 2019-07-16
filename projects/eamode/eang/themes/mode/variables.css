@@ -6,7 +6,7 @@
 
   /* Alternative Base Colors */
   --ea-color-2: hsl(0, 0%, 20%);
-  --ea-color-2-high: hsl(0, 0%, 30%);
+  --ea-color-light: hsl(0, 0%, 30%);
 
   --ea-color-3: hsl(0, 0%, 96%);
   --ea-color-3-dark: hsl(0, 0%, 86%);

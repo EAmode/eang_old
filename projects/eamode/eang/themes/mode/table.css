@@ -29,7 +29,7 @@
     & thead {
       & th {
         color: var(--ea-table-thead-th-color, var(--ea-color-2));
-        background-color: var(--ea-table-thead-background, var(--ea-color-2-high));
+        background-color: var(--ea-table-thead-background, var(--ea-color-light));
         border-color: var(--ea-table-thead-border-color, var(--ea-color-2));
         text-align: var(--ea-table-thead-text-align, center);
       }
