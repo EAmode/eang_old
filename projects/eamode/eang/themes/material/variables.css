@@ -40,7 +40,7 @@
   --ea-color-1-light: hsl(210, 75%,31%);
 
   --ea-color-2: hsl(0, 0%, 98%);
-  --ea-color-2-high: hsl(0, 0%, 100%);
+  --ea-color-light: hsl(0, 0%, 100%);
 
   --ea-text-color: var(--ea-text-color-dark);
   --ea-text-color-dark: #333;

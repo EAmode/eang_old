@@ -20,7 +20,7 @@ export class CardComponent implements OnInit {
   `
 
   card = `
-  ~~~css
+  ~~~html
   <div class="ea-card">
   <div class="ea-card-header">
     <p>ea-card-header</p>

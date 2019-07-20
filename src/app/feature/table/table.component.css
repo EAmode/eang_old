@@ -1,0 +1,35 @@
+  .markdown-table-wrapper {
+    flex-direction: row;
+    justify-content: space-around;
+    display: flex;
+  }
+
+  .markdown-table-wrapper > div {
+    flex-basis: 48%;
+    margin: auto;
+  }
+
+  .table-right-position { 
+    padding: inherit;
+    margin: auto;
+  }
+
+  .table-styling-header {
+    margin: 1em;
+  }
+
+  .h2-table-caption {
+    margin-top: 1em;
+  }
+
+  .copy-clipboard {
+    display: flex;
+    justify-content: space-around;
+    padding-top: .4em;
+    margin: .8em;
+  }
+
+  small {
+    text-align: center;
+    color: var(--ea-color-accent-1);
+  }

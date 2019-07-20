@@ -29,7 +29,7 @@ export class ListComponent implements OnInit {
     `
 
   role_banner_listitem = `
-  |  CSS Variables   | Type  | Description |
+  |  CSS Variables   | Description  | Default |
   |---|---|----|
   |  \`--ea-list-max-height\`  |  Sets the max height for the list before it overflows | 8em |
   |  \`--ea-listitem-background-hover\`  |  Sets the background for a  \`:hover\` event | rgba(0,0,0,0.05) |
