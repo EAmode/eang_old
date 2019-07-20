@@ -61,26 +61,5 @@
 
   --ea-toolbar-height: 4rem;
   --ea-toolbar-background: var(--ea-color-1-light);
-
-  /* Table */
-  --ea-table-thead-color: var(--ea-text-color,rgba(0, 0, 0, 1));
-  --ea-table-thead-background:rgba(255, 255, 255, 1);
-  --ea-table-thead-border-color:rgba(0, 0, 0, 0.5);
-  --ea-table-thead-text-align: center;
-
-  --ea-table-tbody-text-align: center;
-
-  --ea-table-border-bottom-width: 0.2em;
-  --ea-table-border-color: rgba(148, 148, 148, 0.616);
-
-  --ea-table-padding-top-bottom: .7em;
-  --ea-table-padding-right-left: .7em;
-  --ea-table-caption-padding: .3em;
-
-  --ea-table-tr-striped-background: rgba(233, 236, 239, 1);
-
-  --ea-table-tr-hover-cursor: pointer;
-  --ea-table-tr-hover-background: var(--ea-background-color-hover, rgba(206, 221, 226, 1));
-
-  --ea-table-row-selected-background: var( --ea-background-color-active, rgba(179, 194, 230, 1));
-}
+  
+ }
