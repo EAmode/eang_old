@@ -218,22 +218,7 @@
   .ea-card-header > p {
     margin: 0.7em 0;
   }
-  & .theme-color {
-    & p {
-      margin: 0;
-      font-size: 1em;
-      font-weight: 400;
-      text-align: center;
-    }
-    & .ea-card-footer {
-      margin-top: 0.7em;
-    }
-    & .example-color {
-      height: 6em;
-      width: 6em;
-      border-radius: 50%;
-    }
-  }
+
   & .menu-example {
     --ea-background: var(--ea-color-2);
     --ea-color: white;
