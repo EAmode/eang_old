@@ -6,7 +6,7 @@
 
   /* Alternative Base Colors */
   --ea-color-2: hsl(0, 0%, 20%);
-  --ea-color-light: hsl(0, 0%, 30%);
+  --ea-color-2-light: hsl(0, 0%, 30%);
 
   --ea-color-3: hsl(0, 0%, 96%);
   --ea-color-3-dark: hsl(0, 0%, 86%);
@@ -61,5 +61,5 @@
 
   --ea-toolbar-height: 4rem;
   --ea-toolbar-background: var(--ea-color-1-light);
-  
+
  }
