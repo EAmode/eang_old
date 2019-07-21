@@ -35,10 +35,8 @@
   --ea-font-1-family: 'Roboto';
   --ea-font-1-style: normal;
   --ea-font-1-weight: 400;
-  --ea-font-size: 16;
   --ea-scalar-factor: 24;
   --ea-margin: var(--ea-scalar-factor);
-  --ea-spacer: 1;
 
   /* Default */
   --ea-default-border-bottom-width: .2em;

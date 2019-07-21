@@ -1,0 +1,57 @@
+.hero {
+  font-size: calc(var(--ea-sizer) * 1rem);
+  background-color: var(--ea-color-1);
+  background-image: url('/assets/images/triangles.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.shim {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(66, 91, 154, 0.4),
+    var(--ea-color-1)
+  );
+  height: 101%;
+  width: 100%;
+}
+.hero h1 {
+  z-index: 1;
+  color: white;
+}
+.hero .logo {
+  height: 9em;
+  width: 10em;
+  z-index: 1;
+}
+.hero button {
+  z-index: 1;
+}
+.hero h2,
+.hero p {
+  color: white;
+  text-align: center;
+  z-index: 1;
+}
+.v-prop {
+  --ea-grid-col-min-width: 15em;
+}
+footer {
+  --ea-grid-col-min-width: 8.9em;
+}
+#why-eang {
+  margin-top: 4.8em;
+}
+
+.symbol {
+  font-size: calc(var(--ea-sizer) * 1rem);
+  height: 3.5em;
+  margin-bottom: 1em;
+}
+
+.symbol-lg {
+  height: calc(var(--ea-sizer) * 8rem);
+  margin-bottom: 1em;
+}

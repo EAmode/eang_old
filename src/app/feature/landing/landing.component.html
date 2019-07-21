@@ -1,55 +1,6 @@
-<style>
-  .hero {
-    background-color: var(--ea-color-1);
-    background-image: url('../../assets/images/triangles.svg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-  }
-  .shim {
-    background-image: linear-gradient(
-      to bottom,
-      rgba(66, 91, 154, 0.4),
-      var(--ea-color-1)
-    );
-    height: 101%;
-    width: 100%;
-  }
-  .hero h1 {
-    z-index: 1;
-    color: white;
-  }
-  .hero .logo {
-    z-index: 1;
-  }
-  .hero button {
-    z-index: 1;
-  }
-  .hero h2,
-  .hero p {
-    color: white;
-    text-align: center;
-    z-index: 1;
-  }
-  .v-prop {
-    --ea-grid-col-min-width: 15em;
-  }
-  footer {
-    --ea-grid-col-min-width: 8.9em;
-  }
-  #why-eang {
-    margin-top: 4.8em;
-  }
-</style>
-
-<section flex-center class="hero" p-3-0>
+<section flex-center class="hero">
   <div class="shim"></div>
-  <div
-    class="logo"
-    style="height: 9em;
-  width: 10em;"
-  ></div>
+  <div class="logo"></div>
   <h1>The Progressive Web App Framework</h1>
   <p style="max-width: 20em;">Build modern web applications that scale</p>
 
@@ -80,9 +31,9 @@
   ></path>
 </svg>
 
-<div flex-center id="why-eang" style=" --ea-grid-col-min-width: 18em;">
+<div flex-center id="why-eang">
   <div max-width multi-col>
-    <h1 style="text-align: center; font-size: 3em;">Why eang?</h1>
+    <h1 style="font-size: calc(var(--ea-sizer) * 3.5rem);">Why eang?</h1>
     <div>
       <h2>
         eang makes it easy to implement your corporate style and compose
@@ -101,10 +52,9 @@
   <div multi-col max-width style="--ea-grid-col-min-width: 18em;">
     <div style="display: flex; flex-direction: column; align-items: center;">
       <img
-        src="../../../assets/images/rapid-develop.svg"
-        height="100%"
-        style="width: 5rem; height: 3.5rem;  margin-bottom: 1em;"
-        alt=""
+        src="/assets/images/rapid-develop.svg"
+        class="symbol"
+        alt="component symbol"
       />
       <div>
         <h2 style="text-align: center; margin: 0;">Components</h2>
@@ -116,10 +66,9 @@
     </div>
     <div style="display: flex; flex-direction: column; align-items: center;">
       <img
-        src="../../../assets/images/reactive-icon.svg"
-        height="100%"
-        style="width: 5rem; height: 3.5rem;  margin-bottom: 1em;"
-        alt=""
+        src="/assets/images/reactive-icon.svg"
+        class="symbol"
+        alt="reactive symbol"
       />
       <div>
         <h2 style="text-align: center; margin: 0;">Reactive Streams</h2>
@@ -131,10 +80,9 @@
     </div>
     <div style="display: flex; flex-direction: column; align-items: center;">
       <img
-        src="../../../assets/images/themes-icon.svg"
-        height="100%"
-        style="width: 5rem; height: 3.5rem; margin-bottom: 1em;"
-        alt=""
+        src="/assets/images/themes-icon.svg"
+        class="symbol"
+        alt="themes symbol"
       />
       <div>
         <h2 style="text-align: center; margin: 0;">CSS Themes</h2>
@@ -249,7 +197,7 @@
         <!-- <a target="_blank" href="https://angular.io"
           >
         </a> -->
-        <img style="width: 8em;" src="/assets/images/angular.svg" />
+        <img class="symbol-lg" src="/assets/images/angular.svg" />
         <!-- <b>Angular</b>
         <p>
           <a target="_blank" href="https://angular.io">Angular</a> offers
@@ -259,7 +207,7 @@
       <div>
         <!-- <a target="_blank" href="http://reactivex.io/">
         </a> -->
-        <img style="width: 8em;" src="/assets/images/rxjs-white.png" />
+        <img class="symbol-lg" src="/assets/images/rxjs-white.png" />
         <!-- <b>ReactiveX</b>
         <p>
           <a href="http://reactivex.io/">ReactiveX</a> provides an asynchronous
@@ -269,7 +217,7 @@
       <div>
         <!-- <a href="https://postcss.org/">
         </a> -->
-        <img style="width: 8em;" src="/assets/images/postcss.svg" />
+        <img class="symbol-lg" src="/assets/images/postcss.svg" />
         <!-- <b>PostCSS</b>
         <p>
           <a href="https://postcss.org/">PostCSS</a> provides transformations
@@ -282,11 +230,7 @@
 <section flex-center id="features">
   <div multi-col max-width class="grid">
     <div feat style="border-bottom: 1px solid var(--ea-color-3-dark);">
-      <img
-        style="width: 10em;"
-        src="../../../assets/images/getstarted.svg"
-        alt=""
-      />
+      <img class="symbol-lg" src="/assets/images/getstarted.svg" alt="" />
       <h2>Get Started Quickly</h2>
       <p>
         Use the Angular CLI and a set of Custom Properties to create an themed
@@ -297,11 +241,7 @@
       feat
       style="border-bottom: 1px solid var(--ea-color-3-dark); border-left: 1px solid var(--ea-color-3-dark);"
     >
-      <img
-        style="width: 10em;"
-        src="../../../assets/images/themes.svg"
-        alt=""
-      />
+      <img class="symbol-lg" src="/assets/images/themes.svg" alt="" />
       <h2>Global and Project themes</h2>
       <p>
         Maintain a global theme and as many project specific themes as needed,
@@ -309,11 +249,7 @@
       </p>
     </div>
     <div feat>
-      <img
-        style="width: 10em;"
-        src="../../../assets/images/style-guide.svg"
-        alt=""
-      />
+      <img class="symbol-lg" src="/assets/images/style-guide.svg" alt="" />
       <h2>Digital Style Guide</h2>
       <p>
         See your themes in production and have your styles in a digital style
@@ -321,11 +257,7 @@
       </p>
     </div>
     <div feat style="border-left: 1px solid var(--ea-color-3-dark);">
-      <img
-        style="width: 10em;"
-        src="../../../assets/images/aria-syntax.svg"
-        alt=""
-      />
+      <img class="symbol-lg" src="/assets/images/aria-syntax.svg" alt="" />
       <h2>ARIA Compliant Syntax</h2>
       <p>
         We reinforce best practices regarding ARIA syntax by marrying styles and

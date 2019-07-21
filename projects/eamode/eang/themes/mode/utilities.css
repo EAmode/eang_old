@@ -1,103 +1,18 @@
 @define-mixin utilities {
-  & [m-1] {
-    margin: calc(
-      (((var(--ea-scalar-factor) * 0.5) / var(--ea-font-size)) * 1em)
-    );
-  }
-
-  & [m-0] {
-    margin: 0;
-  }
-
-  & [m-1-1-1-0] {
-    margin: calc((((var(--ea-scalar-factor) * 1) / var(--ea-font-size)) * 1em))
-      calc((((var(--ea-scalar-factor) * 1) / var(--ea-font-size)) * 1em))
-      calc((((var(--ea-scalar-factor) * 1) / var(--ea-font-size)) * 1em)) 0;
-  }
-
-
-  /* Margin Top */
-  & [m-1-0-0-0] {
-    margin: calc((((var(--ea-scalar-factor) * 1) / var(--ea-font-size)) * 1em))
-      0 0 0;
-  }
-
-  & [m-2-0-0-0] {
-    margin: calc((((var(--ea-scalar-factor) * 2) / var(--ea-font-size)) * 1em))
-      0 0 0;
-  }
-
-  & [m-3-0-0-0] {
-    margin: calc((((var(--ea-scalar-factor) * 3) / var(--ea-font-size)) * 1em))
-      0 0 0;
-  }
-
-  & [m-4-0-0-0] {
-    margin: calc((((var(--ea-scalar-factor) * 4) / var(--ea-font-size)) * 1em))
-      0 0 0;
-  }
-
-  & [m-0-0-1-0] {
-    margin: 0 0
-      calc((((var(--ea-scalar-factor) * 1) / var(--ea-font-size)) * 1em)) 0;
-  }
-  & [m-0-0-2-0] {
-    margin: 0 0
-      calc((((var(--ea-scalar-factor) * 2) / var(--ea-font-size)) * 1em)) 0;
-  }
-  & [m-0-0-3-0] {
-    margin: 0 0
-      calc((((var(--ea-scalar-factor) * 3) / var(--ea-font-size)) * 1em)) 0;
-  }
-  & [m-0-0-4-0] {
-    margin: 0 0
-      calc((((var(--ea-scalar-factor) * 4) / var(--ea-font-size)) * 1em)) 0;
-  }
-
-  & [m-0-1] {
-    margin: 0
-      calc((((var(--ea-scalar-factor) * 1) / var(--ea-font-size)) * 1em));
-  }
-
-  & [m-2] {
-    margin: calc((((var(--ea-scalar-factor) * 2) / var(--ea-font-size)) * 1em));
-  }
-
-  /* Padding Utilities */
-  & [p-1-0-0-0] {
-    padding: calc((((var(--ea-scalar-factor) * 1) / var(--ea-font-size)) * 1em))
-      0 0 0;
-  }
-
-  & [p-2-0-0-0] {
-    padding: calc((((var(--ea-scalar-factor) * 2) / var(--ea-font-size)) * 1em))
-      0 0 0;
-  }
-
-  & [p-4-0] {
-    padding: calc((((var(--ea-scalar-factor) * 4) / var(--ea-font-size)) * 1em))
-      0 ;
-  }
-
-  & [p-3-0] {
-    padding: calc((((var(--ea-scalar-factor) * 3) / var(--ea-font-size)) * 1em))
-      0 ;
-  }
-
   [sm] {
-    --ea-font-size: 0.8rem;
+    --ea-sizer: 0.8;
   }
   [md] {
-    --ea-font-size: 1.25rem;
+    --ea-sizer: 1.25;
   }
   [lg] {
-    --ea-font-size: 1.5rem;
+    --ea-sizer: 1.5;
   }
   [xl] {
-    --ea-font-size: 2rem;
+    --ea-sizer: 2;
   }
   [xxl] {
-    --ea-font-size: 2.5rem;
+    --ea-sizer: 2.5;
   }
   [avatar] {
     display: grid;
