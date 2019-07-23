@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser'
-import { NgModule } from '@angular/core'
+import { NgModule, Component } from '@angular/core'
 import { ReactiveFormsModule } from '@angular/forms'
 import { RouterModule, Routes } from '@angular/router'
 
@@ -30,20 +30,37 @@ import { IconComponent } from './feature/icon/icon.component'
 import { VariablesComponent } from './variables/variables.component'
 import { GetStartedComponent } from './feature/get-started/get-started.component'
 import { MenuComponent } from './feature/menu/menu.component'
+import { LandingComponent } from './feature/landing/landing.component'
+import { ComponentsComponent } from './feature/components/components.component'
 import { TabsComponent } from './feature/tabs/tabs.component'
+import { UtilitiesComponent } from './utilities/utilities.component'
+import { MarkdownComponent } from './feature/markdown/markdown.component'
+import { ListComponent } from './components/list/list.component'
+import { BannerComponent } from './components/banner/banner.component'
+import { TooltipComponent } from './components/tooltip/tooltip.component'
+import { TableComponent } from './feature/table/table.component'
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: LandingComponent },
   { path: 'reactive', component: ReactiveComponent },
   { path: 'theming', component: ThemingComponent },
   { path: 'layout', component: LayoutComponent },
   { path: 'button', component: ButtonComponent },
+  { path: 'banner', component: BannerComponent },
+  { path: 'tooltip', component: TooltipComponent },
   { path: 'card', component: CardComponent },
+  { path: 'list', component: ListComponent },
   { path: 'icon', component: IconComponent },
   { path: 'variables', component: VariablesComponent },
-  { path: 'menu', component: MenuComponent },
+  { path: 'components', component: ComponentsComponent },
   { path: 'getting-started', component: GetStartedComponent },
-  { path: 'tabs', component: TabsComponent }
+  { path: 'table', component: TableComponent },
+  { path: 'tabs', component: TabsComponent },
+  { path: 'menu', component: MenuComponent },
+  { path: 'variables', component: VariablesComponent },
+  { path: 'features', component: HomeComponent },
+  { path: 'utilities', component: UtilitiesComponent },
+  { path: 'markdown', component: MarkdownComponent }
 ]
 
 @NgModule({
@@ -59,7 +76,15 @@ const routes: Routes = [
     VariablesComponent,
     MenuComponent,
     GetStartedComponent,
-    TabsComponent
+    LandingComponent,
+    ComponentsComponent,
+    TabsComponent,
+    UtilitiesComponent,
+    MarkdownComponent,
+    ListComponent,
+    BannerComponent,
+    TooltipComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,

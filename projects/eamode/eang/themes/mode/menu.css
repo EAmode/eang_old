@@ -1,127 +1,200 @@
-  @define-mixin menu {
-    & ea-menu {
-      /* --ea-menu-background-active: red; */
-      /* --ea-menu-text-color: blue; */
-      /* --ea-menu-background-hover: yellow;
-      --ea-menu-background-active: brown; */
-
+@define-mixin menu {
+  & ea-menu {
+    --ea-menu-height: 2.5em;
     user-select: none;
     cursor: pointer;
-
-    & .node-toggle {
-      padding: 0;
-      min-width: 1.4rem;
-      width: 1.4em;
-      height: 1.2rem;
-      background: none;
-      border: none;
-      cursor: pointer;
-
-      & span {
-        margin: 0
-      }
-
-      &:hover {
-        border: none
-      }
-
-      &[disabled] {
-        border: none;
-        cursor: not-allowed;
-      }
-
-      &.close {
-        font-size: 10px;
-        margin-left: 10px;
-
-        & span {
-          transition: all ease .2s;
-        }  
-
-        &:hover {
-
-          & span {
-            transform: scale(1.4);
-          }
-        }
-      }
-    }
-
-    & .name {
-      margin-left: 5.5px;
-      width: 100%;
-      color: var(--ea-menu-text-color, var(--ea-text-color-light));
+    position: relative;
+    & [node] {
       display: flex;
-      align-items: center;
-    }
-
-    & aside {
-      font-size: .8em;
-      opacity: 0;
-      position: absolute;
-      top: 0;
-      right: 8px;
-    }
-
-    & .node {
-      display: flex;
-      line-height: 2.5em;
+      line-height: var(--ea-menu-height);
       align-items: center;
       position: relative;
+
+      & span[icon] {
+        height: 0.7em;
+        width: 0.7em;
+      }
 
       &[hidden] {
         display: none;
       }
 
+      &[toggle] {
+        flex-direction: row-reverse;
+      }
+
       &[active] {
-        background: var(--ea-color-background-6);
-        color: var(--ea-text-color-dark);
+        background: var(
+          --ea-menu-background-color-active,
+          var(--ea-background-color-active)
+        );
+        color: var(--ea-menu-color-active, var(--ea-text-color-light));
       }
 
       &:hover {
-        background: var(--ea-menu-background-hover, var(--ea-background-hover));
-        color: var(--ea-menu-text-color, var(--ea-text-color-light));
+        background: var(
+          --ea-background,
+          var(--ea-menu-background-hover, var(--ea-background-color-hover))
+        );
+        color: var(
+          --ea-color,
+          var(--ea-menu-color-hover, var(--ea-text-color-light))
+        );
+      }
 
-        & .node-toggle span[chevron-down] {
-          --ea-button-icon: var(--ea-icon-chevron-down-neg);
+      &:active {
+        background: var(
+          --ea-background,
+          var(
+            --ea-menu-background-color-active,
+            var(--ea-background-color-active)
+          )
+        );
+        box-shadow: var(
+          --ea-menu-background-active-shadow,
+          var(--ea-background-active-shadow)
+        );
+        color: var(--ea-menu-color-active, var(--ea-text-color-light));
+      }
+
+      & [toggle-area] {
+        display: flex;
+        height: var(--ea-menu-height);
+        align-items: center;
+        justify-content: flex-end;
+      }
+
+      & [name-area] {
+        width: 100%;
+        color: var(--ea-color, var(--ea-menu-color, var(--ea-text-color)));
+        display: flex;
+        align-items: center;
+
+        & span[icon] {
+          margin-right: 0.3em;
         }
 
-        & .node-toggle span[chevron-right] {
-          --ea-button-icon: var(--ea-icon-chevron-right-neg);
-        }
-
-        & .node-toggle.object-menu {
-          --ea-button-icon: var(--ea-icon-vertical-menu);
-
-          display: block;
-          background-position: center;
-          cursor: pointer;
-
-          &:hover {
-            transform: scale(1.2);
+        &[toggle] {
+          flex-direction: row-reverse;
+          & span[icon] {
+            margin-right: 0.5em;
+            margin-left: 0.5em;
           }
         }
 
         & aside {
-          opacity: 1;
+          font-size: 0.8em;
+          opacity: 0;
+          position: absolute;
+          top: 0;
+          right: 8px;
+          & .close {
+            font-size: 10px;
+            margin-right: 0.6em;
+
+            & span {
+              transition: all ease 0.2s;
+            }
+
+            &:hover {
+              background: none;
+
+              & span {
+                transform: scale(1.4);
+              }
+            }
+          }
         }
       }
-      &:active {
-        background: var(--ea-menu-background-active, var(--ea-background-active));
-        box-shadow: var(--ea-menu-background-active-shadow, var(--ea-background-active-shadow));
+      &[dropdown] {
+        &:hover {
+          --ea-background: transparent;
+        }
+        &:active {
+          --ea-background: transparent;
+        }
+        & [toggle-area] {
+          min-width: 100%;
+          justify-content: center;
+          &:hover {
+            --ea-background: transparent;
+          }
+        }
       }
     }
-
-    & .ea-tree-children {
-
-      &.horizontal {
+    & [ea-tree-children] {
+      &[horizontal] {
         display: flex;
         flex-direction: row;
         align-items: flex-start;
         justify-content: flex-start;
       }
+      &[dropdown] {
+        --ea-color: var(--ea-color-2);
+        position: absolute;
+        z-index: 1;
+        background: var(
+          --ea-background,
+          var(--ea-menu-background-dropdown, white)
+        );
+        min-width: 8em;
+        box-shadow: var(--ea-box-shadow);
+        & [node] {
+          &:hover {
+            --ea-background: var(--ea-color-1-light);
+            --ea-color: var(--ea-color-3);
+          }
+          & [name-area] {
+            padding-left: 5px !important;
+            margin-left: 5px;
+            display: flex;
+            justify-content: space-between;
+          }
+        }
+        &[left] {
+          left: -6.5em;
+          top: 2em;
+        }
+      }
+    }
+  }
 
+  & .ea-menu {
+    ul {
+      display: flex;
+      flex-direction: column;
+      padding: .6em 0 0 0;
+      
     }
 
+    li {
+      font-size: var(--ea-font-size, 1em);
+      
+      & :hover {
+        background: var(
+          --ea-menu-background-color-hover,
+          var(--ea-background-color-hover)
+        );
+        color: var(--ea-menu-color-hover, var(--ea-text-color-light));
+      }
+
+      & [active],
+      .active {
+        background: var(
+          --ea-menu-background-color-active,
+          var(--ea-background-color-active)
+        );
+        color: var(--ea-menu-color-active, var(--ea-text-color-light));
+      }
+
+      a {
+        padding: 0 .2em 0 .6em;
+        display: block;
+        line-height: var(--ea-menu-height, 2.5em);
+        font-size: var(--ea-font-size, 1em);
+        text-decoration: none;
+        color: var(--ea-color, var(--ea-a-color, var(--ea-text-color-light)));
+      }
+    }
   }
-  }
+}

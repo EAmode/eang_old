@@ -14,8 +14,12 @@
 @import 'mode/icons.css';
 @import 'mode/table.css';
 @import 'mode/utilities.css';
+@import 'mode/input.css';
+@import 'mode/tooltip.css';
+
 
 .mode {
+  /* @mixin input-mode; */
   @mixin autocomplete-mode;
   @mixin button-mode;
   @mixin card-mode;
@@ -29,4 +33,5 @@
   @mixin utilities;
   @mixin menu;
   @mixin tabs;
+  @mixin tooltip;
 }

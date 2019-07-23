@@ -1,24 +1,166 @@
-
-  @define-mixin tabs {
-  & ea-tab {
-
-    background: var(--ea-color-3);
+@define-mixin tabs {
+  & ea-tabpanel {
+    background: var(--ea-background, var(--ea-tab-body-background, tansparent));
     display: none;
-    /* height: 100%; */
-    padding: 0.5em 1em;
-    border: 1px solid #c8c8c8;
-    border-radius: 0.1em 0.1em 0.3em 0.3em;
-
+    border: var(--ea-tab-body-border, none);
     &[active] {
       display: block;
-      width: calc(100% - 2em);
     }
   }
+  & ea-tablist {
+    display: flex;
+    overflow: auto;
+    & [name-area] {
 
-  & ea-tabs {
+      padding-left: 1em !important;
+      padding-right: 1em;
+    }
+    &[vertical] {
+      display: block;
+
+      & [node] {
+        background: var(--ea-background, var(--ea-tab-background, transparent));
+        border-color: var(--ea-tab-border-color, transparent);
+        border-width: var(--ea-tab-border-width, 0.2em);
+        border-style: var(--ea-tab-border-style, none none none solid);
+      }
+      & [node][active] {
+        background: var(
+          --ea-background,
+          var(--ea-tab-background-active, transparent)
+        );
+        border-color: var(--ea-tab-border-color-active, var(--ea-color-1));
+        border-width: var(--ea-tab-border-width-active, 0.2em);
+        border-style: var(--ea-tab-border-style-active, none none none solid);
+        color: var(
+          --ea-color,
+          var(--ea-tab-color-active, var(--ea-text-color))
+        );
+
+        &:hover {
+          background: var(
+            --ea-background,
+            var(--ea-tab-background-hover-active, transparent)
+          );
+          border-color: var(
+            --ea-tab-border-color-active-hover,
+            var(--ea-color-1-light)
+          );
+          border-width: var(--ea-tab-border-width-active-hover, 0.2em);
+          border-style: var(
+            --ea-tab-border-style-active-hover,
+            none none none solid
+          );
+        }
+        & [name-area] {
+          font-weight: var(--ea-tab-font-weight-active, inherit);
+        }
+      }
+      & [node]:hover {
+        background: var(
+          --ea-background,
+          var(--ea-tab-background-hover, transparent)
+        );
+        border-color: var(--ea-tab-border-color-hover, transparent);
+        border-width: var(--ea-tab-border-width-hover, 0.2em);
+        border-style: var(--ea-tab-border-style-hover, none none none solid);
+        & [name-area] {
+
+          padding-left: 1em !important;
+          padding-right: 1em;
+        }
+      }
+      & [node]:active {
+        background: var(
+          --ea-background,
+          var(--ea-tab-background-active, transparent)
+        );
+        border-color: var(--ea-tab-border-color-active, var(--ea-color-1));
+        border-width: var(--ea-tab-border-width-active, 0.2em);
+        border-style: var(--ea-tab-border-style-active, none none none solid);
+        color: var(
+          --ea-color,
+          var(--ea-tab-color-active, var(--ea-text-color))
+        );
+      }
+    }
+    & [node] {
+      background: var(--ea-background, var(--ea-tab-background, transparent));
+      border-top: 0.1em solid transparent;
+      border-color: var(--ea-tab-border-color, transparent);
+      border-width: var(--ea-tab-border-width, 0.1em);
+      border-style: var(--ea-tab-border-style, solid none none none);
+      width: max-content;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    & [node][active] {
+      background: var(
+        --ea-background,
+        var(--ea-tab-background-active, transparent)
+      );
+      border-color: var(--ea-tab-border-color-active, var(--ea-color-1));
+      border-width: var(--ea-tab-border-width-active, 0.1em);
+      border-style: var(--ea-tab-border-style-active, none none solid none);
+      color: var(--ea-color, var(--ea-tab-color-active, var(--ea-text-color)));
+
+      &:hover {
+        background: var(
+          --ea-background,
+          var(--ea-tab-background-hover-active, rgba(0, 0, 0, 0.15))
+        );
+        border-color: var(
+          --ea-tab-border-color-active-hover,
+          var(--ea-color-1-light)
+        );
+        border-width: var(--ea-tab-border-width-active-hover, 0.1em);
+        border-style: var(
+          --ea-tab-border-style-active-hover,
+          none none solid none
+        );
+      }
+      & [name-area] {
+        font-weight: var(--ea-tab-font-weight-active, inherit);
+      }
+    }
+    & [node]:hover {
+      background: var(
+        --ea-background,
+        var(--ea-tab-background-hover, transparent)
+      );
+      border-color: var(
+        --ea-tab-border-color-hover,
+        var(--ea-background-color-hover)
+      );
+      border-width: var(--ea-tab-border-width-hover, 0.1em);
+      border-style: var(--ea-tab-border-style-hover, solid none none none);
+      color: var(--ea-color, var(--ea-tab-color-hover, var(--ea-text-color)));
+    }
+    & [node]:active {
+      background: var(
+        --ea-background,
+        var(--ea-tab-background-active, rgba(0, 0, 0, 0.15))
+      );
+      box-shadow: none;
+      border-color: var(--ea-tab-border-color-active, var(--ea-color-1));
+      border-width: var(--ea-tab-border-width-active, 0.1em);
+      border-style: var(--ea-tab-border-style-active, none none solid none);
+      color: var(--ea-color, var(--ea-tab-color-active, var(--ea-text-color)));
+    }
     & ea-menu {
-      .node {
-        border-radius: 0.3em 0.3em 0 0;
+      -webkit-tap-highlight-color: transparent;
+      display: block;
+      & [ea-tree-children][horizontal] {
+        display: flex;
+        border-bottom: var(--ea-tabs-border-bottom, solid);
+        border-color: var(--ea-tabs-border-color, var(--ea-color-3-dark));
+        border-width: var(--ea-tabs-border-width, 0.05em);
+        border-style: var(--ea-tabs-border-style, none none solid none);
+        background: var(
+          --ea-background,
+          var(--ea-tabs-background, transparent)
+        );
+        overflow-x: auto;
       }
     }
   }

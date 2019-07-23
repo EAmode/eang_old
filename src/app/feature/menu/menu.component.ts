@@ -23,6 +23,7 @@ export class MenuComponent implements OnInit {
       {
         name: 'Cards',
         icon: 'ea-layers',
+        toggleRightPosition: true,
         iconStyle: 'ea-AntiqueWhite',
         data: {
           link: '/card'
@@ -31,17 +32,65 @@ export class MenuComponent implements OnInit {
       {
         name: 'Library',
         icon: 'ea-align-right',
-        iconStyle: 'ea-aliceblue',
+        iconStyle: 'ea-negative',
         data: {
           link: '/icon'
         },
         children: [
           {
-            name: 'Book',
+            name: 'Book-lvl-1',
             icon: 'ea-bookmark',
             data: {
               link: '/special'
-            }
+            },
+            children: [
+              {
+                name: 'Book-lvl-2',
+                icon: 'ea-bookmark',
+                data: {
+                  link: '/special'
+                }
+              },
+              {
+                name: 'Book-lvl-2-1',
+                icon: 'ea-bookmark',
+                data: {
+                  link: '/special2'
+                },
+                children: [
+                  {
+                    name: 'Book-lvl-3',
+                    icon: 'ea-bookmark',
+                    data: {
+                      link: '/special'
+                    }
+                  },
+                  {
+                    name: 'Book-lvl-3-1',
+                    icon: 'ea-bookmark',
+                    data: {
+                      link: '/special2'
+                    },
+                    children: [
+                      {
+                        name: 'Book-lvl-4',
+                        icon: 'ea-bookmark',
+                        data: {
+                          link: '/special'
+                        }
+                      },
+                      {
+                        name: 'Book-lvl-4-1',
+                        icon: 'ea-bookmark',
+                        data: {
+                          link: '/special2'
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
           },
           {
             name: 'Book2',
@@ -55,9 +104,50 @@ export class MenuComponent implements OnInit {
     ]
   }
 
+  modal = false
+
   nodeHorizontal
   nodeHiddenFalse
   nodeWithTemplate
+  nodeWithNameTemplate
+
+  nodeWithRightToggle = {
+    name: 'Main menu',
+    icon: 'ea-hamburger-menu',
+    iconStyle: 'ea-negative',
+    isHidden: false,
+    toggleRight: true,
+    children: [
+      {
+        name: 'Archive',
+        icon: 'ea-archive ',
+        iconStyle: 'ea-negative'
+      },
+      {
+        name: 'Wi-Fi',
+        icon: 'ea-wifi',
+        iconStyle: 'ea-negative'
+      }
+    ]
+  }
+
+  nodeWithMod = {
+    name: 'Main menu',
+    icon: 'hamburger-menu',
+    isHidden: false,
+    children: [
+      {
+        name: 'Archive',
+        icon: 'archive ',
+        iconStyle: 'aqua'
+      },
+      {
+        name: 'Wi-Fi',
+        icon: 'wifi',
+        iconStyle: 'aqua'
+      }
+    ]
+  }
 
   constructor() {}
 
@@ -69,9 +159,21 @@ export class MenuComponent implements OnInit {
     this.nodeHiddenFalse.isHidden = false
 
     this.nodeWithTemplate = JSON.parse(JSON.stringify(this.node))
+    this.nodeWithNameTemplate = JSON.parse(JSON.stringify(this.node))
+
     this.nodeWithTemplate.children[0].data.description =
       'Notification description'
+    this.nodeWithNameTemplate.children[0].data.header =
+      'The name of the first paragraph'
     this.nodeWithTemplate.children[1].data.description = 'Cards description'
+    this.nodeWithNameTemplate.children[1].data.header =
+      'The name of the second paragraph'
+    this.nodeWithNameTemplate.children[2].data.header =
+      'The name of the first container'
+    this.nodeWithNameTemplate.children[2].children[0].data.header =
+      'The first content text'
+    this.nodeWithNameTemplate.children[2].children[1].data.header =
+      'The second content text'
   }
 
   ea_menu = `
@@ -101,12 +203,38 @@ export class MenuComponent implements OnInit {
   *component.html*
   ~~~html
   <ea-menu
-    [node]="nodeWithTemplate"
-    [controlPanelTemplate]="templateMenu">
+    [node]="node"
+    [optionAreaTemplate]="optionArea"
+    [nameAreaTemplate]="nameArea"
+    [toggleAreaTemplate]="toggleArea"
+  >
   </ea-menu>
-  <ng-template #templateMenu let-data="node.data">
-    <div *ngIf="data">{{data.description}}</div>
+
+  <ng-template #optionArea let-node="node">
+    <button flat icon *ngIf="node.isActive">
+      <span icon vertical-menu negative></span>
+    </button>
   </ng-template>
+  <ng-template #nameArea let-node="node">
+    <div>{{node.name}}</div>
+  </ng-template>
+  <ng-template #toggleArea let-node="node">
+    <span *ngIf="node.isOpen" icon chevron-down negative>
+    </span>
+    <span *ngIf="!node.isOpen" icon chevron-right negative>
+    </span>
+  </ng-template>
+  `
+
+  ea_menu_attrs = `
+  |  Attributes   | Type  | Description |
+  |---|---|----|
+  |  id (optional)   |  Better to use string or number types  | Add identificator for your current node. |
+  |  name   |  string   | Node name will be displayed on the site view. |
+  | horizontal (optional) | boolean | Value used to change menu orientation. |
+  | isHidden (optional) | boolean | Place this attribute as "true" to hide parent node for children. |
+  | children (optional) | array[] | Define array of children in that attribute. |
+  | data (optional) | any | Place inside of this attribute any data. |
   `
 
   node_example = `
@@ -122,18 +250,12 @@ export class MenuComponent implements OnInit {
     {
       name: 'Archive',
       icon: 'archive ',
-      iconStyle: 'aqua',
-      data: {
-        link: '/download'
-      }
+      iconStyle: 'aqua'
     },
     {
       name: 'Wi-Fi',
       icon: 'wifi',
-      iconStyle: 'aqua',
-      data: {
-        link: '/wifi'
-      }
+      iconStyle: 'aqua'
     }
     ]
   }

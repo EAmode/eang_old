@@ -1,14 +1,18 @@
 @define-mixin panel-base {
   color: var(--ea-panel-color, --ea-color-1);
-  background: var(--ea-panel-background, --ea-color-background-2);
+  background: var(--ea-panel-background-color, white);
   height: var(--ea-panel-height, initial);
   width: var(--ea-panel-width, initial);
+  display: var(--ea-panel-display, block);
   --ea-panel-min-size-ratio: 0.5;
+  --ea-panel-sm-size-ratio: 0.5;
+  --ea-panel-md-size-ratio: 1.5;
+  --ea-panel-lg-size-ratio: 2.5;
 }
 @define-mixin panel-mode {
   & ea-panel {
     @mixin panel-base;
-    display: block;
+    --ea-panel-display: flex;
   }
 
   & ea-panel[orientation='top'] {
@@ -35,6 +39,12 @@
     position: relative;
   }
 
+  & .ea-panel-host-element[ea-panel-host-state='flex-center'] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   & ea-panel[state='maximized'] {
     --ea-panel-height: var(--ea-panel-max-height);
     --ea-panel-width: var(--ea-panel-max-width);
@@ -51,11 +61,7 @@
 
   & ea-panel[state='closed'] {
     width: 0;
+    display: none !important;
   }
 
-  & ea-panel[flex-centered] {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
 }

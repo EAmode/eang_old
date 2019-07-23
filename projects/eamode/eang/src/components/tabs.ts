@@ -3,73 +3,148 @@ import {
   AfterContentInit,
   ContentChildren,
   QueryList,
-  EventEmitter
+  EventEmitter,
+  TemplateRef,
+  ContentChild,
+  HostBinding,
+  Input,
+  OnDestroy,
+  Renderer2,
+  ElementRef
 } from '@angular/core'
-import { MenuTreeItem } from './menu'
-import { TabComponent } from './tab'
+import { Subject, Subscription, Observable, combineLatest } from 'rxjs'
+import { EangElement } from '../core'
 
 @Component({
-  selector: 'ea-tabs',
+  selector: 'ea-tabpanel',
   template: `
-  <ea-menu [node]="menu" [activateEvents]="activated" [closeEvents]="closed">
-  </ea-menu>
-  <ng-content select="ea-tab"></ng-content>
-  `,
-  styles: []
+    <ng-content></ng-content>
+  `
 })
-export class TabsComponent implements AfterContentInit {
-  @ContentChildren(TabComponent)
-  tabs: QueryList<TabComponent>
+export class TabpanelComponent implements EangElement {
+  @HostBinding('attr.role') role = 'tabpanel'
+  @HostBinding('attr.closed') closed: string
+  @HostBinding('attr.active') active: string
 
-  menu: MenuTreeItem = {
-    name: 'Main',
-    horizontal: true,
-    isHidden: true,
-    children: []
-  }
-  activated = new EventEmitter<MenuTreeItem>()
-  closed = new EventEmitter<MenuTreeItem>()
+  @Input() @HostBinding('attr.id') id: string
+  @Input() name: string
+  @Input() closeable = false
 
-  constructor() {}
+  constructor(private renderer: Renderer2, private el: ElementRef) {}
 
-  activateTab(activeTab: TabComponent) {
-    this.tabs.forEach(tab => (tab.activeAttr = null))
-    activeTab.activeAttr = ''
-  }
-
-  closeTab(closedTab: TabComponent) {
-    closedTab.closedAttr = ''
-    if (closedTab.activeAttr === '') {
-      const openedTabs = this.tabs.filter(tab => tab.closedAttr !== '')
-      if (openedTabs.length > 0) {
-        const openedMenus = this.menu.children.filter(child => !child.isHidden)
-        openedMenus[0].isActive = true
-        this.activateTab(openedTabs[0])
-      } else {
-        closedTab.activeAttr = null
-      }
+  private _isActive = false
+  @Input() set isActive(isActive: boolean) {
+    this._isActive = isActive
+    this.active = isActive ? '' : undefined
+    if (this.active !== undefined) {
+      this.renderer.setAttribute(this.el.nativeElement, 'active', this.active)
+    } else {
+      this.renderer.removeAttribute(this.el.nativeElement, 'active')
     }
   }
+  get isActive() {
+    return this._isActive
+  }
+}
+
+@Component({
+  selector: 'ea-tabpanel-group',
+  template: `
+    <ng-content select="ea-tabpanel"></ng-content>
+  `
+})
+export class TabpanelGroupComponent implements AfterContentInit {
+  @ContentChildren(TabpanelComponent)
+  tabQueryList: QueryList<TabpanelComponent>
+  _tabs = new Subject<TabpanelComponent[]>()
+  get tabs() {
+    return this._tabs.asObservable()
+  }
+
+  @Input() activate$: Observable<string>
 
   ngAfterContentInit() {
-    if (this.tabs.length > 0) {
-      this.tabs.forEach(tab => {
-        console.log(tab)
-        this.menu.children.push({ name: tab.name, closeable: tab.closeable })
-      })
+    this._tabs.next(this.tabQueryList.toArray())
+    this.tabQueryList.changes.subscribe(t => {
+      this._tabs.next(t.toArray())
+    })
+  }
+}
 
-      this.menu.children[0].isActive = true
-      this.activateTab(this.tabs.first)
+@Component({
+  selector: 'ea-tablist',
+  template: `
+    <ea-menu
+      *ngFor="let t of tabs"
+      role="tab"
+      [attr.aria-label]="t.name"
+      [node]="t"
+      [activateSubject]="activateSubject"
+      [closeEvents]="closed"
+      [nameAreaTemplate]="headerTemplate"
+      [optionAreaTemplate]="optionTemplate"
+    >
+    </ea-menu>
+  `
+})
+export class TabListComponent implements AfterContentInit, OnDestroy {
+  @HostBinding('attr.role') role = 'tablist'
+
+  @ContentChild('headerTemplate', { static: true })
+  headerTemplate: TemplateRef<{}>
+  @ContentChild('optionTemplate', { static: true })
+  optionTemplate: TemplateRef<{}>
+
+  @Input() tabpanelGroup: TabpanelGroupComponent
+  @Input() activateSubject = new Subject<EangElement>()
+  @Input() activated$: Observable<EangElement>
+  menuItems: EangElement[]
+
+  activeTab: EangElement
+  closed = new EventEmitter<EangElement>()
+  tabs = [] as EangElement[]
+
+  private _tabsSub: Subscription
+
+  ngAfterContentInit() {
+    if (!this.activated$) {
+      this.activated$ = this.activateSubject.asObservable()
     }
+    combineLatest(this.activated$, this.tabpanelGroup.tabs).subscribe(
+      ([activatedTab, tabsInGroup]) => {
+        if (this.activeTab === activatedTab) {
+          return
+        }
+        const tab = tabsInGroup.find(x => x.name === activatedTab.name)
+        if (tab) {
+          tab.isActive = true
+          if (this.activeTab) {
+            this.activeTab.isActive = false
+          }
+          this.activeTab = tab
+        } else {
+          throw new Error(
+            `Tab ${activatedTab.id || activatedTab.name} does not exist!`
+          )
+        }
+      }
+    )
 
-    this.activated.subscribe((activatedItem: MenuTreeItem) => {
-      const activeTab = this.tabs.find(tab => tab.name === activatedItem.name)
-      this.activateTab(activeTab)
+    this._tabsSub = this.tabpanelGroup.tabs.subscribe(tabpanels => {
+      this.tabs = tabpanels
+      const hasActiveTab = this.activeTab
+        ? tabpanels.find(x => x.name === this.activeTab.name)
+        : undefined
+      if ((!this.activeTab || !hasActiveTab) && this.tabs.length > 0) {
+        this.activeTab = this.tabs[0]
+        this.activeTab.isActive = true
+      }
     })
+  }
 
-    this.closed.subscribe((closedItem: MenuTreeItem) => {
-      const closedTab = this.tabs.find(tab => tab.name === closedItem.name)
-      this.closeTab(closedTab)
-    })
+  ngOnDestroy() {
+    if (this._tabsSub) {
+      this._tabsSub.unsubscribe()
+    }
   }
 }

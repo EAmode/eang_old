@@ -38,6 +38,11 @@
       transition: 0.3s cubic-bezier(0.4, 0.2, 0.5, 1.4);
       transform-origin: 1.43em -0.43em;
       position: absolute;
+      top: var(--ea-autocomplete-ul-top);
+      bottom: var(--ea-autocomplete-ul-bottom);
+      left: var(--ea-autocomplete-ul-left);
+      right: var(--ea-autocomplete-ul-right);
+      width: var(--ea-autocomplete-ul-width);
     }
     & li {
       color: var(--ea-color-1);

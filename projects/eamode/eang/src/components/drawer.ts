@@ -13,21 +13,19 @@ import { LayoutService } from '../services/layout.service'
   selector: 'ea-drawer',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-  <ng-container *ngIf="(drawerState$ | async) !== 'closed'">
-    <ng-content select="header"></ng-content>
-    <ng-content select="section"></ng-content>
-    <ng-content select="footer"></ng-content>
-    <ng-content></ng-content>
-  </ng-container>
+    <ng-container *ngIf="(drawerState$ | async) !== 'closed'">
+      <ng-content select="header"></ng-content>
+      <ng-content select="section"></ng-content>
+      <ng-content select="footer"></ng-content>
+      <ng-content></ng-content>
+    </ng-container>
   `,
   styles: []
 })
 export class Drawer implements OnInit, OnDestroy {
-  @HostBinding('attr.state')
-  stateAttr
+  @HostBinding('attr.state') stateAttr
 
-  @Input()
-  drawerState$: Subject<string>
+  @Input() drawerState$: Subject<string>
 
   constructor(public layout: LayoutService) {}
 

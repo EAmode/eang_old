@@ -12,9 +12,9 @@
   },
   "license": "MIT",
   "peerDependencies": {
-    "@angular/common": "^6.0.0-rc.0 || ^8.0.0",
-    "@angular/core": "^6.0.0-rc.0 || ^8.0.0",
-    "rxjs": "^6.2.0"
+    "@angular/common": ">= 6",
+    "@angular/core": ">= 6",
+    "rxjs": ">= 6"
   },
   "dependencies": {
     "markdown-it": "^8.4.2",
