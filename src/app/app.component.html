@@ -44,8 +44,10 @@
   </ea-drawer>
 
   <ea-main #scrollContainer>
-    <ea-body>
-      <router-outlet (activate)="onActivate($event, scrollContainer)"></router-outlet>
+    <ea-body style="--ea-sizer: 1; --ea-spacer: 1;">
+      <router-outlet
+        (activate)="onActivate($event, scrollContainer)"
+      ></router-outlet>
     </ea-body>
     <ea-footer>
       <span>

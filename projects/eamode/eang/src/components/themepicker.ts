@@ -30,7 +30,20 @@ import {
         </li>
       </ul>
     </div>
-  `
+  `,
+  styles: [
+    `
+      li:first-child {
+        border-top-left-radius: calc(var(--ea-sizer) * 0.15em);
+        border-top-right-radius: calc(var(--ea-sizer) * 0.15em);
+      }
+
+      li:last-child {
+        border-bottom-left-radius: calc(var(--ea-sizer) * 0.15em);
+        border-bottom-right-radius: calc(var(--ea-sizer) * 0.15em);
+      }
+    `
+  ]
 })
 export class ThemePickerComponent implements OnInit {
   @Input() themes
