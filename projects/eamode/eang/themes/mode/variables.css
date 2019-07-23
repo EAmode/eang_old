@@ -2,7 +2,7 @@
   /* Base Colors */
   --ea-color-1: hsl(223, 40%, 43%);
   --ea-color-1-light: hsl(223, 40%, 53%);
-
+  --ea-color-striped: hsl(223, 40%, 63%);
 
   /* Alternative Base Colors */
   --ea-color-2: hsl(0, 0%, 20%);
@@ -22,6 +22,10 @@
   --ea-color-danger: #d9534f;
   --ea-color-error: #d9534f;
 
+  --ea-color-grey: hsl(0, 0%, 75%);
+  --ea-color-grey-light: hsl(0, 0%, 85%);
+  --ea-color-striped: rgba(139, 184, 232, 1);
+
   /* Text Colors */
   --ea-text-color: var(--ea-text-color-dark);
   --ea-text-color-dark: hsl(0, 0%, 20%);
@@ -36,11 +40,6 @@
   --ea-font-1-style: normal;
   --ea-font-1-weight: 400;
   --ea-scalar-factor: 24;
-  --ea-margin: var(--ea-scalar-factor);
-
-  /* Default */
-  --ea-default-border-bottom-width: .2em;
-  --ea-default-padding: .7em;
 
   font-family: var(--ea-font-1-family);
   font-style: var(--ea-font-1-style);
@@ -49,15 +48,4 @@
 
   /* Utilities */
   --ea-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.09);
-  --ea-padding: 4rem;
-  --ea-scale-factor: 0.5;
-
-  /* Component Specific Overrides */
-  --ea-main-background: var(--ea-color-3);
-
-  --ea-markdown-background: var(--ea-color-2);
-
-  --ea-toolbar-height: 4rem;
-  --ea-toolbar-background: var(--ea-color-1-light);
-
  }

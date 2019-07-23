@@ -19,10 +19,7 @@
       font-size: 1rem;
       grid-area: main;
       overflow: auto;
-      background: var(
-        --ea-background,
-        var(--ea-main-background, var(--ea-color-3))
-      );
+      background: var(--ea-color-3);
 
       & ea-footer {
         height: var(--ea-footer-height, 4.5rem);
@@ -63,23 +60,17 @@
 
     & ea-toolbar {
       font-size: 1rem;
-      height: var(--ea-toolbar-height, 4rem);
-      padding: var(--ea-toolbar-padding, 0.5em 1em);
-      background: var(
-        --ea-background,
-        var(--ea-toolbar-background, var(--ea-color-1))
-      );
-      display: var(--ea-toolbar-display, flex);
+      height: calc(var(--ea-sizer) * 4rem);
+      padding: calc(var(--ea-sizer) * .5em) calc(var(--ea-sizer) * 1em);
+      background: var(--ea-color-1);
+      display: flex;
       align-items: center;
       grid-area: toolbar;
       grid-row: 1;
       grid-column: 1 / 4;
       z-index: 2;
       box-sizing: border-box;
-      color: var(
-        --ea-color,
-        var(--ea-toolbar-color, var(--ea-text-color-light))
-      );
+      color: var(--ea-text-color-light);
       &[shadow] {
         box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);
       }
@@ -90,7 +81,7 @@
         --ea-toolbar-display: grid;
       }
       & header {
-        color: var(--ea-toolbar-color, inherit);
+        color: inherit;
         display: flex;
         justify-content: flex-start;
         align-items: center;
@@ -98,11 +89,11 @@
       }
 
       & aside {
-        color: var(--ea-toolbar-color, inherit);
+        color: inherit;
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        padding-right: var(--ea-toolbar-aside-padding, 3rem);
+        padding-right: calc(var(--ea-sizer) * 3rem);
       }
 
       & p,
@@ -110,11 +101,11 @@
       h2,
       h3 {
         margin: 0;
-        color: var(--ea-toolbar-color, inherit);
+        color: inherit;
       }
 
       & a {
-        color: var(--ea-toolbar-color, inherit);
+        color: inherit;
         text-decoration: none;
         font-size: 1rem;
         margin: 0.5em;
@@ -127,20 +118,17 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      width: var(--ea-drawer-width, 15em);
-      background: var(
-        --ea-background,
-        var(--ea-drawer-background, var(--ea-color-2))
-      );
+      width: calc(var(--ea-sizer) * 15em);
+      background: var(--ea-color-2);
       -webkit-tap-highlight-color: transparent;
-      color: var(--ea-color, var(--ea-drawer-color, var(--ea-text-color)));
+      color: var(--ea-text-color);
       overflow: auto;
 
       & footer {
         background: var(
           --ea-background,
           var(--ea-drawer-footer-background, var(--ea-drawer-background))
-        );
+        ); /* -_- */
       }
 
       &[resizable] {
@@ -156,8 +144,8 @@
 
     &[nav-overlay] {
       display: grid;
-      grid-template-rows: [ea-toolbar-start] var(--ea-toolbar-height) [ea-toolbar-end ea-main-start] 1fr [ea-footer-start ea-main-end];
-      grid-template-columns: [ea-drawer-start] var(--ea-drawer-width) [ea-drawer-end ea-main-start] 1fr [ea-main-end];
+      grid-template-rows: [ea-toolbar-start] calc(var(--ea-sizer) * 4rem) [ea-toolbar-end ea-main-start] 1fr [ea-footer-start ea-main-end];
+      grid-template-columns: [ea-drawer-start] calc(var(--ea-sizer) * 13em) [ea-drawer-end ea-main-start] 1fr [ea-main-end];
       height: 100vh;
     }
     &[nav-overlay] ea-main {
