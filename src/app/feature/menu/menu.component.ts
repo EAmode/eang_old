@@ -211,7 +211,7 @@ export class MenuComponent implements OnInit {
   </ea-menu>
 
   <ng-template #optionArea let-node="node">
-    <button flat icon *ngIf="node.isActive">
+    <button class="ea-button" flat icon *ngIf="node.isActive">
       <span icon vertical-menu negative></span>
     </button>
   </ng-template>

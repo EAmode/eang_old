@@ -29,11 +29,11 @@
   </p>
   <div class="ea-card">
     <div class="ea-card-header">
-      <button (click)="toggleTab()">Toggle</button>
-      <button (click)="activate.next({ name: 'Paragraph#1' })">
+      <button class="ea-button" (click)="toggleTab()">Toggle</button>
+      <button class="ea-button" (click)="activate.next({ name: 'Paragraph#1' })">
         Activate first Tab
       </button>
-      <button (click)="addTab()">Add Tab</button>
+      <button class="ea-button" (click)="addTab()">Add Tab</button>
     </div>
     <div class="ea-card-content header" style="flex-direction: column;">
       <ea-tablist

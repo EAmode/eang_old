@@ -25,14 +25,14 @@ export class CardComponent implements OnInit {
   <div class="ea-card-header">
     <p>ea-card-header</p>
     <div content>
-      <button icon>
+      <button class="ea-button" icon>
         <span icon download></span>
       </button>
-      <button icon>
+      <button class="ea-button" icon>
         <span icon sign-in></span>
       </button>
     </div>
-    <button icon>
+    <button class="ea-button" icon>
       <span icon x></span>
     </button>
   </div>
@@ -42,9 +42,9 @@ export class CardComponent implements OnInit {
     Maecenas lacinia ipsum id est suscipit, non sollicitudin odio imperdiet.</p>
   </div>
   <div class="ea-card-footer">
-    <button small>back</button>
+    <button class="ea-button" small>back</button>
     1/2
-    <button small>next</button>
+    <button class="ea-button" small>next</button>
   </div>
 </div>
   ~~~
