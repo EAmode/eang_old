@@ -9,7 +9,8 @@ export class ListComponent implements OnInit {
   role_list = `
 ~~~html
 <div role="list">
-  <div role="listitem"></div>
+  <div role="listitem">Item #1</div>
+  <div role="listitem">Item #2</div>
 </div>
 ~~~
   `

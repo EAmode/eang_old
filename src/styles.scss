@@ -234,7 +234,7 @@
       border-radius: 50%;
     }
   }
-  & .menu-example {
+  & .card-dark-example {
     --ea-background: var(--ea-color-2);
     --ea-color: white;
     & ea-menu {
@@ -425,7 +425,7 @@
 //       margin-bottom: 1rem;
 //     }
 //   }
-//   & .menu-example {
+//   & .card-dark-example {
 //     flex-direction: column;
 //     background: rgba(0, 0, 0, 0.03);
 //   }
@@ -442,7 +442,7 @@
 //     width: 5rem;
 //     background-repeat: no-repeat;
 //   }
-//   & .menu-example {
+//   & .card-dark-example {
 //     --ea-card-content-background: var(--ea-color-2);
 //     --ea-menu-color: var(--ea-color-3);
 //     flex-direction: column;

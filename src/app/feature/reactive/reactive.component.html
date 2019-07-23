@@ -12,47 +12,35 @@
   </p>
 
   <div class="ea-card example" m-0-0-1-0>
-    <div class="ea-card-header"><h2>&lt;ea-panel&gt;</h2></div>
-    <div
-      id="example-label"
-      class="ea-card-content"
-      style="justify-content: center;"
-    >
+    <div class="ea-card-header">
+      <h2>&lt;ea-panel&gt;</h2>
+    </div>
+    <div id="example-label" class="ea-card-content" style="justify-content: center;">
       <div class="screen">
         <div class="text-container">
           <p style="color: var(--ea-color-2);" class="container-text">
             ({{ panelOrientation | async }}, {{ panelState | async }})
           </p>
         </div>
-        <ea-panel
-          [state]="panelState"
-          [orientation]="panelOrientation"
-          style="--ea-panel-background-color: var(--ea-color-1); color:white;"
-        >
+        <ea-panel [state]="panelState" [orientation]="panelOrientation"
+          style="--ea-panel-background-color: var(--ea-color-1); color:white;">
           ea-panel
         </ea-panel>
       </div>
     </div>
-    <div class="ea-card-footer" style="justify-content: center;">
-      <mdc-radio
-        name="radioGroup"
-        checked="true"
-        value="maximized"
-        (change)="onChange($event)"
-      ></mdc-radio>
-      <label>maximized</label>
-      <mdc-radio
-        name="radioGroup"
-        value="minimized"
-        (change)="onChange($event)"
-      ></mdc-radio>
-      <label>minimized</label>
-      <mdc-radio
-        name="radioGroup"
-        value="closed"
-        (change)="onChange($event)"
-      ></mdc-radio>
-      <label>closed</label>
+    <div class="ea-card-footer" style="justify-content: space-evenly; display: flex;">
+      <div style="display: flex;">
+        <mdc-radio name="radioGroup" checked="true" value="maximized" (change)="onChange($event)"></mdc-radio>
+        <label>maximized</label>
+      </div>
+      <div style="display: flex;">
+        <mdc-radio name="radioGroup" value="minimized" (change)="onChange($event)"></mdc-radio>
+        <label>minimized</label>
+      </div>
+      <div style="display: flex;">
+        <mdc-radio name="radioGroup" value="closed" (change)="onChange($event)"></mdc-radio>
+        <label>closed</label>
+      </div>
     </div>
   </div>
 

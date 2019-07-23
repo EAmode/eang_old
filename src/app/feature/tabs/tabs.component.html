@@ -27,30 +27,27 @@
     Tabpanel is defined within the tabgroup. The <em>name</em> attribute is
     mandatory.
   </p>
+  <div multi-col center class="example" style="--ea-grid-col-min-width: 4em;">
+    <button (click)="toggleTab()">Toggle</button>
+    <button (click)="activate.next({ name: 'Paragraph#1' })">
+      Activate first Tab
+    </button>
+    <button (click)="addTab()">Add Tab</button>
+  </div>
   <div class="ea-card">
-    <div class="ea-card-header">
-      <button (click)="toggleTab()">Toggle</button>
-      <button (click)="activate.next({ name: 'Paragraph#1' })">
-        Activate first Tab
-      </button>
-      <button (click)="addTab()">Add Tab</button>
-    </div>
     <div class="ea-card-content header" style="flex-direction: column;">
-      <ea-tablist
-        [tabpanelGroup]="exampleTabs"
-        [activateSubject]="activate"
-      ></ea-tablist>
+      <ea-tablist [tabpanelGroup]="exampleTabs" [activateSubject]="activate"></ea-tablist>
       <ea-tabpanel-group #exampleTabs>
         <ea-tabpanel id="tab-1" name="Paragraph#1">
-          <p>Just paragraph #1</p>
+          <p >Just paragraph #1</p>
         </ea-tabpanel>
         <ea-tabpanel *ngIf="editing" name="Toggle Tab">
-          <p>Toggle on/off</p>
+          <p >Toggle on/off</p>
         </ea-tabpanel>
         <ea-tabpanel name="List">
           <ul>
-            <li>There is some list</li>
-            <li>With few items</li>
+            <li >There is some list</li>
+            <li >With few items</li>
           </ul>
         </ea-tabpanel>
         <ea-tabpanel *ngFor="let t of addedTabs" [name]="t.name">
