@@ -9,7 +9,7 @@
   color: var(--ea-text-color-light);
   border-color: var(--ea-color-1);
   border-style: solid;
-  border-width: alc(var(--ea-sizer) * .1em);
+  border-width: calc(var(--ea-sizer) * .1em);
   padding: 0 calc(var(--ea-spacer) * 1.5em);
   height: calc(var(--ea-sizer) * 2.19rem);
   cursor: pointer;
