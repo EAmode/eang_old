@@ -4,15 +4,29 @@ import { CommonModule } from '@angular/common'
 import {
   TabListComponent,
   TabpanelComponent,
-  TabpanelGroupComponent
+  TabpanelGroupComponent,
+  TabComponent,
+  TabsComponent
 } from '../components/tabs'
 import { MenuModule } from './menu.module'
 
 export * from '../components/tabs'
 
 @NgModule({
-  declarations: [TabListComponent, TabpanelComponent, TabpanelGroupComponent],
-  exports: [TabListComponent, TabpanelComponent, TabpanelGroupComponent],
+  declarations: [
+    TabListComponent,
+    TabpanelComponent,
+    TabpanelGroupComponent,
+    TabComponent,
+    TabsComponent
+  ],
+  exports: [
+    TabListComponent,
+    TabpanelComponent,
+    TabpanelGroupComponent,
+    TabComponent,
+    TabsComponent
+  ],
   imports: [CommonModule, MenuModule]
 })
 export class TabsModule {}
