@@ -52,14 +52,14 @@
     height: calc(var(--ea-sizer) * 3em);
     background: transparent;
     border-color: rgba(0, 0, 0, 0);
-    border-width: calc(var(--ea-sizer) * .1em);
+    border: .1em;
     border-style: solid;
     color: var(--ea-text-color);
     &:hover:not(:active) {
       background-color: var(--ea-background-color-hover);
       box-shadow: none;
       border-color: rgba(0, 0, 0, 0);
-      border-width: calc(var(--ea-sizer) * .1em);
+      border: .1em;
       border-style: solid;
       color:var(--ea-color-2);
     }
@@ -68,7 +68,7 @@
       box-shadow: unset;
       background-color: var(--ea-background-color-active);
       border-color:rgba(0, 0, 0, 0);
-      border-width:calc(var(--ea-sizer) * .1em);
+      border: .1em;
       border-style: solid;
       color: var(--ea-color-2);
     }

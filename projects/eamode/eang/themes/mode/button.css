@@ -1,6 +1,6 @@
 @define-mixin button-border-w-s {
   border-style: solid;
-  border-width: calc(var(--ea-sizer) * .1em);
+  border: .1em;
 }
 
 @define-mixin button-base {
@@ -9,7 +9,7 @@
   color: var(--ea-text-color-light);
   border-color: var(--ea-color-1);
   border-style: solid;
-  border-width: calc(var(--ea-sizer) * .1em);
+  border: .1em;
   padding: 0 calc(var(--ea-spacer) * 1.5em);
   height: calc(var(--ea-sizer) * 2.19rem);
   cursor: pointer;
@@ -54,7 +54,7 @@
     &[disabled] {
       opacity: 0.65;
       cursor: not-allowed;
-      border: solid calc(var(--ea-sizer) * .1em);
+      border: solid .1em;
     }
 
     &[outline] {
@@ -82,7 +82,7 @@
         &:active {
           background:rgba(0, 0, 0, 0.15);
           border-color: var(--ea-color-1);
-          border-width: calc(var(--ea-sizer) * .1em);
+          border: .1em;
         }
         &[disabled] {
           border: var(--ea-color-3) solid 0.1em;

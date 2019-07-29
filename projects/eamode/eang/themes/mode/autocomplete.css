@@ -76,7 +76,7 @@
     }
     & input {
       background: white;
-      border-width: calc(var(--ea-sizer) * .08em);
+      border: .08em;
       border-style: solid;
       border-image: var(--ea-gradient) 1, 100%;
       border-radius: calc(var(--ea-sizer) * .4em);

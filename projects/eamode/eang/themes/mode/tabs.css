@@ -1,5 +1,5 @@
 @define-mixin tabs-border-w-s {
-  border-width: calc(var(--ea-sizer) * .2em);
+  border: .2em;
   border-style: none none none solid;
 }
 
@@ -61,7 +61,7 @@
       background: transparent;
       border-top: 0.1em solid transparent;
       border-color: transparent;
-      border-width: 0.1em;
+      border: 0.1em;
       border-style: solid none none none;
       width: max-content;
       width: 100%;
@@ -70,13 +70,13 @@
     & [node][active] {
       background: transparent;
       border-color: var(--ea-color-1);
-      border-width: 0.1em;
+      border: 0.1em;
       border-style: none none solid none;
 
       &:hover {
         background: rgba(0, 0, 0, 0.15);
         border-color: var(--ea-color-1-light);
-        border-width: 0.1em;
+        border: 0.1em;
         border-style: none none solid none;
       }
       & [name-area] {
@@ -86,14 +86,14 @@
     & [node]:hover {
       background: transparent;
       border-color:  var(--ea-background-color-hover);
-      border-width: 0.1em;
+      border: 0.1em;
       border-style: solid none none none;
     }
     & [node]:active {
       background: rgba(0, 0, 0, 0.15);
       box-shadow: none;
       border-color: var(--ea-color-1);
-      border-width: 0.1em;
+      border: 0.1em;
       border-style: none none solid none;
     }
     & ea-menu {
@@ -103,7 +103,7 @@
         display: flex;
         border-bottom: solid;
         border-color: var(--ea-color-3-dark);
-        border-width: 0.05em;
+        border: 0.05em;
         border-style: none none solid none;
         background: transparent;
         overflow-x: auto;

@@ -33,7 +33,7 @@
     }
 
     & .ea-card-header {
-      border: calc(var(--ea-sizer) * .1em) var(--ea-color-3);
+      border: .1em var(--ea-color-3);
       border-style: none none solid none;
       background: transparent;
       color: var(--ea-color-2);
