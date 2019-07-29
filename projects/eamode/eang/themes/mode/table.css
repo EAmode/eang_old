@@ -1,4 +1,5 @@
 @define-mixin table-default {
+  font-size: calc(var(--ea-sizer) * .9em);
   border-collapse: collapse;
   border-spacing: 0;
   width: 100%;

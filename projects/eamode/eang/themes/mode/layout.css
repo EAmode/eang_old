@@ -1,7 +1,6 @@
 @define-mixin layout-base {
   --ea-drawer-header-height: 4rem;
   --ea-drawer-footer-height: 4rem;
-  --ea-body-display: var(--ea-body-display, block);
 }
 @define-mixin layout-mode {
   & ea-layout {
@@ -22,20 +21,14 @@
       background: var(--ea-color-3);
 
       & ea-footer {
-        height: var(--ea-footer-height, 4.5rem);
-        background: var(
-          --ea-background,
-          var(--ea-footer-background, var(--ea-color-1))
-        );
+        height: calc(var(--ea-sizer) * 4.5rem);
+        background: var(--ea-color-1);
         width: 100%;
         display: flex;
         align-items: center;
         padding: 1rem;
         box-sizing: border-box;
-        color: var(
-          --ea-color,
-          var(--ea-footer-color, var(--ea-text-color-light))
-        );
+        color: var(--ea-text-color-light);
         & p,
         h1,
         h2,
@@ -46,15 +39,15 @@
         a,
         b,
         small {
-          color: var(--ea-color, inherit);
+          color: inherit;
         }
       }
     }
 
     & ea-body {
-      --ea-main-margin: var(--ea-main-padding, 0.5em 1em);
-      margin: var(--ea-main-margin);
-      display: var(--ea-body-display);
+      --ea-main-margin: calc(var(--ea-spacer) * 0.5em) calc(var(--ea-spacer) * 1em);
+      margin: 0;
+      display: flex;
       min-height: 100%;
     }
 
@@ -99,7 +92,8 @@
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        padding-right: calc(var(--ea-sizer) * 3rem);
+        padding-right: calc(var(--ea-spacer) * 3rem);
+        order: 3;
       }
 
       & p,

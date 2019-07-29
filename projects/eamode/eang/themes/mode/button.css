@@ -9,7 +9,7 @@
   color: var(--ea-text-color-light);
   border-color: var(--ea-color-1);
   border-style: solid;
-  border-width: alc(var(--ea-spacer) * .1em);
+  border-width: alc(var(--ea-sizer) * .1em);
   padding: 0 calc(var(--ea-spacer) * 1.5em);
   height: calc(var(--ea-sizer) * 2.19rem);
   cursor: pointer;
@@ -35,7 +35,7 @@
     user-select: none;
 
     &.ea-button {
-       
+      
     /* this is to set the border-color when the button is :hover and not :active */
     &:hover:not(:active) {
       @mixin button-border-w-s;
@@ -52,10 +52,9 @@
     }
 
     &[disabled] {
-      --ea-button-border: solid calc(var(--ea-sizer) * .1em);
       opacity: 0.65;
       cursor: not-allowed;
-      border: var(--ea-button-border);
+      border: solid calc(var(--ea-sizer) * .1em);
     }
 
     &[outline] {
@@ -65,56 +64,25 @@
       border-color: var(--ea-color-1);
 
       &:hover:not(:active) {
-        background: var(
-          --ea-background,
-          var(--ea-button-background-hover-outline, rgba(0, 0, 0, 0.05))
-        );
+        background: rgba(0, 0, 0, 0.05);
         box-shadow: unset;
       }
 
       &[outline] {
-        background: var(
-          --ea-background,
-          var(--ea-button-background-outline, transparent)
-        );
-        color: var(
-          --ea-color,
-          var(--ea-button-color-outline, var(--ea-text-color))
-        );
-        border-color: var(
-          --ea-button-border-color-outline,
-          var(--ea-button-border-color, var(--ea-color-1))
-        );
-        border-style: var(
-          --ea-button-border-style-outline,
-          var(--ea-button-border-style, solid)
-        );
-        border-width: var(
-          --ea-button-border-width-outline,
-          var(--ea-button-border-width, 0.1em)
-        );
+        @mixin button-border-w-s;
+        background: transparent;
+        color: var(--ea-text-color);
+        border-color: var(--ea-color-1);
   
         &:hover:not(:active) {
-          background: var(
-            --ea-background,
-            var(--ea-button-background-hover-outline, rgba(0, 0, 0, 0.05))
-          );
+          background: rgba(0, 0, 0, 0.05);
           box-shadow: unset;
         }
   
         &:active {
-          background: var(
-            --ea-background,
-            var(--ea-button-background-active-outline, rgba(0, 0, 0, 0.15))
-          );
-          border-color: var(
-            --ea-button-border-color-active-outline,
-            var(--ea-color-1)
-          );
-          border-width: var(
-            --ea-button-border-width,
-            var(--ea-button-border-width-active-outline, 0.1em)
-          );
+          background:rgba(0, 0, 0, 0.15);
+          border-color: var(--ea-color-1);
+          border-width: calc(var(--ea-sizer) * .1em);
         }
         &[disabled] {
           border: var(--ea-color-3) solid 0.1em;
@@ -145,66 +113,32 @@
         background-color: rgba(0, 0, 0, 0.25);
         border-color: rgba(0, 0, 0, 0);
       }
+    }
       &[light] {
         color: var(--ea-text-color-dark);
+      }
 
       &[flat] {
-        background: var(
-          --ea-background,
-          var(--ea-button-background-flat, transparent)
-        );
-        border-color: var(
-          --ea-button-border-color,
-          var(--ea-button-border-color-flat, rgba(0, 0, 0, 0))
-        );
-        border-width: var(
-          --ea-button-border-width,
-          var(--ea-button-border-width-flat, 0.1em)
-        );
-        border-style: var(
-          --ea-button-border-style,
-          var(--ea-button-border-style-flat, solid)
-        );
-        color: var(--ea-color, var(--ea-button-color-flat, var(--ea-text-color)));
+        @mixin button-border-w-s;
+        background: transparent;
+        border-color: rgba(0, 0, 0, 0);
+        color: var(--ea-text-color);
   
         &:hover:not(:active) {
-          background-color: var(
-            --ea-background,
-            var(--ea-button-background-hover-flat, rgba(0, 0, 0, 0.1))
-          );
+          button-border-w-s
+          background-color: rgba(0, 0, 0, 0.1);
           box-shadow: none;
-          border-color: var(
-            --ea-button-border-color,
-            var(--ea-button-border-color-hover-flat, rgba(0, 0, 0, 0))
-          );
-          border-width: var(
-            --ea-button-border-width,
-            var(--ea-button-border-width-hover-flat, 0.1em)
-          );
-          border-style: var(
-            --ea-button-border-style,
-            var(--ea-button-border-style-hover-flat, solid)
-          );
+          border-color: rgba(0, 0, 0, 0);
         }
   
         &:active {
+          button-border-w-s
           box-shadow: unset;
           background-color: rgba(0, 0, 0, 0.25);
-          border-color: var(
-            --ea-button-border-color,
-            var(--ea-button-border-color-active-flat, rgba(0, 0, 0, 0))
-          );
-          border-width: var(
-            --ea-button-border-width,
-            var(--ea-button-border-width-active-flat, 0.1em)
-          );
-          border-style: var(
-            --ea-button-border-style,
-            var(--ea-button-border-style-active-flat, solid)
-          );
+          border-color: rgba(0, 0, 0, 0);
         }
         &[light] {
-          color: var(--ea-button-color, var(--ea-text-color-dark));
+          color: var(--ea-text-color-dark);
   
           &:hover:not(:active) {
             background-color: rgba(255, 255, 255, 0.1);
@@ -226,7 +160,7 @@
         margin-left: 0;
         
       &[icon] {
-        padding: var(--ea-span-icon-padding, 0.2em);
+        padding: calc(var(--ea-spacer) * .2em);
         height: min-content;
       }
   
@@ -242,12 +176,11 @@
         }
       }
 
-      &[rounded] {
-        border-radius: 1.5rem;
-      }
     }
-
-    &[rounded] {
-      border-radius: .5rem;
-    }
+}
+  &[rounded] {
+    border-radius: calc(var(--ea-sizer) * 1.5rem);
+  }
+}
+}
 }

@@ -113,4 +113,41 @@
       }
     }
   }
+
+  & ea-tabs {
+    display: grid;
+    & ul.ea-tabs {
+      border-bottom: calc(var(--ea-sizer) * .01em) solid #ddd;
+      padding-left: 0;
+      margin-bottom: 0;
+      list-style: none;
+      & li {
+        position: relative;
+        display: block;
+        margin: calc(var(--ea-spacer) * .3em);
+        padding: calc(var(--ea-spacer) * .5em);
+        float: left;
+        margin-bottom: calc(var(--ea-spacer) * .01em);
+        & a {
+          cursor: pointer;
+        }
+      }
+      & li.active {
+        border-top-right-radius: calc(var(--ea-sizer) * .3em);
+        border-top-left-radius: calc(var(--ea-sizer) * .3em);
+        border-left: .1em var(--ea-color-1) solid;
+        border-top: .1em var(--ea-color-1) solid;
+        border-right: .1em var(--ea-color-1) solid;
+      }
+      & li:not(.active):hover {
+        border-top-right-radius: calc(var(--ea-sizer) * .3em);
+        border-top-left-radius: calc(var(--ea-sizer) * .3em);
+        border-left: .1em var(--ea-color-hover-not-active) solid;
+        border-top: .1em var(--ea-color-hover-not-active) solid;
+        border-right: .1em var(--ea-color-hover-not-active) solid;
+        transform: scale(1.001);
+        transition-duration: .2s;
+      }
+    }
+  }
 }

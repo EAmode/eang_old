@@ -65,6 +65,10 @@
     user-select: auto;
   }
 
+  label {
+    font-size: calc(var(--ea-sizer) * 1rem);
+  }
+
   & a {
     font-size: calc(var(--ea-sizer) * 1rem);
     text-decoration: none;

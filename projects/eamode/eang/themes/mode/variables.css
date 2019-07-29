@@ -2,7 +2,6 @@
   /* Base Colors */
   --ea-color-1: hsl(223, 40%, 43%);
   --ea-color-1-light: hsl(223, 40%, 53%);
-  --ea-color-striped: hsl(223, 40%, 63%);
 
   /* Alternative Base Colors */
   --ea-color-2: hsl(0, 0%, 20%);
@@ -34,6 +33,7 @@
   /* Hover, Active */
   --ea-background-color-hover: var(--ea-color-1);
   --ea-background-color-active: var(--ea-color-1-light);
+  --ea-color-hover-not-active: hsl(223, 40%, 73%);
 
   /* Fonts & Typography */
   --ea-font-1-family: 'Roboto';

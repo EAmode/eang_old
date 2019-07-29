@@ -25,7 +25,7 @@
       list-style: none;
       padding: 0;
       border-radius: calc(var(--ea-sizer) * .3em);
-      margin: calc(var(--ea-sizer) * .2em) 0 0;
+      margin: calc(var(--ea-spacer) * .2em) 0 0;
       background: var(--ea-color-3);
       background: linear-gradient(to bottom right, white, hsla(0, 0%, 100%, 1));
       border: 1px solid rgba(0, 0, 0, 0.3);
@@ -46,7 +46,7 @@
       height: 30px;
       cursor: pointer;
       padding-left: 1rem;
-      padding-top: calc(var(--ea-sizer) * .25rem);
+      padding-top: calc(var(--ea-spacer) * .25rem);
       display: flex;
       align-items: center;
       min-height: fit-content;
@@ -85,7 +85,7 @@
       font-size: calc(var(--ea-sizer) * 1em);
       height: calc(var(--ea-sizer) * 1.7em);
       width: auto;
-      padding-left: calc(var(--ea-sizer) * 1rem);
+      padding-left: calc(var(--ea-spacer) * 1rem);
       box-shadow: var(--ea-box-shadow);
     }
     & img {

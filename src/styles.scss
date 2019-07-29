@@ -221,7 +221,7 @@
   & .theme-color {
     & p {
       margin: 0;
-      font-size: 1em;
+      font-size: calc(var(--ea-sizer) * 1rem);
       font-weight: 400;
       text-align: center;
     }
@@ -229,14 +229,15 @@
       margin-top: 0.7em;
     }
     & .example-color {
+      margin: auto;
       height: 6em;
       width: 6em;
       border-radius: 50%;
     }
   }
-  & .card-dark-example {
-    --ea-background: var(--ea-color-2);
-    --ea-color: white;
+  & .card-dark {
+    background-color: var(--ea-color-2);
+    color: var(--ea-text-color-light);
     & ea-menu {
       width: 100%;
     }
@@ -248,6 +249,7 @@
       line-height: 1.3em;
     }
   }
+
   & ea-footer {
     @media only screen and (max-width: 625px) {
       --ea-footer-height: auto;
@@ -425,7 +427,7 @@
 //       margin-bottom: 1rem;
 //     }
 //   }
-//   & .card-dark-example {
+//   & .card-dark {
 //     flex-direction: column;
 //     background: rgba(0, 0, 0, 0.03);
 //   }
@@ -442,7 +444,7 @@
 //     width: 5rem;
 //     background-repeat: no-repeat;
 //   }
-//   & .card-dark-example {
+//   & .card-dark {
 //     --ea-card-content-background: var(--ea-color-2);
 //     --ea-menu-color: var(--ea-color-3);
 //     flex-direction: column;

@@ -1,5 +1,6 @@
 @define-mixin markdown-mode {
   & ea-markdown {
+    font-size: calc(var(--ea-sizer) * 1.2em);
     width: auto;
     display: block;
     & p {
@@ -39,7 +40,7 @@
     }
     /* Inline code */
     & :not(pre) > code[class*='language-'] {
-      padding: calc(var(--ea-sizer) * .1em);
+      padding: calc(var(--ea-spacer) * .1em);
       border-radius: calc(var(--ea-sizer) * .3em);
       white-space: normal;
     }
