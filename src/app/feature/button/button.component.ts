@@ -3,7 +3,13 @@ import { Component, OnInit } from '@angular/core'
 @Component({
   selector: 'eangio-button',
   templateUrl: './button.component.html',
-  styles: []
+  styles: [
+    `
+      div {
+        --ea-grid-col-min-width: calc(var(--ea-sizer) * 8em);
+      }
+    `
+  ]
 })
 export class ButtonComponent implements OnInit {
   button = `

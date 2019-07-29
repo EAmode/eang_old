@@ -238,6 +238,9 @@
   & .card-dark {
     background-color: var(--ea-color-2);
     color: var(--ea-text-color-light);
+    & div:first-child {
+      color: var(--ea-text-color-light);
+    }
     & ea-menu {
       width: 100%;
     }
