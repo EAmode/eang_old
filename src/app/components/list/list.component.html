@@ -8,11 +8,11 @@
     The List and Listitem role allow you to make a set of two elements into a
     scrollable list with mouse interactions accounted for.
   </p>
-  <div multi-col v-center class="example">
+  <div multi-col v-center class="example" style="display: inherit;">
     <ea-markdown [doc]="role_list"></ea-markdown>
-    <div>
+    <div role_list_example>
       <label for="secondlist"> Longer List</label>
-      <div role="list" id="secondlist">
+      <div role="list" id="secondlist" style="max-height: 15em">
         <div role="listitem">Angular</div>
         <div role="listitem">Express</div>
         <div role="listitem">Polymer</div>
@@ -26,5 +26,5 @@
     </div>
   </div>
 
-  <ea-markdown [doc]="role_banner_listitem"></ea-markdown>
+<!--   <ea-markdown [doc]="role_banner_listitem"></ea-markdown> -->
 </div>

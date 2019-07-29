@@ -8,22 +8,25 @@ import { Component, OnInit } from '@angular/core'
 export class GetStartedComponent implements OnInit {
   ngOnInit() {}
   ngnew = `
-  ~~~html
+  ~~~ ts
   ng new [project name]
   ~~~
   `
+
   npminstall = `
-  ~~~html
+  ~~~ ts
   npm install -S @eamode/eang
   ~~~
     `
 
   import = `
+  *app.module.ts*
   ~~~ts
   import { PanelModule, AutoCompleteModule, LayoutModule, ... } from '@eamode/eang';
   ~~~
       `
   ngmodel = `
+  *app.module.ts*
   ~~~ts
   @NgModule({
     ...
@@ -33,11 +36,13 @@ export class GetStartedComponent implements OnInit {
   ~~~
     `
   style = `
-  ~~~ts
+  *style.scss*
+  ~~~css
   @import '~@eamode/eang/css/all.css';
   ~~~
     `
   body = `
+  *index.html*
   ~~~html
   <!doctype html>
   <html lang="en">
@@ -56,14 +61,14 @@ export class GetStartedComponent implements OnInit {
   ~~~
     `
   mode = `
-  ~~~ts
+  ~~~ css
   .mode {
-    --ea-color-background-2: navy;
+    background: navy;
   }
   ~~~
     `
   eadrawertag = `
-   ~~~ts
+   ~~~ css
    ea-drawer {
     --ea-drawer-width: 12em;
   }
@@ -71,6 +76,7 @@ export class GetStartedComponent implements OnInit {
     `
 
   layout = `
+  *component.html*
   ~~~html
   <ea-layout>
   <ea-toolbar>
