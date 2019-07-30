@@ -177,4 +177,12 @@ export class AppComponent implements OnInit {
       }
     })
   }
+
+  showDrawer() {
+    if (this.layout.drawerState$.value === 'closed') {
+      this.layout.drawerState$.next('maximized')
+    } else {
+      this.layout.drawerState$.next('closed')
+    }
+  }
 }

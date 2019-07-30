@@ -1,9 +1,10 @@
 @define-mixin markdown-mode {
   & ea-markdown {
+    font-size: calc(var(--ea-sizer) * 1.2em);
     width: auto;
     display: block;
     & p {
-      font-size: 1.2em;
+      font-size: calc(var(--ea-sizer) * 1.2em);
     }
     & code[class*='language-'],
     & pre[class*='language-'] {
@@ -28,25 +29,19 @@
       padding: 1em;
       margin: 0;
       overflow: auto;
-      background: var(
-        --ea-background,
-        var(--ea-markdown-background, var(--ea-color-2))
-      );
+      background: var(--ea-color-2);
     }
     & pre {
       padding: 1em;
       margin: 0.5em 0;
       overflow: auto;
-      background: var(
-        --ea-background,
-        var(--ea-markdown-background, var(--ea-color-2))
-      );
-      border-radius: 0.15em;
+      background: var(--ea-color-2);
+      border-radius: calc(var(--ea-sizer) * 0.15em);
     }
     /* Inline code */
     & :not(pre) > code[class*='language-'] {
-      padding: 0.1em;
-      border-radius: 0.3em;
+      padding: calc(var(--ea-spacer) * 0.1em);
+      border-radius: calc(var(--ea-sizer) * 0.3em);
       white-space: normal;
     }
     & .token.comment,
@@ -116,6 +111,6 @@
     }
     & table {
       @mixin table-default;
-     }
-   }
+    }
+  }
 }

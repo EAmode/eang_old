@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core'
-import { Subject } from 'rxjs'
+import { Subject, timer } from 'rxjs'
 import { EangElement } from '@eamode/eang'
 
 @Component({
@@ -11,11 +11,16 @@ export class TabsComponent implements OnInit {
   addedTabs = []
   editing = true
   activate = new Subject<EangElement>()
+  public doesFirstTabActive = true
   constructor() {}
 
   ngOnInit() {
-    this.activate.subscribe(x => {
-      console.log(x)
+    this.activate.subscribe((el: EangElement) => {
+      if (el.name === 'Paragraph#1' && el.isActive) {
+        this.doesFirstTabActive = true
+      } else {
+        this.doesFirstTabActive = false
+      }
     })
   }
 
@@ -31,22 +36,49 @@ export class TabsComponent implements OnInit {
   }
 
   tabs_example = `
+  *tabs.html*
   ~~~html
-  <ea-tabs>
-    <ea-tab name="Paragraph">
-      <p>Just paragraph</p>
-    </ea-tab>
-    <ea-tab name="List">
+  <ea-tablist [tabpanelGroup]="exampleTabs" [activateSubject]="activate"></ea-tablist>
+  <ea-tabpanel-group #exampleTabs>
+    <ea-tabpanel id="tab-1" name="Paragraph#1">
+      <p>Just paragraph #1</p>
+    </ea-tabpanel>
+    <ea-tabpanel *ngIf="editing" name="Toggle Tab">
+      <p>Toggle on/off</p>
+    </ea-tabpanel>
+    <ea-tabpanel name="List">
       <ul>
         <li>There is some list</li>
         <li>With few items</li>
-        ...
       </ul>
-    </ea-tab>
-    <ea-tab name="Image">
-      <img ...>
-    </ea-tab>
-  </ea-tabs>
+    </ea-tabpanel>
+    <ea-tabpanel *ngFor="let t of addedTabs" [name]="t.name">
+      <p>This is an added Tab!</p>
+    </ea-tabpanel>
+  </ea-tabpanel-group>
+  ~~~
+  `
+
+  tabs_simple_example = `
+  *tabs.html*
+  ~~~html
+  <ea-tabs>
+  <ea-tab [tabTitle]="'Tab 1'" active>
+    Tab 1 content
+  </ea-tab>
+  <ea-tab tabTitle="Tab 2">
+    Tab 2 content
+  </ea-tab>
+  <ea-tab tabTitle="Tab 3">
+    Tab 3 content
+  </ea-tab>
+  <ea-tab tabTitle="Tab 4">
+    Tab 4 content
+  </ea-tab>
+  <ea-tab tabTitle="Tab 5">
+    Tab 5 content
+  </ea-tab>
+</ea-tabs>
   ~~~
   `
 

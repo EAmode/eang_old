@@ -50,7 +50,7 @@ export class ThemingComponent implements OnInit {
   )
 
   variables = `
-  *style.pcss*
+  *style.scss*
   ~~~ css
   /* overriding one common property accross all
      themes */
@@ -61,37 +61,95 @@ export class ThemingComponent implements OnInit {
   /* overriding some common properties for
      the mode theme */
   .mode {
-    --ea-color-2: #1f242c;
-    --ea-color-3: #fff;
-    --ea-color-accent-1: #298c1d;
-    --ea-color-accent-2: #3f6eb5;
-    --ea-color-background-1: #ffffff;
-    --ea-color-background-2: #3e3e3e;
+    --ea-color-1: hsl(223, 40%, 43%);
   }
 
   /* changing the properties of a left aligned panel */
   ea-panel[orientation='left'] {
-    --ea-panel-color: var(--ea-color-3);
-    --ea-panel-max-width: 6rem;
+    color: var(--ea-color-3);
+    max-width: 6rem;
   }
   ~~~
   `
 
   scope = `
+  *component.html*
   ~~~ html
   <div class="my-secial-green-div">
     <style>
       <!-- all ea-panels have a green background within
            this div -->
       ea-panel {
-        --ea-panel-background: green;
+        background: green;
       }
     </style>
     ...
   </div>
   <!-- component properties can also be changed
        individually -->
-  <ea-panel style="--ea-panel-background: pink;"></ea-panel>
+  <ea-panel style="background: pink;"></ea-panel>
+  ~~~
+  `
+
+  allVariablesForOverride = `
+  *style.scss*
+  ~~~ css
+  :root {
+    /* Variable for scaling height, width, font-size etc. */
+    --ea-sizer: 1;
+    /* Variable for scaling margin, padding etc. */
+    --ea-spacer: 1;
+  }
+
+  .mode {
+    /* Base Colors */
+    --ea-color-1: hsl(223, 40%, 43%);
+    --ea-color-1-light: hsl(223, 40%, 53%);
+
+    /* Alternative Base Colors */
+    --ea-color-2: hsl(0, 0%, 20%);
+    --ea-color-2-light: hsl(0, 0%, 30%);
+
+    --ea-color-3: hsl(0, 0%, 96%);
+    --ea-color-3-dark: hsl(0, 0%, 86%);
+
+    /* Accent Colors */
+    --ea-color-accent-1: #6a9c45;
+    --ea-color-accent-2: #0078d4;
+
+    /* Semantic Colors */
+    --ea-color-success: #5bb95b;
+    --ea-color-info: #5ac1de;
+    --ea-color-warning: #f1ae4e;
+    --ea-color-danger: #d9534f;
+    --ea-color-error: #d9534f;
+
+    --ea-color-grey: hsl(0, 0%, 75%);
+    --ea-color-grey-light: hsl(0, 0%, 85%);
+    --ea-color-striped: rgba(139, 184, 232, 1);
+
+    /* Text Colors */
+    --ea-text-color: var(--ea-text-color-dark);
+    --ea-text-color-dark: hsl(0, 0%, 20%);
+    --ea-text-color-light: hsl(0, 0%, 96%);
+
+    /* Hover, Active */
+    --ea-background-color-hover: var(--ea-color-1);
+    --ea-background-color-active: var(--ea-color-1-light);
+
+    /* Fonts & Typography */
+    --ea-font-1-family: 'Roboto';
+    --ea-font-1-style: normal;
+    --ea-font-1-weight: 400;
+    --ea-scalar-factor: 24;
+
+    font-family: var(--ea-font-1-family);
+    font-style: var(--ea-font-1-style);
+    font-weight: var(--ea-font-1-weight);
+
+    /* Utilities */
+    --ea-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.09);
+   }
   ~~~
   `
 

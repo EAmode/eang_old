@@ -17,7 +17,6 @@
 @import 'mode/input.css';
 @import 'mode/tooltip.css';
 
-
 .mode {
   /* @mixin input-mode; */
   @mixin autocomplete-mode;

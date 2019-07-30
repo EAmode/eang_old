@@ -1,64 +1,50 @@
 <ea-layout>
   <ea-toolbar flex shadow>
+    <button class="ea-button" flat icon (click)="showDrawer()">
+      <div *ngIf="(layout.drawerState$ | async)  === 'closed'; else menuOpened">
+        <span hamburger-menu icon negative style="--ea-icon-margin: 0; height: 2em; width: 2em;">
+        </span>
+      </div>
+      <ng-template #menuOpened>
+        <span chevrons-left icon negative style="--ea-icon-margin: 0; height: 2em; width: 2em;">
+        </span>
+      </ng-template>
+    </button>
     <header>
       <a (click)="closeDrawer()" routerLink="/"> <span class="logo"></span> </a>
     </header>
     <aside>
-      <ea-themepicker
-        select="eangio-root"
-        [themes]="['mode', 'material']"
-      ></ea-themepicker>
-      <a
-        flat
-        icon
-        alt="GitHub"
-        href="https://github.com/eamode/eang"
-        rel="noopener noreferrer"
-        target="_blank"
-        role="button"
-      >
-        <img
-          height="26"
-          src="/assets/images/github-circle-white-transparent.svg"
-        />
+      <ea-themepicker select="eangio-root" [themes]="['mode', 'material']"></ea-themepicker>
+      <a flat icon alt="GitHub" href="https://github.com/eamode/eang" rel="noopener noreferrer" target="_blank"
+        role="button">
+        <img height="26" src="/assets/images/github-circle-white-transparent.svg" />
       </a>
     </aside>
   </ea-toolbar>
 
   <ea-drawer>
     <section m-1-0-0-0>
-      <ea-menu
-        [node]="menu"
-        [nameAreaTemplate]="nameArea"
-        [activateSubject]="activate"
-      >
+      <ea-menu [node]="menu" [nameAreaTemplate]="nameArea" [activateSubject]="activate">
       </ea-menu>
       <ng-template #nameArea let-node="node">
-        <span
-          *ngIf="node.icon"
-          icon
-          class="{{ node.icon }} {{ node.iconStyle }}"
-        ></span>
+        <span *ngIf="node.icon" icon class="{{ node.icon }} {{ node.iconStyle }}"></span>
         <div [style.padding-left]="!node.icon ? '5px' : null">
           {{ node.name }}
         </div>
       </ng-template>
     </section>
     <footer>
-      <img
-        style="padding-right: 1rem;"
+      <img style="padding-right: 1rem;"
         src="https://camo.githubusercontent.com/369cc2fa7d48781a040878c8b6e9bf8ff7ba4a30/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f762f4065616d6f64652f65616e672e737667"
-        alt=""
-      />
+        alt="" />
       <img
         src="https://camo.githubusercontent.com/e66b89ea6f74ba6585d8ed3705e81bfa5d31c405/68747470733a2f2f696d672e736869656c64732e696f2f7472617669732f45416d6f64652f65616e672e737667"
-        alt=""
-      />
+        alt="" />
     </footer>
   </ea-drawer>
 
   <ea-main #scrollContainer>
-    <ea-body>
+    <ea-body style="--ea-sizer: 1; --ea-spacer: 1;">
       <router-outlet
         (activate)="onActivate($event, scrollContainer)"
       ></router-outlet>
@@ -66,27 +52,18 @@
     <ea-footer>
       <span>
         <p>Powered by</p>
-        <a
-          style=" height: 3rem;
+        <a style=" height: 3rem;
           display: flex;
-          align-items: center;"
-          href="https://eamode.com"
-        >
-          <img
-            src="../assets/images/eamode-logo.svg"
-            style="height: 4rem; width: 5rem;"
-            alt=""
-          />
+          align-items: center;" href="https://eamode.com">
+          <img src="../assets/images/eamode-logo.svg" style="height: 4rem; width: 5rem;" alt="" />
         </a>
       </span>
 
-      <span
-        ><p>Want to contribute?</p>
-        <a href="https://github.com/eamode/eang/issues" class="footer-text"
-          >Open an issue</a
-        >
-        <p>in Github</p></span
-      >
+      <span>
+        <p>Want to contribute?</p>
+        <a href="https://github.com/eamode/eang/issues" class="footer-text">Open an issue</a>
+        <p>in Github</p>
+      </span>
     </ea-footer>
   </ea-main>
 </ea-layout>

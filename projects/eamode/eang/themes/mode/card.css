@@ -1,29 +1,16 @@
-@define-mixin card-base {
-  font-size: var(--ea-font-size, 1rem);
-  box-shadow: var(--ea-card-shadow, var(--ea-box-shadow));
-  background: var(--ea-background, var(--ea-card-background, #fff));
-  border: var(--ea-card-border, 1px solid var(--ea-color-3));
-  color: var(--ea-color, var(--ea-card-color, var(--ea-text-color)));
-  width: var(--ea-card-width, 100%);
-  margin: var(--ea-card-margin, 0);
-  display: flex;
-  flex-direction: column;
-  height: fit-content;
-}
-
 @define-mixin card-mode {
   & .ea-card {
-    @mixin card-base;
-    --ea-card-border-radius: 0.5em;
-    border-radius: var(--ea-card-border-radius);
-    & p,
-    h1,
-    h2,
-    h3,
-    h4,
-    a {
-      color: var(--ea-card-color);
-    }
+    font-size: calc(var(--ea-sizer) * 1rem);
+    box-shadow: var(--ea-box-shadow);
+    background: #fff;
+    border: 1px solid var(--ea-color-3);
+    color: var(--ea-text-color);
+    width: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    border-radius: calc(var(--ea-sizer) * 0.5em);
 
     &[grid] {
       --ea-card-grid-template: var(
@@ -46,17 +33,11 @@
     }
 
     & .ea-card-header {
-      border: var(
-        --ea-card-header-border,
-        0.1em var(--ea-card-header-border-color, var(--ea-color-3))
-      );
+      border: 0.1em var(--ea-color-3);
       border-style: none none solid none;
-      background: var(
-        --ea-background,
-        var(--ea-card-header-background, transparent)
-      );
-      color: var(--ea-color, var(--ea-card-header-color, var(--ea-card-color)));
-      padding: 0 1em;
+      background: transparent;
+      color: var(--ea-color-2);
+      padding: 0 calc(var(--ea-spacer) * 1em);
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -90,15 +71,9 @@
     & .ea-card-content {
       display: flex;
       flex-wrap: wrap;
-      padding: 1em;
-      background: var(
-        --ea-background,
-        var(--ea-card-content-background, transparent)
-      );
-      color: var(
-        --ea-color,
-        var(--ea-card-content-color, var(--ea-card-color))
-      );
+      padding: calc(var(--ea-spacer) * 1em);
+      background: transparent;
+      color: var(--ea-text-color);
 
       &[flex-center] {
         align-items: center;
@@ -116,17 +91,14 @@
       }
       &[grid] {
         display: grid;
-        grid-template-columns: var(--ea-card-content-grid, repeat(1, 1fr));
+        grid-template-columns: repeat(1, 1fr);
       }
     }
     & .ea-card-footer {
-      background: var(
-        --ea-background,
-        var(--ea-card-footer-background, transparent)
-      );
-      border: var(--ea-card-footer-border, 1px var(--ea-color-3));
+      background: transparent;
+      border: 1px var(--ea-color-3);
       border-style: solid none none none;
-      padding: 1em 1em;
+      padding: calc(var(--ea-spacer) * 1em);
       display: flex;
       justify-content: space-between;
       align-items: center;

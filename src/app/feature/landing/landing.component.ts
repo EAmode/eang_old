@@ -5,7 +5,7 @@ import { map, share } from 'rxjs/operators'
 @Component({
   selector: 'eangio-landing',
   templateUrl: './landing.component.html',
-  styles: []
+  styleUrls: ['./landing.component.scss']
 })
 export class LandingComponent implements OnInit {
   panelState = new BehaviorSubject<string>('maximized')

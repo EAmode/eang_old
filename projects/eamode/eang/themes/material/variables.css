@@ -25,19 +25,18 @@
   --ea-padding: 4rem;
   --ea-toolbar-height: 4rem;
 
- /* Fonts & Typography */
- --ea-font-1-family: 'Roboto';
- --ea-font-1-style: normal;
- --ea-font-1-weight: 400;
- --ea-font-size: 16px;
+  /* Fonts & Typography */
+  --ea-font-1-family: 'Roboto';
+  --ea-font-1-style: normal;
+  --ea-font-1-weight: 400;
 
   --ea-background-color: 66, 91, 154;
 
-  --ea-background-color-1:rgba(var(--ea-background-color), 1);
-  --ea-background-color-light:rgba(var(--ea-background-color), 0.8);
+  --ea-background-color-1: rgba(var(--ea-background-color), 1);
+  --ea-background-color-light: rgba(var(--ea-background-color), 0.8);
 
-  --ea-color-1: hsl(210, 75%,21%);
-  --ea-color-1-light: hsl(210, 75%,31%);
+  --ea-color-1: hsl(210, 75%, 21%);
+  --ea-color-1-light: hsl(210, 75%, 31%);
 
   --ea-color-2: hsl(0, 0%, 98%);
   --ea-color-light: hsl(0, 0%, 100%);
@@ -50,8 +49,7 @@
   /* --ea-background-hover: red; */
   --ea-background-active: var(--ea-color-1-light);
   /* --ea-background-active: purple; */
-  --ea-background-active-shadow: inset 1.5px 2px 5px rgba(0,0,0,0.2);
-  --ea-menu-color-active: #3F51B5;
-  --ea-menu-color-hover: #3F51B5;
-
+  --ea-background-active-shadow: inset 1.5px 2px 5px rgba(0, 0, 0, 0.2);
+  --ea-menu-color-active: #3f51b5;
+  --ea-menu-color-hover: #3f51b5;
 }

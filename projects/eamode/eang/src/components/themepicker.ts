@@ -10,7 +10,13 @@ import {
 @Component({
   selector: 'ea-themepicker',
   template: `
-    <button icon flat (click)="toggleThemes()" (focus)="focus.emit($event)">
+    <button
+      class="ea-button"
+      icon
+      flat
+      (click)="toggleThemes()"
+      (focus)="focus.emit($event)"
+    >
       <span icon pallete style="height:1.5rem; width: 1.5rem;"></span>
     </button>
     <div *ngIf="showThemes" class="ea-themepicker-dropdown">
@@ -24,7 +30,20 @@ import {
         </li>
       </ul>
     </div>
-  `
+  `,
+  styles: [
+    `
+      li:first-child {
+        border-top-left-radius: calc(var(--ea-sizer) * 0.15em);
+        border-top-right-radius: calc(var(--ea-sizer) * 0.15em);
+      }
+
+      li:last-child {
+        border-bottom-left-radius: calc(var(--ea-sizer) * 0.15em);
+        border-bottom-right-radius: calc(var(--ea-sizer) * 0.15em);
+      }
+    `
+  ]
 })
 export class ThemePickerComponent implements OnInit {
   @Input() themes

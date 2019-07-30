@@ -16,7 +16,7 @@ import { EangElement } from '../core'
       node
       [attr.has-children]="node.hasChildren"
       [attr.hidden]="node.isHidden ? '' : null"
-      [attr.active]="node.isActive ? '' : null"
+      [attr.active]="node.isActive ? 'true' : null"
       [attr.toggle]="node.toggleRight ? '' : null"
       [attr.dropdown]="node.dropdown"
     >
@@ -82,6 +82,7 @@ import { EangElement } from '../core'
         </ng-container>
 
         <button
+          class="ea-button"
           *ngIf="node.closeable"
           icon
           flat

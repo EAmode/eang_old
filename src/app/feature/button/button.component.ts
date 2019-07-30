@@ -3,40 +3,56 @@ import { Component, OnInit } from '@angular/core'
 @Component({
   selector: 'eangio-button',
   templateUrl: './button.component.html',
-  styles: []
+  styles: [
+    `
+      div {
+        --ea-grid-col-min-width: calc(var(--ea-sizer) * 8em);
+      }
+    `
+  ]
 })
 export class ButtonComponent implements OnInit {
   button = `
   ~~~html
-  <button>Button</button>
-  <button rounded>Rounded</button>
-  <button outline>Outline</button>
-  <button outline rounded>Outline Rounded</button>
-  <button flat>Flat</button>
-  <button flat rounded>Flat Rounded</button>
+  <button class="ea-button">Button</button>
+  <button class="ea-button" rounded>Rounded</button>
+  <button class="ea-button" outline>Outline</button>
+  <button class="ea-button" outline rounded>Outline Rounded</button>
+  <button class="ea-button" flat>Flat</button>
+  <button class="ea-button" flat rounded>Flat Rounded</button>
+  ~~~
+  `
+
+  tags = `
+  ~~~html
+  <div class="ea-button" role="ea-button">Div</div>
+  <span class="ea-button" role="ea-button" rounded>Rounded</span>
+  <a class="ea-button" role="ea-button" outline>Outline</a>
+  <label class="ea-button" role="ea-button" flat rounded>Flat Rounded</label>
   ~~~
   `
 
   button_sizing = `
   ~~~html
-  <button sm rounded><span icon filter></span>[sm]</button>
-  <button md outline rounded>[md]</button>
-  <button lg rounded>[lg]</button>
-  <button xl flat>[xl]</button>
-  <button xxl>[xxl]</button>
+  <button class="ea-button" sm rounded><span icon filter></span>[sm]</button>
+  <button class="ea-button" md outline rounded>[md]</button>
+  <button class="ea-button" lg rounded>[lg]</button>
+  <button class="ea-button" xl flat>[xl]</button>
+  <button class="ea-button" xxl>[xxl]</button>
   ~~~
   `
 
   button_icon = `
   ~~~html
-  <button icon><span icon sign-in></span></button>
-  <button rounded><span icon sign-in></span></button>
-  <button icon outline><span icon trash></span></button>
-  <button  outline rounded>Button<span icon filter></span></button>
-  <button icon outline rounded><span icon filter></span></button>
-  <button outline rounded>Delete<span icon filter></span></button>
-  <button icon flat><span icon trash></span></button>
-  <button icon flat rounded><span icon filter></span></button>
+  <button class="ea-button"><span icon negative sign-in></span></button>
+  <button class="ea-button" rounded><span icon negative filter></span></button>
+  <button class="ea-button" rounded>Button <span icon negative filter></span></button>
+  <button class="ea-button" icon outline><span icon trash-2></span></button>
+  <button class="ea-button" icon outline rounded><span icon trash-2></span></button>
+  <button class="ea-button" outline rounded><span icon trash-2></span> Delete</button>
+  <button class="ea-button" icon flat><span icon filter></span></button>
+  <button class="ea-button" flat rounded><span icon filter></span></button>
+  <button class="ea-button" flat rounded>Filter <span icon filter></span></button>
   ~~~
   `
 
@@ -52,7 +68,7 @@ export class ButtonComponent implements OnInit {
   icons = `
   *app-component.html*
   ~~~html
-  <button style="--ea-button-margin: 1em; --ea-button-padding: 1em 1em;" large>
+  <button class="ea-button" style="--ea-button-margin: 1em; --ea-button-padding: 1em 1em;" large>
     <span role="icon" style="--ea-button-icon: var(--ea-icon-sign-in); --ea-icon-margin: 0 0.5em 0 0;" icon></span>
     {{Button}}
   </button>

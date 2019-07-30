@@ -148,3 +148,53 @@ export class TabListComponent implements AfterContentInit, OnDestroy {
     }
   }
 }
+
+@Component({
+  selector: 'ea-tab',
+  styles: [],
+  template: `
+    <div [hidden]="!active" style="padding: calc(var(--ea-sizer) * 1em);">
+      <ng-content></ng-content>
+    </div>
+  `
+})
+export class TabComponent {
+  // tslint:disable-next-line: no-input-rename
+  @Input('tabTitle') title: string
+  @Input() active = false
+}
+
+@Component({
+  selector: 'ea-tabs',
+  template: `
+    <ul class="ea-tabs">
+      <li
+        *ngFor="let tab of tabs"
+        (click)="selectTab(tab)"
+        [class.active]="tab.active"
+        style="display: inline-flex;"
+      >
+        <a>{{ tab.title }}</a>
+      </li>
+    </ul>
+    <ng-content></ng-content>
+  `,
+  styles: []
+})
+export class TabsComponent implements AfterContentInit {
+  @ContentChildren(TabComponent) tabs: QueryList<TabComponent>
+
+  ngAfterContentInit() {
+    const activeTabs = this.tabs.filter(tab => tab.active)
+
+    if (activeTabs.length === 0) {
+      this.selectTab(this.tabs.first)
+    }
+  }
+
+  selectTab(eaTab) {
+    this.tabs.toArray().forEach(tab => (tab.active = false))
+
+    eaTab.active = true
+  }
+}
