@@ -45,10 +45,8 @@
   --ea-scale-factor: 0.5;
   --ea-toolbar-height: 4rem;
 
-
   font-family: var(--ea-font-1-family);
   font-style: var(--ea-font-1-style);
   font-weight: var(--ea-font-1-weight);
   /* font-size: var(--ea-font-1-size); */
-
 }

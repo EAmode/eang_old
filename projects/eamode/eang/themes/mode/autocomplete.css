@@ -18,21 +18,23 @@
   & ea-autocomplete {
     @mixin autocomplete-base;
     display: block;
-    position:relative;
+    position: relative;
     & ul {
       z-index: 1;
       box-sizing: border-box;
       list-style: none;
       padding: 0;
-      border-radius: calc(var(--ea-sizer) * .3em);
-      margin: calc(var(--ea-spacer) * .2em) 0 0;
+      border-radius: calc(var(--ea-sizer) * 0.3em);
+      margin: calc(var(--ea-spacer) * 0.2em) 0 0;
       background: var(--ea-color-3);
       background: linear-gradient(to bottom right, white, hsla(0, 0%, 100%, 1));
       border: 1px solid rgba(0, 0, 0, 0.3);
-      box-shadow: calc(var(--ea-sizer) * .05em) calc(var(--ea-sizer) * .2em) calc(var(--ea-sizer) * .6em) rgba(0, 0, 0, 0.2);
+      box-shadow: calc(var(--ea-sizer) * 0.05em) calc(var(--ea-sizer) * 0.2em)
+        calc(var(--ea-sizer) * 0.6em) rgba(0, 0, 0, 0.2);
       text-shadow: none;
       transition: 0.3s cubic-bezier(0.4, 0.2, 0.5, 1.4);
-      transform-origin: calc(var(--ea-sizer) * 1.43em) calc(var(--ea-sizer) * -.43em);
+      transform-origin: calc(var(--ea-sizer) * 1.43em)
+        calc(var(--ea-sizer) * -0.43em);
       position: absolute;
       top: var(--ea-autocomplete-ul-top);
       bottom: var(--ea-autocomplete-ul-bottom);
@@ -42,15 +44,15 @@
     }
     & li {
       color: var(--ea-text-color);
-      font-size: calc(var(--ea-sizer) * .9rem);
+      font-size: calc(var(--ea-sizer) * 0.9rem);
       height: 30px;
       cursor: pointer;
       padding-left: 1rem;
-      padding-top: calc(var(--ea-spacer) * .25rem);
+      padding-top: calc(var(--ea-spacer) * 0.25rem);
       display: flex;
       align-items: center;
       min-height: fit-content;
-/*       & span.matched > mark {
+      /*       & span.matched > mark {
         background-color: red;
       } */
     }
@@ -76,10 +78,10 @@
     }
     & input {
       background: white;
-      border: .08em;
+      border: 0.08em;
       border-style: solid;
       border-image: var(--ea-gradient) 1, 100%;
-      border-radius: calc(var(--ea-sizer) * .4em);
+      border-radius: calc(var(--ea-sizer) * 0.4em);
       color: black;
       outline: none;
       font-size: calc(var(--ea-sizer) * 1em);

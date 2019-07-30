@@ -1,20 +1,20 @@
 @import '../dist/eamode/eang/css/all.css';
 // @import '~@angular-mdc/theme/material';
 @font-face {
-  font-family: "Graphik-Bold";
-  src: url("./assets/fonts/Graphik-Bold.ttf");
+  font-family: 'Graphik-Bold';
+  src: url('./assets/fonts/Graphik-Bold.ttf');
 }
 @font-face {
-  font-family: "Graphik-Regular";
-  src: url("./assets/fonts/Graphik-Regular.ttf");
+  font-family: 'Graphik-Regular';
+  src: url('./assets/fonts/Graphik-Regular.ttf');
 }
 @font-face {
-  font-family: "AdelleSans-Regular";
-  src: url("./assets/fonts/AdelleSans-Regular.ttf");
+  font-family: 'AdelleSans-Regular';
+  src: url('./assets/fonts/AdelleSans-Regular.ttf');
 }
 @font-face {
-  font-family: "AdelleSans-Bold";
-  src: url("./assets/fonts/AdelleSans-Bold.ttf");
+  font-family: 'AdelleSans-Bold';
+  src: url('./assets/fonts/AdelleSans-Bold.ttf');
 }
 
 :root {
@@ -27,7 +27,6 @@
 .fluentdark,
 .mode,
 .material {
-
   & [activity] & .ea-activity {
     background: url('./assets/images/activity.svg');
   }
@@ -80,14 +79,14 @@
       & a {
         margin-right: 0.5em;
         @media only screen and (max-width: 625px) {
-          margin-bottom: .5em;
+          margin-bottom: 0.5em;
         }
-
       }
     }
   }
- & eangio-landing {
-   &  h1, h2 {
+  & eangio-landing {
+    & h1,
+    h2 {
       font-family: 'Adelle sans';
     }
   }
@@ -299,7 +298,7 @@
       grid-gap: 0;
       --ea-grid-col-min-width: 25em;
       @media only screen and (max-width: 625px) {
-      --ea-grid-col-min-width: 15em;
+        --ea-grid-col-min-width: 15em;
       }
     }
   }
@@ -307,11 +306,12 @@
     & h1 {
       @media only screen and (max-width: 625px) {
         text-align: center;
-        padding: 0 .5em;
+        padding: 0 0.5em;
       }
     }
   }
-  & #why-eang, #features-col,  {
+  & #why-eang,
+  #features-col {
     @media only screen and (max-width: 625px) {
       padding: 2em;
     }

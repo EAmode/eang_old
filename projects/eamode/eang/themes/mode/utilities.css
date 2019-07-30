@@ -52,23 +52,23 @@
     height: calc(var(--ea-sizer) * 3em);
     background: transparent;
     border-color: rgba(0, 0, 0, 0);
-    border: .1em;
+    border: 0.1em;
     border-style: solid;
     color: var(--ea-text-color);
     &:hover:not(:active) {
       background-color: var(--ea-background-color-hover);
       box-shadow: none;
       border-color: rgba(0, 0, 0, 0);
-      border: .1em;
+      border: 0.1em;
       border-style: solid;
-      color:var(--ea-color-2);
+      color: var(--ea-color-2);
     }
 
     &:active {
       box-shadow: unset;
       background-color: var(--ea-background-color-active);
-      border-color:rgba(0, 0, 0, 0);
-      border: .1em;
+      border-color: rgba(0, 0, 0, 0);
+      border: 0.1em;
       border-style: solid;
       color: var(--ea-color-2);
     }
@@ -79,7 +79,7 @@
     box-shadow: var(--ea-box-shadow);
     display: flex;
     padding: calc(var(--ea-spacer) * 2.1em) calc(var(--ea-spacer) * 4.2vw);
-    margin-bottom: calc(var(--ea-spacer) * 1.5em) ;
+    margin-bottom: calc(var(--ea-spacer) * 1.5em);
     align-items: center;
     justify-content: space-between;
     font-weight: calc(var(--ea-sizer) * 800);

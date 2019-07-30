@@ -1,5 +1,5 @@
 @define-mixin tabs-border-w-s {
-  border: .2em;
+  border: 0.2em;
   border-style: none none none solid;
 }
 
@@ -16,7 +16,6 @@
     display: flex;
     overflow: auto;
     & [name-area] {
-
       padding-left: calc(var(--ea-spacer) * 1em) !important;
       padding-right: calc(var(--ea-spacer) * 1em);
     }
@@ -85,7 +84,7 @@
     }
     & [node]:hover {
       background: transparent;
-      border-color:  var(--ea-background-color-hover);
+      border-color: var(--ea-background-color-hover);
       border: 0.1em;
       border-style: solid none none none;
     }
@@ -108,7 +107,7 @@
         background: transparent;
         overflow-x: auto;
       }
-      & div[node][has-children]> div[name-area] {
+      & div[node][has-children] > div[name-area] {
         color: var(--ea-color-2);
       }
     }
@@ -117,36 +116,36 @@
   & ea-tabs {
     display: grid;
     & ul.ea-tabs {
-      border-bottom: calc(var(--ea-sizer) * .01em) solid #ddd;
+      border-bottom: calc(var(--ea-sizer) * 0.01em) solid #ddd;
       padding-left: 0;
       margin-bottom: 0;
       list-style: none;
       & li {
         position: relative;
         display: block;
-        margin: calc(var(--ea-spacer) * .3em);
-        padding: calc(var(--ea-spacer) * .5em);
+        margin: calc(var(--ea-spacer) * 0.3em);
+        padding: calc(var(--ea-spacer) * 0.5em);
         float: left;
-        margin-bottom: calc(var(--ea-spacer) * .01em);
+        margin-bottom: calc(var(--ea-spacer) * 0.01em);
         & a {
           cursor: pointer;
         }
       }
       & li.active {
-        border-top-right-radius: calc(var(--ea-sizer) * .3em);
-        border-top-left-radius: calc(var(--ea-sizer) * .3em);
-        border-left: .1em var(--ea-color-1) solid;
-        border-top: .1em var(--ea-color-1) solid;
-        border-right: .1em var(--ea-color-1) solid;
+        border-top-right-radius: calc(var(--ea-sizer) * 0.3em);
+        border-top-left-radius: calc(var(--ea-sizer) * 0.3em);
+        border-left: 0.1em var(--ea-color-1) solid;
+        border-top: 0.1em var(--ea-color-1) solid;
+        border-right: 0.1em var(--ea-color-1) solid;
       }
       & li:not(.active):hover {
-        border-top-right-radius: calc(var(--ea-sizer) * .3em);
-        border-top-left-radius: calc(var(--ea-sizer) * .3em);
-        border-left: .1em var(--ea-color-hover-not-active) solid;
-        border-top: .1em var(--ea-color-hover-not-active) solid;
-        border-right: .1em var(--ea-color-hover-not-active) solid;
+        border-top-right-radius: calc(var(--ea-sizer) * 0.3em);
+        border-top-left-radius: calc(var(--ea-sizer) * 0.3em);
+        border-left: 0.1em var(--ea-color-hover-not-active) solid;
+        border-top: 0.1em var(--ea-color-hover-not-active) solid;
+        border-right: 0.1em var(--ea-color-hover-not-active) solid;
         transform: scale(1.001);
-        transition-duration: .2s;
+        transition-duration: 0.2s;
       }
     }
   }

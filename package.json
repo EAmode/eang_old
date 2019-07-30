@@ -23,7 +23,7 @@
     "css:copy": "cpx \"projects/eamode/eang/themes/**/*\" \"dist/eamode/eang/themes\"",
     "css:watch": "concurrently  \"npm run css:build -- -w\" \"npm run css:copy -- -w\"",
     "css:fluentdark": "postcss themes/all.css themes/fluentdark.css themes/fluentdark.css themes/fluentdark/**/*.css -o playground/dist/fluentdark.css",
-    "format": "prettier --write src/**/*.{ts,json,js} && prettier --write projects/eamode/eang/src/**/*.{ts,json,js} && prettier --write e2e/src/**/*.{ts,json,js}",
+    "format": "prettier --write src/**/*.{ts,json,js,scss} && prettier --write projects/eamode/eang/**/*.{ts,json,js,css} && prettier --write e2e/src/**/*.{ts,json,js}",
     "lint": "ng lint && stylelint \"projects/eamode/eang/themes/**/*.css\"",
     "e2e": "ng e2e",
     "semantic-release": "semantic-release",

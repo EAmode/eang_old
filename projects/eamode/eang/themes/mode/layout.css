@@ -45,7 +45,8 @@
     }
 
     & ea-body {
-      --ea-main-margin: calc(var(--ea-spacer) * 0.5em) calc(var(--ea-spacer) * 1em);
+      --ea-main-margin: calc(var(--ea-spacer) * 0.5em)
+        calc(var(--ea-spacer) * 1em);
       margin: 0;
       display: flex;
       min-height: 100%;
@@ -54,7 +55,7 @@
     & ea-toolbar {
       font-size: 1rem;
       height: calc(var(--ea-sizer) * 4rem);
-      padding: calc(var(--ea-sizer) * .5em) calc(var(--ea-sizer) * 1em);
+      padding: calc(var(--ea-sizer) * 0.5em) calc(var(--ea-sizer) * 1em);
       background: var(--ea-color-1);
       display: flex;
       align-items: center;

@@ -1,4 +1,4 @@
-@define-mixin autocomplete-material{
+@define-mixin autocomplete-material {
   & ea-autocomplete {
     & ul {
       list-style: none;
