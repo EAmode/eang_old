@@ -31,31 +31,31 @@
   & [activity] & .ea-activity {
     background: url('./assets/images/activity.svg');
   }
-  & [layout],
+
   & .ea-layout {
     background: url('./assets/images/layout-icon.svg');
   }
-  & [tabs-icon],
+
   & .ea-tabs-icon {
     background: url('./assets/images/tabs-icon.svg');
   }
-  & [button-icon],
+
   & .ea-button-icon {
     background: url('./assets/images/button-icon.svg');
   }
-  & [pallete],
+
   & .ea-pallete {
     background: url('./assets/images/pallete.svg');
   }
-  & [terminal],
+
   & .ea-terminal {
     background-image: inline('mode/icon/terminal.svg');
   }
-  & [component],
+
   & .ea-component {
     background: url('./assets/images/components.svg');
   }
-  & [color],
+
   & .ea-color {
     background-image: url('assets/images/colors.svg');
   }
