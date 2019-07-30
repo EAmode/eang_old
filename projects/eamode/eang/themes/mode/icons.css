@@ -1,5 +1,4 @@
 .mode {
-
   & span[icon] {
     display: block;
     background-position: center;
@@ -108,7 +107,7 @@
       background-image: inline('mode/icon/code.svg');
     }
     &[crosshair],
-    &.ea-crosshair  {
+    &.ea-crosshair {
       background-image: inline('mode/icon/crosshair.svg');
     }
     &[database],
@@ -195,16 +194,13 @@
     &.ea-volume-1 {
       background-image: inline('mode/icon/volume-1.svg');
     }
-    &[volume-2]
-    &.ea-volume-2 {
+    &[volume-2] &.ea-volume-2 {
       background-image: inline('mode/icon/volume-2.svg');
     }
-    &[volume-x]
-    &.ea-volume-x {
+    &[volume-x] &.ea-volume-x {
       background-image: inline('mode/icon/volume-x.svg');
     }
-    &[wifi-off]
-    &.ea-wifi-off {
+    &[wifi-off] &.ea-wifi-off {
       background-image: inline('mode/icon/wifi-off.svg');
     }
     &[wifi],

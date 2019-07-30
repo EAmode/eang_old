@@ -1,8 +1,7 @@
-
 @define-mixin card-material {
   & .ea-card {
     &:not([unset]) {
-      --ea-card-border-radius: .5em;
+      --ea-card-border-radius: 0.5em;
       border-radius: var(--ea-card-border-radius);
       & p,
       h1,
@@ -16,25 +15,45 @@
 
     &[unset] {
       border: none;
-      background: var(--ea-background, var(--ea-card-background-unset, transparent));
+      background: var(
+        --ea-background,
+        var(--ea-card-background-unset, transparent)
+      );
       color: var(--ea-text-color);
       box-shadow: none;
       display: flex;
       flex-direction: column;
 
       & > .ea-card-header {
-        background: var(--ea-background, var(--ea-card-header-background-unset, var(--ea-card-background-unset, transparent)));
+        background: var(
+          --ea-background,
+          var(
+            --ea-card-header-background-unset,
+            var(--ea-card-background-unset, transparent)
+          )
+        );
         padding: 0;
         color: currentColor;
       }
       & > .ea-card-content {
         padding: 0;
-        background: var(--ea-background, var(--ea-card-content-background-unset, var(--ea-card-background-unset, transparent)));
-
+        background: var(
+          --ea-background,
+          var(
+            --ea-card-content-background-unset,
+            var(--ea-card-background-unset, transparent)
+          )
+        );
       }
       & > .ea-card-footer {
         padding: 0;
-        background: var(--ea-background, var(--ea-card-footer-background-unset, var(--ea-card-background-unset, transparent)));
+        background: var(
+          --ea-background,
+          var(
+            --ea-card-footer-background-unset,
+            var(--ea-card-background-unset, transparent)
+          )
+        );
       }
     }
 
@@ -60,9 +79,15 @@
 
     & .ea-card-header {
       /* --ea-card-header-border: .1em var(--ea-color-2); */
-      border: var(--ea-card-header-border, .1em var(--ea-card-header-border-color, var(--ea-color-2)));
+      border: var(
+        --ea-card-header-border,
+        0.1em var(--ea-card-header-border-color, var(--ea-color-2))
+      );
       border-style: none none solid none;
-      background: var(--ea-background, var(--ea-card-header-background, transparent));
+      background: var(
+        --ea-background,
+        var(--ea-card-header-background, transparent)
+      );
       color: var(--ea-color, var(--ea-card-header-color, var(--ea-card-color)));
       padding: 0 1em;
       display: flex;
@@ -99,8 +124,14 @@
       display: flex;
       flex-wrap: wrap;
       padding: 1em;
-      background: var(--ea-background, var(--ea-card-content-background, transparent));
-      color: var(--ea-color, var(--ea-card-content-color, var(--ea-card-color)));
+      background: var(
+        --ea-background,
+        var(--ea-card-content-background, transparent)
+      );
+      color: var(
+        --ea-color,
+        var(--ea-card-content-color, var(--ea-card-color))
+      );
 
       &[flex-center] {
         align-items: center;
@@ -122,7 +153,10 @@
     }
     & .ea-card-footer {
       /* --ea-card-footer-border: .1em var(--ea-color-2); */
-      background: var(--ea-background, var(--ea-card-footer-background, transparent));
+      background: var(
+        --ea-background,
+        var(--ea-card-footer-background, transparent)
+      );
       border: var(--ea-card-footer-border, 1px var(--ea-color-2));
       border-style: solid none none none;
       padding: 1em 1em;

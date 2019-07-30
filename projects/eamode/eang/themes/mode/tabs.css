@@ -1,5 +1,5 @@
 @define-mixin tabs-border-w-s {
-  border-width: calc(var(--ea-sizer) * .2em);
+  border: 0.2em;
   border-style: none none none solid;
 }
 
@@ -16,7 +16,6 @@
     display: flex;
     overflow: auto;
     & [name-area] {
-
       padding-left: calc(var(--ea-spacer) * 1em) !important;
       padding-right: calc(var(--ea-spacer) * 1em);
     }
@@ -61,7 +60,7 @@
       background: transparent;
       border-top: 0.1em solid transparent;
       border-color: transparent;
-      border-width: 0.1em;
+      border: 0.1em;
       border-style: solid none none none;
       width: max-content;
       width: 100%;
@@ -70,13 +69,13 @@
     & [node][active] {
       background: transparent;
       border-color: var(--ea-color-1);
-      border-width: 0.1em;
+      border: 0.1em;
       border-style: none none solid none;
 
       &:hover {
         background: rgba(0, 0, 0, 0.15);
         border-color: var(--ea-color-1-light);
-        border-width: 0.1em;
+        border: 0.1em;
         border-style: none none solid none;
       }
       & [name-area] {
@@ -85,15 +84,15 @@
     }
     & [node]:hover {
       background: transparent;
-      border-color:  var(--ea-background-color-hover);
-      border-width: 0.1em;
+      border-color: var(--ea-background-color-hover);
+      border: 0.1em;
       border-style: solid none none none;
     }
     & [node]:active {
       background: rgba(0, 0, 0, 0.15);
       box-shadow: none;
       border-color: var(--ea-color-1);
-      border-width: 0.1em;
+      border: 0.1em;
       border-style: none none solid none;
     }
     & ea-menu {
@@ -103,13 +102,50 @@
         display: flex;
         border-bottom: solid;
         border-color: var(--ea-color-3-dark);
-        border-width: 0.05em;
+        border: 0.05em;
         border-style: none none solid none;
         background: transparent;
         overflow-x: auto;
       }
-      & div[node][has-children]> div[name-area] {
+      & div[node][has-children] > div[name-area] {
         color: var(--ea-color-2);
+      }
+    }
+  }
+
+  & ea-tabs {
+    display: grid;
+    & ul.ea-tabs {
+      border-bottom: calc(var(--ea-sizer) * 0.01em) solid #ddd;
+      padding-left: 0;
+      margin-bottom: 0;
+      list-style: none;
+      & li {
+        position: relative;
+        display: block;
+        margin: calc(var(--ea-spacer) * 0.3em);
+        padding: calc(var(--ea-spacer) * 0.5em);
+        float: left;
+        margin-bottom: calc(var(--ea-spacer) * 0.01em);
+        & a {
+          cursor: pointer;
+        }
+      }
+      & li.active {
+        border-top-right-radius: calc(var(--ea-sizer) * 0.3em);
+        border-top-left-radius: calc(var(--ea-sizer) * 0.3em);
+        border-left: 0.1em var(--ea-color-1) solid;
+        border-top: 0.1em var(--ea-color-1) solid;
+        border-right: 0.1em var(--ea-color-1) solid;
+      }
+      & li:not(.active):hover {
+        border-top-right-radius: calc(var(--ea-sizer) * 0.3em);
+        border-top-left-radius: calc(var(--ea-sizer) * 0.3em);
+        border-left: 0.1em var(--ea-color-hover-not-active) solid;
+        border-top: 0.1em var(--ea-color-hover-not-active) solid;
+        border-right: 0.1em var(--ea-color-hover-not-active) solid;
+        transform: scale(1.001);
+        transition-duration: 0.2s;
       }
     }
   }

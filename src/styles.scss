@@ -1,20 +1,20 @@
 @import '../dist/eamode/eang/css/all.css';
 // @import '~@angular-mdc/theme/material';
 @font-face {
-  font-family: "Graphik-Bold";
-  src: url("./assets/fonts/Graphik-Bold.ttf");
+  font-family: 'Graphik-Bold';
+  src: url('./assets/fonts/Graphik-Bold.ttf');
 }
 @font-face {
-  font-family: "Graphik-Regular";
-  src: url("./assets/fonts/Graphik-Regular.ttf");
+  font-family: 'Graphik-Regular';
+  src: url('./assets/fonts/Graphik-Regular.ttf');
 }
 @font-face {
-  font-family: "AdelleSans-Regular";
-  src: url("./assets/fonts/AdelleSans-Regular.ttf");
+  font-family: 'AdelleSans-Regular';
+  src: url('./assets/fonts/AdelleSans-Regular.ttf');
 }
 @font-face {
-  font-family: "AdelleSans-Bold";
-  src: url("./assets/fonts/AdelleSans-Bold.ttf");
+  font-family: 'AdelleSans-Bold';
+  src: url('./assets/fonts/AdelleSans-Bold.ttf');
 }
 
 :root {
@@ -27,7 +27,6 @@
 .fluentdark,
 .mode,
 .material {
-
   & [activity] & .ea-activity {
     background: url('./assets/images/activity.svg');
   }
@@ -80,14 +79,14 @@
       & a {
         margin-right: 0.5em;
         @media only screen and (max-width: 625px) {
-          margin-bottom: .5em;
+          margin-bottom: 0.5em;
         }
-
       }
     }
   }
- & eangio-landing {
-   &  h1, h2 {
+  & eangio-landing {
+    & h1,
+    h2 {
       font-family: 'Adelle sans';
     }
   }
@@ -221,7 +220,7 @@
   & .theme-color {
     & p {
       margin: 0;
-      font-size: 1em;
+      font-size: calc(var(--ea-sizer) * 1rem);
       font-weight: 400;
       text-align: center;
     }
@@ -229,14 +228,18 @@
       margin-top: 0.7em;
     }
     & .example-color {
+      margin: auto;
       height: 6em;
       width: 6em;
       border-radius: 50%;
     }
   }
-  & .card-dark-example {
-    --ea-background: var(--ea-color-2);
-    --ea-color: white;
+  & .card-dark {
+    background-color: var(--ea-color-2);
+    color: var(--ea-text-color-light);
+    & div:first-child {
+      color: var(--ea-text-color-light);
+    }
     & ea-menu {
       width: 100%;
     }
@@ -248,6 +251,7 @@
       line-height: 1.3em;
     }
   }
+
   & ea-footer {
     @media only screen and (max-width: 625px) {
       --ea-footer-height: auto;
@@ -294,7 +298,7 @@
       grid-gap: 0;
       --ea-grid-col-min-width: 25em;
       @media only screen and (max-width: 625px) {
-      --ea-grid-col-min-width: 15em;
+        --ea-grid-col-min-width: 15em;
       }
     }
   }
@@ -302,11 +306,12 @@
     & h1 {
       @media only screen and (max-width: 625px) {
         text-align: center;
-        padding: 0 .5em;
+        padding: 0 0.5em;
       }
     }
   }
-  & #why-eang, #features-col,  {
+  & #why-eang,
+  #features-col {
     @media only screen and (max-width: 625px) {
       padding: 2em;
     }
@@ -425,7 +430,7 @@
 //       margin-bottom: 1rem;
 //     }
 //   }
-//   & .card-dark-example {
+//   & .card-dark {
 //     flex-direction: column;
 //     background: rgba(0, 0, 0, 0.03);
 //   }
@@ -442,7 +447,7 @@
 //     width: 5rem;
 //     background-repeat: no-repeat;
 //   }
-//   & .card-dark-example {
+//   & .card-dark {
 //     --ea-card-content-background: var(--ea-color-2);
 //     --ea-menu-color: var(--ea-color-3);
 //     flex-direction: column;

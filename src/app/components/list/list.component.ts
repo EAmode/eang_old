@@ -3,14 +3,23 @@ import { Component, OnInit } from '@angular/core'
 @Component({
   selector: 'eangio-list',
   templateUrl: './list.component.html',
-  styles: []
+  styles: [
+    `
+      ea-markdown,
+      div[role_list_example] {
+        margin: 1.5em;
+      }
+    `
+  ]
 })
 export class ListComponent implements OnInit {
   role_list = `
 ~~~html
 <div role="list">
-  <div role="listitem">Item #1</div>
-  <div role="listitem">Item #2</div>
+  <div role="listitem">Angular</div>
+  <div role="listitem">Express</div>
+  <div role="listitem">Polymer</div>
+  ...
 </div>
 ~~~
   `

@@ -14,11 +14,11 @@
   </p>
   <div multi-col v-center class="example">
     <ea-markdown [doc]="ea_menu"></ea-markdown>
-    <div class="ea-card">
+    <div class="ea-card card-dark">
       <div class="ea-card-header">
         <p>Result menu view. Try to click each sub-menu.</p>
       </div>
-      <div class="ea-card-content header card-dark-example">
+      <div class="ea-card-content header">
         <ea-menu [node]="node"> </ea-menu>
       </div>
     </div>
@@ -42,9 +42,9 @@
   <p>Default orientation is vertical.</p>
   <div multi-col v-center class="example">
     <ea-markdown [doc]="ea_menu_horizontal"></ea-markdown>
-    <div class="ea-card">
-      <div class="ea-card-header"><p>ea-menu</p></div>
-      <div class="ea-card-content header card-dark-example" style=" padding: 0;">
+    <div class="ea-card card-dark">
+      <div class="ea-card-header" style="color: var(--ea-text-color-light);"><p>ea-menu</p></div>
+      <div class="ea-card-content header" style=" padding: 0;">
         <ea-menu [node]="nodeHorizontal"> </ea-menu>
       </div>
     </div>
@@ -55,15 +55,15 @@
     <em>isHidden: false</em>.
   </p>
   <div multi-col v-center class="example">
-    <div class="ea-card">
-      <div class="ea-card-header"><p>IsHidden: true</p></div>
-      <div class="ea-card-content card-dark-example">
+    <div class="ea-card card-dark">
+      <div class="ea-card-header" style="color: var(--ea-text-color-light);"><p>IsHidden: true</p></div>
+      <div class="ea-card-content">
         <ea-menu [node]="node"> </ea-menu>
       </div>
     </div>
-    <div class="ea-card">
-      <div class="ea-card-header"><p>IsHidden: false</p></div>
-      <div class="ea-card-content card-dark-example">
+    <div class="ea-card card-dark">
+      <div class="ea-card-header" style="color: var(--ea-text-color-light);"><p>IsHidden: false</p></div>
+      <div class="ea-card-content">
         <ea-menu [node]="nodeHiddenFalse"> </ea-menu>
       </div>
     </div>
@@ -77,11 +77,11 @@
   </p>
   <div multi-col v-center class="example">
     <ea-markdown [doc]="ea_menu_template"></ea-markdown>
-    <div class="ea-card">
-      <div class="ea-card-header">
+    <div class="ea-card card-dark">
+      <div class="ea-card-header" style="color: var(--ea-text-color-light);">
         <p>Move mouse over the sub-menus to see the description.</p>
       </div>
-      <div class="ea-card-content card-dark-example">
+      <div class="ea-card-content">
         <ea-menu
           [node]="node"
           [optionAreaTemplate]="optionArea"
