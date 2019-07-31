@@ -30,31 +30,31 @@
   & [activity] & .ea-activity {
     background: url('./assets/images/activity.svg');
   }
-  & [layout],
+
   & .ea-layout {
     background: url('./assets/images/layout-icon.svg');
   }
-  & [tabs-icon],
+
   & .ea-tabs-icon {
     background: url('./assets/images/tabs-icon.svg');
   }
-  & [button-icon],
+
   & .ea-button-icon {
     background: url('./assets/images/button-icon.svg');
   }
-  & [pallete],
+
   & .ea-pallete {
     background: url('./assets/images/pallete.svg');
   }
-  & [terminal],
+
   & .ea-terminal {
     background-image: inline('mode/icon/terminal.svg');
   }
-  & [component],
+
   & .ea-component {
     background: url('./assets/images/components.svg');
   }
-  & [color],
+
   & .ea-color {
     background-image: url('assets/images/colors.svg');
   }
@@ -217,29 +217,10 @@
   .ea-card-header > p {
     margin: 0.7em 0;
   }
-  & .theme-color {
-    & p {
-      margin: 0;
-      font-size: calc(var(--ea-sizer) * 1rem);
-      font-weight: 400;
-      text-align: center;
-    }
-    & .ea-card-footer {
-      margin-top: 0.7em;
-    }
-    & .example-color {
-      margin: auto;
-      height: 6em;
-      width: 6em;
-      border-radius: 50%;
-    }
-  }
-  & .card-dark {
-    background-color: var(--ea-color-2);
-    color: var(--ea-text-color-light);
-    & div:first-child {
-      color: var(--ea-text-color-light);
-    }
+
+  & .menu-example {
+    --ea-background: var(--ea-color-2);
+    --ea-color: white;
     & ea-menu {
       width: 100%;
     }
