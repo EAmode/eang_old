@@ -27,48 +27,7 @@
 .fluentdark,
 .mode,
 .material {
-  & [activity] & .ea-activity {
-    background: url('./assets/images/activity.svg');
-  }
-  & [layout],
-  & .ea-layout {
-    background: url('./assets/images/layout-icon.svg');
-  }
-  & [tabs-icon],
-  & .ea-tabs-icon {
-    background: url('./assets/images/tabs-icon.svg');
-  }
-  & [button-icon],
-  & .ea-button-icon {
-    background: url('./assets/images/button-icon.svg');
-  }
-  & [pallete],
-  & .ea-pallete {
-    background: url('./assets/images/pallete.svg');
-  }
-  & [terminal],
-  & .ea-terminal {
-    background-image: inline('mode/icon/terminal.svg');
-  }
-  & [component],
-  & .ea-component {
-    background: url('./assets/images/components.svg');
-  }
-  & [color],
-  & .ea-color {
-    background-image: url('assets/images/colors.svg');
-  }
-  --ea-drawer-width: 13em;
-
-  & ea-layout ea-body {
-    --ea-body-display: flex;
-    margin: 0;
-  }
-  & ea-layout ea-drawer {
-    --ea-menu-color: var(--ea-color-3);
-  }
-  & ea-footer {
-    justify-content: space-between;
+    & ea-footer {
     & span {
       display: flex;
       align-items: center;
@@ -90,11 +49,7 @@
       font-family: 'Adelle sans';
     }
   }
-  & .md-sm {
-    @media only screen and (max-width: 625px) {
-      max-width: 22em;
-    }
-  }
+
   & .content-container {
     margin: 2.8em 4.2vw;
   }
@@ -111,9 +66,7 @@
   a > div {
     text-decoration: none;
   }
-  & [role='banner'] h1 {
-    color: white;
-  }
+
   & eangio-icon,
   eangio-markdown,
   eangio-layout,
@@ -164,8 +117,6 @@
       }
     }
     & ea-panel {
-      --ea-panel-color: var(--ea-color-3);
-      --ea-panel-background: var(--ea-color-background-2);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -176,7 +127,7 @@
     }
     & ea-panel[orientation='left'],
     & ea-panel[orientation='right'] {
-      --ea-panel-max-width: 6rem;
+      --ea-panel-max-width: 6rem; 
       flex-direction: column;
     }
     & ea-panel[orientation='top'],
@@ -185,12 +136,6 @@
     }
   }
 
-  & eangio-button {
-    & button {
-      width: min-content;
-      white-space: nowrap;
-    }
-  }
   & #icon-examples {
     & .ea-card {
       width: fit-content;
@@ -209,23 +154,12 @@
   & .ea-markdown-content > p {
     margin-bottom: 0.5em;
   }
-  & .ea-card-header > h1,
-  .ea-card-header > h2,
-  .ea-card-header > h3,
-  .ea-card-header > h4,
-  .ea-card-header > h5,
-  .ea-card-header > p {
-    margin: 0.7em 0;
-  }
   & .theme-color {
     & p {
       margin: 0;
       font-size: calc(var(--ea-sizer) * 1rem);
       font-weight: 400;
       text-align: center;
-    }
-    & .ea-card-footer {
-      margin-top: 0.7em;
     }
     & .example-color {
       margin: auto;
@@ -251,7 +185,7 @@
       line-height: 1.3em;
     }
   }
-
+/* 
   & ea-footer {
     @media only screen and (max-width: 625px) {
       --ea-footer-height: auto;
@@ -261,7 +195,7 @@
         flex-direction: column;
       }
     }
-  }
+  } */
 
   & .shim {
     position: absolute;
@@ -302,7 +236,7 @@
       }
     }
   }
-  & .hero {
+  & .framework-description {
     & h1 {
       @media only screen and (max-width: 625px) {
         text-align: center;
@@ -318,433 +252,6 @@
   }
 }
 
-// .mode {
-//   & #variables {
-//     & .example {
-//       margin: 5rem 0;
-//       justify-content: space-evenly;
-//     }
-//     & .example-color {
-//       border-radius: 0.25em;
-//       box-shadow: var(--ea-box-shadow);
-//       width: 6rem;
-//       height: 4rem;
-//       display: flex;
-//       justify-content: center;
-//       align-items: center;
-//       cursor: pointer;
-//       & small {
-//         text-align: center;
-//         color: var(--ea-text-color-light);
-//       }
-//       &.base-color {
-//         background: var(--ea-color-1);
-//       }
-//       &.base-color-high {
-//         background: var(--ea-color-1-light);
-//       }
-//       &.alt-base-color {
-//         background: var(--ea-color-2);
-//       }
-//       &.ea-hover {
-//         & small {
-//           color: var(--ea-text-color-dark);
-//         }
-//         &:hover {
-//           background: var(--ea-background-color-hover);
-//           & small {
-//             color: var(--ea-text-color-light);
-//           }
-//         }
-//       }
-//       &.ea-active {
-//         & small {
-//           color: var(--ea-text-color-dark);
-//         }
-//         &[active='true'] {
-//           background: var(--ea-background-color-active);
-//           & small {
-//             color: var(--ea-text-color-light);
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
-
-// .material ea-drawer {
-//   --ea-background: #d3d3d3;
-// }
-// .material ea-menu {
-//   --ea-color: black;
-//   & [node] [name-area] span[icon] {
-//     display: none;
-//   }
-// }
-
-// .material ea-footer {
-//   color: white;
-//   & a {
-//     color: inherit;
-//   }
-// }
-
-// /* Landing Page */
-
-// .material {
-//   & ea-layout {
-//     background: #fafafa;
-//   }
-
-//     & #text-colors {
-//       & .base-color .text-hover-color,
-//       .base-color-high .text-active-color {
-//         color: var(--ea-text-color-dark);
-//       }
-//       & .base-color:hover {
-//         & small {
-//           color: var(--ea-text-color-light);
-//         }
-//       }
-//       & .text-active-color {
-//         &[textIsActive='true'] {
-//           color: var(--ea-text-color-light);
-//         }
-//       }
-//     }
-//   }
-
-//   & span[chevron-right][negative],
-//   span[chevron-down][negative] {
-//     filter: invert(0%);
-//   }
-
-//   .node-toggle[disabled] span[icon] {
-//     display: none;
-//   }
-//   & .eang-logo {
-//     background: url('./assets/images/eang-logo-dark.svg');
-//     width: 5rem;
-//     background-repeat: no-repeat;
-//     @media only screen and (max-width: 500px) {
-//       margin-bottom: 1rem;
-//     }
-//   }
-//   & .card-dark {
-//     flex-direction: column;
-//     background: rgba(0, 0, 0, 0.03);
-//   }
-// }
-
-// .mode {
-//   --ea-padding-value: 6em 0;
-//   --ea-max-width: 980px;
-//   & [role='banner'] h1 {
-//     color: var(--ea-color-3);
-//   }
-//   & .eang-logo {
-//     background: url('./assets/images/eang-logo.svg');
-//     width: 5rem;
-//     background-repeat: no-repeat;
-//   }
-//   & .card-dark {
-//     --ea-card-content-background: var(--ea-color-2);
-//     --ea-menu-color: var(--ea-color-3);
-//     flex-direction: column;
-//   }
-
-//   & #variables {
-//     & .example {
-//       margin: 5rem 0;
-//       justify-content: space-evenly;
-//     }
-//     & .theme-color {
-//       display: flex;
-//       flex-direction: column;
-//       align-items: center;
-//       & .ea-card-footer {
-//         justify-content: center;
-//       }
-//     }
-//     & .example-color {
-//       border-radius: 50%;
-//       box-shadow: var(--ea-box-shadow);
-//       height: 6rem;
-//       display: flex;
-//       justify-content: center;
-//       align-items: center;
-//       flex-grow: 1;
-//       width: 6em;
-//       box-sizing: border-box;
-//       cursor: pointer;
-//       & small {
-//         text-align: center;
-//         color: var(--ea-text-color-light);
-//       }
-//       &.base-color {
-//         background: var(--ea-color-1);
-//       }
-//       &.base-color-high {
-//         background: var(--ea-color-1-light);
-//       }
-//       &.alt-base-color {
-//         background: var(--ea-color-2);
-//       }
-//       &.ea-hover {
-//         & small {
-//           color: var(--ea-text-color-dark);
-//         }
-//         &:hover {
-//           background: var(--ea-background-color-hover);
-//           & small {
-//             color: var(--ea-text-color-light);
-//           }
-//         }
-//       }
-//       &.ea-active {
-//         & small {
-//           color: var(--ea-text-color-dark);
-//         }
-//         &[active='true'] {
-//           background: var(--ea-background-color-active);
-//           & small {
-//             color: var(--ea-text-color-light);
-//           }
-//         }
-//       }
-//     }
-//     & #text-colors {
-//       & .base-color .text-hover-color,
-//       .base-color-high .text-active-color {
-//         color: var(--ea-text-color-dark);
-//       }
-//       & .base-color:hover {
-//         & small {
-//           color: var(--ea-text-color-light);
-//         }
-//       }
-//       & .text-active-color {
-//         &[textIsActive='true'] {
-//           color: var(--ea-text-color-light);
-//         }
-//       }
-//     }
-//   }
-// }
-
-// /* Material Design Specific Styles */
-
-// .mode,
-// .material {
-//   & .card-example {
-//     align-items: center;
-//     justify-content: space-between;
-//     @media only screen and (max-width: 640px) {
-//       justify-content: center;
-//     }
-//   }
-//   & .ea-card {
-//     & .ea-card-content.example {
-//       --ea-card-content-grid: minmax(40%, 50%) 1fr;
-//       grid-gap: 2rem;
-//       align-items: center;
-//       padding: 0;
-//       @media only screen and (max-width: 770px) {
-//         --ea-card-content-grid: repeat(auto-fill, 2, 1fr);
-//         padding: 0;
-//       }
-//     }
-//   }
-//   & .button-container {
-//     width: 100%;
-//     display: flex;
-//     flex-wrap: wrap;
-//     justify-content: center;
-//     margin: 4rem 0 2rem 0;
-//     @media only screen and (max-width: 640px) {
-//       grid-template-columns: repeat(2, 1fr);
-//       display: grid;
-//       justify-content: space-around;
-//     }
-//     & button {
-//       margin: 1rem;
-//     }
-//   }
-//   & ea-layout {
-//     & ea-toolbar {
-//       & aside {
-//         --ea-toolbar-aside-padding: 2rem;
-//         @media only screen and (max-width: 500px) {
-//           --ea-toolbar-aside-padding: 0rem;
-//         }
-//       }
-//
-//     }
-//     & ea-body {
-//       overflow: hidden;
-//       --ea-body-display: flex;
-//       justify-content: center;
-//       margin: 0;
-
-//       & eangio-menu {
-//         --ea-tab-color: var(--ea-text-color);
-//       }
-
-//       & eangio-markdown {
-//         width: 100%;
-//         & .example {
-//           & .ea-card {
-//             & .ea-card-content {
-//               justify-content: flex-start;
-//             }
-//           }
-//         }
-//       }
-
-//       & .icon-tiles {
-//         & .ea-card-content {
-//           justify-content: center;
-//         }
-//         & .ea-card-footer {
-//           text-align: center;
-//         }
-//       }
-
-//       & eangio-home,
-//       eangio-get-started,
-//       eangio-card,
-//       eangio-button,
-//       eangio-icon,
-//       eangio-menu,
-//       eangio-tabs,
-//       eangio-layout,
-//       eangio-variables,
-//       eangio-tabs,
-//       eangio-components,
-//       eangio-utilities,
-//       eangio-markdown,
-//       eangio-banner,
-//       eangio-list,
-//       eangio-tooltip {
-//         width: 100%;
-//         @media only screen and (max-width: 500px) {
-//           width: 95%;
-//           & .ea-card[unset] {
-//             & .ea-card-content {
-//               margin: 0 1rem;
-//             }
-//           }
-//         }
-//         & .ea-card[unset] {
-//           margin: 0;
-//           & .ea-card-content {
-//             justify-content: center;
-//           }
-//         }
-//       }
-//       #container {
-//         flex-direction: column;
-//         padding: 0 4vw;
-//       }
-//       & ea-tabs {
-//         width: 90%;
-//       }
-//       & eangio-landing {
-//         width: 100%;
-//       }
-//       & eangio-components {
-//         & p {
-//           font-size: 0.9rem;
-//         }
-//         & a {
-//           text-decoration: none;
-//           &:hover {
-//             & h2 {
-//               color: var(--ea-background-hover);
-//             }
-//           }
-//         }
-//       }
-
-//       eangio-feature-reactive,
-//       eangio-feature-theming {
-//         width: 90%;
-//       }
-
-//       & ea-markdown {
-//         @media only screen and (max-width: 500px) {
-//           overflow-x: overlay;
-//         }
-//       }
-//       & eangio-utilities {
-//         & .example {
-//           margin-top: 3em;
-//           margin-bottom: 3em;
-//         }
-//       }
-//     }
-//     & ea-footer {
-//       justify-content: space-between;
-//       --ea-footer-height: fit-content;
-//       @media only screen and (max-width: 500px) {
-//         flex-direction: column;
-//       }
-//       & span {
-//         display: flex;
-//         align-items: center;
-//         cursor: pointer;
-//         @media only screen and (max-width: 500px) {
-//           flex-direction: column;
-//         }
-//         & a {
-//           margin: 0 0.3rem;
-//         }
-//       }
-//     }
-//   }
-// }
-
-// .color-title-container {
-//   display: flex;
-//   align-items: center;
-//   margin-bottom: 3em;
-//   & h3 {
-//     white-space: nowrap;
-//     margin-right: 1em;
-//   }
-//   & hr {
-//     width: 100%;
-//     height: 0;
-//     border: 1px solid var(--ea-color-3-dark);
-//     background: var(--ea-color-2);
-//   }
-// }
-
-// .ea-menu {
-//   margin-top: 1rem;
-// }
-
-// #banner-contents {
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-// }
-
-// #tabMobileExample {
-//   height: 5em;
-//   background: white;
-//   display: flex;
-//   align-items: flex-end;
-//   justify-content: flex-start;
-// }
-// ea-tabpanel-group#mobileTab {
-//   display: flex;
-//   background: var(--ea-color-3-dark);
-//   & ea-tabpanel {
-//     width: 100%;
-//     padding: 1em;
-//   }
-// }
 .ea-mode-logo {
   background: url('assets/images/eamode-logo.svg');
   height: 4rem;
