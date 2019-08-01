@@ -169,7 +169,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.layout.drawerState$.next('closed')
+    this.layout.drawerState$.next('maximized')
 
     this.activate.subscribe(item => {
       if (item.data && item.data.link) {

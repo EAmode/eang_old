@@ -7,6 +7,7 @@
     @mixin layout-base;
     display: grid;
     height: 100vh;
+    margin: 0;
     overflow: hidden;
     grid-template-columns: auto 1fr;
     grid-template-rows: auto 1fr;
@@ -21,6 +22,7 @@
       background: var(--ea-color-3);
 
       & ea-footer {
+        justify-content: space-between;
         height: calc(var(--ea-sizer) * 4.5rem);
         background: var(--ea-color-1);
         width: 100%;
@@ -40,6 +42,14 @@
         b,
         small {
           color: inherit;
+        }
+        @media only screen and (max-width: 625px) {
+          height: auto;
+          flex-direction: column;
+          span {
+            display: flex;
+            flex-direction: column;
+          }
         }
       }
     }
@@ -114,7 +124,6 @@
     }
 
     & ea-drawer {
-      --ea-menu-color: #fff;
       grid-area: drawer;
       display: flex;
       flex-direction: column;

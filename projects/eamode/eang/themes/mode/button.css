@@ -5,7 +5,7 @@
 
 @define-mixin button-base {
   font-size: calc(var(--ea-sizer) * 1rem);
-  background: var(--ea-color-1);
+  background: var(--ea-button-background, var(--ea-color-1));
   color: var(--ea-text-color-light);
   border-color: var(--ea-color-1);
   border-style: solid;
@@ -57,7 +57,7 @@
 
       &[outline] {
         @mixin button-border-w-s;
-        background: transparent;
+        background: var(--ea-button-background, transparent);
         color: var(--ea-text-color);
         border-color: var(--ea-color-1);
 
@@ -68,7 +68,7 @@
 
         &[outline] {
           @mixin button-border-w-s;
-          background: transparent;
+          background: var(--ea-button-background, transparent);
           color: var(--ea-text-color);
           border-color: var(--ea-color-1);
 
@@ -94,7 +94,7 @@
 
       &[flat] {
         @mixin button-border-w-s;
-        background: transparent;
+        background: var(--ea-button-background, transparent);
         border-color: rgba(0, 0, 0, 0);
         color: var(--ea-text-color);
 
@@ -118,7 +118,7 @@
 
       &[flat] {
         @mixin button-border-w-s;
-        background: transparent;
+        background: var(--ea-button-background, transparent);
         border-color: rgba(0, 0, 0, 0);
         color: var(--ea-text-color);
 

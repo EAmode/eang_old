@@ -46,8 +46,10 @@
       h2,
       h3,
       h4,
+      h5,
       a {
         color: inherit;
+        margin: calc(var(--ea-spacer) * 0.7em) 0;
       }
 
       & [content] {
@@ -95,6 +97,7 @@
       }
     }
     & .ea-card-footer {
+      margin-top: calc(var(--ea-spacer) * 0.7em);
       background: transparent;
       border: 1px var(--ea-color-3);
       border-style: solid none none none;
