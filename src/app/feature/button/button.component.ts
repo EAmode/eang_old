@@ -71,34 +71,6 @@ export class ButtonComponent implements OnInit {
   | --ea-button-background  | Change button background |
   `
 
-  override_button_example = `
-  ~~~css
-  :root {
-    --ea-button-background: #884e88;
-  }
-
-  button {
-    --ea-button-background: #884e88;
-  }
-
-  .ea-button {
-    --ea-button-background: #884e88;
-  }
-
-  button[flat][rounded] {
-    --ea-button-background: #884e88;
-  }
-
-  .ea-button {
-    --ea-button-background: #884e88;
-  }
-
-  button[outline][icon] {
-    --ea-button-background: #884e88;
-  }
-  ~~~
-  `
-
   icons = `
   *app-component.html*
   ~~~html
