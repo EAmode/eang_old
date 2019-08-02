@@ -31,7 +31,7 @@ export class AppComponent implements OnInit {
         iconStyle: 'ea-negative',
         children: [
           {
-            name: 'Variables',
+            name: 'Theme',
             icon: 'ea-color',
             iconStyle: 'ea-negative',
             data: {
@@ -169,7 +169,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.layout.drawerState$.next('closed')
+    this.layout.drawerState$.next('maximized')
 
     this.activate.subscribe(item => {
       if (item.data && item.data.link) {
