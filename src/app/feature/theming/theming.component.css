@@ -1,0 +1,27 @@
+img {
+    width: 2em;
+}
+
+#warning-img {
+    display: -webkit-inline-box;
+}
+
+#input-examples {
+    padding: 1em;
+}
+
+ea-markdown {
+    margin: calc(var(--ea-spacer) * 0.7em) 0;
+}
+
+label li {
+    list-style:none;
+}
+
+.copy-markdown-box {
+    box-shadow: var(--ea-box-shadow);
+}
+
+.copy-markdown-box-icon-margin {
+    margin: calc(var(--ea-spacer) * 0.03em);
+}
