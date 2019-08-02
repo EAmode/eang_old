@@ -1,6 +1,6 @@
 <ea-layout>
   <ea-toolbar flex shadow>
-    <button class="ea-button" flat icon (click)="showDrawer()">
+    <button class="ea-button" flat icon (click)="showDrawer()" left>
       <div *ngIf="(layout.drawerState$ | async)  === 'closed'; else menuOpened">
         <span hamburger-menu icon negative style="--ea-icon-margin: 0; height: 2em; width: 2em;">
         </span>

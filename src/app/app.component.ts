@@ -31,7 +31,15 @@ export class AppComponent implements OnInit {
         iconStyle: 'ea-negative',
         children: [
           {
-            name: 'Theme',
+            name: 'Adjustment',
+            icon: 'ea-adjustment',
+            iconStyle: 'ea-negative',
+            data: {
+              link: '/adjustment'
+            }
+          },
+          {
+            name: 'Variables',
             icon: 'ea-color',
             iconStyle: 'ea-negative',
             data: {
