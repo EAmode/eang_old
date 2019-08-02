@@ -2,6 +2,13 @@
   --ea-drawer-header-height: 4rem;
   --ea-drawer-footer-height: 4rem;
 }
+
+@define-mixin white-text-color {
+  & a, & p, & textarea, & h1, & h2, & h3, & h4, & h5, & h6 {
+    color: var(--ea-text-color-light);
+  }
+}
+
 @define-mixin layout-mode {
   & ea-layout {
     @mixin layout-base;
@@ -85,26 +92,40 @@
         --ea-toolbar-display: grid;
       }
 
-      & button {
+      & [left] {
         order: 1;
       }
 
       & header {
+        @mixin white-text-color;
         color: inherit;
         display: flex;
         justify-content: flex-start;
         align-items: center;
         flex-grow: 1;
         order: 2;
+        & img {
+          width:calc(var(--ea-sizer) * 3em);
+          height: calc(var(--ea-sizer) * 3em);
+        }
+      }
+
+      & [center] {
+        order: 3;
       }
 
       & aside {
+        @mixin white-text-color;
         color: inherit;
         display: flex;
         justify-content: flex-end;
         align-items: center;
         padding-right: calc(var(--ea-spacer) * 3rem);
-        order: 3;
+        order: 4;
+      }
+
+      & [right] {
+        order: 5;
       }
 
       & p,
@@ -121,13 +142,14 @@
         font-size: 1rem;
         margin: 0.5em;
       }
+
     }
 
     & ea-drawer {
       grid-area: drawer;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      /* justify-content: space-between; */
       width: calc(var(--ea-sizer) * 15em);
       background: var(--ea-color-2);
       -webkit-tap-highlight-color: transparent;
@@ -150,6 +172,23 @@
         width: 0;
         display: none;
       }
+
+      & header {
+        @mixin white-text-color;
+        top: 0;
+        position: inherit;
+      }
+
+      & section {
+        @mixin white-text-color;
+      }
+
+      & footer {
+        @mixin white-text-color;    
+        position: fixed;
+        bottom: 0;
+      }
+
     }
 
     &[nav-overlay] {
