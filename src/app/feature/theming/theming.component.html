@@ -64,30 +64,22 @@
     </h3>
   </div>
 
-  <p>This is a list of possible variables that can be overriden per component. </p>
-
+  <br>
   <div class="copy-markdown-box">
-    <eangio-copy-code [templateToCopy]="allVariables" class="copy-markdown-box-icon-margin"></eangio-copy-code>
     <ea-markdown [doc]="allVariablesForOverride" #allVariables></ea-markdown>
   </div>
-
-  <p>Here you can make changes at the root level.
-    Paste the code from the code snippet above into the root style file.
-    <strong>Use the save icon or select the part by the mouse to copy the code.</strong></p>
+  
   <div class="copy-markdown-box">
-    <eangio-copy-code [templateToCopy]="rootLevel" class="copy-markdown-box-icon-margin"></eangio-copy-code>
     <ea-markdown [doc]="root_level" #rootLevel></ea-markdown>
   </div>
 
   <p>You can do the same with <code>component.css</code> to change view for individual tags, classes.</p>
   <div class="copy-markdown-box">
-    <eangio-copy-code [templateToCopy]="overrideButtonExample" class="copy-markdown-box-icon-margin"></eangio-copy-code>
     <ea-markdown [doc]="override_button_example" #overrideButtonExample></ea-markdown>
   </div>
 
   <p>Just apply within a specific scope of your page inside <code>component.html</code>.</p>
   <div class="copy-markdown-box">
-    <eangio-copy-code [templateToCopy]="scopeFile" class="copy-markdown-box-icon-margin"></eangio-copy-code>
     <ea-markdown [doc]="scope" #scopeFile></ea-markdown>
   </div>
 

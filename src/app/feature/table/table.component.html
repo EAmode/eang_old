@@ -24,11 +24,9 @@
           <ea-tablist [tabpanelGroup]="selectableTableCode"></ea-tablist>
           <ea-tabpanel-group #selectableTableCode>
             <ea-tabpanel name="HTML">
-              <eangio-copy-code [templateToCopy]="htmlCopy"></eangio-copy-code>
               <ea-markdown [doc]="stripedNHoveredNSelectableTable" #htmlCopy></ea-markdown>
             </ea-tabpanel>
             <ea-tabpanel name="TS">
-              <eangio-copy-code [templateToCopy]="tsCopy"></eangio-copy-code>
               <ea-markdown [doc]="tableOnRowSelect" #tsCopy></ea-markdown>
             </ea-tabpanel>
           </ea-tabpanel-group>
