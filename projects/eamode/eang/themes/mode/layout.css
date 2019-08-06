@@ -43,7 +43,7 @@
         width: 100%;
         display: flex;
         align-items: center;
-        padding: calc(var(--ea-spacer) * 4rem);
+        padding: calc(var(--ea-spacer) * 2.5rem);
         box-sizing: border-box;
         color: var(--ea-text-color-light);
         & p,
@@ -78,7 +78,7 @@
     }
 
     & ea-toolbar {
-      font-size: 1rem;
+      font-size: calc(var(--ea-sizer) * 1rem);
       height: calc(var(--ea-sizer) * 4rem);
       padding: calc(var(--ea-sizer) * 0.5em) calc(var(--ea-sizer) * 1em);
       background: var(--ea-color-1);
@@ -91,7 +91,7 @@
       box-sizing: border-box;
       color: var(--ea-text-color-light);
       &[shadow] {
-        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);
+        box-shadow: 0 calc(var(--ea-sizer) * 0.2em) calc(var(--ea-sizer) * 0.3em) 0 rgba(0, 0, 0, 0.3);
       }
       &[flex] {
         --ea-toolbar-display: flex;
@@ -206,7 +206,7 @@
     & [overlay] {
       grid-row: ea-toolbar-end / ea-main-end;
       grid-column: 1/5;
-      background: #000;
+      background: var(--ea-color-2);
       opacity: 0.5;
       z-index: 1;
     }
