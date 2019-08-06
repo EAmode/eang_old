@@ -1,32 +1,39 @@
-<div>
-  <h2>CSS Themes</h2>
-  <p>
-    Styling and theming in eang is fully customizable and can be easily changed.
-    New and upcoming features of CSS alleviate a lot of the maintainability
-    problems of CSS. Eang relies heavily on CSS Custom Properties and nesting
-    and uses a PostCSS pipeline to support older browsers.
-  </p>
-
-  <p>
-    Unlike other component frameworks, the style is not set in stone and does
-    not abstract or encapsulates away the power of CSS. Instead it embraces new
-    capabilities of CSS and puts design back into the hand of the designer.
-  </p>
-
+<div role="banner" m-0-0-2-0>
+    <h1>Style adjustment</h1>
+    <span icon adjustment negative style="width: 2rem; height:2rem;"></span>
+  </div>
+  
+  <div class="content-container">
+    <h2>CSS Themes</h2>
+    <p>
+      Styling and theming in eang is fully customizable and can be easily changed.
+      New and upcoming features of CSS alleviate a lot of the maintainability
+      problems of CSS. Eang relies heavily on CSS Custom Properties and nesting
+      and uses a PostCSS pipeline to support older browsers.
+    </p>
+  
+    <p>
+      Unlike other component frameworks, the style is not set in stone and does
+      not abstract or encapsulates away the power of CSS. Instead it embraces new
+      capabilities of CSS and puts design back into the hand of the designer.
+    </p>
+  
     <div class="ea-card example" m-0-0-1-0>
-      <div class="ea-card-header"><h2>Theme examples</h2></div>
-      <div multi-col center class="example">
+      <div class="ea-card-header">
+        <h2>Theme examples</h2>
+      </div>
+      <div multi-col center id="input-examples">
         <div class="mode">
           <h3>Mode Theme</h3>
           <small>Select the airport you are flying from.</small>
           <!-- <label>Airport Lookup</label> -->
           <ea-autocomplete
-            #from
-            [suggestions]="airportResult1$"
-            [formControl]="airportSearchTerm1"
-            [mapSelectItem]="mapSelectItem"
-            placeholder="from*"
-            [selectFirst]="true"
+          #from
+          [suggestions]="airportResult1$"
+          [formControl]="airportSearchTerm1"
+          [mapSelectItem]="mapSelectItem"
+          placeholder="from*"
+          [selectFirst]="true"
           >
             <ng-template #resultsTemplate let-item>
               <span class="matched" [innerHTML]="item.match"></span>
@@ -35,14 +42,14 @@
         </div>
         <div class="material">
           <h3>Material Theme</h3>
-
+  
           <small>Select the airport you are flying to.</small>
           <!-- <label>Airport lookup</label> -->
           <ea-autocomplete
-            [suggestions]="airportResult2$"
-            [formControl]="airportSearchTerm2"
-            [mapSelectItem]="mapSelectItem"
-            placeholder="to*"
+          [suggestions]="airportResult2$"
+          [formControl]="airportSearchTerm2"
+          [mapSelectItem]="mapSelectItem"
+          placeholder="to*"
           >
             <ng-template #resultsTemplate let-item>
               <span class="matched" [innerHTML]="item.match"></span>
@@ -53,37 +60,45 @@
     </div>
 
 
-  <p>
-    Eang has multiple build-in themes. Each theme can be extensively customized
-    with CSS Custom Properties. Each theme has global variables as well as
-    component based CSS variables.
-  </p>
-
-  <ea-markdown  class="example md-sm" [doc]="variables"></ea-markdown>
-
-  <p>
-    These properties can also just apply within a specific scope of your page.
-  </p>
-
-  <ea-markdown  class="example md-sm" [doc]="scope"></ea-markdown>
-
-  <p>
-    These are all variables that you can override in <code>:root</code> or for a specific theme.
-    For example default values for <code>mode</code> theme.
-  </p>
-
-  <ea-markdown  class="example md-sm" [doc]="allVariablesForOverride"></ea-markdown>
-
-  <p>
-    If overriding variables and properties for some reason does not work in your
-    case, there is nothing prevents you from creating your own theme.
-  </p>
-  <p>
-    If that is not enough, eang allows you to define the CSS of each component
-    individually additional themes can be be added. This allows users of eang to
-    fully customize the the look and feel of each component and makes it easy to
-    comply with Corporate Design guidelines.
-  </p>
-
-  <!-- <ea-markdown [doc]="component"></ea-markdown> -->
-</div>
+    <p>
+      Eang has multiple build-in themes. Each theme can be extensively customized
+      with CSS Custom Properties. Each theme has global variables as well as
+      component based CSS variables.
+    </p>
+  
+    <p>This is a list of possible variables that can be overriden per component. <strong>Use the save icon to copy the code.</strong></p>
+  
+    <br>
+    <div class="copy-markdown-box">
+      <eangio-copy-code [templateToCopy]="allVariables" class="copy-markdown-box-icon-margin"></eangio-copy-code>
+      <ea-markdown [doc]="allVariablesForOverride" #allVariables></ea-markdown>
+    </div>
+    
+    <div class="copy-markdown-box">
+      <eangio-copy-code [templateToCopy]="rootLevel" class="copy-markdown-box-icon-margin"></eangio-copy-code>
+      <ea-markdown [doc]="root_level" #rootLevel></ea-markdown>
+    </div>
+  
+    <p>You can do the same with <code>component.css</code> to change view for individual tags, classes.</p>
+    <div class="copy-markdown-box">
+      <eangio-copy-code [templateToCopy]="overrideButtonExample" class="copy-markdown-box-icon-margin"></eangio-copy-code>
+      <ea-markdown [doc]="override_button_example" #overrideButtonExample></ea-markdown>
+    </div>
+  
+    <p>Just apply within a specific scope of your page inside <code>component.html</code>.</p>
+    <div class="copy-markdown-box">
+      <eangio-copy-code [templateToCopy]="scopeFile" class="copy-markdown-box-icon-margin"></eangio-copy-code>
+      <ea-markdown [doc]="scope" #scopeFile></ea-markdown>
+    </div>
+  
+    <p>
+      If overriding variables and properties for some reason does not work in your
+      case, there is nothing prevents you from creating your own theme.
+    </p>
+    <p>
+      If that is not enough, eang allows you to define the CSS of each component
+      individually additional themes can be be added. This allows users of eang to
+      fully customize the the look and feel of each component and makes it easy to
+      comply with Corporate Design guidelines.
+    </p>
+  </div>

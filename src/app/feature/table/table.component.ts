@@ -1,6 +1,7 @@
 import { Component, OnInit, Renderer2 } from '@angular/core'
 import { MarkdownComponent } from '@eamode/eang'
 import { timer, interval } from 'rxjs'
+import { CopyPasteService } from 'src/app/services/copy-paste.service'
 
 class TableItem {
   constructor(public technology: string, public experience: string) {}
@@ -19,7 +20,10 @@ export class TableComponent implements OnInit {
     new TableItem('Assembler', '15 years')
   ]
 
-  constructor(public renderer2: Renderer2) {}
+  constructor(
+    public renderer2: Renderer2,
+    public copyPasteService: CopyPasteService
+  ) {}
 
   onRowSelect(row: HTMLElement) {
     if (row.getAttribute('selected')) {
@@ -29,21 +33,10 @@ export class TableComponent implements OnInit {
     }
   }
 
-  copyCode(code: MarkdownComponent) {
-    this.showInfoAboutSuccessfullyCopy()
-
-    const el = document.createElement('textarea')
-    el.value = code.doc
-    document.body.appendChild(el)
-    el.select()
-    document.execCommand('copy')
-    document.body.removeChild(el)
-  }
-
   showInfoAboutSuccessfullyCopy() {
-    this.showSuccessfullyCopied = true
+    this.copyPasteService.showSuccessfullyCopied.next(true)
     timer(2000).subscribe(() => {
-      this.showSuccessfullyCopied = false
+      this.copyPasteService.showSuccessfullyCopied.next(false)
     })
   }
 

@@ -39,6 +39,7 @@ import { ListComponent } from './components/list/list.component'
 import { BannerComponent } from './components/banner/banner.component'
 import { TooltipComponent } from './components/tooltip/tooltip.component'
 import { TableComponent } from './feature/table/table.component'
+import { CopyCodeComponent } from './components/copy-code/copy-code.component'
 
 const routes: Routes = [
   { path: '', component: LandingComponent },
@@ -84,7 +85,8 @@ const routes: Routes = [
     ListComponent,
     BannerComponent,
     TooltipComponent,
-    TableComponent
+    TableComponent,
+    CopyCodeComponent
   ],
   imports: [
     BrowserModule,

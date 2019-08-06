@@ -49,19 +49,28 @@ export class ThemingComponent implements OnInit {
     })
   )
 
-  variables = `
-  *style.scss*
-  ~~~ css
-  /* overriding one common property accross all
-     themes */
-  :root {
-    --ea-color-1: green;
+  override_button_example = `
+  ~~~css
+  button[flat][rounded] {
+    --ea-button-background: #884e88;
   }
 
+  .ea-button[outline][icon] {
+    --ea-button-background: #884e88;
+  }
+
+  .ea-table > tbody > tr:hover {
+    color: #884e88;
+  }
+  ~~~
+`
+  root_level = `
+  ~~~ css
   /* overriding some common properties for
-     the mode theme */
+    the mode theme */
   .mode {
     --ea-color-1: hsl(223, 40%, 43%);
+    --ea-background-color-hover: violet;
   }
 
   /* changing the properties of a left aligned panel */
@@ -73,7 +82,6 @@ export class ThemingComponent implements OnInit {
   `
 
   scope = `
-  *component.html*
   ~~~ html
   <div class="my-secial-green-div">
     <style>
@@ -92,15 +100,7 @@ export class ThemingComponent implements OnInit {
   `
 
   allVariablesForOverride = `
-  *style.scss*
-  ~~~ css
-  :root {
-    /* Variable for scaling height, width, font-size etc. */
-    --ea-sizer: 1;
-    /* Variable for scaling margin, padding etc. */
-    --ea-spacer: 1;
-  }
-
+  ~~~css
   .mode {
     /* Base Colors */
     --ea-color-1: hsl(223, 40%, 43%);
@@ -215,7 +215,6 @@ for the --ea-card-color. The same method is applied to the --ea-card-header-back
 
   corporate = `
   ~~~ css
-
   /* overriding some common properties for the mode theme */
   .yourCorporateTheme {
     --theme-color-2: #1f242c;

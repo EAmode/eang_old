@@ -1,184 +1,175 @@
 <div role="banner">
-  <h1>Table</h1>
-  <span icon negative tab style="width: 2rem; height:2rem;"></span>
-</div>
-<div class="content-container">
-  <p>
-    To improve the view of the default HTML table add <code>ea-table</code> class in
-    <code>&lt;table&gt;</code> tag and it will add padding, border and emphasized table header etc.
-  </p>
-  <br>
-  <div class="prettifier">
-    <h2 class="h2-table-caption">Striped, Hovered and Selectable Table</h2>
+    <h1>Table</h1>
+    <span icon negative tab style="width: 2rem; height:2rem;"></span>
+  </div>
+  <div class="content-container">
     <p>
-      To make table stpired or hovered use appropriate <code>striped</code> and <code>table-hover</code>
-      attributes in
-      <code>&lt;tbody&gt;</code>. To make table selectable - add <code>(click)</code>event <code>onRowSelect(row)</code>. 
-      Add a template reference variable for <code>&lt;tr&gt;</code> tag. It the tabs below you can copy the example
-      code.
+      To improve the view of the default HTML table add <code>ea-table</code> class in
+      <code>&lt;table&gt;</code> tag and it will add padding, border and emphasized table header etc.
     </p>
-    <div class="ea-card">
-      <div class="ea-card-header"></div>
-      <div class="ea-card-content">
-        <div class="header table-right-position">
-          <ea-tablist [tabpanelGroup]="selectableTableCode"></ea-tablist>
-          <ea-tabpanel-group #selectableTableCode>
-            <ea-tabpanel name="HTML">
-              <div style="display: grid">
-                <p class="copy-clipboard">Copy to clipboard
-                  <span icon save (click)="copyCode(htmlCopy)"></span>
-                </p>
-                <small *ngIf="showSuccessfullyCopied">Successully copied</small>
-              </div>
-              <ea-markdown [doc]="stripedNHoveredNSelectableTable" #htmlCopy></ea-markdown>
-            </ea-tabpanel>
-            <ea-tabpanel name="TS">
-              <div style="display: grid">
-                <p class="copy-clipboard">Copy to clipboard
-                  <span icon save (click)="copyCode(tsCopy)"></span>
-                </p>
-                <small *ngIf="showSuccessfullyCopied">Successully copied</small>
-              </div>
-              <ea-markdown [doc]="tableOnRowSelect" #tsCopy></ea-markdown>
-            </ea-tabpanel>
-          </ea-tabpanel-group>
-        </div>
-        <div class="table-right-position">
-          <table class="ea-table">
-            <caption>
-              Table 1. Programming languages experience
-            </caption>
-            <thead>
-              <tr>
-                <th>Type</th>
-                <th>Experience</th>
-              </tr>
-            </thead>
-            <tbody striped table-hover>
-              <tr *ngFor="let i of tableData" #row (click)="onRowSelect(row)">
-                <td>{{ i.technology }}</td>
-                <td>{{ i.experience }}</td>
-              </tr>
-            </tbody>
-          </table>
+    <br>
+    <div class="prettifier">
+      <h2 class="h2-table-caption">Striped, Hovered and Selectable Table</h2>
+      <p>
+        To make table stpired or hovered use appropriate <code>striped</code> and <code>table-hover</code>
+        attributes in
+        <code>&lt;tbody&gt;</code>. To make table selectable - add <code>(click)</code>event <code>onRowSelect(row)</code>. 
+        Add a template reference variable for <code>&lt;tr&gt;</code> tag. It the tabs below you can copy the example
+        code.
+      </p>
+      <div class="ea-card">
+        <div class="ea-card-header"></div>
+        <div class="ea-card-content">
+          <div class="header table-right-position">
+            <ea-tablist [tabpanelGroup]="selectableTableCode"></ea-tablist>
+            <ea-tabpanel-group #selectableTableCode>
+              <ea-tabpanel name="HTML">
+                <eangio-copy-code [templateToCopy]="htmlCopy"></eangio-copy-code>
+                <ea-markdown [doc]="stripedNHoveredNSelectableTable" #htmlCopy></ea-markdown>
+              </ea-tabpanel>
+              <ea-tabpanel name="TS">
+                <eangio-copy-code [templateToCopy]="tsCopy"></eangio-copy-code>
+                <ea-markdown [doc]="tableOnRowSelect" #tsCopy></ea-markdown>
+              </ea-tabpanel>
+            </ea-tabpanel-group>
+          </div>
+          <div class="table-right-position">
+            <table class="ea-table">
+              <caption>
+                Table 1. Programming languages experience
+              </caption>
+              <thead>
+                <tr>
+                  <th>Type</th>
+                  <th>Experience</th>
+                </tr>
+              </thead>
+              <tbody striped table-hover>
+                <tr *ngFor="let i of tableData" #row (click)="onRowSelect(row)">
+                  <td>{{ i.technology }}</td>
+                  <td>{{ i.experience }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="prettifier">
-    <h2 class="h2-table-caption">Striped Table</h2>
-    <p>
-      Bisides using class <code>ea-table</code> in tag
-      <code>&lt;table&gt;</code> use attribute
-      <code>striped</code> in <code>&lt;tbody&gt;</code> tag.
-    </p>
-    <div class="ea-card">
-      <div class="ea-card-header"></div>
-      <div class="ea-card-content header markdown-table-wrapper">
-        <div>
-          <ea-markdown [doc]="stripedTable"></ea-markdown>
-        </div>
-        <div>
-          <table class="ea-table">
-            <caption>
-              Table 2. Programming languages experience
-            </caption>
-            <thead>
-              <tr>
-                <th>Type</th>
-                <th>Experience</th>
-              </tr>
-            </thead>
-            <tbody striped>
-              <tr *ngFor="let i of tableData">
-                <td>{{ i.technology }}</td>
-                <td>{{ i.experience }}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="prettifier">
-    <h2 class="h2-table-caption">Hover Table</h2>
-    <p>
-      Bisides using class <code>ea-table</code> in tag
-      <code>&lt;table&gt;</code> use attribute
-      <code>table-hover</code> in
-      <code>&lt;tbody&gt;</code>.
-    </p>
-    <div class="ea-card">
-      <div class="ea-card-header"></div>
-      <div class="ea-card-content header markdown-table-wrapper">
-        <div>
-          <ea-markdown [doc]="hoverTable"></ea-markdown>
-        </div>
-        <div>
-          <table class="ea-table">
-            <caption>
-              Table 3. Programming languages experience
-            </caption>
-            <thead>
-              <tr>
-                <th>Type</th>
-                <th>Experience</th>
-              </tr>
-            </thead>
-            <tbody table-hover>
-              <tr *ngFor="let i of tableData">
-                <td>{{ i.technology }}</td>
-                <td>{{ i.experience }}</td>
-              </tr>
-            </tbody>
-          </table>
+    <div class="prettifier">
+      <h2 class="h2-table-caption">Striped Table</h2>
+      <p>
+        Bisides using class <code>ea-table</code> in tag
+        <code>&lt;table&gt;</code> use attribute
+        <code>striped</code> in <code>&lt;tbody&gt;</code> tag.
+      </p>
+      <div class="ea-card">
+        <div class="ea-card-header"></div>
+        <div class="ea-card-content header markdown-table-wrapper">
+          <div>
+            <ea-markdown [doc]="stripedTable"></ea-markdown>
+          </div>
+          <div>
+            <table class="ea-table">
+              <caption>
+                Table 2. Programming languages experience
+              </caption>
+              <thead>
+                <tr>
+                  <th>Type</th>
+                  <th>Experience</th>
+                </tr>
+              </thead>
+              <tbody striped>
+                <tr *ngFor="let i of tableData">
+                  <td>{{ i.technology }}</td>
+                  <td>{{ i.experience }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="prettifier">
-    <h2 class="h2-table-caption">Text direction</h2>
-    <p>
-      Add an attribute <code>text-direction</code> with the following values:
-      <code>left</code> and <code>right</code>. The text will be centered by
-      default
-    </p>
-    <div class="ea-card">
-      <div class="ea-card-header"></div>
-      <div class="ea-card-content header markdown-table-wrapper">
-        <div>
-          <ea-markdown [doc]="textDirectionTable"></ea-markdown>
-        </div>
-        <div>
-          <table class="ea-table">
-            <caption>
-              Table 4. Programming languages experience
-            </caption>
-            <thead>
-              <tr>
-                <th text-direction="right">Type</th>
-                <th text-direction="left">Experience</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td text-direction="right">C++</td>
-                <td text-direction="left">5 years</td>
-              </tr>
-              <tr>
-                <td text-direction="right">Pascal</td>
-                <td text-direction="left">10 Years</td>
-              </tr>
-              <tr>
-                <td text-direction="right">Assembler</td>
-                <td text-direction="left">15 years</td>
-              </tr>
-            </tbody>
-          </table>
+    <div class="prettifier">
+      <h2 class="h2-table-caption">Hover Table</h2>
+      <p>
+        Bisides using class <code>ea-table</code> in tag
+        <code>&lt;table&gt;</code> use attribute
+        <code>table-hover</code> in
+        <code>&lt;tbody&gt;</code>.
+      </p>
+      <div class="ea-card">
+        <div class="ea-card-header"></div>
+        <div class="ea-card-content header markdown-table-wrapper">
+          <div>
+            <ea-markdown [doc]="hoverTable"></ea-markdown>
+          </div>
+          <div>
+            <table class="ea-table">
+              <caption>
+                Table 3. Programming languages experience
+              </caption>
+              <thead>
+                <tr>
+                  <th>Type</th>
+                  <th>Experience</th>
+                </tr>
+              </thead>
+              <tbody table-hover>
+                <tr *ngFor="let i of tableData">
+                  <td>{{ i.technology }}</td>
+                  <td>{{ i.experience }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
+    <div class="prettifier">
+      <h2 class="h2-table-caption">Text direction</h2>
+      <p>
+        Add an attribute <code>text-direction</code> with the following values:
+        <code>left</code> and <code>right</code>. The text will be centered by
+        default
+      </p>
+      <div class="ea-card">
+        <div class="ea-card-header"></div>
+        <div class="ea-card-content header markdown-table-wrapper">
+          <div>
+            <ea-markdown [doc]="textDirectionTable"></ea-markdown>
+          </div>
+          <div>
+            <table class="ea-table">
+              <caption>
+                Table 4. Programming languages experience
+              </caption>
+              <thead>
+                <tr>
+                  <th text-direction="right">Type</th>
+                  <th text-direction="left">Experience</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td text-direction="right">C++</td>
+                  <td text-direction="left">5 years</td>
+                </tr>
+                <tr>
+                  <td text-direction="right">Pascal</td>
+                  <td text-direction="left">10 Years</td>
+                </tr>
+                <tr>
+                  <td text-direction="right">Assembler</td>
+                  <td text-direction="left">15 years</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!--   <h2 class="table-styling-header">Styling</h2>
+    <ea-markdown [doc]="table_css_variables"></ea-markdown> -->
   </div>
-<!--   <h2 class="table-styling-header">Styling</h2>
-  <ea-markdown [doc]="table_css_variables"></ea-markdown> -->
-</div>
+  
