@@ -1,6 +1,6 @@
 @define-mixin layout-base {
-  --ea-drawer-header-height: 4rem;
-  --ea-drawer-footer-height: 4rem;
+  --ea-drawer-header-height: calc(var(--ea-sizer) * 4rem);
+  --ea-drawer-footer-height: calc(var(--ea-sizer) * 4rem);
 }
 
 @define-mixin white-text-color {
@@ -31,7 +31,7 @@
       'drawer main';
 
     & ea-main {
-      font-size: 1rem;
+      font-size: calc(var(--ea-sizer) * 1rem);
       grid-area: main;
       overflow: auto;
       background: var(--ea-color-3);
@@ -43,7 +43,7 @@
         width: 100%;
         display: flex;
         align-items: center;
-        padding: 1rem;
+        padding: calc(var(--ea-spacer) * 4rem);
         box-sizing: border-box;
         color: var(--ea-text-color-light);
         & p,
@@ -133,8 +133,8 @@
       & a {
         color: inherit;
         text-decoration: none;
-        font-size: 1rem;
-        margin: 0.5em;
+        font-size: calc(var(--ea-sizer) * 1rem);
+        margin: calc(var(--ea-spacer) * 0.5em);
       }
     }
 

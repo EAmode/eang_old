@@ -115,7 +115,7 @@
         position: absolute;
         z-index: 1;
         background: var(--ea-color-3);
-        min-width: 8em;
+        min-width: calc(var(--ea-sizer) * 8em);
         box-shadow: var(--ea-box-shadow);
         & [node] {
           &:hover {
@@ -158,7 +158,7 @@
       }
 
       a {
-        padding: 0 0.2em 0 0.6em;
+        padding: 0 calc(var(--ea-spacer) * 0.2em) 0 calc(var(--ea-spacer) * 0.6em);
         display: block;
         line-height: var(calc(var(--ea-sizer) * 2.5em), 2.5em);
         font-size: calc(var(--ea-sizer) * 1rem);

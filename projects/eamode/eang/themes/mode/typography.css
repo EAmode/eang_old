@@ -82,8 +82,8 @@
     font-size: calc(var(--ea-sizer) * 1rem);
     background: var(--ea-code-background, transparent);
     color: var(--ea-color, var(--ea-code-color, var(--ea-color-1)));
-    padding: 0.2rem;
-    border-radius: 0.3em;
+    padding: calc(var(--ea-spacer) * 0.2rem);
+    border-radius: calc(var(--ea-sizer) * 0.3em);
     margin-right: calc(var(--ea-spacer) * 0.1em);
     font-family: 'Source Code Pro', monospace;
   }
