@@ -95,41 +95,6 @@ export class LayoutComponent implements OnInit {
   |  Flex   |  Sets the properties of the toolbar to be flex with space-between a two child element layout  |
   `
 
-  ea_toolbar_left_center_right = `
-  |  Attributes   | Description  |
-  |---|---|
-  |  left   |  Sets a tag before &lt;header&gt; |
-  |  center  |  Sets a tag between &lt;header&gt; and &lt;aside&gt; |
-  |  right   |  Sets a tag after &lt;aside&gt; |
-  `
-
-  ea_toolbar_position_example = `
-  *layout.component.html*
-  ~~~html
-  <ea-layout>
-    <ea-toolbar>
-      <div left>
-        <img src="...any logo...">
-      </div>
-
-      <header>
-        <a routerLink="/about">About</a>
-      </header>
-
-      <input type="tel" center>
-
-      <aside>
-        <button class="ea-button">Log out</button>
-      </aside>
-
-      <span right>
-        <p center>Text after aside</p>
-      </span>
-    </ea-toolbar>
-  ...
-  </ea-layout>
-  ~~~
-  `
   constructor() {}
 
   ngOnInit() {}
