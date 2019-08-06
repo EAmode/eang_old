@@ -14,7 +14,11 @@ import 'prismjs/components/prism-scss'
 @Component({
   selector: 'ea-markdown',
   template: `
-    <span class="ea-markdown-content" [innerHTML]="compiledMarkdown"></span>
+    <span
+      class="ea-markdown-content"
+      [innerHTML]="compiledMarkdown"
+      (mouseup)="copyCode()"
+    ></span>
   `
 })
 export class MarkdownComponent implements OnChanges {
@@ -62,5 +66,14 @@ export class MarkdownComponent implements OnChanges {
     this.compiledMarkdown = this.markdownIt.render(
       String(changes.doc.currentValue)
     )
+  }
+
+  copyCode() {
+    const el = document.createElement('textarea')
+    el.value = document.getSelection().toString()
+    document.body.appendChild(el)
+    el.select()
+    document.execCommand('copy')
+    document.body.removeChild(el)
   }
 }
