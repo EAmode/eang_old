@@ -16,16 +16,11 @@ import 'prismjs/components/prism-markup'
 import 'prismjs/components/prism-typescript'
 import 'prismjs/components/prism-sass'
 import 'prismjs/components/prism-scss'
-import { CopyCodeService } from '../services/copy-code.service'
 
 @Component({
   selector: 'ea-markdown',
   template: `
-    <span
-      class="ea-markdown-content"
-      [innerHTML]="compiledMarkdown"
-      (mouseup)="SelectCode()"
-    ></span>
+    <span class="ea-markdown-content" [innerHTML]="compiledMarkdown"></span>
   `
 })
 export class MarkdownComponent implements OnChanges {
@@ -69,15 +64,11 @@ export class MarkdownComponent implements OnChanges {
 
   @ContentChild('copyPaste', { static: false }) code: MarkdownComponent
 
-  constructor(public copyCodeService: CopyCodeService) {}
+  constructor() {}
 
   ngOnChanges(changes: SimpleChanges) {
     this.compiledMarkdown = this.markdownIt.render(
       String(changes.doc.currentValue)
     )
-  }
-
-  SelectCode() {
-    this.copyCodeService.copyCode(document.getSelection().toString())
   }
 }
