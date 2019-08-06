@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser'
 import { NgModule, Component } from '@angular/core'
-import { ReactiveFormsModule, FormsModule } from '@angular/forms'
+import { ReactiveFormsModule } from '@angular/forms'
 import { RouterModule, Routes } from '@angular/router'
 
 import { AppComponent } from './app.component'
@@ -94,7 +94,6 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    FormsModule,
     LayoutModule,
     AutoCompleteModule,
     PanelModule,
