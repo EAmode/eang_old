@@ -18,7 +18,22 @@
     </div>
   </div>
 
+  <div>
+      <input type="text" id="searchIcon" placeholder="Search icon..." [(ngModel)]="inputValue"
+        (ngModelChange)="onSearchInputChange($event)">
+    </div>
+
   <h2>Icon Set</h2>
+  <div *ngIf="match > 0">Oops, found nothing.</div>
+<!--   <ng-template [ngIf]="successfullyMatch.value === 0"></ng-template> -->
+  <div multi-col style="--ea-grid-col-min-width: calc(var(--ea-sizer) * 8em);">
+    <div class="ea-card searchable" *ngFor="let i of cardWithIcons">
+      <div class="ea-card-content"><span icon class="{{i.className}}"></span></div>
+      <div class="ea-card-footer">{{i.iconName}}</div>
+    </div>
+  </div>
+
+<!--   <h2>Icon Set</h2>
   <div multi-col style="--ea-grid-col-min-width: 8em;">
     <div class="ea-card">
       <div class="ea-card-content"><span alert-circle icon></span></div>
@@ -272,5 +287,5 @@
       <div class="ea-card-content"><span add-file icon></span></div>
       <div class="ea-card-footer">add-file</div>
     </div>
-  </div>
+  </div> -->
 </div>
