@@ -66,17 +66,11 @@ export class ThemingComponent implements OnInit {
 `
   root_level = `
   ~~~ css
-  /* overriding one common property accross all
-     themes */
-  :root {
-    --ea-color-1: green;
-  }
-
   /* overriding some common properties for
-     the mode theme */
+    the mode theme */
   .mode {
     --ea-color-1: hsl(223, 40%, 43%);
-    --ea-background-color-hover: #violet;
+    --ea-background-color-hover: violet;
   }
 
   /* changing the properties of a left aligned panel */
