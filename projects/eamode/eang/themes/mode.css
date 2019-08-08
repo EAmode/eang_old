@@ -16,6 +16,7 @@
 @import 'mode/utilities.css';
 @import 'mode/input.css';
 @import 'mode/tooltip.css';
+@import 'mode/list.css';
 
 .mode {
   /* @mixin input-mode; */
@@ -33,4 +34,5 @@
   @mixin menu;
   @mixin tabs;
   @mixin tooltip;
+  @mixin list-mode;
 }
