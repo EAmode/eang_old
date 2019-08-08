@@ -34,6 +34,7 @@
       font-size: calc(var(--ea-sizer) * 1rem);
       grid-area: main;
       overflow: auto;
+      overflow-x: inherit;
       background: var(--ea-color-3);
 
       & ea-footer {
