@@ -15,11 +15,11 @@ import { Component, OnInit } from '@angular/core'
 export class ListComponent implements OnInit {
   role_list = `
 ~~~html
-<div role="list">
-  <div role="listitem">Angular</div>
-  <div role="listitem">Express</div>
-  <div role="listitem">Polymer</div>
-  ...
+<div class="ea-list">
+  <div role="list">
+    <div role="listitem">...</div>
+    ...
+  </div>
 </div>
 ~~~
   `
