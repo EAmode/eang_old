@@ -21,8 +21,8 @@
       font-size: var(--ea-tooltip-font-size);
       background: var(--ea-tooltip-background);
       display: flex;
-      padding: 0.5em 1em;
-      border-radius: 0.25em;
+      padding: calc(var(--ea-spacer) * 0.5em) calc(var(--ea-spacer) * 1em);
+      border-radius: calc(var(--ea-sizer) * 0.25em);
       white-space: nowrap;
       min-width: 2em;
     }

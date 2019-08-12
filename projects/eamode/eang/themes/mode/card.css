@@ -2,8 +2,8 @@
   & .ea-card {
     font-size: calc(var(--ea-sizer) * 1rem);
     box-shadow: var(--ea-box-shadow);
-    background: #fff;
-    border: 1px solid var(--ea-color-3);
+    background: var(--ea-color-3);
+    border: 0.1em solid var(--ea-color-3);
     color: var(--ea-text-color);
     width: 100%;
     margin: 0;

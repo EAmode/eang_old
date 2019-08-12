@@ -27,7 +27,7 @@
 .fluentdark,
 .mode,
 .material {
-    & ea-footer {
+  & ea-footer {
     & span {
       display: flex;
       align-items: center;
@@ -127,7 +127,7 @@
     }
     & ea-panel[orientation='left'],
     & ea-panel[orientation='right'] {
-      --ea-panel-max-width: 6rem; 
+      --ea-panel-max-width: 6rem;
       flex-direction: column;
     }
     & ea-panel[orientation='top'],
@@ -187,7 +187,7 @@
       line-height: 1.3em;
     }
   }
-/* 
+  /* 
   & ea-footer {
     @media only screen and (max-width: 625px) {
       --ea-footer-height: auto;

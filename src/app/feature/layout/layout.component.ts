@@ -1,11 +1,21 @@
 import { Component, OnInit } from '@angular/core'
+import { Subject } from 'rxjs'
+import { EangElement } from '@eamode/eang'
 
 @Component({
   selector: 'eangio-layout',
   templateUrl: './layout.component.html',
-  styles: []
+  styles: [
+    `
+      ul {
+        list-style-type: circle;
+      }
+    `
+  ]
 })
 export class LayoutComponent implements OnInit {
+  activate = new Subject<EangElement>()
+
   ea_layout_attrs = `
   *layout.component.html*
   ~~~html
@@ -43,6 +53,17 @@ export class LayoutComponent implements OnInit {
   }
   ~~~
   `
+
+  ea_layout_import = `
+  *module.ts*
+  ~~~ts
+  import { LayoutModule } from '@eamode/eang';
+  ...
+  @NgModule({
+    imports: [ LayoutModule ]
+  })
+  ~~~
+  `
   ea_layout_drawer = `
   *layout.component.html*
   ~~~html
@@ -73,6 +94,7 @@ export class LayoutComponent implements OnInit {
   |  Shadow   |  Sets a drop shadow on the ea-toolbar   |
   |  Flex   |  Sets the properties of the toolbar to be flex with space-between a two child element layout  |
   `
+
   constructor() {}
 
   ngOnInit() {}

@@ -61,7 +61,8 @@ const routes: Routes = [
   { path: 'variables', component: VariablesComponent },
   { path: 'features', component: HomeComponent },
   { path: 'utilities', component: UtilitiesComponent },
-  { path: 'markdown', component: MarkdownComponent }
+  { path: 'markdown', component: MarkdownComponent },
+  { path: 'adjustment', component: ThemingComponent }
 ]
 
 @NgModule({

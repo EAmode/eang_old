@@ -49,6 +49,7 @@
       &:hover {
         background-color: var(--ea-background-color-hover) !important;
         cursor: pointer;
+        color: var(--ea-text-color-light);
       }
     }
   }

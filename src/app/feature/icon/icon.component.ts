@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit, AfterViewInit } from '@angular/core'
+import { Subject, BehaviorSubject } from 'rxjs'
+import { debounceTime, distinctUntilChanged } from 'rxjs/operators'
 
 @Component({
   selector: 'eangio-icon',
@@ -20,30 +22,31 @@ export class IconComponent implements OnInit {
   iconset = [
     {
       name: 'x',
-      title: 'close'
+      title: 'close',
+      className: 'ea-'
     },
+    ,
     {
       name: 'chevron',
-      title: 'close'
+      title: 'close',
+      className: 'ea-'
     },
+    ,
     {
       name: 'x',
-      title: 'close'
+      title: 'close',
+      className: 'ea-'
     },
+    ,
     {
       name: 'x',
-      title: 'close'
+      title: 'close',
+      className: 'ea-'
     },
+    ,
     {
       name: 'x',
       title: 'close'
     }
   ]
-
-  colors = `
-  |  Attributes   | HEX Code  |
-  |---|---|
-  |  Closed   |  this would set the panel to its closed state   |
-  |  Maximized   |  this would set the panel to its maximized, or open, state   |
-  `
 }
