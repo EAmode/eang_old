@@ -1,5 +1,5 @@
 @define-mixin tabs-border-w-s {
-  border: calc(var(--ea-sizer) * 0.2em);
+  border: 0.2em;
   border-style: none none none solid;
 }
 
@@ -60,7 +60,7 @@
       background: transparent;
       border-top: calc(var(--ea-sizer) * 0.1em) solid transparent;
       border-color: transparent;
-      border: calc(var(--ea-sizer) * 0.1em);
+      border: 0.1em;
       border-style: solid none none none;
       width: max-content;
       width: 100%;
@@ -69,13 +69,13 @@
     & [node][active] {
       background: transparent;
       border-color: var(--ea-color-1);
-      border: calc(var(--ea-sizer) * 0.1em);
+      border: 0.1em;
       border-style: none none solid none;
 
       &:hover {
         background: rgba(0, 0, 0, 0.15);
         border-color: var(--ea-color-1-light);
-        border: calc(var(--ea-sizer) * 0.1em);
+        border: 0.1em;
         border-style: none none solid none;
       }
       & [name-area] {
@@ -85,14 +85,14 @@
     & [node]:hover {
       background: transparent;
       border-color: var(--ea-background-color-hover);
-      border: calc(var(--ea-sizer) * 0.1em);
+      border: 0.1em;
       border-style: solid none none none;
     }
     & [node]:active {
       background: rgba(0, 0, 0, 0.15);
       box-shadow: none;
       border-color: var(--ea-color-1);
-      border: calc(var(--ea-sizer) * 0.1em);
+      border: 0.1em;
       border-style: none none solid none;
     }
     & ea-menu {
@@ -102,7 +102,7 @@
         display: flex;
         border-bottom: solid;
         border-color: var(--ea-color-3-dark);
-        border: calc(var(--ea-sizer) * 0.05em);
+        border: 0.05em;
         border-style: none none solid none;
         background: transparent;
         overflow-x: auto;
@@ -141,9 +141,12 @@
       & li:not(.active):hover {
         border-top-right-radius: calc(var(--ea-sizer) * 0.3em);
         border-top-left-radius: calc(var(--ea-sizer) * 0.3em);
-        border-left: calc(var(--ea-sizer) * 0.1em) var(--ea-color-hover-not-active) solid;
-        border-top: calc(var(--ea-sizer) * 0.1em) var(--ea-color-hover-not-active) solid;
-        border-right: calc(var(--ea-sizer) * 0.1em) var(--ea-color-hover-not-active) solid;
+        border-left: calc(var(--ea-sizer) * 0.1em)
+          var(--ea-color-hover-not-active) solid;
+        border-top: calc(var(--ea-sizer) * 0.1em)
+          var(--ea-color-hover-not-active) solid;
+        border-right: calc(var(--ea-sizer) * 0.1em)
+          var(--ea-color-hover-not-active) solid;
         transform: scale(1.001);
         transition-duration: 0.2s;
       }
