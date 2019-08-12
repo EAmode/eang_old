@@ -1,47 +1,43 @@
 @define-mixin list-default {
-    
 }
 
 @define-mixin list-mode {
-    .ea-list {
-        width: 100%;
-        & [role='list'] {
-            background-color: var(--ea-color-3);
-            box-shadow: inset 0px 3px 12px rgba(0, 0, 0, 0.08);
-            color: var(--ea-text-color);
-            max-height: calc(var(--ea-sizer) * 15em);
-            overflow-y: auto;
-          }
-            & [role='listitem'] {
-            align-items: center;
-            background: transparent;
-            border-color: rgba(0, 0, 0, 0);
-            border: calc(var(--ea-spacer) * 0.02em);
-            border-style: solid;
-            cursor: pointer;
-            display: flex;
-            font-size: calc(var(--ea-sizer) * 1rem);
-            height: calc(var(--ea-sizer) * 3em);
-            margin: calc(var(--ea-spacer) * 0.07em);
-            padding: 0 0 0 calc(var(--ea-spacer) * 1em);
-            &:hover:not(:active) {
-              background-color: var(--ea-background-color-hover);
-              box-shadow: none;
-              border-color: transparent;
-              border: calc(var(--ea-sizer) * 0.02em);
-              border-style: solid;
-              color: var(--ea-color-3);
-            }
-        
-            &:active {
-              background-color: var(--ea-background-color-active);
-              box-shadow: unset;
-              border-color: transparent;
-              border: calc(var(--ea-sizer) * 0.1em);
-              border-style: solid;
-              color: var(--ea-color-3);
-            }
-          }
+  .ea-list[role='list'] {
+    width: 100%;
+    background-color: var(--ea-color-3);
+    box-shadow: inset 0px 3px 12px rgba(0, 0, 0, 0.08);
+    color: var(--ea-text-color);
+    max-height: calc(var(--ea-sizer) * 15em);
+    overflow-y: auto;
+    & [role='listitem'] {
+      align-items: center;
+      background: transparent;
+      border-color: rgba(0, 0, 0, 0);
+      border: calc(var(--ea-spacer) * 0.02em);
+      border-style: solid;
+      cursor: pointer;
+      display: flex;
+      font-size: calc(var(--ea-sizer) * 1rem);
+      height: calc(var(--ea-sizer) * 3em);
+      margin: calc(var(--ea-spacer) * 0.07em);
+      padding: 0 0 0 calc(var(--ea-spacer) * 1em);
+      &:hover:not(:active) {
+        background-color: var(--ea-background-color-hover);
+        box-shadow: none;
+        border-color: transparent;
+        border: calc(var(--ea-sizer) * 0.02em);
+        border-style: solid;
+        color: var(--ea-color-3);
+      }
+
+      &:active {
+        background-color: var(--ea-background-color-active);
+        box-shadow: unset;
+        border-color: transparent;
+        border: calc(var(--ea-sizer) * 0.1em);
+        border-style: solid;
+        color: var(--ea-color-3);
+      }
     }
   }
-  
+}
