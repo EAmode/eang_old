@@ -3,7 +3,7 @@
     font-size: calc(var(--ea-sizer) * 1rem);
     box-shadow: var(--ea-box-shadow);
     background: var(--ea-color-3);
-    border: calc(var(--ea-sizer) * 0.1em) solid var(--ea-color-3);
+    border: 0.1em solid var(--ea-color-3);
     color: var(--ea-text-color);
     width: 100%;
     margin: 0;
@@ -33,7 +33,7 @@
     }
 
     & .ea-card-header {
-      border: calc(var(--ea-sizer) * 0.1em) var(--ea-color-3);
+      border: 0.1em var(--ea-color-3);
       border-style: none none solid none;
       background: transparent;
       color: var(--ea-color-2);
