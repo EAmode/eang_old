@@ -1,87 +1,34 @@
 <div role="banner" m-0-0-2-0>
   <h1>Button</h1>
-
   <span icon button-icon negative style="width: 2rem; height:2rem;"></span>
 </div>
+
 <div class="content-container">
   <p>
-    Buttons allow users to take actions, and make choices, with a single tap.
-    Eang has 4 core types of buttons. Add <code>ea-button</code> class in <code>&lt;button&gt;</code> tag to apply styles.
+    Standard button examples. Add <code>ea-button</code> class to a
+    <code>&lt;button&gt;</code>.
   </p>
-
   <div multi-col center class="example">
     <button class="ea-button">Button</button>
-    <button class="ea-button" rounded>Rounded</button>
+    <button class="ea-button" active>Active</button>
+    <button class="ea-button" disabled>Disabled</button>
+    <button class="ea-button" primary>Primary</button>
     <button class="ea-button" outline>Outline</button>
-    <button class="ea-button" outline rounded>Outline Rounded</button>
     <button class="ea-button" flat>Flat</button>
-    <button class="ea-button" flat rounded>Flat Rounded</button>
   </div>
   <ea-markdown style="margin-bottom:2em;" [doc]="button"></ea-markdown>
 
-  <ea-markdown class="example" [doc]="props"></ea-markdown>
-
-  <p>You can do the same with the <code>&lt;div&gt;</code>, <code>&lt;span&gt;</code>, <code>&lt;a&gt;</code> tags, but need also to add <code>role="ea-button"</code>.</p>
-  
+  <p>Customized button examples.</p>
   <div multi-col center class="example">
-    <div class="ea-button" role="ea-button">Div</div>
-    <span class="ea-button" role="ea-button" rounded>Rounded</span>
-    <a class="ea-button" role="ea-button" outline>Outline</a>
-    <label class="ea-button" role="ea-button" flat rounded>Flat Rounded</label>
+    <button class="ea-button" style="--ea-button-border-radius: 1em">
+      Button
+    </button>
+    <button
+      class="ea-button"
+      style="--ea-button-background: var(--ea-color-success);"
+    >
+      Success
+    </button>
   </div>
   <ea-markdown style="margin-bottom:2em;" [doc]="tags"></ea-markdown>
-
-  <h2>Icon Buttons</h2>
-  <p>
-    Eang makes it easy to add icons into your buttons with a preset lay out that
-    also scales up proportionally based off font-size. the
-    <code>[icon]</code> attribute can be added to a button to take care of some
-    basic icon work.
-  </p>
-
-  <div
-    multi-col
-    class="example"
-    center
-  >
-    <button class="ea-button"><span icon negative sign-in></span></button>
-    <button class="ea-button" rounded><span icon negative filter></span></button>
-    <button class="ea-button" rounded>Button <span icon negative filter></span></button>
-    <button class="ea-button" icon outline><span icon trash-2></span></button>
-    <button class="ea-button" icon outline rounded><span icon trash-2></span></button>
-    <button class="ea-button" outline rounded><span icon trash-2></span> Delete</button>
-    <button class="ea-button" icon flat><span icon filter></span></button>
-    <button class="ea-button" flat rounded><span icon filter></span></button>
-    <button class="ea-button" flat rounded>Filter <span icon filter></span></button>
-  </div>
-  <ea-markdown class="example" [doc]="button_icon"></ea-markdown>
-
-  <h3>Re-Sizable Buttons</h3>
-  <p>
-    These variables can all be adjusted to customize aspects of your button that
-    you want to scale with. We've added a few attributes to allow you to easily
-    scale up and down to preset measurements.
-  </p>
-
-  <div
-    multi-col
-    class="example"
-    center
-  >
-    <button class="ea-button" sm rounded style="margin:1rem;">
-      <span icon filter negative></span> [sm]
-    </button>
-    <button class="ea-button" md outline rounded style="margin:1rem;">[md]</button>
-    <button class="ea-button" lg rounded style="margin:1rem;">[lg]</button>
-    <button class="ea-button" xl flat style="margin:1rem;">[xl]</button>
-    <button class="ea-button" xxl style="margin:1rem;">[xxl]</button>
-  </div>
-  <ea-markdown class="example" [doc]="button_sizing"></ea-markdown>
-
-  <h2>Styling</h2>
-  
-  <h3>Button Variables</h3>
-  <p>Note: only <strong>before</strong> `ea` double dash.</p>
-  <ea-markdown class="example" [doc]="button_variables"></ea-markdown>
-
 </div>
