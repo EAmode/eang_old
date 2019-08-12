@@ -13,7 +13,7 @@ import {
     <button
       class="ea-button"
       icon
-      flat
+      outline
       (click)="toggleThemes()"
       (focus)="focus.emit($event)"
     >
