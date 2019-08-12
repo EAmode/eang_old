@@ -3,13 +3,7 @@ import { Component, OnInit } from '@angular/core'
 @Component({
   selector: 'eangio-button',
   templateUrl: './button.component.html',
-  styles: [
-    `
-      div {
-        --ea-grid-col-min-width: calc(var(--ea-sizer) * 8em);
-      }
-    `
-  ]
+  styleUrls: ['./button.component.scss']
 })
 export class ButtonComponent implements OnInit {
   button = `
@@ -25,8 +19,20 @@ export class ButtonComponent implements OnInit {
 
   tags = `
   ~~~html
-  <button class="ea-button" style="--ea-button-border-radius: 1em">Button</button>
-  <button class="ea-button" style="--ea-button-background: var(--ea-color-success);">Success</button>
+<!-- // CSS
+  --ea-button-border-radius: 1rem;
+  & button.ea-button[success] { // define a 'success' button type
+    --ea-button-background: var(--ea-color-success);
+    --ea-button-border: 0.1em solid var(--ea-color-success-dark);
+    &:hover {
+      --ea-button-background: var(--ea-color-success-dark);
+    }
+  }
+  -->
+  <div id="customized">
+    <button class="ea-button">Button</button>
+    <button class="ea-button" success>Success</button>
+  </div>
   ~~~
   `
 

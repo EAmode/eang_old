@@ -16,6 +16,7 @@
 
   /* Semantic Colors */
   --ea-color-success: #5bb95b;
+  --ea-color-success-dark: #438a43;
   --ea-color-info: #5ac1de;
   --ea-color-warning: #f1ae4e;
   --ea-color-danger: #d9534f;
@@ -52,6 +53,7 @@
   /* Utilities */
   /* --ea-color: hsl(0, 0%, 20%); */
   /* --ea-background:  hsl(223, 50%, 95%); */
+  /* --ea-border: 0.1em solid var(--ea-color-1-dark); */
   /* --ea-border-radius:  0.1em; */
   --ea-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
