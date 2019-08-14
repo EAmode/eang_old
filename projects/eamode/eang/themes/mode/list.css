@@ -20,13 +20,13 @@
       margin: calc(var(--ea-spacer) * 0.07em);
       padding: 0 0 0 calc(var(--ea-spacer) * 1em);
       &:active {
-        background-color: var(--ea-background-color-active);
+        background: var(--ea-background-color-active);
         box-shadow: unset;
         border: calc(var(--ea-sizer) * 0.1em) transparent solid;
         color: var(--ea-color-3);
       }
       &:hover:not(:active) {
-        background-color: var(--ea-background-color-hover);
+        background: var(--ea-background-color-hover);
         box-shadow: none;
         border: calc(var(--ea-sizer) * 0.02em) transparent solid;
         color: var(--ea-color-3);
