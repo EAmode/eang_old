@@ -1,0 +1,18 @@
+ea-markdown,
+div[role_list_example] {
+  margin: 1.5em;
+}
+
+#customized {
+    --ea-list-max-height: 15em;
+    --ea-list-background-color: #d4d6c8;
+    & [listitem] {
+    &:active {
+      background-color: #52524e;
+    }
+    &:hover:not(:active) {
+      background-color: #9a9b94
+    }
+  }
+}
+  
