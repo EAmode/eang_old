@@ -11,20 +11,39 @@
   <div multi-col v-center class="example" style="display: inherit;">
     <ea-markdown [doc]="role_list"></ea-markdown>
     <div role_list_example>
-      <label for="secondlist"> Longer List</label>
-        <div  class="ea-list" role="list" id="secondlist">
-          <div role="listitem">Angular</div>
-          <div role="listitem">Express</div>
-          <div role="listitem">Polymer</div>
-          <div role="listitem">Aurelia</div>
-          <div role="listitem">Vue.js</div>
-          <div role="listitem">React</div>
-          <div role="listitem">Meteor</div>
-          <div role="listitem">Ember.js</div>
-          <div role="listitem">Riot.js</div>
-        </div>
+      <label for="firstList"> Longer List</label>
+      <div class="ea-list" id="firstList">
+        <div listitem>Angular</div>
+        <div listitem>Express</div>
+        <div listitem>Polymer</div>
+        <div listitem>Aurelia</div>
+        <div listitem>Vue.js</div>
+        <div listitem>React</div>
+        <div listitem>Meteor</div>
+        <div listitem>Ember.js</div>
+        <div listitem>Riot.js</div>
       </div>
+    </div>
   </div>
+
+  <p>Customized list examples.</p>
+  <div multi-col v-center class="example" style="display: inherit;">
+    <div role_list_example>
+      <label for="customized"> Customzied List</label>
+      <div class="ea-list" id="customized">
+        <div listitem>Angular</div>
+        <div listitem>Express</div>
+        <div listitem>Polymer</div>
+        <div listitem>Aurelia</div>
+        <div listitem>Vue.js</div>
+        <div listitem>React</div>
+        <div listitem>Meteor</div>
+        <div listitem>Ember.js</div>
+        <div listitem>Riot.js</div>
+      </div>
+    </div>
+  </div>
+  <ea-markdown style="margin-bottom:2em;" [doc]="role_list_css"></ea-markdown>
 
   <!--   <ea-markdown [doc]="role_banner_listitem"></ea-markdown> -->
 </div>

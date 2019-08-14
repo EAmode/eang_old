@@ -3,40 +3,48 @@ import { Component, OnInit } from '@angular/core'
 @Component({
   selector: 'eangio-list',
   templateUrl: './list.component.html',
-  styles: [
-    `
-      ea-markdown,
-      div[role_list_example] {
-        margin: 1.5em;
-      }
-    `
-  ]
+  styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
   role_list = `
 ~~~html
-<div class="ea-list">
-  <div role="list">
-    <div role="listitem">...</div>
+  <div class="ea-list">
+    <div listitem>...</div>
     ...
   </div>
-</div>
 ~~~
   `
   role_list_css = `
-  ~~~css
-  role="list" {
+~~~html
+  <!-- // CSS
     --ea-list-max-height: 15em;
+    // if not defined  --ea-color-3 will be used
+    --ea-list-background-color: #d4d6c8;
+    & [listitem] {
+    &:active {
+      // if not defined --ea-background-color-active will be used
+      background-color: #52524e;
+    }
+    &:hover:not(:active) {
+      // if not defined --ea-background-color-hover will be used
+      background-color: #9a9b94
+    }
   }
-  role="listitem" {
-     --ea-listitem-background-hover: var(--ea-color-1);
-     --ea-listitem-background-active: var(--ea-color-1-light);
-     --ea-listitem-color-hover: var(--ea-color-3);
-     --ea-listitem-color-active: var(--ea-color-3);
-     --ea-listitem-height: 2.5em;
-   }
-  ~~~
-    `
+  -->
+
+  <div  class="ea-list" id="customized">
+    <div listitem>Angular</div>
+    <div listitem>Express</div>
+    <div listitem>Polymer</div>
+    <div listitem>Aurelia</div>
+    <div listitem>Vue.js</div>
+    <div listitem>React</div>
+    <div listitem>Meteor</div>
+    <div listitem>Ember.js</div>
+    <div listitem>Riot.js</div>
+  </div>
+~~~
+  `
 
   role_banner_listitem = `
   |  CSS Variables   | Description  | Default |
