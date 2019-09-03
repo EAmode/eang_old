@@ -1,56 +1,273 @@
-/* @define-mixin input-mode {
-  [type='text'] {
-    height: 3em;
-    border-radius: 0.3em;
-    outline: none;
-    border: 0.2em solid var(--ea-color-2);
-    background-image: var(--ea-input-icon);
-    background-position: 98%;
-    background-repeat: no-repeat;
-    background-color: white;
-    background-size: 1em;
-    width: var(--ea-input-width, auto);
-    padding: 0 0.5em;
-    &:focus {
-      border: 0.2em solid var(--ea-color-1);
+@define-mixin default-input-style {
+  margin: calc(var(--ea-spacer) * 0.5em);
+  font-size: calc(var(--ea-sizer) * 1rem);
+  border: 1px solid #919191;
+  padding: 0.35em;
+  border-radius: 0.15em;
+}
+
+@define-mixin input-mode {
+  & .ea-form-field {
+    margin: calc(var(--ea-spacer) * 0.5em) calc(var(--ea-spacer) * 0.2em);
+    display: grid;
+    align-items: center;
+    width: auto;
+
+    & > label {
+      margin: 0 0 0 calc(var(--ea-spacer) * 0.5em);
+    }
+
+    & > input[type='reset'],
+    & > input[type='submit'],
+    & > input[type='button'],
+    & > input[type='file'] {
+      @mixin default-input-style;
       box-shadow: var(--ea-box-shadow);
     }
-  }
-  & [readonly] {
-    background-image: inline('mode/icon/close.svg');
-    background-position: 98%;
-    background-repeat: no-repeat;
-    background-size: 1em;
-    border: 0.2em solid transparent;
-    &:focus {
-      border: 0.2em solid var(--ea-color-3-dark);
+
+    & > textarea {
+      @mixin default-input-style;
+      min-height: calc(var(--ea-spacer) * 5em);
+      min-width: calc(var(--ea-spacer) * 15em);
+    }
+
+    & > textarea:hover {
+      border-color: var(--ea-color-1);
+    }
+
+    & > input[type='image'] {
+      margin: calc(var(--ea-spacer) * 0.5em);
+      font-size: initial;
+      padding: calc(var(--ea-spacer) * 0.35em);
+      border-radius: 0.15em;
+    }
+
+    & > input[type='color'] {
+      margin: calc(var(--ea-spacer) * 0.5em);
+      font-size: initial;
+      border-radius: 0.15em;
+    }
+
+    & > input[type='text'],
+    & > input[type='number'],
+    & > input[type='password'],
+    & > input[type='search'],
+    & > input[type='tel'],
+    & > input[type='time'],
+    & > input[type='url'],
+    & > input[type='week'],
+    & > input[type='email'],
+    & > input[type='month'],
+    & > input[type='date'],
+    & > input[type='datetime-local'] {
+      @mixin default-input-style;
+    }
+
+    & > input[type='text']:hover,
+    & > input[type='number']:hover,
+    & > input[type='password']:hover,
+    & > input[type='search']:hover,
+    & > input[type='tel']:hover,
+    & > input[type='time']:hover,
+    & > input[type='url']:hover,
+    & > input[type='week']:hover,
+    & > input[type='email']:hover,
+    & > input[type='month']:hover,
+    & > input[type='date']:hover,
+    & > input[type='datetime-local']:hover {
+      border-color: var(--ea-color-1);
+    }
+
+    & > input[type='radio'] {
+      visibility: hidden;
+      position: absolute;
+    }
+
+    & > input[type='radio'] + label {
+      cursor: pointer;
+      margin: 0 0.2em;
+    }
+
+    & > input[type='radio'] + label:before {
+      height: calc(var(--ea-sizer) * 16px);
+      margin-right: calc(var(--ea-spacer) * 4px);
+      content: ' ';
+      display: inline-block;
+      vertical-align: baseline;
+      transition: 0.3s;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-shadow: inset 0 -3px 6px #e4e4e4;
+      transition: 0.3s;
+    }
+
+    & > input[type='radio'] + label:before {
+      border-radius: 50%;
+      width: calc(var(--ea-sizer) * 16px);
+    }
+
+    & > input[type='radio']:checked + label:before {
+      box-shadow: inset 0 0 3px #e4e4e4, inset 0 0 1px #222,
+        inset 0 0 0 3.2px var(--ea-color-1);
+    }
+    
+    & > input[type='radio'][disabled] + label:before {
+      box-shadow: inset 0 0 3px #e4e4e4, inset 0 0 1px #222,
+        inset 0 0 0 3.2px var(--ea-color-disabled);
+    }
+    
+    & > input[type='range'] {
+      -webkit-appearance: none;
+      margin: calc(var(--ea-spacer) * 10px) 0;
+      width: 100%;
+    }
+  
+    & > input[type='range']:focus {
+      outline: none;
+    }
+
+    & > input[type='range']::-webkit-slider-runnable-track {
+      width: 100%;
+      height: calc(var(--ea-sizer) * 7.5px);
+      cursor: pointer;
+      animate: 0.2s;
+      box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+      background: var(--ea-color-3);
+      border-radius: 25px;
+      border: 1px solid #000101;
+    }
+
+    & > input[type='range']::-webkit-slider-thumb {
+      box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+      border: 0px solid #000000;
+      height: calc(var(--ea-sizer) * 17px);
+      width: calc(var(--ea-sizer) * 8px);
+      border-radius: 7px;
+      background: var(--ea-color-1);
+      cursor: pointer;
+      -webkit-appearance: none;
+      margin: calc(var(--ea-sizer) * -5px) 0 0 0;
+    }
+
+    & > input[type='checkbox'] {
+      margin: calc(var(--ea-spacer) * 1.5em);
+      position: relative;
+      cursor: pointer;
+    }
+    
+    & > input[type='checkbox']:before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: calc(var(--ea-sizer) * 16px);
+      height: calc(var(--ea-sizer) * 16px);
+      top: 0;
+      left: 0;
+      border: 2px solid var(--ea-color-1);
+      border-radius: 3px;
+      background-color: white;
+    }
+
+    & > input[type='checkbox'][disabled]:before {
+      border-color: var(--ea-color-disabled);
+    }
+
+    & > input[type='checkbox']:checked:after {
+      content: '';
+      display: block;
+      width: calc(var(--ea-sizer) * 5px);
+      height: calc(var(--ea-sizer) * 10px);
+      border: solid black;
+      border-width: 0 2px 2px 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+      position: absolute;
+      top: calc(var(--ea-sizer) * 2px);
+      left: calc(var(--ea-sizer) * 6px);
     }
   }
 
-  textarea {
-    --ea-textarea-padding: 1em;
-    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-    background: var(--ea-color-2);
-    color: white;
-    outline: none;
-    font-size: 1.2em;
-    border-radius: 3px;
-    padding: var(--ea-textarea-padding);
-    resize: none;
-    height: auto;
-    &[editing='true'] {
-      min-height: 10em;
-    }
-    &[editing='false'] {
+  & .checkbox-switch {
+    margin: calc(var(--ea-sizer) * 0.5em);
+    & > input[type='checkbox'] {
+      margin: calc(var(--ea-spacer) * 0.5em) calc(var(--ea-spacer) * 0.5em);
+      position: relative;
       background: var(--ea-color-3);
-      color: hsl(0, 0%, 61%);
-      border: 0;
-      pointer-events: none;
-      resize: none;
-      overflow: hidden;
+      width: calc(var(--ea-sizer) * 100px);
+      height: calc(var(--ea-sizer) * 40px);
+      -webkit-appearance: initial;
+      border-radius: calc(var(--ea-sizer) * 20px);
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      outline: none;
+      font-size: calc(var(--ea-sizer) * 14px);
+      font-family: Trebuchet, Arial, sans-serif;
+      font-weight: bold;
+      cursor: pointer;
+      border: 1px solid var(--ea-color-1);
+      animation-name: blue-to-white;
+      animation-duration: 1.5s;
     }
-    &::selection {
+
+    & > input[type='checkbox']:after {
+      position: absolute;
+      top: 5%;
+      display: block;
+      line-height: calc(var(--ea-sizer) * 32px);
+      width: 35%;
+      height: 90%;
+      background: #fff;
+      box-sizing: border-box;
+      text-align: center;
+      transition: all 0.3s ease-in 0s;
+      color: black;
+      border: var(--ea-color-1-light) 1px solid;
+      border-radius: 3px;
+    }
+
+    & > input[type='checkbox']:after {
+      left: 2%;
+      color: var(--ea-text-color-light);
       background: var(--ea-color-1);
+      border-radius: calc(var(--ea-sizer) * 20px);
+      content: 'OFF';
+    }
+
+    & > input[type='checkbox'][disabled]:after {
+      background: var(--ea-color-grey);
+      color: var(--ea-color-disabled)
+    }
+
+    & > input[type='checkbox']:checked:after {
+      color: var(--ea-text-color);
+      background: var(--ea-color-3);
+      left: 62%;
+      border-radius: calc(var(--ea-sizer) * 20px);
+      content: 'ON';
+    }
+
+    & > input[type='checkbox']:checked {
+      background: var(--ea-color-1);
+      animation-name: white-to-blue;
+      animation-duration: 1.5s;
+    }
+
+    @keyframes white-to-blue {
+      from {
+        background-color: var(--ea-color-3);
+      }
+      to {
+        background-color: var(--ea-color-1);
+      }
+    }
+
+    @keyframes blue-to-white {
+      from {
+        background: var(--ea-color-1);
+      }
+      to {
+        background: var(--ea-color-3);
+      }
     }
   }
-} */
+}
