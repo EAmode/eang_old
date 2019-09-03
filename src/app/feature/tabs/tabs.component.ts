@@ -35,7 +35,7 @@ export class TabsComponent implements OnInit {
     })
   }
 
-  tabs_example = `
+  tabs_example_html = `
   *tabs.html*
   ~~~html
   <ea-tablist [tabpanelGroup]="exampleTabs" [activateSubject]="activate"></ea-tablist>
@@ -59,14 +59,29 @@ export class TabsComponent implements OnInit {
   ~~~
   `
 
+  tabs_example_ts = `
+  *tabs.ts*
+  ~~~ts
+  import { Component } from '@angular/core'
+  import { Subject } from 'rxjs'
+  import { EangElement } from '@eamode/eang'
+  ...
+  @Component({...})
+  ...
+  export class ComponentName {
+    activate = new Subject<EangElement>();
+  }
+  ~~~
+  `
+
   tabs_simple_example = `
   *tabs.html*
   ~~~html
   <ea-tabs>
-  <ea-tab [tabTitle]="'Tab 1'" active>
+  <ea-tab tabTitle="Tab 1" active>
     Tab 1 content
   </ea-tab>
-  <ea-tab tabTitle="Tab 2">
+  <ea-tab [tabTitle]="'Tab 2'">
     Tab 2 content
   </ea-tab>
   <ea-tab tabTitle="Tab 3">
@@ -113,6 +128,16 @@ export class TabsComponent implements OnInit {
       <p>Information #2</p>
     </ea-tab>
   </ea-tabs>
+  ~~~
+  `
+  ea_tabs_import = `
+  *module.ts*
+  ~~~ts
+  import { TabsModule } from '@eamode/eang';
+  ...
+  @NgModule({
+    imports: [ TabsModule ]
+  })
   ~~~
   `
 }

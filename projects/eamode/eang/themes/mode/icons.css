@@ -6,6 +6,14 @@
     height: 1em;
     width: 1em;
 
+    &[activity],
+    &.ea-activity {
+      background-image: inline('mode/icon/activity.svg');
+    }
+    &[adjustment],
+    &.ea-adjustment {
+      background-image: inline('mode/icon/adjustment.svg');
+    }
     &[alert-circle],
     &.ea-alert-circle {
       background-image: inline('mode/icon/alert-circle.svg');
@@ -89,6 +97,10 @@
     &[bookmark],
     &.ea-bookmark {
       background-image: inline('mode/icon/bookmark.svg');
+    }
+    &[button-icon],
+    &.ea-button-icon {
+      background-image: inline('mode/icon/button.svg');
     }
     &[calendar],
     &.ea-calendar {
@@ -174,6 +186,10 @@
     &.ea-tab {
       background-image: inline('mode/icon/tab.svg');
     }
+    &[tabs-icon],
+    &.ea-tabs-icon {
+      background-image: inline('mode/icon/tabs-icon.svg');
+    }
     &[toggle-left],
     &.ea-toggle-left {
       background-image: inline('mode/icon/toggle-left.svg');
@@ -181,6 +197,10 @@
     &[toggle-right],
     &.ea-toggle-right {
       background-image: inline('mode/icon/toggle-right.svg');
+    }
+    &[terminal],
+    &.ea-terminal {
+      background-image: inline('mode/icon/terminal.svg');
     }
     &[trash-2],
     &.ea-trash-2 {
@@ -230,6 +250,14 @@
     &[x],
     &.ea-x {
       background-image: inline('mode/icon/x.svg');
+    }
+    &[component],
+    &.ea-component {
+      background-image: inline('mode/icon/component.svg');
+    }
+    &[color],
+    &.ea-color {
+      background-image: inline('mode/icon/color.svg');
     }
     &[close],
     &.ea-close {
@@ -295,6 +323,10 @@
     &.ea-power {
       background-image: inline('mode/icon/power.svg');
     }
+    &[layout],
+    &.ea-layout {
+      background-image: inline('mode/icon/layout-icon.svg');
+    }
     &[loader],
     &.ea-loader {
       background-image: inline('mode/icon/loader.svg');
@@ -310,6 +342,10 @@
     &[users],
     &.users {
       background-image: inline('mode/icon/users.svg');
+    }
+    &[pallete],
+    &.ea-pallete {
+      background-image: inline('mode/icon/pallete.svg');
     }
     &[patient],
     &.patient {

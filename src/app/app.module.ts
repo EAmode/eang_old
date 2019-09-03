@@ -40,6 +40,7 @@ import { BannerComponent } from './components/banner/banner.component'
 import { TooltipComponent } from './components/tooltip/tooltip.component'
 import { TableComponent } from './feature/table/table.component'
 import { InputsComponent } from './feature/inputs/inputs.component'
+import { ColorDisplayComponent } from './component/color-display/color-display.component'
 
 const routes: Routes = [
   { path: '', component: LandingComponent },
@@ -62,7 +63,8 @@ const routes: Routes = [
   { path: 'variables', component: VariablesComponent },
   { path: 'features', component: HomeComponent },
   { path: 'utilities', component: UtilitiesComponent },
-  { path: 'markdown', component: MarkdownComponent }
+  { path: 'markdown', component: MarkdownComponent },
+  { path: 'adjustment', component: ThemingComponent }
 ]
 
 @NgModule({
@@ -88,6 +90,7 @@ const routes: Routes = [
     TooltipComponent,
     TableComponent,
     InputsComponent
+    ColorDisplayComponent
   ],
   imports: [
     BrowserModule,

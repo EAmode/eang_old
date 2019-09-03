@@ -260,4 +260,15 @@ export class MenuComponent implements OnInit {
     ]
   }
   `
+
+  ea_menu_import = `
+  *module.ts*
+  ~~~ts
+  import { MenuModule } from '@eamode/eang';
+  ...
+  @NgModule({
+    imports: [ MenuModule ]
+  })
+  ~~~
+  `
 }

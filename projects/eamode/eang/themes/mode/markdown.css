@@ -26,14 +26,14 @@
       hyphens: none;
     }
     & pre[class*='language-'] {
-      padding: 1em;
+      padding: calc(var(--ea-spacer) * 1em);
       margin: 0;
       overflow: auto;
       background: var(--ea-color-2);
     }
     & pre {
-      padding: 1em;
-      margin: 0.5em 0;
+      padding: calc(var(--ea-spacer) * 1em);
+      margin: calc(var(--ea-spacer) * 0.5em) 0;
       overflow: auto;
       background: var(--ea-color-2);
       border-radius: calc(var(--ea-sizer) * 0.15em);

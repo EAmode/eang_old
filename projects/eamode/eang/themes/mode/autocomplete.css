@@ -45,9 +45,9 @@
     & li {
       color: var(--ea-text-color);
       font-size: calc(var(--ea-sizer) * 0.9rem);
-      height: 30px;
+      height: calc(var(--ea-sizer) * 2.3em);
       cursor: pointer;
-      padding-left: 1rem;
+      padding-left: calc(var(--ea-sizer) * 1rem);
       padding-top: calc(var(--ea-spacer) * 0.25rem);
       display: flex;
       align-items: center;
@@ -78,7 +78,7 @@
     }
     & input {
       background: white;
-      border: 0.08em;
+      border: calc(var(--ea-sizer) * 0.08em);
       border-style: solid;
       border-image: var(--ea-gradient) 1, 100%;
       border-radius: calc(var(--ea-sizer) * 0.4em);
@@ -91,7 +91,7 @@
       box-shadow: var(--ea-box-shadow);
     }
     & img {
-      height: 20px;
+      height: calc(var(--ea-sizer) * 1.4em);
     }
   }
 }

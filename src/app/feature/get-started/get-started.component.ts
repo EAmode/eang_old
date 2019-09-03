@@ -1,9 +1,18 @@
 import { Component, OnInit } from '@angular/core'
+import { Subject } from 'rxjs'
+import { EangElement } from '@eamode/eang'
 
 @Component({
   selector: 'eangio-get-started',
   templateUrl: './get-started.component.html',
-  styles: []
+  styles: [
+    `
+      h5 {
+        font-weight: 500;
+        display: -ms-inline-flexbox;
+      }
+    `
+  ]
 })
 export class GetStartedComponent implements OnInit {
   ngOnInit() {}
@@ -45,18 +54,13 @@ export class GetStartedComponent implements OnInit {
   *index.html*
   ~~~html
   <!doctype html>
-  <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Project Name</title>
-    <base href="/">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-  </head>
-  <body class="mode">
-    <app-root></app-root>
-  </body>
+  <html>
+    <head>
+      ...
+    </head>
+    <body class="mode">
+      <app-root></app-root>
+    </body>
   </html>
   ~~~
     `
@@ -96,5 +100,25 @@ export class GetStartedComponent implements OnInit {
   </ea-main>
   </ea-layout>
   ~~~
+   `
+  ea_layout_attrs = `
+   *layout.component.html*
+   ~~~html
+     <ea-layout>
+       <ea-toolbar>
+         <!-- Toolbar Content here -->
+       </ea-toolbar>
+
+       <ea-drawer>
+         <!-- Drawer Content here -->
+       </ea-drawer>
+
+       <ea-main>
+         <ea-body>
+           <!-- Body content here -->
+         </ea-body>
+       </ea-main>
+     </ea-layout>
+   ~~~
    `
 }
