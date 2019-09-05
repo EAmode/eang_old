@@ -89,7 +89,7 @@ const routes: Routes = [
     BannerComponent,
     TooltipComponent,
     TableComponent,
-    InputsComponent
+    InputsComponent,
     ColorDisplayComponent
   ],
   imports: [
