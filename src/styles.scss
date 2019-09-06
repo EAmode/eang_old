@@ -240,9 +240,9 @@
     }
   }
   & .framework-description {
+    text-align: center;
     & h1 {
       @media only screen and (max-width: 625px) {
-        text-align: center;
         padding: 0 0.5em;
       }
     }

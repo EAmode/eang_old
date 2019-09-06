@@ -23,11 +23,12 @@
   --ea-color-error: #d9534f;
 
   --ea-color-grey: hsl(0, 0%, 75%);
+  --ea-color-grey-dark: hsl(0, 0%, 57%);
   --ea-color-grey-light: hsl(0, 0%, 85%);
   --ea-color-striped: rgba(139, 184, 232, 1);
 
   --ea-color-disabled: hsl(0, 0%, 45%);
-
+  
   /* Text Colors */
   --ea-text-color: var(--ea-text-color-dark);
   --ea-text-color-dark: hsl(0, 0%, 20%);
