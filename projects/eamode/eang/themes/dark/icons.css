@@ -6,6 +6,10 @@
     height: 1em;
     width: 1em;
 
+    &[activity]
+    &.ea-activity {
+      background-image: inline('dark/icon/activity.svg');
+    }
     &[alert-circle],
     &.ea-alert-circle {
       background-image: inline('dark/icon/alert-circle.svg');
@@ -13,6 +17,34 @@
     &[alert-octagon],
     &.ea-alert-octagon {
       background-image: inline('dark/icon/alert-octagon.svg');
+    }
+    &[button-icon],
+    &.ea-button-icon {
+      background-image: inline('dark/icon/button.svg');
+    }
+    &[tabs-icon],
+    &.ea-tabs-icon {
+      background-image: inline('dark/icon/tabs-icon.svg');
+    }
+    &[terminal],
+    &.ea-terminal {
+      background-image: inline('dark/icon/terminal.svg');
+    }
+    &[component],
+    &.ea-component {
+      background-image: inline('dark/icon/component.svg');
+    }
+    &[color],
+    &.ea-color {
+      background-image: inline('dark/icon/color.svg');
+    }
+    &[layout],
+    &.ea-layout {
+      background-image: inline('dark/icon/layout-icon.svg');
+    }
+    &[pallete],
+    &.ea-pallete {
+      background-image: inline('dark/icon/pallete.svg');
     }
     &[align-justify],
     &.ea-align-justify {
