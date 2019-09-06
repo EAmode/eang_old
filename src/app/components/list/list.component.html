@@ -9,41 +9,42 @@
     scrollable list with mouse interactions accounted for.
   </p>
   <div multi-col v-center class="example" style="display: inherit;">
+    <h3>Default list</h3>
     <ea-markdown [doc]="role_list"></ea-markdown>
     <div role_list_example>
-      <label for="firstList"> Longer List</label>
-      <div class="ea-list" id="firstList">
-        <div listitem>Angular</div>
-        <div listitem>Express</div>
-        <div listitem>Polymer</div>
-        <div listitem>Aurelia</div>
-        <div listitem>Vue.js</div>
-        <div listitem>React</div>
-        <div listitem>Meteor</div>
-        <div listitem>Ember.js</div>
-        <div listitem>Riot.js</div>
-      </div>
+      <ul class="ea-list">
+        <li>Angular</li>
+         <li>Express</li>
+        <li>Polymer</li>
+        <li>Aurelia</li>
+        <li>Vue.js</li>
+        <li>React</li>
+        <li>Meteor</li>
+        <li>Ember.js</li>
+        <li>Riot.js</li>
+      </ul>
     </div>
   </div>
 
-  <p>Customized list examples.</p>
+  <h3>Customzied list</h3>
+  <ea-markdown style="margin-bottom:2em;" [doc]="list_html"></ea-markdown>
+  <ea-markdown style="margin-bottom:2em;" [doc]="list_css"></ea-markdown>
+
   <div multi-col v-center class="example" style="display: inherit;">
     <div role_list_example>
-      <label for="customized"> Customzied List</label>
-      <div class="ea-list" id="customized">
-        <div listitem>Angular</div>
-        <div listitem>Express</div>
-        <div listitem>Polymer</div>
-        <div listitem>Aurelia</div>
-        <div listitem>Vue.js</div>
-        <div listitem>React</div>
-        <div listitem>Meteor</div>
-        <div listitem>Ember.js</div>
-        <div listitem>Riot.js</div>
-      </div>
+      <ul class="ea-list" id="customized">
+        <li>Angular</li>
+        <li>Express</li>
+        <li>Polymer</li>
+        <li>Aurelia</li>
+        <li>Vue.js</li>
+        <li>React</li>
+        <li>Meteor</li>
+        <li>Ember.js</li>
+        <li>Riot.js</li>
+      </ul>
     </div>
   </div>
-  <ea-markdown style="margin-bottom:2em;" [doc]="role_list_css"></ea-markdown>
 
   <!--   <ea-markdown [doc]="role_banner_listitem"></ea-markdown> -->
 </div>
