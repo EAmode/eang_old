@@ -1,11 +1,3 @@
-@define-mixin default-input-style {
-  margin: calc(var(--ea-spacer) * 0.5em);
-  font-size: calc(var(--ea-sizer) * 1rem);
-  border: 1px solid #919191;
-  padding: 0.35em;
-  border-radius: 0.15em;
-}
-
 @define-mixin input-mode {
   & .ea-form-field {
     margin: calc(var(--ea-spacer) * 0.5em) calc(var(--ea-spacer) * 0.2em);
@@ -17,16 +9,31 @@
       margin: 0 0 0 calc(var(--ea-spacer) * 0.5em);
     }
 
-    & > input[type='reset'],
-    & > input[type='submit'],
-    & > input[type='button'],
-    & > input[type='file'] {
-      @mixin default-input-style;
-      box-shadow: var(--ea-box-shadow);
+    & > input {
+      margin: calc(var(--ea-spacer) * 0.5em);
+      font-size: calc(var(--ea-sizer) * 1rem);
+      border: 1px solid var(--ea-color-grey-dark);
+      padding: 0.35em;
+      border-radius: 0.15em;
+    }
+
+    & > input[type='color'] {
+      padding: 0.05em;
+      margin: calc(var(--ea-spacer) * 0.5em);
+      font-size: initial;
+      border-radius: 0.15em;
+    }
+
+    & > input:hover {
+      border-color: var(--ea-color-1);
     }
 
     & > textarea {
-      @mixin default-input-style;
+      margin: calc(var(--ea-spacer) * 0.5em);
+      font-size: calc(var(--ea-sizer) * 1rem);
+      border: 1px solid var(--ea-color-grey-dark);
+      padding: 0.35em;
+      border-radius: 0.15em;
       min-height: calc(var(--ea-spacer) * 5em);
       min-width: calc(var(--ea-spacer) * 15em);
     }
@@ -35,91 +42,79 @@
       border-color: var(--ea-color-1);
     }
 
-    & > input[type='image'] {
-      margin: calc(var(--ea-spacer) * 0.5em);
-      font-size: initial;
-      padding: calc(var(--ea-spacer) * 0.35em);
-      border-radius: 0.15em;
-    }
-
-    & > input[type='color'] {
-      margin: calc(var(--ea-spacer) * 0.5em);
-      font-size: initial;
-      border-radius: 0.15em;
-    }
-
-    & > input[type='text'],
-    & > input[type='number'],
-    & > input[type='password'],
-    & > input[type='search'],
-    & > input[type='tel'],
-    & > input[type='time'],
-    & > input[type='url'],
-    & > input[type='week'],
-    & > input[type='email'],
-    & > input[type='month'],
-    & > input[type='date'],
-    & > input[type='datetime-local'] {
-      @mixin default-input-style;
-    }
-
-    & > input[type='text']:hover,
-    & > input[type='number']:hover,
-    & > input[type='password']:hover,
-    & > input[type='search']:hover,
-    & > input[type='tel']:hover,
-    & > input[type='time']:hover,
-    & > input[type='url']:hover,
-    & > input[type='week']:hover,
-    & > input[type='email']:hover,
-    & > input[type='month']:hover,
-    & > input[type='date']:hover,
-    & > input[type='datetime-local']:hover {
-      border-color: var(--ea-color-1);
-    }
-
     & > input[type='radio'] {
-      visibility: hidden;
-      position: absolute;
-    }
-
-    & > input[type='radio'] + label {
-      cursor: pointer;
-      margin: 0 0.2em;
-    }
-
-    & > input[type='radio'] + label:before {
-      height: calc(var(--ea-sizer) * 16px);
-      margin-right: calc(var(--ea-spacer) * 4px);
-      content: ' ';
-      display: inline-block;
-      vertical-align: baseline;
-      transition: 0.3s;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      box-shadow: inset 0 -3px 6px #e4e4e4;
-      transition: 0.3s;
-    }
-
-    & > input[type='radio'] + label:before {
-      border-radius: 50%;
-      width: calc(var(--ea-sizer) * 16px);
-    }
-
-    & > input[type='radio']:checked + label:before {
-      box-shadow: inset 0 0 3px #e4e4e4, inset 0 0 1px #222,
-        inset 0 0 0 3.2px var(--ea-color-1);
-    }
-    
-    & > input[type='radio'][disabled] + label:before {
-      box-shadow: inset 0 0 3px #e4e4e4, inset 0 0 1px #222,
-        inset 0 0 0 3.2px var(--ea-color-disabled);
-    }
-    
-    & > input[type='range'] {
       -webkit-appearance: none;
-      margin: calc(var(--ea-spacer) * 10px) 0;
+      -moz-appearance: none;
+      appearance: none;
+      display: inline-block;
+      width: 5%;
+      height: 40%;
+      padding: 3px;
+      background-clip: content-box;
+      border: 1px solid var(--ea-color-grey);
+      background-color: var(--ea-color-grey-light);
+      border-radius: 50%;
+    }
+    
+    & > input[type='radio']:checked {
+      background-color: var(--ea-color-1);
+    }
+
+    & > input[type='radio'][disabled] {
+      background-color: var(--ea-color-disabled);
+    }
+
+    & > .ea-radio-item {
+      display: inline-block;
+      position: relative;
+      padding: 0 6px;
+      margin: 10px 0 0;
+      & > input[type='radio'] {
+        display: none;
+      }
+      
+      & > label:before {
+        content: " ";
+        display: inline-block;
+        position: relative;
+        top: 5px;
+        margin: 0 5px 0 0;
+        width: 1em;
+        height: 1em;
+        border-radius: 11px;
+        border: 2px solid var(--ea-color-1);
+        background-color: transparent;
+      }
+
+      & > [disabled] + label:before {
+        border: 2px solid var(--ea-color-disabled);
+      }
+
+      & > [disabled] + label {
+        color: var(--ea-color-grey-dark);
+      }
+      
+      & > input[type=radio]:checked + label:after {
+        border-radius: 11px;
+        width: 12px;
+        height: 12px;
+        position: absolute;
+        top: 9px;
+        left: 10px;
+        content: " ";
+        display: block;
+        background: #004c97;
+      }
+    }
+
+    & > input[type='range'] {
+      background: transparent;
+      font-size: calc(var(--ea-sizer) * 1rem);
+      padding: 0.35em;
+      -webkit-appearance: none;
+      margin: calc(var(--ea-spacer) * 0.5em) 0;
       width: 100%;
+      border: none;
     }
   
     & > input[type='range']:focus {
@@ -131,15 +126,15 @@
       height: calc(var(--ea-sizer) * 7.5px);
       cursor: pointer;
       animate: 0.2s;
-      box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+      box-shadow: 0px 0px 0px var(--ea-color-2), 0px 0px 0px var(--ea-color-2);
       background: var(--ea-color-3);
       border-radius: 25px;
-      border: 1px solid #000101;
+      border: 1px solid var(--ea-color-2);
     }
 
     & > input[type='range']::-webkit-slider-thumb {
-      box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
-      border: 0px solid #000000;
+      box-shadow: 0px 0px 0px var(--ea-color-2), 0px 0px 0px var(--ea-color-2);
+      border: 0px solid var(--ea-color-2);
       height: calc(var(--ea-sizer) * 17px);
       width: calc(var(--ea-sizer) * 8px);
       border-radius: 7px;
@@ -186,16 +181,23 @@
       top: calc(var(--ea-sizer) * 2px);
       left: calc(var(--ea-sizer) * 6px);
     }
+
+    & > input[type='checkbox'][disabled] + label {
+      color: var(--ea-color-disabled);
+    }
   }
 
   & .checkbox-switch {
     margin: calc(var(--ea-sizer) * 0.5em);
+    & > label {
+      margin: 0 0 0 calc(var(--ea-spacer) * 0.5em);
+    }
     & > input[type='checkbox'] {
       margin: calc(var(--ea-spacer) * 0.5em) calc(var(--ea-spacer) * 0.5em);
       position: relative;
       background: var(--ea-color-3);
-      width: calc(var(--ea-sizer) * 100px);
-      height: calc(var(--ea-sizer) * 40px);
+      width: calc(var(--ea-sizer) * 45px);
+      height: calc(var(--ea-sizer) * 18px);
       -webkit-appearance: initial;
       border-radius: calc(var(--ea-sizer) * 20px);
       -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -216,7 +218,7 @@
       line-height: calc(var(--ea-sizer) * 32px);
       width: 35%;
       height: 90%;
-      background: #fff;
+      background: var(--ea-color-3);
       box-sizing: border-box;
       text-align: center;
       transition: all 0.3s ease-in 0s;
@@ -226,11 +228,11 @@
     }
 
     & > input[type='checkbox']:after {
-      left: 2%;
+      left: 4%;
       color: var(--ea-text-color-light);
       background: var(--ea-color-1);
-      border-radius: calc(var(--ea-sizer) * 20px);
-      content: 'OFF';
+      border-radius: calc(var(--ea-sizer) * 30px);
+      content: '';
     }
 
     & > input[type='checkbox'][disabled]:after {
@@ -243,7 +245,7 @@
       background: var(--ea-color-3);
       left: 62%;
       border-radius: calc(var(--ea-sizer) * 20px);
-      content: 'ON';
+      content: '';
     }
 
     & > input[type='checkbox']:checked {
