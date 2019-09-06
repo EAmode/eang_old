@@ -14,7 +14,7 @@
   "scripts": {
     "ng": "ng",
     "watch": "concurrently \"ng build @eamode/eang --watch\" \"npm run css:build -- -w\" \"npm run css:copy -- -w\"",
-    "start": "npm run css && ng serve --port 4204",
+    "start": "concurrently  \"npm run css:build -- -w\" \"npm run css:copy -- -w\" \"ng serve --port 4204\"",
     "build:prod": "ng build @eamode/eang && npm run css && ng build eang-io --prod",
     "build": "ng build @eamode/eang && npm run css && cpx \"README.md\" \"dist/eamode/eang\"",
     "commit": "git-cz",

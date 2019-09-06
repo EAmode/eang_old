@@ -1,6 +1,6 @@
 <div role="banner" m-0-0-2-0>
   <h1>Layout</h1>
-  <span icon layout></span>
+  <span icon layout negative style="width: 2rem; height:2rem;"></span>
 </div>
 <div class="content-container">
   <h2>&lt;ea-layout&gt;</h2>
@@ -11,23 +11,41 @@
     set of visual layout components:
   </p>
   <ul>
-    <li><code class="language-html">&lt;ea-layout&gt;</code></li>
-    <li><code class="language-html">&lt;ea-toolbar&gt;</code></li>
-    <li><code class="language-html">&lt;ea-main&gt;</code></li>
-    <li><code class="language-html">&lt;ea-body&gt;</code></li>
-    <li><code class="language-html">&lt;ea-drawer&gt;</code></li>
-    <li><code class="language-html">&lt;ea-footer&gt;</code></li>
+    <li><code class="language-html">&lt;ea-layout&gt;</code>
+      <ul>
+        <li><code class="language-html">&lt;ea-toolbar&gt;</code>
+          <ul>
+            <li><code class="language-html">&lt;header&gt;</code></li>
+            <li><code class="language-html">&lt;aside&gt;</code></li>
+          </ul>
+        </li>
+        <li><code class="language-html">&lt;ea-main&gt;</code>
+          <ul>
+            <li><code class="language-html">&lt;ea-body&gt;</code></li>
+            <li><code class="language-html">&lt;ea-footer&gt;</code></li>
+          </ul>
+        </li>
+        <li><code class="language-html">&lt;ea-drawer&gt;</code>
+          <ul>
+            <li><code class="language-html">&lt;header&gt;</code></li>
+            <li><code class="language-html">&lt;section&gt;</code></li>
+            <li><code class="language-html">&lt;footer&gt;</code></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
   </ul>
+  <br>
+  <h2>Import</h2>
+  <ea-markdown [doc]="ea_layout_import"></ea-markdown>
   <div multi-col class="example">
     <ea-markdown [doc]="ea_layout_attrs"></ea-markdown>
     <div class="ea-card">
-      <div class="ea-card-header"><h3>Layout Module</h3></div>
+      <div class="ea-card-header">
+        <h3>Layout Module</h3>
+      </div>
       <div class="ea-card-content" grid style="grid-template-columns: 1fr;">
-        <img
-          style="max-width: 70rem;"
-          src="../../../assets/images/layouts.svg"
-          alt=""
-        />
+        <img style="max-width: 70rem;" src="../../../assets/images/layouts.svg" alt="" />
       </div>
     </div>
   </div>
@@ -45,24 +63,22 @@
   </p>
 
   <div class="ea-card example">
-    <div class="ea-card-header"><h3>&lt;ea-toolbar&gt;</h3></div>
+    <div class="ea-card-header">
+      <h3>&lt;ea-toolbar&gt;</h3>
+    </div>
     <div class="ea-card-content" grid>
-      <img
-        style="width: 100%;"
-        src="../../../assets/images/ea-toolbar.svg"
-        alt=""
-      />
+      <img style="width: 100%;" src="../../../assets/images/ea-toolbar.svg" alt="" />
     </div>
   </div>
+
   <p>You can adjust certain aspects of the toolbar using attributes to chagne the style.</p>
   <ea-markdown class="example" [doc]="ea_toolbar_attrs"></ea-markdown>
 
   <h2>&lt;ea-drawer&gt;</h2>
   <p>
     (optional) panel that expands/collapses from one side of the screen. The
-    ea-drawer is designed to have a ,<code class="language-html"
-      >&lt;header&gt;</code
-    >, <code class="language-html">&lt;section&gt;</code>, and
+    ea-drawer is designed to have a ,<code class="language-html">&lt;header&gt;</code>, <code
+      class="language-html">&lt;section&gt;</code>, and
     <code class="language-html">&lt;footer&gt;</code>. A
     <code class="language-html">&lt;header&gt;</code> element will always sit at
     the top of the drawer. The
@@ -84,17 +100,11 @@
   <div multi-col class="example">
     <ea-markdown [doc]="ea_layout_drawer"></ea-markdown>
     <div class="ea-card">
-      <div class="ea-card-header"><h3>&lt;ea-drawer&gt;</h3></div>
-      <div
-        class="ea-card-content"
-        grid
-        style="grid-template-columns: 1fr; justify-items: center;"
-      >
-        <img
-          style="width: 10rem;"
-          src="../../../assets/images/drawer.svg"
-          alt=""
-        />
+      <div class="ea-card-header">
+        <h3>&lt;ea-drawer&gt;</h3>
+      </div>
+      <div class="ea-card-content" grid style="grid-template-columns: 1fr; justify-items: center;">
+        <img style="width: 10rem;" src="../../../assets/images/drawer.svg" alt="" />
       </div>
     </div>
   </div>

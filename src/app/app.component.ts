@@ -31,6 +31,14 @@ export class AppComponent implements OnInit {
         iconStyle: 'ea-negative',
         children: [
           {
+            name: 'Adjustment',
+            icon: 'ea-adjustment',
+            iconStyle: 'ea-negative',
+            data: {
+              link: '/adjustment'
+            }
+          },
+          {
             name: 'Variables',
             icon: 'ea-color',
             iconStyle: 'ea-negative',
@@ -66,6 +74,7 @@ export class AppComponent implements OnInit {
           {
             name: 'Buttons',
             icon: 'ea-button-icon',
+            iconStyle: 'ea-negative',
             data: {
               link: '/button'
             }
@@ -112,6 +121,7 @@ export class AppComponent implements OnInit {
           {
             name: 'Layout',
             icon: 'ea-layout',
+            iconStyle: 'ea-negative',
             data: {
               link: '/layout'
             }
@@ -169,7 +179,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.layout.drawerState$.next('closed')
+    this.layout.drawerState$.next('maximized')
 
     this.activate.subscribe(item => {
       if (item.data && item.data.link) {

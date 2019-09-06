@@ -24,21 +24,9 @@
           <ea-tablist [tabpanelGroup]="selectableTableCode"></ea-tablist>
           <ea-tabpanel-group #selectableTableCode>
             <ea-tabpanel name="HTML">
-              <div style="display: grid">
-                <p class="copy-clipboard">Copy to clipboard
-                  <span icon save (click)="copyCode(htmlCopy)"></span>
-                </p>
-                <small *ngIf="showSuccessfullyCopied">Successully copied</small>
-              </div>
               <ea-markdown [doc]="stripedNHoveredNSelectableTable" #htmlCopy></ea-markdown>
             </ea-tabpanel>
             <ea-tabpanel name="TS">
-              <div style="display: grid">
-                <p class="copy-clipboard">Copy to clipboard
-                  <span icon save (click)="copyCode(tsCopy)"></span>
-                </p>
-                <small *ngIf="showSuccessfullyCopied">Successully copied</small>
-              </div>
               <ea-markdown [doc]="tableOnRowSelect" #tsCopy></ea-markdown>
             </ea-tabpanel>
           </ea-tabpanel-group>

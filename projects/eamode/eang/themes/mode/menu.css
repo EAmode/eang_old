@@ -69,9 +69,9 @@
           opacity: 0;
           position: absolute;
           top: 0;
-          right: 8px;
+          right: calc(var(--ea-sizer) * 0.3em);
           & .close {
-            font-size: 10px;
+            font-size: calc(var(--ea-sizer) * 0.35em);
             margin-right: calc(var(--ea-spacer) * 0.6em);
 
             & span {
@@ -115,15 +115,15 @@
         position: absolute;
         z-index: 1;
         background: var(--ea-color-3);
-        min-width: 8em;
+        min-width: calc(var(--ea-sizer) * 8em);
         box-shadow: var(--ea-box-shadow);
         & [node] {
           &:hover {
             --ea-background: var(--ea-color-1-light);
           }
           & [name-area] {
-            padding-left: 5px !important;
-            margin-left: 5px;
+            padding-left: calc(var(--ea-spacer) * 0.6em) !important;
+            margin-left: calc(var(--ea-spacer) * 0.3em);
             display: flex;
             justify-content: space-between;
           }
@@ -158,7 +158,8 @@
       }
 
       a {
-        padding: 0 0.2em 0 0.6em;
+        padding: 0 calc(var(--ea-spacer) * 0.2em) 0
+          calc(var(--ea-spacer) * 0.6em);
         display: block;
         line-height: var(calc(var(--ea-sizer) * 2.5em), 2.5em);
         font-size: calc(var(--ea-sizer) * 1rem);
