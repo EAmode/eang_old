@@ -1,0 +1,56 @@
+/* @define-mixin input-mode {
+  [type='text'] {
+    height: 3em;
+    border-radius: 0.3em;
+    outline: none;
+    border: 0.2em solid var(--ea-color-2);
+    background-image: var(--ea-input-icon);
+    background-position: 98%;
+    background-repeat: no-repeat;
+    background-color: white;
+    background-size: 1em;
+    width: var(--ea-input-width, auto);
+    padding: 0 0.5em;
+    &:focus {
+      border: 0.2em solid var(--ea-color-1);
+      box-shadow: var(--ea-box-shadow);
+    }
+  }
+  & [readonly] {
+    background-image: inline('mode/icon/close.svg');
+    background-position: 98%;
+    background-repeat: no-repeat;
+    background-size: 1em;
+    border: 0.2em solid transparent;
+    &:focus {
+      border: 0.2em solid var(--ea-color-3-dark);
+    }
+  }
+
+  textarea {
+    --ea-textarea-padding: 1em;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    background: var(--ea-color-2);
+    color: white;
+    outline: none;
+    font-size: 1.2em;
+    border-radius: 3px;
+    padding: var(--ea-textarea-padding);
+    resize: none;
+    height: auto;
+    &[editing='true'] {
+      min-height: 10em;
+    }
+    &[editing='false'] {
+      background: var(--ea-color-3);
+      color: hsl(0, 0%, 61%);
+      border: 0;
+      pointer-events: none;
+      resize: none;
+      overflow: hidden;
+    }
+    &::selection {
+      background: var(--ea-color-1);
+    }
+  }
+} */

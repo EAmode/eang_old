@@ -1,0 +1,100 @@
+@define-mixin typography-dark {
+  body,
+  div,
+  dl,
+  dt,
+  dd,
+  ul,
+  ol,
+  li,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  pre,
+  form,
+  fieldset,
+  input,
+  textarea,
+  p,
+  blockquote,
+  th,
+  td {
+    margin: 0;
+    padding: 0;
+  }
+
+  & h1 {
+    font-size: calc(var(--ea-sizer) * 2rem);
+    margin-bottom: calc(var(--ea-spacer) * 0.5em);
+    line-height: calc(var(--ea-spacer) * 1.2em);
+  }
+
+  & h2 {
+    font-size: calc(var(--ea-sizer) * 1.5rem);
+    margin-bottom: calc(var(--ea-spacer) * 0.5em);
+    line-height: calc(var(--ea-spacer) * 1.2em);
+  }
+
+  & h3 {
+    font-size: calc(var(--ea-sizer) * 1.2rem);
+    margin-bottom: calc(var(--ea-spacer) * 0.5em);
+    line-height: calc(var(--ea-spacer) * 1.2em);
+  }
+
+  & h4 {
+    font-size: calc(var(--ea-sizer) * 1.125rem);
+    margin-bottom: calc(var(--ea-spacer) * 0.5em);
+    line-height: calc(var(--ea-spacer) * 1.2em);
+  }
+
+  & h5,
+  h6 {
+    font-size: calc(var(--ea-sizer) * 1rem);
+    margin-bottom: calc(var(--ea-spacer) * 0.5em);
+    line-height: calc(var(--ea-spacer) * 1.2em);
+  }
+
+  & p {
+    font-size: calc(var(--ea-sizer) * 1rem);
+    line-height: calc(var(--ea-spacer) * 1.5em);
+    font-weight: 400;
+    margin: 0 0 calc(var(--ea-spacer) * 1.25em);
+    user-select: auto;
+  }
+
+  label {
+    font-size: calc(var(--ea-sizer) * 1rem);
+  }
+
+  & a {
+    font-size: calc(var(--ea-sizer) * 1rem);
+    text-decoration: none;
+    color: var(--ea-color, var(--ea-a-color, var(--ea-text-color)));
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  & code {
+    font-size: calc(var(--ea-sizer) * 1rem);
+    background: var(--ea-code-background, transparent);
+    color: var(--ea-color, var(--ea-code-color, var(--ea-base-color)));
+    padding: 0.2rem;
+    border-radius: 0.3em;
+    margin-right: calc(var(--ea-spacer) * 0.1em);
+    font-family: 'Source Code Pro', monospace;
+  }
+  & *::selection {
+    background: var(
+      --ea-selection-background,
+      var(--ea-background, var(--ea-base-color))
+    );
+    color: var(
+      --ea-selection-color,
+      var(--ea-color, var(--ea-text-color-light))
+    );
+  }
+}

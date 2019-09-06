@@ -1,0 +1,36 @@
+@import '_base.css';
+@import 'dark/variables.css';
+@import 'dark/fonts.css';
+@import 'dark/menu.css';
+@import 'dark/tabs.css';
+@import 'dark/autocomplete.css';
+@import 'dark/button.css';
+@import 'dark/card.css';
+@import 'dark/layout.css';
+@import 'dark/markdown.css';
+@import 'dark/panel.css';
+@import 'dark/typography.css';
+@import 'dark/themepicker.css';
+@import 'dark/icons.css';
+@import 'dark/table.css';
+@import 'dark/utilities.css';
+@import 'dark/input.css';
+@import 'dark/tooltip.css';
+
+.dark {
+  /* @mixin input-mode; */
+  @mixin autocomplete-dark;
+  @mixin button-dark;
+  @mixin card-dark;
+  @mixin layout-dark;
+  @mixin markdown-dark;
+  @mixin panel-dark;
+  @mixin typography-dark;
+  @mixin themepicker-dark;
+  @mixin table-dark;
+  @mixin panel-dark;
+  @mixin utilities-dark;
+  @mixin menu-dark;
+  @mixin tabs-dark;
+  @mixin tooltip-dark;
+}

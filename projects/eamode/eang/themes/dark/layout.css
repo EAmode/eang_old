@@ -1,0 +1,174 @@
+@define-mixin layout-base {
+  --ea-drawer-header-height: 4rem;
+  --ea-drawer-footer-height: 4rem;
+}
+@define-mixin layout-dark {
+  & ea-layout {
+    @mixin layout-base;
+    display: grid;
+    height: 100vh;
+    overflow: hidden;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      'toolbar toolbar'
+      'drawer main';
+
+    & ea-main {
+      font-size: 1rem;
+      grid-area: main;
+      overflow: auto;
+      background: var(--ea-background-light-grey);
+
+      & ea-footer {
+        height: calc(var(--ea-sizer) * 4.5rem);
+        background: var(--ea-background-grey);
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding: 1rem;
+        box-sizing: border-box;
+        color: var(--ea-text-color-light);
+        & p,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        a,
+        b,
+        small {
+          color: inherit;
+        }
+      }
+    }
+
+    & ea-body {
+      --ea-main-margin: calc(var(--ea-spacer) * 0.5em)
+        calc(var(--ea-spacer) * 1em);
+      margin: 0;
+      display: flex;
+      min-height: 100%;
+    }
+
+    & ea-toolbar {
+      font-size: 1rem;
+      height: calc(var(--ea-sizer) * 4rem);
+      padding: calc(var(--ea-sizer) * 0.5em) calc(var(--ea-sizer) * 1em);
+      background: var(--ea-background-dark-grey);
+      display: flex;
+      align-items: center;
+      grid-area: toolbar;
+      grid-row: 1;
+      grid-column: 1 / 4;
+      z-index: 2;
+      box-sizing: border-box;
+      color: var(--ea-text-color-light);
+      &[shadow] {
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);
+      }
+      &[flex] {
+        --ea-toolbar-display: flex;
+      }
+      &[grid] {
+        --ea-toolbar-display: grid;
+      }
+
+      & button {
+        order: 1;
+      }
+
+      & header {
+        color: inherit;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-grow: 1;
+        order: 2;
+      }
+
+      & aside {
+        color: inherit;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding-right: calc(var(--ea-spacer) * 3rem);
+        order: 3;
+      }
+
+      & p,
+      h1,
+      h2,
+      h3 {
+        margin: 0;
+        color: inherit;
+      }
+
+      & a {
+        color: inherit;
+        text-decoration: none;
+        font-size: 1rem;
+        margin: 0.5em;
+      }
+    }
+
+    & ea-drawer {
+      --ea-menu-color: #fff;
+      grid-area: drawer;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: calc(var(--ea-sizer) * 15em);
+      background: #36454f;
+      -webkit-tap-highlight-color: transparent;
+      color: var(--ea-text-color);
+      overflow: auto;
+
+      & footer {
+        background: var(
+          --ea-background,
+          var(--ea-drawer-footer-background, var(--ea-drawer-background))
+        ); /* -_- */
+      }
+
+      &[resizable] {
+        resize: horizontal;
+        overflow: auto;
+      }
+
+      &[state='closed'] {
+        width: 0;
+        display: none;
+      }
+    }
+
+    &[nav-overlay] {
+      display: grid;
+      grid-template-rows: [ea-toolbar-start] calc(var(--ea-sizer) * 4rem) [ea-toolbar-end ea-main-start] 1fr [ea-footer-start ea-main-end];
+      grid-template-columns: [ea-drawer-start] calc(var(--ea-sizer) * 13em) [ea-drawer-end ea-main-start] 1fr [ea-main-end];
+      height: 100vh;
+    }
+    &[nav-overlay] ea-main {
+      grid-row: ea-toolbar-end / ea-main-end;
+      grid-column: 1/5;
+      overflow: auto;
+    }
+    &[nav-overlay] ea-toolbar {
+      grid-row: ea-toolbar-start;
+      grid-column: 1/5;
+    }
+    &[nav-overlay] ea-drawer {
+      grid-row: 2 / 4;
+      grid-column: 1;
+      z-index: 1;
+    }
+    & [overlay] {
+      grid-row: ea-toolbar-end / ea-main-end;
+      grid-column: 1/5;
+      background: #000;
+      opacity: 0.5;
+      z-index: 1;
+    }
+  }
+}

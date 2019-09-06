@@ -1,0 +1,183 @@
+@define-mixin button-border-w-s {
+  border-style: solid;
+  border: 0.1em;
+}
+
+@define-mixin button-base {
+  font-size: calc(var(--ea-sizer) * 1rem);
+  background: var(--ea-base-color);
+  color: var(--ea-text-color-light);
+  border-color: var(--ea-base-color);
+  border-style: solid;
+  border: 0.1em;
+  padding: 0 calc(var(--ea-spacer) * 1.5em);
+  height: calc(var(--ea-sizer) * 2.19rem);
+  cursor: pointer;
+  outline: none;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+@define-mixin button-dark {
+  & button,
+  [role='ea-button'] {
+    @mixin button-base;
+    border-radius: calc(var(--ea-sizer) * 0.25rem);
+    box-sizing: content-box;
+    transition: all 0.25s ease 0s;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+
+    &.ea-button {
+      /* this is to set the border-color when the button is :hover and not :active */
+      &:hover:not(:active) {
+        @mixin button-border-w-s;
+        border-color: var(--ea-color-1-light);
+        background: var(--ea-background-grey);
+        box-shadow: var(--ea-active-shadow);
+      }
+
+      &:active {
+        @mixin button-border-w-s;
+        border-color: var(--ea-base-color);
+        background: var(--ea-background-dark-grey);
+        box-shadow: var(--ea-box-shadow);
+      }
+
+      &[disabled] {
+        opacity: 0.65;
+        cursor: not-allowed;
+        border: solid 0.1em;
+      }
+
+      &[outline] {
+        @mixin button-border-w-s;
+        background: transparent;
+        color: var(--ea-text-color);
+        border-color: var(--ea-base-color);
+
+        &:hover:not(:active) {
+          background: rgba(0, 0, 0, 0.05);
+          box-shadow: unset;
+        }
+
+        &[outline] {
+          @mixin button-border-w-s;
+          background: transparent;
+          color: var(--ea-text-color);
+          border-color: var(--ea-base-color);
+
+          &:hover:not(:active) {
+            background: rgba(0, 0, 0, 0.05);
+            box-shadow: unset;
+          }
+
+          &:active {
+            background: rgba(0, 0, 0, 0.15);
+            border-color: var(--ea-base-color);
+            border: 0.1em;
+          }
+          &[disabled] {
+            border: var(--ea-color-3) solid 0.1em;
+          }
+        }
+
+        &[disabled] {
+          border: var(--ea-color-3) solid 0.1em;
+        }
+      }
+
+      &[flat] {
+        @mixin button-border-w-s;
+        background: transparent;
+        border-color: rgba(0, 0, 0, 0);
+        color: var(--ea-text-color);
+
+        &:hover:not(:active) {
+          @mixin button-border-w-s;
+          background-color: rgba(0, 0, 0, 0.1);
+          box-shadow: none;
+          border-color: rgba(0, 0, 0, 0);
+        }
+
+        &:active {
+          @mixin button-border-w-s;
+          box-shadow: unset;
+          background-color: rgba(0, 0, 0, 0.25);
+          border-color: rgba(0, 0, 0, 0);
+        }
+      }
+      &[light] {
+        color: var(--ea-text-color-dark);
+      }
+
+      &[flat] {
+        @mixin button-border-w-s;
+        background: transparent;
+        border-color: rgba(0, 0, 0, 0);
+        color: var(--ea-text-color);
+
+        &:hover:not(:active) {
+          @mixin button-border-w-s;
+          background-color: rgba(0, 0, 0, 0.1);
+          box-shadow: none;
+          border-color: rgba(0, 0, 0, 0);
+        }
+
+        &:active {
+          @mixin button-border-w-s;
+          box-shadow: unset;
+          background-color: rgba(0, 0, 0, 0.25);
+          border-color: rgba(0, 0, 0, 0);
+        }
+        &[light] {
+          color: var(--ea-text-color-dark);
+
+          &:hover:not(:active) {
+            background-color: rgba(255, 255, 255, 0.1);
+          }
+
+          &:active {
+            background-color: rgba(255, 255, 255, 0.25);
+          }
+        }
+      }
+
+      &[icon] {
+        padding: calc(var(--ea-spacer) * 0.2em);
+        height: min-content;
+      }
+
+      &[left] {
+        & > span[icon] {
+          margin-left: 0;
+
+          &[icon] {
+            padding: calc(var(--ea-spacer) * 0.2em);
+            height: min-content;
+          }
+
+          &[left] {
+            & > span[icon] {
+              margin-left: 0;
+            }
+          }
+
+          &[right] {
+            & > span[icon] {
+              margin-right: 0;
+            }
+          }
+        }
+      }
+      &[rounded] {
+        border-radius: calc(var(--ea-sizer) * 1.5rem);
+      }
+    }
+  }
+}

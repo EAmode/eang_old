@@ -1,0 +1,67 @@
+@define-mixin table-default {
+  font-size: calc(var(--ea-sizer) * 0.9em);
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  text-align: center;
+
+  & [text-direction='left'] {
+    text-align: start;
+  }
+
+  & [text-direction='right'] {
+    text-align: end;
+  }
+
+  & caption {
+    font-size: calc(var(--ea-sizer) * 0.9em);
+    padding: calc(var(--ea-spacer) * 0.7em);
+    caption-side: bottom;
+  }
+
+  & td,
+  th {
+    border-bottom: calc(var(--ea-sizer) * 0.1em) solid
+      var(--ea-color-2, transparent);
+    padding: calc(var(--ea-spacer) * 0.5em);
+  }
+
+  & thead {
+    border-bottom: calc(var(--ea-sizer) * 0.2em) solid
+      var(--ea-color-2, transparent);
+    & th {
+      color: var(--ea-text-color-dark, var(--ea-color-2));
+      /* background-color: var(--ea-color-grey); */
+      border-color: var(--ea-color-2);
+      text-align: center;
+    }
+  }
+
+  & [striped] {
+    & tr:nth-of-type(odd) {
+      background-color: var(--ea-color-striped);
+    }
+  }
+
+  /* Do not move [table hover] before [striped] */
+  & [table-hover] {
+    & tr {
+      &:hover {
+        background-color: var(--ea-background-grey) !important;
+        cursor: pointer;
+        color: var(--ea-text-color-light);
+      }
+    }
+  }
+
+  & [selected='true'] {
+    background-color: var(--ea-base-color) !important;
+    color: var(--ea-text-color-light);
+  }
+}
+
+@define-mixin table-dark {
+  .ea-table {
+    @mixin table-default;
+  }
+}
