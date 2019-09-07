@@ -5,14 +5,11 @@
       background-color: var(--ea-list-background-color, --ea-color-3);
       box-shadow: inset 0px 3px 12px rgba(0, 0, 0, 0.08);
       color: var(--ea-text-color);
-      height: var(--ea-list-max-height, calc(var(--ea-sizer) * 15em));
       overflow-y: auto;
-      overflow-x: hidden;
       list-style: none;
       padding: 0;
       display: inline-block;
       & li {
-        background: transparent;
         border: calc(var(--ea-spacer) * 0.02em) solid rgba(0, 0, 0, 0);
         cursor: pointer;
         margin: calc(var(--ea-spacer) * 0.07em);
@@ -20,8 +17,6 @@
       }
       & li:active {
         background: var(--ea-background-color-active);
-        box-shadow: unset;
-        /* border: calc(var(--ea-sizer) * 0.1em) transparent solid; // uncoment = selected list point will size up*/
         color: var(--ea-color-3);
       }
 
