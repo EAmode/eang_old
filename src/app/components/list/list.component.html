@@ -9,22 +9,35 @@
     scrollable list with mouse interactions accounted for.
   </p>
   <div multi-col v-center class="example" style="display: inherit;">
+    <h3>Default list</h3>
     <ea-markdown [doc]="role_list"></ea-markdown>
     <div role_list_example>
-      <label for="secondlist"> Longer List</label>
-      <div role="list" id="secondlist" style="max-height: 15em">
-        <div role="listitem">Angular</div>
-        <div role="listitem">Express</div>
-        <div role="listitem">Polymer</div>
-        <div role="listitem">Aurelia</div>
-        <div role="listitem">Vue.js</div>
-        <div role="listitem">React</div>
-        <div role="listitem">Meteor</div>
-        <div role="listitem">Ember.js</div>
-        <div role="listitem">Riot.js</div>
-      </div>
+      <ul class="ea-list">
+        <li>Angular</li>
+        <li>Express</li>
+        <li>Polymer</li>
+      </ul>
     </div>
   </div>
 
-<!--   <ea-markdown [doc]="role_banner_listitem"></ea-markdown> -->
+  <h3>Customzied list</h3>
+  <ea-markdown style="margin-bottom:2em;" [doc]="list_html"></ea-markdown>
+  <ea-markdown style="margin-bottom:2em;" [doc]="list_css"></ea-markdown>
+
+  <div multi-col v-center class="example" style="display: inherit;">
+    <div role_list_example>
+      <ul class="ea-list" id="customized">
+        <li>Angular</li>
+        <li>Express</li>
+        <li>Polymer</li>
+        <li>Aurelia</li>
+        <li>Vue.js</li>
+        <li>React</li>
+        <li>Meteor</li>
+        <li>Ember.js</li>
+        <li>Riot.js</li>
+      </ul>
+    </div>
+  </div>
+
 </div>

@@ -21,17 +21,33 @@ export class LayoutComponent implements OnInit {
   ~~~html
     <ea-layout>
       <ea-toolbar>
-        <!-- Toolbar Content here -->
+        <header>
+          <!-- Header Content here -->
+        </header>
+        <aside>
+          <!-- Aside Content here -->
+        </aside>
       </ea-toolbar>
 
       <ea-drawer>
-        <!-- Drawer Content here -->
+        <header>
+          <!-- Header Content here -->
+        </header>
+        <section>
+          <!-- Section Content here -->
+        </section>
+        <footer>
+          <!-- Footer Content here -->
+        <footer>
       </ea-drawer>
 
       <ea-main>
         <ea-body>
           <!-- Body content here -->
         </ea-body>
+        <ea-footer>
+          <!-- Footer content here -->
+        </ea-footer>
       </ea-main>
     </ea-layout>
   ~~~
