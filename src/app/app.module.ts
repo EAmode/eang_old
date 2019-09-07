@@ -39,6 +39,7 @@ import { ListComponent } from './components/list/list.component'
 import { BannerComponent } from './components/banner/banner.component'
 import { TooltipComponent } from './components/tooltip/tooltip.component'
 import { TableComponent } from './feature/table/table.component'
+import { InputsComponent } from './feature/inputs/inputs.component'
 import { ColorDisplayComponent } from './component/color-display/color-display.component'
 
 const routes: Routes = [
@@ -52,6 +53,7 @@ const routes: Routes = [
   { path: 'card', component: CardComponent },
   { path: 'list', component: ListComponent },
   { path: 'icon', component: IconComponent },
+  { path: 'inputs', component: InputsComponent },
   { path: 'variables', component: VariablesComponent },
   { path: 'components', component: ComponentsComponent },
   { path: 'getting-started', component: GetStartedComponent },
@@ -87,6 +89,7 @@ const routes: Routes = [
     BannerComponent,
     TooltipComponent,
     TableComponent,
+    InputsComponent,
     ColorDisplayComponent
   ],
   imports: [

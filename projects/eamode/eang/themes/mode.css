@@ -19,7 +19,7 @@
 @import 'mode/list.css';
 
 .mode {
-  /* @mixin input-mode; */
+  @mixin input-mode;
   @mixin autocomplete-mode;
   @mixin button-mode;
   @mixin card-mode;

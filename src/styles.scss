@@ -78,7 +78,8 @@
   eangio-get-started,
   eangio-variables,
   eangio-card,
-  eangio-button {
+  eangio-button,
+  eangio-inputs {
     width: 100%;
   }
 
@@ -239,9 +240,9 @@
     }
   }
   & .framework-description {
+    text-align: center;
     & h1 {
       @media only screen and (max-width: 625px) {
-        text-align: center;
         padding: 0 0.5em;
       }
     }
