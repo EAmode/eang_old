@@ -1,5 +1,5 @@
 @define-mixin autocomplete-base {
-  --ea-autocomplete-hover-color: var(--ea-base-color);
+  --ea-autocomplete-hover-color: var(--ea-grey-main-dark);
 
   --ea-autocomplete-hover-background: var(
     --ea-autocomplete-hover-background,
@@ -60,10 +60,10 @@
     & li:hover {
       background-color: var(--ea-color-3);
       & .matched {
-        color: var(--ea-base-color);
+        color: var(--ea-grey-main-dark);
       }
       & mark {
-        color: var(--ea-color-2);
+        color: var(--ea-color-4);
       }
     }
     & li[selected],

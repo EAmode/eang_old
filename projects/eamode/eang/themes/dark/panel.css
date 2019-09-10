@@ -1,6 +1,6 @@
 @define-mixin panel-base {
-  color: var(--ea-panel-color, --ea-base-color);
-  background: var(--ea-background-grey);
+  color: var(--ea-panel-color, --ea-grey-main-dark);
+  background: var(--ea-grey-main-light);
   height: var(--ea-panel-height, initial);
   width: var(--ea-panel-width, initial);
   display: var(--ea-panel-display, block);

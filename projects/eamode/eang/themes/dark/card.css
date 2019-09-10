@@ -2,9 +2,9 @@
   & .ea-card {
     font-size: calc(var(--ea-sizer) * 1rem);
     box-shadow: var(--ea-box-shadow);
-    background: #fff;
+    background: var(--ea-color-1-light);
     border: 1px solid var(--ea-color-3);
-    color: var(--ea-text-color);
+    color: var(--ea-text-color-light-main);
     width: 100%;
     margin: 0;
     display: flex;
@@ -36,7 +36,7 @@
       border: 0.1em var(--ea-color-3);
       border-style: none none solid none;
       background: transparent;
-      color: var(--ea-color-2);
+      color: var(--ea-text-color-light-main);
       padding: 0 calc(var(--ea-spacer) * 1em);
       display: flex;
       justify-content: space-between;
@@ -48,6 +48,7 @@
       h4,
       a {
         color: inherit;
+        margin: calc(var(--ea-spacer) * 0.7em) 0;
       }
 
       & [content] {
@@ -73,7 +74,7 @@
       flex-wrap: wrap;
       padding: calc(var(--ea-spacer) * 1em);
       background: transparent;
-      color: var(--ea-text-color);
+      color: var(--ea-text-color-light-main);
 
       &[flex-center] {
         align-items: center;

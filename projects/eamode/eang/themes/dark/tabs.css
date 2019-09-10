@@ -30,7 +30,7 @@
       & [node][active] {
         @mixin tabs-border-w-s;
         background: transparent;
-        border-color: var(--ea-base-color);
+        border-color: var(--ea-grey-main-dark);
 
         &:hover {
           @mixin tabs-border-w-s;
@@ -53,7 +53,7 @@
       & [node]:active {
         @mixin tabs-border-w-s;
         background: transparent;
-        border-color: var(--ea-base-color);
+        border-color: var(--ea-grey-main-dark);
       }
     }
     & [node] {
@@ -68,7 +68,7 @@
     }
     & [node][active] {
       background: transparent;
-      border-color: var(--ea-base-color);
+      border-color: var(--ea-grey-main-dark);
       border: 0.1em;
       border-style: none none solid none;
 
@@ -91,7 +91,7 @@
     & [node]:active {
       background: rgba(0, 0, 0, 0.15);
       box-shadow: none;
-      border-color: var(--ea-base-color);
+      border-color: var(--ea-grey-main-dark);
       border: 0.1em;
       border-style: none none solid none;
     }
@@ -108,7 +108,7 @@
         overflow-x: auto;
       }
       & div[node][has-children] > div[name-area] {
-        color: var(--ea-color-2);
+        color: var(--ea-color-4);
       }
     }
   }
@@ -134,16 +134,16 @@
       & li.active {
         border-top-right-radius: calc(var(--ea-sizer) * 0.3em);
         border-top-left-radius: calc(var(--ea-sizer) * 0.3em);
-        border-left: 0.1em var(--ea-base-color) solid;
-        border-top: 0.1em var(--ea-base-color) solid;
-        border-right: 0.1em var(--ea-base-color) solid;
+        border-left: 0.1em var(--ea-grey-main-dark) solid;
+        border-top: 0.1em var(--ea-grey-main-dark) solid;
+        border-right: 0.1em var(--ea-grey-main-dark) solid;
       }
       & li:not(.active):hover {
         border-top-right-radius: calc(var(--ea-sizer) * 0.3em);
         border-top-left-radius: calc(var(--ea-sizer) * 0.3em);
-        border-left: 0.1em var(--ea-background-grey) solid;
-        border-top: 0.1em var(--ea-background-grey) solid;
-        border-right: 0.1em var(--ea-background-grey) solid;
+        border-left: 0.1em var(--ea-grey-main-light) solid;
+        border-top: 0.1em var(--ea-grey-main-light) solid;
+        border-right: 0.1em var(--ea-grey-main-light) solid;
         transform: scale(1.001);
         transition-duration: 0.2s;
       }

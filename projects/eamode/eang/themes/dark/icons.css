@@ -6,9 +6,13 @@
     height: 1em;
     width: 1em;
 
-    &[activity]
+    &[activity],
     &.ea-activity {
       background-image: inline('dark/icon/activity.svg');
+    }
+    &[adjustment],
+    &.ea-adjustment {
+      background-image: inline('dark/icon/adjustment.svg');
     }
     &[alert-circle],
     &.ea-alert-circle {

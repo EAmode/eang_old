@@ -61,7 +61,7 @@
       border-color: rgba(0, 0, 0, 0);
       border: 0.1em;
       border-style: solid;
-      color: var(--ea-color-2);
+      color: var(--ea-color-4);
     }
 
     &:active {
@@ -70,12 +70,12 @@
       border-color: rgba(0, 0, 0, 0);
       border: 0.1em;
       border-style: solid;
-      color: var(--ea-color-2);
+      color: var(--ea-color-4);
     }
   }
   [role='banner'] {
     /* height: var(--ea-height, var(--ea-banner-height, 6em)); */
-    background: var(--ea-background-grey);
+    background: var(--ea-color-3);
     box-shadow: var(--ea-box-shadow);
     display: flex;
     padding: calc(var(--ea-spacer) * 2.1em) calc(var(--ea-spacer) * 4.2vw);

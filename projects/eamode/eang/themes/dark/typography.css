@@ -81,7 +81,7 @@
   & code {
     font-size: calc(var(--ea-sizer) * 1rem);
     background: var(--ea-code-background, transparent);
-    color: var(--ea-color, var(--ea-code-color, var(--ea-base-color)));
+    color: #000; /* ! add color ! */
     padding: 0.2rem;
     border-radius: 0.3em;
     margin-right: calc(var(--ea-spacer) * 0.1em);
@@ -90,7 +90,7 @@
   & *::selection {
     background: var(
       --ea-selection-background,
-      var(--ea-background, var(--ea-base-color))
+      var(--ea-background, var(--ea-grey-main-dark))
     );
     color: var(
       --ea-selection-color,

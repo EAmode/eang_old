@@ -29,13 +29,13 @@
       padding: 1em;
       margin: 0;
       overflow: auto;
-      background: var(--ea-color-2);
+      background: var(--ea-color-1);
     }
     & pre {
       padding: 1em;
       margin: 0.5em 0;
       overflow: auto;
-      background: var(--ea-color-2);
+      background: var(--ea-color-1);
       border-radius: calc(var(--ea-sizer) * 0.15em);
     }
     /* Inline code */

@@ -1,21 +1,55 @@
 .dark {
-  --ea-base-color: hsl(0, 0%, 30%);
+  /* Pallete */
 
-  --ea-background-dark-grey: var(--ea-base-color);
-  --ea-background-grey: hsl(0, 0%, 42%);
-  --ea-background-light-grey: hsl(210, 0%, 82%);
+  /* Dark, Light */
+  --ea-main-dark: #333333;
+  --ea-main-light: #f4f4f4;
 
-  /* Base Colors */
- 
-  --ea-color-1-light: #7d5c9e;
-  --ea-color-grey-color-test: #959799;
+  /* Color 1 */
+  --ea-color-1: #3b3b3b;
+  --ea-color-1-light: #424242;
 
-  /* Alternative Base Colors */
-  --ea-color-2: hsl(0, 0%, 20%);
-  --ea-color-2-light: hsl(0, 0%, 40%);
+  /* Color 2 */
+  --ea-color-2: #333333;
+  --ea-color-2-light: #4c4c4c;
 
-  --ea-color-3: hsl(0, 0%, 96%);
-  --ea-color-3-dark: hsl(0, 0%, 86%);
+  /* Color 3 */
+  --ea-color-3: #6b5780;
+  --ea-color-3-light: #8e78a3;
+
+  /* Color 4 */
+  --ea-color-4: #5f5f5f;
+  --ea-color-4-ligh: #858585;
+
+  /* Text */
+  --ea-text-color-light: #dcdcdc;
+  --ea-text-color-dark: var(--ea-main-dark);
+
+  /* Hover, Striped, Active, Selected, Disabled */
+  --ea-color-hover: var(--ea-color-2);
+  --ea-color-striped: #ccc;
+  --ea-color-disabled: rgb(255, 255, 255);
+  --ea-color-active: var(--ea-color-3-light);
+  --ea-color-selected: var(--ea-color-1);
+
+
+  /* DELETE */
+/*   --ea-dark-main: #3b3b3b;
+
+  --ea-grey-main-dark: #4c4c4c;
+  --ea-grey-main: #858585;
+  --ea-grey-main-light: #6b6b6b;
+
+  --ea-silver-light: #d1d1d1;
+  --ea-silver-dark: #a8a8a8;
+  --ea-black-main: #333333;
+
+  --ea-background: #424242;
+  --ea-background-light: #5f5f5f;
+
+  --ea-text-color-light-main: #dcdcdc;
+  --ea-background-gray: #808080; */
+  /* DELETE */
 
   /* Accent Colors */
   --ea-color-accent-1: #6a9c45;
@@ -28,33 +62,18 @@
   --ea-color-danger: #d9534f;
   --ea-color-error: #d9534f;
 
-  --ea-color-grey: hsl(0, 0%, 75%);
-
-  --ea-color-silver: hsl(0, 0%, 75%);
-  --ea-color-grey-light: hsl(0, 0%, 85%);
-  --ea-color-striped: var(--ea-background-light-grey);
-
-  /* Text Colors */
-  --ea-text-color: var(--ea-text-color-dark);
-  --ea-text-color-dark: hsl(0, 0%, 20%);
-  --ea-text-color-light: hsl(0, 0%, 96%);
-
-  /* Hover, Active */
-  --ea-background-color-hover: var(--ea-base-color);
-  --ea-background-color-active: var(--ea-color-1-light);
-  --ea-color-hover-not-active: hsl(223, 40%, 73%);
-
-  /* Fonts & Typography */
+  /* Typography */
   --ea-font-1-family: 'Roboto';
   --ea-font-1-style: normal;
   --ea-font-1-weight: 400;
   --ea-scalar-factor: 24;
 
+  /* Box shadow */
+  --ea-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.09);
+
+  /* Font */
   font-family: var(--ea-font-1-family);
   font-style: var(--ea-font-1-style);
-  font-weight: var(--ea-font-1-weight);
-  /* font-size: var(--ea-font-1-size); */
+  font-weight: var(--ea-font-1-weight)
 
-  /* Utilities */
-  --ea-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.09);
 }
