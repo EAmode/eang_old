@@ -7,7 +7,7 @@ import { Subject } from 'rxjs'
 @Component({
   selector: 'eangio-root',
   templateUrl: './app.component.html',
-  styles: []
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
   menu = {
