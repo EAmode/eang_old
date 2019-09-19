@@ -64,7 +64,6 @@
       border-style: solid none none none;
       width: max-content;
       width: 100%;
-      box-sizing: border-box;
     }
     & [node][active] {
       background: transparent;

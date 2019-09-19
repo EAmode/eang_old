@@ -28,7 +28,6 @@
         align-items: center;
         background: var(--ea-color-background-2);
         padding: 1rem;
-        box-sizing: border-box;
         & p {
           color: var(--ea-color-3);
         }
@@ -53,7 +52,6 @@
       grid-row: 1;
       grid-column: 1 / 4;
       z-index: 2;
-      box-sizing: border-box;
       color: var(--ea-toolbar-color, var(--ea-color-3));
       &[shadow] {
         box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);

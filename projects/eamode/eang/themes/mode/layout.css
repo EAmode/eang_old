@@ -37,7 +37,6 @@
         display: flex;
         align-items: center;
         padding: calc(var(--ea-spacer) * 2.5rem);
-        box-sizing: border-box;
         color: var(--ea-text-color-light);
         & p,
         h1,
@@ -75,7 +74,6 @@
       grid-row: 1;
       grid-column: 1 / 4;
       z-index: 2;
-      box-sizing: border-box;
       color: var(--ea-text-color-light);
       &[shadow] {
         box-shadow: 0 calc(var(--ea-sizer) * 0.1em)

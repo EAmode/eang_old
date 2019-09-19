@@ -219,7 +219,6 @@
       width: 35%;
       height: 90%;
       background: var(--ea-color-3);
-      box-sizing: border-box;
       text-align: center;
       transition: all 0.3s ease-in 0s;
       color: black;
