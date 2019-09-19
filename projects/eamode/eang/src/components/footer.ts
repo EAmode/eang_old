@@ -1,29 +1,12 @@
-import {
-  Component,
-  Output,
-  EventEmitter,
-  Input,
-  TemplateRef,
-  ContentChild,
-  ViewChild,
-  ChangeDetectionStrategy
-} from '@angular/core'
-import { Observable } from 'rxjs'
+import { Component, ChangeDetectionStrategy } from '@angular/core'
 
 @Component({
   selector: 'ea-footer',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <ng-content></ng-content>
-  `,
-  styles: []
+  `
 })
 export class Footer {
-  @Input() suggestions: Observable<any>
-  @Input() enabled
-
-  @Output() readonly searchTerm = new EventEmitter<string>()
-  @Output() selectedItem
-
   constructor() {}
 }

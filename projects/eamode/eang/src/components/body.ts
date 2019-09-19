@@ -1,29 +1,13 @@
-import {
-  Component,
-  Output,
-  EventEmitter,
-  Input,
-  TemplateRef,
-  ContentChild,
-  ViewChild,
-  ChangeDetectionStrategy
-} from '@angular/core'
-import { Observable } from 'rxjs'
+import { Component, ChangeDetectionStrategy } from '@angular/core'
 
 @Component({
   selector: 'ea-body',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <ng-content></ng-content>
-  `,
-  styles: []
+    <ng-content select="ea-main"></ng-content>
+    <ng-content select="ea-footer"></ng-content>
+  `
 })
 export class Body {
-  @Input() suggestions: Observable<any>
-  @Input() enabled
-
-  @Output() readonly searchTerm = new EventEmitter<string>()
-  @Output() selectedItem
-
   constructor() {}
 }
