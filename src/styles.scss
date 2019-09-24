@@ -28,7 +28,9 @@
 .mode,
 .mode-dark,
 .material {
-  
+  --ea-toolbar-background: var(--ea-color-1);
+  --ea-footer-background: var(--ea-color-1);
+  --ea-drawer-width: 15em;
   & eangio-landing {
     & h1,
     h2 {

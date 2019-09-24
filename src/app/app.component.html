@@ -44,7 +44,7 @@
   </ea-drawer>
 
   <ea-body #scrollContainer>
-    <ea-main style="--ea-sizer: 1; --ea-spacer: 1;">
+    <ea-main role="main">
       <router-outlet (activate)="onActivate($event, scrollContainer)"></router-outlet>
     </ea-main>
     <ea-footer>

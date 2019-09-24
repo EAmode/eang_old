@@ -41,14 +41,14 @@ export class LayoutComponent implements OnInit {
         <footer>
       </ea-drawer>
 
-      <ea-main>
-        <ea-body>
+      <ea-body>
+        <ea-main>
           <!-- Body content here -->
-        </ea-body>
+        </ea-main>
         <ea-footer>
           <!-- Footer content here -->
         </ea-footer>
-      </ea-main>
+      </ea-body>
     </ea-layout>
   ~~~
   `
