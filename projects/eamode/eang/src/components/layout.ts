@@ -18,7 +18,7 @@ import { Observable } from 'rxjs'
       (click)="layout.drawerState$.next('closed')"
     ></div>
     <ng-content select="ea-toolbar"></ng-content>
-    <ng-content select="ea-main"></ng-content>
+    <ng-content select="ea-body"></ng-content>
     <ng-content select="ea-drawer"></ng-content>
   `,
   styles: []

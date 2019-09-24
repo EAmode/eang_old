@@ -1,4 +1,10 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core'
+import {
+  Component,
+  Input,
+  OnChanges,
+  SimpleChanges,
+  ContentChild
+} from '@angular/core'
 import * as MarkdownIt from 'markdown-it'
 import Prism from 'prismjs'
 // import 'prismjs/plugins/toolbar/prism-toolbar';
@@ -55,6 +61,8 @@ export class MarkdownComponent implements OnChanges {
 
   @Input() doc: string
   compiledMarkdown = ''
+
+  @ContentChild('copyPaste', { static: false }) code: MarkdownComponent
 
   constructor() {}
 

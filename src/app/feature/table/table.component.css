@@ -21,15 +21,3 @@
   .h2-table-caption {
     margin-top: 1em;
   }
-
-  .copy-clipboard {
-    display: flex;
-    justify-content: space-around;
-    padding-top: .4em;
-    margin: .8em;
-  }
-
-  small {
-    text-align: center;
-    color: var(--ea-color-accent-1);
-  }

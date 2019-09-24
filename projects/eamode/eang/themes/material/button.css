@@ -28,7 +28,6 @@
     cursor: pointer;
     display: flex;
     align-items: center;
-    box-sizing: border-box;
     outline: none;
     transition: all 0.25s ease 0s;
 

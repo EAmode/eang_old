@@ -7,7 +7,7 @@ import { Subject } from 'rxjs'
 @Component({
   selector: 'eangio-root',
   templateUrl: './app.component.html',
-  styles: []
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
   menu = {
@@ -30,6 +30,14 @@ export class AppComponent implements OnInit {
         name: 'Styles',
         iconStyle: 'ea-negative',
         children: [
+          {
+            name: 'Adjustment',
+            icon: 'ea-adjustment',
+            iconStyle: 'ea-negative',
+            data: {
+              link: '/adjustment'
+            }
+          },
           {
             name: 'Variables',
             icon: 'ea-color',
@@ -66,6 +74,7 @@ export class AppComponent implements OnInit {
           {
             name: 'Buttons',
             icon: 'ea-button-icon',
+            iconStyle: 'ea-negative',
             data: {
               link: '/button'
             }
@@ -93,6 +102,14 @@ export class AppComponent implements OnInit {
               link: '/icon'
             }
           },
+          {
+            name: 'Inputs',
+            icon: 'ea-chevron-right',
+            iconStyle: 'ea-negative',
+            data: {
+              link: '/inputs'
+            }
+          },
           // {
           //   name: 'Markdown',
           //   icon: 'ea-edit',
@@ -112,6 +129,7 @@ export class AppComponent implements OnInit {
           {
             name: 'Layout',
             icon: 'ea-layout',
+            iconStyle: 'ea-negative',
             data: {
               link: '/layout'
             }
@@ -169,7 +187,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.layout.drawerState$.next('closed')
+    this.layout.drawerState$.next('maximized')
 
     this.activate.subscribe(item => {
       if (item.data && item.data.link) {

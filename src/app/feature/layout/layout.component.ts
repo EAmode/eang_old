@@ -1,28 +1,54 @@
 import { Component, OnInit } from '@angular/core'
+import { Subject } from 'rxjs'
+import { EangElement } from '@eamode/eang'
 
 @Component({
   selector: 'eangio-layout',
   templateUrl: './layout.component.html',
-  styles: []
+  styles: [
+    `
+      ul {
+        list-style-type: circle;
+      }
+    `
+  ]
 })
 export class LayoutComponent implements OnInit {
+  activate = new Subject<EangElement>()
+
   ea_layout_attrs = `
   *layout.component.html*
   ~~~html
     <ea-layout>
       <ea-toolbar>
-        <!-- Toolbar Content here -->
+        <header>
+          <!-- Header Content here -->
+        </header>
+        <aside>
+          <!-- Aside Content here -->
+        </aside>
       </ea-toolbar>
 
       <ea-drawer>
-        <!-- Drawer Content here -->
+        <header>
+          <!-- Header Content here -->
+        </header>
+        <section>
+          <!-- Section Content here -->
+        </section>
+        <footer>
+          <!-- Footer Content here -->
+        <footer>
       </ea-drawer>
 
-      <ea-main>
-        <ea-body>
+      <ea-body>
+        <ea-main>
           <!-- Body content here -->
-        </ea-body>
-      </ea-main>
+        </ea-main>
+        <ea-footer>
+          <!-- Footer content here -->
+        </ea-footer>
+      </ea-body>
     </ea-layout>
   ~~~
   `
@@ -41,6 +67,17 @@ export class LayoutComponent implements OnInit {
         'drawer main';
     }
   }
+  ~~~
+  `
+
+  ea_layout_import = `
+  *module.ts*
+  ~~~ts
+  import { LayoutModule } from '@eamode/eang';
+  ...
+  @NgModule({
+    imports: [ LayoutModule ]
+  })
   ~~~
   `
   ea_layout_drawer = `
@@ -73,6 +110,7 @@ export class LayoutComponent implements OnInit {
   |  Shadow   |  Sets a drop shadow on the ea-toolbar   |
   |  Flex   |  Sets the properties of the toolbar to be flex with space-between a two child element layout  |
   `
+
   constructor() {}
 
   ngOnInit() {}
