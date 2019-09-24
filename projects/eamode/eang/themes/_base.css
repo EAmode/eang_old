@@ -2,10 +2,11 @@
   --ea-sizer: 1;
   --ea-spacer: 1;
   font-size: 16px;
+  box-sizing: border-box;
 }
 
-* {
-  box-sizing: border-box;
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
 body {

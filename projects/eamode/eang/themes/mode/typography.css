@@ -7,12 +7,6 @@
   ul,
   ol,
   li,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
   pre,
   form,
   fieldset,
@@ -22,39 +16,45 @@
   blockquote,
   th,
   td {
+    font-family: var(--ea-font-family);
     margin: 0;
     padding: 0;
   }
 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(
+      --ea-font-family,
+      var(--ea-font-2-family, var(--ea-font-1-family))
+    );
+    font-weight: var(--ea-font-weight, var(--ea-font-2-weight, bold));
+    line-height: calc(var(--ea-spacer) * 1.2em);
+    margin: calc(var(--ea-spacer) * 0.8em) 0 calc(var(--ea-spacer) * 0.5em);
+  }
+
   & h1 {
     font-size: calc(var(--ea-sizer) * 2rem);
-    margin-bottom: calc(var(--ea-spacer) * 0.5em);
-    line-height: calc(var(--ea-sizer) * 1.2em);
   }
 
   & h2 {
     font-size: calc(var(--ea-sizer) * 1.5rem);
-    margin-bottom: calc(var(--ea-spacer) * 0.5em);
-    line-height: calc(var(--ea-sizer) * 1.2em);
   }
 
   & h3 {
     font-size: calc(var(--ea-sizer) * 1.2rem);
-    margin-bottom: calc(var(--ea-spacer) * 0.5em);
-    line-height: calc(var(--ea-sizer) * 1.2em);
   }
 
   & h4 {
     font-size: calc(var(--ea-sizer) * 1.125rem);
-    margin-bottom: calc(var(--ea-spacer) * 0.5em);
-    line-height: calc(var(--ea-sizer) * 1.2em);
   }
 
   & h5,
   h6 {
     font-size: calc(var(--ea-sizer) * 1rem);
-    margin-bottom: calc(var(--ea-spacer) * 0.5em);
-    line-height: calc(var(--ea-sizer) * 1.2em);
   }
 
   & p {

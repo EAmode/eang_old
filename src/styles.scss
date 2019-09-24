@@ -26,23 +26,9 @@
 /* ICONS FOR DIFFERENT THEMES */
 .fluentdark,
 .mode,
+.mode-dark,
 .material {
-  & ea-footer {
-    & span {
-      display: flex;
-      align-items: center;
-      & p {
-        margin: 0;
-        margin-right: 0.5em;
-      }
-      & a {
-        margin-right: 0.5em;
-        @media only screen and (max-width: 625px) {
-          margin-bottom: 0.5em;
-        }
-      }
-    }
-  }
+  
   & eangio-landing {
     & h1,
     h2 {
@@ -188,7 +174,7 @@
       line-height: 1.3em;
     }
   }
-  /* 
+  /*
   & ea-footer {
     @media only screen and (max-width: 625px) {
       --ea-footer-height: auto;

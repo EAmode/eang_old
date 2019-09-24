@@ -1,4 +1,4 @@
-.mode {
+@define-mixin icon-mode {
   & span[icon] {
     display: block;
     background-position: center;
