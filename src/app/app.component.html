@@ -43,10 +43,10 @@
     </footer>
   </ea-drawer>
 
-  <ea-main #scrollContainer>
-    <ea-body style="--ea-sizer: 1; --ea-spacer: 1;">
+  <ea-body #scrollContainer>
+    <ea-main style="--ea-sizer: 1; --ea-spacer: 1;">
       <router-outlet (activate)="onActivate($event, scrollContainer)"></router-outlet>
-    </ea-body>
+    </ea-main>
     <ea-footer>
       <span>
         <p>Powered by</p>
@@ -63,5 +63,5 @@
         <p>in Github</p>
       </span>
     </ea-footer>
-  </ea-main>
+  </ea-body>
 </ea-layout>

@@ -24,7 +24,6 @@
   @mixin card-mode;
   @mixin layout-mode;
   @mixin markdown-mode;
-  @mixin panel-base;
   @mixin typography;
   @mixin themepicker;
   @mixin table-mode;
@@ -59,6 +58,9 @@
   --ea-color-danger: #d9534f;
   --ea-color-error: #d9534f;
 
+  --ea-black: hsl(240, 33%, 4%);
+  --ea-white: hsl(253, 100%, 97%);
+
   --ea-color-grey: hsl(0, 0%, 75%);
   --ea-color-grey-dark: hsl(0, 0%, 57%);
   --ea-color-grey-light: hsl(0, 0%, 85%);
@@ -67,11 +69,11 @@
   --ea-color-disabled: hsl(0, 0%, 45%);
 
   /* Text Colors */
-  --ea-text-color: var(--ea-text-color-dark);
+  --ea-color: var(--ea-black);
   --ea-text-color-dark: hsl(0, 0%, 20%);
   --ea-text-color-light: hsl(0, 0%, 96%);
 
-  /* Hover, Active */
+  /* Backgrounds */
   --ea-background-1: hsl(223, 50%, 95%);
   --ea-background-2: hsl(223, 30%, 88%);
 
@@ -83,17 +85,18 @@
   --ea-font-1-family: 'Roboto';
   --ea-font-1-style: normal;
   --ea-font-1-weight: 400;
-  --ea-scalar-factor: 24;
+
+  /* Utilities */
+  --ea-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 
   font-family: var(--ea-font-1-family);
   font-style: var(--ea-font-1-style);
   font-weight: var(--ea-font-1-weight);
-  /* font-size: var(--ea-font-1-size); */
+  color: var(--ea-color);
+}
 
-  /* Utilities */
-  /* --ea-color: hsl(0, 0%, 20%); */
-  /* --ea-background:  hsl(223, 50%, 95%); */
-  /* --ea-border: 0.1em solid var(--ea-color-1-dark); */
-  /* --ea-border-radius:  0.1em; */
-  --ea-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+.mode.ea-color-scheme-dark {
+  --ea-color: var(--ea-white);
+  --ea-background-1: hsl(0, 0%, 15%);
+  --ea-background-2: hsl(0, 0%, 5%);
 }

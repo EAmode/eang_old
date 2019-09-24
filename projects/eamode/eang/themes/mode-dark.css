@@ -24,7 +24,6 @@
   @mixin card-mode;
   @mixin layout-mode;
   @mixin markdown-mode;
-  @mixin panel-base;
   @mixin typography;
   @mixin themepicker;
   @mixin table-mode;
