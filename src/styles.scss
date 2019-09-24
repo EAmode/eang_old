@@ -241,6 +241,9 @@
       padding: 2em;
     }
   }
+  & [role='banner'] {
+    --ea-color: white;
+  }
 }
 
 .ea-mode-logo {

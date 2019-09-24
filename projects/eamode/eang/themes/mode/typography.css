@@ -1,6 +1,5 @@
 @define-mixin typography {
   body,
-  div,
   dl,
   dt,
   dd,
@@ -16,6 +15,7 @@
   blockquote,
   th,
   td {
+    color: var(--ea-color, var(--ea-text-color));
     font-family: var(--ea-font-family);
     margin: 0;
     padding: 0;
@@ -34,6 +34,7 @@
     font-weight: var(--ea-font-weight, var(--ea-font-2-weight, bold));
     line-height: calc(var(--ea-spacer) * 1.2em);
     margin: calc(var(--ea-spacer) * 0.8em) 0 calc(var(--ea-spacer) * 0.5em);
+    color: var(--ea-color, var(--ea-h-color, var(--ea-text-color)));
   }
 
   & h1 {

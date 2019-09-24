@@ -6,6 +6,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+  --ea-color: white;
 }
 
 .shim {
@@ -19,7 +20,7 @@
 }
 .framework-description h1 {
   z-index: 1;
-  color: white;
+
 }
 .framework-description .logo {
   height: 9em;
@@ -31,7 +32,6 @@
 }
 .framework-description h2,
 .framework-description p {
-  color: white;
   text-align: center;
   z-index: 1;
 }

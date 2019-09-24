@@ -14,7 +14,7 @@
       --ea-border-radius,
       var(--ea-button-border-radius, 0.1em)
     );
-    color: var(--ea-color, var(--ea-button-color, var(--ea-text-color-dark)));
+    color: var(--ea-color, var(--ea-button-color));
     cursor: pointer;
     display: flex;
     font-size: calc(var(--ea-sizer) * 1rem);
