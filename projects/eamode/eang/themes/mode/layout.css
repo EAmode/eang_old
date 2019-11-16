@@ -32,8 +32,7 @@
 
     color: var(--ea-text-color-light);
     &[shadow] {
-      box-shadow: 0 calc(var(--ea-sizer) * 0.1em) calc(var(--ea-sizer) * 0.3em)
-        0 rgba(0, 0, 0, 0.3);
+      box-shadow: 0em calc(var(--ea-sizer) * 0.1em) 1em 0 rgba(0, 0, 0, 0.3);
       z-index: 1;
     }
     &[flex] {
