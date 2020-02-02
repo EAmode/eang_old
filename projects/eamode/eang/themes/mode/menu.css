@@ -137,13 +137,13 @@
   }
 
   & .ea-menu {
-    ul {
+    & ul {
       display: flex;
       flex-direction: column;
-      padding: calc(var(--ea-spacer) * 0.6em) 0 0 0;
+      list-style-type: none;
     }
 
-    li {
+    & li {
       font-size: calc(var(--ea-sizer) * 1rem);
 
       & :hover {
@@ -157,9 +157,9 @@
         color: var(--ea-text-color-light);
       }
 
-      a {
-        padding: 0 calc(var(--ea-spacer) * 0.2em) 0
-          calc(var(--ea-spacer) * 0.6em);
+      & a {
+        padding: calc(var(--ea-spacer) * 0.4em) calc(var(--ea-spacer) * 0.8em)
+          calc(var(--ea-spacer) * 0.4em) calc(var(--ea-spacer) * 0.8em);
         display: block;
         line-height: var(calc(var(--ea-sizer) * 2.5em), 2.5em);
         font-size: calc(var(--ea-sizer) * 1rem);
