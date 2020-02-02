@@ -36,7 +36,7 @@ import { TabsComponent } from './components/tabs/tabs.component'
 import { UtilitiesComponent } from './utilities/utilities.component'
 import { MarkdownComponent } from './components/markdown/markdown.component'
 import { ListComponent } from './components/list/list.component'
-import { BannerComponent } from './components/banner/banner.component'
+import { CssExamplesComponent } from './components/css-examples/css-examples.component'
 import { TooltipComponent } from './components/tooltip/tooltip.component'
 import { TableComponent } from './components/table/table.component'
 import { InputsComponent } from './components/inputs/inputs.component'
@@ -48,7 +48,7 @@ const routes: Routes = [
   { path: 'theming', component: ThemingComponent },
   { path: 'layout', component: LayoutComponent },
   { path: 'button', component: ButtonComponent },
-  { path: 'banner', component: BannerComponent },
+  { path: 'css-examples', component: CssExamplesComponent },
   { path: 'tooltip', component: TooltipComponent },
   { path: 'card', component: CardComponent },
   { path: 'list', component: ListComponent },
@@ -86,7 +86,7 @@ const routes: Routes = [
     UtilitiesComponent,
     MarkdownComponent,
     ListComponent,
-    BannerComponent,
+    CssExamplesComponent,
     TooltipComponent,
     TableComponent,
     InputsComponent,

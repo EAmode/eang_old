@@ -2,13 +2,26 @@ import { Component, OnInit } from '@angular/core'
 
 @Component({
   selector: 'eangio-banner',
-  templateUrl: './banner.component.html',
-  styles: [``]
+  templateUrl: './css-examples.component.html',
+  styleUrls: ['./css-examples.component.scss']
 })
-export class BannerComponent implements OnInit {
+export class CssExamplesComponent implements OnInit {
   banner_div = `
   ~~~html
-  <div role="banner" m-0-0-2-0>
+  <style type="text/css">
+    .my-banner {
+      --ea-color: white;
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--ea-color-1);
+      padding: calc(var(--ea-spacer) * 2.1em) calc(var(--ea-spacer) * 2em);
+      margin-bottom: calc(var(--ea-spacer) * 1.5em);
+      font-weight: calc(var(--ea-sizer) * 800);
+    }
+  </style>
+  <div class="my-banner" role="banner" m-0-0-2-0>
     <h1>Button</h1>
     <span icon button-icon negative style="width: 2rem; height:2rem;"></span>
   </div>

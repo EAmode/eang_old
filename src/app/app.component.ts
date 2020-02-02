@@ -72,11 +72,11 @@ export class AppComponent implements OnInit {
           //   }
           // },
           {
-            name: 'Banner',
+            name: 'Custom CSS Examples',
             icon: 'ea-button-icon',
             iconStyle: 'ea-negative',
             data: {
-              link: '/banner'
+              link: '/css-examples'
             }
           },
           {
