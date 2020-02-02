@@ -1,5 +1,6 @@
 @define-mixin list-mode {
-  ul, ol {
+  ul,
+  ol {
     &.ea-list {
       width: 100%;
       background-color: var(--ea-list-background-color, --ea-color-3);

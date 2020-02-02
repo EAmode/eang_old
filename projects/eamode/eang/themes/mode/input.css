@@ -74,7 +74,7 @@
       }
 
       & > label:before {
-        content: " ";
+        content: ' ';
         display: inline-block;
         position: relative;
         top: 5px;
@@ -94,14 +94,14 @@
         color: var(--ea-color-grey-dark);
       }
 
-      & > input[type=radio]:checked + label:after {
+      & > input[type='radio']:checked + label:after {
         border-radius: 11px;
         width: 12px;
         height: 12px;
         position: absolute;
         top: 9px;
         left: 10px;
-        content: " ";
+        content: ' ';
         display: block;
         background: #004c97;
       }
@@ -236,7 +236,7 @@
 
     & > input[type='checkbox'][disabled]:after {
       background: var(--ea-color-grey);
-      color: var(--ea-color-disabled)
+      color: var(--ea-color-disabled);
     }
 
     & > input[type='checkbox']:checked:after {
