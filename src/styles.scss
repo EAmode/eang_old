@@ -241,9 +241,6 @@
       padding: 2em;
     }
   }
-  & [role='banner'] {
-    --ea-color: white;
-  }
 }
 
 .ea-mode-logo {
@@ -252,4 +249,23 @@
   width: 4rem;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.eangio-banner {
+  /* height: var(--ea-height, var(--ea-banner-height, 6em)); */
+  --ea-color: white;
+  background: var(--ea-color-1);
+  box-shadow: var(--ea-box-shadow);
+  display: flex;
+  padding: calc(var(--ea-spacer) * 2.1em) calc(var(--ea-spacer) * 4.2vw);
+  margin-bottom: calc(var(--ea-spacer) * 1.5em);
+  align-items: center;
+  justify-content: space-between;
+  font-weight: calc(var(--ea-sizer) * 800);
+  color: var(--ea-text-color-light);
+  & h1,
+  h2,
+  h3 {
+    margin: 0;
+  }
 }
