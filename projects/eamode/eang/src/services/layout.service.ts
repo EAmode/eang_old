@@ -3,6 +3,22 @@ import { BehaviorSubject, merge } from 'rxjs'
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout'
 import { filter, map } from 'rxjs/operators'
 
+export class EaLayout {
+  config = {
+    drawerState: 'maximized'
+  }
+
+  private readonly configSubject = new BehaviorSubject<any>(this.config)
+  config$ = this.configSubject.asObservable()
+
+  closeDrawer() {
+    if (this.config.drawerState !== 'closed') {
+      this.config.drawerState = 'closed'
+      this.configSubject.next(this.config)
+    }
+  }
+}
+
 @Injectable()
 export class LayoutService {
   screenSize: String

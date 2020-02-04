@@ -1,17 +1,13 @@
 <ea-layout>
   <ea-toolbar flex shadow>
     <header>
-      <button class="ea-button" outline (click)="showDrawer()" left>
-        <div *ngIf="(layout.drawerState$ | async)  === 'closed'; else menuOpened">
-          <span hamburger-menu icon negative style="--ea-icon-margin: 0; height: 2em; width: 2em;">
-          </span>
-        </div>
-        <ng-template #menuOpened>
-          <span chevrons-left icon negative style="--ea-icon-margin: 0; height: 2em; width: 2em;">
-          </span>
-        </ng-template>
+      <button *ngIf="layout.config.drawerState === 'closed'" class="ea-button" outline (click)="showDrawer()" left>
+        <span hamburger-menu icon negative style="--ea-icon-margin: 0; height: 2em; width: 2em;"></span>
       </button>
-      <a (click)="closeDrawer()" routerLink="/"> <span class="logo"></span> </a>
+      <button *ngIf="layout.config.drawerState !== 'closed'" class="ea-button" outline (click)="closeDrawer()" left>
+        <span chevrons-left icon negative style="--ea-icon-margin: 0; height: 2em; width: 2em;"></span>
+      </button>
+      <a routerLink="/"> <span class="logo"></span> </a>
     </header>
     <aside>
       <ea-themepicker select="eangio-root" [themes]="['mode', 'mode-dark']"></ea-themepicker>

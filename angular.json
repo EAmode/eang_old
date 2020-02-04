@@ -32,7 +32,7 @@
           "spec": false
         }
       },
-      "targets": {
+      "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
@@ -121,7 +121,7 @@
     "eang-io-e2e": {
       "root": "e2e/",
       "projectType": "application",
-      "targets": {
+      "architect": {
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
@@ -150,7 +150,7 @@
       "sourceRoot": "projects/eamode/eang/src",
       "projectType": "library",
       "prefix": "ea",
-      "targets": {
+      "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {

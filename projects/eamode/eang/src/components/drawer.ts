@@ -7,13 +7,13 @@ import {
   HostBinding
 } from '@angular/core'
 import { Subject } from 'rxjs'
-import { LayoutService } from '../services/layout.service'
+import { LayoutService, EaLayout } from '../services/layout.service'
 
 @Component({
   selector: 'ea-drawer',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <ng-container *ngIf="(drawerState$ | async) !== 'closed'">
+    <ng-container *ngIf="stateAttr !== 'closed'">
       <ng-content select="header"></ng-content>
       <ng-content select="section"></ng-content>
       <ng-content select="footer"></ng-content>
@@ -23,9 +23,10 @@ import { LayoutService } from '../services/layout.service'
   styles: []
 })
 export class Drawer implements OnInit, OnDestroy {
-  @HostBinding('attr.state') stateAttr
+  @HostBinding('attr.state') stateAttr: string
 
   @Input() drawerState$: Subject<string>
+  @Input() layoutTest: EaLayout
 
   constructor(public layout: LayoutService) {}
 
@@ -33,6 +34,14 @@ export class Drawer implements OnInit, OnDestroy {
     this.layout.drawerState$.subscribe(d => {
       this.stateAttr = d
     })
+
+    if (this.layoutTest) {
+      this.layoutTest.config$.subscribe(x => {
+        if (this.stateAttr !== x.drawerState) {
+          this.stateAttr = x.drawerState
+        }
+      })
+    }
   }
 
   ngOnDestroy() {}

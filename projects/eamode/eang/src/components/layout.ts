@@ -5,7 +5,7 @@ import {
   OnInit,
   HostBinding
 } from '@angular/core'
-import { LayoutService } from '../services/layout.service'
+import { LayoutService, EaLayout } from '../services/layout.service'
 import { Observable } from 'rxjs'
 
 @Component({
@@ -27,6 +27,8 @@ export class Layout implements OnInit {
   @HostBinding('attr.nav-overlay') stateAttr
 
   @Input() drawerState$: Observable<string>
+
+  @Input() layoutTest = new EaLayout()
 
   constructor(public layout: LayoutService) {}
 

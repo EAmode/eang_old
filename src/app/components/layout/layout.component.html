@@ -3,6 +3,57 @@
   <span icon layout negative style="width: 2rem; height:2rem;"></span>
 </div>
 <div class="content-container">
+  <div class="ea-card example" m-0-0-1-0>
+    <div class="ea-card-header">
+      <h2>App Layout</h2>
+    </div>
+    <div class="ea-card-content">
+      <div class="screen">
+        <ea-layout>
+          <ea-toolbar flex shadow>
+            <header>
+              <!-- <button class="ea-button" outline (click)="showDrawer()" left>
+                <div *ngIf="(layout.drawerState$ | async)  === 'closed'; else menuOpened">
+                  <span hamburger-menu icon negative style="--ea-icon-margin: 0; height: 2em; width: 2em;">
+                  </span>
+                </div>
+                <ng-template #menuOpened>
+                  <span chevrons-left icon negative style="--ea-icon-margin: 0; height: 2em; width: 2em;">
+                  </span>
+                </ng-template>
+              </button>
+              <a (click)="closeDrawer()" routerLink="/"> <span class="logo"></span> </a> -->
+            </header>
+            <aside>
+              <p>aside</p>
+            </aside>
+          </ea-toolbar>
+
+          <ea-drawer>
+            <section>
+              <p>section</p>
+            </section>
+            <footer>
+            <p>footer</p>
+            </footer>
+          </ea-drawer>
+
+          <ea-body #scrollContainer>
+            <ea-main role="main">
+              <p>main</p>
+            </ea-main>
+            <ea-footer>
+              <p>footer</p>
+            </ea-footer>
+          </ea-body>
+        </ea-layout>
+      </div>
+    </div>
+    <div class="ea-card-footer">
+      <p>footer</p>
+    </div>
+  </div>
+
   <h2>&lt;ea-layout&gt;</h2>
   <p>
     Responsive layout grid that automatically adapts to screen size and
