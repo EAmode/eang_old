@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { Router } from '@angular/router'
-import {
-  LayoutService,
-  EaLayout
-} from 'projects/eamode/eang/src/services/layout.service'
-import { EangElement } from '@eamode/eang'
+import { EangElement, Layout } from '@eamode/eang'
 import { Subject } from 'rxjs'
 
 @Component({
@@ -182,7 +178,7 @@ export class AppComponent implements OnInit {
   }
   activate = new Subject<EangElement>()
 
-  layout = new EaLayout()
+  layout = new Layout()
   constructor(public router: Router) {}
 
   // shouldCloseDrawer() {

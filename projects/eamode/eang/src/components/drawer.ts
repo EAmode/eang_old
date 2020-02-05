@@ -4,11 +4,8 @@ import {
   Input,
   ChangeDetectionStrategy,
   OnDestroy,
-  HostBinding,
-  AfterViewInit
+  HostBinding
 } from '@angular/core'
-import { Subject, Subscription } from 'rxjs'
-import { LayoutService, EaLayout } from '../services/layout.service'
 
 @Component({
   selector: 'ea-drawer',
@@ -28,7 +25,6 @@ export class Drawer implements OnInit, OnDestroy {
   @Input()
   state: string
 
-  private configSubscription: Subscription
   constructor() {}
 
   ngOnInit() {}

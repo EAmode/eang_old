@@ -1,5 +1,4 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core'
-import { LayoutService } from '../services/layout.service'
 
 @Component({
   selector: 'ea-toolbar',
@@ -13,5 +12,5 @@ import { LayoutService } from '../services/layout.service'
   styles: []
 })
 export class Toolbar {
-  constructor(public layout: LayoutService) {}
+  constructor() {}
 }

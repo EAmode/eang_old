@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core'
-import { LayoutService } from '@eamode/eang'
 import { BehaviorSubject, timer } from 'rxjs'
 import { map, share } from 'rxjs/operators'
 @Component({
@@ -14,13 +13,7 @@ export class LandingComponent implements OnInit {
     map(i => this.orientations[i % this.orientations.length]),
     share()
   )
-  constructor(public layout: LayoutService) {}
-
-  shouldOpenDrawer() {
-    if (!this.layout.isDrawerOverlay) {
-      this.layout.drawerState$.next('maximized')
-    }
-  }
+  constructor() {}
 
   ngOnInit() {}
 
