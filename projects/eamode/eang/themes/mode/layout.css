@@ -8,8 +8,14 @@
     grid-template-columns: auto 1fr;
     grid-template-rows: auto 1fr;
     grid-template-areas:
+      'drawer toolbar'
+      'drawer body';
+
+    &[toolbar-top]{
+      grid-template-areas:
       'toolbar toolbar'
       'drawer body';
+    }
 
     & [overlay] {
       background: var(--ea-color-2);
@@ -140,36 +146,10 @@
   }
 
   & ea-footer {
-    justify-content: space-between;
     background: var(
       --ea-background,
       var(--ea-footer-background, var(--ea-background-2))
     );
     width: 100%;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    padding: calc(var(--ea-spacer) * 2.5rem);
-    color: var(--ea-text-color-light);
-    & p,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    a,
-    b,
-    small {
-      color: inherit;
-    }
-    @media only screen and (max-width: 625px) {
-      height: auto;
-      flex-direction: column;
-      span {
-        display: flex;
-        flex-direction: column;
-      }
-    }
   }
 }

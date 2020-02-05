@@ -5,15 +5,23 @@ import { filter, map } from 'rxjs/operators'
 
 export class EaLayout {
   config = {
-    drawerState: 'maximized'
+    drawer: { state: 'maximized' }
   }
 
   private readonly configSubject = new BehaviorSubject<any>(this.config)
   config$ = this.configSubject.asObservable()
+  drawerState$ = this.config$.pipe(map(x => x.drawer.state))
+
+  openDrawer() {
+    if (this.config.drawer.state !== 'maximized') {
+      this.config.drawer.state = 'maximi'
+      this.configSubject.next(this.config)
+    }
+  }
 
   closeDrawer() {
-    if (this.config.drawerState !== 'closed') {
-      this.config.drawerState = 'closed'
+    if (this.config.drawer.state !== 'closed') {
+      this.config.drawer.state = 'closed'
       this.configSubject.next(this.config)
     }
   }

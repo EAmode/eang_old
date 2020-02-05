@@ -4,16 +4,17 @@ import {
   Input,
   ChangeDetectionStrategy,
   OnDestroy,
-  HostBinding
+  HostBinding,
+  AfterViewInit
 } from '@angular/core'
-import { Subject } from 'rxjs'
+import { Subject, Subscription } from 'rxjs'
 import { LayoutService, EaLayout } from '../services/layout.service'
 
 @Component({
   selector: 'ea-drawer',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <ng-container *ngIf="stateAttr !== 'closed'">
+    <ng-container *ngIf="state !== 'closed'">
       <ng-content select="header"></ng-content>
       <ng-content select="section"></ng-content>
       <ng-content select="footer"></ng-content>
@@ -23,26 +24,14 @@ import { LayoutService, EaLayout } from '../services/layout.service'
   styles: []
 })
 export class Drawer implements OnInit, OnDestroy {
-  @HostBinding('attr.state') stateAttr: string
+  @HostBinding('attr.state')
+  @Input()
+  state: string
 
-  @Input() drawerState$: Subject<string>
-  @Input() layoutTest: EaLayout
+  private configSubscription: Subscription
+  constructor() {}
 
-  constructor(public layout: LayoutService) {}
-
-  ngOnInit() {
-    this.layout.drawerState$.subscribe(d => {
-      this.stateAttr = d
-    })
-
-    if (this.layoutTest) {
-      this.layoutTest.config$.subscribe(x => {
-        if (this.stateAttr !== x.drawerState) {
-          this.stateAttr = x.drawerState
-        }
-      })
-    }
-  }
+  ngOnInit() {}
 
   ngOnDestroy() {}
 }

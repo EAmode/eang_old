@@ -1,10 +1,10 @@
-<ea-layout>
+<ea-layout toolbar-top>
   <ea-toolbar flex shadow>
     <header>
-      <button *ngIf="layout.config.drawerState === 'closed'" class="ea-button" outline (click)="showDrawer()" left>
+      <button *ngIf="layout.config.drawer.state === 'closed'" class="ea-button" outline (click)="layout.openDrawer()" left>
         <span hamburger-menu icon negative style="--ea-icon-margin: 0; height: 2em; width: 2em;"></span>
       </button>
-      <button *ngIf="layout.config.drawerState !== 'closed'" class="ea-button" outline (click)="closeDrawer()" left>
+      <button *ngIf="layout.config.drawer.state !== 'closed'" class="ea-button" outline (click)="layout.closeDrawer()" left>
         <span chevrons-left icon negative style="--ea-icon-margin: 0; height: 2em; width: 2em;"></span>
       </button>
       <a routerLink="/"> <span class="logo"></span> </a>
@@ -18,7 +18,7 @@
     </aside>
   </ea-toolbar>
 
-  <ea-drawer>
+  <ea-drawer [state]="layout.drawerState$ | async">
     <section m-1-0-0-0>
       <ea-menu [node]="menu" [nameAreaTemplate]="nameArea" [activateSubject]="activate">
       </ea-menu>

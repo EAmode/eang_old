@@ -9,27 +9,23 @@
     </div>
     <div class="ea-card-content">
       <div class="screen">
-        <ea-layout>
+        <ea-layout id="example1">
           <ea-toolbar flex shadow>
             <header>
-              <!-- <button class="ea-button" outline (click)="showDrawer()" left>
-                <div *ngIf="(layout.drawerState$ | async)  === 'closed'; else menuOpened">
-                  <span hamburger-menu icon negative style="--ea-icon-margin: 0; height: 2em; width: 2em;">
-                  </span>
-                </div>
-                <ng-template #menuOpened>
-                  <span chevrons-left icon negative style="--ea-icon-margin: 0; height: 2em; width: 2em;">
-                  </span>
-                </ng-template>
+              <button *ngIf="layoutExample1.config.drawer.state === 'closed'" class="ea-button" outline (click)="layoutExample1.openDrawer()" left>
+                <span hamburger-menu icon negative style="--ea-icon-margin: 0; height: 2em; width: 2em;"></span>
               </button>
-              <a (click)="closeDrawer()" routerLink="/"> <span class="logo"></span> </a> -->
+              <button *ngIf="layoutExample1.config.drawer.state !== 'closed'" class="ea-button" outline (click)="layoutExample1.closeDrawer()" left>
+                <span chevrons-left icon negative style="--ea-icon-margin: 0; height: 2em; width: 2em;"></span>
+              </button>
+              <a routerLink="/"> <span class="logo"></span> </a>
             </header>
             <aside>
               <p>aside</p>
             </aside>
           </ea-toolbar>
 
-          <ea-drawer>
+          <ea-drawer [state]="layoutExample1.drawerState$ | async">
             <section>
               <p>section</p>
             </section>

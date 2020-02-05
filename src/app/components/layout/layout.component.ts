@@ -1,20 +1,16 @@
 import { Component, OnInit } from '@angular/core'
 import { Subject } from 'rxjs'
-import { EangElement } from '@eamode/eang'
+import { EangElement, EaLayout } from '@eamode/eang'
 
 @Component({
   selector: 'eangio-layout',
   templateUrl: './layout.component.html',
-  styles: [
-    `
-      ul {
-        list-style-type: circle;
-      }
-    `
-  ]
+  styleUrls: ['./layout.component.scss']
 })
 export class LayoutComponent implements OnInit {
   activate = new Subject<EangElement>()
+
+  layoutExample1 = new EaLayout()
 
   ea_layout_attrs = `
   *layout.component.html*
