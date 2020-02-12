@@ -88,10 +88,8 @@ export class AutocompleteComponent
   @Output() selectedItem
 
   @ViewChild('inputField', { static: true }) inputField
-  @ViewChild('suggestionPanel', { static: false }) suggestionPanel
-  @ContentChild(TemplateRef, { static: false }) resultsTemplate: TemplateRef<
-    any
-  >
+  @ViewChild('suggestionPanel') suggestionPanel
+  @ContentChild(TemplateRef) resultsTemplate: TemplateRef<any>
 
   currentSuggestions: any[]
   showPanel = true
