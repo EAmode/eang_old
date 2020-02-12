@@ -74,8 +74,8 @@
   --ea-text-color-light: hsl(0, 0%, 96%);
 
   /* Backgrounds */
-  --ea-background-1: hsl(223, 50%, 95%);
-  --ea-background-2: hsl(223, 30%, 88%);
+  --ea-background-1: hsl(0, 0%, 100%);
+  --ea-background-2: hsl(0, 0%, 96%);
 
   --ea-background-color-hover: var(--ea-color-1);
   --ea-background-color-active: var(--ea-color-1-light);
