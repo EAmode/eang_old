@@ -36,7 +36,7 @@
     align-items: center;
     grid-area: toolbar;
 
-    color: var(--ea-text-color-light);
+    color: var(--ea-text-color-2);
     &[shadow] {
       box-shadow: 0em calc(var(--ea-sizer) * 0.1em) 0.4em 0 rgba(0, 0, 0, 0.3);
       z-index: 1;
@@ -85,7 +85,7 @@
   }
 
   & ea-drawer {
-    color: var(--ea-text-color-light);
+    color: var(--ea-text-color-2);
     grid-area: drawer;
     display: flex;
     flex-direction: column;

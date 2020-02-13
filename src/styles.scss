@@ -26,7 +26,6 @@
 /* ICONS FOR DIFFERENT THEMES */
 .fluentdark,
 .mode,
-.mode-dark,
 .material {
   --ea-toolbar-background: var(--ea-color-1);
   --ea-footer-background: var(--ea-color-1);
@@ -160,9 +159,9 @@
   }
   & .card-dark {
     background-color: var(--ea-color-2);
-    color: var(--ea-text-color-light);
+    color: var(--ea-text-color-2);
     & div:first-child {
-      color: var(--ea-text-color-light);
+      color: var(--ea-text-color-2);
     }
 
     & ea-menu {
@@ -262,7 +261,7 @@
   align-items: center;
   justify-content: space-between;
   font-weight: calc(var(--ea-sizer) * 800);
-  color: var(--ea-text-color-light);
+  color: var(--ea-text-color-2);
   & h1,
   h2,
   h3 {

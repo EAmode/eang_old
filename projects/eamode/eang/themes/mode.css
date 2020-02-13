@@ -58,9 +58,6 @@
   --ea-color-danger: #d9534f;
   --ea-color-error: #d9534f;
 
-  --ea-black: hsl(240, 33%, 4%);
-  --ea-white: hsl(253, 100%, 97%);
-
   --ea-color-grey: hsl(0, 0%, 75%);
   --ea-color-grey-dark: hsl(0, 0%, 57%);
   --ea-color-grey-light: hsl(0, 0%, 85%);
@@ -69,9 +66,8 @@
   --ea-color-disabled: hsl(0, 0%, 45%);
 
   /* Text Colors */
-  --ea-color: var(--ea-black);
-  --ea-text-color-dark: hsl(0, 0%, 20%);
-  --ea-text-color-light: hsl(0, 0%, 96%);
+  --ea-text-color-1: hsl(0, 0%, 20%);
+  --ea-text-color-2: hsl(0, 0%, 96%);
 
   /* Backgrounds */
   --ea-background-1: hsl(0, 0%, 100%);
@@ -96,7 +92,6 @@
 }
 
 .mode.ea-color-scheme-dark {
-  --ea-color: var(--ea-white);
-  --ea-background-1: hsl(0, 0%, 15%);
+  --ea-background-1: hsl(0, 0%, 8%);
   --ea-background-2: hsl(0, 0%, 5%);
 }

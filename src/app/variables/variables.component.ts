@@ -26,9 +26,9 @@ export class VariablesComponent implements OnInit {
   text_variables = `
   |  Title   |  Custom Property  | Description | rgba |
   |---|---|---|---|
-  |  Text Color Dark |  \` --ea-text-color-light \` |Light color text for the theme|hsl(0, 0%, 96%)|
-  |  Text Color Light |  \`--ea-text-color-dark \` |Dark color text for the theme|hsl(0, 0%, 20%)|
-  |  Text Color Hover      |  \` --ea-text-color-hover \` |Text color for all hover state components|  \`var(--ea-text-color-light)\` |
-  |  Text Color Active      |  \` --ea-text-color-active \` |Text color for all active state components| \` --ea-text-color-light\`|
+  |  Text Color Dark |  \` --ea-text-color-2 \` |Light color text for the theme|hsl(0, 0%, 96%)|
+  |  Text Color Light |  \`--ea-text-color-1 \` |Dark color text for the theme|hsl(0, 0%, 20%)|
+  |  Text Color Hover      |  \` --ea-text-color-hover \` |Text color for all hover state components|  \`var(--ea-text-color-2)\` |
+  |  Text Color Active      |  \` --ea-text-color-active \` |Text color for all active state components| \` --ea-text-color-2\`|
   `
 }

@@ -30,7 +30,7 @@
       background: var(--ea-button-background, var(--ea-color-1));
       color: var(
         --ea-color,
-        var(--ea-button-color, var(--ea-text-color-light))
+        var(--ea-button-color, var(--ea-text-color-2))
       );
     }
 
@@ -55,7 +55,7 @@
       );
       color: var(
         --ea-color,
-        var(--ea-button-color, var(--ea-text-color-light))
+        var(--ea-button-color, var(--ea-text-color-2))
       );
       text-decoration: none;
     }

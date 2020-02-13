@@ -228,7 +228,7 @@
 
     & > input[type='checkbox']:after {
       left: 4%;
-      color: var(--ea-text-color-light);
+      color: var(--ea-text-color-2);
       background: var(--ea-color-1);
       border-radius: calc(var(--ea-sizer) * 30px);
       content: '';

@@ -41,9 +41,9 @@
   --ea-color-2: hsl(0, 0%, 98%);
   --ea-color-light: hsl(0, 0%, 100%);
 
-  --ea-text-color: var(--ea-text-color-dark);
-  --ea-text-color-dark: #333;
-  --ea-text-color-light: #f6f6f6;
+  --ea-text-color: var(--ea-text-color-1);
+  --ea-text-color-1: #333;
+  --ea-text-color-2: #f6f6f6;
 
   --ea-background-hover: var(--ea-color-1);
   /* --ea-background-hover: red; */

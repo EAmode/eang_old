@@ -30,7 +30,7 @@
     border-bottom: calc(var(--ea-sizer) * 0.2em) solid
       var(--ea-color-2, transparent);
     & th {
-      color: var(--ea-text-color-dark, var(--ea-color-2));
+      color: var(--ea-text-color-1, var(--ea-color-2));
       /* background-color: var(--ea-color-grey); */
       border-color: var(--ea-color-2);
       text-align: center;
@@ -49,7 +49,7 @@
       &:hover {
         background-color: var(--ea-background-color-hover) !important;
         cursor: pointer;
-        color: var(--ea-text-color-light);
+        color: var(--ea-text-color-2);
       }
     }
   }

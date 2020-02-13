@@ -10,6 +10,8 @@ import { map } from 'rxjs/operators'
 
 export class Layout {
   config = {
+    theme: 'mode',
+    colorScheme: 'default',
     drawer: { state: 'maximized' }
   }
 
@@ -19,7 +21,7 @@ export class Layout {
 
   openDrawer() {
     if (this.config.drawer.state !== 'maximized') {
-      this.config.drawer.state = 'maximi'
+      this.config.drawer.state = 'maximized'
       this.configSubject.next(this.config)
     }
   }
@@ -27,6 +29,19 @@ export class Layout {
   closeDrawer() {
     if (this.config.drawer.state !== 'closed') {
       this.config.drawer.state = 'closed'
+      this.configSubject.next(this.config)
+    }
+  }
+
+  changeColorScheme(scheme: 'default' | 'dark' | 'light') {
+    if (this.config.colorScheme !== scheme) {
+      const element = document.getElementsByClassName(this.config.theme)[0]
+      if (scheme === 'dark') {
+        element.classList.add('ea-color-scheme-dark')
+      } else if (scheme === 'light') {
+        element.classList.remove('ea-color-scheme-dark')
+      }
+      this.config.colorScheme = scheme
       this.configSubject.next(this.config)
     }
   }
