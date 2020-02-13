@@ -11,10 +11,10 @@
       'drawer toolbar'
       'drawer body';
 
-    &[toolbar-top]{
+    &[toolbar-top] {
       grid-template-areas:
-      'toolbar toolbar'
-      'drawer body';
+        'toolbar toolbar'
+        'drawer body';
     }
 
     & [overlay] {
