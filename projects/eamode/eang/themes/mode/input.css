@@ -1,20 +1,28 @@
 @define-mixin input-mode {
   & .ea-form-field {
-    margin: calc(var(--ea-spacer) * 0.5em) calc(var(--ea-spacer) * 0.2em);
     display: grid;
     align-items: center;
-    width: auto;
 
     & > label {
       margin: 0 0 0 calc(var(--ea-spacer) * 0.5em);
     }
 
+    & > .ea-validation-errors {
+      margin: calc(var(--ea-spacer) * -0.4em) 0 0 calc(var(--ea-spacer) * 0.5em);
+      font-size: calc(var(--ea-sizer) * 0.8rem);
+      color: var(--ea-color-error);
+    }
+
     & > input {
-      margin: calc(var(--ea-spacer) * 0.5em);
+      margin: calc(var(--ea-spacer) * 0.2em) calc(var(--ea-spacer) * 0.4em) calc(var(--ea-spacer) * 0.4em) calc(var(--ea-spacer) * 0.4em);
       font-size: calc(var(--ea-sizer) * 1rem);
       border: 0.1em solid var(--ea-color-grey-dark);
       padding: 0.35em;
       border-radius: 0.15em;
+
+      &.ng-dirty.ng-invalid {
+        border: 0.1em solid var(--ea-color-error);
+      }
     }
 
     & > input[type='color'] {

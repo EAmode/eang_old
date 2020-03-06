@@ -1,47 +1,72 @@
 <div class="eangio-banner" role="banner">
-    <h1>Inputs</h1>
-    <span icon chevron-right negative tab style="width: 2rem; height:2rem;"></span>
+  <h1>Inputs</h1>
+  <span icon chevron-right negative tab style="width: 2rem; height:2rem;"></span>
 </div>
 <div class="content-container">
-    <p>
-        The <code>&lt;input&gt;</code> tag allows you to create different interface elements and provide user
-        interaction.
-        Mainly <code>&lt;input&gt;</code> is intended for creating text fields, various buttons, radio buttons and
-        checkboxes.
-        The main attribute of the <code>&lt;input&gt;</code> tag is "type" which defines the type of element such as
-        text field, field to insert the password, date time picker etc.
-        To styling the inputs add <code>ea-form-field</code> class for a wrapper.
-    </p>
-    <br>
-    <div class="prettifier">
-        <h2>Inputs</h2>
-        <p>Use the next structure to assign styles.</p>
-        <ea-markdown [doc]="inputs"></ea-markdown>
-        <h2>Text</h2>
+  <p>
+    Form elements need to be wrapped with the <code>ea-form-field</code> class. Labels only work side-by-side with the
+    input element and cannot contain the element itself.
+  </p>
+  <div multi-col center class="example">
 
-        <div multi-col style="--ea-grid-col-min-width: calc(var(--ea-sizer) * 15em);">
-            <div class="ea-form-field">
-                <label>Input type: text</label>
-                <input type="text" placeholder="Input text #1">
-            </div>
-            <div class="ea-form-field">
-                <label>Input type: password</label>
-                <input type="password" placeholder="Insert your password">
-            </div>
-            <div class="ea-form-field">
-                <label>Input type: url</label>
-                <input type="url" placeholder="Insert the url">
-            </div>
-            <div class="ea-form-field">
-                <label>Input type: search</label>
-                <input type="search" placeholder="Search">
-            </div>
-            <div class="ea-form-field">
-                <label>Input type: email</label>
-                <input type="email" placeholder="Insert email">
-            </div>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="ea-form-field">
+        <label for="name">* Name</label>
+        <input type="text" name="Name" formControlName="name" id="name" required>
+        <div class="ea-validation-errors" *ngIf="name.invalid && (name.dirty || name.touched)">
+          <div *ngIf="name.errors.required">First Name is required</div>
+          <div *ngIf="name.errors.minlength">Name must be at least 4 characters long.</div>
+        </div>
+      </div>
+      <div class="ea-form-field">
+        <label for="email">Email</label>
+        <input type="text" name="Email" formControlName="email" id="email">
+        <div class="ea-validation-errors" *ngIf="email.invalid && (email.dirty || email.touched)">
+          <div *ngIf="email.errors.email">Please enter a valid email.</div>
+        </div>
+      </div>
+      <div class="form-example">
+        <label for="email">Enter your email: </label>
+        <input type="email" name="email" id="email" required>
+      </div>
+      <div class="form-example">
+        <input type="submit" value="Subscribe!">
+      </div>
+    </form>
+    <div>
+      {{ form.valueChanges | async | json }}
+    </div>
 
-            <!--
+  </div>
+  <div class="prettifier">
+    <h2>Inputs</h2>
+    <p>Use the next structure to assign styles.</p>
+    <ea-markdown [doc]="inputs"></ea-markdown>
+    <h2>Text</h2>
+
+    <div multi-col style="--ea-grid-col-min-width: calc(var(--ea-sizer) * 15em);">
+      <div class="ea-form-field">
+        <label>Input type: text</label>
+        <input type="text" placeholder="Input text #1">
+      </div>
+      <div class="ea-form-field">
+        <label>Input type: password</label>
+        <input type="password" placeholder="Insert your password">
+      </div>
+      <div class="ea-form-field">
+        <label>Input type: url</label>
+        <input type="url" placeholder="Insert the url">
+      </div>
+      <div class="ea-form-field">
+        <label>Input type: search</label>
+        <input type="search" placeholder="Search">
+      </div>
+      <div class="ea-form-field">
+        <label>Input type: email</label>
+        <input type="email" placeholder="Insert email">
+      </div>
+
+      <!--
                 <div class="ea-form-field">
                 <label>Input type: color</label>
                 <input type="color">
@@ -60,78 +85,78 @@
                 <label>Input type: file</label>
                 <input type="file">
             </div> -->
-        </div>
-
-        <h2>Range, Color</h2>
-        <div multi-col style="--ea-grid-col-min-width: calc(var(--ea-sizer) * 15em);">
-            <div class="ea-form-field">
-                <label>Input type: range</label>
-                <input type="range">
-            </div>
-            <div class="ea-form-field">
-                <label>Input type: color</label>
-                <input type="color">
-            </div>
-        </div>
-
-        <h2>Date</h2>
-        <div multi-col style="--ea-grid-col-min-width: calc(var(--ea-sizer) * 15em);">
-            <div class="ea-form-field">
-                <label>Input type: datetime-local</label>
-                <input type="datetime-local">
-            </div>
-            <div class="ea-form-field">
-                <label>Input type: time</label>
-                <input type="time">
-            </div>
-            <div class="ea-form-field">
-                <label>Input type: month</label>
-                <input type="month">
-            </div>
-            <div class="ea-form-field">
-                <label>Input type: date</label>
-                <input type="date">
-            </div>
-            <div class="ea-form-field">
-                <label>Input type: week</label>
-                <input type="week">
-            </div>
-        </div>
-
-        <h2>Radio, Checkbox</h2>
-        <p>Follow the next naming of classes to get radio or checkbox.</p>
-        <ea-markdown [doc]="radioCheckbox"></ea-markdown>
-        <div multi-col style="--ea-grid-col-min-width: calc(var(--ea-sizer) * 25em);">
-            <div class="ea-form-field dis-blc">
-                <label>Input type: radio</label>
-                <div class="ea-radio-item">
-                    <input type="radio" id="angular-frm" name="frm" value="angular" checked>
-                    <label for="angular-frm">Angular</label>
-                </div>
-
-                <div class="ea-radio-item">
-                    <input type="radio" id="react-frm" name="frm" value="react">
-                    <label for="react-frm">React</label>
-                </div>
-
-                <div class="ea-radio-item">
-                    <input type="radio" id="vue-frm" name="frm" value="vue.js" disabled>
-                    <label for="vue-frm">Vue.js</label>
-                </div>
-            </div>
-            <div class="ea-form-field dis-flx">
-                <label>Input type: checkbox</label>
-                <input type="checkbox" name="checkbox-one" checked><label for="react-frm">Angular</label><br>
-                <input type="checkbox" name="checkbox-two"><label for="react-frm">React</label><br>
-                <input type="checkbox" name="checkbox-three" disabled><label for="react-frm">Vue.js</label><br>
-            </div>
-        </div>
-        <h2>Switcher</h2>
-        <p>Follow the next naming of classes to get switchers.</p>
-        <ea-markdown [doc]="switchCheckbox"></ea-markdown>
-        <div class="checkbox-switch">
-            <input type="checkbox" value="Light">
-            <input type="checkbox" value="Light" disabled>
-        </div>
     </div>
+
+    <h2>Range, Color</h2>
+    <div multi-col style="--ea-grid-col-min-width: calc(var(--ea-sizer) * 15em);">
+      <div class="ea-form-field">
+        <label>Input type: range</label>
+        <input type="range">
+      </div>
+      <div class="ea-form-field">
+        <label>Input type: color</label>
+        <input type="color">
+      </div>
+    </div>
+
+    <h2>Date</h2>
+    <div multi-col style="--ea-grid-col-min-width: calc(var(--ea-sizer) * 15em);">
+      <div class="ea-form-field">
+        <label>Input type: datetime-local</label>
+        <input type="datetime-local">
+      </div>
+      <div class="ea-form-field">
+        <label>Input type: time</label>
+        <input type="time">
+      </div>
+      <div class="ea-form-field">
+        <label>Input type: month</label>
+        <input type="month">
+      </div>
+      <div class="ea-form-field">
+        <label>Input type: date</label>
+        <input type="date">
+      </div>
+      <div class="ea-form-field">
+        <label>Input type: week</label>
+        <input type="week">
+      </div>
+    </div>
+
+    <h2>Radio, Checkbox</h2>
+    <p>Follow the next naming of classes to get radio or checkbox.</p>
+    <ea-markdown [doc]="radioCheckbox"></ea-markdown>
+    <div multi-col style="--ea-grid-col-min-width: calc(var(--ea-sizer) * 25em);">
+      <div class="ea-form-field dis-blc">
+        <label>Input type: radio</label>
+        <div class="ea-radio-item">
+          <input type="radio" id="angular-frm" name="frm" value="angular" checked>
+          <label for="angular-frm">Angular</label>
+        </div>
+
+        <div class="ea-radio-item">
+          <input type="radio" id="react-frm" name="frm" value="react">
+          <label for="react-frm">React</label>
+        </div>
+
+        <div class="ea-radio-item">
+          <input type="radio" id="vue-frm" name="frm" value="vue.js" disabled>
+          <label for="vue-frm">Vue.js</label>
+        </div>
+      </div>
+      <div class="ea-form-field dis-flx">
+        <label>Input type: checkbox</label>
+        <input type="checkbox" name="checkbox-one" checked><label for="react-frm">Angular</label><br>
+        <input type="checkbox" name="checkbox-two"><label for="react-frm">React</label><br>
+        <input type="checkbox" name="checkbox-three" disabled><label for="react-frm">Vue.js</label><br>
+      </div>
+    </div>
+    <h2>Switcher</h2>
+    <p>Follow the next naming of classes to get switchers.</p>
+    <ea-markdown [doc]="switchCheckbox"></ea-markdown>
+    <div class="checkbox-switch">
+      <input type="checkbox" value="Light">
+      <input type="checkbox" value="Light" disabled>
+    </div>
+  </div>
 </div>

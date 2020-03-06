@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core'
+import { Component } from '@angular/core'
+import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms'
 
 @Component({
   selector: 'eangio-inputs',
@@ -19,10 +20,24 @@ import { Component, OnInit } from '@angular/core'
     `
   ]
 })
-export class InputsComponent implements OnInit {
-  constructor() {}
+export class InputsComponent {
+  name = new FormControl('', [Validators.required, Validators.minLength(4)])
+  email = new FormControl('', [Validators.email])
+  form = this.fb.group({
+    name: this.name,
+    email: this.email,
+    address: this.fb.group({
+      street: [''],
+      city: [''],
+      state: [''],
+      zip: ['']
+    }),
+    aliases: this.fb.array([this.fb.control('')])
+  })
 
-  ngOnInit() {}
+  constructor(private fb: FormBuilder) {}
+
+  onSubmit() {}
 
   inputs = `
   ~~~html
