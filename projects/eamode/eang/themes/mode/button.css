@@ -29,10 +29,7 @@
 
     &[primary] {
       background: var(--ea-button-background, var(--ea-color-1));
-      color: var(
-        --ea-color,
-        var(--ea-button-color, var(--ea-text-color-2))
-      );
+      color: var(--ea-color, var(--ea-button-color, var(--ea-text-color-2)));
     }
 
     &[outline] {
@@ -54,10 +51,7 @@
         --ea-background,
         var(--ea-button-background, var(--ea-color-1-dark))
       );
-      color: var(
-        --ea-color,
-        var(--ea-button-color, var(--ea-text-color-2))
-      );
+      color: var(--ea-color, var(--ea-button-color, var(--ea-text-color-2)));
       text-decoration: none;
     }
 

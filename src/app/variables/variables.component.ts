@@ -1,17 +1,15 @@
-import { Component, OnInit } from '@angular/core'
+import { Component } from '@angular/core'
 
 @Component({
   selector: 'eangio-variables',
   templateUrl: './variables.component.html',
   styles: []
 })
-export class VariablesComponent implements OnInit {
+export class VariablesComponent {
   constructor() {}
 
   isActive = false
   textIsActive = false
-
-  ngOnInit() {}
 
   variables = `
   |  Title   |  Custom Property  | Description | hsl( ) |

@@ -14,7 +14,8 @@
     }
 
     & > input {
-      margin: calc(var(--ea-spacer) * 0.2em) calc(var(--ea-spacer) * 0.4em) calc(var(--ea-spacer) * 0.4em) calc(var(--ea-spacer) * 0.4em);
+      margin: calc(var(--ea-spacer) * 0.2em) calc(var(--ea-spacer) * 0.4em)
+        calc(var(--ea-spacer) * 0.4em) calc(var(--ea-spacer) * 0.4em);
       font-size: calc(var(--ea-sizer) * 1rem);
       border: 0.1em solid var(--ea-color-grey-dark);
       padding: 0.35em;

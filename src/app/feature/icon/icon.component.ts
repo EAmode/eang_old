@@ -1,16 +1,12 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core'
-import { Subject, BehaviorSubject } from 'rxjs'
-import { debounceTime, distinctUntilChanged } from 'rxjs/operators'
+import { Component } from '@angular/core'
 
 @Component({
   selector: 'eangio-icon',
   templateUrl: './icon.component.html',
   styles: []
 })
-export class IconComponent implements OnInit {
+export class IconComponent {
   constructor() {}
-
-  ngOnInit() {}
 
   icon = `
   ~~~html

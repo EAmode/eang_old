@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core'
+import { Component } from '@angular/core'
 
 @Component({
   selector: 'eangio-utilities',
   templateUrl: './utilities.component.html',
   styles: []
 })
-export class UtilitiesComponent implements OnInit {
+export class UtilitiesComponent {
   center = `
   ~~~html
   <div center>
@@ -22,6 +22,4 @@ export class UtilitiesComponent implements OnInit {
   ~~~
   `
   constructor() {}
-
-  ngOnInit() {}
 }

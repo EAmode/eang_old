@@ -2,7 +2,6 @@ import {
   Component,
   Input,
   EventEmitter,
-  OnInit,
   ViewEncapsulation,
   AfterContentInit
 } from '@angular/core'
@@ -114,7 +113,7 @@ import { EangElement } from '../core'
   `,
   encapsulation: ViewEncapsulation.None
 })
-export class MenuComponent implements OnInit, AfterContentInit {
+export class MenuComponent implements AfterContentInit {
   @Input() node
   @Input() depth = 0
   @Input() nameAreaTemplate
@@ -125,8 +124,6 @@ export class MenuComponent implements OnInit, AfterContentInit {
   @Input() activateSubject: Subject<EangElement>
 
   constructor() {}
-
-  ngOnInit(): void {}
 
   ngAfterContentInit() {
     if (this.node.toggleRight && this.node.children) {

@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core'
+import { Component } from '@angular/core'
 
 @Component({
   selector: 'eangio-banner',
   templateUrl: './css-examples.component.html',
   styleUrls: ['./css-examples.component.scss']
 })
-export class CssExamplesComponent implements OnInit {
+export class CssExamplesComponent {
   banner_div = `
   ~~~html
   <style type="text/css">
@@ -38,6 +38,4 @@ export class CssExamplesComponent implements OnInit {
   | \`--ea-banner-color\` | Sets the color of the banner font | var(--ea-color-3) |
     `
   constructor() {}
-
-  ngOnInit() {}
 }

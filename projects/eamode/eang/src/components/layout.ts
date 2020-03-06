@@ -2,7 +2,6 @@ import {
   Component,
   ChangeDetectionStrategy,
   Input,
-  OnInit,
   HostBinding
 } from '@angular/core'
 import { Observable, BehaviorSubject } from 'rxjs'
@@ -58,7 +57,7 @@ export class Layout {
   `,
   styles: []
 })
-export class LayoutComponent implements OnInit {
+export class LayoutComponent {
   @HostBinding('attr.nav-overlay') stateAttr
 
   @Input() drawerState$: Observable<string>
@@ -67,17 +66,17 @@ export class LayoutComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {
-    // if (this.drawerState$) {
-    //   this.drawerState$.subscribe(this.layout.drawerState$)
-    // }
-    // this.layout.breakpoint$.subscribe(b => {
-    //   this.layout.screenSize = b
-    //   this.layout.isDrawerOverlay = b === 'XSmall' ? true : false
-    //   this.stateAttr = this.layout.isDrawerOverlay ? '' : null
-    //   if (this.layout.isDrawerOverlay) {
-    //     this.layout.drawerState$.next('closed')
-    //   }
-    // })
-  }
+  // ngOnInit() {
+  //   if (this.drawerState$) {
+  //     this.drawerState$.subscribe(this.layout.drawerState$)
+  //   }
+  //   this.layout.breakpoint$.subscribe(b => {
+  //     this.layout.screenSize = b
+  //     this.layout.isDrawerOverlay = b === 'XSmall' ? true : false
+  //     this.stateAttr = this.layout.isDrawerOverlay ? '' : null
+  //     if (this.layout.isDrawerOverlay) {
+  //       this.layout.drawerState$.next('closed')
+  //     }
+  //   })
+  // }
 }

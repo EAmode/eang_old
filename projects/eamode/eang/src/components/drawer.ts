@@ -1,9 +1,7 @@
 import {
   Component,
-  OnInit,
   Input,
   ChangeDetectionStrategy,
-  OnDestroy,
   HostBinding
 } from '@angular/core'
 
@@ -20,14 +18,10 @@ import {
   `,
   styles: []
 })
-export class Drawer implements OnInit, OnDestroy {
+export class Drawer {
   @HostBinding('attr.state')
   @Input()
   state: string
 
   constructor() {}
-
-  ngOnInit() {}
-
-  ngOnDestroy() {}
 }

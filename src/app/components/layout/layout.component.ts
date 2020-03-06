@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import { Component } from '@angular/core'
 import { Subject } from 'rxjs'
 import { EangElement, Layout } from '@eamode/eang'
 
@@ -7,7 +7,7 @@ import { EangElement, Layout } from '@eamode/eang'
   templateUrl: './layout.component.html',
   styleUrls: ['./layout.component.scss']
 })
-export class LayoutComponent implements OnInit {
+export class LayoutComponent {
   activate = new Subject<EangElement>()
 
   layoutExample1 = new Layout()
@@ -108,6 +108,4 @@ export class LayoutComponent implements OnInit {
   `
 
   constructor() {}
-
-  ngOnInit() {}
 }
