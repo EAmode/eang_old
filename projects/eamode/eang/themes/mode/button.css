@@ -17,6 +17,7 @@
     color: var(--ea-color, var(--ea-button-color));
     cursor: pointer;
     display: flex;
+    font-family: var(--ea-font-1-family);
     font-size: calc(var(--ea-sizer) * 1rem);
     font-weight: 600;
     padding: calc(var(--ea-spacer) * 0.375em) calc(var(--ea-spacer) * 1em);
