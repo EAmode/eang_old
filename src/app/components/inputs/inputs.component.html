@@ -14,7 +14,7 @@
         <label for="name">* Name</label>
         <input type="text" name="Name" formControlName="name" id="name" required>
         <div class="ea-validation-errors" *ngIf="name.invalid && (name.dirty || name.touched)">
-          <div *ngIf="name.errors.required">First Name is required</div>
+          <div *ngIf="name.errors.required">Name is required</div>
           <div *ngIf="name.errors.minlength">Name must be at least 4 characters long.</div>
         </div>
       </div>
@@ -25,22 +25,14 @@
           <div *ngIf="email.errors.email">Please enter a valid email.</div>
         </div>
       </div>
-      <div class="form-example">
-        <label for="email">Enter your email: </label>
-        <input type="email" name="email" id="email" required>
-      </div>
-      <div class="form-example">
-        <input type="submit" value="Subscribe!">
-      </div>
+      <button class="ea-button" type="submit" [disabled]="!form.valid">Add User</button>
     </form>
-    <div>
-      {{ form.valueChanges | async | json }}
-    </div>
 
+    <p>Values:</p>
+    {{ form.valueChanges | async | json }}
   </div>
+
   <div class="prettifier">
-    <h2>Inputs</h2>
-    <p>Use the next structure to assign styles.</p>
     <ea-markdown [doc]="inputs"></ea-markdown>
     <h2>Text</h2>
 

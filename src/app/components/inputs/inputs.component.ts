@@ -25,14 +25,7 @@ export class InputsComponent {
   email = new FormControl('', [Validators.email])
   form = this.fb.group({
     name: this.name,
-    email: this.email,
-    address: this.fb.group({
-      street: [''],
-      city: [''],
-      state: [''],
-      zip: ['']
-    }),
-    aliases: this.fb.array([this.fb.control('')])
+    email: this.email
   })
 
   constructor(private fb: FormBuilder) {}
@@ -41,9 +34,27 @@ export class InputsComponent {
 
   inputs = `
   ~~~html
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
   <div class="ea-form-field">
-    <input type="..." placeholder="..." value="..." name="..." disabled>
+    <label for="name">* Name</label>
+    <input type="text" name="Name" formControlName="name" id="name" required>
+    <div class="ea-validation-errors" *ngIf="name.invalid && (name.dirty || name.touched)">
+      <div *ngIf="name.errors.required">Name is required</div>
+      <div *ngIf="name.errors.minlength">Name must be at least 4 characters long.</div>
+    </div>
   </div>
+  <div class="ea-form-field">
+    <label for="email">Email</label>
+    <input type="text" name="Email" formControlName="email" id="email">
+    <div class="ea-validation-errors" *ngIf="email.invalid && (email.dirty || email.touched)">
+      <div *ngIf="email.errors.email">Please enter a valid email.</div>
+    </div>
+  </div>
+  <button class="ea-button" type="submit" [disabled]="!form.valid">Add User</button>
+</form>
+
+<p>Values:</p>
+{{ form.valueChanges | async | json }}
   ~~~
   `
 
