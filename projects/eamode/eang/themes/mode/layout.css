@@ -37,8 +37,10 @@
     grid-area: toolbar;
 
     color: var(--ea-text-color-2);
+
     &[shadow] {
       box-shadow: 0em calc(var(--ea-sizer) * 0.1em) 0.4em 0 rgba(0, 0, 0, 0.3);
+      /* box-shadow:  inset 0 -3px 0 0 rgba(0, 0, 0, 0.3); */
       z-index: 1;
     }
     &[flex] {
@@ -85,13 +87,13 @@
   }
 
   & ea-drawer {
-    color: var(--ea-text-color-2);
+    color: var(--ea-color, var(--ea-drawer-color, inherit));
     grid-area: drawer;
     display: flex;
     flex-direction: column;
     /* justify-content: space-between; */
     width: var(--ea-drawer-width);
-    background: var(--ea-color-2);
+    background: var(--ea-background, var(--ea-drawer-background));
     -webkit-tap-highlight-color: transparent;
     /* color: var(--ea-text-color); */
     overflow: auto;

@@ -141,30 +141,32 @@
       display: flex;
       flex-direction: column;
       list-style-type: none;
+      font-size: calc(var(--ea-sizer) * 1rem);
+      color: var(--ea-menu-color, inherit);
+      padding-inline-start: 0;
     }
 
     & li {
-      font-size: calc(var(--ea-sizer) * 1rem);
-
-      & :hover {
+      &:hover {
         background: var(--ea-background-color-hover);
-        color: var(--ea-text-color-2);
+        /* color: var(--ea-text-color-2); */
       }
 
-      & [active],
+      &:active,
+      [active],
       .active {
         background: var(--ea-background-color-active);
-        color: var(--ea-text-color-2);
+        /* color: var(--ea-text-color-2); */
       }
 
       & a {
         padding: calc(var(--ea-spacer) * 0.4em) calc(var(--ea-spacer) * 0.8em)
           calc(var(--ea-spacer) * 0.4em) calc(var(--ea-spacer) * 0.8em);
         display: block;
-        line-height: var(calc(var(--ea-sizer) * 2.5em), 2.5em);
-        font-size: calc(var(--ea-sizer) * 1rem);
+        /* line-height: var(calc(var(--ea-sizer) * 2.5em), 2.5em); */
         text-decoration: none;
-        color: var(--ea-text-color-2);
+        /* color: var(--ea-text-color-2); */
+        color: inherit;
       }
     }
   }
