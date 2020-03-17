@@ -32,6 +32,16 @@ export class Layout {
     }
   }
 
+  toggleDrawer() {
+    if (this.config.drawer.state === 'closed') {
+      this.config.drawer.state = 'maximized'
+      this.configSubject.next(this.config)
+    } else {
+      this.config.drawer.state = 'closed'
+      this.configSubject.next(this.config)
+    }
+  }
+
   changeColorScheme(scheme: 'default' | 'dark' | 'light') {
     if (this.config.colorScheme !== scheme) {
       const element = document.getElementsByClassName(this.config.theme)[0]

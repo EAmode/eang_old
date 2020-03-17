@@ -4,6 +4,9 @@
     display: grid;
     height: 100vh;
     margin: 0;
+
+    color: var(--ea-color, var(--ea-layout-color, var(--ea-text-color-1)));
+
     overflow: hidden;
     grid-template-columns: auto 1fr;
     grid-template-rows: auto 1fr;
@@ -26,17 +29,22 @@
 
   & ea-toolbar {
     font-size: calc(var(--ea-sizer) * 1rem);
-    height: var(--ea-toolbar-height, calc(var(--ea-spacer) * 4em));
-    padding: calc(var(--ea-spacer) * 0.5em) calc(var(--ea-spacer) * 1em);
+    color: var(--ea-color, var(--ea-toolbar-color, inherit));
+    height: calc(var(--ea-sizer) * var(--ea-toolbar-height, 4em));
+    padding: var(
+      --ea-padding,
+      var(
+        --ea-toolbar-padding,
+        calc(var(--ea-spacer) * 0.625em) calc(var(--ea-spacer) * 1em)
+      )
+    );
     background: var(
       --ea-background,
-      var(--ea-toolbar-background, var(--ea-background-2))
+      var(--ea-toolbar-background, var(--ea-background-1))
     );
     display: flex;
     align-items: center;
     grid-area: toolbar;
-
-    color: var(--ea-text-color-2);
 
     &[shadow] {
       box-shadow: 0em calc(var(--ea-sizer) * 0.1em) 0.4em 0 rgba(0, 0, 0, 0.3);
@@ -136,21 +144,21 @@
     grid-area: body;
     overflow: auto;
     overflow-x: inherit;
+    color: var(--ea-color, var(--ea-body-color, inherit));
   }
 
   & ea-main {
     flex: 1 0 auto;
     background: var(
       --ea-background,
-      var(--ea-main-background, var(--ea-background-1))
+      var(--ea-main-background, var(--ea-background-2))
     );
-    color: var(--ea-color, var(--ea-main-color, var(--ea-color-1)));
   }
 
   & ea-footer {
     background: var(
       --ea-background,
-      var(--ea-footer-background, var(--ea-background-2))
+      var(--ea-footer-background, var(--ea-background-1))
     );
     width: 100%;
   }
