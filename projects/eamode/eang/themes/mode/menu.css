@@ -148,14 +148,22 @@
 
     & li {
       &:hover {
-        background: var(--ea-background-color-hover);
-        /* color: var(--ea-text-color-2); */
+        background: var(
+          --ea-background-active,
+          var(
+            --ea-menu-background-active,
+            var(--ea-color-1-light, hsla(var(--ea-color-1), 0.5))
+          )
+        );
       }
 
       &:active,
       [active],
       .active {
-        background: var(--ea-background-color-active);
+        background: var(
+          --ea-background-active,
+          var(--ea-menu-background-active, var(--ea-color-1))
+        );
         /* color: var(--ea-text-color-2); */
       }
 

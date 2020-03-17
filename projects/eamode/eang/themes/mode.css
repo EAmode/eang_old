@@ -58,9 +58,9 @@
   --ea-color-danger: #d9534f;
   --ea-color-error: #d9534f;
 
-  --ea-color-grey: hsl(0, 0%, 75%);
   --ea-color-grey-dark: hsl(0, 0%, 57%);
-  --ea-color-grey-light: hsl(0, 0%, 85%);
+  --ea-color-grey: hsl(0, 0%, 80%);
+  --ea-color-grey-light: hsl(0, 0%, 90%);
   --ea-color-striped: rgba(139, 184, 232, 1);
 
   --ea-color-disabled: hsl(0, 0%, 45%);
@@ -73,9 +73,9 @@
   --ea-background-1: hsl(0, 0%, 100%);
   --ea-background-2: hsl(0, 0%, 96%);
 
-  --ea-background-color-hover: var(--ea-color-1-light);
-  --ea-background-color-active: var(--ea-color-1);
-  --ea-color-hover-not-active: hsl(223, 40%, 73%);
+  /* --ea-background-hover: var(--ea-color-1-light); */
+  /* --ea-background-active: var(--ea-color-1); */
+  /* --ea-color-hover-not-active: hsl(223, 40%, 73%); */
 
   /* Fonts & Typography */
   --ea-font-1-family: 'Roboto';
@@ -94,6 +94,9 @@
 .mode.ea-color-scheme-dark {
   --ea-text-color-1: hsl(0, 0%, 96%);
   --ea-text-color-2: hsl(0, 0%, 20%);
+
+  --ea-color-grey: hsl(0, 0%, 30%);
+  --ea-color-grey-light: hsl(0, 0%, 20%);
 
   --ea-background-1: hsl(0, 0%, 8%);
   --ea-background-2: hsl(0, 0%, 5%);
