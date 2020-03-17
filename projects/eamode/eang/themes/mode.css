@@ -71,7 +71,7 @@
 
   /* Backgrounds */
   --ea-background-1: hsl(0, 0%, 100%);
-  --ea-background-2: hsl(0, 0%, 96%);
+  --ea-background-2: hsl(0, 0%, 97%);
 
   /* Borders */
   --ea-border-1: 0.0625em solid hsla(0, 0%, 70%, 0.5);
@@ -97,6 +97,6 @@
   --ea-color-grey: hsl(0, 0%, 30%);
   --ea-color-grey-light: hsl(0, 0%, 20%);
 
-  --ea-background-1: hsl(0, 0%, 8%);
-  --ea-background-2: hsl(0, 0%, 5%);
+  --ea-background-1: hsl(0, 0%, 5%);
+  --ea-background-2: hsl(0, 0%, 10%);
 }

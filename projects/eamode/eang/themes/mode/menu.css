@@ -152,7 +152,7 @@
           --ea-background-active,
           var(
             --ea-menu-background-active,
-            var(--ea-color-1-light, hsla(var(--ea-color-1), 0.5))
+            var(--ea-color-1-light, var(--ea-color-grey-light))
           )
         );
       }
@@ -164,7 +164,7 @@
           --ea-background-active,
           var(--ea-menu-background-active, var(--ea-color-1))
         );
-        /* color: var(--ea-text-color-2); */
+        font-weight: 500;
       }
 
       & a {
