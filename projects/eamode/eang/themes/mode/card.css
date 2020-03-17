@@ -1,16 +1,14 @@
 @define-mixin card-mode {
   & .ea-card {
     font-size: calc(var(--ea-sizer) * 1rem);
-    box-shadow: var(--ea-box-shadow);
-    background: var(--ea-color-3);
-    border: 0.1em solid var(--ea-color-3);
+    background: var(--ea-background-1);
+    border: 0.05em solid rgba(204, 204, 204, 0.513);
     color: var(--ea-text-color);
     width: 100%;
     margin: 0;
     display: flex;
     flex-direction: column;
     height: fit-content;
-    border-radius: calc(var(--ea-sizer) * 0.5em);
 
     &[grid] {
       --ea-card-grid-template: var(
@@ -64,10 +62,6 @@
         );
         display: grid;
         grid-template: var(--ea-card-header-grid-template);
-      }
-      &[border] {
-        border-top-left-radius: var(--ea-card-border-radius, 8px);
-        border-top-right-radius: var(--ea-card-border-radius, 8px);
       }
     }
     & .ea-card-content {
