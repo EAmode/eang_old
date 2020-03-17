@@ -1,14 +1,20 @@
 @define-mixin input-mode {
+  form {
+    display: block;
+    width: 100%;
+    max-width: 50em;
+  }
+
   & .ea-form-actions {
     margin: calc(var(--ea-spacer) * 0.2em) calc(var(--ea-spacer) * 0.4em)
-    calc(var(--ea-spacer) * 0.4em) calc(var(--ea-spacer) * 0.4em);
+      calc(var(--ea-spacer) * 0.4em) calc(var(--ea-spacer) * 0.4em);
   }
 
   & .ea-form-field {
     display: grid;
     align-items: center;
     margin: calc(var(--ea-spacer) * 0.2em) calc(var(--ea-spacer) * 0.4em)
-    calc(var(--ea-spacer) * 0.4em) calc(var(--ea-spacer) * 0.4em);
+      calc(var(--ea-spacer) * 0.4em) calc(var(--ea-spacer) * 0.4em);
 
     & > label {
       margin: 0 0 0 calc(var(--ea-spacer) * 0.4em);
