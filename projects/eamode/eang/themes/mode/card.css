@@ -1,8 +1,14 @@
 @define-mixin card-mode {
   & .ea-card {
     font-size: calc(var(--ea-sizer) * 1rem);
-    background: var(--ea-background-1);
-    border: 0.05em solid rgba(204, 204, 204, 0.513);
+    background: var(
+      --ea-background,
+      var(--ea-card-background, var(--ea-background-1))
+    );
+    border: var(
+      --ea-border,
+      var(--ea-card-border, var(--ea-border-1))
+    );
     color: var(--ea-text-color);
     width: 100%;
     margin: 0;
