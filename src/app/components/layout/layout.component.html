@@ -9,7 +9,7 @@
     </div>
     <div class="ea-card-content">
       <div class="screen">
-        <ea-layout id="example1">
+        <ea-layout id="example1" [draweroverlay]="layoutExample1.drawerOverlay$ | async">
           <ea-toolbar flex shadow>
             <header>
               <button *ngIf="layoutExample1.config.drawer.state === 'closed'" class="ea-button" outline (click)="layoutExample1.openDrawer()" left>
@@ -25,7 +25,7 @@
             </aside>
           </ea-toolbar>
 
-          <ea-drawer [state]="layoutExample1.drawerState$ | async">
+          <ea-drawer >
             <section>
               <p>section</p>
             </section>

@@ -2,21 +2,55 @@ import {
   Component,
   ChangeDetectionStrategy,
   Input,
-  HostBinding
+  HostBinding,
+  OnChanges
 } from '@angular/core'
-import { Observable, BehaviorSubject } from 'rxjs'
-import { map } from 'rxjs/operators'
+import {
+  Observable,
+  BehaviorSubject,
+  fromEventPattern,
+  of,
+  interval
+} from 'rxjs'
+import { map, share, catchError } from 'rxjs/operators'
 
 export class Layout {
-  config = {
-    theme: 'mode',
-    colorScheme: 'default',
-    drawer: { state: 'maximized' }
-  }
-
   private readonly configSubject = new BehaviorSubject<any>(this.config)
-  config$ = this.configSubject.asObservable()
-  drawerState$ = this.config$.pipe(map(x => x.drawer.state))
+  config$ = this.configSubject.pipe(share())
+  // drawerState$ = this.config$.pipe(map(x => x.drawer.state))
+  // drawerOverlay$ = this.config$.pipe(
+  //   map(x => {
+  //     return x.drawer.overlay.toString()
+  //   }),
+  //   catchError(val => {
+  //     return of(`I caught: ${val}`)
+  //   })
+  // )
+
+  drawerState$ = interval(1000).pipe(map(i => ({ count: i })))
+
+  constructor(
+    public config = {
+      theme: 'mode',
+      colorScheme: 'default',
+      drawerOverlayMediaQuery: '(max-width: 600px)',
+      drawer: { state: 'maximized', overlay: 'true' }
+    }
+  ) {
+    if (config.drawerOverlayMediaQuery) {
+      const mql = window.matchMedia(config.drawerOverlayMediaQuery)
+      const mediaObserver = fromEventPattern<MediaQueryListEvent>(
+        mql.addListener.bind(mql),
+        mql.removeListener.bind(mql)
+      )
+      mediaObserver.pipe(map(x => x.matches)).subscribe(x => {
+        const clone = Object.assign({}, this.config)
+        clone.drawer.overlay = x.toString()
+        this.configSubject.next(clone)
+        console.log(clone)
+      })
+    }
+  }
 
   openDrawer() {
     if (this.config.drawer.state !== 'maximized') {
@@ -58,23 +92,31 @@ export class Layout {
 
 @Component({
   selector: 'ea-layout',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.Default,
   template: `
-    <div overlay></div>
+    <div overlay *ngIf="draweroverlay === 'true'"></div>
     <ng-content select="ea-toolbar"></ng-content>
     <ng-content select="ea-body"></ng-content>
     <ng-content select="ea-drawer"></ng-content>
   `,
   styles: []
 })
-export class LayoutComponent {
-  @HostBinding('attr.nav-overlay') stateAttr
+export class LayoutComponent implements OnChanges {
+  _draweroverlay: string
+  @Input('draweroverlay')
+  set draweroverlay(value) {
+    this._draweroverlay = value
+  }
 
-  @Input() drawerState$: Observable<string>
-
-  @Input() layoutTest = new Layout()
-
+  // @HostBinding('attr.draweroverlay')
+  get draweroverlay() {
+    return this._draweroverlay
+  }
   constructor() {}
+
+  ngOnChanges(changes: import('@angular/core').SimpleChanges): void {
+    console.log(changes)
+  }
 
   // ngOnInit() {
   //   if (this.drawerState$) {
