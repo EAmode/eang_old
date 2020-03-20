@@ -17,7 +17,7 @@ import { map, share, catchError } from 'rxjs/operators'
 export class Layout {
   private readonly configSubject = new BehaviorSubject<any>(this.config)
   config$ = this.configSubject.pipe(share())
-  // drawerState$ = this.config$.pipe(map(x => x.drawer.state))
+  drawerState$ = this.config$.pipe(map(x => x.drawer.state))
   // drawerOverlay$ = this.config$.pipe(
   //   map(x => {
   //     return x.drawer.overlay.toString()
@@ -27,7 +27,11 @@ export class Layout {
   //   })
   // )
 
-  drawerState$ = interval(1000).pipe(map(i => ({ count: i })))
+  drawerOverlay$ = interval(1000).pipe(
+    map(i => {
+      return i % 2 === 0
+    })
+  )
 
   constructor(
     public config = {
@@ -37,19 +41,19 @@ export class Layout {
       drawer: { state: 'maximized', overlay: 'true' }
     }
   ) {
-    if (config.drawerOverlayMediaQuery) {
-      const mql = window.matchMedia(config.drawerOverlayMediaQuery)
-      const mediaObserver = fromEventPattern<MediaQueryListEvent>(
-        mql.addListener.bind(mql),
-        mql.removeListener.bind(mql)
-      )
-      mediaObserver.pipe(map(x => x.matches)).subscribe(x => {
-        const clone = Object.assign({}, this.config)
-        clone.drawer.overlay = x.toString()
-        this.configSubject.next(clone)
-        console.log(clone)
-      })
-    }
+    // if (config.drawerOverlayMediaQuery) {
+    //   const mql = window.matchMedia(config.drawerOverlayMediaQuery)
+    //   const mediaObserver = fromEventPattern<MediaQueryListEvent>(
+    //     mql.addListener.bind(mql),
+    //     mql.removeListener.bind(mql)
+    //   )
+    //   mediaObserver.pipe(map(x => x.matches)).subscribe(x => {
+    //     const clone = Object.assign({}, this.config)
+    //     clone.drawer.overlay = x.toString()
+    //     this.configSubject.next(clone)
+    //     console.log(clone)
+    //   })
+    // }
   }
 
   openDrawer() {
@@ -102,16 +106,15 @@ export class Layout {
   styles: []
 })
 export class LayoutComponent implements OnChanges {
-  _draweroverlay: string
-  @Input('draweroverlay')
-  set draweroverlay(value) {
-    this._draweroverlay = value
-  }
+  // _draweroverlay: string
+  // set draweroverlay(value) {
+  //   this._draweroverlay = value
+  // }
 
-  // @HostBinding('attr.draweroverlay')
-  get draweroverlay() {
-    return this._draweroverlay
-  }
+  @HostBinding('attr.draweroverlay')
+  @Input()
+  draweroverlay: string
+
   constructor() {}
 
   ngOnChanges(changes: import('@angular/core').SimpleChanges): void {
