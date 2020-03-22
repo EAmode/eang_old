@@ -1,5 +1,15 @@
+.ea-card-content {
+  justify-content: space-evenly;
+}
+
 #example1 {
-  --ea-sizer: 0.5;
+  --ea-sizer: 0.6;
+  --ea-footer-background: red;
+  height: 100%;
+}
+
+#example2 {
+  --ea-sizer: 0.6;
   --ea-footer-background: red;
   height: 100%;
 }

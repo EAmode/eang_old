@@ -10,9 +10,6 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <ng-container *ngIf="state !== 'closed'">
-      <ng-content select="header"></ng-content>
-      <ng-content select="section"></ng-content>
-      <ng-content select="footer"></ng-content>
       <ng-content></ng-content>
     </ng-container>
   `,

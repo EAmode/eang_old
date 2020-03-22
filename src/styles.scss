@@ -23,13 +23,10 @@
     font-size: 18px;
   }
 }
-/* ICONS FOR DIFFERENT THEMES */
-.fluentdark,
-.mode,
-.material {
+
+.mode {
   --ea-toolbar-background: var(--ea-color-1);
   --ea-footer-background: var(--ea-color-1);
-  --ea-drawer-width: 15em;
   & eangio-landing {
     & h1,
     h2 {
@@ -40,16 +37,7 @@
   & .content-container {
     margin: 2.8em 4.2vw;
   }
-  & .logo {
-    background: url('assets/images/eang-logo.svg');
-    height: 4em;
-    width: 4em;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-  a > .logo {
-    display: flex;
-  }
+  
   a > div {
     text-decoration: none;
   }
@@ -80,9 +68,10 @@
     height: 15rem;
     max-width: 25rem;
     width: 100%;
-    background-color: var(--ea-color-background-7);
-    border: 1px solid lightgrey;
+    background: var(--ea-text-color-1);
+    border: 0.125em solid var(--ea-text-color-1);
     position: relative;
+    padding: 0.5em;
     @media only screen and (max-width: 500px) {
       width: 90%;
     }
@@ -168,7 +157,7 @@
       width: 100%;
     }
   }
-  
+
   /*
   & ea-footer {
     @media only screen and (max-width: 625px) {

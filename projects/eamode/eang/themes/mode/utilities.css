@@ -79,4 +79,48 @@
     width: 100%;
     max-width: var(--ea-max-width, 1080px);
   }
+
+  .ea-container-horizontal {
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    padding: var(
+      --ea-padding,
+      var(
+        --ea-container-padding,
+        calc(var(--ea-spacer) * 0.375em) calc(var(--ea-spacer) * 1em)
+      )
+    );
+
+    > * {
+      display: flex;
+    }
+
+    > :nth-last-child(2) {
+      flex-grow: 1;
+    }
+  }
+
+  .ea-container-vertical {
+    display: flex;
+    flex-direction: column;
+
+    padding: var(
+      --ea-padding,
+      var(
+        --ea-container-padding,
+        calc(var(--ea-spacer) * 1em) calc(var(--ea-spacer) * 0.5em)
+      )
+    );
+
+    > * {
+      display: flex;
+    }
+
+    > :nth-last-child(2) {
+      flex-grow: 1;
+    }
+  }
+
 }
