@@ -3,6 +3,7 @@
     user-select: none;
     cursor: pointer;
     position: relative;
+    color: var(--ea-color, var(--ea-menu-color, inherit));
     & [node] {
       display: flex;
       line-height: calc(var(--ea-sizer) * 2.5em);
@@ -24,7 +25,7 @@
 
       &[active] {
         background: var(--ea-background-color-active);
-        color: var(--ea-text-color-2);
+        /* color: var(--ea-text-color-2); */
       }
 
       &:hover {
@@ -35,7 +36,7 @@
       &:active {
         background: var(--ea-background-color-active);
         box-shadow: var(--ea-background-active-shadow);
-        color: var(--ea-text-color-2);
+        /* color: var(--ea-text-color-2); */
       }
 
       & [toggle-area] {
@@ -48,7 +49,6 @@
 
       & [name-area] {
         width: 100%;
-        color: var(--ea-text-color-2);
         display: flex;
         align-items: center;
 
@@ -142,7 +142,7 @@
       flex-direction: column;
       list-style-type: none;
       font-size: calc(var(--ea-sizer) * 1rem);
-      color: var(--ea-menu-color, inherit);
+      color: var(--ea-color, var(--ea-menu-color, inherit));
       padding-inline-start: 0;
     }
 

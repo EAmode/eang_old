@@ -9,7 +9,7 @@
       --ea-border,
       var(--ea-card-border, var(--ea-border-1))
     );
-    color: var(--ea-text-color);
+    color: var(--ea-color, var(--ea-card-color, inherit));
     width: 100%;
     margin: 0;
     display: flex;
@@ -37,24 +37,16 @@
     }
 
     & .ea-card-header {
-      border: 0.1em var(--ea-color-3);
-      border-style: none none solid none;
+      border-bottom: var(
+        --ea-border,
+        var(--ea-card-header-border, var(--ea-border-1))
+      );
       background: transparent;
-      color: var(--ea-color-2);
+      color: var(--ea-color, var(--ea-card-header-color, inherit));
       padding: 0 calc(var(--ea-spacer) * 1em);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      & p,
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      a {
-        color: inherit;
-        margin: calc(var(--ea-spacer) * 0.7em) 0;
-      }
 
       & [content] {
         flex-grow: 1;
@@ -70,6 +62,7 @@
         grid-template: var(--ea-card-header-grid-template);
       }
     }
+
     & .ea-card-content {
       display: flex;
       flex-wrap: wrap;
@@ -96,11 +89,14 @@
         grid-template-columns: repeat(1, 1fr);
       }
     }
+    
     & .ea-card-footer {
       margin-top: calc(var(--ea-spacer) * 0.7em);
       background: transparent;
-      border: 1px var(--ea-color-3);
-      border-style: solid none none none;
+      border-top: var(
+        --ea-border,
+        var(--ea-card-footer-border, var(--ea-border-1))
+      );
       padding: calc(var(--ea-spacer) * 1em);
       display: flex;
       justify-content: space-between;

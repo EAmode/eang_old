@@ -1,5 +1,5 @@
 @define-mixin button-mode {
-  & button.ea-button {
+  & button.ea-button, input.ea-button {
     appearance: none;
     align-items: center;
     background: var(
