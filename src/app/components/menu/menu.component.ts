@@ -181,9 +181,9 @@ export class MenuComponent implements OnInit {
   ~~~html
   <nav class="ea-menu">
     <ul routerLinkActive="active">
-      <li><a routerLink="home">Home</a></li>
-      <li><a routerLink="about">About</a></li>
-      <li><a routerLink="courses">Courses</a></li>
+      <li routerLinkActive="active"><a routerLink="home">Home</a></li>
+      <li routerLinkActive="active"><a routerLink="about">About</a></li>
+      <li routerLinkActive="active"><a routerLink="courses">Courses</a></li>
     </ul>
   </nav>
   ~~~

@@ -158,8 +158,8 @@
       }
 
       &:active,
-      [active],
-      .active {
+      &[active],
+      &.active {
         background: var(
           --ea-background-active,
           var(--ea-menu-background-active, var(--ea-color-1))
