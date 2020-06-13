@@ -1,33 +1,39 @@
-@define-mixin autocomplete-base {
-  --ea-autocomplete-hover-color: var(--ea-color-1);
-
-  --ea-autocomplete-hover-background: var(
-    --ea-autocomplete-hover-background,
-    var(--ea-color-background-2)
-  );
-  --ea-autocomplete-selected-background: var(
-    --ea-autocomplete-selected-background,
-    var(--ea-color-background-3)
-  );
-  --ea-autocomplete-selected-color: var(
-    --ea-autocomplete-selected-color,
-    var(--ea-color-3)
-  );
-}
 @define-mixin autocomplete-mode {
   & ea-autocomplete {
-    @mixin autocomplete-base;
+    --ea-autocomplete-hover-color: var(--ea-color-1);
+
+    --ea-autocomplete-hover-background: var(
+      --ea-autocomplete-hover-background,
+      var(--ea-color-background-2)
+    );
+    --ea-autocomplete-selected-background: var(
+      --ea-autocomplete-selected-background,
+      var(--ea-color-background-3)
+    );
+    --ea-autocomplete-selected-color: var(
+      --ea-autocomplete-selected-color,
+      var(--ea-color-3)
+    );
     display: block;
     position: relative;
+
+    & input {
+      border: 0.1em solid var(--ea-color-grey-dark);
+      border-image: var(--ea-gradient) 1, 100%;
+      border-radius: 0.15em;
+      font-size: calc(var(--ea-sizer) * 1em);
+      width: 100%;
+      padding: 0.35em;
+    }
+
     & ul {
       z-index: 1;
       list-style: none;
       padding: 0;
-      border-radius: calc(var(--ea-sizer) * 0.3em);
-      margin: calc(var(--ea-spacer) * 0.2em) 0 0;
+      margin: 0;
       background: var(--ea-color-3);
       background: linear-gradient(to bottom right, white, hsla(0, 0%, 100%, 1));
-      border: 1px solid rgba(0, 0, 0, 0.3);
+      border: 0.1em solid var(--ea-color-grey-dark);
       box-shadow: calc(var(--ea-sizer) * 0.05em) calc(var(--ea-sizer) * 0.2em)
         calc(var(--ea-sizer) * 0.6em) rgba(0, 0, 0, 0.2);
       text-shadow: none;
@@ -41,54 +47,51 @@
       right: var(--ea-autocomplete-ul-right);
       width: var(--ea-autocomplete-ul-width);
     }
+
     & li {
-      color: var(--ea-text-color);
       font-size: calc(var(--ea-sizer) * 0.9rem);
       height: calc(var(--ea-sizer) * 2.3em);
       cursor: pointer;
-      padding-left: calc(var(--ea-sizer) * 1rem);
-      padding-top: calc(var(--ea-spacer) * 0.25rem);
+      padding: calc(var(--ea-sizer) * 1em);
       display: flex;
       align-items: center;
       min-height: fit-content;
-      /*       & span.matched > mark {
-        background-color: red;
-      } */
     }
 
     & li:hover {
-      background-color: var(--ea-color-3);
+      color: var(--ea-autocomplete-color-hover, var(--ea-text-color-2));
+      background: var(
+        --ea-background-hover,
+        var(
+          --ea-autocomplete-background-hover,
+          var(--ea-color-1-light, var(--ea-color-grey-light))
+        )
+      );
       & .matched {
-        color: var(--ea-color-1);
+        color: var(--ea-autocomplete-color-matched);
       }
       & mark {
-        color: var(--ea-color-2);
+        color: var(--ea-autocomplete-color-mark, var(--ea-text-color-1));
       }
     }
+
     & li[selected],
     & li[selection-focus] {
-      color: var(--ea-autocomplete-selected-color);
-      background: var(--ea-autocomplete-selected-background);
+      color: var(--ea-autocomplete-color-selected, var(--ea-text-color-2));
+      background: var(
+        --ea-background-selected,
+        var(
+          --ea-autocomplete-background-selected,
+          var(--ea-color-1, var(--ea-color-grey))
+        )
+      );
     }
     & li[selected]:hover,
     & li[selected] .matched mark,
     & li[selected]:hover .matched mark {
-      color: var(--ea-color-3);
+      color: var(--ea-autocomplete-color-mark, var(--ea-text-color-1));
     }
-    & input {
-      background: white;
-      border: calc(var(--ea-sizer) * 0.08em);
-      border-style: solid;
-      border-image: var(--ea-gradient) 1, 100%;
-      border-radius: calc(var(--ea-sizer) * 0.4em);
-      color: black;
-      outline: none;
-      font-size: calc(var(--ea-sizer) * 1em);
-      height: calc(var(--ea-sizer) * 1.7em);
-      width: auto;
-      padding-left: calc(var(--ea-spacer) * 1rem);
-      box-shadow: var(--ea-box-shadow);
-    }
+
     & img {
       height: calc(var(--ea-sizer) * 1.4em);
     }

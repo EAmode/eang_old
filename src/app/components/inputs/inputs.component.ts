@@ -1,32 +1,54 @@
 import { Component } from '@angular/core'
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms'
-
+import { pipe } from 'rxjs'
+import { map } from 'rxjs/operators'
+import { airports } from '../../feature/theming/airports'
 @Component({
   selector: 'eangio-inputs',
   templateUrl: './inputs.component.html',
-  styles: [
-    `
-      h2 {
-        margin: 0.5em 0;
-      }
-
-      .dis-flx {
-        display: flex;
-      }
-
-      .dis-blc {
-        display: block;
-      }
-    `
-  ]
+  styles: []
 })
 export class InputsComponent {
   name = new FormControl('', [Validators.required, Validators.minLength(4)])
   email = new FormControl('', [Validators.email])
+  airportSearchTerm = new FormControl()
   form = this.fb.group({
     name: this.name,
     email: this.email
   })
+  maxResults = 10
+  airportSearchPipe = pipe(
+    map((searchTerm: string) => {
+      const results = []
+      if (!searchTerm || searchTerm === '') {
+        return results
+      }
+
+      const regex = new RegExp(
+        searchTerm.replace(/[#-.]|[[-^]|[?|{}]/g, '\\$&'),
+        'gi'
+      )
+      for (const a of airports) {
+        if (results.length >= this.maxResults) {
+          break
+        }
+        let hasMatched = false
+        const match = a.Name.replace(regex, m => {
+          hasMatched = true
+          return `<mark>${m}</mark>`
+        })
+        if (hasMatched) {
+          results.push({ name: a.Name, match })
+        }
+      }
+      return results
+    })
+  )
+
+  airportResult1$ = this.airportSearchTerm.valueChanges.pipe(
+    this.airportSearchPipe
+  )
+  mapSelectItem = item => item.name
 
   constructor(private fb: FormBuilder) {}
 

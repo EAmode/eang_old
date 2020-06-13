@@ -149,9 +149,9 @@
     & li {
       &:hover {
         background: var(
-          --ea-background-active,
+          --ea-background-hover,
           var(
-            --ea-menu-background-active,
+            --ea-menu-background-hover,
             var(--ea-color-1-light, var(--ea-color-grey-light))
           )
         );

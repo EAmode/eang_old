@@ -10,22 +10,34 @@
   <div multi-col center class="example">
 
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
-      <div class="ea-form-field">
-        <label for="name">* Name</label>
-        <input type="text" name="Name" formControlName="name" id="name" required>
-        <div class="ea-validation-errors" *ngIf="name.invalid && (name.dirty || name.touched)">
-          <div *ngIf="name.errors.required">Name is required</div>
-          <div *ngIf="name.errors.minlength">Name must be at least 4 characters long.</div>
+      <fieldset>
+        <legend>Fieldset</legend>
+        <div class="ea-form-field">
+          <label for="name">* Name</label>
+          <input type="text" name="Name" formControlName="name" id="name" required>
+          <div class="ea-validation-errors" *ngIf="name.invalid && (name.dirty || name.touched)">
+            <div *ngIf="name.errors.required">Name is required</div>
+            <div *ngIf="name.errors.minlength">Name must be at least 4 characters long.</div>
+          </div>
         </div>
-      </div>
-      <div class="ea-form-field">
-        <label for="email">Email</label>
-        <input type="text" name="Email" formControlName="email" id="email">
-        <div class="ea-validation-errors" *ngIf="email.invalid && (email.dirty || email.touched)">
-          <div *ngIf="email.errors.email">Please enter a valid email.</div>
+        <div class="ea-form-field">
+          <label for="email">Email</label>
+          <input type="text" name="Email" formControlName="email" id="email">
+          <div class="ea-validation-errors" *ngIf="email.invalid && (email.dirty || email.touched)">
+            <div *ngIf="email.errors.email">Please enter a valid email.</div>
+          </div>
         </div>
-      </div>
-      <button class="ea-button" type="submit" [disabled]="!form.valid">Add User</button>
+        <div class="ea-form-field">
+          <label for="airport">Airport</label>
+          <ea-autocomplete #from [suggestions]="airportResult1$" [formControl]="airportSearchTerm"
+          [mapSelectItem]="mapSelectItem" placeholder="from*" [selectFirst]="true">
+          <ng-template #resultsTemplate let-item>
+            <span class="matched" [innerHTML]="item.match"></span>
+          </ng-template>
+        </ea-autocomplete>
+        </div>
+        <button class="ea-button" type="submit" [disabled]="!form.valid">Add User</button>
+      </fieldset>
     </form>
 
     <p>Values:</p>
@@ -136,11 +148,16 @@
           <label for="vue-frm">Vue.js</label>
         </div>
       </div>
-      <div class="ea-form-field dis-flx">
-        <label>Input type: checkbox</label>
-        <input type="checkbox" name="checkbox-one" checked><label for="react-frm">Angular</label><br>
-        <input type="checkbox" name="checkbox-two"><label for="react-frm">React</label><br>
-        <input type="checkbox" name="checkbox-three" disabled><label for="react-frm">Vue.js</label><br>
+      <div class="ea-form-field">
+        <fieldset>
+          <legend>Input type: checkbox</legend>
+          <div>
+            <input id="angular-check" type="checkbox" name="checkbox-one" />
+            <label for="angular-check">Angular</label>
+            <input type="checkbox" name="checkbox-two"><label for="react-frm">React</label>
+            <input type="checkbox" name="checkbox-three" disabled><label for="react-frm">Vue.js</label>
+          </div>
+        </fieldset>
       </div>
     </div>
     <h2>Switcher</h2>
