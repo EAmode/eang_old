@@ -30,11 +30,11 @@
         <div class="ea-form-field">
           <label for="airport">Airport</label>
           <ea-autocomplete #from [suggestions]="airportResult1$" [formControl]="airportSearchTerm"
-          [mapSelectItem]="mapSelectItem" placeholder="from*" [selectFirst]="true">
-          <ng-template #resultsTemplate let-item>
-            <span class="matched" [innerHTML]="item.match"></span>
-          </ng-template>
-        </ea-autocomplete>
+            [mapSelectItem]="mapSelectItem" placeholder="from*" [selectFirst]="true">
+            <ng-template #resultsTemplate let-item>
+              <span class="matched" [innerHTML]="item.match"></span>
+            </ng-template>
+          </ea-autocomplete>
         </div>
         <button class="ea-button" type="submit" [disabled]="!form.valid">Add User</button>
       </fieldset>
