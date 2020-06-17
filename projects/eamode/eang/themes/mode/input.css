@@ -1,10 +1,4 @@
 @define-mixin input-mode {
-  form {
-    display: block;
-    width: 100%;
-    max-width: 50em;
-  }
-
   & .ea-form-actions {
     margin: calc(var(--ea-spacer) * 0.2em) calc(var(--ea-spacer) * 0.4em)
       calc(var(--ea-spacer) * 0.4em) calc(var(--ea-spacer) * 0.4em);
