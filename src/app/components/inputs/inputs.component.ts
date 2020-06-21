@@ -11,10 +11,13 @@ import { airports } from '../../feature/theming/airports'
 export class InputsComponent {
   name = new FormControl('', [Validators.required, Validators.minLength(4)])
   email = new FormControl('', [Validators.email])
+  countries = ['USA', 'France', 'Germany']
+
   airportSearchTerm = new FormControl()
   form = this.fb.group({
     name: this.name,
-    email: this.email
+    email: this.email,
+    country: new FormControl()
   })
   maxResults = 10
   airportSearchPipe = pipe(

@@ -198,6 +198,14 @@
     & > input[type='checkbox'][disabled] + label {
       color: var(--ea-color-disabled);
     }
+
+    & > select{
+      font-size: calc(var(--ea-sizer) * 1rem);
+      border: 0.1em solid var(--ea-color-grey-dark);
+      padding: 0.35em;
+      border-radius: 0.15em;
+      width: 100%;
+    }
   }
 
   & .checkbox-switch {

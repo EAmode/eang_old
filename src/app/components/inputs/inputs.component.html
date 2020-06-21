@@ -28,6 +28,17 @@
           </div>
         </div>
         <div class="ea-form-field">
+          <label for="country">Country</label>
+          <select formControlName="country" id="country">
+            <option *ngFor="let c of countries" [value]="c">
+              {{c}}
+          </option>
+            </select>
+          <div class="ea-validation-errors" *ngIf="email.invalid && (email.dirty || email.touched)">
+            <div *ngIf="email.errors.email">Please enter a valid email.</div>
+          </div>
+        </div>
+        <div class="ea-form-field">
           <label for="airport">Airport</label>
           <ea-autocomplete #from [suggestions]="airportResult1$" [formControl]="airportSearchTerm"
             [mapSelectItem]="mapSelectItem" placeholder="from*" [selectFirst]="true">
