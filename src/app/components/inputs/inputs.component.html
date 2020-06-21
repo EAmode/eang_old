@@ -32,8 +32,8 @@
           <select formControlName="country" id="country">
             <option *ngFor="let c of countries" [value]="c">
               {{c}}
-          </option>
-            </select>
+            </option>
+          </select>
           <div class="ea-validation-errors" *ngIf="email.invalid && (email.dirty || email.touched)">
             <div *ngIf="email.errors.email">Please enter a valid email.</div>
           </div>
