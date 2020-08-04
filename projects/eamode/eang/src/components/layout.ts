@@ -7,11 +7,11 @@ import {
   EventEmitter
 } from '@angular/core'
 import { BehaviorSubject } from 'rxjs'
-import { map, share } from 'rxjs/operators'
+import { map, share, shareReplay } from 'rxjs/operators'
 
 export class Layout {
   private readonly configSubject = new BehaviorSubject<any>(this.config)
-  config$ = this.configSubject.pipe(share())
+  config$ = this.configSubject.pipe(shareReplay(1))
   drawerState$ = this.config$.pipe(map(x => x.drawer.state))
   drawerOverlay$ = this.config$.pipe(map(x => x.drawer.overlay))
 
@@ -28,6 +28,7 @@ export class Layout {
       const mql = window.matchMedia(config.drawerOverlayMediaQuery)
       this.onMediaChange(mql)
       mql.addEventListener('change', x => this.onMediaChange(x))
+      console.log('ctor', this.config)
     }
   }
 
@@ -35,7 +36,8 @@ export class Layout {
     this.config.drawerOverlayMatches = x.matches
     if (this.config.drawerOverlayMatches) {
       if (this.config.drawer.state !== 'closed') {
-        this.config.drawer.overlay = true
+        this.config.drawer.overlay = false
+        this.config.drawer.state = 'closed'
       }
     } else {
       this.config.drawer.overlay = false
@@ -65,11 +67,9 @@ export class Layout {
 
   toggleDrawer() {
     if (this.config.drawer.state === 'closed') {
-      this.config.drawer.state = 'maximized'
-      this.configSubject.next(this.config)
+      this.openDrawer()
     } else {
-      this.config.drawer.state = 'closed'
-      this.configSubject.next(this.config)
+      this.closeDrawer()
     }
   }
 
