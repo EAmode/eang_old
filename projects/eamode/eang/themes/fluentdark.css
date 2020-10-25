@@ -5,7 +5,6 @@
 @import 'mode/markdown.css';
 @import 'mode/autocomplete.css';
 @import 'mode/panel.css';
-@import 'mode/typography.css';
 @import 'mode/themepicker.css';
 @import 'mode/card.css';
 @import 'mode/icons.css';
@@ -23,7 +22,6 @@
   @mixin layout-mode;
   @mixin markdown-mode;
   @mixin panel-mode;
-  @mixin typography;
   @mixin themepicker;
   @mixin table-mode;
   @mixin menu;
