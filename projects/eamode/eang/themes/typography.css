@@ -31,12 +31,13 @@ h6 {
   );
   /* font-weight: var(--ea-font-weight, var(--ea-font-2-weight, bold)); */
   /* line-height: calc(var(--ea-spacer) * 1.2em); */
-  margin: calc(var(--ea-spacer) * 0.8em) 0 calc(var(--ea-spacer) * 0.5em);
+
   /* color: var(--ea-color, var(--ea-h-color, var(--ea-text-color))); */
 }
 
 h1 {
   font-size: calc(var(--ea-sizer) * 2rem);
+  margin: calc(var(--ea-spacer) * 0.8em) 0 calc(var(--ea-spacer) * 0.5em);
 }
 
 h2 {
@@ -58,7 +59,7 @@ h6 {
 
 p {
   font-size: calc(var(--ea-sizer) * 1rem);
-  margin: 0 0 calc(var(--ea-spacer) * 1.25em);
+  margin: 0 0 calc(var(--ea-spacer) * 1em);
 }
 
 /*
