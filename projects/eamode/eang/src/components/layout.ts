@@ -27,8 +27,11 @@ export class Layout {
     if (config.drawerOverlayMediaQuery) {
       const mql = window.matchMedia(config.drawerOverlayMediaQuery)
       this.onMediaChange(mql)
-      mql.addEventListener('change', x => this.onMediaChange(x))
-      console.log('ctor', this.config)
+      if (typeof mql.addEventListener === 'function') {
+        mql.addListener(x => this.onMediaChange(x))
+      } else if (typeof mql.addListener === 'function') {
+        mql.addEventListener('change', x => this.onMediaChange(x))
+      }
     }
   }
 
