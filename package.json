@@ -60,6 +60,10 @@
   "release": {
     "pkgRoot": "dist/eamode/eang"
   },
+  "np": {
+    "yarn": false,
+    "contents": "dist/eamode/eang"
+  },
   "dependencies": {
     "@angular-mdc/web": "^5.0.1",
     "@angular/animations": "^9.0.7",
