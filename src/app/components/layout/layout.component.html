@@ -1,8 +1,78 @@
-<div role="banner" m-0-0-2-0>
+<div class="eangio-banner" role="banner" m-0-0-2-0>
   <h1>Layout</h1>
   <span icon layout negative style="width: 2rem; height:2rem;"></span>
 </div>
 <div class="content-container">
+  <div class="ea-card example" m-0-0-1-0>
+    <div class="ea-card-header">
+      <h2>App Layout</h2>
+    </div>
+    <div class="ea-card-content">
+      <div class="screen">
+        <ea-layout id="example1" toolbar-top [draweroverlay]="layoutExample1.drawerOverlay$ | async">
+          <ea-toolbar shadow>
+              <button *ngIf="layoutExample1.config.drawer.state === 'closed'" class="ea-button" outline (click)="layoutExample1.openDrawer()" left>
+                <span hamburger-menu icon negative style="--ea-icon-margin: 0; height: 2em; width: 2em;"></span>
+              </button>
+              <button *ngIf="layoutExample1.config.drawer.state !== 'closed'" class="ea-button" outline (click)="layoutExample1.closeDrawer()" left>
+                <span chevrons-left icon negative style="--ea-icon-margin: 0; height: 2em; width: 2em;"></span>
+              </button>
+              <a routerLink="/">  <img src="assets/images/eang-logo.svg" alt="logo" /> </a>
+          </ea-toolbar>
+
+          <ea-drawer [state]="layoutExample1.drawerState$ | async">
+            <h2>ea-drawer</h2>
+          </ea-drawer>
+
+          <ea-body #scrollContainer>
+            <ea-main role="main">
+              <h1>ea-main</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </ea-main>
+            <ea-footer>
+              <p>footer</p>
+            </ea-footer>
+          </ea-body>
+        </ea-layout>
+      </div>
+      <div class="screen">
+        <ea-layout id="example2" [draweroverlay]="layoutExample1.drawerOverlay$ | async">
+          <ea-toolbar>
+            <header>
+              <button *ngIf="layoutExample1.config.drawer.state === 'closed'" class="ea-button" outline (click)="layoutExample1.openDrawer()" left>
+                <span hamburger-menu icon negative style="--ea-icon-margin: 0; height: 2em; width: 2em;"></span>
+              </button>
+              <button *ngIf="layoutExample1.config.drawer.state !== 'closed'" class="ea-button" outline (click)="layoutExample1.closeDrawer()" left>
+                <span chevrons-left icon negative style="--ea-icon-margin: 0; height: 2em; width: 2em;"></span>
+              </button>
+              <a routerLink="/"> <span class="logo"></span> </a>
+            </header>
+            <aside>
+              <p>aside</p>
+            </aside>
+          </ea-toolbar>
+
+          <ea-drawer [state]="layoutExample1.drawerState$ | async">
+            <h2>ea-drawer</h2>
+          </ea-drawer>
+
+          <ea-body #scrollContainer>
+            <ea-main role="main">
+              <h2>ea-main</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </ea-main>
+            <ea-footer>
+              <p>footer</p>
+            </ea-footer>
+          </ea-body>
+        </ea-layout>
+      </div>
+    </div>
+    <div class="ea-card-footer">
+      <p>footer</p>
+    </div>
+  </div>
+
   <h2>&lt;ea-layout&gt;</h2>
   <p>
     Responsive layout grid that automatically adapts to screen size and

@@ -48,7 +48,7 @@
     & .name {
       margin-left: 5.5px;
       width: 100%;
-      color: var(--ea-menu-text-color, var(--ea-text-color-dark));
+      color: var(--ea-menu-text-color, var(--ea-text-color-1));
       display: flex;
       align-items: center;
       &[active] {

@@ -3,6 +3,7 @@
     user-select: none;
     cursor: pointer;
     position: relative;
+    color: var(--ea-color, var(--ea-menu-color, inherit));
     & [node] {
       display: flex;
       line-height: calc(var(--ea-sizer) * 2.5em);
@@ -24,18 +25,18 @@
 
       &[active] {
         background: var(--ea-background-color-active);
-        color: var(--ea-text-color-light);
+        /* color: var(--ea-text-color-2); */
       }
 
       &:hover {
         background: var(--ea-background-color-hover);
-        color: var(--ea-text-color-dark);
+        color: var(--ea-text-color-1);
       }
 
       &:active {
         background: var(--ea-background-color-active);
         box-shadow: var(--ea-background-active-shadow);
-        color: var(--ea-text-color-light);
+        /* color: var(--ea-text-color-2); */
       }
 
       & [toggle-area] {
@@ -48,7 +49,6 @@
 
       & [name-area] {
         width: 100%;
-        color: var(--ea-text-color-light);
         display: flex;
         align-items: center;
 
@@ -137,34 +137,44 @@
   }
 
   & .ea-menu {
-    ul {
+    & ul {
       display: flex;
       flex-direction: column;
-      padding: calc(var(--ea-spacer) * 0.6em) 0 0 0;
+      list-style-type: none;
+      font-size: calc(var(--ea-sizer) * 1rem);
+      color: var(--ea-color, var(--ea-menu-color, inherit));
+      padding-inline-start: 0;
     }
 
-    li {
-      font-size: calc(var(--ea-sizer) * 1rem);
-
-      & :hover {
-        background: var(--ea-background-color-hover);
-        color: var(--ea-text-color-light);
+    & li {
+      &:hover {
+        background: var(
+          --ea-background-hover,
+          var(
+            --ea-menu-background-hover,
+            var(--ea-color-1-light, var(--ea-color-grey-light))
+          )
+        );
       }
 
-      & [active],
-      .active {
-        background: var(--ea-background-color-active);
-        color: var(--ea-text-color-light);
+      &:active,
+      &[active],
+      &.active {
+        background: var(
+          --ea-background-active,
+          var(--ea-menu-background-active, var(--ea-color-1))
+        );
+        font-weight: 500;
       }
 
-      a {
-        padding: 0 calc(var(--ea-spacer) * 0.2em) 0
-          calc(var(--ea-spacer) * 0.6em);
+      & a {
+        padding: calc(var(--ea-spacer) * 0.4em) calc(var(--ea-spacer) * 0.8em)
+          calc(var(--ea-spacer) * 0.4em) calc(var(--ea-spacer) * 0.8em);
         display: block;
-        line-height: var(calc(var(--ea-sizer) * 2.5em), 2.5em);
-        font-size: calc(var(--ea-sizer) * 1rem);
+        /* line-height: var(calc(var(--ea-sizer) * 2.5em), 2.5em); */
         text-decoration: none;
-        color: var(--ea-text-color-light);
+        /* color: var(--ea-text-color-2); */
+        color: inherit;
       }
     }
   }

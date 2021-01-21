@@ -1,13 +1,18 @@
-<div role="banner" m-0-0-2-0>
+<div class="eangio-banner" role="banner" m-0-0-2-0>
   <h1>Menu</h1>
   <span icon negative hamburger-menu style="width: 2rem; height:2rem;"></span>
 </div>
 
 <div class="content-container">
-  <p>
-    If you are looking for the easier way of adding menu for your site - use
-    <em>ea-menu</em>.
-  </p>
+  <nav class="ea-menu">
+    <ul routerLinkActive="active">
+      <li><a routerLink="home">Home</a></li>
+      <li><a routerLink="about">About</a></li>
+      <li><a routerLink="courses">Courses</a></li>
+    </ul>
+  </nav>
+  <ea-markdown [doc]="css_menu"></ea-markdown>
+
   <p>
     To add menu use next piece of code. Where "node" is a structure describe in
     "Menu Structure/Example Node" paragraph.
@@ -33,7 +38,9 @@
     <em>component.ts</em>
   </p>
 
-  <div><ea-markdown class="example" [doc]="node_example"></ea-markdown></div>
+  <div>
+    <ea-markdown class="example" [doc]="node_example"></ea-markdown>
+  </div>
   <p>Use these attributes in node.</p>
 
   <ea-markdown class="example" [doc]="ea_menu_attrs"></ea-markdown>
@@ -47,7 +54,9 @@
   <div multi-col v-center class="example">
     <ea-markdown [doc]="ea_menu_horizontal"></ea-markdown>
     <div class="ea-card card-dark">
-      <div class="ea-card-header" style="color: var(--ea-text-color-light);"><p>ea-menu</p></div>
+      <div class="ea-card-header" style="color: var(--ea-text-color-2);">
+        <p>ea-menu</p>
+      </div>
       <div class="ea-card-content header" style=" padding: 0;">
         <ea-menu [node]="nodeHorizontal"> </ea-menu>
       </div>
@@ -60,13 +69,17 @@
   </p>
   <div multi-col v-center class="example">
     <div class="ea-card card-dark">
-      <div class="ea-card-header" style="color: var(--ea-text-color-light);"><p>IsHidden: true</p></div>
+      <div class="ea-card-header" style="color: var(--ea-text-color-2);">
+        <p>IsHidden: true</p>
+      </div>
       <div class="ea-card-content">
         <ea-menu [node]="node"> </ea-menu>
       </div>
     </div>
     <div class="ea-card card-dark">
-      <div class="ea-card-header" style="color: var(--ea-text-color-light);"><p>IsHidden: false</p></div>
+      <div class="ea-card-header" style="color: var(--ea-text-color-2);">
+        <p>IsHidden: false</p>
+      </div>
       <div class="ea-card-content">
         <ea-menu [node]="nodeHiddenFalse"> </ea-menu>
       </div>
@@ -82,17 +95,15 @@
   <div multi-col v-center class="example">
     <ea-markdown [doc]="ea_menu_template"></ea-markdown>
     <div class="ea-card card-dark">
-      <div class="ea-card-header" style="color: var(--ea-text-color-light);">
+      <div class="ea-card-header" style="color: var(--ea-text-color-2);">
         <p>Move mouse over the sub-menus to see the description.</p>
       </div>
       <div class="ea-card-content">
-        <ea-menu
-          [node]="node"
-          [optionAreaTemplate]="optionArea"
-          [toggleAreaTemplate]="toggleArea"
-        >
+        <ea-menu [node]="node" [optionAreaTemplate]="optionArea" [toggleAreaTemplate]="toggleArea">
         </ea-menu>
-        <ng-template #optionArea let-node="node"> <div></div> </ng-template>
+        <ng-template #optionArea let-node="node">
+          <div></div>
+        </ng-template>
 
         <ng-template #toggleArea let-node="node">
           <span *ngIf="node.isOpen" icon chevron-down negative> </span>

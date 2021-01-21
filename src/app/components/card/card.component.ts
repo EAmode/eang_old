@@ -1,14 +1,12 @@
-import { Component, OnInit } from '@angular/core'
+import { Component } from '@angular/core'
 
 @Component({
   selector: 'eangio-card',
   templateUrl: './card.component.html',
   styles: []
 })
-export class CardComponent implements OnInit {
+export class CardComponent {
   constructor() {}
-
-  ngOnInit() {}
 
   sizing = `
   |  Class   | Description  |

@@ -176,6 +176,19 @@ export class MenuComponent implements OnInit {
       'The second content text'
   }
 
+  css_menu = `
+  *CSS (only)*
+  ~~~html
+  <nav class="ea-menu">
+    <ul routerLinkActive="active">
+      <li routerLinkActive="active"><a routerLink="home">Home</a></li>
+      <li routerLinkActive="active"><a routerLink="about">About</a></li>
+      <li routerLinkActive="active"><a routerLink="courses">Courses</a></li>
+    </ul>
+  </nav>
+  ~~~
+  `
+
   ea_menu = `
   *component.html*
   ~~~html

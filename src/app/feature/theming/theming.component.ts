@@ -129,9 +129,9 @@ export class ThemingComponent implements OnInit {
     --ea-color-striped: rgba(139, 184, 232, 1);
 
     /* Text Colors */
-    --ea-text-color: var(--ea-text-color-dark);
-    --ea-text-color-dark: hsl(0, 0%, 20%);
-    --ea-text-color-light: hsl(0, 0%, 96%);
+    --ea-text-color: var(--ea-text-color-1);
+    --ea-text-color-1: hsl(0, 0%, 20%);
+    --ea-text-color-2: hsl(0, 0%, 96%);
 
     /* Hover, Active */
     --ea-background-color-hover: var(--ea-color-1);

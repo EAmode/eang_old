@@ -1,6 +1,4 @@
-import { Component, OnInit } from '@angular/core'
-import { Subject } from 'rxjs'
-import { EangElement } from '@eamode/eang'
+import { Component } from '@angular/core'
 
 @Component({
   selector: 'eangio-get-started',
@@ -14,8 +12,7 @@ import { EangElement } from '@eamode/eang'
     `
   ]
 })
-export class GetStartedComponent implements OnInit {
-  ngOnInit() {}
+export class GetStartedComponent {
   ngnew = `
   ~~~ ts
   ng new [project name]

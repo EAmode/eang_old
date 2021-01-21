@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { Router } from '@angular/router'
-import { LayoutService } from 'projects/eamode/eang/src/services/layout.service'
-import { EangElement } from '@eamode/eang'
+import { EangElement, Layout } from '@eamode/eang'
 import { Subject } from 'rxjs'
 
 @Component({
@@ -71,6 +70,14 @@ export class AppComponent implements OnInit {
           //     link: '/markdown'
           //   }
           // },
+          {
+            name: 'Custom CSS Examples',
+            icon: 'ea-button-icon',
+            iconStyle: 'ea-negative',
+            data: {
+              link: '/css-examples'
+            }
+          },
           {
             name: 'Buttons',
             icon: 'ea-button-icon',
@@ -171,15 +178,17 @@ export class AppComponent implements OnInit {
   }
   activate = new Subject<EangElement>()
 
-  constructor(public router: Router, public layout: LayoutService) {}
+  layout = new Layout()
+  constructor(public router: Router) {}
 
-  shouldCloseDrawer() {
-    if (this.layout.isDrawerOverlay) {
-      this.layout.drawerState$.next('closed')
-    }
-  }
+  // shouldCloseDrawer() {
+  //   if (this.layout.isDrawerOverlay) {
+  //     this.layout.drawerState$.next('closed')
+  //   }
+  // }
+
   closeDrawer() {
-    this.layout.drawerState$.next('closed')
+    this.layout.closeDrawer()
   }
 
   onActivate(e, scrollContainer) {
@@ -187,7 +196,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.layout.drawerState$.next('maximized')
+    // this.layout.drawerState$.next('maximized')
 
     this.activate.subscribe(item => {
       if (item.data && item.data.link) {
@@ -197,10 +206,10 @@ export class AppComponent implements OnInit {
   }
 
   showDrawer() {
-    if (this.layout.drawerState$.value === 'closed') {
-      this.layout.drawerState$.next('maximized')
-    } else {
-      this.layout.drawerState$.next('closed')
-    }
+    // if (this.layout.drawerState$.value === 'closed') {
+    //   this.layout.drawerState$.next('maximized')
+    // } else {
+    //   this.layout.drawerState$.next('closed')
+    // }
   }
 }

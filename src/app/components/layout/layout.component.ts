@@ -1,20 +1,16 @@
-import { Component, OnInit } from '@angular/core'
+import { Component } from '@angular/core'
 import { Subject } from 'rxjs'
-import { EangElement } from '@eamode/eang'
+import { EangElement, Layout } from '@eamode/eang'
 
 @Component({
   selector: 'eangio-layout',
   templateUrl: './layout.component.html',
-  styles: [
-    `
-      ul {
-        list-style-type: circle;
-      }
-    `
-  ]
+  styleUrls: ['./layout.component.scss']
 })
-export class LayoutComponent implements OnInit {
+export class LayoutComponent {
   activate = new Subject<EangElement>()
+
+  layoutExample1 = new Layout()
 
   ea_layout_attrs = `
   *layout.component.html*
@@ -112,6 +108,4 @@ export class LayoutComponent implements OnInit {
   `
 
   constructor() {}
-
-  ngOnInit() {}
 }

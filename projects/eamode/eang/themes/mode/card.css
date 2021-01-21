@@ -1,16 +1,19 @@
 @define-mixin card-mode {
   & .ea-card {
     font-size: calc(var(--ea-sizer) * 1rem);
-    box-shadow: var(--ea-box-shadow);
-    background: var(--ea-color-3);
-    border: 0.1em solid var(--ea-color-3);
-    color: var(--ea-text-color);
+    background: var(
+      --ea-background,
+      var(--ea-card-background, var(--ea-background-1))
+    );
+    border: var(
+      --ea-border,
+      var(--ea-card-border, var(--ea-border-1))
+    );
+    color: var(--ea-color, var(--ea-card-color, inherit));
     width: 100%;
-    margin: 0;
     display: flex;
     flex-direction: column;
     height: fit-content;
-    border-radius: calc(var(--ea-sizer) * 0.5em);
 
     &[grid] {
       --ea-card-grid-template: var(
@@ -33,24 +36,13 @@
     }
 
     & .ea-card-header {
-      border: 0.1em var(--ea-color-3);
-      border-style: none none solid none;
+      border-bottom: var(
+        --ea-border,
+        var(--ea-card-header-border, var(--ea-border-1))
+      );
       background: transparent;
-      color: var(--ea-color-2);
+      color: var(--ea-color, var(--ea-card-header-color, inherit));
       padding: 0 calc(var(--ea-spacer) * 1em);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      & p,
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      a {
-        color: inherit;
-        margin: calc(var(--ea-spacer) * 0.7em) 0;
-      }
 
       & [content] {
         flex-grow: 1;
@@ -65,17 +57,12 @@
         display: grid;
         grid-template: var(--ea-card-header-grid-template);
       }
-      &[border] {
-        border-top-left-radius: var(--ea-card-border-radius, 8px);
-        border-top-right-radius: var(--ea-card-border-radius, 8px);
-      }
     }
+
     & .ea-card-content {
-      display: flex;
-      flex-wrap: wrap;
       padding: calc(var(--ea-spacer) * 1em);
       background: transparent;
-      color: var(--ea-text-color);
+      color: var(--ea-color, var(--ea-card-content-color, inherit));
 
       &[flex-center] {
         align-items: center;
@@ -96,15 +83,15 @@
         grid-template-columns: repeat(1, 1fr);
       }
     }
+
     & .ea-card-footer {
       margin-top: calc(var(--ea-spacer) * 0.7em);
       background: transparent;
-      border: 1px var(--ea-color-3);
-      border-style: solid none none none;
+      border-top: var(
+        --ea-border,
+        var(--ea-card-footer-border, var(--ea-border-1))
+      );
       padding: calc(var(--ea-spacer) * 1em);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
 
       &[grid] {
         display: grid;

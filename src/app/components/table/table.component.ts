@@ -1,6 +1,5 @@
-import { Component, OnInit, Renderer2 } from '@angular/core'
-import { MarkdownComponent } from '@eamode/eang'
-import { timer, interval } from 'rxjs'
+import { Component, Renderer2 } from '@angular/core'
+import { timer } from 'rxjs'
 import { CopyPasteService } from 'src/app/services/copy-paste.service'
 
 class TableItem {
@@ -12,7 +11,7 @@ class TableItem {
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.css']
 })
-export class TableComponent implements OnInit {
+export class TableComponent {
   public showSuccessfullyCopied = false
   public selectedText
   tableData = [
@@ -207,6 +206,4 @@ export class TableComponent implements OnInit {
   |---|---|----|
   | \`--ea-table-row-selected-background\` | Sets the selected background color | rgba(179, 194, 230, 1)|
   `
-
-  ngOnInit() {}
 }

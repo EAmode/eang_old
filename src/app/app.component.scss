@@ -14,3 +14,22 @@ ea-footer {
     }
   }
 }
+
+ea-toolbar {
+
+  & header {
+    height: 100%;
+    & .logo {
+      height: 100%;
+      width:100%;
+      display: flex;
+      padding: 0.375em 0;
+
+    }
+  }
+  }
+
+ea-drawer {
+  --ea-drawer-background: hsl(0, 0%, 20%);
+}
+

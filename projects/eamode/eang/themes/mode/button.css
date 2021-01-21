@@ -1,5 +1,5 @@
 @define-mixin button-mode {
-  & button.ea-button {
+  & button.ea-button, input.ea-button {
     appearance: none;
     align-items: center;
     background: var(
@@ -17,6 +17,7 @@
     color: var(--ea-color, var(--ea-button-color));
     cursor: pointer;
     display: flex;
+    font-family: var(--ea-font-1-family);
     font-size: calc(var(--ea-sizer) * 1rem);
     font-weight: 600;
     padding: calc(var(--ea-spacer) * 0.375em) calc(var(--ea-spacer) * 1em);
@@ -28,10 +29,7 @@
 
     &[primary] {
       background: var(--ea-button-background, var(--ea-color-1));
-      color: var(
-        --ea-color,
-        var(--ea-button-color, var(--ea-text-color-light))
-      );
+      color: var(--ea-color, var(--ea-button-color, var(--ea-text-color-2)));
     }
 
     &[outline] {
@@ -53,10 +51,7 @@
         --ea-background,
         var(--ea-button-background, var(--ea-color-1-dark))
       );
-      color: var(
-        --ea-color,
-        var(--ea-button-color, var(--ea-text-color-light))
-      );
+      color: var(--ea-color, var(--ea-button-color, var(--ea-text-color-2)));
       text-decoration: none;
     }
 
@@ -72,6 +67,46 @@
       background: var(
         --ea-background,
         var(--ea-button-background, var(--ea-color-1-light))
+      );
+      box-shadow: var(--ea-box-shadow);
+    }
+  }
+
+  & button.ea-button-icon {
+    font-size: calc(var(--ea-sizer) * 1rem);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.375em;
+    height: 2em;
+    border-radius: 0.125em;
+    user-select: none;
+    outline: transparent;
+    color: var(--ea-color, var(--ea-button-color, inherit));
+
+    text-align: center;
+
+    &:active,
+    &[active],
+    &.active {
+      background: var(
+        --ea-background-active,
+        var(--ea-button-background-active, var(--ea-color-grey))
+      );
+    }
+
+    &[disabled],
+    &:disabled,
+    &.disabled {
+      cursor: default;
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    &:hover:not(:active) {
+      background: var(
+        --ea-background-hover,
+        var(--ea-button-background-hover, var(--ea-color-grey-light))
       );
       box-shadow: var(--ea-box-shadow);
     }

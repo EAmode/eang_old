@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core'
+import { Component } from '@angular/core'
 
 @Component({
   selector: 'eangio-button',
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.scss']
 })
-export class ButtonComponent implements OnInit {
+export class ButtonComponent {
   button = `
   ~~~html
   <button class="ea-button">Button</button>
@@ -57,6 +57,4 @@ export class ButtonComponent implements OnInit {
 
   `
   constructor() {}
-
-  ngOnInit() {}
 }

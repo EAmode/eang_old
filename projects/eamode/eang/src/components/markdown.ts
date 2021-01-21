@@ -62,7 +62,7 @@ export class MarkdownComponent implements OnChanges {
   @Input() doc: string
   compiledMarkdown = ''
 
-  @ContentChild('copyPaste', { static: false }) code: MarkdownComponent
+  @ContentChild('copyPaste') code: MarkdownComponent
 
   constructor() {}
 
