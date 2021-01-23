@@ -1,0 +1,42 @@
+@define-mixin autocomplete-material {
+  & ea-autocomplete {
+    & ul {
+      list-style: none;
+      padding: 20;
+      margin: 0;
+      border-radius: 0;
+      background: var(--ea-color-3);
+    }
+    & li {
+      color: var(--ea-color2);
+      height: 3rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      padding: 0 1rem;
+    }
+    & li:hover,
+    & li[selected] {
+      background-color: var(--ea-color-background-2);
+      & .matched {
+        color: var(--ea-color-3);
+      }
+      & span {
+        & mark {
+          background-color: none;
+          font-weight: 700;
+        }
+      }
+    }
+    & input {
+      /* background: var(--ea-color-background-2); */
+      border: none;
+      border-radius: 0;
+      border-bottom: 1px solid var(--ea-color-accent-1);
+      color: var(--ea-color-1);
+      outline: none;
+      padding-left: 1rem;
+      box-shadow: none;
+    }
+  }
+}

@@ -1,0 +1,302 @@
+@define-mixin icon-material {
+  & span[icon] {
+    display: block;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 1em;
+    width: 1em;
+
+    &[alert-circle],
+    &.ea-alert-circle {
+      background-image: inline('material/icon/alert-circle.svg');
+    }
+    &[alert-octagon],
+    &.ea-alert-octagon {
+      background-image: inline('material/icon/alert-octagon.svg');
+    }
+    &[align-justify],
+    &.ea-align-justify {
+      background-image: inline('material/icon/align-justify.svg');
+    }
+    &[alert-triangle],
+    &.ea-alert-triangle {
+      background-image: inline('material/icon/alert-triangle.svg');
+    }
+    &[align-center],
+    &.ea-align-center {
+      background-image: inline('material/icon/align-center.svg');
+    }
+    &[align-left],
+    &.ea-align-left {
+      background-image: inline('material/icon/align-left.svg');
+    }
+    &[align-right],
+    &.ea-align-right {
+      background-image: inline('material/icon/align-right.svg');
+    }
+    &[archive],
+    &.ea-archive {
+      background-image: inline('material/icon/archive.svg');
+    }
+    &[arrow-down-circle],
+    &.ea-arrow-down-circle {
+      background-image: inline('material/icon/arrow-down-circle.svg');
+    }
+    &[arrow-down-left],
+    &.ea-arrow-down-left {
+      background-image: inline('material/icon/arrow-down-left.svg');
+    }
+    &[arrow-down-right],
+    &.ea-arrow-down-right {
+      background-image: inline('material/icon/arrow-down-right.svg');
+    }
+    &[arrow-down],
+    &.ea-arrow-down {
+      background-image: inline('material/icon/arrow-down.svg');
+    }
+    &[arrow-left-circle],
+    &.ea-arrow-left-circle {
+      background-image: inline('material/icon/arrow-left-circle.svg');
+    }
+    &[arrow-left],
+    &.ea-arrow-left {
+      background-image: inline('material/icon/arrow-left.svg');
+    }
+    &[bar-chart],
+    &.ea-bar-chart {
+      background-image: inline('material/icon/bar-chart.svg');
+    }
+    &[bell-off],
+    &.ea-bell-off {
+      background-image: inline('material/icon/bell-off.svg');
+    }
+    &[bell],
+    &.ea-bell {
+      background-image: inline('material/icon/bell.svg');
+    }
+    &[layers],
+    &.ea-layers {
+      background-image: inline('material/icon/layers.svg');
+    }
+    &[grid],
+    &.ea-grid {
+      background-image: inline('material/icon/grid.svg');
+    }
+    &[bluetooth],
+    &.ea-bluetooth {
+      background-image: inline('material/icon/bluetooth.svg');
+    }
+    &[bookmark],
+    &.ea-bookmark {
+      background-image: inline('material/icon/bookmark.svg');
+    }
+    &[calendar],
+    &.ea-calendar {
+      background-image: inline('material/icon/calendar.svg');
+    }
+    &[check-circle],
+    &.ea-check-circle {
+      background-image: inline('material/icon/check-circle.svg');
+    }
+    &[check-square],
+    &.ea-check-square {
+      background-image: inline('material/icon/check-square.svg');
+    }
+    &[code],
+    &.ea-code {
+      background-image: inline('material/icon/code.svg');
+    }
+    &[crosshair],
+    &.ea-crosshair {
+      background-image: inline('material/icon/crosshair.svg');
+    }
+    &[database],
+    &.ea-database {
+      background-image: inline('material/icon/database.svg');
+    }
+    &[download-cloud],
+    &.ea-downdload-cloud {
+      background-image: inline('material/icon/download-cloud.svg');
+    }
+    &[external-link],
+    &.ea-external-link {
+      background-image: inline('material/icon/external-link.svg');
+    }
+    &[filter],
+    &.ea-filter {
+      background-image: inline('material/icon/filter.svg');
+    }
+    &[folder-plus],
+    &.ea-folder-plus {
+      background-image: inline('material/icon/folder-plus.svg');
+    }
+    &[help-circle],
+    &.ea-help-circle {
+      background-image: inline('material/icon/help-circle.svg');
+    }
+    &[inbox],
+    &.ea-inbox {
+      background-image: inline('material/icon/inbox.svg');
+    }
+    &[link-2],
+    &.ea-link-2 {
+      background-image: inline('material/icon/link-2.svg');
+    }
+    &[link],
+    &.ea-link {
+      background-image: inline('material/icon/link.svg');
+    }
+    &[paperclip],
+    &.ea-paperclip {
+      background-image: inline('material/icon/paperclip.svg');
+    }
+    &[plus-circle],
+    &.ea-plus-circle {
+      background-image: inline('material/icon/plus-circle.svg');
+    }
+    &[printer],
+    &.ea-printer {
+      background-image: inline('material/icon/printer.svg');
+    }
+    &[refresh-cw],
+    &.ea-refresh-cw {
+      background-image: inline('material/icon/refresh-cw.svg');
+    }
+    &[share],
+    &.ea-share {
+      background-image: inline('material/icon/share.svg');
+    }
+    &[toggle-left],
+    &.ea-toggle-left {
+      background-image: inline('material/icon/toggle-left.svg');
+    }
+    &[toggle-right],
+    &.ea-toggle-right {
+      background-image: inline('material/icon/toggle-right.svg');
+    }
+    &[trash-2],
+    &.ea-trash-2 {
+      background-image: inline('material/icon/trash-2.svg');
+    }
+    &[upload],
+    &.ea-upload {
+      background-image: inline('material/icon/upload.svg');
+    }
+    &[volume-1],
+    &.ea-volume-1 {
+      background-image: inline('material/icon/volume-1.svg');
+    }
+    &[volume-2] &.ea-volume-2 {
+      background-image: inline('material/icon/volume-2.svg');
+    }
+    &[volume-x] &.ea-volume-x {
+      background-image: inline('material/icon/volume-x.svg');
+    }
+    &[wifi-off] &.ea-wifi-off {
+      background-image: inline('material/icon/wifi-off.svg');
+    }
+    &[wifi],
+    &.ea-wifi {
+      background-image: inline('material/icon/wifi.svg');
+    }
+    &[zoom-in],
+    &.ea-zoom-in {
+      background-image: inline('material/icon/zoom-in.svg');
+    }
+    &[zoom-out],
+    &.ea-zoom-out {
+      background-image: inline('material/icon/zoom-out.svg');
+    }
+    &[hamburger-menu],
+    &.ea-hamburger-menu {
+      background-image: inline('material/icon/menu.svg');
+    }
+    &[minimized],
+    &.ea-minimized {
+      background-image: inline('material/icon/minimized.svg');
+    }
+    &[maximized-2],
+    &.ea-maximized-2 {
+      background-image: inline('material/icon/maximized-2.svg');
+    }
+    &[x],
+    &.ea-x {
+      background-image: inline('material/icon/x.svg');
+    }
+    &[close],
+    &.ea-close {
+      background-image: inline('material/icon/close.svg');
+    }
+    &[sign-in],
+    &.ea-sign-in {
+      background-image: inline('material/icon/sign-in.svg');
+    }
+    &[download],
+    &.ea-download {
+      background-image: inline('material/icon/download.svg');
+    }
+    &[chevron-right],
+    &.ea-chevron-right {
+      background-image: inline('material/icon/right-chevron.svg');
+    }
+    &[chevron-left],
+    &.ea-chevron-left {
+      background-image: inline('mode/icon/left-chevron.svg');
+    }
+    &[menu-close],
+    &.ea-menu-close {
+      background-image: inline('material/icon/menu-close.svg');
+    }
+    &[chevron-down],
+    &.ea-chevron-down {
+      background-image: inline('material/icon/chevron-down.svg');
+    }
+    &[vertical-menu],
+    &.ea-vertical-menu {
+      background-image: inline('material/icon/vertical-menu.svg');
+    }
+    &[chevron],
+    &.ea-chevron {
+      background-image: inline('material/icon/chevron.svg');
+    }
+    &[chevrons-left],
+    &.ea-chevrons-left {
+      background-image: inline('material/icon/chevrons-left.svg');
+    }
+    &[chevrons-right],
+    &.ea-chevrons-rifht {
+      background-image: inline('material/icon/chevrons-right.svg');
+    }
+    &[save],
+    &.ea-save {
+      background-image: inline('material/icon/save.svg');
+    }
+    &[edit],
+    &.ea-edit {
+      background-image: inline('material/icon/edit.svg');
+    }
+    &[add-file],
+    &.ea-add-file {
+      background-image: inline('material/icon/add-file.svg');
+    }
+    &[negative],
+    &.ea-negative {
+      filter: invert(100%);
+    }
+    &[aliceblue],
+    &.ea-aliceblue {
+      filter: invert(98%) sepia(77%) saturate(7219%) hue-rotate(178deg)
+        brightness(112%) contrast(101%);
+    }
+    &[AntiqueWhite],
+    &.ea-AntiqueWhite {
+      filter: invert(82%) sepia(28%) saturate(168%) hue-rotate(344deg)
+        brightness(109%) contrast(96%);
+    }
+    &[aqua],
+    &.ea-aqua {
+      filter: invert(96%) sepia(34%) saturate(4436%) hue-rotate(107deg)
+        brightness(101%) contrast(104%);
+    }
+  }
+}

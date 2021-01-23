@@ -1,0 +1,101 @@
+.material {
+  & button {
+    --ea-button-color: var(
+      --ea-button-color,
+      var(--ea-color-2)
+    ); /* Sets the button font-color */
+    --ea-button-background-color: var(
+      --ea-button-background-color,
+      var(--ea-color-background-2)
+    ); /* Sets the button background color */
+    --ea-button-border: var(--ea-button-border, var(--ea-color-background-2));
+    --ea-button-border-outline: 0em; /*Sets the initial em for the border outline*/
+    --ea-button-font-size: var(
+      --ea-button-font-size,
+      1rem
+    ); /*Sets the scale factor for the button*/
+    --ea-button-border-radius: 0em; /*Sets the border radius for the button*/
+    --ea-button-padding: 1em 1.5em;
+    --ea-button-margin: var(--ea-button-margin, 0);
+
+    font-size: var(--ea-button-font-size);
+    padding: var(--ea-button-padding);
+    background-color: var(--ea-button-background-color);
+    color: var(--ea-color-3);
+    border: var(--ea-button-border) solid 0.1em;
+    margin: var(--ea-button-margin);
+    border-radius: 0.2em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    outline: none;
+    transition: all 0.25s ease 0s;
+
+    &[icon] {
+      border: none;
+      background: none;
+      padding: 0;
+      outline: none;
+    }
+
+    &[icon]:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+      border: none;
+    }
+
+    &[icon]:active {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+  }
+  & [small] {
+    font-size: calc(var(--ea-button-font-size) * 0.8);
+  }
+  & [medium] {
+    font-size: calc(var(--ea-button-font-size) * 1.2);
+  }
+  & [large] {
+    font-size: calc(var(--ea-button-font-size) * 1.5);
+  }
+
+  & [outline] {
+    --ea-button-background-color: none;
+    color: var(--ea-color-1);
+  }
+
+  &[primary] {
+    color: var(--ea-color-1);
+    background-color: var(--ea-color-accent-1);
+  }
+  &[secondary] {
+    color: var(--ea-color-1);
+    background-color: var(--ea-color-accent-2);
+  }
+  &[success] {
+    color: var(--ea-color-1);
+    background-color: var(--ea-color-success);
+  }
+  &[info] {
+    color: var(--ea-color-1);
+    background-color: var(--ea-color-info);
+  }
+  &[warning] {
+    color: var(--ea-color-1);
+    background-color: var(--ea-color-warning);
+  }
+  &[danger] {
+    color: var(--ea-color-1);
+    background-color: var(--ea-color-danger);
+  }
+  & button[disabled] {
+    opacity: 0.65;
+    cursor: not-allowed;
+    border: var(--ea-color-background-6) solid 0.1em;
+  }
+  & button:hover {
+    border: var(--ea-color-background-6) solid 0.1em;
+  }
+
+  & button:active {
+    background-color: var(--ea-color-background-6);
+  }
+}

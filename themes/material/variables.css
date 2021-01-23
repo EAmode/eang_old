@@ -1,0 +1,55 @@
+.material {
+  --ea-color-accent-1: #6102ef;
+  --ea-color-accent-2: #398bf7;
+
+  --ea-color-background-1: #ffffff;
+  --ea-color-background-2: #0d355d;
+  --ea-color-background-3: #e1effd;
+  --ea-color-background-4: hsl(0, 0%, 96%);
+  --ea-color-background-5: #0c0e0f;
+  --ea-color-background-6: #00152b;
+
+  --ea-color-success: #5bb95b;
+  --ea-color-info: #5ac1de;
+  --ea-color-warning: #f1ae4e;
+  --ea-color-danger: #d9534f;
+  --ea-color-error: #d9534f;
+
+  --ea-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  --ea-font-1: 'Roboto';
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  --ea-padding: 4rem;
+  --ea-toolbar-height: 4rem;
+
+  /* Fonts & Typography */
+  --ea-font-1-family: 'Roboto';
+  --ea-font-1-style: normal;
+  --ea-font-1-weight: 400;
+
+  --ea-background-color: 66, 91, 154;
+
+  --ea-background-color-1: rgba(var(--ea-background-color), 1);
+  --ea-background-color-light: rgba(var(--ea-background-color), 0.8);
+
+  --ea-color-1: hsl(210, 75%, 21%);
+  --ea-color-1-light: hsl(210, 75%, 31%);
+
+  --ea-color-2: hsl(0, 0%, 98%);
+  --ea-color-light: hsl(0, 0%, 100%);
+
+  --ea-text-color: var(--ea-text-color-1);
+  --ea-text-color-1: #333;
+  --ea-text-color-2: #f6f6f6;
+
+  --ea-background-hover: var(--ea-color-1);
+  /* --ea-background-hover: red; */
+  --ea-background-active: var(--ea-color-1-light);
+  /* --ea-background-active: purple; */
+  --ea-background-active-shadow: inset 1.5px 2px 5px rgba(0, 0, 0, 0.2);
+  --ea-menu-color-active: #3f51b5;
+  --ea-menu-color-hover: #3f51b5;
+}
