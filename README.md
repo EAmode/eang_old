@@ -1,142 +1,80 @@
-[![npm version](https://img.shields.io/npm/v/@eamode/eang.svg)](https://www.npmjs.com/package/@eamode/eang) 
-[![travis build](https://img.shields.io/travis/EAmode/eang.svg)](https://travis-ci.org/EAmode/eang)
+# \<eang-layout>
 
-# eang
-Reactive components for Angular with customizable UX themes
+This webcomponent follows the [open-wc](https://github.com/open-wc/open-wc) recommendation.
 
-## Why eang?
-eang is fast, fully reactive, and really flexible angular development framework with a set of themeable visual components. Through its native support for reactive programming, eang enables your angular apps to automatically update the user experience in response to event stream data from event sources. Eang plays well with your existing Angular architecture.
-
-
-## Getting Started
-1. Create a new project use Angular CLI:
-
-```ng new [project name]```
-
-2. Add `eang` to your Angular project by running:
-
-```npm install -S @eamode/eang``` 
-
-3. Import selected `eang` modules in your project module file. e.g. `app.module.ts`:
-
-```
-import { PanelModule, AutoCompleteModule, LayoutModule, ... } from '@eamode/eang'
-@NgModule({
-  ...
-  imports: [..., PanelModule, AutoCompleteModule, LayoutModule, ...],
-  ...
-})
-
+## Installation
+```bash
+npm i eang-layout
 ```
 
-4. To use eang themes add ```@import '~@eamode/eang/css/all.css';``` to your ```styles.css``` file.
+## Usage
+```html
+<script type="module">
+  import 'eang-layout/eang-layout.js';
+</script>
 
-5. In ```index.html``` add a class to the body tag to apply the selected theme.
-```
-...
-<body class="mode">
-  <app-root></app-root>
-</body>
-...
+<eang-layout></eang-layout>
 ```
 
-| Theme Name | Description |
-|------------|-------------|
-| mode       | default theme of [MODE](https://www.eamode.com) |
-| material   | Components designed following Google's Material design |
-| your-theme-here | It is easy to add your own completely customized theme as well.|
-
-6. To use the eang `LayoutModule`, paste the following into the root component of the app: 
-```
-<ea-layout>
-  <ea-toolbar>
-    <h1>Logo here</h1>
-  </ea-toolbar>
-
-  <ea-drawer>
-    <a href="">Link in Drawer</a>
-  </ea-drawer>
-
-  <ea-main>
-    <ea-body>
-      <p lg>Body</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eget mollis nisi. Vivamus vel enim turpis.</p>
-    </ea-body>
-    <ea-footer>
-      <p sm>your company here TM</p>
-    </ea-footer>
-  </ea-main>
-</ea-layout>
+## Linting with ESLint, Prettier, and Types
+To scan the project for linting errors, run
+```bash
+npm run lint
 ```
 
-7. If you want to change the theme color or another component attributes, just override them using CSS Properties. Use ```.<class name>``` to change the value of the variable for all components in your ```style.css``` file:
-  
+You can lint with ESLint and Prettier individually as well
+```bash
+npm run lint:eslint
 ```
-.mode {
-  --ea-color-background-2: navy;
-}
-```
-Use ```<tag name>``` to change the value of variables for a component:
-
-```
-ea-drawer {
-  --ea-drawer-width: 12em;
-}
+```bash
+npm run lint:prettier
 ```
 
-8. Launch your app by running ```npm start```.  Enjoy.
+To automatically fix many linting errors, run
+```bash
+npm run format
+```
 
-## Develop
-```sh
-git clone https://github.com/EAmode/eang.git
-cd eang
-npm install
+You can format using ESLint and Prettier individually as well
+```bash
+npm run format:eslint
+```
+```bash
+npm run format:prettier
+```
+
+## Testing with Web Test Runner
+To run the suite of Web Test Runner tests, run
+```bash
+npm run test
+```
+
+To run the tests in watch mode (for &lt;abbr title=&#34;test driven development&#34;&gt;TDD&lt;/abbr&gt;, for example), run
+
+```bash
+npm run test:watch
+```
+
+## Demoing with Storybook
+To run a local instance of Storybook for your component, run
+```bash
+npm run storybook
+```
+
+To build a production version of Storybook, run
+```bash
+npm run storybook:build
+```
+
+
+## Tooling configs
+
+For most of the tools, the configuration is in the `package.json` to reduce the amount of files in your project.
+
+If you customize the configuration a lot, you can consider moving them to individual files.
+
+## Local Demo with `web-dev-server`
+```bash
 npm start
 ```
-Go to http://localhost:4204/ to bring up the website eang-io using `@eamode/eang` itself.
-
-In order for eang-io to reflect changes made in `@eamode/eang`, eang-io needs to be linked to `@eamode/eang`.
-
-```sh
-npm run build
-cd dist/eamode/eang
-npm link
-cd ../../../
-npm link @eamode/eang
-```
-
-Start `npm run watch` and then `npm run start` in a different terminal. At that point everything should be hot-reloading during development.
-
-You can do that with every angular project using `eang`. The project's `npm start` might break, when `npm run watch` is run in eang, because `watch` deletes files in the dist folder that the project is linked to. Just restart `watch` and then `npm start` in your project again.
-
-NPM scripts:
-- `npm start`: Starts eang-io in watch mode.
-- `npm run watch`: Compiles `@eamode/eang` in watch mode.
-- `npm run commit`: CLI tool `git-cz` to commit to git with `conventional` style.
-- `npm run format`: Automatic code formatting the whole project.
-- `npm run lint`: Linting Angular and CSS.
-
-Recommended VS Code extensions:
-- Angular Language Service
-- agular2-inline
-- Debugger for Chrome
-- PostCSS syntax
-- Prettier
-- TSLint
-- stylelint
-
-### Create your own eang CSS theme
-By default, eang components are styled using the theme called 'mode'. However, you can create your own custom theme by following the steps below.
-1. Create a file: `themes/<nameofyourtheme>.css`
-2. Create a directory: `themes/<nameofyourtheme>`
-3. Inside the `themes/<nameofyourtheme>` directory...
-  * create a file called `variables.css` (you can copy a variables.css file from one of the other existing theme directories)
-  * create a file `<nameofeangcomponen>.css`
-4. to modify fonts and colors, you can play with the values inside the file `themes/<nameofyourtheme>/variables.css`
-5. set up a post-css pipeline
-  * add a line into the file `'`package.json`'` inside of the `'` "scripts": {`'` section as follows: `"css:<nameofyourtheme>": "postcss themes/all.css themes/<nameofyourtheme>.css themes/<nameofyourtheme>.css themes/<nameofyourtheme>/**/*.css -o playground/dist/<nameofyourtheme>.css",`
-
-
-### travis (build, publish to npm, reference docs)
-eang's build scripts enforce linting to prevent errors.
-to commit your changes to eang, just  run `npm run commit` and follow the prompts
+To run a local development server that serves the basic demo located in `demo/index.html`
