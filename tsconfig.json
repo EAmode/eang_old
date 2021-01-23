@@ -10,7 +10,7 @@
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "importHelpers": true,
-    "outDir": "dist",
+    "outDir": "lib",
     "sourceMap": true,
     "inlineSources": true,
     "rootDir": "./",
