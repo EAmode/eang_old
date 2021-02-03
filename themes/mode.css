@@ -3,7 +3,7 @@
 @import 'mode/menu.css';
 @import 'mode/tabs.css';
 @import 'mode/autocomplete.css';
-@import 'mode/button.css';
+@import 'mode/button-mixin.css';
 @import 'mode/card.css';
 @import 'mode/layout.css';
 @import 'mode/markdown.css';
@@ -17,15 +17,17 @@
 @import 'mode/tooltip.css';
 @import 'mode/list.css';
 
+@mixin button-mode .mode;
+
 .mode {
-  @mixin input-mode;
+  /* @mixin input-mode;
   @mixin autocomplete-mode;
-  @mixin button-mode;
-  @mixin card-mode;
+  @import 'mode/button.css'; */
+  /* @mixin card-mode;
   @mixin layout-mode;
-  @mixin markdown-mode;
+  @mixin markdown-mode; */
   /* @mixin typography; */
-  @mixin themepicker;
+  /* @mixin themepicker;
   @mixin table-mode;
   @mixin panel-mode;
   @mixin utilities;
@@ -33,7 +35,7 @@
   @mixin tabs;
   @mixin tooltip;
   @mixin list-mode;
-  @mixin icon-mode;
+  @mixin icon-mode; */
 
   /* Base Colors */
   --ea-color-1-dark: hsl(223, 40%, 28%);
