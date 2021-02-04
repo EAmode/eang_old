@@ -1,6 +1,6 @@
 {
   "name": "eang-layout",
-  "version": "0.0.0",
+  "version": "4.0.0-alpha",
   "description": "Webcomponent eang-layout following open-wc recommendations",
   "author": "eang-layout",
   "license": "MIT",
@@ -8,6 +8,7 @@
   "module": "lib/index.js",
   "scripts": {
     "start": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wds\"",
+    "prebuild": "rimraf ./lib",
     "build": "tsc",
     "prepublish": "tsc",
     "lint": "eslint --ext .ts,.html . --ignore-path .gitignore && prettier \"**/*.ts\" --check --ignore-path .gitignore",
@@ -18,6 +19,7 @@
     "storybook:build": "tsc && build-storybook",
     "precss": "rimraf ./lib/css",
     "css": "postcss \"./themes/*.css\" --dir ./lib/css && postcss --no-map \"./themes/mode/button.css\" --dir ./lib/css/mode",
+    "postcss": "node cssToLitHtml.js",
     "css:watch": "npm run css -- -w"
   },
   "dependencies": {

@@ -16,4 +16,4 @@ fs.readdirSync(cssFolder).forEach(file => {
   cssFile += `export const ${name} = css\`${contents}\`\n`
 });
 
-console.log(cssFile);
+fs.writeFileSync('./src/CssMode.ts', cssFile)
