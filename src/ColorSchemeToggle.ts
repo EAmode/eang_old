@@ -7,6 +7,16 @@ export class ColorSchemeToggle extends LitElement {
 
   @property({ type: String, reflect: true }) colorScheme?: string
 
+  #mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+
+  #onChange = (e: MediaQueryListEvent | MediaQueryList) => {
+    if (e.matches) {
+      this.changeColorScheme('dark')
+    } else {
+      this.changeColorScheme()
+    }
+  }
+
   static styles = css`
     ${button}
   `
@@ -14,16 +24,12 @@ export class ColorSchemeToggle extends LitElement {
   connectedCallback() {
     super.connectedCallback()
 
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
-    const onChange = (e: MediaQueryListEvent | MediaQueryList) => {
-      if (e.matches) {
-        this.changeColorScheme('dark')
-      } else {
-        this.changeColorScheme()
-      }
-    }
-    mediaQuery.addListener(onChange)
-    onChange(mediaQuery)
+    this.#mediaQuery.addListener(this.#onChange)
+    this.#onChange(this.#mediaQuery)
+  }
+
+  disconnectedCallback() {
+    this.#mediaQuery.removeListener(this.#onChange)
   }
 
   render() {
