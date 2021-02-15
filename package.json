@@ -1,5 +1,5 @@
 {
-  "name": "eang-layout",
+  "name": "@eamode/eang",
   "version": "4.0.0-alpha",
   "description": "Webcomponent eang-layout following open-wc recommendations",
   "author": "eang-layout",
@@ -7,9 +7,9 @@
   "main": "lib/index.js",
   "module": "lib/index.js",
   "scripts": {
-    "start": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wds\"",
+    "start": "npm run css && tsc && concurrently -k -r \"npm run css:watch\" \"tsc --watch --preserveWatchOutput\" \"wds\"",
     "prebuild": "rimraf ./lib",
-    "build": "tsc",
+    "build": "npm run css && tsc",
     "prepublish": "tsc",
     "lint": "eslint --ext .ts,.html . --ignore-path .gitignore && prettier \"**/*.ts\" --check --ignore-path .gitignore",
     "format": "eslint --ext .ts,.html . --fix --ignore-path .gitignore && prettier \"**/*.ts\" --write --ignore-path .gitignore",
@@ -17,10 +17,11 @@
     "test:watch": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wtr --watch\"",
     "storybook": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wds -c .storybook/server.mjs\"",
     "storybook:build": "tsc && build-storybook",
-    "precss": "rimraf ./lib/css",
-    "css": "postcss \"./themes/*.css\" --dir ./lib/css && postcss --no-map \"./themes/mode/button.css\" --dir ./lib/css/mode",
-    "postcss": "node cssToLitHtml.js",
-    "css:watch": "npm run css -- -w"
+    "precss": "rimraf ./lib/css ./lib/themes",
+    "css": "postcss \"./themes/*.css\" --dir ./lib/css && postcss --no-map \"./themes/mode/!(*-mixin*)\" --dir ./lib/css/mode",
+    "css:copy": "cpx \"themes/**/*\" \"lib/themes\"",
+    "postcss": "node cssToLitHtml.js && npm run css:copy",
+    "css:watch": "concurrently -k -r \"npm run css -- -w\" \"npm run css:copy -- -w\""
   },
   "dependencies": {
     "lit-html": "^1.1.2",
@@ -35,6 +36,7 @@
     "@web/dev-server-storybook": "^0.3.2",
     "@web/test-runner": "^0.11.5",
     "concurrently": "^5.3.0",
+    "cpx": "^1.5.0",
     "eslint": "^6.1.0",
     "eslint-config-prettier": "^6.11.0",
     "husky": "^1.0.0",
@@ -60,6 +62,7 @@
       "@typescript-eslint"
     ],
     "rules": {
+      "wc/guard-super-call": "off",
       "no-unused-vars": "off",
       "@typescript-eslint/no-unused-vars": [
         "error"
@@ -76,7 +79,8 @@
   },
   "prettier": {
     "singleQuote": true,
-    "arrowParens": "avoid"
+    "arrowParens": "avoid",
+    "semi": false
   },
   "husky": {
     "hooks": {

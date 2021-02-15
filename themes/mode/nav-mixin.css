@@ -1,0 +1,49 @@
+@define-mixin nav-mode $theme {
+  $(theme) .ea-nav {
+    & ul {
+      display: flex;
+      list-style-type: none;
+      font-size: calc(var(--ea-sizer) * 1rem);
+      color: var(--ea-color, var(--ea-nav-color, inherit));
+      padding-inline-start: 0;
+      margin: 0;
+    }
+
+    & a {
+      padding: calc(var(--ea-spacer) * 0.4em) calc(var(--ea-spacer) * 0.8em)
+        calc(var(--ea-spacer) * 0.4em) calc(var(--ea-spacer) * 0.8em);
+      display: block;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    & li {
+      &:hover {
+        color: var(--ea-hover-color, var(--ea-nav-hover-color, inherit));
+      }
+    }
+
+    &.nav-pills {
+      & li {
+        &:hover {
+          background: var(
+            --ea-background-hover,
+            var(
+              --ea-nav-background-hover,
+              var(--ea-color-1-light, var(--ea-color-grey-light))
+            )
+          );
+        }
+        &:active,
+        &[active],
+        &.active {
+          background: var(
+            --ea-background-active,
+            var(--ea-nav-background-active, var(--ea-color-1))
+          );
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}

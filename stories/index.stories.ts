@@ -1,5 +1,5 @@
-import { html, TemplateResult } from 'lit-html';
-import '../eang-layout.js';
+import { html, TemplateResult } from 'lit-html'
+import '../layout.js'
 
 export default {
   title: 'EangLayout',
@@ -9,19 +9,19 @@ export default {
     counter: { control: 'number' },
     textColor: { control: 'color' },
   },
-};
+}
 
 interface Story<T> {
-  (args: T): TemplateResult;
-  args?: Partial<T>;
-  argTypes?: Record<string, unknown>;
+  (args: T): TemplateResult
+  args?: Partial<T>
+  argTypes?: Record<string, unknown>
 }
 
 interface ArgTypes {
-  title?: string;
-  counter?: number;
-  textColor?: string;
-  slot?: TemplateResult;
+  title?: string
+  counter?: number
+  textColor?: string
+  slot?: TemplateResult
 }
 
 const Template: Story<ArgTypes> = ({
@@ -37,24 +37,24 @@ const Template: Story<ArgTypes> = ({
   >
     ${slot}
   </eang-layout>
-`;
+`
 
-export const Regular = Template.bind({});
+export const Regular = Template.bind({})
 
-export const CustomTitle = Template.bind({});
+export const CustomTitle = Template.bind({})
 CustomTitle.args = {
   title: 'My title',
-};
+}
 
-export const CustomCounter = Template.bind({});
+export const CustomCounter = Template.bind({})
 CustomCounter.args = {
   counter: 123456,
-};
+}
 
-export const SlottedContent = Template.bind({});
+export const SlottedContent = Template.bind({})
 SlottedContent.args = {
   slot: html`<p>Slotted content</p>`,
-};
+}
 SlottedContent.argTypes = {
   slot: { table: { disable: true } },
-};
+}
