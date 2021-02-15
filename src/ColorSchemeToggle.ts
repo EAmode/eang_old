@@ -12,10 +12,7 @@ export class ColorSchemeToggle extends LitElement {
   `
 
   connectedCallback() {
-    // super.connectedCallback()
-    if (super.connectedCallback) {
-      super.connectedCallback()
-    }
+    super.connectedCallback()
 
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
     const onChange = (e: MediaQueryListEvent | MediaQueryList) => {
@@ -77,7 +74,6 @@ export class ColorSchemeToggle extends LitElement {
   changeColorScheme(scheme?: string) {
     const elements = document.querySelectorAll(this.selector)
     elements.forEach(element => {
-      console.log(element)
       if (scheme) {
         element.setAttribute('data-color-scheme', scheme)
         this.colorScheme = scheme
