@@ -1,6 +1,7 @@
 :root {
   --ea-sizer: 1;
   --ea-spacer: 1;
+  --ea-alpha: 1;
   font-size: 16px;
   box-sizing: border-box;
 }
@@ -14,4 +15,5 @@
 body {
   margin: 0;
   -webkit-overflow-scrolling: touch;
+  background: var(--ea-background-1);
 }

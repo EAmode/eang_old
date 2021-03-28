@@ -3,7 +3,9 @@
 @import 'mode/fonts.css';
 @import 'mode/button-mixin.css';
 @import 'mode/nav-mixin.css';
+@import 'mode/card-mixin.css';
 
 @mixin button-mode .mode;
 @mixin nav-mode .mode;
+@mixin card-mode .mode;
 

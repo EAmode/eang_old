@@ -1,12 +1,8 @@
 @define-mixin button-mode $theme {
-  $(theme) button.ea-button,
-  $(theme) input.ea-button {
+  $(theme) .ea-button {
     appearance: none;
     align-items: center;
-    background: var(
-      --ea-background,
-      var(--ea-button-background, var(--ea-background-1))
-    );
+    background: var(--ea-background, var(--ea-button-background));
     border: var(
       --ea-border,
       var(--ea-button-border, 0.1em solid var(--ea-color-1-dark))
@@ -20,7 +16,6 @@
     display: flex;
     font-family: var(--ea-font-1-family);
     font-size: calc(var(--ea-sizer) * 1rem);
-    font-weight: 600;
     padding: calc(var(--ea-spacer) * 0.375em) calc(var(--ea-spacer) * 1em);
     margin: 0;
     text-decoration: none;
@@ -29,8 +24,22 @@
     user-select: none;
 
     &[primary] {
-      background: var(--ea-button-background, var(--ea-color-1));
-      color: var(--ea-color, var(--ea-button-color, var(--ea-text-color-2)));
+      background: var(--ea-button-background, var(--ea-color-1b));
+      color: var(--ea-color, var(--ea-button-color, var(--ea-text-color-light)));
+      border: var(
+        --ea-border,
+        var(--ea-button-border, 0.1em solid var(--ea-color-1a))
+      );
+      &:hover:not(:active) {
+        background: var(
+          --ea-background,
+          var(--ea-button-background, var(--ea-color-1a))
+        );
+      }
+    }
+
+    &[lg] {
+      --ea-sizer: 1.2;
     }
 
     &[outline] {
@@ -50,9 +59,8 @@
     &.active {
       background: var(
         --ea-background,
-        var(--ea-button-background, var(--ea-color-1-dark))
+        var(--ea-button-background, var(--ea-color-1b))
       );
-      color: var(--ea-color, var(--ea-button-color, var(--ea-text-color-2)));
       text-decoration: none;
     }
 
@@ -69,11 +77,10 @@
         --ea-background,
         var(--ea-button-background, var(--ea-color-1-light))
       );
-      box-shadow: var(--ea-box-shadow);
     }
   }
 
-  $(theme) button.ea-button-icon {
+  $(theme) .ea-button-icon {
     font-size: calc(var(--ea-sizer) * 1rem);
     background: none;
     border: none;

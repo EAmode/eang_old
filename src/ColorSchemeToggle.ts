@@ -23,7 +23,6 @@ export class ColorSchemeToggle extends LitElement {
 
   connectedCallback() {
     super.connectedCallback()
-
     this.#mediaQuery.addListener(this.#onChange)
     this.#onChange(this.#mediaQuery)
   }
@@ -36,7 +35,7 @@ export class ColorSchemeToggle extends LitElement {
     if (this.colorScheme === 'dark') {
       return html`
         <button
-          class="ea_button_icon"
+          class="ea-button-icon"
           title="Enable Light Mode"
           @click="${() => this.changeColorScheme()}"
         >
@@ -57,7 +56,7 @@ export class ColorSchemeToggle extends LitElement {
     }
     return html`
       <button
-        class="ea_button_icon"
+        class="ea-button-icon"
         title="Enable Dark Mode"
         @click="${() => this.changeColorScheme('dark')}"
       >

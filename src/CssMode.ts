@@ -2,14 +2,10 @@ import { css } from 'lit-element'
 
 export const autocomplete = css``
 export const button = css`
-  button.ea-button,
-  input.ea-button {
+  .ea-button {
     appearance: none;
     align-items: center;
-    background: var(
-      --ea-background,
-      var(--ea-button-background, var(--ea-background-1))
-    );
+    background: var(--ea-background, var(--ea-button-background));
     border: var(
       --ea-border,
       var(--ea-button-border, 0.1em solid var(--ea-color-1-dark))
@@ -23,7 +19,6 @@ export const button = css`
     display: flex;
     font-family: var(--ea-font-1-family);
     font-size: calc(var(--ea-sizer) * 1rem);
-    font-weight: 600;
     padding: calc(var(--ea-spacer) * 0.375em) calc(var(--ea-spacer) * 1em);
     margin: 0;
     text-decoration: none;
@@ -32,61 +27,64 @@ export const button = css`
     user-select: none;
   }
 
-  button.ea-button[primary],
-  input.ea-button[primary] {
-    background: var(--ea-button-background, var(--ea-color-1));
-    color: var(--ea-color, var(--ea-button-color, var(--ea-text-color-2)));
+  .ea-button[primary] {
+    background: var(--ea-button-background, var(--ea-color-1b));
+    color: var(--ea-color, var(--ea-button-color, var(--ea-text-color-light)));
+    border: var(
+      --ea-border,
+      var(--ea-button-border, 0.1em solid var(--ea-color-1a))
+    );
   }
 
-  button.ea-button[outline],
-  input.ea-button[outline] {
+  .ea-button[primary]:hover:not(:active) {
+    background: var(
+      --ea-background,
+      var(--ea-button-background, var(--ea-color-1a))
+    );
+  }
+
+  .ea-button[lg] {
+    --ea-sizer: 1.2;
+  }
+
+  .ea-button[outline] {
     background: var(--ea-button-background, transparent);
     color: var(--ea-text-color);
     border-color: var(--ea-color-1);
   }
 
-  button.ea-button[flat],
-  input.ea-button[flat] {
+  .ea-button[flat] {
     background: var(--ea-background-2, transparent);
     border-color: rgba(0, 0, 0, 0);
     color: var(--ea-text-color);
   }
 
-  button.ea-button:active,
-  button.ea-button[active],
-  button.ea-button.active,
-  input.ea-button:active,
-  input.ea-button[active],
-  input.ea-button.active {
+  .ea-button:active,
+  .ea-button[active],
+  .ea-button.active {
     background: var(
       --ea-background,
-      var(--ea-button-background, var(--ea-color-1-dark))
+      var(--ea-button-background, var(--ea-color-1b))
     );
-    color: var(--ea-color, var(--ea-button-color, var(--ea-text-color-2)));
     text-decoration: none;
   }
 
-  button.ea-button[disabled],
-  button.ea-button:disabled,
-  button.ea-button.disabled,
-  input.ea-button[disabled],
-  input.ea-button:disabled,
-  input.ea-button.disabled {
+  .ea-button[disabled],
+  .ea-button:disabled,
+  .ea-button.disabled {
     cursor: default;
     opacity: 0.5;
     pointer-events: none;
   }
 
-  button.ea-button:hover:not(:active),
-  input.ea-button:hover:not(:active) {
+  .ea-button:hover:not(:active) {
     background: var(
       --ea-background,
       var(--ea-button-background, var(--ea-color-1-light))
     );
-    box-shadow: var(--ea-box-shadow);
   }
 
-  button.ea-button-icon {
+  .ea-button-icon {
     font-size: calc(var(--ea-sizer) * 1rem);
     background: none;
     border: none;
@@ -101,24 +99,24 @@ export const button = css`
     text-align: center;
   }
 
-  button.ea-button-icon:active,
-  button.ea-button-icon[active],
-  button.ea-button-icon.active {
+  .ea-button-icon:active,
+  .ea-button-icon[active],
+  .ea-button-icon.active {
     background: var(
       --ea-background-active,
       var(--ea-button-background-active, var(--ea-color-grey))
     );
   }
 
-  button.ea-button-icon[disabled],
-  button.ea-button-icon:disabled,
-  button.ea-button-icon.disabled {
+  .ea-button-icon[disabled],
+  .ea-button-icon:disabled,
+  .ea-button-icon.disabled {
     cursor: default;
     opacity: 0.5;
     pointer-events: none;
   }
 
-  button.ea-button-icon:hover:not(:active) {
+  .ea-button-icon:hover:not(:active) {
     background: var(
       --ea-background-hover,
       var(--ea-button-background-hover, var(--ea-color-grey-light))
@@ -126,7 +124,111 @@ export const button = css`
     box-shadow: var(--ea-box-shadow);
   }
 `
-export const card = css``
+export const card = css`
+  .ea-card {
+    font-size: calc(var(--ea-sizer) * 1rem);
+    background: var(
+      --ea-background,
+      var(--ea-card-background, var(--ea-background-1))
+    );
+    border: var(--ea-border, var(--ea-card-border, var(--ea-border-1)));
+    color: var(--ea-color, var(--ea-card-color, inherit));
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+  }
+
+  .ea-card[grid] {
+    --ea-card-grid-template: var(
+      --ea-card-grid-template,
+      'ea-card-header' 'ea-card-content' 'ea-card-footer'
+    );
+
+    display: grid;
+    grid-template: var(--ea-card-grid-template);
+  }
+
+  .ea-card[grid] > .ea-card-header {
+    grid-area: ea-card-header;
+  }
+
+  .ea-card[grid] > .ea-card-content {
+    grid-area: ea-card-content;
+  }
+
+  .ea-card[grid] > .ea-card-footer {
+    grid-area: ea-card-footer;
+  }
+
+  .ea-card .ea-card-header {
+    border-bottom: var(
+      --ea-border,
+      var(--ea-card-header-border, var(--ea-border-1))
+    );
+    background: transparent;
+    color: var(--ea-color, var(--ea-card-header-color, inherit));
+    padding: 0 calc(var(--ea-spacer) * 1em);
+  }
+
+  .ea-card .ea-card-header [content] {
+    flex-grow: 1;
+    display: flex;
+  }
+
+  .ea-card .ea-card-header[grid] {
+    --ea-card-header-grid-template: var(
+      --ea-card-header-grid-template,
+      'header section aside' / 1fr 3fr 1fr
+    );
+    display: grid;
+    grid-template: var(--ea-card-header-grid-template);
+  }
+
+  .ea-card .ea-card-content {
+    padding: calc(var(--ea-spacer) * 1em);
+    background: transparent;
+    color: var(--ea-color, var(--ea-card-content-color, inherit));
+  }
+
+  .ea-card .ea-card-content[flex-center] {
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .ea-card .ea-card-content[flex-end] {
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  .ea-card .ea-card-content[flex-start] {
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .ea-card .ea-card-content[grid] {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .ea-card .ea-card-footer {
+    margin-top: calc(var(--ea-spacer) * 0.7em);
+    background: transparent;
+    border-top: var(
+      --ea-border,
+      var(--ea-card-footer-border, var(--ea-border-1))
+    );
+    padding: calc(var(--ea-spacer) * 1em);
+  }
+
+  .ea-card .ea-card-footer[grid] {
+    display: grid;
+    grid-template-columns: var(
+      --ea-card-footer-grid,
+      'header section aside' / 1fr 3fr 1fr
+    );
+  }
+`
 export const fonts = css`
   @font-face {
     font-family: 'Montserrat';
@@ -452,12 +554,13 @@ export const utilities = css``
 export const variables = css`
   .mode {
     /* Base Colors */
-    --ea-color-1-dark: hsl(223, 40%, 28%);
+    --ea-color-1a: hsl(223, 40%, 28%);
     --ea-color-1: hsl(223, 40%, 43%);
-    --ea-color-1-light: hsl(223, 40%, 53%);
+    --ea-color-1b: hsl(223, 40%, 63%);
 
-    --ea-color-2: hsl(0, 0%, 20%);
-    --ea-color-2-light: hsl(0, 0%, 30%);
+    --ea-color-2a: hsl(223, 40%, 18%);
+    --ea-color-2: hsl(223, 40%, 28%);
+    --ea-color-2b: hsl(223, 40%, 38%);
 
     --ea-color-3: hsl(0, 0%, 96%);
     --ea-color-3-dark: hsl(0, 0%, 86%);
@@ -482,14 +585,15 @@ export const variables = css`
     --ea-color-disabled: hsl(0, 0%, 45%);
 
     /* Text Colors */
+    --ea-text-color-light: hsl(0, 0%, 96%);
     --ea-text-color-1: hsl(0, 0%, 10%);
     --ea-text-color-2: hsl(0, 0%, 96%);
 
     /* Backgrounds */
     --ea-background-1: hsl(0, 0%, 100%);
-    --ea-background-2: hsl(0, 0%, 97%);
+    --ea-background-2: hsl(231, 33%, 96%);
 
-    --ea-background-transparent-1: hsla(0, 0%, 100%, 0.95);
+    --ea-background-transparent-1: hsla(0, 0%, 100%, 0.9);
 
     /* Borders */
     --ea-border-1: 0.0625em solid hsla(0, 0%, 70%, 0.5);
@@ -508,14 +612,21 @@ export const variables = css`
     color: var(--ea-text-color-1);
   }
 
-  .mode.ea-color-scheme-dark {
+  .mode[data-color-scheme='dark'] {
+    --ea-color-1a: hsl(223, 40%, 63%);
+    --ea-color-1b: hsl(223, 40%, 28%);
+
     --ea-text-color-1: hsl(0, 0%, 96%);
     --ea-text-color-2: hsl(0, 0%, 20%);
+
+    --ea-background-transparent-1: hsla(0, 0%, 5%, 0.9);
 
     --ea-color-grey: hsl(0, 0%, 30%);
     --ea-color-grey-light: hsl(0, 0%, 20%);
 
     --ea-background-1: hsl(0, 0%, 5%);
     --ea-background-2: hsl(0, 0%, 10%);
+
+    --ea-box-shadow: 0 4px 12px rgba(255, 255, 255, 0.5);
   }
 `

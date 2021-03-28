@@ -18,10 +18,10 @@
     "storybook": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wds -c .storybook/server.mjs\"",
     "storybook:build": "tsc && build-storybook",
     "precss": "rimraf ./lib/css ./lib/themes",
-    "css": "postcss \"./themes/*.css\" --dir ./lib/css && postcss --no-map \"./themes/mode/!(*-mixin*)\" --dir ./lib/css/mode",
+    "css": "npm run css:copy && postcss \"./themes/*.css\" --dir ./lib/css && postcss --no-map \"./themes/mode/!(*-mixin*)\" --dir ./lib/css/mode",
     "css:copy": "cpx \"themes/**/*\" \"lib/themes\"",
-    "postcss": "node cssToLitHtml.js && npm run css:copy",
-    "css:watch": "concurrently -k -r \"npm run css -- -w\" \"npm run css:copy -- -w\""
+    "css:js": "node cssToLitHtml.js",
+    "css:watch": "concurrently -k -r \"npm run css -- -w\" \"npm run css:copy -- -w\" \"onchange './lib/css/**/*' -- npm run css:js\" "
   },
   "dependencies": {
     "lit-html": "^1.1.2",
@@ -41,6 +41,7 @@
     "eslint-config-prettier": "^6.11.0",
     "husky": "^1.0.0",
     "lint-staged": "^10.0.0",
+    "onchange": "^7.1.0",
     "postcss": "^8.2.4",
     "postcss-assets": "^5.0.0",
     "postcss-cli": "^8.3.1",
