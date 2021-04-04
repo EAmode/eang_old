@@ -5,15 +5,25 @@ import { button } from './CssMode.js'
 export class ColorSchemeToggle extends LitElement {
   @property({ type: String, reflect: true }) selector = '.mode'
 
-  @property({ type: String, reflect: true }) colorScheme?: string
+  @property({ type: String, reflect: true }) preferedColorScheme?: string
 
   #mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
 
   #onChange = (e: MediaQueryListEvent | MediaQueryList) => {
+    const colorSchemeOverride = localStorage.getItem('ea-color-scheme-override')
+    if (colorSchemeOverride) {
+      this.changeColorScheme(colorSchemeOverride)
+    }
     if (e.matches) {
-      this.changeColorScheme('dark')
+      this.preferedColorScheme = 'dark'
+      if (!colorSchemeOverride) {
+        this.changeColorScheme('dark')
+      }
     } else {
-      this.changeColorScheme()
+      this.preferedColorScheme = 'light'
+      if (!colorSchemeOverride) {
+        this.changeColorScheme('light')
+      }
     }
   }
 
@@ -32,12 +42,12 @@ export class ColorSchemeToggle extends LitElement {
   }
 
   render() {
-    if (this.colorScheme === 'dark') {
+    if (this.preferedColorScheme === 'dark') {
       return html`
         <button
           class="ea-button-icon"
           title="Enable Light Mode"
-          @click="${() => this.changeColorScheme()}"
+          @click="${() => this.changeColorScheme('light')}"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -76,15 +86,18 @@ export class ColorSchemeToggle extends LitElement {
     `
   }
 
-  changeColorScheme(scheme?: string) {
+  changeColorScheme(scheme: string) {
+    if (scheme === this.preferedColorScheme) {
+      localStorage.removeItem('ea-color-scheme-override')
+    } else {
+      localStorage.setItem('ea-color-scheme-override', scheme)
+    }
     const elements = document.querySelectorAll(this.selector)
     elements.forEach(element => {
-      if (scheme) {
-        element.setAttribute('data-color-scheme', scheme)
-        this.colorScheme = scheme
-      } else {
+      if (scheme === 'light') {
         element.removeAttribute('data-color-scheme')
-        this.colorScheme = undefined
+      } else {
+        element.setAttribute('data-color-scheme', scheme)
       }
     })
   }

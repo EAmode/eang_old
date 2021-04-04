@@ -1,10 +1,10 @@
-# \<eang-layout>
+# eang
 
-This webcomponent follows the [open-wc](https://github.com/open-wc/open-wc) recommendation.
+Web-component library
 
 ## Installation
 ```bash
-npm i eang-layout
+npm i eang
 ```
 
 ## Usage
@@ -78,3 +78,10 @@ If you customize the configuration a lot, you can consider moving them to indivi
 npm start
 ```
 To run a local development server that serves the basic demo located in `demo/index.html`
+
+## Publish via np
+
+```sh
+npm login
+np 
+```
