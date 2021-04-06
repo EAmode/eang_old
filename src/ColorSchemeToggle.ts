@@ -7,9 +7,11 @@ export class ColorSchemeToggle extends LitElement {
 
   @property({ type: String, reflect: true }) preferedColorScheme?: string
 
-  #mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+  @property({ type: String, reflect: true }) selectedColorScheme?: string
 
-  #onChange = (e: MediaQueryListEvent | MediaQueryList) => {
+  private mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+
+  private onChange = (e: MediaQueryListEvent | MediaQueryList) => {
     const colorSchemeOverride = localStorage.getItem('ea-color-scheme-override')
     if (colorSchemeOverride) {
       this.changeColorScheme(colorSchemeOverride)
@@ -25,6 +27,10 @@ export class ColorSchemeToggle extends LitElement {
         this.changeColorScheme('light')
       }
     }
+
+    if (this.selectedColorScheme === this.preferedColorScheme) {
+      localStorage.removeItem('ea-color-scheme-override')
+    }
   }
 
   static styles = css`
@@ -33,16 +39,16 @@ export class ColorSchemeToggle extends LitElement {
 
   connectedCallback() {
     super.connectedCallback()
-    this.#mediaQuery.addListener(this.#onChange)
-    this.#onChange(this.#mediaQuery)
+    this.mediaQuery.addListener(this.onChange)
+    this.onChange(this.mediaQuery)
   }
 
   disconnectedCallback() {
-    this.#mediaQuery.removeListener(this.#onChange)
+    this.mediaQuery.removeListener(this.onChange)
   }
 
   render() {
-    if (this.preferedColorScheme === 'dark') {
+    if (this.selectedColorScheme === 'dark') {
       return html`
         <button
           class="ea-button-icon"
@@ -93,6 +99,7 @@ export class ColorSchemeToggle extends LitElement {
       localStorage.setItem('ea-color-scheme-override', scheme)
     }
     const elements = document.querySelectorAll(this.selector)
+    this.selectedColorScheme = scheme
     elements.forEach(element => {
       if (scheme === 'light') {
         element.removeAttribute('data-color-scheme')
