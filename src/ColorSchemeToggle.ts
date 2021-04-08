@@ -1,5 +1,5 @@
 import { html, css, LitElement, property, customElement } from 'lit-element'
-import { button } from './CssMode.js'
+import { button } from './css/CssMode.js'
 
 @customElement('ea-color-scheme-toggle')
 export class ColorSchemeToggle extends LitElement {

@@ -6,6 +6,14 @@
   "license": "MIT",
   "main": "lib/index.js",
   "module": "lib/index.js",
+  "exports": {
+    "./css": {
+      "default": "./lib/src/css/index.js"
+    }
+  },
+  "files": [
+    "/lib"
+  ],
   "scripts": {
     "start": "npm run css && tsc && concurrently -k -r \"npm run css:watch\" \"tsc --watch --preserveWatchOutput\" \"wds\"",
     "prebuild": "rimraf ./lib",
