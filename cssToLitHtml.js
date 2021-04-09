@@ -13,7 +13,7 @@ fs.readdirSync(cssFolder).forEach(file => {
   );
   const name = file.split('.')[0];
 
-  cssFile += `export const ${name} = css\`${contents}\`\n`
+  cssFile += `export const css_mode_ea_${name} = css\`${contents}\`\n`
 });
 
 fs.writeFileSync('./src/CssMode.ts', cssFile)

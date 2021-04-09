@@ -1,9 +1,9 @@
 
 import { css } from 'lit-element'
 
-export const autocomplete = css`
+export const css_mode_ea_autocomplete = css`
 `
-export const button = css` .ea-button {
+export const css_mode_ea_button = css` .ea-button {
     appearance: none;
     align-items: center;
     background: var(--ea-background, var(--ea-button-background));
@@ -125,7 +125,7 @@ export const button = css` .ea-button {
       box-shadow: var(--ea-box-shadow);
     }
 `
-export const card = css` .ea-card {
+export const css_mode_ea_card = css` .ea-card {
       font-size: calc(var(--ea-sizer) * 1rem);
       background: var(
         --ea-background,
@@ -232,7 +232,7 @@ export const card = css` .ea-card {
           );
         }
 `
-export const fonts = css`@font-face {
+export const css_mode_ea_fonts = css`@font-face {
   font-family: 'Montserrat';
   src: url('../assets/fonts/Montserrat-Bold.woff2') format('woff2'),
     url('../assets/fonts/Montserrat-Bold.woff') format('woff'),
@@ -503,11 +503,12 @@ export const fonts = css`@font-face {
   font-display: swap;
 }
 `
-export const icons = css`
+export const css_mode_ea_icons = css`
 `
-export const input = css`
+export const css_mode_ea_input = css`
 `
-export const layout = css` ea-layout {
+export const css_mode_ea_layout = css` :host(ea-layout),
+   .ea-layout {
     font-size: calc(var(--ea-sizer) * 1rem);
     display: grid;
     height: 100vh;
@@ -519,45 +520,19 @@ export const layout = css` ea-layout {
     grid-template-columns: auto 1fr;
     grid-template-rows: auto 1fr;
     grid-template-areas:
-      'drawer toolbar'
+      'toolbar toolbar'
       'drawer body';
   }
-
-    ea-layout[toolbar-top] {
-      grid-template-areas:
-        'toolbar toolbar'
-        'drawer body';
-    }
-
-    ea-layout[draweroverlay='true'] {
-      grid-template-areas:
-        'toolbar toolbar'
-        'body body';
-    }
-
-    ea-layout[draweroverlay='true'] ea-drawer {
-        grid-row: 1;
-        grid-column: 1;
-        z-index: 1000000;
-      }
-
-    ea-layout[draweroverlay='true'] div[overlay] {
-        grid-row: 2;
-        grid-column: 2;
-        background: black;
-        opacity: 0.5;
-        z-index: 1000000;
-      }
-
-    ea-layout[toolbar-top][draweroverlay='true'] ea-drawer {
-        grid-row: 2/3;
-      }
-
+ :host(ea-layout[drawerstate='closed']),
+   .ea-layout[drawerstate='closed'] {
+    grid-template-columns: 1fr;
+  }
  .ea-toolbar {
+    grid-area: toolbar;
     font-size: calc(var(--ea-sizer) * 1rem);
     color: var(--ea-color, var(--ea-toolbar-color, inherit));
     height: calc(
-      var(--ea-spacer) * var(--ea-sizer) * var(--ea-toolbar-height, 4em)
+      var(--ea-spacer) * var(--ea-sizer) * var(--ea-toolbar-height, 100%)
     );
     padding: var(--ea-padding, var(--ea-toolbar-padding));
     background: var(
@@ -566,18 +541,18 @@ export const layout = css` ea-layout {
     );
     display: flex;
     align-items: center;
-    grid-area: toolbar;
   }
-
+.ea-toolbar[border] {
+      z-index: 1;
+      border-bottom: 1px solid lightgrey;
+    }
 .ea-toolbar[shadow] {
       box-shadow: 0em calc(var(--ea-sizer) * 0.1em) 0.4em 0 rgba(0, 0, 0, 0.3);
-      /* box-shadow:  inset 0 -3px 0 0 rgba(0, 0, 0, 0.3); */
       z-index: 1;
     }
-
  .ea-drawer {
-    color: var(--ea-color, var(--ea-drawer-color, inherit));
     grid-area: drawer;
+    color: var(--ea-color, var(--ea-drawer-color, inherit));
     display: flex;
     flex-direction: column;
     width: var(--ea-drawer-width);
@@ -589,36 +564,30 @@ export const layout = css` ea-layout {
     -webkit-tap-highlight-color: transparent;
     overflow: auto;
   }
-
 .ea-drawer[resizable] {
       resize: horizontal;
       overflow: auto;
     }
-
 .ea-drawer[state='closed'] {
       width: 0;
       display: none;
     }
-
- .ea-body {
-    display: flex;
-    flex-direction: column;
-    font-size: calc(var(--ea-sizer) * 1rem);
-    grid-area: body;
-    overflow: auto;
-    overflow-x: inherit;
-    color: var(--ea-color, var(--ea-body-color, inherit));
-    padding: var(--ea-padding, var(--ea-body-padding));
-  }
-
  .ea-main {
-    flex: 1 0 auto;
+    overflow: auto;
     background: var(
       --ea-background,
       var(--ea-main-background, var(--ea-background-2))
     );
   }
+ .ea-body {
+    display: flex;
+    flex-direction: column;
+    font-size: calc(var(--ea-sizer) * 1rem);
+    grid-area: body;
 
+    color: var(--ea-color, var(--ea-body-color, inherit));
+    padding: var(--ea-padding, var(--ea-body-padding));
+  }
  .ea-footer {
     background: var(
       --ea-background,
@@ -627,11 +596,11 @@ export const layout = css` ea-layout {
     width: var(--ea-footer-width, 100%);
     padding: var(--ea-padding, var(--ea-footer-padding));
   }`
-export const list = css`
+export const css_mode_ea_list = css`
 `
-export const markdown = css`
+export const css_mode_ea_markdown = css`
 `
-export const nav = css`.ea-nav ul {
+export const css_mode_ea_nav = css`.ea-nav ul {
       display: flex;
       list-style-type: none;
       font-size: calc(var(--ea-sizer) * 1rem);
@@ -668,19 +637,19 @@ export const nav = css`.ea-nav ul {
           font-weight: 500;
         }
 `
-export const panel = css`
+export const css_mode_ea_panel = css`
 `
-export const table = css`
+export const css_mode_ea_table = css`
 `
-export const tabs = css`
+export const css_mode_ea_tabs = css`
 `
-export const themepicker = css`
+export const css_mode_ea_themepicker = css`
 `
-export const tooltip = css`
+export const css_mode_ea_tooltip = css`
 `
-export const utilities = css`
+export const css_mode_ea_utilities = css`
 `
-export const variables = css`.mode {
+export const css_mode_ea_variables = css`.mode {
   /* Base Colors */
   --ea-color-1a: hsl(223, 40%, 28%);
   --ea-color-1: hsl(223, 40%, 43%);

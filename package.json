@@ -12,7 +12,8 @@
     }
   },
   "files": [
-    "/lib"
+    "/lib",
+    "/themes"
   ],
   "scripts": {
     "start": "npm run css && tsc && concurrently -k -r \"npm run css:watch\" \"tsc --watch --preserveWatchOutput\" \"wds\"",
@@ -29,6 +30,10 @@
     "css": "cpx \"themes/**/*\" \"lib/themes\" && postcss \"./themes/**/*.css\" --dir ./lib/css --no-map --base ./themes",
     "postcss": "node cssToLitHtml.js",
     "css:watch": "onchange \"./themes/**/*\" -- npm run css\" "
+  },
+  "peerDependencies": {
+    "rxjs": ">= 6"
+
   },
   "dependencies": {
     "lit-html": "^1.3.0",
@@ -70,6 +75,8 @@
       "@typescript-eslint"
     ],
     "rules": {
+      "max-classes-per-file": ["error", 10],
+      "camelcase":"off",
       "wc/guard-super-call": "off",
       "no-unused-vars": "off",
       "@typescript-eslint/no-unused-vars": [

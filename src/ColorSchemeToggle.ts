@@ -1,5 +1,5 @@
-import { html, css, LitElement, property, customElement } from 'lit-element'
-import { button } from './css/CssMode.js'
+import { html, LitElement, property, customElement } from 'lit-element'
+import { css_mode_ea_button } from './CssMode.js'
 
 @customElement('ea-color-scheme-toggle')
 export class ColorSchemeToggle extends LitElement {
@@ -33,9 +33,7 @@ export class ColorSchemeToggle extends LitElement {
     }
   }
 
-  static styles = css`
-    ${button}
-  `
+  static styles = [css_mode_ea_button]
 
   connectedCallback() {
     super.connectedCallback()
