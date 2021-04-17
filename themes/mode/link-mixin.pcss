@@ -1,0 +1,9 @@
+@define-mixin link-mode $theme {
+  $(theme) .ea-link {
+      color: var(--ea-color, var(--ea-link-color,var(--ea-color-1a)));
+      &:hover {
+        color: var(--ea-color, var(--ea-link-color-hover,var(--ea-color-1)));
+
+      }
+  }
+}

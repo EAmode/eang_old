@@ -9,7 +9,5 @@ describe('EangLayout', () => {
 
     expect(el.title).to.equal('Hey there')
     await expect(el).shadowDom.to.be.accessible()
-   
   })
-
 })

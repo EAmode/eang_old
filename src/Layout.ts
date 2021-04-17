@@ -116,7 +116,7 @@ export class LayoutComponent extends LitElement {
   get layout() {
     return this._layout
   }
-  
+
   set layout(value) {
     this._layout = value
     if (this._layout) {

@@ -6,11 +6,6 @@
   "license": "MIT",
   "main": "lib/index.js",
   "module": "lib/index.js",
-  "exports": {
-    "./css": {
-      "default": "./lib/src/css/index.js"
-    }
-  },
   "files": [
     "/lib",
     "/themes"
@@ -33,7 +28,6 @@
   },
   "peerDependencies": {
     "rxjs": ">= 6"
-
   },
   "dependencies": {
     "lit-html": "^1.3.0",
@@ -75,8 +69,11 @@
       "@typescript-eslint"
     ],
     "rules": {
-      "max-classes-per-file": ["error", 10],
-      "camelcase":"off",
+      "max-classes-per-file": [
+        "error",
+        10
+      ],
+      "camelcase": "off",
       "wc/guard-super-call": "off",
       "no-unused-vars": "off",
       "@typescript-eslint/no-unused-vars": [
@@ -95,7 +92,8 @@
   "prettier": {
     "singleQuote": true,
     "arrowParens": "avoid",
-    "semi": false
+    "semi": false,
+    "printWidth": 100
   },
   "husky": {
     "hooks": {
