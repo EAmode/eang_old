@@ -91,7 +91,6 @@ export const css_mode_ea_button = css` .ea-button {
     border: none;
     cursor: pointer;
     padding: 0.375em;
-    height: 2em;
     border-radius: 0.125em;
     user-select: none;
     outline: transparent;
@@ -509,6 +508,10 @@ export const css_mode_ea_input = css` .ea-form-actions {
     margin: calc(var(--ea-spacer) * 0.2em) calc(var(--ea-spacer) * 0.4em)
       calc(var(--ea-spacer) * 0.4em) calc(var(--ea-spacer) * 0.4em);
   }
+ .ea-validation-error {
+    font-size: calc(var(--ea-sizer) * 0.8rem);
+    color: var(--ea-color-error);
+  }
  .ea-form-field {
     display: grid;
     align-items: center;
@@ -518,10 +521,6 @@ export const css_mode_ea_input = css` .ea-form-actions {
 .ea-form-field > label {
       margin: 0 0 0 calc(var(--ea-spacer) * 0.4em);
     }
-.ea-form-field > .ea-validation-errors {
-      font-size: calc(var(--ea-sizer) * 0.8rem);
-      color: var(--ea-color-error);
-    }
 .ea-form-field > input {
       font-size: calc(var(--ea-sizer) * 1rem);
       border: 0.1em solid var(--ea-color-grey-dark);
@@ -529,7 +528,8 @@ export const css_mode_ea_input = css` .ea-form-actions {
       border-radius: 0.15em;
       width: 100%;
     }
-.ea-form-field > input.ng-dirty.ng-invalid {
+.ea-form-field > input.ng-dirty.ng-invalid,
+      .ea-form-field > input.invalid {
         border: 0.1em solid var(--ea-color-error);
       }
 .ea-form-field > input[type='color'] {
@@ -679,7 +679,7 @@ export const css_mode_ea_input = css` .ea-form-actions {
 .ea-form-field > input[type='checkbox'][disabled] + label {
       color: var(--ea-color-disabled);
     }
-.ea-form-field > select{
+.ea-form-field > select {
       font-size: calc(var(--ea-sizer) * 1rem);
       border: 0.1em solid var(--ea-color-grey-dark);
       padding: 0.35em;

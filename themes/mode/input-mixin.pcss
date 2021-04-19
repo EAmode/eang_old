@@ -4,6 +4,11 @@
       calc(var(--ea-spacer) * 0.4em) calc(var(--ea-spacer) * 0.4em);
   }
 
+  $(theme) .ea-validation-error {
+    font-size: calc(var(--ea-sizer) * 0.8rem);
+    color: var(--ea-color-error);
+  }
+
   $(theme) .ea-form-field {
     display: grid;
     align-items: center;
@@ -14,11 +19,6 @@
       margin: 0 0 0 calc(var(--ea-spacer) * 0.4em);
     }
 
-    & > .ea-validation-errors {
-      font-size: calc(var(--ea-sizer) * 0.8rem);
-      color: var(--ea-color-error);
-    }
-
     & > input {
       font-size: calc(var(--ea-sizer) * 1rem);
       border: 0.1em solid var(--ea-color-grey-dark);
@@ -26,7 +26,8 @@
       border-radius: 0.15em;
       width: 100%;
 
-      &.ng-dirty.ng-invalid {
+      &.ng-dirty.ng-invalid,
+      &.invalid {
         border: 0.1em solid var(--ea-color-error);
       }
     }
@@ -199,7 +200,7 @@
       color: var(--ea-color-disabled);
     }
 
-    & > select{
+    & > select {
       font-size: calc(var(--ea-sizer) * 1rem);
       border: 0.1em solid var(--ea-color-grey-dark);
       padding: 0.35em;
