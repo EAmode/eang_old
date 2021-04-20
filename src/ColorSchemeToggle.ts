@@ -1,4 +1,4 @@
-import { html, LitElement, property, customElement } from 'lit-element'
+import { html, LitElement, property, customElement, css } from 'lit-element'
 import { css_mode_ea_button } from './CssMode.js'
 
 @customElement('ea-color-scheme-toggle')
@@ -33,7 +33,18 @@ export class ColorSchemeToggle extends LitElement {
     }
   }
 
-  static styles = [css_mode_ea_button]
+  static styles = [
+    css`
+      :host {
+        height: var(--ea-color-scheme-toggle, 2em);
+      }
+
+      button {
+        height: 100%;
+      }
+    `,
+    css_mode_ea_button,
+  ]
 
   connectedCallback() {
     super.connectedCallback()

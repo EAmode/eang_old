@@ -2,30 +2,12 @@
 <html lang="en-GB">
 <head>
   <meta charset="utf-8">
-  <style>
-    body {
-      background: #fafafa;
-    }
-  </style>
+  <link rel="stylesheet" href="../lib/css/mode.css" >
 </head>
-<body>
+<body class="mode">
   <div id="demo"></div>
+  <ea-color-scheme-toggle selector="body.mode"></ea-color-scheme-toggle>
 
-  <script type="module">
-    import { html, render } from 'lit-html';
-    import '../lib/eang-layout.js';
-    // eslint-disable-next-line import/extensions
-    import "../lib";
-
-    const title = 'Hello owc World!';
-    render(
-      html`
-        <eang-layout .title=${title}>
-          some more light-dom
-        </eang-layout>
-      `,
-      document.querySelector('#demo')
-    );
-  </script>
+  <script type="module" src="./index.js"></script>
 </body>
 </html>
