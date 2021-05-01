@@ -45,9 +45,14 @@
   --ea-border-1: 0.0625em solid hsla(0, 0%, 70%, 0.5);
 
   /* Fonts & Typography */
-  --ea-font-1-family: 'Roboto', sans-serif;
+  --ea-font-1-family: 'Roboto Condensed', sans-serif;
   --ea-font-1-style: normal;
   --ea-font-1-weight: 400;
+
+  --ea-font-2-family: 'Roboto Condensed', sans-serif;
+  --ea-font-2-style: normal;
+  --ea-font-2-weight: 300;
+  
 
   /* Utilities */
   --ea-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
