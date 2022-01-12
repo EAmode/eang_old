@@ -76,7 +76,7 @@
     "@angular/platform-browser-dynamic": "^9.0.7",
     "@angular/router": "^9.0.7",
     "core-js": "^3.1.4",
-    "markdown-it": "^10.0.0",
+    "markdown-it": "^12.3.2",
     "postcss-color-function": "^4.1.0",
     "prismjs": "^1.19.0",
     "rxjs": "~6.5.4",
