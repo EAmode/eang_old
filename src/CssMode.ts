@@ -1397,7 +1397,7 @@ export const css_mode_ea_variables = css`.mode {
   --ea-border-1: 0.0625em solid hsla(0, 0%, 70%, 0.5);
 
   /* Fonts & Typography */
-  --ea-font-1-family: 'Roboto Condensed', sans-serif;
+  --ea-font-1-family: 'Roboto', sans-serif;
   --ea-font-1-style: normal;
   --ea-font-1-weight: 400;
 
