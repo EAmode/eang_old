@@ -1,7 +1,7 @@
-import { LitElement, html, property, customElement } from 'lit-element'
+import { LitElement, html } from 'lit'
+import {customElement, property} from 'lit/decorators.js';
 import { BehaviorSubject } from 'rxjs'
 import { map, shareReplay } from 'rxjs/operators'
-import { ifDefined } from 'lit-html/directives/if-defined'
 import { css_mode_ea_layout } from './CssMode.js'
 
 interface LayoutConfig {

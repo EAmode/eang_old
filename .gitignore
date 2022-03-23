@@ -1,25 +1,10 @@
-## editors
-/.idea
-/.vscode
-
-## system files
-.DS_Store
-
-## npm
 /node_modules/
-/npm-debug.log
-/debug.log
-
-## testing
-/coverage/
-
-## temp folders
-/.tmp/
-
-# build
-/_site/
-/dist/
 /lib/
-/out-tsc/
-
-storybook-static
+/test/
+custom-elements.json
+# top level source
+.pnpm-debug.log
+my-element.js
+my-element.js.map
+my-element.d.ts
+my-element.d.ts.map
