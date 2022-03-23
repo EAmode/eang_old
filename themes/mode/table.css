@@ -21,14 +21,12 @@
 
   & td,
   th {
-    border-bottom: calc(var(--ea-sizer) * 0.1em) solid
-      var(--ea-color-2, transparent);
+    border-bottom: calc(var(--ea-sizer) * 0.1em) solid var(--ea-color-2, transparent);
     padding: calc(var(--ea-spacer) * 0.5em);
   }
 
   & thead {
-    border-bottom: calc(var(--ea-sizer) * 0.2em) solid
-      var(--ea-color-2, transparent);
+    border-bottom: calc(var(--ea-sizer) * 0.2em) solid var(--ea-color-2, transparent);
     & th {
       color: var(--ea-text-color-1, var(--ea-color-2));
       /* background-color: var(--ea-color-grey); */

@@ -140,12 +140,9 @@
       & li:not(.active):hover {
         border-top-right-radius: calc(var(--ea-sizer) * 0.3em);
         border-top-left-radius: calc(var(--ea-sizer) * 0.3em);
-        border-left: calc(var(--ea-sizer) * 0.1em)
-          var(--ea-color-hover-not-active) solid;
-        border-top: calc(var(--ea-sizer) * 0.1em)
-          var(--ea-color-hover-not-active) solid;
-        border-right: calc(var(--ea-sizer) * 0.1em)
-          var(--ea-color-hover-not-active) solid;
+        border-left: calc(var(--ea-sizer) * 0.1em) var(--ea-color-hover-not-active) solid;
+        border-top: calc(var(--ea-sizer) * 0.1em) var(--ea-color-hover-not-active) solid;
+        border-right: calc(var(--ea-sizer) * 0.1em) var(--ea-color-hover-not-active) solid;
         transform: scale(1.001);
         transition-duration: 0.2s;
       }

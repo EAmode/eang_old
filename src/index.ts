@@ -4,8 +4,8 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-import {LitElement, html, css} from 'lit';
-import {customElement, property} from 'lit/decorators.js';
+import { LitElement, html, css } from 'lit'
+import { customElement, property } from 'lit/decorators.js'
 
 /**
  * An example element.
@@ -23,33 +23,31 @@ export class MyElement extends LitElement {
       padding: 16px;
       max-width: 800px;
     }
-  `;
+  `
 
   /**
    * The name to say "Hello" to.
    */
   @property()
-  name = 'World';
+  name = 'World'
 
   /**
    * The number of times the button has been clicked.
    */
-  @property({type: Number})
-  count = 0;
+  @property({ type: Number })
+  count = 0
 
   override render() {
     return html`
       <h1>${this.sayHello(this.name)}!</h1>
-      <button @click=${this._onClick} part="button">
-        Click Count: ${this.count}
-      </button>
+      <button @click=${this._onClick} part="button">Click Count: ${this.count}</button>
       <slot></slot>
-    `;
+    `
   }
 
   private _onClick() {
-    this.count++;
-    this.dispatchEvent(new CustomEvent('count-changed'));
+    this.count++
+    this.dispatchEvent(new CustomEvent('count-changed'))
   }
 
   /**
@@ -57,12 +55,12 @@ export class MyElement extends LitElement {
    * @param name The name to say "Hello" to
    */
   sayHello(name: string): string {
-    return `Hello, ${name}`;
+    return `Hello, ${name}`
   }
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'my-element': MyElement;
+    'my-element': MyElement
   }
 }

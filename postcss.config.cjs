@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 /* eslint-disable @typescript-eslint/no-var-requires */
-module.exports = (ctx) => ({
+module.exports = ctx => ({
   map: ctx.options.map,
   plugins: [
     require('postcss-import')(),
@@ -11,4 +11,4 @@ module.exports = (ctx) => ({
       relative: 'themes',
     }),
   ],
-});
+})

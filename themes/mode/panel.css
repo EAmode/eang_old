@@ -48,12 +48,8 @@
   }
 
   & ea-panel[state='minimized'] {
-    --ea-panel-height: calc(
-      var(--ea-panel-max-height) * var(--ea-panel-min-size-ratio)
-    );
-    --ea-panel-width: calc(
-      var(--ea-panel-max-width) * var(--ea-panel-min-size-ratio)
-    );
+    --ea-panel-height: calc(var(--ea-panel-max-height) * var(--ea-panel-min-size-ratio));
+    --ea-panel-width: calc(var(--ea-panel-max-width) * var(--ea-panel-min-size-ratio));
   }
 
   & ea-panel[state='closed'] {

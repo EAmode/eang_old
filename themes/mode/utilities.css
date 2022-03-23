@@ -41,10 +41,7 @@
     display: grid;
     grid-template-columns: repeat(
       auto-fit,
-      minmax(
-        var(--ea-grid-col-min-width, 22em),
-        var(--ea-grid-col-max-width, 1fr)
-      )
+      minmax(var(--ea-grid-col-min-width, 22em), var(--ea-grid-col-max-width, 1fr))
     );
     grid-gap: var(--ea-grid-gap, 1.5em);
     &[center] {
@@ -87,10 +84,7 @@
 
     padding: var(
       --ea-padding,
-      var(
-        --ea-container-padding,
-        calc(var(--ea-spacer) * 0.375em) calc(var(--ea-spacer) * 1em)
-      )
+      var(--ea-container-padding, calc(var(--ea-spacer) * 0.375em) calc(var(--ea-spacer) * 1em))
     );
 
     > * {
@@ -108,10 +102,7 @@
 
     padding: var(
       --ea-padding,
-      var(
-        --ea-container-padding,
-        calc(var(--ea-spacer) * 1em) calc(var(--ea-spacer) * 0.5em)
-      )
+      var(--ea-container-padding, calc(var(--ea-spacer) * 1em) calc(var(--ea-spacer) * 0.5em))
     );
 
     > * {

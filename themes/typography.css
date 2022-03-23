@@ -25,10 +25,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(
-    --ea-font-family,
-    var(--ea-font-2-family, var(--ea-font-1-family))
-  );
+  font-family: var(--ea-font-family, var(--ea-font-2-family, var(--ea-font-1-family)));
   margin: calc(var(--ea-spacer) * 0.67em) 0 calc(var(--ea-spacer) * 0.5em) 0;
   /* font-weight: var(--ea-font-weight, var(--ea-font-2-weight, bold)); */
   /* line-height: calc(var(--ea-spacer) * 1.2em); */

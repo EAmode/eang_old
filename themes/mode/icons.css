@@ -365,18 +365,18 @@
     }
     &[aliceblue],
     &.ea-aliceblue {
-      filter: invert(98%) sepia(77%) saturate(7219%) hue-rotate(178deg)
-        brightness(112%) contrast(101%);
+      filter: invert(98%) sepia(77%) saturate(7219%) hue-rotate(178deg) brightness(112%)
+        contrast(101%);
     }
     &[AntiqueWhite],
     &.ea-AntiqueWhite {
-      filter: invert(82%) sepia(28%) saturate(168%) hue-rotate(344deg)
-        brightness(109%) contrast(96%);
+      filter: invert(82%) sepia(28%) saturate(168%) hue-rotate(344deg) brightness(109%)
+        contrast(96%);
     }
     &[aqua],
     &.ea-aqua {
-      filter: invert(96%) sepia(34%) saturate(4436%) hue-rotate(107deg)
-        brightness(101%) contrast(104%);
+      filter: invert(96%) sepia(34%) saturate(4436%) hue-rotate(107deg) brightness(101%)
+        contrast(104%);
     }
   }
 }

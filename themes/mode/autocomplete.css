@@ -10,10 +10,7 @@
       --ea-autocomplete-selected-background,
       var(--ea-color-background-3)
     );
-    --ea-autocomplete-selected-color: var(
-      --ea-autocomplete-selected-color,
-      var(--ea-color-3)
-    );
+    --ea-autocomplete-selected-color: var(--ea-autocomplete-selected-color, var(--ea-color-3));
     display: block;
     position: relative;
 
@@ -38,8 +35,7 @@
         calc(var(--ea-sizer) * 0.6em) rgba(0, 0, 0, 0.2);
       text-shadow: none;
       transition: 0.3s cubic-bezier(0.4, 0.2, 0.5, 1.4);
-      transform-origin: calc(var(--ea-sizer) * 1.43em)
-        calc(var(--ea-sizer) * -0.43em);
+      transform-origin: calc(var(--ea-sizer) * 1.43em) calc(var(--ea-sizer) * -0.43em);
       position: absolute;
       top: var(--ea-autocomplete-ul-top);
       bottom: var(--ea-autocomplete-ul-bottom);
@@ -62,10 +58,7 @@
       color: var(--ea-autocomplete-color-hover, var(--ea-text-color-2));
       background: var(
         --ea-background-hover,
-        var(
-          --ea-autocomplete-background-hover,
-          var(--ea-color-1-light, var(--ea-color-grey-light))
-        )
+        var(--ea-autocomplete-background-hover, var(--ea-color-1-light, var(--ea-color-grey-light)))
       );
       & .matched {
         color: var(--ea-autocomplete-color-matched);
@@ -80,10 +73,7 @@
       color: var(--ea-autocomplete-color-selected, var(--ea-text-color-2));
       background: var(
         --ea-background-selected,
-        var(
-          --ea-autocomplete-background-selected,
-          var(--ea-color-1, var(--ea-color-grey))
-        )
+        var(--ea-autocomplete-background-selected, var(--ea-color-1, var(--ea-color-grey)))
       );
     }
     & li[selected]:hover,

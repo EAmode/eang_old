@@ -1,17 +1,18 @@
-import {LitElement, html} from 'lit';
-import {customElement, property} from 'lit/decorators.js';
-import {BehaviorSubject} from 'rxjs';
-import {map, shareReplay} from 'rxjs/operators';
-import {css_mode_ea_layout} from './CssMode.js';
+import { LitElement, html } from 'lit'
+import { customElement, property } from 'lit/decorators.js'
+import { BehaviorSubject } from 'rxjs'
+import { map, shareReplay } from 'rxjs/operators'
+import { ifDefined } from 'lit/directives/if-defined.js'
+import { css_mode_ea_layout } from './CssMode.js'
 
 interface LayoutConfig {
-  theme: string;
-  colorScheme?: string;
-  drawerOverlayMediaQuery: string;
-  drawerOverlayMatches?: string;
-  drawerState: 'closed' | 'maximized';
-  drawerOverlay: boolean;
-  drawerResizable: boolean;
+  theme: string
+  colorScheme?: string
+  drawerOverlayMediaQuery: string
+  drawerOverlayMatches?: string
+  drawerState: 'closed' | 'maximized'
+  drawerOverlay: boolean
+  drawerResizable: boolean
 }
 
 export class Layout {
@@ -23,116 +24,115 @@ export class Layout {
     drawerState: 'maximized',
     drawerOverlay: false,
     drawerResizable: false,
-  };
+  }
 
-  readonly configSubject = new BehaviorSubject<LayoutConfig>(this.config);
+  readonly configSubject = new BehaviorSubject<LayoutConfig>(this.config)
 
-  config$ = this.configSubject.pipe(shareReplay(1));
+  config$ = this.configSubject.pipe(shareReplay(1))
 
-  drawerState$ = this.config$.pipe(map((x) => x.drawerState));
+  drawerState$ = this.config$.pipe(map(x => x.drawerState))
 
-  drawerOverlay$ = this.config$.pipe(map((x) => x.drawerOverlay));
+  drawerOverlay$ = this.config$.pipe(map(x => x.drawerOverlay))
 
   constructor(config: Partial<LayoutConfig> = {}) {
-    this.config = Object.assign(this.config, config);
+    this.config = Object.assign(this.config, config)
 
     if (config.drawerOverlayMediaQuery) {
-      const mql = window.matchMedia(config.drawerOverlayMediaQuery);
-      this.onMediaChange(mql);
+      const mql = window.matchMedia(config.drawerOverlayMediaQuery)
+      this.onMediaChange(mql)
       if (typeof mql.addEventListener === 'function') {
-        mql.addEventListener('change', (x) => this.onMediaChange(x));
+        mql.addEventListener('change', x => this.onMediaChange(x))
       } else if (typeof mql.addListener === 'function') {
-        mql.addListener((x) => this.onMediaChange(x));
+        mql.addListener(x => this.onMediaChange(x))
       }
     }
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   onMediaChange(x: any) {
-    this.config.drawerOverlayMatches = x.matches;
+    this.config.drawerOverlayMatches = x.matches
     if (this.config.drawerOverlayMatches) {
       if (this.config.drawerState !== 'closed') {
-        this.config.drawerOverlay = false;
-        this.config.drawerState = 'closed';
+        this.config.drawerOverlay = false
+        this.config.drawerState = 'closed'
       }
     } else {
-      this.config.drawerOverlay = false;
+      this.config.drawerOverlay = false
     }
-    this.configSubject.next(this.config);
+    this.configSubject.next(this.config)
   }
 
   openDrawer() {
     if (this.config.drawerState !== 'maximized') {
-      this.config.drawerState = 'maximized';
+      this.config.drawerState = 'maximized'
       if (this.config.drawerOverlayMatches) {
-        this.config.drawerOverlay = true;
+        this.config.drawerOverlay = true
       }
-      this.configSubject.next(this.config);
+      this.configSubject.next(this.config)
     }
   }
 
   closeDrawer() {
     if (this.config.drawerState !== 'closed') {
-      this.config.drawerState = 'closed';
+      this.config.drawerState = 'closed'
       if (this.config.drawerOverlay) {
-        this.config.drawerOverlay = false;
+        this.config.drawerOverlay = false
       }
-      this.configSubject.next(this.config);
+      this.configSubject.next(this.config)
     }
   }
 
   toggleDrawer() {
     if (this.config.drawerState === 'closed') {
-      this.openDrawer();
-      return false;
+      this.openDrawer()
+      return false
     }
-    this.closeDrawer();
-    return true;
+    this.closeDrawer()
+    return true
   }
 
   changeColorScheme(scheme?: string) {
-    const element = document.getElementsByClassName(this.config.theme)[0];
+    const element = document.getElementsByClassName(this.config.theme)[0]
     if (scheme !== undefined) {
       if (this.config.colorScheme !== scheme) {
         if (this.config.colorScheme) {
-          element.classList.remove(
-            `ea-color-scheme-${this.config.colorScheme}`
-          );
+          element.classList.remove(`ea-color-scheme-${this.config.colorScheme}`)
         }
-        element.classList.add(`ea-color-scheme-${scheme}`);
-        this.config.colorScheme = scheme;
-        this.configSubject.next(this.config);
+        element.classList.add(`ea-color-scheme-${scheme}`)
+        this.config.colorScheme = scheme
+        this.configSubject.next(this.config)
       }
     } else if (this.config.colorScheme) {
-      element.classList.remove(`ea-color-scheme-${this.config.colorScheme}`);
-      this.config.colorScheme = scheme;
-      this.configSubject.next(this.config);
+      element.classList.remove(`ea-color-scheme-${this.config.colorScheme}`)
+      this.config.colorScheme = scheme
+      this.configSubject.next(this.config)
     }
   }
 }
 
 @customElement('ea-layout')
 export class LayoutComponent extends LitElement {
-  private _layout?: Layout;
+  private _layout?: Layout
 
-  @property({attribute: false})
+  @property({ attribute: false })
   get layout() {
-    return this._layout;
+    return this._layout
   }
 
   set layout(value) {
-    this._layout = value;
+    this._layout = value
     if (this._layout) {
-      this._layout.drawerState$.subscribe((x) => {
-        this.drawerState = x;
-      });
+      this._layout.drawerState$.subscribe(x => {
+        this.drawerState = x
+      })
     }
   }
 
-  @property({type: String, reflect: true}) drawerState?: string;
+  @property({ type: String, reflect: true }) drawerState?: string
 
-  static styles = [css_mode_ea_layout];
+  static override styles = [css_mode_ea_layout]
 
-  render() {
+  override render() {
     return html`
       <!-- <div
         overlay
@@ -151,6 +151,6 @@ export class LayoutComponent extends LitElement {
             class="ea-drawer"
           ></slot>`
         : undefined}
-    `;
+    `
   }
 }
